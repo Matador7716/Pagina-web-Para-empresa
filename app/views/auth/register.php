@@ -7,8 +7,14 @@
 </head>
 <body>
     <div class="container">
+        <div class="logo">Candela Hotel</div>
         <form action="/register.php" method="post">
-            <h2>Registro</h2>
+            <h2>Crear una Cuenta</h2>
+
+            <?php if(isset($_SESSION['error'])): ?>
+                <div class="error"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></div>
+            <?php endif; ?>
+
             <div class="form-group">
                 <label for="name">Nombre:</label>
                 <input type="text" name="name" id="name" required>

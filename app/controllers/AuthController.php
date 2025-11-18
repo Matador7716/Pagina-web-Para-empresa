@@ -21,17 +21,26 @@ class AuthController {
     // Procesar el registro
     public function register() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Validar que el email no exista
+            if ($this->user->emailExists($_POST['email'])) {
+                $_SESSION['error'] = 'El correo electrónico ya está registrado.';
+                header('Location: /register.php');
+                exit;
+            }
+
             $this->user->name = $_POST['name'];
             $this->user->email = $_POST['email'];
             $this->user->password = $_POST['password'];
-            $this->user->role = $_POST['role']; // Asumiendo que hay un campo para el rol en el formulario
+            $this->user->role = $_POST['role'];
 
             if ($this->user->create()) {
-                // Redirigir al login
+                $_SESSION['success'] = '¡Registro exitoso! Ahora puedes iniciar sesión.';
                 header('Location: /login.php');
+                exit;
             } else {
-                // Manejar error
-                echo 'Error al registrar el usuario.';
+                $_SESSION['error'] = 'Error al registrar el usuario. Por favor, inténtalo de nuevo.';
+                header('Location: /register.php');
+                exit;
             }
         }
     }
@@ -57,9 +66,12 @@ class AuthController {
 
                 // Redirigir al dashboard
                 header('Location: /dashboard.php');
+                exit;
             } else {
                 // Error de autenticación
-                echo 'Email o contraseña incorrectos.';
+                $_SESSION['error'] = 'Email o contraseña incorrectos.';
+                header('Location: /login.php');
+                exit;
             }
         }
     }

@@ -54,5 +54,17 @@ class User {
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    // Comprobar si un email ya existe
+    public function emailExists($email) {
+        $query = 'SELECT id FROM ' . $this->table . ' WHERE email = :email LIMIT 1';
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        if ($stmt->fetch(PDO::FETCH_ASSOC)) {
+            return true;
+        }
+        return false;
+    }
 }
 ?>
