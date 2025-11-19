@@ -1,0 +1,119 @@
+/* public/css/dashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #3a7bd5;
+    --secondary-color: #3a6073;
+    --background-color: #f0f2f5;
+    --text-color: #333;
+    --light-text-color: #777;
+    --card-bg: #ffffff;
+    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    color: var(--text-color);
+}
+
+.dashboard-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.dashboard-header p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.logout-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card p {
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Colores específicos para cada tarjeta */
+.card-sales { border-color: #27ae60; }
+.card-sales .card-icon { color: #27ae60; }
+
+.card-inventory { border-color: #2980b9; }
+.card-inventory .card-icon { color: #2980b9; }
+
+.card-reports { border-color: #8e44ad; }
+.card-reports .card-icon { color: #8e44ad; }
+
+.card-purchases { border-color: #f39c12; }
+.card-purchases .card-icon { color: #f39c12; }
+
+.card-users { border-color: #c0392b; }
+.card-users .card-icon { color: #c0392b; }
+
+.card-settings { border-color: #7f8c8d; }
+.card-settings .card-icon { color: #7f8c8d; }
