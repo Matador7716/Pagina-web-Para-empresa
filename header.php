@@ -102,6 +102,203 @@
             border-radius: 4px;
         }
 
+        .slider-container {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            width: 400%;
+            height: 100%;
+            display: flex;
+            animation: slide 16s infinite;
+        }
+
+        .slide {
+            width: 25%;
+            height: 100%;
+            position: relative;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: kenburns 16s infinite;
+        }
+
+        .slide-content {
+            z-index: 1;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(0); }
+            30% { transform: translateX(-25%); }
+            55% { transform: translateX(-25%); }
+            60% { transform: translateX(-50%); }
+            85% { transform: translateX(-50%); }
+            90% { transform: translateX(-75%); }
+            100% { transform: translateX(-75%); }
+        }
+
+        @keyframes kenburns {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        .presentation {
+            display: flex;
+            align-items: center;
+            gap: 2em;
+        }
+
+        .presentation-text {
+            flex: 1;
+        }
+
+        .presentation-image {
+            flex: 1;
+        }
+
+        .presentation-image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .full-width-section {
+            background-color: #ecf0f1;
+            padding: 3em 2em;
+            text-align: center;
+        }
+
+        .web-design-section {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .card-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+
+        .card {
+            flex: 0 0 250px;
+            margin: 1em;
+            padding: 1.5em;
+            background-color: white;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            scroll-snap-align: center;
+        }
+
+        .card.highlighted {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: white;
+            padding: 0.8em 1.5em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e74c3c;
+            transform: translateY(-3px);
+        }
+
+        .systems-design {
+            display: flex;
+            align-items: center;
+            gap: 2em;
+        }
+
+        .systems-design-text {
+            flex: 1;
+        }
+
+        .systems-design-video {
+            flex: 1;
+        }
+
+        .systems-design-video video {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .electronic-billing-section {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .electronic-billing-section .btn {
+            margin: 0.5em;
+        }
+
+        .comments-section {
+            text-align: center;
+        }
+
+        .comment-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+
+        .comment {
+            flex: 0 0 100%;
+            padding: 2em;
+            scroll-snap-align: center;
+        }
+
+        .social-media {
+            margin-top: 2em;
+        }
+
+        .social-btn {
+            display: inline-block;
+            padding: 1em 2em;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0.5em;
+            transition: opacity 0.3s;
+        }
+
+        .social-btn.facebook {
+            background-color: #3b5998;
+        }
+
+        .social-btn.instagram {
+            background-color: #e1306c;
+        }
+
+        .social-btn:hover {
+            opacity: 0.8;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             nav ul {
