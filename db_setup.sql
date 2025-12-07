@@ -1,70 +1,53 @@
--- =================================================================
---  Script de Configuración de la Base de Datos
---  Proyecto: Sistema de Registro de Asistencia APAFA
--- =================================================================
+-- CandelaWEB - Services Database Setup
 
--- Se recomienda ejecutar este script desde un cliente de MySQL o
--- a través de la pestaña SQL en phpMyAdmin.
+CREATE DATABASE IF NOT EXISTS candelaweb_services;
 
--- ---
--- 1. Creación de la Base de Datos
--- ---
--- Crea la base de datos `apafa_tarjetaasis` si no existe.
--- Se utiliza el juego de caracteres utf8mb4 para una compatibilidad
--- completa con caracteres internacionales y emojis.
-CREATE DATABASE IF NOT EXISTS apafa_tarjetaasis
-CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE candelaweb_services;
 
-
--- ---
--- 2. Selección de la Base de Datos
--- ---
--- Pone en uso la base de datos recién creada para ejecutar las
--- siguientes instrucciones de creación de tablas en ella.
-USE apafa_tarjetaasis;
-
-
--- ---
--- 3. Creación de la Tabla `registrations`
--- ---
--- Almacena la información principal de cada registro, incluyendo
--- los datos del alumno y del apoderado.
-CREATE TABLE `registrations` (
+CREATE TABLE `products` (
     `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
-    `control_card` VARCHAR(50) NOT NULL,
-    `student_grade` VARCHAR(50),
-    `student_section` VARCHAR(50),
-    `student_level` VARCHAR(50),
-    `student_shift` VARCHAR(50),
-    `parent_name` VARCHAR(255) NOT NULL,
-    `parent_dni` VARCHAR(20) NOT NULL,
-    `parent_phone` VARCHAR(20),
-    `observations` TEXT,
-    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    INDEX `idx_parent_dni` (`parent_dni`)
+    `name` VARCHAR(255) NOT NULL,
+    `description` TEXT,
+    `price` DECIMAL(10, 2) NOT NULL,
+    `image` VARCHAR(255),
+    `category` VARCHAR(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
--- ---
--- 4. Creación de la Tabla `attendance`
--- ---
--- Almacena cada marca de asistencia individualmente, vinculada a
--- un registro principal.
-CREATE TABLE `attendance` (
+CREATE TABLE `services` (
     `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
-    `registration_id` INT(11) NOT NULL,
-    `event_block` VARCHAR(100) NOT NULL COMMENT 'Identificador de la tabla de asistencia (ej: asambleas_manana)',
-    `event_index` INT(2) NOT NULL COMMENT 'La posición de la celda en la tabla (0-8)',
-    `status` INT(1) NOT NULL COMMENT '1 para Asistió (A), 0 para Faltó (F)',
-
-    -- Crea una relación con la tabla de registros.
-    -- ON DELETE CASCADE asegura que si se borra un registro, sus asistencias se borran automáticamente.
-    FOREIGN KEY (`registration_id`) REFERENCES `registrations`(`id`) ON DELETE CASCADE,
-
-    -- Asegura que no se pueda marcar la misma asistencia dos veces para la misma persona y evento.
-    UNIQUE KEY `unique_attendance` (`registration_id`, `event_block`, `event_index`)
+    `name` VARCHAR(255) NOT NULL,
+    `description` TEXT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ---
--- Fin del script
--- ---
+CREATE TABLE `contacts` (
+    `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `message` TEXT,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Populate services
+INSERT INTO `services` (`name`, `description`) VALUES
+('Diseño de paginas Web', 'Creamos páginas web a medida, adaptadas a sus necesidades.'),
+('Diseño de sistemas de ventas web', 'Desarrollamos sistemas de ventas online para que pueda vender sus productos en internet.'),
+('Facturacion electronica', 'Integramos sistemas de facturación electrónica en su empresa.'),
+('Soporte tecnico de equipos informaticos', 'Ofrecemos soporte técnico para ordenadores, portátiles e impresoras.');
+
+-- Populate products
+INSERT INTO `products` (`name`, `description`, `price`, `image`, `category`) VALUES
+('Ordenador 1', 'Descripción del ordenador 1.', 1000.00, 'images/computer1.jpg', 'computer'),
+('Ordenador 2', 'Descripción del ordenador 2.', 1100.00, 'images/computer2.jpg', 'computer'),
+('Ordenador 3', 'Descripción del ordenador 3.', 1200.00, 'images/computer3.jpg', 'computer'),
+('Ordenador 4', 'Descripción del ordenador 4.', 1300.00, 'images/computer4.jpg', 'computer'),
+('Ordenador 5', 'Descripción del ordenador 5.', 1400.00, 'images/computer5.jpg', 'computer'),
+('Portátil 1', 'Descripción del portátil 1.', 1500.00, 'images/laptop1.jpg', 'laptop'),
+('Portátil 2', 'Descripción del portátil 2.', 1600.00, 'images/laptop2.jpg', 'laptop'),
+('Portátil 3', 'Descripción del portátil 3.', 1700.00, 'images/laptop3.jpg', 'laptop'),
+('Portátil 4', 'Descripción del portátil 4.', 1800.00, 'images/laptop4.jpg', 'laptop'),
+('Portátil 5', 'Descripción del portátil 5.', 1900.00, 'images/laptop5.jpg', 'laptop'),
+('Impresora 1', 'Descripción de la impresora 1.', 200.00, 'images/printer1.jpg', 'printer'),
+('Impresora 2', 'Descripción de la impresora 2.', 250.00, 'images/printer2.jpg', 'printer'),
+('Impresora 3', 'Descripción de la impresora 3.', 300.00, 'images/printer3.jpg', 'printer'),
+('Impresora 4', 'Descripción de la impresora 4.', 350.00, 'images/printer4.jpg', 'printer'),
+('Impresora 5', 'Descripción de la impresora 5.', 400.00, 'images/printer5.jpg', 'printer');
