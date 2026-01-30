@@ -1,70 +1,42 @@
--- =================================================================
---  Script de Configuración de la Base de Datos
---  Proyecto: Sistema de Registro de Asistencia APAFA
--- =================================================================
+CREATE DATABASE IF NOT EXISTS candela_web;
+USE candela_web;
 
--- Se recomienda ejecutar este script desde un cliente de MySQL o
--- a través de la pestaña SQL en phpMyAdmin.
+CREATE TABLE IF NOT EXISTS contact_messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(20),
+    subject VARCHAR(200),
+    message TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
--- ---
--- 1. Creación de la Base de Datos
--- ---
--- Crea la base de datos `apafa_tarjetaasis` si no existe.
--- Se utiliza el juego de caracteres utf8mb4 para una compatibilidad
--- completa con caracteres internacionales y emojis.
-CREATE DATABASE IF NOT EXISTS apafa_tarjetaasis
-CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS projects (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    description TEXT,
+    image_url VARCHAR(255),
+    project_link VARCHAR(255),
+    category VARCHAR(50)
+);
 
+CREATE TABLE IF NOT EXISTS courses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    description TEXT,
+    image_url VARCHAR(255),
+    price DECIMAL(10, 2),
+    category VARCHAR(50)
+);
 
--- ---
--- 2. Selección de la Base de Datos
--- ---
--- Pone en uso la base de datos recién creada para ejecutar las
--- siguientes instrucciones de creación de tablas en ella.
-USE apafa_tarjetaasis;
+-- Insert some sample data
+INSERT INTO projects (title, description, image_url, project_link, category) VALUES
+('E-commerce de Ropa', 'Tienda online completa con pasarela de pagos.', 'images/project1.jpg', '#', 'web'),
+('Sistema de Inventario', 'Gestión de stock para ferreterías.', 'images/project2.jpg', '#', 'desktop');
 
-
--- ---
--- 3. Creación de la Tabla `registrations`
--- ---
--- Almacena la información principal de cada registro, incluyendo
--- los datos del alumno y del apoderado.
-CREATE TABLE `registrations` (
-    `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
-    `control_card` VARCHAR(50) NOT NULL,
-    `student_grade` VARCHAR(50),
-    `student_section` VARCHAR(50),
-    `student_level` VARCHAR(50),
-    `student_shift` VARCHAR(50),
-    `parent_name` VARCHAR(255) NOT NULL,
-    `parent_dni` VARCHAR(20) NOT NULL,
-    `parent_phone` VARCHAR(20),
-    `observations` TEXT,
-    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    INDEX `idx_parent_dni` (`parent_dni`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
--- ---
--- 4. Creación de la Tabla `attendance`
--- ---
--- Almacena cada marca de asistencia individualmente, vinculada a
--- un registro principal.
-CREATE TABLE `attendance` (
-    `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
-    `registration_id` INT(11) NOT NULL,
-    `event_block` VARCHAR(100) NOT NULL COMMENT 'Identificador de la tabla de asistencia (ej: asambleas_manana)',
-    `event_index` INT(2) NOT NULL COMMENT 'La posición de la celda en la tabla (0-8)',
-    `status` INT(1) NOT NULL COMMENT '1 para Asistió (A), 0 para Faltó (F)',
-
-    -- Crea una relación con la tabla de registros.
-    -- ON DELETE CASCADE asegura que si se borra un registro, sus asistencias se borran automáticamente.
-    FOREIGN KEY (`registration_id`) REFERENCES `registrations`(`id`) ON DELETE CASCADE,
-
-    -- Asegura que no se pueda marcar la misma asistencia dos veces para la misma persona y evento.
-    UNIQUE KEY `unique_attendance` (`registration_id`, `event_block`, `event_index`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- ---
--- Fin del script
--- ---
+INSERT INTO courses (title, description, image_url, price, category) VALUES
+('Diseño de páginas web', 'Aprende desde cero a crear sitios profesionales.', 'images/course1.jpg', 0.00, 'web'),
+('Curso de PHP', 'Domina el lenguaje del lado del servidor.', 'images/course2.jpg', 0.00, 'programming'),
+('Curso de HTML y CSS', 'Fundamentos esenciales para la web moderna.', 'images/course3.jpg', 0.00, 'web'),
+('Curso de OFIMÁTICA', 'Productividad con herramientas de oficina.', 'images/course4.jpg', 0.00, 'office'),
+('Cursos de cómputo general', 'Conceptos básicos y avanzados de computación.', 'images/course5.jpg', 0.00, 'it');
