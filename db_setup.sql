@@ -1,70 +1,118 @@
--- =================================================================
---  Script de Configuración de la Base de Datos
---  Proyecto: Sistema de Registro de Asistencia APAFA
--- =================================================================
+-- Database Schema for Inventory and Sales System
+CREATE DATABASE IF NOT EXISTS inventory_system;
+USE inventory_system;
 
--- Se recomienda ejecutar este script desde un cliente de MySQL o
--- a través de la pestaña SQL en phpMyAdmin.
-
--- ---
--- 1. Creación de la Base de Datos
--- ---
--- Crea la base de datos `apafa_tarjetaasis` si no existe.
--- Se utiliza el juego de caracteres utf8mb4 para una compatibilidad
--- completa con caracteres internacionales y emojis.
-CREATE DATABASE IF NOT EXISTS apafa_tarjetaasis
-CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-
--- ---
--- 2. Selección de la Base de Datos
--- ---
--- Pone en uso la base de datos recién creada para ejecutar las
--- siguientes instrucciones de creación de tablas en ella.
-USE apafa_tarjetaasis;
-
-
--- ---
--- 3. Creación de la Tabla `registrations`
--- ---
--- Almacena la información principal de cada registro, incluyendo
--- los datos del alumno y del apoderado.
-CREATE TABLE `registrations` (
-    `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
-    `control_card` VARCHAR(50) NOT NULL,
-    `student_grade` VARCHAR(50),
-    `student_section` VARCHAR(50),
-    `student_level` VARCHAR(50),
-    `student_shift` VARCHAR(50),
-    `parent_name` VARCHAR(255) NOT NULL,
-    `parent_dni` VARCHAR(20) NOT NULL,
-    `parent_phone` VARCHAR(20),
-    `observations` TEXT,
-    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    INDEX `idx_parent_dni` (`parent_dni`)
+-- Table for users and roles
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    full_name VARCHAR(100) NOT NULL,
+    role ENUM('admin', 'seller') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
--- ---
--- 4. Creación de la Tabla `attendance`
--- ---
--- Almacena cada marca de asistencia individualmente, vinculada a
--- un registro principal.
-CREATE TABLE `attendance` (
-    `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
-    `registration_id` INT(11) NOT NULL,
-    `event_block` VARCHAR(100) NOT NULL COMMENT 'Identificador de la tabla de asistencia (ej: asambleas_manana)',
-    `event_index` INT(2) NOT NULL COMMENT 'La posición de la celda en la tabla (0-8)',
-    `status` INT(1) NOT NULL COMMENT '1 para Asistió (A), 0 para Faltó (F)',
-
-    -- Crea una relación con la tabla de registros.
-    -- ON DELETE CASCADE asegura que si se borra un registro, sus asistencias se borran automáticamente.
-    FOREIGN KEY (`registration_id`) REFERENCES `registrations`(`id`) ON DELETE CASCADE,
-
-    -- Asegura que no se pueda marcar la misma asistencia dos veces para la misma persona y evento.
-    UNIQUE KEY `unique_attendance` (`registration_id`, `event_block`, `event_index`)
+-- Table for product categories
+CREATE TABLE IF NOT EXISTS categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ---
--- Fin del script
--- ---
+-- Table for products
+CREATE TABLE IF NOT EXISTS products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    code VARCHAR(50) UNIQUE NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    category_id INT,
+    purchase_price DECIMAL(10, 2) NOT NULL,
+    sale_price DECIMAL(10, 2) NOT NULL,
+    stock INT NOT NULL DEFAULT 0,
+    min_stock INT NOT NULL DEFAULT 5,
+    image VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table for customers
+CREATE TABLE IF NOT EXISTS customers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    dni_ruc VARCHAR(20) UNIQUE,
+    address VARCHAR(255),
+    phone VARCHAR(20),
+    email VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table for suppliers
+CREATE TABLE IF NOT EXISTS suppliers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    ruc VARCHAR(20) UNIQUE,
+    address VARCHAR(255),
+    phone VARCHAR(20),
+    email VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table for sales
+CREATE TABLE IF NOT EXISTS sales (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    user_id INT,
+    sale_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10, 2) NOT NULL,
+    payment_method ENUM('cash', 'card', 'transfer') NOT NULL,
+    invoice_type ENUM('boleta', 'factura') NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE SET NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table for sale details
+CREATE TABLE IF NOT EXISTS sale_details (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sale_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (sale_id) REFERENCES sales(id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table for purchases (stock entries)
+CREATE TABLE IF NOT EXISTS purchases (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    supplier_id INT,
+    user_id INT,
+    purchase_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10, 2) NOT NULL,
+    `status` ENUM('pending', 'received', 'cancelled') DEFAULT 'received',
+    FOREIGN KEY (supplier_id) REFERENCES suppliers(id) ON DELETE SET NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table for purchase details
+CREATE TABLE IF NOT EXISTS purchase_details (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    purchase_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (purchase_id) REFERENCES purchases(id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Initial data
+-- Password is 'admin' hashed with PASSWORD_DEFAULT
+INSERT INTO users (username, password, full_name, role) VALUES
+('admin', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', 'Administrador Principal', 'admin'),
+('vendedor', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', 'Vendedor de Prueba', 'seller');
+
+-- Initial categories
+INSERT INTO categories (name, description) VALUES
+('Herramientas', 'Herramientas de mano y eléctricas'),
+('Materiales', 'Materiales de construcción'),
+('Accesorios', 'Accesorios diversos');
