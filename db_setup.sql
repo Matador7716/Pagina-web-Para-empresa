@@ -108,8 +108,8 @@ CREATE TABLE IF NOT EXISTS purchase_details (
 -- Initial data
 -- Password is 'admin' hashed with PASSWORD_DEFAULT
 INSERT INTO users (username, password, full_name, role) VALUES
-('admin', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', 'Administrador Principal', 'admin'),
-('vendedor', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', 'Vendedor de Prueba', 'seller');
+('admin', '$2y$10$KZPKl1tYBk436Rxw/BtcdeoUzbPCB7cP5r5xgdq8vMO53VlX3Gd9S', 'Administrador Principal', 'admin'),
+('vendedor', '$2y$10$KZPKl1tYBk436Rxw/BtcdeoUzbPCB7cP5r5xgdq8vMO53VlX3Gd9S', 'Vendedor de Prueba', 'seller');
 
 -- Initial categories
 INSERT INTO categories (name, description) VALUES
