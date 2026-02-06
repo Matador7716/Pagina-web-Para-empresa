@@ -65,6 +65,25 @@ CREATE TABLE `attendance` (
     UNIQUE KEY `unique_attendance` (`registration_id`, `event_block`, `event_index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+-- ---
+-- 5. Creación de la Tabla `usuario`
+-- ---
+-- Almacena los datos de los usuarios del sistema para el inicio de sesión.
+CREATE TABLE `usuario` (
+  `idusuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `usuario` varchar(20) NOT NULL,
+  `clave` varchar(50) NOT NULL,
+  PRIMARY KEY (`idusuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Inserción de un usuario de ejemplo (admin / admin en MD5)
+INSERT INTO `usuario` (`nombre`, `correo`, `usuario`, `clave`) VALUES
+('Administrador', 'admin@candelaweb.com', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+
+
 -- ---
 -- Fin del script
 -- ---
