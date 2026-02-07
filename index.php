@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (empty($_SESSION['active'])) {
+    header('location: login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
