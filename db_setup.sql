@@ -66,5 +66,26 @@ CREATE TABLE `attendance` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ---
+-- 5. Creación de la Tabla `usuario`
+-- ---
+-- Almacena los usuarios del sistema para el control de acceso.
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `idusuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `correo` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `usuario` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `clave` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`idusuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- ---
+-- 6. Inserción de Usuario Administrador Inicial
+-- ---
+-- Inserta un usuario predeterminado: admin / admin123 (md5: 0192023a7bbd73250516f069df18b500)
+INSERT INTO `usuario` (`nombre`, `correo`, `usuario`, `clave`)
+SELECT 'Administrador', 'admin@correo.com', 'admin', '0192023a7bbd73250516f069df18b500'
+WHERE NOT EXISTS (SELECT 1 FROM `usuario` WHERE `usuario` = 'admin');
+
+-- ---
 -- Fin del script
 -- ---
