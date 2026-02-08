@@ -43,7 +43,7 @@
             <div class="col-md-6">
                 <div class="card p-4 shadow">
                     <h3 class="mb-4 text-center">Envíanos un Mensaje</h3>
-                    <form action="#" method="POST">
+                    <form id="contactForm" method="POST">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre Completo</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" required>

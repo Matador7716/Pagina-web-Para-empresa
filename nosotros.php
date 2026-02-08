@@ -44,6 +44,41 @@
                 </div>
             </div>
         </div>
+
+        <!-- Team Section -->
+        <div class="mt-5 pt-5">
+            <h2 class="section-title">Nuestro Equipo Creativo</h2>
+            <div class="row mt-4">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="text-center">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="Team 1" class="rounded-circle mb-3 border border-3" style="border-color: var(--primary-color) !important; width: 150px;">
+                        <h5>Alex Candela</h5>
+                        <p class="text-muted">CEO & Fundador</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="text-center">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="Team 2" class="rounded-circle mb-3 border border-3" style="border-color: var(--primary-color) !important; width: 150px;">
+                        <h5>Maria Garcia</h5>
+                        <p class="text-muted">Directora Creativa</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="text-center">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="Team 3" class="rounded-circle mb-3 border border-3" style="border-color: var(--primary-color) !important; width: 150px;">
+                        <h5>Juan Perez</h5>
+                        <p class="text-muted">Lead Developer</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="text-center">
+                        <img src="https://i.pravatar.cc/150?u=4" alt="Team 4" class="rounded-circle mb-3 border border-3" style="border-color: var(--primary-color) !important; width: 150px;">
+                        <h5>Lucia Torres</h5>
+                        <p class="text-muted">Marketing Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
