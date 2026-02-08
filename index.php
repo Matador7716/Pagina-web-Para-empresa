@@ -2,6 +2,7 @@
 session_start();
 if (!empty($_SESSION['active'])) {
     header('location: src/');
+    exit;
 } else {
     if (!empty($_POST)) {
         $alert = '';
@@ -27,6 +28,7 @@ if (!empty($_SESSION['active'])) {
                     $_SESSION['user'] = $data['usuario'];
                     $_SESSION['rol'] = $data['rol'];
                     header('location: src/');
+                    exit;
                 } else {
                     $alert = '<div class="alert alert-danger" role="alert">Usuario o contraseña incorrectos</div>';
                     session_destroy();

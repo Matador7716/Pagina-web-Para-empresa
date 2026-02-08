@@ -58,7 +58,7 @@ CREATE TABLE detalle_venta (
 
 -- Datos iniciales
 INSERT INTO usuarios (nombre, correo, usuario, clave, rol) VALUES
-('Admin', 'admin@farmacia.com', 'admin', '$2y$10$2ubWvFFS9H1qXsiB1vS1RuJ8YpFvLf4AQTEiqEnLbZBUzzRaT8Nje', 'administrador'); -- clave: admin
+('Admin', 'admin@farmacia.com', 'admin', '$2y$10$sBCEzKSMMZsrSTpO5HzQEu5zx0bWXgmEJHBd6DmU2uVWO/HLTfVJK', 'administrador'); -- clave: admin
 
 INSERT INTO configuracion (ruc, nombre, telefono, correo, direccion) VALUES
 ('20123456789', 'Farmacia Saludable', '987654321', 'contacto@farmacia.com', 'Av. Salud 123');

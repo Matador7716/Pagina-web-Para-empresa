@@ -4,6 +4,7 @@ require_once "../conexion.php";
 
 if ($_SESSION['rol'] != 'administrador' && $_SESSION['rol'] != 'supervisor') {
     header('location: index.php');
+    exit;
 }
 
 // Pagination logic

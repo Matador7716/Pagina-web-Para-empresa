@@ -4,6 +4,7 @@ require_once "../conexion.php";
 
 if ($_SESSION['rol'] != 'administrador') {
     header('location: index.php');
+    exit;
 }
 
 $query = mysqli_query($conexion, "SELECT * FROM configuracion LIMIT 1");
