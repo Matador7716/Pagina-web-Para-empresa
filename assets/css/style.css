@@ -1,0 +1,204 @@
+:root {
+    --primary-color: #D4AF37; /* Gold */
+    --secondary-color: #000000; /* Black */
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
+    --bg-dark: #111111;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+}
+
+/* Top Header */
+.top-header {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.top-header a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.top-header a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons i {
+    font-size: 18px;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--secondary-color) !important;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.nav-link {
+    color: var(--text-light) !important;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Slider */
+.carousel-item {
+    height: 80vh;
+    min-height: 400px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+}
+
+.carousel-caption {
+    bottom: 30%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.carousel-caption h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.bg-black {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+/* Service Cards */
+.card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.icon-box {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Hosting Tables */
+.pricing-table {
+    border: 2px solid #eee;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.pricing-table.featured {
+    border-color: var(--primary-color);
+    background-color: var(--bg-dark);
+    color: white;
+}
+
+.pricing-table h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.pricing-table .price {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: #FFF;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 50px 0 20px;
+    border-top: 3px solid var(--primary-color);
+}
+
+.footer-logo {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: bold;
+}
