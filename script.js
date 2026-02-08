@@ -50,6 +50,7 @@ $(document).ready(function () {
         },
         minLength: 2,
         select: function(event, ui) {
+            $('#id_producto').val(ui.item.id);
             $('#codigo_producto').val(ui.item.codigo);
             $('#nombre_producto').val(ui.item.label);
             $('#precio_producto').val(ui.item.precio);
@@ -72,12 +73,14 @@ $(document).ready(function () {
                 success: function (response) {
                     if (response != 0) {
                         var data = JSON.parse(response);
+                        $('#id_producto').val(data.id);
                         $('#nombre_producto').val(data.nombre);
                         $('#precio_producto').val(data.precio_venta);
                         $('#stock_producto').val(data.cantidad);
                         $('#cantidad_producto').focus();
                         calcularSubtotal();
                     } else {
+                        $('#id_producto').val('');
                         $('#nombre_producto').val('');
                         $('#precio_producto').val('');
                         $('#stock_producto').val('');
@@ -94,46 +97,42 @@ $(document).ready(function () {
     });
 
     // Agregar producto al detalle
-    $('#btn_agregar_producto').click(function () {
-        var codigo = $('#codigo_producto').val();
+    $('#btn_agregar_producto').click(function (e) {
+        e.preventDefault();
+        var id = $('#id_producto').val();
         var cant = $('#cantidad_producto').val();
+        var stock = $('#stock_producto').val();
 
-        if (codigo == '' || cant < 1) {
-            Swal.fire('Error', 'Ingrese un producto y cantidad válida', 'warning');
+        if (id == '' || cant < 1) {
+            Swal.fire('Error', 'Seleccione un producto y cantidad válida', 'warning');
+            return;
+        }
+
+        if (parseInt(cant) > parseInt(stock)) {
+            Swal.fire('Error', 'Stock insuficiente. Disponible: ' + stock, 'error');
             return;
         }
 
         $.ajax({
             url: 'ajax.php',
             type: 'POST',
-            data: { action: 'buscarProducto', codigo: codigo },
-            success: function (response) {
-                if (response != 0) {
-                    var data = JSON.parse(response);
-                    var id = data.id;
-                    if (parseInt(cant) <= parseInt(data.cantidad)) {
-                        $.ajax({
-                            url: 'ajax.php',
-                            type: 'POST',
-                            data: { action: 'agregarProducto', id: id, cantidad: cant },
-                            success: function (res) {
-                                if (res == 'ok') {
-                                    listarDetalle();
-                                    $('#codigo_producto').val('').focus();
-                                    $('#nombre_producto').val('');
-                                    $('#precio_producto').val('');
-                                    $('#stock_producto').val('');
-                                    $('#subtotal_producto').val('');
-                                    $('#cantidad_producto').val('1');
-                                }
-                            }
-                        });
-                    } else {
-                        Swal.fire('Error', 'Stock insuficiente. Disponible: ' + data.cantidad, 'error');
-                    }
+            data: { action: 'agregarProducto', id: id, cantidad: cant },
+            success: function (res) {
+                if (res == 'ok') {
+                    listarDetalle();
+                    $('#id_producto').val('');
+                    $('#codigo_producto').val('').focus();
+                    $('#nombre_producto').val('');
+                    $('#precio_producto').val('');
+                    $('#stock_producto').val('');
+                    $('#subtotal_producto').val('');
+                    $('#cantidad_producto').val('1');
                 } else {
-                    Swal.fire('Error', 'Producto no encontrado', 'error');
+                    Swal.fire('Error', 'No se pudo agregar el producto', 'error');
                 }
+            },
+            error: function() {
+                Swal.fire('Error', 'Error de conexión', 'error');
             }
         });
     });
@@ -162,9 +161,13 @@ function listarDetalle() {
         type: 'POST',
         data: { action: 'listarDetalle' },
         success: function (response) {
-            var data = JSON.parse(response);
-            $('#detalle_venta').html(data.html);
-            $('#detalle_totales').html(data.footer);
+            try {
+                var data = JSON.parse(response);
+                $('#detalle_venta').html(data.html);
+                $('#detalle_totales').html(data.footer);
+            } catch (e) {
+                console.error("Error parsing JSON:", response);
+            }
         }
     });
 }

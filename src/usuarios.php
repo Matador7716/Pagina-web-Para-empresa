@@ -89,16 +89,17 @@ if (!empty($_POST)) {
                 </thead>
                 <tbody>
                     <?php
-                    $query = mysqli_query($conexion, "SELECT * FROM usuarios");
-                    $result = mysqli_num_rows($query);
-                    if ($result > 0) {
+                    $stmt_list = mysqli_prepare($conexion, "SELECT * FROM usuarios");
+                    mysqli_stmt_execute($stmt_list);
+                    $query = mysqli_stmt_get_result($stmt_list);
+                    if (mysqli_num_rows($query) > 0) {
                         while ($data = mysqli_fetch_assoc($query)) { ?>
                             <tr>
                                 <td><?php echo $data['id']; ?></td>
-                                <td><?php echo $data['nombre']; ?></td>
-                                <td><?php echo $data['correo']; ?></td>
-                                <td><?php echo $data['usuario']; ?></td>
-                                <td><?php echo $data['rol']; ?></td>
+                                <td><?php echo htmlspecialchars($data['nombre']); ?></td>
+                                <td><?php echo htmlspecialchars($data['correo']); ?></td>
+                                <td><?php echo htmlspecialchars($data['usuario']); ?></td>
+                                <td><?php echo htmlspecialchars($data['rol']); ?></td>
                                 <td>
                                     <a href="editar_usuario.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class='fas fa-edit'></i></a>
                                     <form action="eliminar_usuario.php?id=<?php echo $data['id']; ?>" method="post" class="confirmar d-inline">

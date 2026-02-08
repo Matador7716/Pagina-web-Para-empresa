@@ -49,29 +49,30 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background: linear-gradient(135deg, #004d40 0%, #00251a 100%);
+            background: linear-gradient(135deg, #1a237e 0%, #000051 100%);
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: #000;
         }
         .login-card {
             width: 100%;
             max-width: 400px;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             backdrop-filter: blur(10px);
         }
         .login-card h2 {
-            color: #004d40;
+            color: #1a237e;
             margin-bottom: 25px;
             text-align: center;
             font-weight: bold;
         }
         .btn-login {
-            background-color: #004d40;
+            background-color: #7b1fa2;
             color: white;
             width: 100%;
             padding: 10px;
@@ -81,7 +82,7 @@ if (!empty($_POST)) {
             transition: 0.3s;
         }
         .btn-login:hover {
-            background-color: #00695c;
+            background-color: #4a148c;
         }
     </style>
 </head>

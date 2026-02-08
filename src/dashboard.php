@@ -1,14 +1,21 @@
 <?php
 include_once "includes/header.php";
 
-$usuarios = mysqli_query($conexion, "SELECT id FROM usuarios");
-$totalU = mysqli_num_rows($usuarios);
-$clientes = mysqli_query($conexion, "SELECT id FROM clientes");
-$totalC = mysqli_num_rows($clientes);
-$productos = mysqli_query($conexion, "SELECT id FROM productos");
-$totalP = mysqli_num_rows($productos);
-$ventas = mysqli_query($conexion, "SELECT id FROM ventas");
-$totalV = mysqli_num_rows($ventas);
+$stmt_u = mysqli_prepare($conexion, "SELECT COUNT(*) as total FROM usuarios");
+mysqli_stmt_execute($stmt_u);
+$totalU = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt_u))['total'];
+
+$stmt_c = mysqli_prepare($conexion, "SELECT COUNT(*) as total FROM clientes");
+mysqli_stmt_execute($stmt_c);
+$totalC = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt_c))['total'];
+
+$stmt_p = mysqli_prepare($conexion, "SELECT COUNT(*) as total FROM productos");
+mysqli_stmt_execute($stmt_p);
+$totalP = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt_p))['total'];
+
+$stmt_v = mysqli_prepare($conexion, "SELECT COUNT(*) as total FROM ventas");
+mysqli_stmt_execute($stmt_v);
+$totalV = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt_v))['total'];
 ?>
 
 <div class="row">
@@ -87,7 +94,11 @@ $totalV = mysqli_num_rows($ventas);
             <div class="card-body">
                 <form action="dashboard.php" method="get" class="row g-3 mb-4">
                     <div class="col-auto">
-                        <label for="mes" class="visually-hidden">Mes</label>
+                        <label for="fecha" class="form-label">Por Día:</label>
+                        <input type="date" name="fecha" id="fecha" class="form-control" value="<?php echo isset($_GET['fecha']) ? $_GET['fecha'] : ''; ?>">
+                    </div>
+                    <div class="col-auto">
+                        <label for="mes" class="form-label">Por Mes:</label>
                         <select name="mes" id="mes" class="form-select">
                             <option value="">Seleccionar Mes</option>
                             <option value="01">Enero</option>
@@ -104,22 +115,30 @@ $totalV = mysqli_num_rows($ventas);
                             <option value="12">Diciembre</option>
                         </select>
                     </div>
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-primary mb-3">Filtrar</button>
+                    <div class="col-auto d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary">Filtrar</button>
                     </div>
                 </form>
                 <?php
-                $mes = isset($_GET['mes']) ? $_GET['mes'] : date('m');
-                $año = date('Y');
-                $stmt_stats = mysqli_prepare($conexion, "SELECT SUM(total) as total_mes, COUNT(*) as cant_ventas FROM ventas WHERE MONTH(fecha) = ? AND YEAR(fecha) = ?");
-                mysqli_stmt_bind_param($stmt_stats, "ss", $mes, $año);
+                if (isset($_GET['fecha']) && !empty($_GET['fecha'])) {
+                    $fecha = $_GET['fecha'];
+                    $stmt_stats = mysqli_prepare($conexion, "SELECT SUM(total) as total_res, COUNT(*) as cant_ventas FROM ventas WHERE DATE(fecha) = ?");
+                    mysqli_stmt_bind_param($stmt_stats, "s", $fecha);
+                    $titulo = "Resumen del día ($fecha)";
+                } else {
+                    $mes = (isset($_GET['mes']) && !empty($_GET['mes'])) ? $_GET['mes'] : date('m');
+                    $año = date('Y');
+                    $stmt_stats = mysqli_prepare($conexion, "SELECT SUM(total) as total_res, COUNT(*) as cant_ventas FROM ventas WHERE MONTH(fecha) = ? AND YEAR(fecha) = ?");
+                    mysqli_stmt_bind_param($stmt_stats, "ss", $mes, $año);
+                    $titulo = "Resumen del mes ($mes/$año)";
+                }
                 mysqli_stmt_execute($stmt_stats);
                 $stats = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt_stats));
                 ?>
                 <div class="alert alert-info">
-                    <strong>Resumen del mes:</strong><br>
+                    <strong><?php echo $titulo; ?>:</strong><br>
                     Ventas realizadas: <?php echo $stats['cant_ventas'] ? $stats['cant_ventas'] : 0; ?><br>
-                    Total recaudado: S/ <?php echo number_format($stats['total_mes'] ? $stats['total_mes'] : 0, 2); ?>
+                    Total recaudado: S/ <?php echo number_format($stats['total_res'] ? $stats['total_res'] : 0, 2); ?>
                 </div>
             </div>
         </div>

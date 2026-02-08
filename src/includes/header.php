@@ -31,14 +31,14 @@ $data_empresa = mysqli_fetch_assoc($query_empresa);
         #sidebar {
             min-width: 250px;
             max-width: 250px;
-            background: #004d40;
+            background: #1a237e;
             color: #fff;
             transition: all 0.3s;
             min-height: 100vh;
         }
         #sidebar .sidebar-header {
             padding: 20px;
-            background: #00332c;
+            background: #000051;
             text-align: center;
         }
         #sidebar ul.components {
@@ -52,27 +52,39 @@ $data_empresa = mysqli_fetch_assoc($query_empresa);
             text-decoration: none;
         }
         #sidebar ul li a:hover {
-            background: #00695c;
+            background: #40c4ff;
+            color: #000;
         }
         #sidebar ul li.active > a {
-            background: #00695c;
+            background: #7b1fa2;
         }
         #content {
             width: 100%;
             padding: 20px;
+            color: #000;
         }
         .card {
-            border: none;
+            border: 1px solid #ddd;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        .card-header.bg-primary {
+            background-color: #1a237e !important;
+        }
         .btn-primary {
-            background-color: #004d40;
-            border-color: #004d40;
+            background-color: #7b1fa2;
+            border-color: #7b1fa2;
         }
         .btn-primary:hover {
-            background-color: #00695c;
-            border-color: #00695c;
+            background-color: #4a148c;
+            border-color: #4a148c;
+        }
+        .bg-primary {
+            background-color: #1a237e !important;
+        }
+        .bg-success {
+            background-color: #40c4ff !important;
+            color: #000 !important;
         }
     </style>
 </head>

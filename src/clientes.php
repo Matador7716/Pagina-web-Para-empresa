@@ -86,10 +86,10 @@ $query = mysqli_stmt_get_result($stmt_query);
                                 while ($data = mysqli_fetch_assoc($query)) { ?>
                                     <tr>
                                         <td><?php echo $data['id']; ?></td>
-                                        <td><?php echo $data['nombre']; ?></td>
-                                        <td><?php echo $data['dni']; ?></td>
-                                        <td><?php echo $data['telefono']; ?></td>
-                                        <td><?php echo $data['direccion']; ?></td>
+                                        <td><?php echo htmlspecialchars($data['nombre']); ?></td>
+                                        <td><?php echo htmlspecialchars($data['dni']); ?></td>
+                                        <td><?php echo htmlspecialchars($data['telefono']); ?></td>
+                                        <td><?php echo htmlspecialchars($data['direccion']); ?></td>
                                         <td>
                                             <a href="editar_cliente.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class='fas fa-edit'></i></a>
                                             <form action="eliminar_cliente.php?id=<?php echo $data['id']; ?>" method="post" class="confirmar d-inline">

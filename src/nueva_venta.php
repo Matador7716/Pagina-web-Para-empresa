@@ -44,6 +44,7 @@ include_once "includes/header.php";
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="mb-3">
+                                            <input type="hidden" id="id_producto">
                                             <label for="codigo_producto">Código</label>
                                             <input type="text" id="codigo_producto" class="form-control" placeholder="Código de barras">
                                         </div>
@@ -81,7 +82,7 @@ include_once "includes/header.php";
                                         </div>
                                     </div>
                                     <div class="col-lg-3 d-flex align-items-end">
-                                        <button class="btn btn-primary w-100 mb-3" id="btn_agregar_producto">Agregar</button>
+                                        <button type="button" class="btn btn-primary w-100 mb-3" id="btn_agregar_producto">Agregar</button>
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,9 @@
 <?php
 include_once "includes/header.php";
 
-$query = mysqli_query($conexion, "SELECT v.*, c.nombre FROM ventas v INNER JOIN clientes c ON v.cliente_id = c.id ORDER BY v.id DESC");
+$stmt = mysqli_prepare($conexion, "SELECT v.*, c.nombre FROM ventas v INNER JOIN clientes c ON v.cliente_id = c.id ORDER BY v.id DESC");
+mysqli_stmt_execute($stmt);
+$query = mysqli_stmt_get_result($stmt);
 ?>
 
 <div class="row">

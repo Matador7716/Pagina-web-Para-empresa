@@ -6,8 +6,11 @@ if ($_SESSION['rol'] != 'administrador' && $_SESSION['rol'] != 'supervisor') {
 }
 include_once "../conexion.php";
 if (!empty($_GET['id'])) {
-    $id = $_GET['id'];
-    $query_delete = mysqli_query($conexion, "DELETE FROM productos WHERE id = $id");
+    $id = (int)$_GET['id'];
+    $stmt = mysqli_prepare($conexion, "DELETE FROM productos WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
     header("Location: productos.php");
+    exit;
 }
 ?>
