@@ -3,8 +3,8 @@
 --  Proyecto: Sistema de Citas Médicas - Clínica Psicológica
 -- =================================================================
 
-CREATE DATABASE IF NOT EXISTS clinica_psicologia CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE clinica_psicologia;
+CREATE DATABASE IF NOT EXISTS bdciitasmedica CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE bdciitasmedica;
 
 -- ---
 -- 1. Tabla de Usuarios
@@ -66,7 +66,6 @@ CREATE TABLE IF NOT EXISTS cobros (
 -- ---
 -- Datos Iniciales
 -- ---
--- Admin por defecto: admin / admin123
+-- Admin por defecto: admin / admin
 INSERT IGNORE INTO usuarios (nombre, usuario, clave, rol) VALUES
-('Administrador Sistema', 'admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'administrador');
--- Nota: La clave de arriba es un hash de ejemplo, pero se recomienda cambiarla.
+('Administrador Sistema', 'admin', '$2y$10$Lt4DfhQgl8IpqDaZLrINTeBBr1IBPQQhx46jaL.4e7WdcziJUS7dO', 'administrador');

@@ -129,8 +129,6 @@ $citas_pendientes = $conn->query("
   </div>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
-
 <script>
 $(document).ready(function() {
     $('.btn-edit-cobro').click(function() {
@@ -195,3 +193,5 @@ $(document).ready(function() {
     });
 });
 </script>
+
+<?php require_once 'includes/footer.php'; ?>

@@ -117,8 +117,6 @@ $pacientes = $conn->query("SELECT id, nombre FROM pacientes ORDER BY nombre");
   </div>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
-
 <!-- FullCalendar JS -->
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
 
@@ -271,3 +269,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<?php require_once 'includes/footer.php'; ?>

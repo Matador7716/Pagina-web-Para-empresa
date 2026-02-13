@@ -112,8 +112,6 @@ require_once 'php/db.php';
   </div>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
-
 <script>
 $(document).ready(function() {
     $('#togglePassword').click(function() {
@@ -180,3 +178,5 @@ $(document).ready(function() {
     });
 });
 </script>
+
+<?php require_once 'includes/footer.php'; ?>

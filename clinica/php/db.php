@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "clinica_user";
 $pass = "clinica_pass";
-$db   = "clinica_psicologia";
+$db   = "bdciitasmedica";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
