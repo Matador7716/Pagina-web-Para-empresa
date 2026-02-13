@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Clínica Psicológica</title>
+    <title>Login - Citas Clínicas</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -51,9 +51,9 @@
 
 <div class="login-card">
     <div class="login-header">
-        <i class="fas fa-user-md fa-3x mb-3"></i>
+        <i class="fas fa-hospital fa-3x mb-3"></i>
         <h3>Bienvenido</h3>
-        <p class="mb-0">Clínica Psicológica</p>
+        <p class="mb-0">Citas Clínicas</p>
     </div>
     <div class="login-body">
         <?php if (isset($_GET['error'])): ?>

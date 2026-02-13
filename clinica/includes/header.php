@@ -6,10 +6,14 @@ require_once 'php/check_session.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($page_title ?? 'Clínica'); ?> - Clínica Psicológica</title>
+    <title><?php echo htmlspecialchars($page_title ?? 'Citas Clínicas'); ?> - Citas Clínicas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Scripts base -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -17,7 +21,7 @@ require_once 'php/check_session.php';
     <!-- Sidebar -->
     <div class="bg-dark text-white" id="sidebar-wrapper">
         <div class="sidebar-heading border-bottom p-4">
-            <h5 class="mb-0"><i class="fas fa-brain me-2"></i>Clínica Psico</h5>
+            <h5 class="mb-0"><i class="fas fa-hospital me-2"></i>Citas Clínicas</h5>
         </div>
         <div class="list-group list-group-flush">
             <a href="dashboard.php" class="list-group-item list-group-item-action bg-dark text-white p-3">
