@@ -1,10 +1,14 @@
 <?php
 include_once "includes/header.php";
 
-$stmt_conf = mysqli_prepare($conexion, "SELECT whatsapp_numero, mensaje_bienvenida FROM configuracion LIMIT 1");
+$stmt_conf = mysqli_prepare($conexion, "SELECT whatsapp_numero, mensaje_bienvenida, mensaje_joinchat FROM configuracion LIMIT 1");
 mysqli_stmt_execute($stmt_conf);
-mysqli_stmt_bind_result($stmt_conf, $numero, $mensaje);
-mysqli_stmt_fetch($stmt_conf);
+mysqli_stmt_bind_result($stmt_conf, $numero, $mensaje, $mensaje_jc);
+if (!mysqli_stmt_fetch($stmt_conf)) {
+    $numero = '+51 905 590 656';
+    $mensaje = '¡Hola! Soy el asistente virtual...';
+    $mensaje_jc = 'Hola, vengo de la web y quiero información';
+}
 mysqli_stmt_close($stmt_conf);
 ?>
 
@@ -45,7 +49,7 @@ mysqli_stmt_close($stmt_conf);
                     <div class="mb-3">
                         <label class="form-label">Mensaje Inicial (Call to Action):</label>
                         <div class="input-group">
-                            <textarea class="form-control" readonly id="jc_msg"><?php echo "Hola, vengo de la web y quiero información"; ?></textarea>
+                            <textarea class="form-control" readonly id="jc_msg"><?php echo htmlspecialchars($mensaje_jc); ?></textarea>
                             <button class="btn btn-outline-secondary" onclick="copyToClipboard('jc_msg')"><i class="fas fa-copy"></i></button>
                         </div>
                         <small class="text-muted">Asegúrate de que este mensaje coincida con una palabra clave en 'Respuestas IA' para que el bot responda automáticamente.</small>
@@ -60,8 +64,8 @@ mysqli_stmt_close($stmt_conf);
                 <div class="card-body">
                     <p>Copia y pega este código antes de cerrar la etiqueta <code>&lt;/body&gt;</code> de tu sitio web:</p>
                     <pre class="bg-light p-3 border rounded" style="font-size: 0.8rem;">
-&lt;!-- ChatBootWeb Widget - Notaria Huanca --&gt;
-&lt;a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $numero); ?>?text=Hola%20vengo%20de%20la%20web"
+&lt;!-- ChatBootWeb Widget --&gt;
+&lt;a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $numero); ?>?text=<?php echo urlencode($mensaje_jc); ?>"
    style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 2px 2px 3px #999;z-index:100;" target="_blank"&gt;
 &lt;i class="fab fa-whatsapp" style="margin-top:16px;"&gt;&lt;/i&gt;
 &lt;/a&gt;
