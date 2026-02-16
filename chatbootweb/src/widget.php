@@ -1,10 +1,11 @@
 <?php
 include_once "includes/header.php";
 
-$query_conf = mysqli_query($conexion, "SELECT * FROM configuracion LIMIT 1");
-$data_conf = mysqli_fetch_assoc($query_conf);
-$numero = $data_conf['whatsapp_numero'];
-$mensaje = $data_conf['mensaje_bienvenida'];
+$stmt_conf = mysqli_prepare($conexion, "SELECT whatsapp_numero, mensaje_bienvenida FROM configuracion LIMIT 1");
+mysqli_stmt_execute($stmt_conf);
+mysqli_stmt_bind_result($stmt_conf, $numero, $mensaje);
+mysqli_stmt_fetch($stmt_conf);
+mysqli_stmt_close($stmt_conf);
 ?>
 
 <div class="container-fluid">
@@ -14,6 +15,22 @@ $mensaje = $data_conf['mensaje_bienvenida'];
         <div class="col-md-7">
             <div class="card mb-4">
                 <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Integración Webhook (Para desarrolladores)</h5>
+                </div>
+                <div class="card-body">
+                    <p>Para que el Bot responda automáticamente en WhatsApp real, debes configurar este URL en tu gateway (Evolution API, etc.):</p>
+                    <div class="mb-3">
+                        <label class="form-label">URL del Webhook:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" value="http://chatbootweb.notariahuancacusco.com/webhook.php" readonly id="webhook_url">
+                            <button class="btn btn-outline-secondary" onclick="copyToClipboard('webhook_url')"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
                     <h5 class="mb-0">Configuración para JoinChat (WordPress)</h5>
                 </div>
                 <div class="card-body">
@@ -43,8 +60,8 @@ $mensaje = $data_conf['mensaje_bienvenida'];
                 <div class="card-body">
                     <p>Copia y pega este código antes de cerrar la etiqueta <code>&lt;/body&gt;</code> de tu sitio web:</p>
                     <pre class="bg-light p-3 border rounded" style="font-size: 0.8rem;">
-&lt;!-- ChatBootWeb Widget --&gt;
-&lt;a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $numero); ?>?text=Hola"
+&lt;!-- ChatBootWeb Widget - Notaria Huanca --&gt;
+&lt;a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $numero); ?>?text=Hola%20vengo%20de%20la%20web"
    style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 2px 2px 3px #999;z-index:100;" target="_blank"&gt;
 &lt;i class="fab fa-whatsapp" style="margin-top:16px;"&gt;&lt;/i&gt;
 &lt;/a&gt;

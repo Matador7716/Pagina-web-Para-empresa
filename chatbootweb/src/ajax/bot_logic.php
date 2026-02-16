@@ -9,9 +9,12 @@ if ($_POST) {
     $action = $_POST['action'];
 
     if ($action == 'get_welcome') {
-        $query = mysqli_query($conexion, "SELECT mensaje_bienvenida FROM configuracion LIMIT 1");
-        $data = mysqli_fetch_assoc($query);
-        echo $data['mensaje_bienvenida'];
+        $stmt_w = mysqli_prepare($conexion, "SELECT mensaje_bienvenida FROM configuracion LIMIT 1");
+        mysqli_stmt_execute($stmt_w);
+        mysqli_stmt_bind_result($stmt_w, $msg_w);
+        mysqli_stmt_fetch($stmt_w);
+        echo $msg_w;
+        mysqli_stmt_close($stmt_w);
     }
 
     if ($action == 'reply') {
@@ -26,16 +29,20 @@ if ($_POST) {
         $stmt = mysqli_prepare($conexion, "SELECT respuesta FROM preguntas_frecuentes WHERE LOWER(pregunta) LIKE LOWER(?) LIMIT 1");
         mysqli_stmt_bind_param($stmt, "s", $searchTerm);
         mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
+        mysqli_stmt_bind_result($stmt, $found_reply);
 
-        if (mysqli_num_rows($result) > 0) {
-            $data = mysqli_fetch_assoc($result);
-            $reply = $data['respuesta'];
+        if (mysqli_stmt_fetch($stmt)) {
+            $reply = $found_reply;
+            mysqli_stmt_close($stmt);
         } else {
+            mysqli_stmt_close($stmt);
             // Default response if no keyword found
-            $query_conf = mysqli_query($conexion, "SELECT mensaje_bienvenida FROM configuracion LIMIT 1");
-            $data_conf = mysqli_fetch_assoc($query_conf);
-            $reply = "Lo siento, no entendí bien. " . $data_conf['mensaje_bienvenida'];
+            $stmt_conf = mysqli_prepare($conexion, "SELECT mensaje_bienvenida FROM configuracion LIMIT 1");
+            mysqli_stmt_execute($stmt_conf);
+            mysqli_stmt_bind_result($stmt_conf, $msg_conf);
+            mysqli_stmt_fetch($stmt_conf);
+            $reply = "Lo siento, no entendí bien. " . $msg_conf;
+            mysqli_stmt_close($stmt_conf);
         }
 
         // Save to chats table

@@ -7,13 +7,27 @@ if ($_SESSION['rol'] != 'Administrador') {
 }
 
 $alert = '';
+
+// Fetch current configuration
+$stmt_ref = mysqli_prepare($conexion, "SELECT nombre_empresa, whatsapp_numero, mensaje_bienvenida, logo FROM configuracion LIMIT 1");
+mysqli_stmt_execute($stmt_ref);
+mysqli_stmt_bind_result($stmt_ref, $r_nom, $r_wa, $r_msg, $r_logo);
+mysqli_stmt_fetch($stmt_ref);
+$data_conf = [
+    'nombre_empresa' => $r_nom,
+    'whatsapp_numero' => $r_wa,
+    'mensaje_bienvenida' => $r_msg,
+    'logo' => $r_logo
+];
+mysqli_stmt_close($stmt_ref);
+
 if (!empty($_POST)) {
-    $nombre = mysqli_real_escape_string($conexion, $_POST['nombre_empresa']);
-    $whatsapp = mysqli_real_escape_string($conexion, $_POST['whatsapp_numero']);
-    $mensaje = mysqli_real_escape_string($conexion, $_POST['mensaje_bienvenida']);
+    $nombre = $_POST['nombre_empresa'];
+    $whatsapp = $_POST['whatsapp_numero'];
+    $mensaje = $_POST['mensaje_bienvenida'];
 
     // Handle logo upload
-    $logo_name = $data_conf['logo'];
+    $logo_name = $data_conf['logo'] ?? 'default_logo.png';
     if (!empty($_FILES['logo']['name'])) {
         $logo_name = $_FILES['logo']['name'];
         $logo_tmp = $_FILES['logo']['tmp_name'];
@@ -21,16 +35,27 @@ if (!empty($_POST)) {
         move_uploaded_file($logo_tmp, $dest);
     }
 
-    $update = mysqli_query($conexion, "UPDATE configuracion SET nombre_empresa = '$nombre', whatsapp_numero = '$whatsapp', mensaje_bienvenida = '$mensaje', logo = '$logo_name' WHERE id = 1");
+    $stmt_upd = mysqli_prepare($conexion, "UPDATE configuracion SET nombre_empresa = ?, whatsapp_numero = ?, mensaje_bienvenida = ?, logo = ? WHERE id = 1");
+    mysqli_stmt_bind_param($stmt_upd, "ssss", $nombre, $whatsapp, $mensaje, $logo_name);
 
-    if ($update) {
+    if (mysqli_stmt_execute($stmt_upd)) {
         $alert = '<div class="alert alert-success" role="alert">Configuración actualizada correctamente.</div>';
-        // Refresh data
-        $query_conf = mysqli_query($conexion, "SELECT * FROM configuracion LIMIT 1");
-        $data_conf = mysqli_fetch_assoc($query_conf);
+        // Refresh data (manual fetch for compatibility)
+        $stmt_ref = mysqli_prepare($conexion, "SELECT nombre_empresa, whatsapp_numero, mensaje_bienvenida, logo FROM configuracion LIMIT 1");
+        mysqli_stmt_execute($stmt_ref);
+        mysqli_stmt_bind_result($stmt_ref, $r_nom, $r_wa, $r_msg, $r_logo);
+        mysqli_stmt_fetch($stmt_ref);
+        $data_conf = [
+            'nombre_empresa' => $r_nom,
+            'whatsapp_numero' => $r_wa,
+            'mensaje_bienvenida' => $r_msg,
+            'logo' => $r_logo
+        ];
+        mysqli_stmt_close($stmt_ref);
     } else {
         $alert = '<div class="alert alert-danger" role="alert">Error al actualizar la configuración.</div>';
     }
+    mysqli_stmt_close($stmt_upd);
 }
 ?>
 

@@ -14,19 +14,21 @@ if (!empty($_POST)) {
         $user = $_POST['usuario'];
         $pass = $_POST['clave'];
 
-        $stmt = mysqli_prepare($conexion, "SELECT * FROM usuarios WHERE usuario = ? AND estado = 1");
+        $stmt = mysqli_prepare($conexion, "SELECT id, nombre, usuario, clave, rol FROM usuarios WHERE usuario = ? AND estado = 1");
         mysqli_stmt_bind_param($stmt, "s", $user);
         mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
+        mysqli_stmt_store_result($stmt);
 
-        if (mysqli_num_rows($result) > 0) {
-            $data = mysqli_fetch_array($result);
-            if (password_verify($pass, $data['clave'])) {
+        if (mysqli_stmt_num_rows($stmt) > 0) {
+            mysqli_stmt_bind_result($stmt, $id, $nombre, $usuario, $hashed_pass, $rol);
+            mysqli_stmt_fetch($stmt);
+
+            if (password_verify($pass, $hashed_pass)) {
                 $_SESSION['active'] = true;
-                $_SESSION['idUser'] = $data['id'];
-                $_SESSION['nombre'] = $data['nombre'];
-                $_SESSION['user'] = $data['usuario'];
-                $_SESSION['rol'] = $data['rol'];
+                $_SESSION['idUser'] = $id;
+                $_SESSION['nombre'] = $nombre;
+                $_SESSION['user'] = $usuario;
+                $_SESSION['rol'] = $rol;
                 header('location: src/dashboard.php');
                 exit;
             } else {

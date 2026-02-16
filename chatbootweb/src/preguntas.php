@@ -23,19 +23,23 @@ include_once "includes/header.php";
                     </thead>
                     <tbody id="listaPreguntas">
                         <?php
-                        $query = mysqli_query($conexion, "SELECT * FROM preguntas_frecuentes");
-                        while ($row = mysqli_fetch_assoc($query)) {
+                        $stmt = mysqli_prepare($conexion, "SELECT id, pregunta, respuesta FROM preguntas_frecuentes");
+                        mysqli_stmt_execute($stmt);
+                        mysqli_stmt_bind_result($stmt, $pid, $ppreg, $presp);
+                        while (mysqli_stmt_fetch($stmt)) {
                         ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($row['pregunta']); ?></td>
-                                <td><?php echo htmlspecialchars($row['respuesta']); ?></td>
+                                <td><?php echo htmlspecialchars($ppreg); ?></td>
+                                <td><?php echo htmlspecialchars($presp); ?></td>
                                 <td>
-                                    <button class="btn btn-sm btn-danger" onclick="eliminarPregunta(<?php echo $row['id']; ?>)">
+                                    <button class="btn btn-sm btn-danger" onclick="eliminarPregunta(<?php echo $pid; ?>)">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php }
+                        mysqli_stmt_close($stmt);
+                        ?>
                     </tbody>
                 </table>
             </div>

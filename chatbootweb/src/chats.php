@@ -43,18 +43,30 @@ if (!empty($_GET['numero'])) {
                     </thead>
                     <tbody>
                         <?php
-                        $query = mysqli_query($conexion, "SELECT * FROM chats $where ORDER BY fecha DESC");
-                        while ($row = mysqli_fetch_assoc($query)) {
+                        if (!empty($_GET['numero'])) {
+                            $num = "%" . $_GET['numero'] . "%";
+                            $stmt = mysqli_prepare($conexion, "SELECT id, numero_whatsapp, mensaje_usuario, respuesta_bot, fecha FROM chats WHERE numero_whatsapp LIKE ? ORDER BY fecha DESC");
+                            mysqli_stmt_bind_param($stmt, "s", $num);
+                        } else {
+                            $stmt = mysqli_prepare($conexion, "SELECT id, numero_whatsapp, mensaje_usuario, respuesta_bot, fecha FROM chats ORDER BY fecha DESC");
+                        }
+
+                        mysqli_stmt_execute($stmt);
+                        mysqli_stmt_bind_result($stmt, $cid, $cwa, $cmsg, $cresp, $cfecha);
+                        $has_rows = false;
+                        while (mysqli_stmt_fetch($stmt)) {
+                            $has_rows = true;
                         ?>
                             <tr>
-                                <td><?php echo $row['id']; ?></td>
-                                <td><strong><?php echo $row['numero_whatsapp']; ?></strong></td>
-                                <td><?php echo htmlspecialchars($row['mensaje_usuario']); ?></td>
-                                <td><span class="text-primary"><?php echo htmlspecialchars($row['respuesta_bot']); ?></span></td>
-                                <td><?php echo $row['fecha']; ?></td>
+                                <td><?php echo $cid; ?></td>
+                                <td><strong><?php echo $cwa; ?></strong></td>
+                                <td><?php echo htmlspecialchars($cmsg); ?></td>
+                                <td><span class="text-primary"><?php echo htmlspecialchars($cresp); ?></span></td>
+                                <td><?php echo $cfecha; ?></td>
                             </tr>
                         <?php }
-                        if (mysqli_num_rows($query) == 0) {
+                        mysqli_stmt_close($stmt);
+                        if (!$has_rows) {
                             echo "<tr><td colspan='5' class='text-center'>No se encontraron registros</td></tr>";
                         }
                         ?>

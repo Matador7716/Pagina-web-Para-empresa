@@ -2,14 +2,26 @@
 include_once "includes/header.php";
 
 // Counts for dashboard
-$query_users = mysqli_query($conexion, "SELECT COUNT(*) as total FROM usuarios WHERE estado = 1");
-$res_users = mysqli_fetch_assoc($query_users);
+// Usuarios
+$stmt = mysqli_prepare($conexion, "SELECT COUNT(*) FROM usuarios WHERE estado = 1");
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $total_users);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
 
-$query_chats = mysqli_query($conexion, "SELECT COUNT(*) as total FROM chats");
-$res_chats = mysqli_fetch_assoc($query_chats);
+// Chats
+$stmt = mysqli_prepare($conexion, "SELECT COUNT(*) FROM chats");
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $total_chats);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
 
-$query_respuestas = mysqli_query($conexion, "SELECT COUNT(*) as total FROM preguntas_frecuentes");
-$res_respuestas = mysqli_fetch_assoc($query_respuestas);
+// Respuestas
+$stmt = mysqli_prepare($conexion, "SELECT COUNT(*) FROM preguntas_frecuentes");
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $total_respuestas);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
 ?>
 
 <div class="container-fluid">
@@ -19,21 +31,21 @@ $res_respuestas = mysqli_fetch_assoc($query_respuestas);
         <div class="col-md-4 mb-4">
             <div class="stat-card bg-primary">
                 <h5>Total Chats</h5>
-                <h2><?php echo $res_chats['total']; ?></h2>
+                <h2><?php echo $total_chats; ?></h2>
                 <i class="fas fa-comments"></i>
             </div>
         </div>
         <div class="col-md-4 mb-4">
             <div class="stat-card bg-success" style="background-color: #28a745 !important;">
                 <h5>Respuestas IA</h5>
-                <h2><?php echo $res_respuestas['total']; ?></h2>
+                <h2><?php echo $total_respuestas; ?></h2>
                 <i class="fas fa-robot"></i>
             </div>
         </div>
         <div class="col-md-4 mb-4">
             <div class="stat-card bg-info" style="background-color: #17a2b8 !important;">
                 <h5>Usuarios</h5>
-                <h2><?php echo $res_users['total']; ?></h2>
+                <h2><?php echo $total_users; ?></h2>
                 <i class="fas fa-users"></i>
             </div>
         </div>
@@ -58,16 +70,21 @@ $res_respuestas = mysqli_fetch_assoc($query_respuestas);
                             </thead>
                             <tbody>
                                 <?php
-                                $query_last_chats = mysqli_query($conexion, "SELECT * FROM chats ORDER BY fecha DESC LIMIT 5");
-                                while ($row = mysqli_fetch_assoc($query_last_chats)) {
+                                $stmt = mysqli_prepare($conexion, "SELECT numero_whatsapp, mensaje_usuario, respuesta_bot, fecha FROM chats ORDER BY fecha DESC LIMIT 5");
+                                mysqli_stmt_execute($stmt);
+                                mysqli_stmt_bind_result($stmt, $num_wa, $msg_u, $resp_b, $fecha);
+                                $has_records = false;
+                                while (mysqli_stmt_fetch($stmt)) {
+                                    $has_records = true;
                                     echo "<tr>
-                                        <td>{$row['numero_whatsapp']}</td>
-                                        <td>" . htmlspecialchars($row['mensaje_usuario']) . "</td>
-                                        <td>" . htmlspecialchars($row['respuesta_bot']) . "</td>
-                                        <td>{$row['fecha']}</td>
+                                        <td>{$num_wa}</td>
+                                        <td>" . htmlspecialchars($msg_u) . "</td>
+                                        <td>" . htmlspecialchars($resp_b) . "</td>
+                                        <td>{$fecha}</td>
                                     </tr>";
                                 }
-                                if (mysqli_num_rows($query_last_chats) == 0) {
+                                mysqli_stmt_close($stmt);
+                                if (!$has_records) {
                                     echo "<tr><td colspan='4' class='text-center'>No hay chats registrados</td></tr>";
                                 }
                                 ?>

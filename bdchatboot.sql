@@ -33,6 +33,13 @@ CREATE TABLE IF NOT EXISTS chats (
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS links_whatsapp (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    numero VARCHAR(20) NOT NULL,
+    mensaje_predeterminado TEXT NOT NULL
+);
+
 -- Insert default admin
 -- Password is 'admin123'
 INSERT INTO usuarios (nombre, usuario, clave, rol) VALUES ('Administrador web', 'admin', '$2y$10$wvUpq0NNYOM79pRKYUtTpO2UG2UiUPOsj5EQTS4RewF9ZkDw0KdoK', 'Administrador');

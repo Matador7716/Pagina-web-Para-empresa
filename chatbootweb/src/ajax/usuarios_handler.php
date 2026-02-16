@@ -15,12 +15,12 @@ if ($_POST) {
         $rol = $_POST['rol'];
 
         // Check if exists
-        $stmt = mysqli_prepare($conexion, "SELECT * FROM usuarios WHERE usuario = ?");
+        $stmt = mysqli_prepare($conexion, "SELECT id FROM usuarios WHERE usuario = ?");
         mysqli_stmt_bind_param($stmt, "s", $usuario);
         mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
+        mysqli_stmt_store_result($stmt);
 
-        if (mysqli_num_rows($result) > 0) {
+        if (mysqli_stmt_num_rows($stmt) > 0) {
             echo "El usuario ya existe";
         } else {
             $stmt = mysqli_prepare($conexion, "INSERT INTO usuarios (nombre, usuario, clave, rol) VALUES (?, ?, ?, ?)");

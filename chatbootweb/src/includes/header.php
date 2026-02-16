@@ -9,10 +9,16 @@ if (empty($_SESSION['active'])) {
 require_once "../conexion.php";
 
 // Get company config
-$query_conf = mysqli_query($conexion, "SELECT * FROM configuracion LIMIT 1");
-$data_conf = mysqli_fetch_assoc($query_conf);
-$nombre_empresa = $data_conf['nombre_empresa'] ?? 'CHATBOOTWEB';
-$logo_empresa = $data_conf['logo'] ?? 'default_logo.png';
+$nombre_empresa = 'CHATBOOTWEB';
+$logo_empresa = 'default_logo.png';
+$stmt_conf = mysqli_prepare($conexion, "SELECT nombre_empresa, logo FROM configuracion LIMIT 1");
+mysqli_stmt_execute($stmt_conf);
+mysqli_stmt_bind_result($stmt_conf, $r_nom, $r_logo);
+if (mysqli_stmt_fetch($stmt_conf)) {
+    $nombre_empresa = $r_nom ?? 'CHATBOOTWEB';
+    $logo_empresa = $r_logo ?? 'default_logo.png';
+}
+mysqli_stmt_close($stmt_conf);
 ?>
 <!DOCTYPE html>
 <html lang="es">

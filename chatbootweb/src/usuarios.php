@@ -33,22 +33,26 @@ if ($_SESSION['rol'] != 'Administrador') {
                     </thead>
                     <tbody>
                         <?php
-                        $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE estado = 1");
-                        while ($row = mysqli_fetch_assoc($query)) {
+                        $stmt = mysqli_prepare($conexion, "SELECT id, nombre, usuario, rol FROM usuarios WHERE estado = 1");
+                        mysqli_stmt_execute($stmt);
+                        mysqli_stmt_bind_result($stmt, $uid, $unom, $uuser, $urol);
+                        while (mysqli_stmt_fetch($stmt)) {
                         ?>
                             <tr>
-                                <td><?php echo $row['nombre']; ?></td>
-                                <td><?php echo $row['usuario']; ?></td>
-                                <td><span class="badge bg-<?php echo ($row['rol'] == 'Administrador' ? 'primary' : 'info'); ?>"><?php echo $row['rol']; ?></span></td>
+                                <td><?php echo $unom; ?></td>
+                                <td><?php echo $uuser; ?></td>
+                                <td><span class="badge bg-<?php echo ($urol == 'Administrador' ? 'primary' : 'info'); ?>"><?php echo $urol; ?></span></td>
                                 <td><span class="badge bg-success">Activo</span></td>
                                 <td>
                                     <!-- Simplified actions for the demo -->
-                                    <button class="btn btn-sm btn-danger" onclick="eliminarUsuario(<?php echo $row['id']; ?>)">
+                                    <button class="btn btn-sm btn-danger" onclick="eliminarUsuario(<?php echo $uid; ?>)">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php }
+                        mysqli_stmt_close($stmt);
+                        ?>
                     </tbody>
                 </table>
             </div>

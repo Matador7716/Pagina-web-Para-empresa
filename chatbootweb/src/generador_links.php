@@ -1,9 +1,11 @@
 <?php
 include_once "includes/header.php";
 
-$query_conf = mysqli_query($conexion, "SELECT whatsapp_numero FROM configuracion LIMIT 1");
-$conf = mysqli_fetch_assoc($query_conf);
-$default_num = $conf['whatsapp_numero'];
+$stmt_conf = mysqli_prepare($conexion, "SELECT whatsapp_numero FROM configuracion LIMIT 1");
+mysqli_stmt_execute($stmt_conf);
+mysqli_stmt_bind_result($stmt_conf, $default_num);
+mysqli_stmt_fetch($stmt_conf);
+mysqli_stmt_close($stmt_conf);
 ?>
 
 <div class="container-fluid">
@@ -29,19 +31,21 @@ $default_num = $conf['whatsapp_numero'];
                     </thead>
                     <tbody id="listaLinks">
                         <?php
-                        $query = mysqli_query($conexion, "SELECT * FROM links_whatsapp ORDER BY id DESC");
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            $clean_num = preg_replace('/[^0-9]/', '', $row['numero']);
-                            $wa_link = "https://wa.me/$clean_num?text=" . urlencode($row['mensaje_predeterminado']);
+                        $stmt = mysqli_prepare($conexion, "SELECT id, nombre, numero, mensaje_predeterminado FROM links_whatsapp ORDER BY id DESC");
+                        mysqli_stmt_execute($stmt);
+                        mysqli_stmt_bind_result($stmt, $lid, $lnom, $lnum, $lmsg);
+                        while (mysqli_stmt_fetch($stmt)) {
+                            $clean_num = preg_replace('/[^0-9]/', '', $lnum);
+                            $wa_link = "https://wa.me/$clean_num?text=" . urlencode($lmsg);
                         ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($row['nombre']); ?></td>
-                                <td><?php echo htmlspecialchars($row['numero']); ?></td>
-                                <td><?php echo htmlspecialchars($row['mensaje_predeterminado']); ?></td>
+                                <td><?php echo htmlspecialchars($lnom); ?></td>
+                                <td><?php echo htmlspecialchars($lnum); ?></td>
+                                <td><?php echo htmlspecialchars($lmsg); ?></td>
                                 <td>
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" value="<?php echo $wa_link; ?>" readonly id="link_<?php echo $row['id']; ?>">
-                                        <button class="btn btn-outline-secondary" type="button" onclick="copyLink(<?php echo $row['id']; ?>)">
+                                        <input type="text" class="form-control" value="<?php echo $wa_link; ?>" readonly id="link_<?php echo $lid; ?>">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="copyLink(<?php echo $lid; ?>)">
                                             <i class="fas fa-copy"></i>
                                         </button>
                                         <a href="<?php echo $wa_link; ?>" target="_blank" class="btn btn-outline-success">
@@ -50,12 +54,14 @@ $default_num = $conf['whatsapp_numero'];
                                     </div>
                                 </td>
                                 <td>
-                                    <button class="btn btn-sm btn-danger" onclick="eliminarLink(<?php echo $row['id']; ?>)">
+                                    <button class="btn btn-sm btn-danger" onclick="eliminarLink(<?php echo $lid; ?>)">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php }
+                        mysqli_stmt_close($stmt);
+                        ?>
                     </tbody>
                 </table>
             </div>
