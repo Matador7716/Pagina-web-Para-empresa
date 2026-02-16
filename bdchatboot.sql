@@ -38,4 +38,4 @@ CREATE TABLE IF NOT EXISTS chats (
 INSERT INTO usuarios (nombre, usuario, clave, rol) VALUES ('Administrador web', 'admin', '$2y$10$wvUpq0NNYOM79pRKYUtTpO2UG2UiUPOsj5EQTS4RewF9ZkDw0KdoK', 'Administrador');
 
 -- Insert initial config
-INSERT INTO configuracion (nombre_empresa, whatsapp_numero, mensaje_bienvenida) VALUES ('CHATBOOTWEB', '51935209781', '¡Hola! Soy el asistente virtual de CHATBOOTWEB. ¿En qué puedo ayudarte hoy? 🚀');
+INSERT INTO configuracion (nombre_empresa, whatsapp_numero, mensaje_bienvenida) VALUES ('CHATBOOTWEB', '+51 905 590 656', '¡Hola! Soy el asistente virtual de CHATBOOTWEB. ¿En qué puedo ayudarte hoy? 🚀');

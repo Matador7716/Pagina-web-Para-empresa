@@ -113,6 +113,12 @@ $logo_empresa = $data_conf['logo'] ?? 'default_logo.png';
                 <a href="simulador.php"><i class="fas fa-vial me-2"></i> Simulador Bot</a>
             </li>
             <li>
+                <a href="generador_links.php"><i class="fas fa-link me-2"></i> Generador de Links</a>
+            </li>
+            <li>
+                <a href="widget.php"><i class="fas fa-comment-dots me-2"></i> Widget / JoinChat</a>
+            </li>
+            <li>
                 <a href="preguntas.php"><i class="fas fa-robot me-2"></i> Respuestas IA</a>
             </li>
             <?php if ($_SESSION['rol'] == 'Administrador') { ?>
