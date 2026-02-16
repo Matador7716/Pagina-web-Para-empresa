@@ -38,7 +38,7 @@ include_once "includes/header.php";
                     </ol>
                     <hr>
                     <h6>Número Simulado:</h6>
-                    <input type="text" id="simulatedPhone" class="form-control mb-3" value="51900111222">
+                    <input type="text" id="simulatedPhone" class="form-control mb-3" value="51905590656">
                     <button class="btn btn-outline-info" onclick="iniciarConversacionAnimada()">
                         <i class="fas fa-rocket me-2"></i> Probar Inicio Animado
                     </button>

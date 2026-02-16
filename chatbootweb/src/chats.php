@@ -16,7 +16,7 @@ if (!empty($_GET['numero'])) {
             <form method="GET" class="row g-3">
                 <div class="col-md-4">
                     <label class="form-label">Filtrar por Número</label>
-                    <input type="text" name="numero" class="form-control" placeholder="Ej: 51935..." value="<?php echo $_GET['numero'] ?? ''; ?>">
+                    <input type="text" name="numero" class="form-control" placeholder="Ej: 51905..." value="<?php echo $_GET['numero'] ?? ''; ?>">
                 </div>
                 <div class="col-md-2 d-flex align-items-end">
                     <button type="submit" class="btn btn-primary w-100"><i class="fas fa-search me-2"></i> Filtrar</button>
