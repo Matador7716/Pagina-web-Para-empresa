@@ -1,0 +1,116 @@
+#notaria-chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+}
+
+#notaria-chatbot-button {
+    width: 60px;
+    height: 60px;
+    background-color: #1a237e;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+#notaria-chatbot-button:hover {
+    transform: scale(1.1);
+}
+
+#notaria-chatbot-button img {
+    width: 35px;
+    height: 35px;
+    filter: invert(1);
+}
+
+#notaria-chatbot-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 450px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+#notaria-chatbot-header {
+    background: #1a237e;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+#notaria-chatbot-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#notaria-chatbot-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+
+.chatbot-msg {
+    margin-bottom: 10px;
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.visitor-msg {
+    background: #40c4ff;
+    color: #fff;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot-msg {
+    background: #e0e0e0;
+    color: #333;
+    align-self: flex-start;
+}
+
+#notaria-chatbot-input {
+    padding: 10px;
+    display: flex;
+    border-top: 1px solid #eee;
+}
+
+#notaria-chatbot-text {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+    outline: none;
+}
+
+#notaria-chatbot-send {
+    background: #1a237e;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
