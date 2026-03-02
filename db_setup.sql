@@ -1,70 +1,117 @@
 -- =================================================================
 --  Script de Configuración de la Base de Datos
---  Proyecto: Sistema de Registro de Asistencia APAFA
+--  Proyecto: Sistema de Ventas para Bar y Licorería
 -- =================================================================
 
--- Se recomienda ejecutar este script desde un cliente de MySQL o
--- a través de la pestaña SQL en phpMyAdmin.
-
--- ---
--- 1. Creación de la Base de Datos
--- ---
--- Crea la base de datos `apafa_tarjetaasis` si no existe.
--- Se utiliza el juego de caracteres utf8mb4 para una compatibilidad
--- completa con caracteres internacionales y emojis.
-CREATE DATABASE IF NOT EXISTS apafa_tarjetaasis
+CREATE DATABASE IF NOT EXISTS inventory_system
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+USE inventory_system;
 
 -- ---
--- 2. Selección de la Base de Datos
+-- 1. Tabla de Usuarios
 -- ---
--- Pone en uso la base de datos recién creada para ejecutar las
--- siguientes instrucciones de creación de tablas en ella.
-USE apafa_tarjetaasis;
+CREATE TABLE IF NOT EXISTS `users` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `username` VARCHAR(50) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL,
+    `full_name` VARCHAR(100),
+    `role` ENUM('admin', 'seller') DEFAULT 'seller',
+    `status` TINYINT(1) DEFAULT 1,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- ---
+-- 2. Tabla de Categorías
+-- ---
+CREATE TABLE IF NOT EXISTS `categories` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL,
+    `description` TEXT,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ---
--- 3. Creación de la Tabla `registrations`
+-- 3. Tabla de Productos
 -- ---
--- Almacena la información principal de cada registro, incluyendo
--- los datos del alumno y del apoderado.
-CREATE TABLE `registrations` (
-    `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
-    `control_card` VARCHAR(50) NOT NULL,
-    `student_grade` VARCHAR(50),
-    `student_section` VARCHAR(50),
-    `student_level` VARCHAR(50),
-    `student_shift` VARCHAR(50),
-    `parent_name` VARCHAR(255) NOT NULL,
-    `parent_dni` VARCHAR(20) NOT NULL,
-    `parent_phone` VARCHAR(20),
-    `observations` TEXT,
+CREATE TABLE IF NOT EXISTS `products` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `barcode` VARCHAR(50) UNIQUE,
+    `name` VARCHAR(255) NOT NULL,
+    `description` TEXT,
+    `category_id` INT,
+    `purchase_price` DECIMAL(10,2) DEFAULT 0.00,
+    `sale_price` DECIMAL(10,2) NOT NULL,
+    `stock` INT DEFAULT 0,
+    `min_stock` INT DEFAULT 5,
+    `image_path` VARCHAR(255),
+    `status` TINYINT(1) DEFAULT 1,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    INDEX `idx_parent_dni` (`parent_dni`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
--- ---
--- 4. Creación de la Tabla `attendance`
--- ---
--- Almacena cada marca de asistencia individualmente, vinculada a
--- un registro principal.
-CREATE TABLE `attendance` (
-    `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
-    `registration_id` INT(11) NOT NULL,
-    `event_block` VARCHAR(100) NOT NULL COMMENT 'Identificador de la tabla de asistencia (ej: asambleas_manana)',
-    `event_index` INT(2) NOT NULL COMMENT 'La posición de la celda en la tabla (0-8)',
-    `status` INT(1) NOT NULL COMMENT '1 para Asistió (A), 0 para Faltó (F)',
-
-    -- Crea una relación con la tabla de registros.
-    -- ON DELETE CASCADE asegura que si se borra un registro, sus asistencias se borran automáticamente.
-    FOREIGN KEY (`registration_id`) REFERENCES `registrations`(`id`) ON DELETE CASCADE,
-
-    -- Asegura que no se pueda marcar la misma asistencia dos veces para la misma persona y evento.
-    UNIQUE KEY `unique_attendance` (`registration_id`, `event_block`, `event_index`)
+    FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ---
--- Fin del script
+-- 4. Tabla de Control de Caja
 -- ---
+CREATE TABLE IF NOT EXISTS `cash_registers` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `user_id` INT NOT NULL,
+    `opening_balance` DECIMAL(10,2) NOT NULL,
+    `closing_balance` DECIMAL(10,2) DEFAULT NULL,
+    `opening_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `closing_date` TIMESTAMP NULL DEFAULT NULL,
+    `status` ENUM('open', 'closed') DEFAULT 'open',
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ---
+-- 5. Tabla de Ventas
+-- ---
+CREATE TABLE IF NOT EXISTS `sales` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `user_id` INT NOT NULL,
+    `cash_register_id` INT NOT NULL,
+    `customer_name` VARCHAR(100) DEFAULT 'Público General',
+    `total_amount` DECIMAL(10,2) NOT NULL,
+    `discount_amount` DECIMAL(10,2) DEFAULT 0.00,
+    `final_amount` DECIMAL(10,2) NOT NULL,
+    `payment_method` ENUM('cash', 'card', 'transfer') DEFAULT 'cash',
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`cash_register_id`) REFERENCES `cash_registers`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ---
+-- 6. Tabla de Detalle de Ventas
+-- ---
+CREATE TABLE IF NOT EXISTS `sale_items` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `sale_id` INT NOT NULL,
+    `product_id` INT NOT NULL,
+    `quantity` INT NOT NULL,
+    `unit_price` DECIMAL(10,2) NOT NULL,
+    `discount` DECIMAL(10,2) DEFAULT 0.00,
+    `subtotal` DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (`sale_id`) REFERENCES `sales`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ---
+-- 7. Tabla de Movimientos de Caja (Ingresos/Egresos extras)
+-- ---
+CREATE TABLE IF NOT EXISTS `cash_movements` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `cash_register_id` INT NOT NULL,
+    `type` ENUM('income', 'expense') NOT NULL,
+    `amount` DECIMAL(10,2) NOT NULL,
+    `description` TEXT,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`cash_register_id`) REFERENCES `cash_registers`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ---
+-- Datos iniciales
+-- ---
+INSERT INTO `users` (`username`, `password`, `full_name`, `role`) VALUES
+('admin', '$2y$10$xGFGyrwlXcJEmHIJIS6yRueNqYAp7dC54HUZlDeKQ6dfpuW570rt.', 'Administrador', 'admin');
+-- password es 'admin123'
