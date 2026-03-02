@@ -113,5 +113,5 @@ CREATE TABLE IF NOT EXISTS `cash_movements` (
 -- Datos iniciales
 -- ---
 INSERT INTO `users` (`username`, `password`, `full_name`, `role`) VALUES
-('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Administrador', 'admin');
--- password es 'password'
+('admin', '$2y$10$xGFGyrwlXcJEmHIJIS6yRueNqYAp7dC54HUZlDeKQ6dfpuW570rt.', 'Administrador', 'admin');
+-- password es 'admin123'
