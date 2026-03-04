@@ -67,37 +67,37 @@ function notaria_chatbot_activate() {
     $wpdb->insert($wpdb->prefix . 'notaria_config', array('setting_key' => 'welcome_message', 'setting_value' => '¡Hola! Bienvenido a Notaria Huanca. ¿En qué podemos ayudarte hoy?'), array('%s', '%s'));
 
     // Seed Knowledge Base
-    $wa_link = '<br><br><a href="https://wa.me/51905590656" target="_blank" style="color: #25d366; font-weight: bold;">[Contactar por WhatsApp]</a>';
+    $wa_link = '<br><br><a href="https://api.whatsapp.com/send?phone=51905590656" target="_blank" style="color: #25d366; font-weight: bold; text-decoration: underline;">[Contactar por WhatsApp]</a>';
     $advisor_msg = "Ahora te contactare con un asesor que te brindara mas información: " . $wa_link;
 
     $kb_data = array(
         array(
             'question' => 'Sobre Escrituras Públicas o relacionados',
-            'answer' => 'Contamos con los siguientes servicios:<br>- COMPRAVENTA DE INMUEBLES<br>- ANTICIPO DE LEGÍTIMA DE INMUEBLE<br>- PODERES POR ESCRITURA PÚBLICA<br>- DONACIÓN DE INMUEBLE<br>- SUSTITUCIÓN DE REGIMEN PATRIMONIAL<br>- CONSTITUCIÓN DE SOCIEDADES<br>- OTROS<br><br>¿Cuál de estos te interesa?'
+            'answer' => 'Contamos con los siguientes servicios:<br><ol><li>COMPRAVENTA DE INMUEBLES</li><li>ANTICIPO DE LEGÍTIMA DE INMUEBLE</li><li>PODERES POR ESCRITURA PÚBLICA</li><li>DONACIÓN DE INMUEBLE</li><li>SUSTITUCIÓN DE REGIMEN PATRIMONIAL</li><li>CONSTITUCIÓN DE SOCIEDADES</li><li>OTROS</li></ol><br>¿Cuál de estos te interesa?'
         ),
         array(
             'question' => 'COMPRAVENTA DE INMUEBLES',
-            'answer' => '<strong>COMPRAVENTA DE INMUEBLES</strong><br>Importante: Los requisitos son referenciales.<br><ul><li>Minuta firmada por las partes y abogado.</li><li>Fotocopia de DNI con última votación.</li><li>Copia literal vigente de la partida registral.</li><li>Vigencia de poder (si aplica).</li><li>Constancia de pago de impuesto a la renta y alcabala.</li><li>Pago del Impuesto Predial y Constancia de No Adeudo.</li><li>Medio de pago bancario (vouchers, cheques).</li></ul>¿Quieres hablar con un asesor?'
+            'answer' => '<strong>COMPRAVENTA DE INMUEBLES</strong><br>Importante: Los requisitos son referenciales.<br><ol><li>Minuta firmada por las partes y abogado.</li><li>Fotocopia de DNI con última votación.</li><li>Copia literal vigente de la partida registral.</li><li>Vigencia de poder (si aplica).</li><li>Constancia de pago de impuesto a la renta y alcabala.</li><li>Pago del Impuesto Predial y Constancia de No Adeudo.</li><li>Medio de pago bancario (vouchers, cheques).</li></ol>¿Quieres hablar con un asesor?'
         ),
         array(
             'question' => 'ANTICIPO DE LEGÍTIMA DE INMUEBLE',
-            'answer' => '<strong>ANTICIPO DE LEGÍTIMA</strong><br>Requisitos referenciales:<br><ul><li>Minuta firmada por las partes y abogado.</li><li>Fotocopia de DNI.</li><li>Copia literal vigente.</li><li>Vigencia de poder (si aplica).</li><li>Impuesto Predial y Constancia de No Adeudo.</li><li>Partidas de nacimiento originales de los hijos.</li></ul>¿Quieres hablar con un asesor?'
+            'answer' => '<strong>ANTICIPO DE LEGÍTIMA</strong><br>Requisitos referenciales:<br><ol><li>Minuta firmada por las partes y abogado.</li><li>Fotocopia de DNI.</li><li>Copia literal vigente.</li><li>Vigencia de poder (si aplica).</li><li>Impuesto Predial y Constancia de No Adeudo.</li><li>Partidas de nacimiento originales de los hijos.</li></ol>¿Quieres hablar con un asesor?'
         ),
         array(
             'question' => 'PODERES POR ESCRITURA PÚBLICA',
-            'answer' => '<strong>PODERES POR ESCRITURA PÚBLICA</strong><br>Requisitos referenciales:<br><ul><li>Minuta suscrita por otorgantes y abogado.</li><li>Fotocopia de DNI de los contratantes.</li><li>Fotocopia del DNI del apoderado.</li></ul>¿Quieres hablar con un asesor?'
+            'answer' => '<strong>PODERES POR ESCRITURA PÚBLICA</strong><br>Requisitos referenciales:<br><ol><li>Minuta suscrita por otorgantes y abogado.</li><li>Fotocopia de DNI de los contratantes.</li><li>Fotocopia del DNI del apoderado.</li></ol>¿Quieres hablar con un asesor?'
         ),
         array(
             'question' => 'DONACIÓN DE INMUEBLE',
-            'answer' => '<strong>DONACIÓN DE INMUEBLE</strong><br>Requisitos:<br><ul><li>Minuta firmada por las partes y abogado.</li><li>Fotocopia de DNI.</li><li>Copia literal vigente.</li><li>Vigencia de poder (si aplica).</li><li>Impuesto de Alcabala (si aplica).</li><li>Impuesto Predial y Constancia de No Adeudo.</li></ul>¿Quieres hablar con un asesor?'
+            'answer' => '<strong>DONACIÓN DE INMUEBLE</strong><br>Requisitos:<br><ol><li>Minuta firmada por las partes y abogado.</li><li>Fotocopia de DNI.</li><li>Copia literal vigente.</li><li>Vigencia de poder (si aplica).</li><li>Impuesto de Alcabala (si aplica).</li><li>Impuesto Predial y Constancia de No Adeudo.</li></ol>¿Quieres hablar con un asesor?'
         ),
         array(
             'question' => 'SUSTITUCIÓN DE REGIMEN PATRIMONIAL',
-            'answer' => '<strong>SUSTITUCIÓN DE REGIMEN PATRIMONIAL</strong><br>Requisitos:<br><ul><li>Minuta firmada por cónyuges y abogado.</li><li>Fotocopia de DNI.</li><li>Partida de matrimonio actualizada (RENIEC).</li><li>Documentación de bienes muebles/inmuebles.</li></ul>¿Quieres hablar con un asesor?'
+            'answer' => '<strong>SUSTITUCIÓN DE REGIMEN PATRIMONIAL</strong><br>Requisitos:<br><ol><li>Minuta firmada por cónyuges y abogado.</li><li>Fotocopia de DNI.</li><li>Partida de matrimonio actualizada (RENIEC).</li><li>Documentación de bienes muebles/inmuebles.</li></ol>¿Quieres hablar con un asesor?'
         ),
         array(
             'question' => 'CONSTITUCIÓN DE SOCIEDADES',
-            'answer' => '<strong>CONSTITUCIÓN DE SOCIEDADES</strong><br>Requisitos:<br><ul><li>Minuta de constitución firmada por socios y abogado.</li><li>Reserva de nombre vigente (SUNARP).</li><li>Fotocopia de DNI de los socios.</li><li>Declaración jurada de aporte de bienes.</li><li>Voucher de depósito de capital social.</li></ul>¿Quieres hablar con un asesor?'
+            'answer' => '<strong>CONSTITUCIÓN DE SOCIEDADES</strong><br>Requisitos:<br><ol><li>Minuta de constitución firmada por socios y abogado.</li><li>Reserva de nombre vigente (SUNARP).</li><li>Fotocopia de DNI de los socios.</li><li>Declaración jurada de aporte de bienes.</li><li>Voucher de depósito de capital social.</li></ol>¿Quieres hablar con un asesor?'
         ),
         array(
             'question' => 'OTROS',

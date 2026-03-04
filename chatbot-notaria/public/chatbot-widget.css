@@ -91,6 +91,20 @@
     align-self: flex-start;
 }
 
+.chatbot-msg ol, .chatbot-msg ul {
+    margin: 10px 0 10px 20px;
+    padding: 0;
+}
+
+.chatbot-msg li {
+    margin-bottom: 5px;
+}
+
+.chatbot-msg a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 #notaria-chatbot-input {
     padding: 10px;
     display: flex;
