@@ -76,7 +76,7 @@ function notaria_chatbot_activate() {
         ),
         array(
             'question' => 'SI',
-            'answer' => "Claro... puedes escribir a este numero de manera directa:\n👉 +51 905 590 656"
+            'answer' => 'Asesor disponible, puedes escribir directamente +51905590656'
         ),
         array(
             'question' => 'Sobre Escrituras Públicas o relacionados',
