@@ -65,6 +65,73 @@ function notaria_chatbot_activate() {
     // Initial config
     $wpdb->insert($wpdb->prefix . 'notaria_config', array('setting_key' => 'bot_name', 'setting_value' => 'HuancaBot'), array('%s', '%s'));
     $wpdb->insert($wpdb->prefix . 'notaria_config', array('setting_key' => 'welcome_message', 'setting_value' => '¡Hola! Bienvenido a Notaria Huanca. ¿En qué podemos ayudarte hoy?'), array('%s', '%s'));
+
+    // Seed Knowledge Base
+    $wa_link = '<br><br><a href="https://wa.me/51905590656" target="_blank" style="color: #25d366; font-weight: bold;">[Contactar por WhatsApp]</a>';
+    $advisor_msg = "Ahora te contactare con un asesor que te brindara mas información: " . $wa_link;
+
+    $kb_data = array(
+        array(
+            'question' => 'Sobre Escrituras Públicas o relacionados',
+            'answer' => 'Contamos con los siguientes servicios:<br>- COMPRAVENTA DE INMUEBLES<br>- ANTICIPO DE LEGÍTIMA DE INMUEBLE<br>- PODERES POR ESCRITURA PÚBLICA<br>- DONACIÓN DE INMUEBLE<br>- SUSTITUCIÓN DE REGIMEN PATRIMONIAL<br>- CONSTITUCIÓN DE SOCIEDADES<br>- OTROS<br><br>¿Cuál de estos te interesa?'
+        ),
+        array(
+            'question' => 'COMPRAVENTA DE INMUEBLES',
+            'answer' => '<strong>COMPRAVENTA DE INMUEBLES</strong><br>Importante: Los requisitos son referenciales.<br><ul><li>Minuta firmada por las partes y abogado.</li><li>Fotocopia de DNI con última votación.</li><li>Copia literal vigente de la partida registral.</li><li>Vigencia de poder (si aplica).</li><li>Constancia de pago de impuesto a la renta y alcabala.</li><li>Pago del Impuesto Predial y Constancia de No Adeudo.</li><li>Medio de pago bancario (vouchers, cheques).</li></ul>¿Quieres hablar con un asesor?'
+        ),
+        array(
+            'question' => 'ANTICIPO DE LEGÍTIMA DE INMUEBLE',
+            'answer' => '<strong>ANTICIPO DE LEGÍTIMA</strong><br>Requisitos referenciales:<br><ul><li>Minuta firmada por las partes y abogado.</li><li>Fotocopia de DNI.</li><li>Copia literal vigente.</li><li>Vigencia de poder (si aplica).</li><li>Impuesto Predial y Constancia de No Adeudo.</li><li>Partidas de nacimiento originales de los hijos.</li></ul>¿Quieres hablar con un asesor?'
+        ),
+        array(
+            'question' => 'PODERES POR ESCRITURA PÚBLICA',
+            'answer' => '<strong>PODERES POR ESCRITURA PÚBLICA</strong><br>Requisitos referenciales:<br><ul><li>Minuta suscrita por otorgantes y abogado.</li><li>Fotocopia de DNI de los contratantes.</li><li>Fotocopia del DNI del apoderado.</li></ul>¿Quieres hablar con un asesor?'
+        ),
+        array(
+            'question' => 'DONACIÓN DE INMUEBLE',
+            'answer' => '<strong>DONACIÓN DE INMUEBLE</strong><br>Requisitos:<br><ul><li>Minuta firmada por las partes y abogado.</li><li>Fotocopia de DNI.</li><li>Copia literal vigente.</li><li>Vigencia de poder (si aplica).</li><li>Impuesto de Alcabala (si aplica).</li><li>Impuesto Predial y Constancia de No Adeudo.</li></ul>¿Quieres hablar con un asesor?'
+        ),
+        array(
+            'question' => 'SUSTITUCIÓN DE REGIMEN PATRIMONIAL',
+            'answer' => '<strong>SUSTITUCIÓN DE REGIMEN PATRIMONIAL</strong><br>Requisitos:<br><ul><li>Minuta firmada por cónyuges y abogado.</li><li>Fotocopia de DNI.</li><li>Partida de matrimonio actualizada (RENIEC).</li><li>Documentación de bienes muebles/inmuebles.</li></ul>¿Quieres hablar con un asesor?'
+        ),
+        array(
+            'question' => 'CONSTITUCIÓN DE SOCIEDADES',
+            'answer' => '<strong>CONSTITUCIÓN DE SOCIEDADES</strong><br>Requisitos:<br><ul><li>Minuta de constitución firmada por socios y abogado.</li><li>Reserva de nombre vigente (SUNARP).</li><li>Fotocopia de DNI de los socios.</li><li>Declaración jurada de aporte de bienes.</li><li>Voucher de depósito de capital social.</li></ul>¿Quieres hablar con un asesor?'
+        ),
+        array(
+            'question' => 'OTROS',
+            'answer' => 'Para otros trámites, ¿Quieres hablar con un asesor?'
+        ),
+        array(
+            'question' => 'Quieres hablar con un asesor',
+            'answer' => $advisor_msg
+        ),
+        array(
+            'question' => 'Mas información',
+            'answer' => $advisor_msg
+        ),
+        array(
+            'question' => 'mas detalles',
+            'answer' => $advisor_msg
+        ),
+        array(
+            'question' => 'Certificaciones',
+            'answer' => '<strong>Certificaciones:</strong><br>- certificación de firmas<br>- certificación de apertura y cierre de libros (persona jurídica)<br>- certificación de apertura y cierre de libros (persona natural)<br>- certificación de copias<br>- autorización de viaje<br>- otros<br><br>¿Quieres hablar con un asesor?'
+        ),
+        array(
+            'question' => 'ASUNTOS NO CONTENCIOSOS',
+            'answer' => '<strong>ASUNTOS NO CONTENCIOSOS:</strong><br>- rectificación de partidas<br>- sucesión intestada<br>- separacion convencional y divorcio ulterior<br>- prescripción adquisitiva<br>- otros<br><br>¿Quieres hablar con un asesor?'
+        ),
+        array(
+            'question' => 'TRANSFERENCIAS VEHICULARES',
+            'answer' => '<strong>TRANSFERENCIAS VEHICULARES:</strong><br>- transferencias vehiculares<br>- otros<br><br>¿Quieres hablar con un asesor?'
+        )
+    );
+
+    foreach ($kb_data as $item) {
+        $wpdb->insert($wpdb->prefix . 'notaria_kb', $item, array('%s', '%s'));
+    }
 }
 
 // Enqueue scripts and styles for the frontend
