@@ -57,12 +57,7 @@ jQuery(document).ready(function($) {
 
     function addMessage(text, sender) {
         const msgClass = sender === 'visitor' ? 'visitor-msg' : 'bot-msg';
-        const $msgDiv = $('<div class="chatbot-msg"></div>').addClass(msgClass);
-        if (sender === 'visitor') {
-            $msgDiv.text(text);
-        } else {
-            $msgDiv.html(text);
-        }
+        const $msgDiv = $('<div class="chatbot-msg"></div>').addClass(msgClass).text(text);
         $messages.append($msgDiv);
         $messages.scrollTop($messages[0].scrollHeight);
     }

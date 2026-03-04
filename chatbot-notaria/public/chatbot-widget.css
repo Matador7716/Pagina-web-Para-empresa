@@ -75,7 +75,9 @@
     padding: 10px;
     border-radius: 8px;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .visitor-msg {
