@@ -75,40 +75,44 @@ function notaria_chatbot_activate() {
             'answer' => 'Hola, ¿en qué puedo ayudarte hoy? 👋'
         ),
         array(
+            'question' => 'gracias',
+            'answer' => 'Notaria Huanca siempre estara a tu servicio... Nos vemos pronto 👋'
+        ),
+        array(
             'question' => 'SI',
             'answer' => 'Asesor disponible, puedes escribir directamente +51905590656'
         ),
         array(
             'question' => 'Sobre Escrituras Públicas o relacionados',
-            'answer' => "Contamos con los siguientes servicios especializados: 📄\n\n1. COMPRAVENTA DE INMUEBLES\n2. ANTICIPO DE LEGÍTIMA DE INMUEBLE\n3. PODERES POR ESCRITURA PÚBLICA\n4. DONACIÓN DE INMUEBLE\n5. SUSTITUCIÓN DE REGIMEN PATRIMONIAL\n6. CONSTITUCIÓN DE SOCIEDADES\n7. OTROS\n\n¿Cuál de estos te interesa conocer más?"
+            'answer' => "Contamos con los siguientes servicios especializados: COMPRAVENTA DE INMUEBLES, ANTICIPO DE LEGÍTIMA DE INMUEBLE, PODERES POR ESCRITURA PÚBLICA, DONACIÓN DE INMUEBLE, SUSTITUCIÓN DE REGIMEN PATRIMONIAL, CONSTITUCIÓN DE SOCIEDADES, OTROS. ¿Cuál de estos te interesa conocer más?"
         ),
         array(
             'question' => 'COMPRAVENTA DE INMUEBLES',
-            'answer' => "🏠 COMPRAVENTA DE INMUEBLES\n\nLos requisitos referenciales son:\n\n1. Minuta firmada por las partes y abogado.\n2. Fotocopia de DNI con última votación.\n3. Copia literal vigente de la partida registral.\n4. Vigencia de poder (si aplica).\n5. Constancia de pago de impuesto a la renta y alcabala.\n6. Pago del Impuesto Predial y Constancia de No Adeudo.\n7. Medio de pago bancario (vouchers, cheques).\n\n¿Deseas hablar con un asesor para más detalles?"
+            'answer' => "🏠 COMPRAVENTA DE INMUEBLES: Los requisitos referenciales son: Minuta firmada por las partes y abogado, Fotocopia de DNI con última votación, Copia literal vigente de la partida registral, Vigencia de poder (si aplica), Constancia de pago de impuesto a la renta y alcabala, Pago del Impuesto Predial y Constancia de No Adeudo, Medio de pago bancario (vouchers, cheques). ¿Deseas hablar con un asesor para más detalles?"
         ),
         array(
             'question' => 'ANTICIPO DE LEGÍTIMA DE INMUEBLE',
-            'answer' => "🎁 ANTICIPO DE LEGÍTIMA\n\nRequisitos referenciales:\n\n1. Minuta firmada por las partes y abogado.\n2. Fotocopia de DNI.\n3. Copia literal vigente.\n4. Vigencia de poder (si aplica).\n5. Impuesto Predial y Constancia de No Adeudo.\n6. Partidas de nacimiento originales de los hijos.\n\n¿Te gustaría hablar con un asesor?"
+            'answer' => "🎁 ANTICIPO DE LEGÍTIMA: Requisitos referenciales: Minuta firmada por las partes y abogado, Fotocopia de DNI, Copia literal vigente, Vigencia de poder (si aplica), Impuesto Predial y Constancia de No Adeudo, Partidas de nacimiento originales de los hijos. ¿Te gustaría hablar con un asesor?"
         ),
         array(
             'question' => 'PODERES POR ESCRITURA PÚBLICA',
-            'answer' => "⚖️ PODERES POR ESCRITURA PÚBLICA\n\nRequisitos básicos:\n\n1. Minuta suscrita por otorgantes y abogado.\n2. Fotocopia de DNI de los contratantes.\n3. Fotocopia del DNI del apoderado.\n\n¿Quieres hablar con un asesor?"
+            'answer' => "⚖️ PODERES POR ESCRITURA PÚBLICA: Requisitos básicos: Minuta suscrita por otorgantes y abogado, Fotocopia de DNI de los contratantes, Fotocopia del DNI del apoderado. ¿Quieres hablar con un asesor?"
         ),
         array(
             'question' => 'DONACIÓN DE INMUEBLE',
-            'answer' => "🤝 DONACIÓN DE INMUEBLE\n\nRequisitos principales:\n\n1. Minuta firmada por las partes y abogado.\n2. Fotocopia de DNI.\n3. Copia literal vigente.\n4. Vigencia de poder (si aplica).\n5. Impuesto de Alcabala (si aplica).\n6. Impuesto Predial y Constancia de No Adeudo.\n\n¿Necesitas hablar con un asesor?"
+            'answer' => "🤝 DONACIÓN DE INMUEBLE: Requisitos principales: Minuta firmada por las partes y abogado, Fotocopia de DNI, Copia literal vigente, Vigencia de poder (si aplica), Impuesto de Alcabala (si aplica), Impuesto Predial y Constancia de No Adeudo. ¿Necesitas hablar con un asesor?"
         ),
         array(
             'question' => 'SUSTITUCIÓN DE REGIMEN PATRIMONIAL',
-            'answer' => "💍 SUSTITUCIÓN DE REGIMEN PATRIMONIAL\n\nRequisitos:\n\n1. Minuta firmada por cónyuges y abogado.\n2. Fotocopia de DNI.\n3. Partida de matrimonio actualizada (RENIEC).\n4. Documentación de bienes muebles/inmuebles.\n\n¿Deseas hablar con un asesor?"
+            'answer' => "💍 SUSTITUCIÓN DE REGIMEN PATRIMONIAL: Requisitos: Minuta firmada por cónyuges y abogado, Fotocopia de DNI, Partida de matrimonio actualizada (RENIEC), Documentación de bienes muebles/inmuebles. ¿Deseas hablar con un asesor?"
         ),
         array(
             'question' => 'CONSTITUCIÓN DE SOCIEDADES',
-            'answer' => "🏢 CONSTITUCIÓN DE SOCIEDADES\n\nRequisitos para tu empresa:\n\n1. Minuta de constitución firmada por socios y abogado.\n2. Reserva de nombre vigente (SUNARP).\n3. Fotocopia de DNI de los socios.\n4. Declaración jurada de aporte de bienes.\n5. Voucher de depósito de capital social.\n\n¿Quieres hablar con un asesor?"
+            'answer' => "🏢 CONSTITUCIÓN DE SOCIEDADES: Requisitos para tu empresa: Minuta de constitución firmada por socios y abogado, Reserva de nombre vigente (SUNARP), Fotocopia de DNI de los socios, Declaración jurada de aporte de bienes, Voucher de depósito de capital social. ¿Quieres hablar con un asesor?"
         ),
         array(
             'question' => 'OTROS',
-            'answer' => "Para otros trámites notariales específicos, estaré encantado de conectarte con un asesor. 📞\n\n¿Deseas hablar con un asesor ahora?"
+            'answer' => "Para otros trámites notariales específicos, estaré encantado de conectarte con un asesor. ¿Deseas hablar con un asesor ahora?"
         ),
         array(
             'question' => 'Quieres hablar con un asesor',
@@ -124,15 +128,15 @@ function notaria_chatbot_activate() {
         ),
         array(
             'question' => 'Certificaciones',
-            'answer' => "📑 CERTIFICACIONES\n\nBrindamos los siguientes servicios:\n\n- Certificación de firmas\n- Apertura y cierre de libros (Persona Jurídica/Natural)\n- Certificación de copias\n- Autorización de viaje\n- Otros\n\n¿Te gustaría hablar con un asesor?"
+            'answer' => "📑 CERTIFICACIONES: Brindamos los siguientes servicios: Certificación de firmas, Apertura y cierre de libros (Persona Jurídica/Natural), Certificación de copias, Autorización de viaje, Otros. ¿Te gustaría hablar con un asesor?"
         ),
         array(
             'question' => 'ASUNTOS NO CONTENCIOSOS',
-            'answer' => "📝 ASUNTOS NO CONTENCIOSOS\n\nPodemos ayudarte con:\n\n- Rectificación de partidas\n- Sucesión intestada\n- Separación convencional y divorcio ulterior\n- Prescripción adquisitiva\n\n¿Deseas hablar con un asesor?"
+            'answer' => "📝 ASUNTOS NO CONTENCIOSOS: Podemos ayudarte con: Rectificación de partidas, Sucesión intestada, Separación convencional y divorcio ulterior, Prescripción adquisitiva. ¿Deseas hablar con un asesor?"
         ),
         array(
             'question' => 'TRANSFERENCIAS VEHICULARES',
-            'answer' => "🚗 TRANSFERENCIAS VEHICULARES\n\nRealizamos transferencias vehiculares y otros trámites relacionados.\n\n¿Quieres hablar con un asesor?"
+            'answer' => "🚗 TRANSFERENCIAS VEHICULARES: Realizamos transferencias vehiculares y otros trámites relacionados. ¿Quieres hablar con un asesor?"
         )
     );
 
