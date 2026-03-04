@@ -71,6 +71,10 @@ function notaria_chatbot_activate() {
 
     $kb_data = array(
         array(
+            'question' => 'Hola',
+            'answer' => 'Hola, ¿en qué puedo ayudarte hoy? 👋'
+        ),
+        array(
             'question' => 'Sobre Escrituras Públicas o relacionados',
             'answer' => "Contamos con los siguientes servicios especializados: 📄\n\n1. COMPRAVENTA DE INMUEBLES\n2. ANTICIPO DE LEGÍTIMA DE INMUEBLE\n3. PODERES POR ESCRITURA PÚBLICA\n4. DONACIÓN DE INMUEBLE\n5. SUSTITUCIÓN DE REGIMEN PATRIMONIAL\n6. CONSTITUCIÓN DE SOCIEDADES\n7. OTROS\n\n¿Cuál de estos te interesa conocer más?"
         ),
