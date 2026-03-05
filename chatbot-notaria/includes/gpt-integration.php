@@ -44,7 +44,8 @@ function notaria_chatbot_get_gpt_response($message) {
         return "Error de OpenAI: " . $data['error']['message'];
     }
 
-    return $data['choices'][0]['message']['content'];
+    $gpt_response = $data['choices'][0]['message']['content'];
+    return strip_tags($gpt_response);
 }
 
 function notaria_chatbot_find_kb_response($message) {

@@ -33,10 +33,21 @@ function notaria_chatbot_admin_page() {
         global $wpdb;
         $wpdb->insert($wpdb->prefix . 'notaria_kb', array(
             'question' => sanitize_textarea_field($_POST['question']),
-            'answer' => sanitize_textarea_field($_POST['answer']),
+            'answer' => strip_tags(sanitize_textarea_field($_POST['answer'])),
             'use_gpt' => isset($_POST['use_gpt']) ? 1 : 0
         ));
         echo '<div class="updated"><p>Pregunta añadida.</p></div>';
+    }
+
+    if (isset($_POST['notaria_edit_kb'])) {
+        check_admin_referer('notaria_chatbot_edit_kb');
+        global $wpdb;
+        $wpdb->update($wpdb->prefix . 'notaria_kb', array(
+            'question' => sanitize_textarea_field($_POST['question']),
+            'answer' => strip_tags(sanitize_textarea_field($_POST['answer'])),
+            'use_gpt' => isset($_POST['use_gpt']) ? 1 : 0
+        ), array('id' => intval($_POST['kb_id'])));
+        echo '<div class="updated"><p>Pregunta actualizada.</p></div>';
     }
 
     if (isset($_GET['delete_kb'])) {
@@ -172,6 +183,7 @@ function notaria_chatbot_render_kb_config() {
                 <td><?php echo esc_html($item->answer); ?></td>
                 <td><?php echo $item->use_gpt ? 'Sí' : 'No'; ?></td>
                 <td>
+                    <a href="?page=notaria-chatbot&tab=chatbot&edit_kb=<?php echo $item->id; ?>" class="button">Editar</a>
                     <a href="<?php echo wp_nonce_url('?page=notaria-chatbot&tab=chatbot&delete_kb=' . $item->id, 'notaria_delete_kb_' . $item->id); ?>" class="button" onclick="return confirm('¿Seguro?')">Eliminar</a>
                 </td>
             </tr>
@@ -182,13 +194,30 @@ function notaria_chatbot_render_kb_config() {
         </tbody>
     </table>
 
-    <h4>Añadir Nueva Pregunta</h4>
-    <form method="post" action="">
-        <?php wp_nonce_field('notaria_chatbot_kb'); ?>
-        <p><label>Pregunta:</label><br><textarea name="question" style="width: 100%;" required></textarea></p>
-        <p><label>Respuesta:</label><br><textarea name="answer" style="width: 100%;" required></textarea></p>
-        <p><label><input type="checkbox" name="use_gpt"> ¿Permitir que GPT mejore esta respuesta?</label></p>
-        <button type="submit" name="notaria_add_kb" class="button-primary">Añadir Pregunta</button>
-    </form>
+    <?php if (isset($_GET['edit_kb'])):
+        $edit_id = intval($_GET['edit_kb']);
+        $edit_item = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$wpdb->prefix}notaria_kb WHERE id = %d", $edit_id));
+        if ($edit_item):
+    ?>
+        <h4>Editar Pregunta</h4>
+        <form method="post" action="?page=notaria-chatbot&tab=chatbot">
+            <?php wp_nonce_field('notaria_chatbot_edit_kb'); ?>
+            <input type="hidden" name="kb_id" value="<?php echo $edit_item->id; ?>">
+            <p><label>Pregunta:</label><br><textarea name="question" style="width: 100%;" required><?php echo esc_textarea($edit_item->question); ?></textarea></p>
+            <p><label>Respuesta:</label><br><textarea name="answer" style="width: 100%;" required><?php echo esc_textarea($edit_item->answer); ?></textarea></p>
+            <p><label><input type="checkbox" name="use_gpt" <?php checked($edit_item->use_gpt, 1); ?>> ¿Permitir que GPT mejore esta respuesta?</label></p>
+            <button type="submit" name="notaria_edit_kb" class="button-primary">Actualizar Pregunta</button>
+            <a href="?page=notaria-chatbot&tab=chatbot" class="button">Cancelar</a>
+        </form>
+    <?php endif; else: ?>
+        <h4>Añadir Nueva Pregunta</h4>
+        <form method="post" action="">
+            <?php wp_nonce_field('notaria_chatbot_kb'); ?>
+            <p><label>Pregunta:</label><br><textarea name="question" style="width: 100%;" required></textarea></p>
+            <p><label>Respuesta:</label><br><textarea name="answer" style="width: 100%;" required></textarea></p>
+            <p><label><input type="checkbox" name="use_gpt"> ¿Permitir que GPT mejore esta respuesta?</label></p>
+            <button type="submit" name="notaria_add_kb" class="button-primary">Añadir Pregunta</button>
+        </form>
+    <?php endif; ?>
     <?php
 }
