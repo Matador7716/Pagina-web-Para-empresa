@@ -61,12 +61,12 @@ function notaria_chatbot_admin_page() {
     <div class="wrap">
         <h1>Notaria Huanca - Plataforma de Chatbot</h1>
         <h2 class="nav-tab-wrapper">
-            <a href="?page=notaria-chatbot&tab=conversaciones" class="nav-tab <?php echo $tab == 'conversaciones' ? 'nav-tab-active' : ''; ?>">Iniciar conversaciones</a>
-            <a href="?page=notaria-chatbot&tab=chatbot" class="nav-tab <?php echo $tab == 'chatbot' ? 'nav-tab-active' : ''; ?>">Implementar Chatbots</a>
-            <a href="?page=notaria-chatbot&tab=agentes" class="nav-tab <?php echo $tab == 'agentes' ? 'nav-tab-active' : ''; ?>">Conectar agentes</a>
-            <a href="?page=notaria-chatbot&tab=crm" class="nav-tab <?php echo $tab == 'crm' ? 'nav-tab-active' : ''; ?>">Integrar con tu CRM</a>
-            <a href="?page=notaria-chatbot&tab=masivos" class="nav-tab <?php echo $tab == 'masivos' ? 'nav-tab-active' : ''; ?>">Enviar mensajes Masivos</a>
-            <a href="?page=notaria-chatbot&tab=tienda" class="nav-tab <?php echo $tab == 'tienda' ? 'nav-tab-active' : ''; ?>">Integrar con tu tienda Online</a>
+            <a href="<?php echo admin_url('admin.php?page=notaria-chatbot&tab=conversaciones'); ?>" class="nav-tab <?php echo $tab == 'conversaciones' ? 'nav-tab-active' : ''; ?>">Iniciar conversaciones</a>
+            <a href="<?php echo admin_url('admin.php?page=notaria-chatbot&tab=chatbot'); ?>" class="nav-tab <?php echo $tab == 'chatbot' ? 'nav-tab-active' : ''; ?>">Implementar Chatbots</a>
+            <a href="<?php echo admin_url('admin.php?page=notaria-chatbot&tab=agentes'); ?>" class="nav-tab <?php echo $tab == 'agentes' ? 'nav-tab-active' : ''; ?>">Conectar agentes</a>
+            <a href="<?php echo admin_url('admin.php?page=notaria-chatbot&tab=crm'); ?>" class="nav-tab <?php echo $tab == 'crm' ? 'nav-tab-active' : ''; ?>">Integrar con tu CRM</a>
+            <a href="<?php echo admin_url('admin.php?page=notaria-chatbot&tab=masivos'); ?>" class="nav-tab <?php echo $tab == 'masivos' ? 'nav-tab-active' : ''; ?>">Enviar mensajes Masivos</a>
+            <a href="<?php echo admin_url('admin.php?page=notaria-chatbot&tab=tienda'); ?>" class="nav-tab <?php echo $tab == 'tienda' ? 'nav-tab-active' : ''; ?>">Integrar con tu tienda Online</a>
         </h2>
 
         <div class="tab-content" style="margin-top: 20px; background: #fff; padding: 20px; border: 1px solid #ccc;">
@@ -183,8 +183,8 @@ function notaria_chatbot_render_kb_config() {
                 <td><?php echo esc_html($item->answer); ?></td>
                 <td><?php echo $item->use_gpt ? 'Sí' : 'No'; ?></td>
                 <td>
-                    <a href="?page=notaria-chatbot&tab=chatbot&edit_kb=<?php echo $item->id; ?>" class="button">Editar</a>
-                    <a href="<?php echo wp_nonce_url('?page=notaria-chatbot&tab=chatbot&delete_kb=' . $item->id, 'notaria_delete_kb_' . $item->id); ?>" class="button" onclick="return confirm('¿Seguro?')">Eliminar</a>
+                    <a href="<?php echo admin_url('admin.php?page=notaria-chatbot&tab=chatbot&edit_kb=' . $item->id); ?>" class="button">Editar</a>
+                    <a href="<?php echo wp_nonce_url(admin_url('admin.php?page=notaria-chatbot&tab=chatbot&delete_kb=' . $item->id), 'notaria_delete_kb_' . $item->id); ?>" class="button" onclick="return confirm('¿Seguro?')">Eliminar</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -200,14 +200,14 @@ function notaria_chatbot_render_kb_config() {
         if ($edit_item):
     ?>
         <h4>Editar Pregunta</h4>
-        <form method="post" action="?page=notaria-chatbot&tab=chatbot">
+        <form method="post" action="<?php echo admin_url('admin.php?page=notaria-chatbot&tab=chatbot'); ?>">
             <?php wp_nonce_field('notaria_chatbot_edit_kb'); ?>
             <input type="hidden" name="kb_id" value="<?php echo $edit_item->id; ?>">
             <p><label>Pregunta:</label><br><textarea name="question" style="width: 100%;" required><?php echo esc_textarea($edit_item->question); ?></textarea></p>
             <p><label>Respuesta:</label><br><textarea name="answer" style="width: 100%;" required><?php echo esc_textarea($edit_item->answer); ?></textarea></p>
             <p><label><input type="checkbox" name="use_gpt" <?php checked($edit_item->use_gpt, 1); ?>> ¿Permitir que GPT mejore esta respuesta?</label></p>
             <button type="submit" name="notaria_edit_kb" class="button-primary">Actualizar Pregunta</button>
-            <a href="?page=notaria-chatbot&tab=chatbot" class="button">Cancelar</a>
+            <a href="<?php echo admin_url('admin.php?page=notaria-chatbot&tab=chatbot'); ?>" class="button">Cancelar</a>
         </form>
     <?php endif; else: ?>
         <h4>Añadir Nueva Pregunta</h4>
