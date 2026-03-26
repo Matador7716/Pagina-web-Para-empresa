@@ -18,6 +18,10 @@
             --light-color: #ffffff; /* White */
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--dark-color);
@@ -170,42 +174,42 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto fw-semibold">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">INICIO</a>
+                        <a class="nav-link active" href="inicio.php">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">NOSOTROS</a>
+                        <a class="nav-link" href="nosotros.php">NOSOTROS</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             SERVICIOS
                         </a>
                         <ul class="dropdown-menu border-0 shadow" aria-labelledby="serviciosDropdown">
-                            <li><a class="dropdown-item py-2" href="#">HOSTING + DOMINIO</a></li>
-                            <li><a class="dropdown-item py-2" href="#">MARKETING DIGITAL</a></li>
-                            <li><a class="dropdown-item py-2" href="#">DISEÑO DE LOGO</a></li>
-                            <li><a class="dropdown-item py-2" href="#">SOPORTE TECNICO COMPUTADORAS</a></li>
+                            <li><a class="dropdown-item py-2" href="nosotros.php#hosting">HOSTING + DOMINIO</a></li>
+                            <li><a class="dropdown-item py-2" href="nosotros.php#marketing">MARKETING DIGITAL</a></li>
+                            <li><a class="dropdown-item py-2" href="nosotros.php#logo">DISEÑO DE LOGO</a></li>
+                            <li><a class="dropdown-item py-2" href="nosotros.php#soporte">SOPORTE TECNICO COMPUTADORAS</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">DISEÑO WEB</a>
+                        <a class="nav-link" href="nosotros.php#diseno-web">DISEÑO WEB</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">AULAS VIRTUALES</a>
+                        <a class="nav-link" href="nosotros.php#aulas">AULAS VIRTUALES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">LANDING PAGE</a>
+                        <a class="nav-link" href="nosotros.php#landing">LANDING PAGE</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="seoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             SEO
                         </a>
                         <ul class="dropdown-menu border-0 shadow" aria-labelledby="seoDropdown">
-                            <li><a class="dropdown-item py-2" href="#">SEO PAGINAS WEB</a></li>
-                            <li><a class="dropdown-item py-2" href="#">SEO TIENDAS VIRTUALES</a></li>
+                            <li><a class="dropdown-item py-2" href="nosotros.php#seo-web">SEO PAGINAS WEB</a></li>
+                            <li><a class="dropdown-item py-2" href="nosotros.php#seo-tienda">SEO TIENDAS VIRTUALES</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACTO</a>
+                        <a class="nav-link" href="#contacto">CONTACTO</a>
                     </li>
                 </ul>
             </div>
@@ -354,6 +358,26 @@
                         <p class="small">Convierte visitas en clientes con páginas enfocadas en ventas, diseño atractivo y persuasivo, ideal para campañas publicitarias.</p>
                     </div>
                 </div>
+                <!-- Service 9 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card p-4">
+                        <div class="icon-box mb-3 text-info">
+                            <i class="bi bi-mortarboard-fill fs-1"></i>
+                        </div>
+                        <h4 class="fw-bold">AULAS VIRTUALES</h4>
+                        <p class="text-muted small">Implementamos plataformas educativas modernas para que puedas impartir cursos online con facilidad y gestión de alumnos.</p>
+                    </div>
+                </div>
+                <!-- Service 10 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card p-4">
+                        <div class="icon-box mb-3 text-secondary">
+                            <i class="bi bi-search fs-1"></i>
+                        </div>
+                        <h4 class="fw-bold">SEO</h4>
+                        <p class="text-muted small">Posicionamiento web y de tiendas virtuales para que tu negocio aparezca en los primeros resultados de búsqueda.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -419,6 +443,35 @@
             <p class="mb-0">&copy; <?php echo date('Y'); ?> Todo Web Cusco. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/51913952677" class="btn-whatsapp" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <style>
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .btn-whatsapp:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+    </style>
 
     <!-- Bootstrap 5 Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
