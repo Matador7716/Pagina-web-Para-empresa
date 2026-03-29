@@ -1,0 +1,312 @@
+[Fri Feb 13 03:18:26 2026] PHP 8.3.6 Development Server (http://0.0.0.0:8000) started
+[Fri Feb 13 03:19:05 2026] 127.0.0.1:43334 Accepted
+[Fri Feb 13 03:19:05 2026] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' in /app/chatbootweb/conexion.php:7
+Stack trace:
+#0 /app/chatbootweb/conexion.php(7): mysqli_connect()
+#1 /app/chatbootweb/index.php(7): require_once('...')
+#2 {main}
+  thrown in /app/chatbootweb/conexion.php on line 7
+[Fri Feb 13 03:19:05 2026] 127.0.0.1:43334 [500]: GET /index.php - Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' in /app/chatbootweb/conexion.php:7
+Stack trace:
+#0 /app/chatbootweb/conexion.php(7): mysqli_connect()
+#1 /app/chatbootweb/index.php(7): require_once('...')
+#2 {main}
+  thrown in /app/chatbootweb/conexion.php on line 7
+[Fri Feb 13 03:19:05 2026] 127.0.0.1:43334 Closing
+[Fri Feb 13 03:19:53 2026] 127.0.0.1:48516 Accepted
+[Fri Feb 13 03:19:53 2026] 127.0.0.1:48516 [200]: GET /index.php
+[Fri Feb 13 03:19:53 2026] 127.0.0.1:48516 Closing
+[Fri Feb 13 03:19:54 2026] 127.0.0.1:48526 Accepted
+[Fri Feb 13 03:19:54 2026] 127.0.0.1:48540 Accepted
+[Fri Feb 13 03:19:54 2026] 127.0.0.1:48526 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:19:54 2026] 127.0.0.1:48526 Closing
+[Fri Feb 13 03:19:54 2026] 127.0.0.1:48540 [404]: GET /assets/img/default_logo.png - No such file or directory
+[Fri Feb 13 03:19:54 2026] 127.0.0.1:48540 Closing
+[Fri Feb 13 03:20:41 2026] 127.0.0.1:54242 Accepted
+[Fri Feb 13 03:20:41 2026] 127.0.0.1:54242 [200]: GET /index.php
+[Fri Feb 13 03:20:41 2026] 127.0.0.1:54242 Closing
+[Fri Feb 13 03:20:41 2026] 127.0.0.1:54258 Accepted
+[Fri Feb 13 03:20:41 2026] 127.0.0.1:54266 Accepted
+[Fri Feb 13 03:20:41 2026] 127.0.0.1:54258 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:20:41 2026] 127.0.0.1:54266 [404]: GET /assets/img/default_logo.png - No such file or directory
+[Fri Feb 13 03:20:41 2026] 127.0.0.1:54266 Closing
+[Fri Feb 13 03:20:41 2026] 127.0.0.1:54258 Closing
+[Fri Feb 13 03:21:16 2026] 127.0.0.1:34896 Accepted
+[Fri Feb 13 03:21:16 2026] 127.0.0.1:34896 [200]: GET /index.php
+[Fri Feb 13 03:21:16 2026] 127.0.0.1:34896 Closing
+[Fri Feb 13 03:21:28 2026] 127.0.0.1:60822 Accepted
+[Fri Feb 13 03:21:28 2026] 127.0.0.1:60822 [200]: GET /index.php
+[Fri Feb 13 03:21:28 2026] 127.0.0.1:60822 Closing
+[Fri Feb 13 03:21:28 2026] 127.0.0.1:60830 Accepted
+[Fri Feb 13 03:21:28 2026] 127.0.0.1:60836 Accepted
+[Fri Feb 13 03:21:28 2026] 127.0.0.1:60830 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:21:28 2026] 127.0.0.1:60836 [404]: GET /assets/img/default_logo.png - No such file or directory
+[Fri Feb 13 03:21:28 2026] 127.0.0.1:60830 Closing
+[Fri Feb 13 03:21:28 2026] 127.0.0.1:60836 Closing
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60842 Accepted
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60842 [302]: POST /index.php
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60842 Closing
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60848 Accepted
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60848 [200]: GET /src/dashboard.php
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60848 Closing
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60862 Accepted
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60866 Accepted
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60878 Accepted
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60866 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60866 Closing
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60862 [404]: GET /assets/img/default_user.png - No such file or directory
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60862 Closing
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60878 [404]: GET /assets/img/default_logo.png - No such file or directory
+[Fri Feb 13 03:21:29 2026] 127.0.0.1:60878 Closing
+[Fri Feb 13 03:22:20 2026] 127.0.0.1:59928 Accepted
+[Fri Feb 13 03:22:20 2026] 127.0.0.1:59928 [200]: GET /index.php
+[Fri Feb 13 03:22:20 2026] 127.0.0.1:59928 Closing
+[Fri Feb 13 03:22:20 2026] 127.0.0.1:59944 Accepted
+[Fri Feb 13 03:22:20 2026] 127.0.0.1:59960 Accepted
+[Fri Feb 13 03:22:20 2026] 127.0.0.1:59944 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:22:20 2026] 127.0.0.1:59960 [404]: GET /assets/img/default_logo.png - No such file or directory
+[Fri Feb 13 03:22:20 2026] 127.0.0.1:59960 Closing
+[Fri Feb 13 03:22:20 2026] 127.0.0.1:59944 Closing
+[Fri Feb 13 03:22:20 2026] 127.0.0.1:59962 Accepted
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59962 [302]: POST /index.php
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59962 Closing
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59976 Accepted
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59976 [200]: GET /src/dashboard.php
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59976 Closing
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59984 Accepted
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59992 Accepted
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60002 Accepted
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59992 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59984 [404]: GET /assets/img/default_user.png - No such file or directory
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59984 Closing
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:59992 Closing
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60002 [404]: GET /assets/img/default_logo.png - No such file or directory
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60002 Closing
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60004 Accepted
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60004 [200]: GET /src/simulador.php
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60004 Closing
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60006 Accepted
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60008 Accepted
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60012 Accepted
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60006 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60008 [404]: GET /assets/img/default_logo.png - No such file or directory
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60012 [404]: GET /assets/img/default_user.png - No such file or directory
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60008 Closing
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60012 Closing
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:60006 Closing
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:53182 Accepted
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:53182 [200]: POST /src/ajax/bot_logic.php
+[Fri Feb 13 03:22:21 2026] 127.0.0.1:53182 Closing
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53196 Accepted
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53196 [200]: GET /src/configuracion.php
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53196 Closing
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53198 Accepted
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53214 Accepted
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53218 Accepted
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53198 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53214 [404]: GET /assets/img/default_logo.png - No such file or directory
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53218 [404]: GET /assets/img/default_user.png - No such file or directory
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53214 Closing
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53218 Closing
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53198 Closing
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53232 Accepted
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53232 [404]: GET /assets/img/default_logo.png - No such file or directory
+[Fri Feb 13 03:22:23 2026] 127.0.0.1:53232 Closing
+[Fri Feb 13 03:24:20 2026] 127.0.0.1:33144 Accepted
+[Fri Feb 13 03:24:20 2026] 127.0.0.1:33144 [200]: GET /index.php
+[Fri Feb 13 03:24:20 2026] 127.0.0.1:33144 Closing
+[Fri Feb 13 03:24:20 2026] 127.0.0.1:33146 Accepted
+[Fri Feb 13 03:24:20 2026] 127.0.0.1:33150 Accepted
+[Fri Feb 13 03:24:20 2026] 127.0.0.1:33146 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:24:20 2026] 127.0.0.1:33146 Closing
+[Fri Feb 13 03:24:20 2026] 127.0.0.1:33150 [200]: GET /assets/img/default_logo.png
+[Fri Feb 13 03:24:20 2026] 127.0.0.1:33150 Closing
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33166 Accepted
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33166 [302]: POST /index.php
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33166 Closing
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33170 Accepted
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33170 [200]: GET /src/dashboard.php
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33170 Closing
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33176 Accepted
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33180 Accepted
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33176 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33180 [200]: GET /assets/img/default_logo.png
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33176 Closing
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33180 Closing
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33194 Accepted
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33194 [200]: GET /assets/img/default_user.png
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:33194 Closing
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40200 Accepted
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40200 [200]: GET /src/simulador.php
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40200 Closing
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40202 Accepted
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40206 Accepted
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40212 Accepted
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40202 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40206 [200]: GET /assets/img/default_logo.png
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40212 [200]: GET /assets/img/default_user.png
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40202 Closing
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40206 Closing
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40212 Closing
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40216 Accepted
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40216 [200]: POST /src/ajax/bot_logic.php
+[Fri Feb 13 03:24:21 2026] 127.0.0.1:40216 Closing
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40222 Accepted
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40222 [200]: GET /src/configuracion.php
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40222 Closing
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40230 Accepted
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40242 Accepted
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40258 Accepted
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40230 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40230 Closing
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40242 [200]: GET /assets/img/default_logo.png
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40242 Closing
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40258 [200]: GET /assets/img/default_user.png
+[Fri Feb 13 03:24:24 2026] 127.0.0.1:40258 Closing
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33664 Accepted
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33664 [200]: GET /index.php
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33664 Closing
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33666 Accepted
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33680 Accepted
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33666 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33680 [200]: GET /assets/img/default_logo.png
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33666 Closing
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33680 Closing
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33690 Accepted
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33690 [302]: POST /index.php
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33690 Closing
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33706 Accepted
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33706 [200]: GET /src/dashboard.php
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33706 Closing
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33712 Accepted
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33716 Accepted
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33712 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33716 [200]: GET /assets/img/default_logo.png
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33712 Closing
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33716 Closing
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33720 Accepted
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33720 [200]: GET /assets/img/default_user.png
+[Fri Feb 13 03:44:22 2026] 127.0.0.1:33720 Closing
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33724 Accepted
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33724 [200]: GET /src/simulador.php
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33724 Closing
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33738 Accepted
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33750 Accepted
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33766 Accepted
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33738 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33750 [200]: GET /assets/img/default_logo.png
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33766 [200]: GET /assets/img/default_user.png
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33738 Closing
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33750 Closing
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33766 Closing
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33776 Accepted
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33776 [200]: POST /src/ajax/bot_logic.php
+[Fri Feb 13 03:44:23 2026] 127.0.0.1:33776 Closing
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37378 Accepted
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37378 [200]: GET /src/configuracion.php
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37378 Closing
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37392 Accepted
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37404 Accepted
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37414 Accepted
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37392 [200]: GET /assets/css/style.css
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37404 [200]: GET /assets/img/default_logo.png
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37392 Closing
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37404 Closing
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37414 [200]: GET /assets/img/default_user.png
+[Fri Feb 13 03:44:25 2026] 127.0.0.1:37414 Closing
+[Mon Feb 16 01:16:03 2026] 127.0.0.1:33622 Accepted
+[Mon Feb 16 01:16:03 2026] 127.0.0.1:33622 [200]: GET /index.php
+[Mon Feb 16 01:16:03 2026] 127.0.0.1:33622 Closing
+[Mon Feb 16 01:16:03 2026] 127.0.0.1:33634 Accepted
+[Mon Feb 16 01:16:03 2026] 127.0.0.1:33644 Accepted
+[Mon Feb 16 01:16:03 2026] 127.0.0.1:33634 [200]: GET /assets/css/style.css
+[Mon Feb 16 01:16:03 2026] 127.0.0.1:33644 [200]: GET /assets/img/default_logo.png
+[Mon Feb 16 01:16:03 2026] 127.0.0.1:33634 Closing
+[Mon Feb 16 01:16:03 2026] 127.0.0.1:33644 Closing
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33660 Accepted
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33660 [302]: POST /index.php
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33660 Closing
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33666 Accepted
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33666 [200]: GET /src/dashboard.php
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33666 Closing
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33680 Accepted
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33696 Accepted
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33680 [200]: GET /assets/css/style.css
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33680 Closing
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33696 [200]: GET /assets/img/default_logo.png
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33696 Closing
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33708 Accepted
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33708 [200]: GET /assets/img/default_user.png
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33708 Closing
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33720 Accepted
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33720 [200]: GET /src/generador_links.php
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33720 Closing
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33724 Accepted
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33734 Accepted
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33746 Accepted
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33724 [200]: GET /assets/css/style.css
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33734 [200]: GET /assets/img/default_logo.png
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33724 Closing
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33746 [200]: GET /assets/img/default_user.png
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33734 Closing
+[Mon Feb 16 01:16:04 2026] 127.0.0.1:33746 Closing
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33752 Accepted
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33752 [200]: GET /src/widget.php
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33752 Closing
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33764 Accepted
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33770 Accepted
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33772 Accepted
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33764 [200]: GET /assets/css/style.css
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33770 [200]: GET /assets/img/default_logo.png
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33772 [200]: GET /assets/img/default_user.png
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33764 Closing
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33770 Closing
+[Mon Feb 16 01:16:05 2026] 127.0.0.1:33772 Closing
+[Mon Feb 16 02:12:12 2026] 127.0.0.1:52096 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52096 [200]: GET /index.php
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52096 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52110 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52126 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52110 [200]: GET /assets/css/style.css
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52126 [200]: GET /assets/img/default_logo.png
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52110 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52126 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52128 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52128 [302]: POST /index.php
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52128 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52144 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52144 [200]: GET /src/dashboard.php
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52144 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52146 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52156 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52146 [200]: GET /assets/css/style.css
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52156 [200]: GET /assets/img/default_logo.png
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52146 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52156 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52172 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52172 [200]: GET /assets/img/default_user.png
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52172 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52186 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52186 [200]: GET /src/generador_links.php
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52186 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52202 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52202 [200]: GET /assets/css/style.css
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52202 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52206 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52222 Accepted
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52206 [200]: GET /assets/img/default_logo.png
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52222 [200]: GET /assets/img/default_user.png
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52206 Closing
+[Mon Feb 16 02:12:13 2026] 127.0.0.1:52222 Closing
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52234 Accepted
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52234 [200]: GET /src/widget.php
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52234 Closing
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52250 Accepted
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52262 Accepted
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52276 Accepted
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52250 [200]: GET /assets/css/style.css
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52262 [200]: GET /assets/img/default_logo.png
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52276 [200]: GET /assets/img/default_user.png
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52250 Closing
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52262 Closing
+[Mon Feb 16 02:12:14 2026] 127.0.0.1:52276 Closing
