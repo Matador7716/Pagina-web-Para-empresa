@@ -9,15 +9,24 @@ class Calculator {
         this.currentOperand = '0';
         this.previousOperand = '';
         this.operation = undefined;
+        this.shouldResetScreen = false;
     }
 
     delete() {
+        if (this.currentOperand === 'Error' || this.currentOperand === 'Infinity') {
+            this.clear();
+            return;
+        }
         if (this.currentOperand === '0') return;
         this.currentOperand = this.currentOperand.toString().slice(0, -1);
         if (this.currentOperand === '') this.currentOperand = '0';
     }
 
     appendNumber(number) {
+        if (this.shouldResetScreen || this.currentOperand === 'Error' || this.currentOperand === 'Infinity') {
+            this.currentOperand = '';
+            this.shouldResetScreen = false;
+        }
         if (number === '.' && this.currentOperand.includes('.')) return;
         if (this.currentOperand === '0' && number !== '.') {
             this.currentOperand = number.toString();
@@ -27,13 +36,18 @@ class Calculator {
     }
 
     chooseOperation(operation) {
-        if (this.currentOperand === '') return;
+        if (this.currentOperand === 'Error' || this.currentOperand === 'Infinity') return;
+        if (this.currentOperand === '' && this.previousOperand !== '') {
+            this.operation = operation;
+            return;
+        }
         if (this.previousOperand !== '') {
             this.compute();
         }
         this.operation = operation;
         this.previousOperand = this.currentOperand;
         this.currentOperand = '';
+        this.shouldResetScreen = false;
     }
 
     compute() {
@@ -52,6 +66,12 @@ class Calculator {
                 computation = prev * current;
                 break;
             case '÷':
+                if (current === 0) {
+                    this.currentOperand = 'Error';
+                    this.operation = undefined;
+                    this.previousOperand = '';
+                    return;
+                }
                 computation = prev / current;
                 break;
             default:
@@ -60,11 +80,14 @@ class Calculator {
         this.currentOperand = computation.toString();
         this.operation = undefined;
         this.previousOperand = '';
+        this.shouldResetScreen = true;
     }
 
     scientificOperation(action) {
+        if (this.currentOperand === 'Error' || this.currentOperand === 'Infinity') return;
         let computation;
         const current = parseFloat(this.currentOperand);
+
         if (isNaN(current) && action !== 'pi') return;
 
         switch (action) {
@@ -78,13 +101,16 @@ class Calculator {
                 computation = Math.tan(current * Math.PI / 180);
                 break;
             case 'log':
-                computation = Math.log10(current);
+                if (current <= 0) computation = NaN;
+                else computation = Math.log10(current);
                 break;
             case 'ln':
-                computation = Math.log(current);
+                if (current <= 0) computation = NaN;
+                else computation = Math.log(current);
                 break;
             case 'sqrt':
-                computation = Math.sqrt(current);
+                if (current < 0) computation = NaN;
+                else computation = Math.sqrt(current);
                 break;
             case 'pow':
                 computation = Math.pow(current, 2);
@@ -96,16 +122,24 @@ class Calculator {
                 computation = Math.exp(current);
                 break;
             case 'factorial':
-                computation = this.factorial(current);
+                if (current < 0 || !Number.isInteger(current)) computation = NaN;
+                else computation = this.factorial(current);
                 break;
             default:
                 return;
         }
-        this.currentOperand = computation.toString();
+
+        if (isNaN(computation)) {
+            this.currentOperand = 'Error';
+        } else if (!isFinite(computation)) {
+            this.currentOperand = 'Infinity';
+        } else {
+            this.currentOperand = computation.toString();
+        }
+        this.shouldResetScreen = true;
     }
 
     factorial(n) {
-        if (n < 0) return NaN;
         if (n === 0) return 1;
         let res = 1;
         for (let i = 2; i <= n; i++) res *= i;
@@ -113,15 +147,21 @@ class Calculator {
     }
 
     getDisplayNumber(number) {
+        if (number === 'Error') return 'Error';
+        if (number === 'Infinity') return 'Error'; // Show Error for Infinity for simplicity
+
         const stringNumber = number.toString();
-        const integerDigits = parseFloat(stringNumber.split('.')[0]);
-        const decimalDigits = stringNumber.split('.')[1];
+        const parts = stringNumber.split('.');
+        const integerDigits = parseFloat(parts[0]);
+        const decimalDigits = parts[1];
+
         let integerDisplay;
         if (isNaN(integerDigits)) {
-            integerDisplay = '';
+            integerDisplay = parts[0] === '-' ? '-' : '';
         } else {
             integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 });
         }
+
         if (decimalDigits != null) {
             return `${integerDisplay}.${decimalDigits}`;
         } else {

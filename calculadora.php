@@ -28,26 +28,30 @@
             </div>
 
             <div class="buttons">
-                <!-- Scientific Buttons (Hidden in basic mode) -->
+                <!-- Scientific Buttons (First rows when active) -->
                 <button class="scientific-btn" data-action="sin">sin</button>
                 <button class="scientific-btn" data-action="cos">cos</button>
                 <button class="scientific-btn" data-action="tan">tan</button>
+                <button class="scientific-btn" data-action="pi">π</button>
+
                 <button class="scientific-btn" data-action="log">log</button>
                 <button class="scientific-btn" data-action="ln">ln</button>
                 <button class="scientific-btn" data-action="sqrt">√</button>
                 <button class="scientific-btn" data-action="pow">x²</button>
-                <button class="scientific-btn" data-action="pi">π</button>
+
                 <button class="scientific-btn" data-action="exp">exp</button>
                 <button class="scientific-btn" data-action="factorial">n!</button>
+                <button class="scientific-btn placeholder"></button>
+                <button class="scientific-btn placeholder"></button>
 
                 <!-- Basic Buttons -->
                 <button class="btn-clear span-two" data-action="all-clear">AC</button>
                 <button class="btn-delete" data-action="delete">DEL</button>
                 <button class="btn-operator" data-action="divide">÷</button>
 
-                <button data-number>1</button>
-                <button data-number>2</button>
-                <button data-number>3</button>
+                <button data-number>7</button>
+                <button data-number>8</button>
+                <button data-number>9</button>
                 <button class="btn-operator" data-action="multiply">×</button>
 
                 <button data-number>4</button>
@@ -55,9 +59,9 @@
                 <button data-number>6</button>
                 <button class="btn-operator" data-action="subtract">-</button>
 
-                <button data-number>7</button>
-                <button data-number>8</button>
-                <button data-number>9</button>
+                <button data-number>1</button>
+                <button data-number>2</button>
+                <button data-number>3</button>
                 <button class="btn-operator" data-action="add">+</button>
 
                 <button data-number>.</button>
