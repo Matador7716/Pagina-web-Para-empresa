@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div style="background: #333; color: white; padding: 10px; text-align: center;">
+        <a href="calculadora.php" style="color: #6f42c1; font-weight: bold; text-decoration: none;">Ir a la Calculadora "El barrio - Nogales"</a>
+    </div>
     <div class="container">
     <div class="view-toggle-bar">
         <button id="view-toggle-btn">Ver Lista de Registros</button>

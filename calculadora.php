@@ -11,6 +11,9 @@
 <body>
     <div class="calculator-container">
         <header>
+            <div style="text-align: left; margin-bottom: 10px;">
+                <a href="index.php" style="text-decoration: none; color: var(--accent-color); font-weight: bold;">← Volver al Inicio</a>
+            </div>
             <h1>El barrio - Nogales</h1>
             <div class="mode-selector">
                 <button id="btn-basic" class="active">Básica</button>
