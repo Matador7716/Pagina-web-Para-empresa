@@ -7,7 +7,7 @@ $phone_clean = "51948364822";
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
-// Array de tarjetas de tours para renderizar dinámicamente si es necesario o recorrer
+// Array de tarjetas de tours
 $tour_cards = [
     [
         'title' => 'Tours Tradicionales',
@@ -25,7 +25,7 @@ $tour_cards = [
     ],
     [
         'title' => 'Aventura',
-        'desc' => 'Experiencias llenas de adrenalina para los mas valientes.',
+        'desc' => 'Experiencias llenas de adrenalina para los más valientes.',
         'badge' => 'Adrenalina pura',
         'img' => 'https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=800&q=80',
         'link' => '#aventura'
@@ -46,37 +46,43 @@ $tour_cards = [
     ]
 ];
 
-// Pilares de Marca
+// Pilares de Marca con imágenes de alta calidad
 $brand_pillars = [
     [
         'title' => 'Autenticidad',
-        'desc' => 'Experiencias conectadas con la verdadera esencia del Perú.',
-        'icon' => 'bi-compass-fill'
+        'desc' => 'Experiencias conectadas con la verdadera esencia, mística y tradiciones del Perú.',
+        'icon' => 'bi-compass-fill',
+        'img' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=600&q=80'
     ],
     [
         'title' => 'Seguridad',
-        'desc' => 'Planificación responsable y acompañamiento durante el viaje.',
-        'icon' => 'bi-shield-check'
+        'desc' => 'Planificación responsable y acompañamiento profesional constante durante todo tu viaje.',
+        'icon' => 'bi-shield-check',
+        'img' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80'
     ],
     [
         'title' => 'Personalización',
-        'desc' => 'Itinerarios adaptados a los intereses y necesidades de cada viajero.',
-        'icon' => 'bi-sliders'
+        'desc' => 'Itinerarios hechos a la medida diseñados según tus intereses, ritmo y preferencias.',
+        'icon' => 'bi-sliders',
+        'img' => 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80'
     ],
     [
         'title' => 'Confianza',
-        'desc' => 'Atención cercana antes, durante y después de cada experiencia.',
-        'icon' => 'bi-heart-fill'
+        'desc' => 'Atención cálida y personalizada antes, durante y después de cada una de tus experiencias.',
+        'icon' => 'bi-heart-fill',
+        'img' => 'https://images.unsplash.com/photo-1539635273304-0e8723e0f016?auto=format&fit=crop&w=600&q=80'
     ],
     [
         'title' => 'Conexión',
-        'desc' => 'Cultura, historia, naturaleza, gastronomía y comunidades locales.',
-        'icon' => 'bi-people-fill'
+        'desc' => 'Cultura viva, historia milenaria, naturaleza imponente, gastronomía y comunidades locales.',
+        'icon' => 'bi-people-fill',
+        'img' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=600&q=80'
     ],
     [
         'title' => 'Confort',
-        'desc' => 'Servicios pensados para disfrutar cada destino sin preocupaciones.',
-        'icon' => 'bi-stars'
+        'desc' => 'Servicios de alta calidad pensados para disfrutar cada destino con máxima comodidad.',
+        'icon' => 'bi-stars',
+        'img' => 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80'
     ]
 ];
 ?>
@@ -90,7 +96,7 @@ $brand_pillars = [
     <!-- Google Fonts: Plus Jakarta Sans & Playfair Display / Caveat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -106,16 +112,18 @@ $brand_pillars = [
             --color-naranja-glow: rgba(255, 107, 0, 0.35);
             --color-blanco: #FFFFFF;
             --color-azul-oscuro: #0B1B3D;
-            --color-azul-card: #132752;
+            --color-azul-card: #0F234D;
             --color-topbar: #07122A;
-            --color-texto-suave: #CBD5E1;
-            --color-gris-claro: #F8FAFC;
+            --color-texto-oscuro: #1E293B;
+            --color-texto-suave: #64748B;
+            --color-gris-bg: #F8FAFC;
+            --color-gris-border: #E2E8F0;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--color-azul-oscuro);
-            color: var(--color-blanco);
+            background-color: var(--color-blanco);
+            color: var(--color-texto-oscuro);
             overflow-x: hidden;
         }
 
@@ -129,7 +137,7 @@ $brand_pillars = [
         }
 
         .top-bar a {
-            color: var(--color-texto-suave);
+            color: #CBD5E1;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -140,16 +148,16 @@ $brand_pillars = [
 
         /* Sticky Navigation Bar */
         .navbar-custom {
-            background-color: rgba(11, 27, 61, 0.85);
+            background-color: rgba(11, 27, 61, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             transition: all 0.4s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .navbar-custom.scrolled {
             background-color: rgba(7, 18, 42, 0.98);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
         }
@@ -286,11 +294,11 @@ $brand_pillars = [
             top: 50%;
             left: 50%;
             width: 100vw;
-            height: 56.25vw; /* 16:9 ratio */
+            height: 56.25vw;
             min-height: 100vh;
-            min-width: 177.77vh; /* 16:9 ratio */
+            min-width: 177.77vh;
             transform: translate(-50%, -50%) scale(1.2);
-            filter: brightness(0.5) contrast(1.1);
+            filter: brightness(0.55) contrast(1.1);
         }
 
         .hero-overlay {
@@ -301,7 +309,7 @@ $brand_pillars = [
             height: 100%;
             background: linear-gradient(180deg,
                 rgba(7, 18, 42, 0.75) 0%,
-                rgba(11, 27, 61, 0.65) 50%,
+                rgba(11, 27, 61, 0.6) 50%,
                 rgba(11, 27, 61, 0.95) 100%);
             z-index: 2;
         }
@@ -309,19 +317,19 @@ $brand_pillars = [
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 900px;
+            max-width: 920px;
             text-align: center;
             padding: 4rem 1.5rem;
         }
 
         .hero-badge {
             display: inline-block;
-            background-color: rgba(255, 107, 0, 0.2);
+            background-color: rgba(255, 107, 0, 0.25);
             border: 1px solid var(--color-naranja);
             color: #FFB380;
             font-size: 0.9rem;
             font-weight: 700;
-            padding: 0.4rem 1.2rem;
+            padding: 0.45rem 1.3rem;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -330,7 +338,7 @@ $brand_pillars = [
 
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 4.2rem;
             font-weight: 800;
             color: var(--color-blanco);
             line-height: 1.15;
@@ -341,7 +349,7 @@ $brand_pillars = [
         .hero-title span {
             color: var(--color-naranja);
             font-family: 'Caveat', cursive;
-            font-size: 4.8rem;
+            font-size: 5rem;
             display: block;
             margin-top: -0.5rem;
             font-weight: 700;
@@ -349,7 +357,7 @@ $brand_pillars = [
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: var(--color-texto-suave);
+            color: #E2E8F0;
             margin-bottom: 2.5rem;
             line-height: 1.6;
             max-width: 780px;
@@ -380,7 +388,7 @@ $brand_pillars = [
         }
 
         .btn-hero-secondary {
-            background-color: rgba(255, 255, 255, 0.12);
+            background-color: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(8px);
             color: var(--color-blanco);
             font-weight: 700;
@@ -391,7 +399,7 @@ $brand_pillars = [
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
         }
 
@@ -399,14 +407,13 @@ $brand_pillars = [
             background-color: var(--color-blanco);
             color: var(--color-azul-oscuro);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
         }
 
-        /* Tarjetas Creativas Carousel Section */
+        /* Tarjetas Creativas Carousel Section - Fondo Blanco con contraste elegante */
         .cards-section {
-            padding: 5rem 0;
+            padding: 5.5rem 0;
             position: relative;
-            background: linear-gradient(180deg, var(--color-azul-oscuro) 0%, #081530 100%);
+            background-color: var(--color-blanco);
         }
 
         .section-header {
@@ -425,9 +432,9 @@ $brand_pillars = [
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 800;
-            color: var(--color-blanco);
+            color: var(--color-azul-oscuro);
         }
 
         .cards-slider-container {
@@ -447,39 +454,33 @@ $brand_pillars = [
             min-width: 280px;
             max-width: 340px;
             flex: 0 0 calc(20% - 1.2rem);
-            background: var(--color-azul-card);
+            background: var(--color-blanco);
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--color-gris-border);
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
             position: relative;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(11, 27, 61, 0.06);
         }
 
         @media (max-width: 1200px) {
-            .tour-card {
-                flex: 0 0 calc(33.333% - 1rem);
-            }
+            .tour-card { flex: 0 0 calc(33.333% - 1rem); }
         }
 
         @media (max-width: 768px) {
-            .tour-card {
-                flex: 0 0 calc(50% - 0.75rem);
-            }
+            .tour-card { flex: 0 0 calc(50% - 0.75rem); }
         }
 
         @media (max-width: 576px) {
-            .tour-card {
-                flex: 0 0 85%;
-            }
+            .tour-card { flex: 0 0 85%; }
         }
 
         .tour-card:hover {
             transform: translateY(-10px);
             border-color: var(--color-naranja);
-            box-shadow: 0 15px 35px rgba(255, 107, 0, 0.25);
+            box-shadow: 0 20px 35px rgba(255, 107, 0, 0.2);
         }
 
         .card-img-wrapper {
@@ -503,14 +504,14 @@ $brand_pillars = [
             position: absolute;
             top: 15px;
             left: 15px;
-            background: rgba(7, 18, 42, 0.85);
+            background: rgba(11, 27, 61, 0.88);
             backdrop-filter: blur(6px);
-            color: var(--color-naranja);
+            color: var(--color-blanco);
             font-weight: 700;
             font-size: 0.75rem;
             padding: 0.35rem 0.85rem;
             border-radius: 30px;
-            border: 1px solid rgba(255, 107, 0, 0.3);
+            border: 1px solid rgba(255, 107, 0, 0.5);
             text-transform: uppercase;
         }
 
@@ -524,7 +525,7 @@ $brand_pillars = [
         .card-title-custom {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--color-blanco);
+            color: var(--color-azul-oscuro);
             margin-bottom: 0.75rem;
         }
 
@@ -568,15 +569,16 @@ $brand_pillars = [
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background-color: var(--color-azul-card);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: var(--color-blanco);
+            background-color: var(--color-blanco);
+            border: 1px solid var(--color-gris-border);
+            color: var(--color-azul-oscuro);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .btn-slider-nav:hover {
@@ -587,57 +589,29 @@ $brand_pillars = [
             transform: scale(1.05);
         }
 
-        /* Sección Contenido Creativo y Movimiento */
+        /* Sección Concepto de la Agencia con Imágenes Creativas */
         .concept-section {
             padding: 6rem 0;
-            background-color: #07122A;
+            background-color: var(--color-gris-bg);
             position: relative;
-            overflow: hidden;
+            border-top: 1px solid var(--color-gris-border);
+            border-bottom: 1px solid var(--color-gris-border);
         }
 
-        .concept-shape {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255, 107, 0, 0.12) 0%, rgba(11, 27, 61, 0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: pulseShape 8s ease-in-out infinite alternate;
-        }
-
-        @keyframes pulseShape {
-            0% { transform: scale(1) translate(0, 0); }
-            100% { transform: scale(1.3) translate(30px, -20px); }
-        }
-
-        .agency-box {
-            background: rgba(19, 39, 82, 0.6);
-            backdrop-filter: blur(10px);
+        .agency-card-creative {
+            background: var(--color-blanco);
             border-radius: 24px;
             padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            margin-bottom: 5rem;
-            position: relative;
-        }
-
-        .agency-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--color-naranja), #FF8800);
-            border-top-left-radius: 24px;
-            border-bottom-left-radius: 24px;
+            border: 1px solid var(--color-gris-border);
+            box-shadow: 0 15px 40px rgba(11, 27, 61, 0.08);
+            margin-bottom: 4rem;
         }
 
         .agency-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             font-weight: 800;
-            color: var(--color-blanco);
+            color: var(--color-azul-oscuro);
             margin-bottom: 1.5rem;
         }
 
@@ -646,58 +620,128 @@ $brand_pillars = [
         }
 
         .text-lead-custom {
-            font-size: 1.12rem;
-            color: var(--color-texto-suave);
+            font-size: 1.08rem;
+            color: #334155;
             line-height: 1.8;
             margin-bottom: 1.2rem;
         }
 
-        /* Floating / Moving Cards for Brand Pillars */
-        .pillar-card {
-            background: var(--color-azul-card);
+        .img-grid-creative {
+            position: relative;
+        }
+
+        .img-creative-main {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
             border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 30px rgba(11, 27, 61, 0.15);
+        }
+
+        .img-creative-overlay {
+            position: absolute;
+            bottom: -25px;
+            left: -25px;
+            width: 55%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 5px solid var(--color-blanco);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .badge-floating-experience {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--color-naranja);
+            color: var(--color-blanco);
+            padding: 0.75rem 1.25rem;
+            border-radius: 16px;
+            font-weight: 800;
+            box-shadow: 0 8px 20px var(--color-naranja-glow);
+            text-align: center;
+        }
+
+        /* Sección PILARES DE MARCA REDISEÑADA Y SUPER CREATIVA */
+        .pillars-section {
+            padding: 6rem 0;
+            background-color: var(--color-blanco);
+        }
+
+        .pillar-card-creative {
+            background: var(--color-blanco);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--color-gris-border);
+            box-shadow: 0 10px 25px rgba(11, 27, 61, 0.05);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 100%;
+            display: flex;
+            flex-direction: column;
             position: relative;
+        }
+
+        .pillar-card-creative:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-naranja);
+            box-shadow: 0 20px 40px rgba(255, 107, 0, 0.2);
+        }
+
+        .pillar-img-box {
+            position: relative;
+            height: 190px;
             overflow: hidden;
         }
 
-        .pillar-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--color-naranja);
-            box-shadow: 0 15px 35px rgba(255, 107, 0, 0.2);
+        .pillar-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
         }
 
-        .pillar-icon-box {
-            width: 56px;
-            height: 56px;
-            background: rgba(255, 107, 0, 0.12);
-            border-radius: 16px;
+        .pillar-card-creative:hover .pillar-img-box img {
+            transform: scale(1.12);
+        }
+
+        .pillar-icon-badge {
+            position: absolute;
+            bottom: -22px;
+            right: 20px;
+            width: 52px;
+            height: 52px;
+            background: var(--color-naranja);
+            color: var(--color-blanco);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-naranja);
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            box-shadow: 0 6px 18px var(--color-naranja-glow);
+            border: 3px solid var(--color-blanco);
+            transition: transform 0.3s ease;
         }
 
-        .pillar-card:hover .pillar-icon-box {
-            background-color: var(--color-naranja);
-            color: var(--color-blanco);
-            transform: rotate(6deg) scale(1.1);
+        .pillar-card-creative:hover .pillar-icon-badge {
+            transform: rotate(8deg) scale(1.1);
         }
 
-        .pillar-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--color-blanco);
+        .pillar-content {
+            padding: 2rem 1.5rem 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pillar-title-creative {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--color-azul-oscuro);
             margin-bottom: 0.75rem;
         }
 
-        .pillar-desc {
+        .pillar-desc-creative {
             font-size: 0.95rem;
             color: var(--color-texto-suave);
             line-height: 1.6;
@@ -705,19 +749,32 @@ $brand_pillars = [
 
         /* Banner Promocional Creativo */
         .creative-banner {
-            background: linear-gradient(135deg, var(--color-naranja) 0%, #D95300 100%);
+            background: linear-gradient(135deg, var(--color-azul-oscuro) 0%, #132752 100%);
             border-radius: 24px;
             padding: 3.5rem 2.5rem;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(255, 107, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(11, 27, 61, 0.2);
             color: var(--color-blanco);
             margin-top: 4rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .creative-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.25) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .creative-banner h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             font-weight: 800;
             margin-bottom: 1rem;
         }
@@ -725,26 +782,26 @@ $brand_pillars = [
         .creative-banner p {
             font-size: 1.1rem;
             max-width: 750px;
-            opacity: 0.95;
+            color: #E2E8F0;
             margin-bottom: 2rem;
         }
 
         .btn-banner {
-            background-color: var(--color-blanco);
-            color: var(--color-naranja) !important;
+            background-color: var(--color-naranja);
+            color: var(--color-blanco) !important;
             font-weight: 800;
             padding: 0.85rem 2.2rem;
             border-radius: 50px;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 20px var(--color-naranja-glow);
         }
 
         .btn-banner:hover {
-            background-color: var(--color-azul-oscuro);
-            color: var(--color-blanco) !important;
+            background-color: var(--color-naranja-hover);
             transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.5);
         }
 
         /* Footer */
@@ -754,6 +811,7 @@ $brand_pillars = [
             padding-top: 4rem;
             padding-bottom: 2rem;
             font-size: 0.95rem;
+            color: #CBD5E1;
         }
 
         .footer-logo {
@@ -775,7 +833,7 @@ $brand_pillars = [
             align-items: center;
             gap: 12px;
             margin-bottom: 1rem;
-            color: var(--color-texto-suave);
+            color: #94A3B8;
         }
 
         .footer-contact-icon {
@@ -791,7 +849,7 @@ $brand_pillars = [
         }
 
         .footer-contact-item a {
-            color: var(--color-texto-suave);
+            color: #E2E8F0;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -830,7 +888,7 @@ $brand_pillars = [
         }
 
         .footer-links a {
-            color: var(--color-texto-suave);
+            color: #94A3B8;
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-flex;
@@ -848,7 +906,7 @@ $brand_pillars = [
             margin-top: 3.5rem;
             padding-top: 1.8rem;
             text-align: center;
-            color: var(--color-texto-suave);
+            color: #94A3B8;
             font-size: 0.88rem;
         }
 
@@ -882,15 +940,9 @@ $brand_pillars = [
         }
 
         @keyframes pulseWhatsApp {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
     </style>
 </head>
@@ -963,7 +1015,6 @@ $brand_pillars = [
                     <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <!-- Icono Llamita SVG -->
                         <svg class="llama-svg" viewBox="0 0 512 512">
-                            <!-- SVG de Llamita estilizada -->
                             <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
                         </svg>
                         <span>Reserva tu Viaje</span>
@@ -979,7 +1030,6 @@ $brand_pillars = [
         <!-- Hero Slider / Video Background -->
         <section class="hero-section">
             <div class="video-background-container">
-                <!-- Video de Youtube de fondo -->
                 <iframe src="https://www.youtube.com/embed/1-fIilS45Q0?autoplay=1&mute=1&controls=0&loop=1&playlist=1-fIilS45Q0&showinfo=0&rel=0&enablejsapi=1"
                         title="Perú Travel Video"
                         frameborder="0"
@@ -1010,7 +1060,7 @@ $brand_pillars = [
         </section>
 
 
-        <!-- 5 Tarjetas Creativas con botones de desplazamiento -->
+        <!-- 5 Tarjetas Creativas en Fondo Blanco -->
         <section class="cards-section" id="tours-destacados">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 section-header">
@@ -1054,60 +1104,82 @@ $brand_pillars = [
         </section>
 
 
-        <!-- Contenido Creativo con Movimiento -->
+        <!-- Sección Concepto de la Agencia con Composición de Imágenes Creativas -->
         <section class="concept-section" id="nosotros">
-            <div class="concept-shape" style="top: 10%; left: -100px;"></div>
-            <div class="concept-shape" style="bottom: 10%; right: -100px;"></div>
-
-            <div class="container position-relative z-2">
-                <!-- Concepto Principal de la Agencia -->
-                <div class="agency-box animate__animated animate__fadeInUp">
-                    <div class="row align-items-center g-4">
-                        <div class="col-lg-12">
+            <div class="container">
+                <div class="agency-card-creative">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-7">
+                            <span class="section-tag"><i class="bi bi-award me-1"></i> Especialistas Locales en Perú</span>
                             <h2 class="agency-title">
                                 Perú Safe Journeys – <span>Travel Agency</span>
                             </h2>
                             <p class="text-lead-custom">
                                 Es una agencia especializada en crear experiencias auténticas, seguras y personalizadas por el Perú. Diseñamos cada viaje pensando en que nuestros viajeros no solo conozcan destinos, sino que vivan la esencia de cada lugar, conectando con nuestras culturas, tradiciones, historia, gastronomía y extraordinarios paisajes.
                             </p>
-                            <p class="text-lead-custom mb-0">
+                            <p class="text-lead-custom">
                                 Desde la majestuosidad de Cusco y Machu Picchu, pasando por el Valle Sagrado, los Andes y la Amazonía, hasta las costas del Pacífico, acompañamos a nuestros viajeros con atención personalizada, planificación profesional, seguridad y confort en cada etapa de su aventura.
                             </p>
-                            <div class="p-3 mt-4 rounded-3" style="background: rgba(255, 107, 0, 0.1); border-left: 4px solid var(--color-naranja);">
-                                <p class="mb-0 text-white font-italic fs-6">
+                            <div class="p-3 mt-4 rounded-3" style="background: rgba(255, 107, 0, 0.08); border-left: 4px solid var(--color-naranja);">
+                                <p class="mb-0 text-dark fw-semibold fs-6">
                                     <i class="bi bi-quote fs-4 text-warning me-2"></i>
                                     <strong>Nuestro propósito:</strong> Convertir cada viaje en una experiencia memorable, combinando la riqueza cultural del Perú con la confianza de viajar acompañado por especialistas locales.
                                 </p>
                             </div>
                         </div>
+                        <div class="col-lg-5">
+                            <div class="img-grid-creative">
+                                <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Cusco" class="img-creative-main">
+                                <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=600&q=80" alt="Cultura viva en Cusco" class="img-creative-overlay d-none d-sm-block">
+                                <div class="badge-floating-experience">
+                                    <i class="bi bi-patch-check-fill fs-3 d-block mb-1"></i>
+                                    100% Seguro & Garantizado
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- CONTENIDO CREATIVO & Pilares de Marca -->
-                <div class="text-center max-w-800 mx-auto mb-5">
-                    <span class="section-tag"><i class="bi bi-stars me-1"></i> Tu Camino Hacia Un Perú Auténtico</span>
+                <div class="text-center max-w-800 mx-auto mt-5 pt-3">
+                    <span class="section-tag"><i class="bi bi-heart me-1"></i> Tu Camino Hacia Un Perú Auténtico</span>
                     <h2 class="section-title">CONTENIDO CREATIVO</h2>
-                    <p class="fs-5 text-light mt-3">
+                    <p class="fs-5 text-dark fw-medium mt-3" style="max-width: 850px; margin-left: auto; margin-right: auto;">
+                        Perú Safe Journeys: tu camino hacia un Perú auténtico.
+                    </p>
+                    <p class="text-secondary fs-6" style="max-width: 850px; margin-left: auto; margin-right: auto; line-height: 1.8;">
                         Creamos viajes que van más allá del turismo convencional. Diseñamos experiencias a tu medida para descubrir el Perú de manera segura, cómoda y auténtica, conectándote con sus pueblos, culturas, historia, naturaleza y tradiciones.
                     </p>
-                    <p class="text-muted fs-6">
+                    <p class="text-secondary fs-6" style="max-width: 850px; margin-left: auto; margin-right: auto; line-height: 1.8;">
                         Con conocimiento local y atención personalizada, transformamos cada recorrido en una historia para recordar. Tú eliges cómo quieres vivir el Perú; nosotros nos encargamos de hacer del camino una experiencia segura y extraordinaria.
                     </p>
                 </div>
+            </div>
+        </section>
 
-                <!-- Pilares de Marca Grid -->
-                <div class="row g-4 mt-2" id="experiencias">
-                    <div class="col-12 text-center mb-2">
-                        <h3 class="font-playfair text-white fw-bold fs-2"><i class="bi bi-gem text-warning me-2"></i> Pilares de marca</h3>
-                    </div>
-                    <?php foreach($brand_pillars as $index => $pillar): ?>
+
+        <!-- Sección PILARES DE MARCA con Imágenes y Diseño Creativo -->
+        <section class="pillars-section" id="experiencias">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="section-tag"><i class="bi bi-gem me-1"></i> Nuestros Valores Fundamentales</span>
+                    <h2 class="section-title">Pilares de marca</h2>
+                    <p class="text-muted fs-6 mt-2">Los cimientos que garantizan que cada aventura sea extraordinaria.</p>
+                </div>
+
+                <div class="row g-4">
+                    <?php foreach($brand_pillars as $pillar): ?>
                     <div class="col-md-6 col-lg-4">
-                        <div class="pillar-card">
-                            <div class="pillar-icon-box">
-                                <i class="bi <?php echo $pillar['icon']; ?>"></i>
+                        <div class="pillar-card-creative">
+                            <div class="pillar-img-box">
+                                <img src="<?php echo $pillar['img']; ?>" alt="<?php echo $pillar['title']; ?>" loading="lazy">
+                                <div class="pillar-icon-badge">
+                                    <i class="bi <?php echo $pillar['icon']; ?>"></i>
+                                </div>
                             </div>
-                            <h4 class="pillar-title"><?php echo $pillar['title']; ?></h4>
-                            <p class="pillar-desc mb-0"><?php echo $pillar['desc']; ?></p>
+                            <div class="pillar-content">
+                                <h3 class="pillar-title-creative"><?php echo $pillar['title']; ?></h3>
+                                <p class="pillar-desc-creative mb-0"><?php echo $pillar['desc']; ?></p>
+                            </div>
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -1115,13 +1187,15 @@ $brand_pillars = [
 
                 <!-- Banner Promocional Creativo -->
                 <div class="creative-banner text-center text-lg-start d-lg-flex align-items-center justify-content-between" id="programas">
-                    <div>
+                    <div class="position-relative z-2">
                         <h3>¿Listo para empezar tu viaje soñado?</h3>
                         <p class="mb-lg-0">Contáctanos hoy y comencemos a planificar juntos tu próxima aventura inolvidable por el Perú.</p>
                     </div>
-                    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20planificar%20un%20viaje%20personalizado" target="_blank" class="btn-banner">
-                        <i class="bi bi-whatsapp me-2"></i> Chatea con un Especialista
-                    </a>
+                    <div class="position-relative z-2">
+                        <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20planificar%20un%20viaje%20personalizado" target="_blank" class="btn-banner">
+                            <i class="bi bi-whatsapp me-2"></i> Chatea con un Especialista
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1137,7 +1211,7 @@ $brand_pillars = [
                     <a href="page-inicio.php" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
-                    <p class="text-muted pe-lg-4">
+                    <p class="pe-lg-4" style="color: #94A3B8;">
                         Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas. Conectamos viajeros con el corazón cultural, histórico y natural del Perú.
                     </p>
                     <div class="d-flex gap-3 mt-3">
@@ -1168,7 +1242,7 @@ $brand_pillars = [
                             <i class="bi bi-telephone-fill"></i>
                         </div>
                         <div>
-                            <small class="d-block text-muted">Teléfono de contacto:</small>
+                            <small class="d-block" style="color: #94A3B8;">Teléfono de contacto:</small>
                             <a href="tel:<?php echo $phone_clean; ?>" class="fw-bold fs-6"><?php echo $phone_number; ?></a>
                         </div>
                     </div>
@@ -1177,7 +1251,7 @@ $brand_pillars = [
                             <i class="bi bi-envelope-fill"></i>
                         </div>
                         <div>
-                            <small class="d-block text-muted">Correo de contacto:</small>
+                            <small class="d-block" style="color: #94A3B8;">Correo de contacto:</small>
                             <a href="mailto:<?php echo $email_address; ?>" class="fw-bold fs-6"><?php echo $email_address; ?></a>
                         </div>
                     </div>
@@ -1186,7 +1260,7 @@ $brand_pillars = [
                             <i class="bi bi-geo-alt-fill"></i>
                         </div>
                         <div>
-                            <small class="d-block text-muted">Ubicación:</small>
+                            <small class="d-block" style="color: #94A3B8;">Ubicación:</small>
                             <span class="text-light">Cusco - Perú</span>
                         </div>
                     </div>
@@ -1213,7 +1287,7 @@ $brand_pillars = [
     <!-- Scripts Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS Script para Interactividad y Slider -->
+    <!-- Custom JS Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Navbar cambio de fondo al hacer scroll
@@ -1232,7 +1306,7 @@ $brand_pillars = [
             const btnNext = document.getElementById('btn-next');
 
             if (track && btnPrev && btnNext) {
-                const scrollAmount = 320; // Ancho aproximado de tarjeta + gap
+                const scrollAmount = 320;
 
                 btnNext.addEventListener('click', function() {
                     track.scrollBy({
