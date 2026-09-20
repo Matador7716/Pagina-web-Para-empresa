@@ -1,5 +1,5 @@
 <?php
-// page-destinos.php - Perú Safe Journeys
+// page-experiencias.php - Perú Safe Journeys
 $company_name = "Perú Safe Journeys";
 $company_tagline = "tu camino hacia un Perú auténtico";
 $phone_number = "+51 948 364 822";
@@ -7,92 +7,102 @@ $phone_clean = "51948364822";
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
-// Array de los 7 Destinos
-$destinos = [
+// Array de Experiencias
+$experiencias = [
     [
-        'id' => 'machu-picchu',
-        'num' => '01',
-        'title' => 'MACHU PICCHU',
-        'subtitle' => 'El misterio que vive entre las montañas',
-        'desc' => 'Hay lugares que fotografías y lugares que nunca olvidas. Entre las montañas de los Andes se encuentra Machu Picchu, la extraordinaria ciudadela inca que continúa sorprendiendo al mundo. Camina por sus antiguos caminos, contempla sus impresionantes construcciones y déjate envolver por la energía de un lugar donde historia y naturaleza se encuentran.',
-        'experience' => 'Ciudadela Inca • Montañas • Historia • Cultura',
-        'ideal' => 'viajeros que quieren conocer una de las grandes maravillas del mundo.',
-        'tagline' => 'Machu Picchu: una historia que merece ser vivida.',
-        'img' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🏛️ Maravilla del Mundo'
-    ],
-    [
-        'id' => 'cusco',
-        'num' => '02',
-        'title' => 'CUSCO',
-        'subtitle' => 'Donde cada calle cuenta una historia',
-        'desc' => 'Bienvenido a Cusco, la antigua capital del Imperio Inca. Camina por sus calles empedradas, descubre sus templos y plazas, contempla la arquitectura que une dos mundos y déjate sorprender por la cultura andina que permanece viva. Cusco es el punto de partida perfecto para explorar los grandes tesoros del sur del Perú.',
-        'experience' => 'Centro Histórico • Cultura Andina • Arqueología • Gastronomía',
-        'ideal' => 'viajeros que buscan historia, cultura y experiencias auténticas.',
-        'tagline' => 'Cusco: el corazón de los Andes te espera.',
-        'img' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🏔️ Capital Inca'
-    ],
-    [
-        'id' => 'valle-sagrado',
-        'num' => '03',
-        'title' => 'VALLE SAGRADO DE LOS INCAS',
-        'subtitle' => 'Un viaje entre montañas, historia y tradición',
-        'desc' => 'Imagina recorrer un valle rodeado de enormes montañas, pueblos tradicionales y antiguos centros arqueológicos. El Valle Sagrado de los Incas es una experiencia donde la naturaleza y la historia se encuentran en cada recorrido. Conoce sus comunidades, descubre sus tradiciones y contempla los paisajes que alguna vez fueron parte fundamental del mundo inca.',
-        'experience' => 'Paisajes Andinos • Cultura • Arqueología • Comunidades',
-        'ideal' => 'viajeros que desean conectar con la naturaleza y la cultura local.',
-        'tagline' => 'Valle Sagrado: descubre la esencia viva de los Andes.',
-        'img' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🌄 Mística & Naturaleza'
-    ],
-    [
-        'id' => 'montana-7-colores',
-        'num' => '04',
-        'title' => 'MONTAÑA DE 7 COLORES',
-        'subtitle' => 'Un paisaje que parece pintado por la naturaleza',
-        'desc' => 'Prepárate para descubrir uno de los paisajes naturales más sorprendentes de los Andes. La Montaña de 7 Colores te espera con sus increíbles tonalidades naturales y un paisaje de alta montaña que convierte cada paso en una aventura. El camino es parte de la experiencia: respira profundo, contempla los Andes y disfruta de una vista que quedará grabada en tu memoria.',
-        'experience' => 'Aventura • Trekking • Andes • Paisajes',
-        'ideal' => 'aventureros, amantes de la fotografía y viajeros que buscan experiencias únicas.',
-        'tagline' => 'Camina hacia un paisaje que no parece real.',
+        'id' => 'aventuras-andes',
+        'icon' => '🏔️',
+        'title' => 'AVENTURAS EN LOS ANDES',
+        'subtitle' => 'Siente la energía de las montañas',
+        'desc' => 'Prepárate para caminar, explorar y contemplar algunos de los paisajes más impresionantes del Perú. Vive experiencias de trekking y aventura en los Andes, descubre caminos rodeados de montañas y contempla escenarios que parecen sacados de una postal.',
+        'ideal' => 'viajeros aventureros, amantes de la naturaleza y quienes buscan superar nuevos desafíos.',
+        'tagline' => '🥾 Explora. Respira. Conquista.',
+        'btn_text' => 'DESCUBRIR AVENTURAS →',
         'img' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🌈 Maravilla Natural'
+        'badge' => 'Trekking & Aventura'
     ],
     [
-        'id' => 'amazona-peruana',
-        'num' => '05',
-        'title' => 'AMAZONÍA PERUANA',
-        'subtitle' => 'Una aventura en el corazón de la naturaleza',
-        'desc' => 'Cambia las montañas por la selva y descubre un Perú completamente diferente. La Amazonía peruana te invita a navegar por sus ríos, descubrir su biodiversidad y conectar con uno de los ecosistemas más extraordinarios del planeta. Una experiencia de naturaleza, aventura y descubrimiento que te permitirá conocer otra de las grandes riquezas del Perú.',
-        'experience' => 'Naturaleza • Biodiversidad • Aventura • Cultura',
-        'ideal' => 'amantes de la naturaleza y viajeros que buscan aventura.',
-        'tagline' => 'Amazonía: donde la naturaleza escribe su propia historia.',
+        'id' => 'experiencias-culturales',
+        'icon' => '🏛️',
+        'title' => 'EXPERIENCIAS CULTURALES',
+        'subtitle' => 'Conoce el Perú más allá de los lugares turísticos',
+        'desc' => 'El Perú tiene una historia que continúa viva. Descubre nuestras tradiciones, costumbres, música, arte, gastronomía y formas de vida que han pasado de generación en generación. Conecta con la cultura local y descubre el Perú desde una perspectiva más cercana y auténtica.',
+        'ideal' => 'viajeros curiosos que quieren conocer la verdadera esencia de cada destino.',
+        'tagline' => '❤️ No solo conozcas una cultura. Conecta con ella.',
+        'btn_text' => 'VIVIR LA CULTURA →',
+        'img' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=1000&q=80',
+        'badge' => 'Cultura & Tradición'
+    ],
+    [
+        'id' => 'experiencias-incas',
+        'icon' => '🌄',
+        'title' => 'EXPERIENCIAS INCAS',
+        'subtitle' => 'Camina por las huellas de una gran civilización',
+        'desc' => 'Viaja al pasado a través de las impresionantes construcciones incas. Explora Machu Picchu, Cusco, el Valle Sagrado y otros centros arqueológicos, mientras descubres las historias, conocimientos y misterios que dejaron los antiguos habitantes de los Andes.',
+        'ideal' => 'amantes de la historia, arqueología y civilizaciones antiguas.',
+        'tagline' => '🏛️ La historia cobra vida cuando caminas sobre sus huellas.',
+        'btn_text' => 'EXPLORAR EL MUNDO INCA →',
+        'img' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1000&q=80',
+        'badge' => 'Arqueología Inca'
+    ],
+    [
+        'id' => 'naturaleza-vida-silvestre',
+        'icon' => '🌿',
+        'title' => 'NATURALEZA & VIDA SILVESTRE',
+        'subtitle' => 'Descubre un Perú lleno de vida',
+        'desc' => 'Desde los imponentes Andes hasta la exuberante Amazonía, el Perú ofrece una extraordinaria diversidad de paisajes y ecosistemas. Explora la naturaleza, observa la vida silvestre y descubre escenarios donde la aventura y la tranquilidad se encuentran.',
+        'ideal' => 'familias, fotógrafos, amantes de la naturaleza y viajeros que buscan desconectarse.',
+        'tagline' => '🌎 Respira naturaleza. Descubre nuevas perspectivas.',
+        'btn_text' => 'EXPLORAR LA NATURALEZA →',
         'img' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🌿 Pulmón del Mundo'
+        'badge' => 'Biodiversidad'
     ],
     [
-        'id' => 'paracas-huacachina',
-        'num' => '06',
-        'title' => 'PARACAS & HUACACHINA',
-        'subtitle' => 'Desierto, océano y aventura en un solo viaje',
-        'desc' => '¿Desierto junto al océano? Sí, y está en Perú. Descubre Paracas, con sus impresionantes paisajes costeros y su extraordinaria vida marina, y continúa hasta Huacachina, el famoso oasis rodeado de enormes dunas. Disfruta de una combinación perfecta de naturaleza y aventura con actividades que harán de tu viaje una experiencia inolvidable.',
-        'experience' => 'Océano • Desierto • Oasis • Aventura',
-        'ideal' => 'viajeros que buscan adrenalina, paisajes y experiencias diferentes.',
-        'tagline' => 'Dos mundos. Un solo viaje. Una experiencia inolvidable.',
-        'img' => 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🏜️ Oasis & Costa'
-    ],
-    [
-        'id' => 'lima',
-        'num' => '07',
-        'title' => 'LIMA',
-        'subtitle' => 'La puerta de entrada a las maravillas del Perú',
-        'desc' => 'Tu aventura peruana comienza en Lima, una ciudad donde la historia, la cultura, la gastronomía y la modernidad se encuentran frente al océano Pacífico. Descubre su centro histórico, disfruta de su reconocida gastronomía y conoce una ciudad llena de contrastes. Lima es mucho más que una parada: es el primer capítulo de tu historia en el Perú.',
-        'experience' => 'Gastronomía • Historia • Cultura • Modernidad',
-        'ideal' => 'viajeros que quieren descubrir la esencia urbana y gastronómica del Perú.',
-        'tagline' => 'Lima: comienza aquí tu historia peruana.',
+        'id' => 'sabores-del-peru',
+        'icon' => '🍽️',
+        'title' => 'SABORES DEL PERÚ',
+        'subtitle' => 'Un viaje que también se disfruta con el paladar',
+        'desc' => 'La gastronomía peruana es parte fundamental de nuestra identidad. Descubre nuevos sabores, ingredientes tradicionales y platos que cuentan historias de diferentes regiones del país. Desde la costa hasta los Andes y la Amazonía, cada destino tiene algo delicioso que compartir.',
+        'ideal' => 'amantes del buen comer, gourmets y viajeros interesados en el arte culinario.',
+        'tagline' => '😋 Descubre el Perú, un sabor a la vez.',
+        'btn_text' => 'DESCUBRIR SABORES →',
         'img' => 'https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🌊 Capital Gastronómica'
+        'badge' => 'Ruta Gastronómica'
+    ],
+    [
+        'id' => 'comunidades-cultura-viva',
+        'icon' => '🧑‍🌾',
+        'title' => 'COMUNIDADES & CULTURA VIVA',
+        'subtitle' => 'Encuentra historias detrás de cada sonrisa',
+        'desc' => 'Conoce comunidades andinas y descubre tradiciones que permanecen vivas. Comparte momentos especiales, conoce sus costumbres y descubre la importancia de preservar nuestros conocimientos ancestrales. Son encuentros que convierten un simple viaje en una experiencia humana.',
+        'ideal' => 'viajeros empáticos que valoran el intercambio cultural y el turismo responsable.',
+        'tagline' => '🤝 Conoce personas. Comparte historias. Crea recuerdos.',
+        'btn_text' => 'CONOCER CULTURAS →',
+        'img' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80',
+        'badge' => 'Turismo Vivencial'
+    ],
+    [
+        'id' => 'experiencias-fotograficas',
+        'icon' => '📸',
+        'title' => 'EXPERIENCIAS FOTOGRÁFICAS',
+        'subtitle' => 'Llévate recuerdos que nunca pasarán de moda',
+        'desc' => 'El Perú está lleno de escenarios extraordinarios. Montañas, valles, ciudades históricas, paisajes naturales y comunidades tradicionales convierten cada recorrido en una oportunidad para capturar momentos únicos. Te llevaremos a descubrir lugares donde cada fotografía puede convertirse en una historia.',
+        'ideal' => 'fotógrafos aficionados y profesionales, creadores de contenido y amantes de los paisajes.',
+        'tagline' => '📷 Tu mejor recuerdo comienza con una experiencia.',
+        'btn_text' => 'VER EXPERIENCIAS →',
+        'img' => 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80',
+        'badge' => 'Fotografía & Paisajes'
     ]
+];
+
+// Puntos de confianza (Viaja con confianza)
+$confianza_items = [
+    "Atención personalizada",
+    "Guías profesionales",
+    "Operación responsable",
+    "Experiencias cuidadosamente organizadas",
+    "Asistencia durante tu viaje",
+    "Itinerarios adaptados a tus necesidades"
 ];
 ?>
 <!DOCTYPE html>
@@ -100,7 +110,7 @@ $destinos = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinos - <?php echo $company_name; ?></title>
+    <title>Experiencias - <?php echo $company_name; ?></title>
 
     <!-- Google Fonts: Plus Jakarta Sans & Playfair Display / Caveat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -275,18 +285,18 @@ $destinos = [
             transform: scale(1.15) rotate(-8deg);
         }
 
-        /* Hero Banner Section para Destinos */
-        .hero-banner-destinos {
+        /* Hero Banner Section para Experiencias */
+        .hero-banner-experiencias {
             position: relative;
             padding: 8rem 0 6rem;
             background: linear-gradient(180deg, rgba(7, 18, 42, 0.85) 0%, rgba(11, 27, 61, 0.92) 100%),
-                        url('https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: var(--color-blanco);
             text-align: center;
             overflow: hidden;
         }
 
-        .destinos-hero-title {
+        .experiencias-hero-title {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
             font-weight: 800;
@@ -295,7 +305,7 @@ $destinos = [
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
-        .destinos-hero-title span {
+        .experiencias-hero-title span {
             color: var(--color-naranja);
             font-family: 'Caveat', cursive;
             font-size: 4.8rem;
@@ -303,7 +313,7 @@ $destinos = [
             margin-top: -0.5rem;
         }
 
-        .destinos-hero-subtitle {
+        .experiencias-hero-subtitle {
             font-size: 1.25rem;
             color: #E2E8F0;
             max-width: 800px;
@@ -312,7 +322,7 @@ $destinos = [
         }
 
         /* Sección Introducción */
-        .intro-destinos-section {
+        .intro-section {
             padding: 4.5rem 0 3.5rem;
             background-color: var(--color-blanco);
         }
@@ -325,8 +335,8 @@ $destinos = [
             box-shadow: 0 10px 30px rgba(11, 27, 61, 0.05);
         }
 
-        /* Item de Destino Creativo */
-        .destino-card {
+        /* Tarjeta de Experiencia Creativa */
+        .experiencia-card {
             background: var(--color-blanco);
             border-radius: 24px;
             overflow: hidden;
@@ -336,46 +346,31 @@ $destinos = [
             transition: all 0.4s ease;
         }
 
-        .destino-card:hover {
+        .experiencia-card:hover {
             transform: translateY(-6px);
             border-color: var(--color-naranja);
             box-shadow: 0 20px 45px rgba(255, 107, 0, 0.18);
         }
 
-        .destino-number-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: var(--color-naranja);
-            color: var(--color-blanco);
-            font-weight: 800;
-            font-size: 1.2rem;
-            border-radius: 14px;
-            margin-bottom: 1rem;
-            box-shadow: 0 6px 18px var(--color-naranja-glow);
-        }
-
-        .destino-img-box {
+        .experiencia-img-box {
             position: relative;
             height: 100%;
             min-height: 380px;
             overflow: hidden;
         }
 
-        .destino-img-box img {
+        .experiencia-img-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
 
-        .destino-card:hover .destino-img-box img {
+        .experiencia-card:hover .experiencia-img-box img {
             transform: scale(1.08);
         }
 
-        .destino-badge-top {
+        .experiencia-badge-top {
             position: absolute;
             top: 20px;
             left: 20px;
@@ -389,7 +384,7 @@ $destinos = [
             border: 1px solid rgba(255, 107, 0, 0.5);
         }
 
-        .destino-title {
+        .experiencia-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.2rem;
             font-weight: 800;
@@ -397,21 +392,21 @@ $destinos = [
             margin-bottom: 0.5rem;
         }
 
-        .destino-subtitle {
+        .experiencia-subtitle {
             color: var(--color-naranja);
             font-weight: 700;
             font-size: 1.1rem;
             margin-bottom: 1.2rem;
         }
 
-        .destino-desc {
+        .experiencia-desc {
             color: #334155;
             font-size: 1.02rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
 
-        .destino-feature-box {
+        .experiencia-feature-box {
             background-color: var(--color-gris-bg);
             border-radius: 16px;
             padding: 1.25rem;
@@ -419,25 +414,14 @@ $destinos = [
             border-left: 4px solid var(--color-naranja);
         }
 
-        .destino-feature-item {
-            margin-bottom: 0.6rem;
-            font-size: 0.95rem;
-            color: var(--color-texto-oscuro);
-        }
-
-        .destino-feature-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .destino-quote-tagline {
-            font-style: italic;
+        .experiencia-quote-tagline {
             font-weight: 700;
             color: var(--color-azul-oscuro);
-            font-size: 1.05rem;
+            font-size: 1.08rem;
             margin-bottom: 1.8rem;
         }
 
-        .btn-destino-whatsapp {
+        .btn-experiencia-action {
             background-color: var(--color-naranja);
             color: var(--color-blanco) !important;
             font-weight: 700;
@@ -449,12 +433,88 @@ $destinos = [
             gap: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px var(--color-naranja-glow);
+            letter-spacing: 0.5px;
         }
 
-        .btn-destino-whatsapp:hover {
+        .btn-experiencia-action:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+        }
+
+        /* Experiencias Personalizadas Section */
+        .personalizadas-section {
+            background-color: var(--color-gris-bg);
+            padding: 5rem 0;
+            border-top: 1px solid var(--color-gris-border);
+            border-bottom: 1px solid var(--color-gris-border);
+        }
+
+        .personalizada-card {
+            background: var(--color-blanco);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            border: 1px solid var(--color-gris-border);
+            box-shadow: 0 15px 35px rgba(11, 27, 61, 0.06);
+        }
+
+        .question-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .question-list li {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-azul-oscuro);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .question-list li i {
+            color: var(--color-naranja);
+        }
+
+        /* Sección Viaja con Confianza */
+        .confianza-section {
+            padding: 5rem 0;
+            background-color: var(--color-blanco);
+        }
+
+        .confianza-item-card {
+            background: var(--color-gris-bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--color-gris-border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            color: var(--color-azul-oscuro);
+            transition: all 0.3s ease;
+        }
+
+        .confianza-item-card:hover {
+            background: var(--color-blanco);
+            border-color: var(--color-naranja);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.12);
+        }
+
+        .confianza-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 107, 0, 0.15);
+            color: var(--color-naranja);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
         }
 
         /* Call To Action Final */
@@ -482,22 +542,11 @@ $destinos = [
             line-height: 1.8;
         }
 
-        .pilar-badges-final {
+        .btn-cta-group {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .pilar-badge-item {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.6rem 1.4rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--color-blanco);
         }
 
         /* Footer */
@@ -690,10 +739,10 @@ $destinos = [
                         <a class="nav-link" href="page-inicio.php#inicio">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="page-destinos.php">DESTINOS</a>
+                        <a class="nav-link" href="page-destinos.php">DESTINOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="page-experiencias.php">EXPERIENCIAS</a>
+                        <a class="nav-link active" href="page-experiencias.php">EXPERIENCIAS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="page-inicio.php#programas">PROGRAMAS</a>
@@ -708,7 +757,7 @@ $destinos = [
 
                 <!-- BOTON "Reserva tu Viaje" con icono llamita -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
-                    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
+                    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20reservar%20una%20experiencia%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
                             <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
                         </svg>
@@ -720,76 +769,71 @@ $destinos = [
     </nav>
 
 
-    <!-- HERO BANNER CON IMAGEN DE FONDO -->
-    <header class="hero-banner-destinos">
+    <!-- HERO BANNER EXPERIENCIAS -->
+    <header class="hero-banner-experiencias">
         <div class="container animate__animated animate__fadeIn">
             <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
-                🇵🇪 Descubre el Perú
+                ✨ EXPERIENCIAS INOLVIDABLES
             </span>
-            <h1 class="destinos-hero-title">
-                DESTINOS
-                <span>7 lugares mágicos para vivir el Perú</span>
+            <h1 class="experiencias-hero-title">
+                EXPERIENCIAS
+                <span>No solo visites el Perú. Vívelo.</span>
             </h1>
-            <p class="destinos-hero-subtitle">
-                Viaja seguro. Vive auténticamente. Descubre el Perú.
+            <p class="experiencias-hero-subtitle">
+                🇵🇪 Tu viaje. Tu historia. Tu experiencia.
             </p>
         </div>
     </header>
 
 
     <!-- INTRODUCCIÓN -->
-    <section class="intro-destinos-section">
+    <section class="intro-section">
         <div class="container">
             <div class="intro-box text-center">
                 <h2 class="font-playfair fw-bold text-dark fs-2 mb-3">
-                    El Perú es mucho más que un destino
+                    Conecta, explora y descubre momentos auténticos
                 </h2>
                 <p class="fs-5 text-secondary mb-0" style="max-width: 850px; margin: 0 auto; line-height: 1.8;">
-                    Es una colección de historias, paisajes, sabores y culturas que esperan ser descubiertos.
-                    En <strong>Perú Safe Journeys</strong>, seleccionamos experiencias que te permiten conocer el Perú de una manera auténtica, emocionante y memorable.
+                    En <strong>Perú Safe Journeys</strong> creemos que un gran viaje no se mide por la cantidad de lugares que visitas, sino por las experiencias que llevas contigo. Por eso creamos experiencias que te permiten <strong>conectar con la cultura, explorar la naturaleza, descubrir nuestra historia y vivir momentos auténticos</strong>.
                 </p>
             </div>
         </div>
     </section>
 
 
-    <!-- LISTA DE LOS 7 DESTINOS -->
+    <!-- LISTA DE EXPERIENCIAS -->
     <section class="py-4">
         <div class="container">
-            <?php foreach($destinos as $index => $item): ?>
-            <div class="destino-card" id="<?php echo $item['id']; ?>">
+            <?php foreach($experiencias as $index => $item): ?>
+            <div class="experiencia-card" id="<?php echo $item['id']; ?>">
                 <div class="row g-0 align-items-stretch <?php echo ($index % 2 != 0) ? 'flex-row-reverse' : ''; ?>">
-                    <!-- Imagen del Destino -->
+                    <!-- Imagen de la Experiencia -->
                     <div class="col-lg-6">
-                        <div class="destino-img-box">
+                        <div class="experiencia-img-box">
                             <img src="<?php echo $item['img']; ?>" alt="<?php echo $item['title']; ?>" loading="lazy">
-                            <span class="destino-badge-top"><?php echo $item['badge']; ?></span>
+                            <span class="experiencia-badge-top"><?php echo $item['icon'] . ' ' . $item['badge']; ?></span>
                         </div>
                     </div>
 
-                    <!-- Contenido del Destino -->
+                    <!-- Contenido de la Experiencia -->
                     <div class="col-lg-6 d-flex align-items-center">
                         <div class="p-4 p-md-5 w-100">
-                            <span class="destino-number-badge"><?php echo $item['num']; ?></span>
-                            <h2 class="destino-title"><?php echo $item['title']; ?></h2>
-                            <h3 class="destino-subtitle"><?php echo $item['subtitle']; ?></h3>
-                            <p class="destino-desc"><?php echo $item['desc']; ?></p>
+                            <h2 class="experiencia-title"><?php echo $item['title']; ?></h2>
+                            <h3 class="experiencia-subtitle"><?php echo $item['subtitle']; ?></h3>
+                            <p class="experiencia-desc"><?php echo $item['desc']; ?></p>
 
-                            <div class="destino-feature-box">
-                                <div class="destino-feature-item">
-                                    <strong>✨ Vive la experiencia:</strong> <?php echo $item['experience']; ?>
-                                </div>
-                                <div class="destino-feature-item">
+                            <div class="experiencia-feature-box">
+                                <div class="mb-0 fs-6 text-dark">
                                     <strong>👉 Ideal para:</strong> <?php echo $item['ideal']; ?>
                                 </div>
                             </div>
 
-                            <p class="destino-quote-tagline">
-                                "<?php echo $item['tagline']; ?>"
+                            <p class="experiencia-quote-tagline">
+                                <?php echo $item['tagline']; ?>
                             </p>
 
-                            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20planificar%20un%20viaje%20a%20<?php echo urlencode($item['title']); ?>" target="_blank" class="btn-destino-whatsapp">
-                                <i class="bi bi-whatsapp"></i> Consultar Tour a <?php echo $item['title']; ?>
+                            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20<?php echo urlencode($item['title']); ?>" target="_blank" class="btn-experiencia-action">
+                                <i class="bi bi-whatsapp"></i> <?php echo $item['btn_text']; ?>
                             </a>
                         </div>
                     </div>
@@ -800,27 +844,97 @@ $destinos = [
     </section>
 
 
+    <!-- EXPERIENCIAS PERSONALIZADAS -->
+    <section class="personalizadas-section" id="personalizadas">
+        <div class="container">
+            <div class="personalizada-card text-center text-lg-start">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3">
+                            ❤️ EXPERIENCIAS PERSONALIZADAS
+                        </span>
+                        <h2 class="font-playfair fw-bold text-dark fs-2 mb-3">
+                            Diseñamos el viaje que imaginas
+                        </h2>
+                        <ul class="question-list">
+                            <li><i class="bi bi-check-circle-fill"></i> ¿Quieres combinar Machu Picchu + Cusco + Valle Sagrado?</li>
+                            <li><i class="bi bi-check-circle-fill"></i> ¿Prefieres una aventura de trekking?</li>
+                            <li><i class="bi bi-check-circle-fill"></i> ¿Viajas en familia?</li>
+                            <li><i class="bi bi-check-circle-fill"></i> ¿Buscas una experiencia cultural, gastronómica o romántica?</li>
+                        </ul>
+                        <p class="fs-5 text-secondary mb-4">
+                            Cuéntanos qué quieres vivir y nuestro equipo diseñará una experiencia adaptada a tus intereses, tiempo y estilo de viaje.
+                        </p>
+                        <h4 class="font-playfair fw-bold text-warning-emphasis mb-4" style="color: var(--color-naranja);">
+                            ✨ Tú imaginas el viaje. Nosotros hacemos posible la experiencia.
+                        </h4>
+                    </div>
+                    <div class="col-lg-5 text-center">
+                        <div class="p-4 rounded-4" style="background-color: var(--color-azul-oscuro); color: var(--color-blanco);">
+                            <i class="bi bi-magic fs-1 text-warning d-block mb-3"></i>
+                            <h3 class="font-playfair fw-bold mb-3">¿Listo para comenzar?</h3>
+                            <p class="text-light fs-6 mb-4">Diseña tu itinerario 100% a medida con la guía de especialistas locales.</p>
+                            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20crear%20mi%20experiencia%20personalizada%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama fs-6 w-100 justify-content-center py-3">
+                                <i class="bi bi-whatsapp"></i> CREAR MI EXPERIENCIA →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN VIAJA CON CONFIANZA -->
+    <section class="confianza-section">
+        <div class="container text-center">
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3" style="background-color: var(--color-azul-oscuro) !important;">
+                🛡️ VIAJA CON CONFIANZA
+            </span>
+            <h2 class="font-playfair fw-bold text-dark fs-2 mb-3">
+                Tu tranquilidad también forma parte de la experiencia
+            </h2>
+            <p class="fs-5 text-secondary mb-5" style="max-width: 800px; margin: 0 auto;">
+                Tu experiencia comienza mucho antes de llegar a tu destino. En <strong>Perú Safe Journeys</strong> cuidamos cada detalle para que puedas disfrutar de tu viaje con tranquilidad.
+            </p>
+
+            <div class="row g-3 justify-content-center">
+                <?php foreach($confianza_items as $confianza): ?>
+                <div class="col-md-6 col-lg-4">
+                    <div class="confianza-item-card">
+                        <div class="confianza-icon">
+                            <i class="bi bi-check-lg"></i>
+                        </div>
+                        <span><?php echo $confianza; ?></span>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+
     <!-- SECCIÓN CALL TO ACTION FINAL -->
     <section class="cta-final-section">
         <div class="container position-relative z-2">
             <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3">
-                🇵🇪 TU PRÓXIMA AVENTURA COMIENZA EN PERÚ
+                🇵🇪 VIVE EL PERÚ A TU MANERA
             </span>
             <h2 class="cta-final-title">
-                Elige tu destino. Nosotros diseñamos tu experiencia.
+                ¿Qué experiencia quieres vivir?
             </h2>
             <p class="cta-final-subtitle">
-                Desde la majestuosidad de <strong>Machu Picchu</strong> hasta la inmensidad de la Amazonía, desde las montañas de Cusco hasta las dunas de Huacachina, el Perú tiene una experiencia esperando por ti. En <strong>Perú Safe Journeys</strong> diseñamos viajes pensados para que descubras cada destino con tranquilidad, confianza y atención personalizada.
+                No importa si buscas <strong>aventura, cultura, naturaleza, gastronomía, historia o momentos especiales</strong>. Tenemos una experiencia para ti.<br>
+                <strong>Perú Safe Journeys</strong>: Viaja seguro. Vive auténticamente. Descubre el Perú.
             </p>
 
-            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20dise%C3%B1ar%20mi%20experiencia%20de%20viaje%20por%20el%20Per%C3%BA" target="_blank" class="btn-reserva-llama fs-5 px-4 py-3">
-                <i class="bi bi-compass-fill"></i> Comienza Tu Viaje Ahora
-            </a>
-
-            <div class="pilar-badges-final">
-                <div class="pilar-badge-item">🛡️ Viaja seguro.</div>
-                <div class="pilar-badge-item">❤️ Vive auténticamente.</div>
-                <div class="pilar-badge-item">🇵🇪 Descubre el Perú.</div>
+            <div class="btn-cta-group">
+                <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20quiero%20explorar%20experiencias%20de%20viaje" target="_blank" class="btn-reserva-llama fs-5 px-4 py-3">
+                    <i class="bi bi-compass-fill"></i> EXPLORAR EXPERIENCIAS
+                </a>
+                <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20planificar%20mi%20viaje%20a%20Per%C3%BA" target="_blank" class="btn btn-outline-light rounded-pill fs-5 px-4 py-3 font-weight-bold border-2">
+                    <i class="bi bi-calendar-check-fill text-warning me-2"></i> PLANIFICAR MI VIAJE
+                </a>
             </div>
         </div>
     </section>
@@ -901,7 +1015,7 @@ $destinos = [
     </footer>
 
     <!-- Icono flotante de WhatsApp -->
-    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%207%20destinos"
+    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20experiencias%20de%20viaje"
        class="whatsapp-float"
        target="_blank"
        aria-label="Contactar por WhatsApp">
