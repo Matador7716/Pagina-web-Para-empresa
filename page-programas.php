@@ -803,7 +803,7 @@ $confianza_items = [
                         <a class="nav-link active" href="page-programas.php">PROGRAMAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="page-inicio.php#nosotros">NOSOTROS</a>
+                        <a class="nav-link" href="page-nosotros.php">NOSOTROS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="page-inicio.php#contacto">CONTACTO</a>
@@ -1058,7 +1058,7 @@ $confianza_items = [
                         <li><a href="page-destinos.php"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
                         <li><a href="page-experiencias.php"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
                         <li><a href="page-programas.php"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
-                        <li><a href="page-inicio.php#nosotros"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
+                        <li><a href="page-nosotros.php"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
                         <li><a href="page-inicio.php#contacto"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
                     </ul>
                 </div>
