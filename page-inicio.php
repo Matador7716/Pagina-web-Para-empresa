@@ -1000,7 +1000,7 @@ $brand_pillars = [
                         <a class="nav-link" href="page-experiencias.php">EXPERIENCIAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#programas">PROGRAMAS</a>
+                        <a class="nav-link" href="page-programas.php">PROGRAMAS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#nosotros">NOSOTROS</a>
@@ -1228,7 +1228,7 @@ $brand_pillars = [
                         <li><a href="#inicio"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
                         <li><a href="page-destinos.php"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
                         <li><a href="page-experiencias.php"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
-                        <li><a href="#programas"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
+                        <li><a href="page-programas.php"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
                         <li><a href="#nosotros"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
                         <li><a href="#contacto"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
                     </ul>
