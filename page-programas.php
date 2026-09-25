@@ -4,147 +4,120 @@ $company_name = "Perú Safe Journeys";
 $company_tagline = "tu camino hacia un Perú auténtico";
 $phone_number = "+51 948 364 822";
 $phone_clean = "51948364822";
-$email_address = "informes-web@perusafejourneys.com";
+$email_address = "informesweb@perusafejourneyscorp.com";
 $current_year = date('Y');
 
-// Array de Programas
+// Array de los Programas de Viaje
 $programas = [
     [
         'id' => 'cusco-machu-picchu',
-        'icon' => '🏔️',
-        'title' => 'CUSCO & MACHU PICCHU',
-        'subtitle' => 'La esencia del mundo Inca',
-        'duration' => '5 días / 4 noches',
-        'desc' => 'Descubre la magia de Cusco y vive el momento más esperado de tu viaje: Machu Picchu. Recorre la ciudad imperial, explora sus impresionantes sitios arqueológicos, descubre el Valle Sagrado y déjate sorprender por una de las maravillas más extraordinarias del mundo.',
-        'includes' => 'Cusco City Tour • 4 ruinas incas • Valle Sagrado • Machu Picchu',
-        'ideal' => 'viajeros que visitan Perú por primera vez.',
-        'tagline' => '✨ Desde Cusco hasta Machu Picchu, cada día tiene una historia que contar.',
-        'btn_text' => 'VER PROGRAMA →',
-        'img' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1000&q=80',
-        'badge' => 'Cusco & Machu Picchu'
+        'title' => 'Cusco & Machu Picchu',
+        'subtitle' => 'Lo mejor del mundo incaico en pocos días',
+        'desc' => 'Un programa clásico e imprescindible para quienes desean conocer el corazón del Imperio Inca. Recorre Cusco, el Valle Sagrado y vive la inolvidable experiencia de llegar a la maravilla de Machu Picchu con todo organizado.',
+        'duration' => '4 Días / 3 Noches',
+        'badge' => '🏛️ Clásico Inca',
+        'includes' => 'Cusco City Tour • Sacsayhuamán • Ollantaytambo • Pisac • Tren a Machu Picchu • Guiado en Ciudadela',
+        'ideal' => 'viajeros que visitan Perú por primera vez y cuentan con tiempo justo.',
+        'tagline' => 'El viaje esencial para enamorarte de los Andes.',
+        'img' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1000&q=80'
     ],
     [
-        'id' => 'lima-cusco-machu-picchu',
-        'icon' => '🇵🇪',
-        'title' => 'LIMA + CUSCO + MACHU PICCHU',
-        'subtitle' => 'Perú en una sola aventura',
-        'duration' => '6 días / 5 noches',
-        'desc' => 'Una combinación perfecta para descubrir algunos de los lugares más representativos del Perú. Comienza en Lima, conoce su historia y gastronomía, continúa hacia Cusco y explora el legado de los Incas antes de llegar al espectacular Machu Picchu.',
-        'includes' => 'Lima City Tour • Cusco City Tour • 4 ruinas incas • Valle Sagrado • Machu Picchu',
-        'ideal' => 'viajeros que desean conocer lo esencial del Perú en pocos días.',
-        'tagline' => '✨ Tres destinos. Una gran aventura.',
-        'btn_text' => 'DESCUBRIR PROGRAMA →',
-        'img' => 'https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&w=1000&q=80',
-        'badge' => 'Lima + Cusco + Machu Picchu'
+        'id' => 'lima-cusco-machupicchu',
+        'title' => 'Lima + Cusco + Machu Picchu',
+        'subtitle' => 'Perú en una sola aventura inolvidable',
+        'desc' => 'Una combinación perfecta para descubrir los lugares más representativos del Perú. Comienza en la capital gastronómica de Lima, continúa hacia las alturas de Cusco y concluye en Machu Picchu.',
+        'duration' => '6 Días / 5 Noches',
+        'badge' => '🌊 Ciudad & Cultura',
+        'includes' => 'Lima City Tour Gastronómico • Vuelo Interno Sugerido • Cusco • Valle Sagrado • Machu Picchu',
+        'ideal' => 'viajeros que buscan cultura viva, buena mesa e historia imperial.',
+        'tagline' => 'De las costas del Pacífico al misticismo de los Andes.',
+        'img' => 'https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&w=1000&q=80'
     ],
     [
-        'id' => 'valle-sagrado-machu-picchu',
-        'icon' => '🌄',
-        'title' => 'VALLE SAGRADO + MACHU PICCHU',
-        'subtitle' => 'Un viaje entre montañas y misterio',
-        'duration' => '3 días / 2 noches',
-        'desc' => 'Conecta con la historia del mundo Inca recorriendo el espectacular Valle Sagrado y culminando la experiencia en la ciudadela de Machu Picchu. Descubre paisajes andinos, pueblos tradicionales y antiguos centros arqueológicos antes de llegar a uno de los lugares más fascinantes del planeta.',
-        'includes' => 'Valle Sagrado • Cultura Andina • Arqueología • Machu Picchu',
-        'ideal' => 'viajeros con poco tiempo que quieren vivir una experiencia inolvidable.',
-        'tagline' => '✨ De los Andes a Machu Picchu. Una experiencia que recordarás siempre.',
-        'btn_text' => 'VER PROGRAMA →',
-        'img' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=1000&q=80',
-        'badge' => 'Valle Sagrado'
+        'id' => 'valle-sagrado-machupicchu',
+        'title' => 'Valle Sagrado + Machu Picchu',
+        'subtitle' => 'Paisajes, pueblos andinos y la maravilla inca',
+        'desc' => 'Un recorrido que combina la belleza natural del Valle Sagrado con sus pintorescos mercados artesanales, centros arqueológicos de vanguardia inca e ingreso a Machu Picchu.',
+        'duration' => '3 Días / 2 Noches',
+        'badge' => '🌄 Mística Andina',
+        'includes' => 'Pisac Mercado & Ruinas • Ollantaytambo • Maras & Moray • Tren de Lujo u Opción Estándar • Machu Picchu',
+        'ideal' => 'parejas y viajeros que buscan un ritmo relajado y vistas deslumbrantes.',
+        'tagline' => 'Descubre por qué los Incas eligieron este valle como su refugio sagrado.',
+        'img' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80'
     ],
     [
-        'id' => 'cusco-montana-7-colores',
-        'icon' => '🌈',
-        'title' => 'CUSCO + MONTAÑA DE 7 COLORES',
-        'subtitle' => 'Historia, cultura y aventura',
-        'duration' => '4 días / 3 noches',
-        'desc' => 'Una propuesta para quienes quieren descubrir la historia de Cusco y añadir una dosis de aventura a su viaje. Explora la ciudad imperial, descubre sus impresionantes sitios arqueológicos y prepárate para contemplar el espectacular paisaje de la Montaña de 7 Colores.',
-        'includes' => 'Cusco • Arqueología • Trekking • Andes • Montaña de 7 Colores',
-        'ideal' => 'viajeros aventureros y amantes de los paisajes de montaña.',
-        'tagline' => '✨ Descubre la historia. Camina por los Andes. Vive la aventura.',
-        'btn_text' => 'EXPLORAR PROGRAMA →',
-        'img' => 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80',
-        'badge' => 'Trekking & Aventura'
+        'id' => 'cusco-7-colores',
+        'title' => 'Cusco + Montaña de 7 Colores',
+        'subtitle' => 'Historia milenaria y naturaleza de alta montaña',
+        'desc' => 'Combina las joyas históricas de la ciudad del Cusco con una de las caminatas naturales más famosas y deslumbrantes del planeta: Vinicunca.',
+        'duration' => '5 Días / 4 Noches',
+        'badge' => '🌈 Aventura Natural',
+        'includes' => 'Cusco Histórico • Valle Sagrado • Machu Picchu • Trekking a Montaña de 7 Colores • Oxígeno & Asistencia',
+        'ideal' => 'entusiastas del trekking, fotógrafos y caminantes activos.',
+        'tagline' => 'Desafía tu ritmo y llega a una cima pintada por la naturaleza.',
+        'img' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80'
     ],
     [
-        'id' => 'peru-inca',
-        'icon' => '🏛️',
-        'title' => 'PERÚ INCA',
-        'subtitle' => 'Una inmersión en la historia del Perú',
-        'duration' => '7 días / 6 noches',
-        'desc' => 'Un programa diseñado para quienes quieren descubrir con mayor profundidad el legado de la civilización Inca. Recorre Cusco, sus sitios arqueológicos, el Valle Sagrado y Machu Picchu, disfrutando además de momentos para descubrir la cultura, gastronomía y tradiciones de los Andes.',
-        'includes' => 'Historia • Cultura • Arqueología • Comunidades • Machu Picchu',
-        'ideal' => 'viajeros interesados en historia, cultura y experiencias auténticas.',
-        'tagline' => '✨ No solo visites el mundo Inca. Conoce su historia.',
-        'btn_text' => 'DESCUBRIR PROGRAMA →',
-        'img' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80',
-        'badge' => 'Inmersión Inca'
+        'id' => 'peru-inca-completo',
+        'title' => 'Perú Inca Completo',
+        'subtitle' => 'La gran ruta del Imperio del Sol',
+        'desc' => 'El itinerario definitivo para recorrer la historia incaica. Desde los templos del sol en Cusco hasta las islas flotantes del Lago Titicaca en Puno pasando por la mística ruta del Sol.',
+        'duration' => '8 Días / 7 Noches',
+        'badge' => '👑 Gran Ruta Imperial',
+        'includes' => 'Cusco • Valle Sagrado • Machu Picchu • Bus Turístico Ruta del Sol • Puno & Lago Titicaca (Uros y Taquile)',
+        'ideal' => 'viajeros fascinados por las culturas precolombinas y la inmensidad del lago navegable más alto del mundo.',
+        'tagline' => 'Una travesía completa por el legado legendario del sur andino.',
+        'img' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=1000&q=80'
     ],
     [
         'id' => 'peru-naturaleza-aventura',
-        'icon' => '🌿',
-        'title' => 'PERÚ NATURALEZA & AVENTURA',
-        'subtitle' => 'Un viaje para quienes buscan más',
-        'duration' => 'Programa Aventura',
-        'desc' => 'Combina algunos de los destinos más fascinantes del Perú con experiencias llenas de naturaleza y aventura. Explora los Andes, descubre paisajes extraordinarios y vive actividades diseñadas para conectar con la naturaleza.',
-        'includes' => 'Trekking • Montañas • Naturaleza • Aventura • Cultura Andina',
-        'ideal' => 'aventureros, amantes de la naturaleza y viajeros activos.',
-        'tagline' => '✨ Más caminos. Más paisajes. Más historias.',
-        'btn_text' => 'VER PROGRAMAS →',
-        'img' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
-        'badge' => 'Naturaleza & Aventura'
+        'title' => 'Perú Naturaleza & Aventura',
+        'subtitle' => 'De la selva amazónica a la cima de las montañas',
+        'desc' => 'Diseñado para los amantes de la biodiversidad extrema. Experimenta la magia salvaje de Puerto Maldonado o Tambopata en la selva amazónica y luego asciende a las cumbres andinas de Cusco.',
+        'duration' => '9 Días / 8 Noches',
+        'badge' => '🌿 Selva & Andes',
+        'includes' => 'Ecolodge Amazónico • Navegación en Ríos • Avistamiento de Fauna • Cusco • Machu Picchu • Laguna Humantay',
+        'ideal' => 'aventureros, ecoturistas y exploradores de naturaleza.',
+        'tagline' => 'Siente dos mundos ecológicos opuestos y fascinantes en un mismo viaje.',
+        'img' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80'
     ],
     [
         'id' => 'peru-esencial',
-        'icon' => '🌊',
-        'title' => 'PERÚ ESENCIAL',
-        'subtitle' => 'De la costa a los Andes',
-        'duration' => '8 días / 7 noches',
-        'desc' => 'Una experiencia diseñada para descubrir diferentes rostros del Perú. Conoce Lima, explora Cusco y el Valle Sagrado, maravíllate con Machu Picchu y continúa hacia paisajes donde el desierto y el océano crean una combinación sorprendente.',
-        'includes' => 'Lima • Cusco • Valle Sagrado • Machu Picchu • Costa Peruana',
-        'ideal' => 'viajeros que quieren descubrir diferentes regiones del Perú en un solo viaje.',
-        'tagline' => '✨ Un país. Diferentes mundos. Una experiencia extraordinaria.',
-        'btn_text' => 'CONOCER PROGRAMA →',
-        'img' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80',
-        'badge' => 'Ruta Completa'
+        'num' => '07',
+        'title' => 'Perú Esencial (Lima, Ica, Cusco & Machu Picchu)',
+        'subtitle' => 'Costas, desierto, oasis e historia imperial',
+        'desc' => 'Un programa variado que abarca la gastronomía costera de Lima, las dunas e islas ballestas en Paracas/Huacachina y el fascinante esplendor de Cusco y Machu Picchu.',
+        'duration' => '8 Días / 7 Noches',
+        'badge' => '🏖️ Costa, Desierto & Andes',
+        'includes' => 'Lima • Paracas Islas Ballestas • Oasis de Huacachina & Buggies • Cusco • Valle Sagrado • Machu Picchu',
+        'ideal' => 'familias y grupos de amigos que buscan diversidad de paisajes y experiencias.',
+        'tagline' => 'El resumen perfecto de las tres grandes geografías del Perú.',
+        'img' => 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80'
     ],
     [
         'id' => 'programas-romanticos',
-        'icon' => '💕',
-        'title' => 'PROGRAMAS ROMÁNTICOS',
-        'subtitle' => 'Viaja juntos. Crea recuerdos para siempre.',
-        'duration' => 'A medida para parejas',
-        'desc' => 'Celebra una ocasión especial con una experiencia diseñada para compartir. Descubre Cusco, disfruta de los paisajes de los Andes y vive junto a esa persona especial un momento inolvidable en Machu Picchu.',
-        'includes' => 'Hoteles con encanto • Cenas exclusivas • Vistas panorámicas • Machu Picchu',
-        'ideal' => 'parejas • aniversarios • lunas de miel • celebraciones especiales',
-        'tagline' => '✨ Algunos recuerdos merecen ser compartidos.',
-        'btn_text' => 'CREAR EXPERIENCIA EN PAREJA →',
-        'img' => 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=1000&q=80',
-        'badge' => 'Parejas & Lunas de Miel'
+        'title' => 'Programas Románticos & Luna de Miel',
+        'subtitle' => 'Magia, distinción y momentos inolvidables en pareja',
+        'desc' => 'Experiencias diseñadas con máximo nivel de detalle para aniversarios, lunas de miel o escapadas románticas. Hoteles de lujo boutique, cenas privadas, vagones de tren exclusivos y atención VIP.',
+        'duration' => 'A la medida (5 a 10 Días)',
+        'badge' => '❤️ Luxury & Romance',
+        'includes' => 'Hoteles Boutique & Spa • Cenas Románticas Maridaje • Tren Hiram Bingham u Vistadome • Traslados Privados',
+        'ideal' => 'parejas, recién casados y celebraciones especiales.',
+        'tagline' => 'Creen recuerdos eternos en los escenarios más deslumbrantes del Perú.',
+        'img' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80'
     ],
     [
-        'id' => 'programas-en-familia',
-        'icon' => '👨‍👩‍👧‍👦',
-        'title' => 'PROGRAMAS EN FAMILIA',
-        'subtitle' => 'El mejor viaje es el que se comparte',
-        'duration' => 'A medida para familias',
-        'desc' => 'Descubre el Perú junto a quienes más quieres. Creamos programas familiares que combinan cultura, aventura, naturaleza y momentos de descanso para que cada integrante de la familia pueda disfrutar del viaje.',
-        'includes' => 'Rutas cómodas • Actividades interactivas • Guías amigables • Seguridad total',
+        'id' => 'programas-familia',
+        'title' => 'Programas en Familia',
+        'subtitle' => 'Seguridad, comodidad y diversión para todas las edades',
+        'desc' => 'Diseñados con tiempos adaptados para niños y adultos mayores. Ritmo pausado, actividades interactivas como talleres de chocotefería o cerámica, transporte privado amplio y asistencia profesional continua.',
+        'duration' => 'A la medida (4 a 8 Días)',
+        'badge' => '👨‍👩‍👧‍👦 Familiar & Confort',
+        'includes' => 'Transporte Privado Confortable • Tiempos Flexibles • Guía Privado Amigable • Hoteles Familiares',
         'ideal' => 'familias con niños, adolescentes o adultos mayores.',
-        'tagline' => '✨ Viajar en familia es crear historias que duran toda la vida.',
-        'btn_text' => 'VER PROGRAMAS FAMILIARES →',
-        'img' => 'https://images.unsplash.com/photo-1476514525535-ce74f45814d0?auto=format&fit=crop&w=1000&q=80',
-        'badge' => 'Viajes Familiares'
+        'tagline' => 'Un viaje inolvidable donde todos disfrutan con total tranquilidad.',
+        'img' => 'https://images.unsplash.com/photo-1539635273304-0e8723e0f016?auto=format&fit=crop&w=1000&q=80'
     ]
-];
-
-// Puntos de confianza (Viaja con Perú Safe Journeys)
-$confianza_items = [
-    "Atención personalizada",
-    "Guías profesionales",
-    "Operación organizada",
-    "Experiencias auténticas",
-    "Asistencia durante el viaje",
-    "Programas flexibles y personalizados"
 ];
 ?>
 <!DOCTYPE html>
@@ -168,17 +141,19 @@ $confianza_items = [
 
     <style>
         :root {
-            --color-naranja: #FF6B00;
-            --color-naranja-hover: #E05A00;
-            --color-naranja-glow: rgba(255, 107, 0, 0.35);
+            --color-azul-peru-safe: #003250;
+            --color-azul-andino: #0B527A;
+            --color-naranja-journey: #FF6B22;
+            --color-naranja-hover: #E0540F;
+            --color-dorado-andino: #D9A441;
             --color-blanco: #FFFFFF;
-            --color-azul-oscuro: #0B1B3D;
-            --color-azul-card: #0F234D;
-            --color-topbar: #07122A;
+            --color-gris-claro: #F4F6F7;
+
+            --color-topbar: #002238;
             --color-texto-oscuro: #1E293B;
             --color-texto-suave: #64748B;
-            --color-gris-bg: #F8FAFC;
             --color-gris-border: #E2E8F0;
+            --color-naranja-glow: rgba(255, 107, 34, 0.35);
         }
 
         body {
@@ -211,7 +186,7 @@ $confianza_items = [
         }
 
         .top-bar a:hover {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
         }
 
         .topbar-social-icon {
@@ -228,7 +203,7 @@ $confianza_items = [
         }
 
         .topbar-social-icon:hover {
-            background: var(--color-naranja);
+            background: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
             transform: translateY(-2px) scale(1.1);
             box-shadow: 0 4px 10px var(--color-naranja-glow);
@@ -236,7 +211,7 @@ $confianza_items = [
 
         /* Sticky Navigation Bar */
         .navbar-custom {
-            background-color: rgba(11, 27, 61, 0.95);
+            background-color: rgba(0, 50, 80, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             transition: all 0.4s ease;
@@ -244,7 +219,7 @@ $confianza_items = [
         }
 
         .navbar-custom.scrolled {
-            background-color: rgba(7, 18, 42, 0.98);
+            background-color: rgba(0, 34, 56, 0.98);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
@@ -257,34 +232,16 @@ $confianza_items = [
             text-decoration: none;
         }
 
-        .logo-icon-box {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--color-naranja), #FF8800);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px var(--color-naranja-glow);
+        .logo-img-header {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+            transition: transform 0.3s ease;
         }
 
-        .brand-text {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--color-blanco);
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
-
-        .brand-text span {
-            color: var(--color-naranja);
-            display: block;
-            font-size: 0.65rem;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .navbar-brand-logo:hover .logo-img-header {
+            transform: scale(1.04);
         }
 
         .nav-link {
@@ -305,7 +262,7 @@ $confianza_items = [
             left: 50%;
             width: 0%;
             height: 2px;
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -317,12 +274,12 @@ $confianza_items = [
 
         .nav-link:hover,
         .nav-link.active {
-            color: var(--color-naranja) !important;
+            color: var(--color-naranja-journey) !important;
         }
 
         /* Botón Llama */
         .btn-reserva-llama {
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
@@ -339,7 +296,7 @@ $confianza_items = [
         .btn-reserva-llama:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.5);
+            box-shadow: 0 8px 25px rgba(255, 107, 34, 0.5);
             color: var(--color-blanco);
         }
 
@@ -357,8 +314,8 @@ $confianza_items = [
         /* Hero Banner Section para Programas */
         .hero-banner-programas {
             position: relative;
-            padding: 8rem 0 6rem;
-            background: linear-gradient(180deg, rgba(7, 18, 42, 0.85) 0%, rgba(11, 27, 61, 0.92) 100%),
+            padding: 8.5rem 0 6.5rem;
+            background: linear-gradient(180deg, rgba(0, 34, 56, 0.85) 0%, rgba(0, 50, 80, 0.92) 100%),
                         url('https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: var(--color-blanco);
             text-align: center;
@@ -366,8 +323,8 @@ $confianza_items = [
         }
 
         .programas-hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.8rem;
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 1.2rem;
@@ -375,11 +332,11 @@ $confianza_items = [
         }
 
         .programas-hero-title span {
-            color: var(--color-naranja);
-            font-family: 'Caveat', cursive;
-            font-size: 4.8rem;
+            color: var(--color-dorado-andino);
+            font-size: 2.8rem;
             display: block;
-            margin-top: -0.5rem;
+            margin-top: 0.2rem;
+            font-weight: 700;
         }
 
         .programas-hero-subtitle {
@@ -390,121 +347,122 @@ $confianza_items = [
             line-height: 1.7;
         }
 
-        /* Sección Introducción */
-        .intro-section {
-            padding: 4.5rem 0 3.5rem;
-            background-color: var(--color-blanco);
-        }
-
-        .intro-box {
-            background: var(--color-gris-bg);
-            border-radius: 24px;
-            padding: 3rem 2.5rem;
-            border: 1px solid var(--color-gris-border);
-            box-shadow: 0 10px 30px rgba(11, 27, 61, 0.05);
-        }
-
-        /* Tarjeta de Programa Creativa */
-        .programa-card {
+        /* Card de Programa con tamaño de imágenes uniforme */
+        .prog-card {
             background: var(--color-blanco);
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 12px 35px rgba(11, 27, 61, 0.07);
-            margin-bottom: 4.5rem;
+            box-shadow: 0 12px 35px rgba(0, 50, 80, 0.07);
+            margin-bottom: 4rem;
             transition: all 0.4s ease;
         }
 
-        .programa-card:hover {
+        .prog-card:hover {
             transform: translateY(-6px);
-            border-color: var(--color-naranja);
-            box-shadow: 0 20px 45px rgba(255, 107, 0, 0.18);
+            border-color: var(--color-naranja-journey);
+            box-shadow: 0 20px 45px rgba(255, 107, 34, 0.18);
         }
 
-        .programa-img-box {
+        /* Estandarización de tamaño de imagen a un solo alto uniforme */
+        .prog-img-box {
             position: relative;
-            height: 100%;
-            min-height: 390px;
+            width: 100%;
+            height: 420px;
             overflow: hidden;
         }
 
-        .programa-img-box img {
+        .prog-img-box img {
             width: 100%;
-            height: 100%;
+            height: 420px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
 
-        .programa-card:hover .programa-img-box img {
+        .prog-card:hover .prog-img-box img {
             transform: scale(1.08);
         }
 
-        .programa-badge-top {
+        .prog-badge-top {
             position: absolute;
             top: 20px;
             left: 20px;
-            background: rgba(11, 27, 61, 0.88);
+            background: rgba(0, 50, 80, 0.88);
             backdrop-filter: blur(8px);
             color: var(--color-blanco);
             padding: 0.5rem 1.1rem;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 700;
-            border: 1px solid rgba(255, 107, 0, 0.5);
+            border: 1px solid rgba(217, 164, 65, 0.5);
+            font-family: 'Poppins', sans-serif;
         }
 
-        .programa-duration-badge {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: var(--color-naranja);
+        .prog-duration-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: var(--color-naranja-journey);
             color: var(--color-blanco);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.88rem;
-            font-weight: 800;
-            box-shadow: 0 4px 15px var(--color-naranja-glow);
-        }
-
-        .programa-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--color-azul-oscuro);
-            margin-bottom: 0.3rem;
-        }
-
-        .programa-subtitle {
-            color: var(--color-naranja);
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px var(--color-naranja-glow);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .prog-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--color-azul-peru-safe);
+            margin-bottom: 0.4rem;
+        }
+
+        .prog-subtitle {
+            color: var(--color-naranja-journey);
+            font-weight: 700;
+            font-size: 1.05rem;
             margin-bottom: 1.2rem;
         }
 
-        .programa-desc {
+        .prog-desc {
             color: #334155;
-            font-size: 1.02rem;
+            font-size: 1rem;
             line-height: 1.8;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
 
-        .programa-includes-box {
-            background-color: var(--color-gris-bg);
+        .prog-feature-box {
+            background-color: var(--color-gris-claro);
             border-radius: 16px;
             padding: 1.25rem;
-            margin-bottom: 1.2rem;
-            border-left: 4px solid var(--color-naranja);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--color-naranja-journey);
         }
 
-        .programa-quote-tagline {
+        .prog-feature-item {
+            margin-bottom: 0.6rem;
+            font-size: 0.93rem;
+            color: var(--color-texto-oscuro);
+        }
+
+        .prog-feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .prog-quote-tagline {
+            font-style: italic;
             font-weight: 700;
-            color: var(--color-azul-oscuro);
-            font-size: 1.05rem;
+            color: var(--color-azul-peru-safe);
+            font-size: 1rem;
             margin-bottom: 1.8rem;
         }
 
-        .btn-programa-action {
-            background-color: var(--color-naranja);
+        .btn-prog-whatsapp {
+            background-color: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
             font-weight: 700;
             padding: 0.75rem 1.8rem;
@@ -515,93 +473,18 @@ $confianza_items = [
             gap: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px var(--color-naranja-glow);
-            letter-spacing: 0.5px;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .btn-programa-action:hover {
+        .btn-prog-whatsapp:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
-        }
-
-        /* Sección Programa Personalizado */
-        .personalizadas-section {
-            background-color: var(--color-gris-bg);
-            padding: 5rem 0;
-            border-top: 1px solid var(--color-gris-border);
-            border-bottom: 1px solid var(--color-gris-border);
-        }
-
-        .personalizada-card {
-            background: var(--color-blanco);
-            border-radius: 24px;
-            padding: 3rem 2.5rem;
-            border: 1px solid var(--color-gris-border);
-            box-shadow: 0 15px 35px rgba(11, 27, 61, 0.06);
-        }
-
-        .custom-tags-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 1.8rem 0 2rem;
-        }
-
-        .custom-tag-item {
-            background-color: var(--color-gris-bg);
-            border: 1px solid var(--color-gris-border);
-            padding: 0.9rem 1.2rem;
-            border-radius: 14px;
-            font-weight: 700;
-            color: var(--color-azul-oscuro);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.98rem;
-        }
-
-        /* Sección Viaja con Perú Safe Journeys */
-        .confianza-section {
-            padding: 5rem 0;
-            background-color: var(--color-blanco);
-        }
-
-        .confianza-item-card {
-            background: var(--color-gris-bg);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid var(--color-gris-border);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-            color: var(--color-azul-oscuro);
-            transition: all 0.3s ease;
-        }
-
-        .confianza-item-card:hover {
-            background: var(--color-blanco);
-            border-color: var(--color-naranja);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.12);
-        }
-
-        .confianza-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background-color: rgba(255, 107, 0, 0.15);
-            color: var(--color-naranja);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(255, 107, 34, 0.4);
         }
 
         /* Call To Action Final */
         .cta-final-section {
-            background: linear-gradient(135deg, var(--color-azul-oscuro) 0%, #07122A 100%);
+            background: linear-gradient(135deg, var(--color-azul-peru-safe) 0%, #001A2B 100%);
             color: var(--color-blanco);
             padding: 6rem 0;
             text-align: center;
@@ -610,7 +493,7 @@ $confianza_items = [
         }
 
         .cta-final-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
@@ -624,16 +507,9 @@ $confianza_items = [
             line-height: 1.8;
         }
 
-        .btn-cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
         /* Footer */
         .footer-custom {
-            background-color: #040A18;
+            background-color: #001A2B;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: 4rem;
             padding-bottom: 2rem;
@@ -642,7 +518,7 @@ $confianza_items = [
         }
 
         .footer-logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 1.6rem;
             font-weight: 800;
             color: var(--color-blanco);
@@ -652,7 +528,7 @@ $confianza_items = [
         }
 
         .footer-logo span {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
         }
 
         .footer-contact-item {
@@ -671,7 +547,7 @@ $confianza_items = [
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
             font-size: 1.1rem;
         }
 
@@ -682,7 +558,7 @@ $confianza_items = [
         }
 
         .footer-contact-item a:hover {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
         }
 
         .footer-heading {
@@ -692,6 +568,7 @@ $confianza_items = [
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .footer-heading::after {
@@ -701,7 +578,7 @@ $confianza_items = [
             left: 0;
             width: 35px;
             height: 2px;
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
         }
 
         .footer-links {
@@ -724,7 +601,7 @@ $confianza_items = [
         }
 
         .footer-links a:hover {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
             transform: translateX(4px);
         }
 
@@ -802,15 +679,9 @@ $confianza_items = [
     <!-- Menú Pegajoso (Sticky Navbar) -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
         <div class="container">
-            <!-- Imagen / Logo -->
-            <a class="navbar-brand-logo" href="page-inicio.php">
-                <div class="logo-icon-box">
-                    <i class="bi bi-compass text-white fs-4"></i>
-                </div>
-                <div class="brand-text">
-                    Perú Safe Journeys
-                    <span>Travel Agency</span>
-                </div>
+            <!-- Imagen del Logo -->
+            <a class="navbar-brand-logo" href="https://www.perusafejourneys.todowebcusco.com/">
+                <img src="http://www.perusafejourneys.todowebcusco.com/wp-content/uploads/2026/09/Peru-Safe-Journeys-logo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
             <!-- Toggle Mobile -->
@@ -843,7 +714,7 @@ $confianza_items = [
 
                 <!-- BOTON "Reserva tu Viaje" con icono llamita -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
-                    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20reservar%20un%20programa%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
+                    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20reservar%20un%20programa%20de%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
                             <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
                         </svg>
@@ -859,85 +730,71 @@ $confianza_items = [
     <header class="hero-banner-programas">
         <div class="container animate__animated animate__fadeIn">
             <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
-                ✈️ PROGRAMAS DE VIAJE
+                🗺️ ITINERARIOS COMPLETOS Y ORGANIZADOS
             </span>
             <h1 class="programas-hero-title">
-                PROGRAMAS
+                PROGRAMAS DE VIAJE
                 <span>Tu viaje comienza con una buena elección</span>
             </h1>
             <p class="programas-hero-subtitle">
-                ¿Tienes pocos días? ¿Quieres conocer Machu Picchu? ¿Buscas una aventura por los Andes? ¿Prefieres descubrir el Perú con calma?<br>
-                En <strong>Perú Safe Journeys</strong> hemos creado programas pensados para diferentes estilos de viajeros, combinando <strong>destinos increíbles, experiencias auténticas y una planificación cuidadosamente organizada</strong>.
+                Diseñamos paquetes turísticos completos con transporte, hoteles, tickets e ingresos incluidos para que disfrutes tu aventura con máxima seguridad y confort.
             </p>
         </div>
     </header>
 
 
-    <!-- INTRODUCCIÓN Y CONCEPTO -->
-    <section class="intro-section">
+    <!-- INTRODUCCIÓN -->
+    <section class="py-5 bg-white">
         <div class="container">
-            <div class="intro-box text-center">
-                <h2 class="font-playfair fw-bold text-dark fs-2 mb-3">
-                    Elige tu programa, prepara tus maletas
+            <div class="p-4 p-md-5 rounded-4 text-center" style="background-color: var(--color-gris-claro); border: 1px solid var(--color-gris-border);">
+                <h2 class="fw-bold text-dark fs-2 mb-3" style="font-family: 'Poppins', sans-serif;">
+                    Planificación profesional al servicio de tus sueños
                 </h2>
-                <p class="fs-5 text-secondary mb-4" style="max-width: 850px; margin: 0 auto; line-height: 1.8;">
-                    Déjanos ayudarte a convertir tus días en el Perú en una historia para recordar.
+                <p class="fs-5 text-secondary mb-0" style="max-width: 880px; margin: 0 auto; line-height: 1.8;">
+                    Nuestros programas combinan los destinos imprescindibles con un ritmo adecuado para permitirte descansar, disfrutar y conectar con cada paisaje sin contratiempos.
                 </p>
-                <div class="d-inline-block px-4 py-2 rounded-pill" style="background-color: var(--color-azul-oscuro); color: var(--color-blanco);">
-                    <span class="fw-bold fs-5">🇵🇪 Elige tu ruta. Vive la experiencia. Descubre el Perú.</span>
-                </div>
             </div>
         </div>
     </section>
 
 
-    <!-- LISTA DE PROGRAMAS -->
-    <section class="py-4" id="programas-list">
+    <!-- LISTA DE LOS PROGRAMAS -->
+    <section class="py-3">
         <div class="container">
-            <div class="text-center mb-5">
-                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-2">
-                    ⭐ NUESTROS PROGRAMAS
-                </span>
-                <h2 class="font-playfair fw-bold text-dark fs-1">
-                    Itinerarios diseñados a tu medida
-                </h2>
-            </div>
-
             <?php foreach($programas as $index => $item): ?>
-            <div class="programa-card" id="<?php echo $item['id']; ?>">
+            <div class="prog-card" id="<?php echo $item['id']; ?>">
                 <div class="row g-0 align-items-stretch <?php echo ($index % 2 != 0) ? 'flex-row-reverse' : ''; ?>">
-                    <!-- Imagen del Programa -->
+                    <!-- Imagen del Programa Estandarizada -->
                     <div class="col-lg-6">
-                        <div class="programa-img-box">
+                        <div class="prog-img-box">
                             <img src="<?php echo $item['img']; ?>" alt="<?php echo $item['title']; ?>" loading="lazy">
-                            <span class="programa-badge-top"><?php echo $item['icon'] . ' ' . $item['badge']; ?></span>
-                            <span class="programa-duration-badge"><i class="bi bi-clock-history me-1"></i> <?php echo $item['duration']; ?></span>
+                            <span class="prog-badge-top"><?php echo $item['badge']; ?></span>
                         </div>
                     </div>
 
                     <!-- Contenido del Programa -->
                     <div class="col-lg-6 d-flex align-items-center">
                         <div class="p-4 p-md-5 w-100">
-                            <h2 class="programa-title"><?php echo $item['title']; ?></h2>
-                            <h3 class="programa-subtitle"><?php echo $item['subtitle']; ?></h3>
-                            <p class="programa-desc"><?php echo $item['desc']; ?></p>
+                            <span class="prog-duration-badge"><i class="bi bi-clock-fill"></i> <?php echo $item['duration']; ?></span>
+                            <h2 class="prog-title"><?php echo $item['title']; ?></h2>
+                            <h3 class="prog-subtitle"><?php echo $item['subtitle']; ?></h3>
+                            <p class="prog-desc"><?php echo $item['desc']; ?></p>
 
-                            <div class="programa-includes-box">
-                                <div class="mb-2 fs-6 text-dark">
-                                    <strong>✨ Incluye experiencias:</strong><br>
-                                    <span class="text-secondary"><?php echo $item['includes']; ?></span>
+                            <div class="prog-feature-box">
+                                <div class="prog-feature-item">
+                                    <strong>✨ Incluye experiencias:</strong> <?php echo $item['includes']; ?>
                                 </div>
-                                <div class="mb-0 fs-6 text-dark pt-1 border-top border-light-subtle">
+                                <div class="prog-feature-item">
                                     <strong>👉 Ideal para:</strong> <?php echo $item['ideal']; ?>
                                 </div>
                             </div>
 
-                            <p class="programa-quote-tagline">
-                                <?php echo $item['tagline']; ?>
+                            <p class="prog-quote-tagline">
+                                "<?php echo $item['tagline']; ?>"
                             </p>
 
-                            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20programa%20<?php echo urlencode($item['title']); ?>" target="_blank" class="btn-programa-action">
-                                <i class="bi bi-whatsapp"></i> <?php echo $item['btn_text']; ?>
+                            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20consultar%20el%20programa%20<?php echo urlencode($item['title']); ?>" target="_blank" class="btn-prog-whatsapp">
+                                <i class="bi bi-whatsapp"></i> Consultar Itinerario de <?php echo $item['title']; ?>
                             </a>
                         </div>
                     </div>
@@ -948,116 +805,22 @@ $confianza_items = [
     </section>
 
 
-    <!-- SECCIÓN ¿NO ENCUENTRAS EL PROGRAMA PERFECTO? -->
-    <section class="personalizadas-section" id="personalizar">
-        <div class="container">
-            <div class="personalizada-card text-center text-lg-start">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3">
-                            🧭 ¿NO ENCUENTRAS EL PROGRAMA PERFECTO?
-                        </span>
-                        <h2 class="font-playfair fw-bold text-dark fs-2 mb-3">
-                            Creamos uno para ti.
-                        </h2>
-                        <p class="fs-5 text-secondary mb-3">
-                            Cada viajero tiene una forma diferente de descubrir el mundo. Por eso podemos adaptar nuestros programas según:
-                        </p>
-
-                        <div class="custom-tags-grid">
-                            <div class="custom-tag-item"><i class="bi bi-calendar3 text-warning"></i> 📅 Número de días</div>
-                            <div class="custom-tag-item"><i class="bi bi-geo-alt-fill text-warning"></i> 🏔️ Destinos a conocer</div>
-                            <div class="custom-tag-item"><i class="bi bi-person-walking text-warning"></i> 🥾 Nivel de aventura</div>
-                            <div class="custom-tag-item"><i class="bi bi-people-fill text-warning"></i> 👨‍👩‍👧 Tipo de viaje</div>
-                            <div class="custom-tag-item"><i class="bi bi-wallet2 text-warning"></i> 💰 Presupuesto</div>
-                            <div class="custom-tag-item"><i class="bi bi-heart-fill text-warning"></i> ❤️ Experiencias deseadas</div>
-                        </div>
-
-                        <p class="fs-6 text-secondary mb-4">
-                            Cuéntanos qué tienes en mente y nuestro equipo puede ayudarte a diseñar una experiencia personalizada por el Perú.
-                        </p>
-                        <h4 class="font-playfair fw-bold mb-4" style="color: var(--color-naranja);">
-                            ✨ Tú eliges cómo quieres viajar. Nosotros diseñamos el camino.
-                        </h4>
-                    </div>
-
-                    <div class="col-lg-5 text-center">
-                        <div class="p-4 rounded-4" style="background-color: var(--color-azul-oscuro); color: var(--color-blanco);">
-                            <i class="bi bi-compass-fill fs-1 text-warning d-block mb-3"></i>
-                            <h3 class="font-playfair fw-bold mb-3">Diseña tu Itinerario</h3>
-                            <p class="text-light fs-6 mb-4">Planificación 100% personalizada con especialistas locales para hacer realidad el viaje de tus sueños.</p>
-                            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20dise%C3%B1ar%20mi%20viaje%20a%20medida%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama fs-6 w-100 justify-content-center py-3">
-                                <i class="bi bi-whatsapp"></i> DISEÑAR MI VIAJE →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- SECCIÓN VIAJA CON PERÚ SAFE JOURNEYS -->
-    <section class="confianza-section">
-        <div class="container text-center">
-            <span class="badge bg-primary text-white px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3" style="background-color: var(--color-azul-oscuro) !important;">
-                🛡️ VIAJA CON PERÚ SAFE JOURNEYS
-            </span>
-            <h2 class="font-playfair fw-bold text-dark fs-2 mb-3">
-                Cada programa está pensado para que disfrutes más y te preocupes menos.
-            </h2>
-
-            <div class="row g-3 justify-content-center mt-4 mb-4">
-                <?php foreach($confianza_items as $confianza): ?>
-                <div class="col-md-6 col-lg-4">
-                    <div class="confianza-item-card">
-                        <div class="confianza-icon">
-                            <i class="bi bi-check-lg"></i>
-                        </div>
-                        <span>✓ <?php echo $confianza; ?></span>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-
-            <div class="mt-4">
-                <span class="fs-5 fw-bold" style="color: var(--color-azul-oscuro);">
-                    🇵🇪 Viaja seguro. Vive auténticamente. Descubre el Perú.
-                </span>
-            </div>
-        </div>
-    </section>
-
-
     <!-- SECCIÓN CALL TO ACTION FINAL -->
     <section class="cta-final-section">
         <div class="container position-relative z-2">
             <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3">
-                ✨ TU PRÓXIMA HISTORIA COMIENZA AQUÍ
+                ✨ ¿NO ENCUENTRAS EL PROGRAMA PERFECTO?
             </span>
             <h2 class="cta-final-title">
-                Machu Picchu te espera.
+                Creamos tu programa de viaje 100% personalizado
             </h2>
-            <p class="cta-final-subtitle fs-5 mb-4">
-                Cusco tiene una historia que contarte.<br>
-                Los Andes tienen caminos por descubrir.<br>
-                El Perú tiene experiencias que recordarás para siempre.<br><br>
-                <strong>Elige tu programa y comienza a planificar tu aventura.</strong>
+            <p class="cta-final-subtitle">
+                Si deseas agregar más días, incluir destinos adicionales o ajustar las actividades a tu propio ritmo, contáctanos y armaremos un itinerario a tu medida.
             </p>
 
-            <div class="btn-cta-group mb-5">
-                <a href="#programas-list" class="btn-reserva-llama fs-5 px-4 py-3">
-                    <i class="bi bi-compass-fill"></i> EXPLORAR PROGRAMAS
-                </a>
-                <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20hablar%20con%20un%20asesor%20de%20viajes" target="_blank" class="btn btn-outline-light rounded-pill fs-5 px-4 py-3 font-weight-bold border-2">
-                    <i class="bi bi-headset text-warning me-2"></i> HABLAR CON UN ASESOR
-                </a>
-            </div>
-
-            <div class="border-top border-secondary pt-4 mt-2 max-w-700 mx-auto">
-                <h4 class="font-playfair fw-bold text-white mb-1">PERÚ SAFE JOURNEYS – TRAVEL AGENCY</h4>
-                <p class="text-warning fst-italic fs-5 mb-0">Tu viaje. Tu historia. Nuestra experiencia.</p>
-            </div>
+            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20solicitar%20un%20programa%20de%20viaje%20personalizado" target="_blank" class="btn-reserva-llama fs-5 px-4 py-3">
+                <i class="bi bi-pencil-square"></i> Solicitar Itinerario Personalizado
+            </a>
         </div>
     </section>
 
@@ -1068,16 +831,16 @@ $confianza_items = [
             <div class="row g-4 justify-content-between">
                 <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
-                    <a href="page-inicio.php" class="footer-logo">
+                    <a href="https://www.perusafejourneys.todowebcusco.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
                     <p class="pe-lg-4" style="color: #94A3B8;">
                         Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas. Conectamos viajeros con el corazón cultural, histórico y natural del Perú.
                     </p>
                     <div class="d-flex gap-3 mt-3">
-                        <a href="#" class="footer-contact-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="footer-contact-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="footer-contact-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="footer-contact-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="footer-contact-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="footer-contact-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
                     </div>
                 </div>
 
@@ -1085,12 +848,12 @@ $confianza_items = [
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading">Navegación</h5>
                     <ul class="footer-links">
-                        <li><a href="page-inicio.php#inicio"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
-                        <li><a href="page-destinos.php"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
-                        <li><a href="page-experiencias.php"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
-                        <li><a href="page-programas.php"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
-                        <li><a href="page-nosotros.php"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
-                        <li><a href="page-contacto.php"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/destinos/"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/experiencias/"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/programas/"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/nosotros/"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/contacto/"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
                     </ul>
                 </div>
 
@@ -1137,7 +900,7 @@ $confianza_items = [
     </footer>
 
     <!-- Icono flotante de WhatsApp -->
-    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20programas%20de%20viaje"
+    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20programas%20de%20viaje"
        class="whatsapp-float"
        target="_blank"
        aria-label="Contactar por WhatsApp">

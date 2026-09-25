@@ -4,7 +4,7 @@ $company_name = "Perú Safe Journeys";
 $company_tagline = "tu camino hacia un Perú auténtico";
 $phone_number = "+51 948 364 822";
 $phone_clean = "51948364822";
-$email_address = "informes-web@perusafejourneys.com";
+$email_address = "informesweb@perusafejourneyscorp.com";
 $current_year = date('Y');
 
 // Array de los 7 Destinos
@@ -116,17 +116,19 @@ $destinos = [
 
     <style>
         :root {
-            --color-naranja: #FF6B00;
-            --color-naranja-hover: #E05A00;
-            --color-naranja-glow: rgba(255, 107, 0, 0.35);
+            --color-azul-peru-safe: #003250;
+            --color-azul-andino: #0B527A;
+            --color-naranja-journey: #FF6B22;
+            --color-naranja-hover: #E0540F;
+            --color-dorado-andino: #D9A441;
             --color-blanco: #FFFFFF;
-            --color-azul-oscuro: #0B1B3D;
-            --color-azul-card: #0F234D;
-            --color-topbar: #07122A;
+            --color-gris-claro: #F4F6F7;
+
+            --color-topbar: #002238;
             --color-texto-oscuro: #1E293B;
             --color-texto-suave: #64748B;
-            --color-gris-bg: #F8FAFC;
             --color-gris-border: #E2E8F0;
+            --color-naranja-glow: rgba(255, 107, 34, 0.35);
         }
 
         body {
@@ -159,7 +161,7 @@ $destinos = [
         }
 
         .top-bar a:hover {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
         }
 
         .topbar-social-icon {
@@ -176,7 +178,7 @@ $destinos = [
         }
 
         .topbar-social-icon:hover {
-            background: var(--color-naranja);
+            background: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
             transform: translateY(-2px) scale(1.1);
             box-shadow: 0 4px 10px var(--color-naranja-glow);
@@ -184,7 +186,7 @@ $destinos = [
 
         /* Sticky Navigation Bar */
         .navbar-custom {
-            background-color: rgba(11, 27, 61, 0.95);
+            background-color: rgba(0, 50, 80, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             transition: all 0.4s ease;
@@ -192,7 +194,7 @@ $destinos = [
         }
 
         .navbar-custom.scrolled {
-            background-color: rgba(7, 18, 42, 0.98);
+            background-color: rgba(0, 34, 56, 0.98);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
@@ -205,34 +207,16 @@ $destinos = [
             text-decoration: none;
         }
 
-        .logo-icon-box {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--color-naranja), #FF8800);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px var(--color-naranja-glow);
+        .logo-img-header {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+            transition: transform 0.3s ease;
         }
 
-        .brand-text {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--color-blanco);
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
-
-        .brand-text span {
-            color: var(--color-naranja);
-            display: block;
-            font-size: 0.65rem;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .navbar-brand-logo:hover .logo-img-header {
+            transform: scale(1.04);
         }
 
         .nav-link {
@@ -253,7 +237,7 @@ $destinos = [
             left: 50%;
             width: 0%;
             height: 2px;
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -265,12 +249,12 @@ $destinos = [
 
         .nav-link:hover,
         .nav-link.active {
-            color: var(--color-naranja) !important;
+            color: var(--color-naranja-journey) !important;
         }
 
         /* Botón Llama */
         .btn-reserva-llama {
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
@@ -287,7 +271,7 @@ $destinos = [
         .btn-reserva-llama:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.5);
+            box-shadow: 0 8px 25px rgba(255, 107, 34, 0.5);
             color: var(--color-blanco);
         }
 
@@ -306,7 +290,7 @@ $destinos = [
         .hero-banner-destinos {
             position: relative;
             padding: 8rem 0 6rem;
-            background: linear-gradient(180deg, rgba(7, 18, 42, 0.85) 0%, rgba(11, 27, 61, 0.92) 100%),
+            background: linear-gradient(180deg, rgba(0, 34, 56, 0.85) 0%, rgba(0, 50, 80, 0.92) 100%),
                         url('https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: var(--color-blanco);
             text-align: center;
@@ -314,7 +298,7 @@ $destinos = [
         }
 
         .destinos-hero-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 4rem;
             font-weight: 800;
             letter-spacing: -1px;
@@ -323,11 +307,12 @@ $destinos = [
         }
 
         .destinos-hero-title span {
-            color: var(--color-naranja);
-            font-family: 'Caveat', cursive;
-            font-size: 4.8rem;
+            color: var(--color-dorado-andino);
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
             display: block;
-            margin-top: -0.5rem;
+            margin-top: 0.2rem;
+            font-weight: 700;
         }
 
         .destinos-hero-subtitle {
@@ -345,28 +330,28 @@ $destinos = [
         }
 
         .intro-box {
-            background: var(--color-gris-bg);
+            background: var(--color-gris-claro);
             border-radius: 24px;
             padding: 3rem 2.5rem;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 10px 30px rgba(11, 27, 61, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 50, 80, 0.05);
         }
 
-        /* Item de Destino Creativo */
+        /* Item de Destino Creativo con Imágenes estandarizadas */
         .destino-card {
             background: var(--color-blanco);
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 12px 35px rgba(11, 27, 61, 0.07);
+            box-shadow: 0 12px 35px rgba(0, 50, 80, 0.07);
             margin-bottom: 4.5rem;
             transition: all 0.4s ease;
         }
 
         .destino-card:hover {
             transform: translateY(-6px);
-            border-color: var(--color-naranja);
-            box-shadow: 0 20px 45px rgba(255, 107, 0, 0.18);
+            border-color: var(--color-naranja-journey);
+            box-shadow: 0 20px 45px rgba(255, 107, 34, 0.18);
         }
 
         .destino-number-badge {
@@ -375,7 +360,7 @@ $destinos = [
             justify-content: center;
             width: 50px;
             height: 50px;
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             color: var(--color-blanco);
             font-weight: 800;
             font-size: 1.2rem;
@@ -384,16 +369,17 @@ $destinos = [
             box-shadow: 0 6px 18px var(--color-naranja-glow);
         }
 
+        /* Estandarización de tamaño de imágenes a un solo alto uniforme */
         .destino-img-box {
             position: relative;
-            height: 100%;
-            min-height: 380px;
+            width: 100%;
+            height: 420px;
             overflow: hidden;
         }
 
         .destino-img-box img {
             width: 100%;
-            height: 100%;
+            height: 420px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
@@ -406,26 +392,27 @@ $destinos = [
             position: absolute;
             top: 20px;
             left: 20px;
-            background: rgba(11, 27, 61, 0.88);
+            background: rgba(0, 50, 80, 0.88);
             backdrop-filter: blur(8px);
             color: var(--color-blanco);
             padding: 0.5rem 1.1rem;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 700;
-            border: 1px solid rgba(255, 107, 0, 0.5);
+            border: 1px solid rgba(217, 164, 65, 0.5);
+            font-family: 'Poppins', sans-serif;
         }
 
         .destino-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 2.2rem;
             font-weight: 800;
-            color: var(--color-azul-oscuro);
+            color: var(--color-azul-peru-safe);
             margin-bottom: 0.5rem;
         }
 
         .destino-subtitle {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
             font-weight: 700;
             font-size: 1.1rem;
             margin-bottom: 1.2rem;
@@ -439,11 +426,11 @@ $destinos = [
         }
 
         .destino-feature-box {
-            background-color: var(--color-gris-bg);
+            background-color: var(--color-gris-claro);
             border-radius: 16px;
             padding: 1.25rem;
             margin-bottom: 1.5rem;
-            border-left: 4px solid var(--color-naranja);
+            border-left: 4px solid var(--color-naranja-journey);
         }
 
         .destino-feature-item {
@@ -459,13 +446,13 @@ $destinos = [
         .destino-quote-tagline {
             font-style: italic;
             font-weight: 700;
-            color: var(--color-azul-oscuro);
+            color: var(--color-azul-peru-safe);
             font-size: 1.05rem;
             margin-bottom: 1.8rem;
         }
 
         .btn-destino-whatsapp {
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
             font-weight: 700;
             padding: 0.75rem 1.8rem;
@@ -476,17 +463,18 @@ $destinos = [
             gap: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px var(--color-naranja-glow);
+            font-family: 'Poppins', sans-serif;
         }
 
         .btn-destino-whatsapp:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(255, 107, 34, 0.4);
         }
 
         /* Call To Action Final */
         .cta-final-section {
-            background: linear-gradient(135deg, var(--color-azul-oscuro) 0%, #07122A 100%);
+            background: linear-gradient(135deg, var(--color-azul-peru-safe) 0%, #001A2B 100%);
             color: var(--color-blanco);
             padding: 6rem 0;
             text-align: center;
@@ -495,7 +483,7 @@ $destinos = [
         }
 
         .cta-final-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
@@ -525,11 +513,12 @@ $destinos = [
             font-weight: 700;
             font-size: 0.95rem;
             color: var(--color-blanco);
+            font-family: 'Poppins', sans-serif;
         }
 
         /* Footer */
         .footer-custom {
-            background-color: #040A18;
+            background-color: #001A2B;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: 4rem;
             padding-bottom: 2rem;
@@ -538,7 +527,7 @@ $destinos = [
         }
 
         .footer-logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 1.6rem;
             font-weight: 800;
             color: var(--color-blanco);
@@ -548,7 +537,7 @@ $destinos = [
         }
 
         .footer-logo span {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
         }
 
         .footer-contact-item {
@@ -567,7 +556,7 @@ $destinos = [
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
             font-size: 1.1rem;
         }
 
@@ -578,7 +567,7 @@ $destinos = [
         }
 
         .footer-contact-item a:hover {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
         }
 
         .footer-heading {
@@ -588,6 +577,7 @@ $destinos = [
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .footer-heading::after {
@@ -597,7 +587,7 @@ $destinos = [
             left: 0;
             width: 35px;
             height: 2px;
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
         }
 
         .footer-links {
@@ -620,7 +610,7 @@ $destinos = [
         }
 
         .footer-links a:hover {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
             transform: translateX(4px);
         }
 
@@ -698,15 +688,9 @@ $destinos = [
     <!-- Menú Pegajoso (Sticky Navbar) -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
         <div class="container">
-            <!-- Imagen / Logo -->
-            <a class="navbar-brand-logo" href="page-inicio.php">
-                <div class="logo-icon-box">
-                    <i class="bi bi-compass text-white fs-4"></i>
-                </div>
-                <div class="brand-text">
-                    Perú Safe Journeys
-                    <span>Travel Agency</span>
-                </div>
+            <!-- Imagen del Logo -->
+            <a class="navbar-brand-logo" href="https://www.perusafejourneys.todowebcusco.com/">
+                <img src="http://www.perusafejourneys.todowebcusco.com/wp-content/uploads/2026/09/Peru-Safe-Journeys-logo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
             <!-- Toggle Mobile -->
@@ -772,7 +756,7 @@ $destinos = [
     <section class="intro-destinos-section">
         <div class="container">
             <div class="intro-box text-center">
-                <h2 class="font-playfair fw-bold text-dark fs-2 mb-3">
+                <h2 class="fw-bold text-dark fs-2 mb-3" style="font-family: 'Poppins', sans-serif;">
                     El Perú es mucho más que un destino
                 </h2>
                 <p class="fs-5 text-secondary mb-0" style="max-width: 850px; margin: 0 auto; line-height: 1.8;">
@@ -790,7 +774,7 @@ $destinos = [
             <?php foreach($destinos as $index => $item): ?>
             <div class="destino-card" id="<?php echo $item['id']; ?>">
                 <div class="row g-0 align-items-stretch <?php echo ($index % 2 != 0) ? 'flex-row-reverse' : ''; ?>">
-                    <!-- Imagen del Destino -->
+                    <!-- Imagen del Destino Estandarizada -->
                     <div class="col-lg-6">
                         <div class="destino-img-box">
                             <img src="<?php echo $item['img']; ?>" alt="<?php echo $item['title']; ?>" loading="lazy">
@@ -863,16 +847,16 @@ $destinos = [
             <div class="row g-4 justify-content-between">
                 <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
-                    <a href="page-inicio.php" class="footer-logo">
+                    <a href="https://www.perusafejourneys.todowebcusco.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
                     <p class="pe-lg-4" style="color: #94A3B8;">
                         Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas. Conectamos viajeros con el corazón cultural, histórico y natural del Perú.
                     </p>
                     <div class="d-flex gap-3 mt-3">
-                        <a href="#" class="footer-contact-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="footer-contact-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="footer-contact-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="footer-contact-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="footer-contact-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="footer-contact-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
                     </div>
                 </div>
 
@@ -880,12 +864,12 @@ $destinos = [
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading">Navegación</h5>
                     <ul class="footer-links">
-                        <li><a href="page-inicio.php#inicio"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
-                        <li><a href="page-destinos.php"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
-                        <li><a href="page-experiencias.php"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
-                        <li><a href="page-programas.php"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
-                        <li><a href="page-nosotros.php"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
-                        <li><a href="page-contacto.php"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/destinos/"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/experiencias/"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/programas/"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/nosotros/"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
+                        <li><a href="https://www.perusafejourneys.todowebcusco.com/contacto/"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
                     </ul>
                 </div>
 
