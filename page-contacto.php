@@ -72,10 +72,10 @@ $faqs = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - <?php echo $company_name; ?></title>
 
-    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display / Caveat -->
+    <!-- Google Fonts: Poppins & Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -100,10 +100,17 @@ $faqs = [
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Manrope', sans-serif;
             background-color: var(--color-blanco);
             color: var(--color-texto-oscuro);
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6,
+        .contacto-hero-title, .section-title,
+        .brand-text, .nav-link, .btn-reserva-llama, .btn-submit-contacto, .btn-whatsapp-direct,
+        .badge, .section-badge {
+            font-family: 'Poppins', sans-serif;
         }
 
         /* TopBar Superior */

@@ -93,10 +93,10 @@ $brand_pillars = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $company_name; ?> - Viajes Auténticos y Seguros por el Perú</title>
 
-    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display / Caveat -->
+    <!-- Google Fonts: Poppins & Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -123,10 +123,18 @@ $brand_pillars = [
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Manrope', sans-serif;
             background-color: var(--color-blanco);
             color: var(--color-texto-oscuro);
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6,
+        .hero-title, .section-title, .agency-title,
+        .card-title-custom, .pillar-title-creative,
+        .brand-text, .nav-link, .btn-reserva-llama, .btn-hero-primary, .btn-hero-secondary,
+        .badge, .section-tag {
+            font-family: 'Poppins', sans-serif;
         }
 
         /* TopBar Superior */
@@ -321,7 +329,7 @@ $brand_pillars = [
         }
 
         .hero-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 4.2rem;
             font-weight: 800;
             color: var(--color-blanco);
@@ -332,7 +340,7 @@ $brand_pillars = [
 
         .hero-title span {
             color: var(--color-dorado-andino);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 3.8rem;
             display: block;
             margin-top: 0.2rem;
@@ -416,7 +424,7 @@ $brand_pillars = [
         }
 
         .section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 2.6rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
@@ -536,6 +544,7 @@ $brand_pillars = [
             justify-content: center;
             gap: 8px;
             transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
         }
 
         .btn-card-action:hover {
@@ -621,7 +630,7 @@ $brand_pillars = [
         }
 
         .agency-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 2.3rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
@@ -674,6 +683,7 @@ $brand_pillars = [
             font-weight: 800;
             box-shadow: 0 8px 20px var(--color-naranja-glow);
             text-align: center;
+            font-family: 'Poppins', sans-serif;
         }
 
         /* Sección PILARES DE MARCA REDISEÑADA Y SUPER CREATIVA */
@@ -752,6 +762,7 @@ $brand_pillars = [
             font-weight: 800;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.75rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .pillar-desc-creative {
@@ -786,7 +797,7 @@ $brand_pillars = [
         }
 
         .creative-banner h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 2.3rem;
             font-weight: 800;
             margin-bottom: 1rem;
@@ -809,6 +820,7 @@ $brand_pillars = [
             display: inline-block;
             transition: all 0.3s ease;
             box-shadow: 0 6px 20px var(--color-naranja-glow);
+            font-family: 'Poppins', sans-serif;
         }
 
         .btn-banner:hover {
@@ -828,7 +840,7 @@ $brand_pillars = [
         }
 
         .footer-logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 1.6rem;
             font-weight: 800;
             color: var(--color-blanco);
@@ -878,6 +890,7 @@ $brand_pillars = [
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .footer-heading::after {
