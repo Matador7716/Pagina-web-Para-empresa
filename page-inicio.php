@@ -4,7 +4,7 @@ $company_name = "Perú Safe Journeys";
 $company_tagline = "tu camino hacia un Perú auténtico";
 $phone_number = "+51 948 364 822";
 $phone_clean = "51948364822";
-$email_address = "informes-web@perusafejourneys.com";
+$email_address = "informesweb@perusafejourneyscorp.com";
 $current_year = date('Y');
 
 // Array de tarjetas de tours
@@ -107,17 +107,19 @@ $brand_pillars = [
 
     <style>
         :root {
-            --color-naranja: #FF6B00;
-            --color-naranja-hover: #E05A00;
-            --color-naranja-glow: rgba(255, 107, 0, 0.35);
+            --color-azul-peru-safe: #003250;
+            --color-azul-andino: #0B527A;
+            --color-naranja-journey: #FF6B22;
+            --color-naranja-hover: #E0540F;
+            --color-dorado-andino: #D9A441;
             --color-blanco: #FFFFFF;
-            --color-azul-oscuro: #0B1B3D;
-            --color-azul-card: #0F234D;
-            --color-topbar: #07122A;
+            --color-gris-claro: #F4F6F7;
+
+            --color-topbar: #002238;
             --color-texto-oscuro: #1E293B;
             --color-texto-suave: #64748B;
-            --color-gris-bg: #F8FAFC;
             --color-gris-border: #E2E8F0;
+            --color-naranja-glow: rgba(255, 107, 34, 0.35);
         }
 
         body {
@@ -143,12 +145,12 @@ $brand_pillars = [
         }
 
         .top-bar a:hover {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
         }
 
         /* Sticky Navigation Bar */
         .navbar-custom {
-            background-color: rgba(11, 27, 61, 0.95);
+            background-color: rgba(0, 50, 80, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             transition: all 0.4s ease;
@@ -156,7 +158,7 @@ $brand_pillars = [
         }
 
         .navbar-custom.scrolled {
-            background-color: rgba(7, 18, 42, 0.98);
+            background-color: rgba(0, 34, 56, 0.98);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
@@ -169,34 +171,16 @@ $brand_pillars = [
             text-decoration: none;
         }
 
-        .logo-icon-box {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--color-naranja), #FF8800);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px var(--color-naranja-glow);
+        .logo-img-header {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+            transition: transform 0.3s ease;
         }
 
-        .brand-text {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--color-blanco);
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
-
-        .brand-text span {
-            color: var(--color-naranja);
-            display: block;
-            font-size: 0.65rem;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .navbar-brand-logo:hover .logo-img-header {
+            transform: scale(1.04);
         }
 
         .nav-link {
@@ -217,7 +201,7 @@ $brand_pillars = [
             left: 50%;
             width: 0%;
             height: 2px;
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -229,12 +213,12 @@ $brand_pillars = [
 
         .nav-link:hover,
         .nav-link.active {
-            color: var(--color-naranja) !important;
+            color: var(--color-naranja-journey) !important;
         }
 
         /* Botón Llama */
         .btn-reserva-llama {
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
@@ -251,7 +235,7 @@ $brand_pillars = [
         .btn-reserva-llama:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.5);
+            box-shadow: 0 8px 25px rgba(255, 107, 34, 0.5);
             color: var(--color-blanco);
         }
 
@@ -274,7 +258,7 @@ $brand_pillars = [
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background-color: var(--color-azul-oscuro);
+            background-color: var(--color-azul-peru-safe);
         }
 
         .video-background-container {
@@ -297,8 +281,8 @@ $brand_pillars = [
             height: 56.25vw;
             min-height: 100vh;
             min-width: 177.77vh;
-            transform: translate(-50%, -50%) scale(1.2);
-            filter: brightness(0.55) contrast(1.1);
+            transform: translate(-50%, -50%) scale(1.25);
+            filter: brightness(0.60) contrast(1.15);
         }
 
         .hero-overlay {
@@ -308,25 +292,25 @@ $brand_pillars = [
             width: 100%;
             height: 100%;
             background: linear-gradient(180deg,
-                rgba(7, 18, 42, 0.75) 0%,
-                rgba(11, 27, 61, 0.6) 50%,
-                rgba(11, 27, 61, 0.95) 100%);
+                rgba(0, 34, 56, 0.75) 0%,
+                rgba(0, 50, 80, 0.55) 50%,
+                rgba(0, 34, 56, 0.95) 100%);
             z-index: 2;
         }
 
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 920px;
+            max-width: 950px;
             text-align: center;
             padding: 4rem 1.5rem;
         }
 
         .hero-badge {
             display: inline-block;
-            background-color: rgba(255, 107, 0, 0.25);
-            border: 1px solid var(--color-naranja);
-            color: #FFB380;
+            background-color: rgba(217, 164, 65, 0.22);
+            border: 1px solid var(--color-dorado-andino);
+            color: #FFE6A3;
             font-size: 0.9rem;
             font-weight: 700;
             padding: 0.45rem 1.3rem;
@@ -347,12 +331,13 @@ $brand_pillars = [
         }
 
         .hero-title span {
-            color: var(--color-naranja);
-            font-family: 'Caveat', cursive;
-            font-size: 5rem;
+            color: var(--color-dorado-andino);
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
             display: block;
-            margin-top: -0.5rem;
+            margin-top: 0.2rem;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .hero-subtitle {
@@ -360,13 +345,13 @@ $brand_pillars = [
             color: #E2E8F0;
             margin-bottom: 2.5rem;
             line-height: 1.6;
-            max-width: 780px;
+            max-width: 820px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .btn-hero-primary {
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             color: var(--color-blanco);
             font-weight: 700;
             font-size: 1.05rem;
@@ -384,7 +369,7 @@ $brand_pillars = [
             background-color: var(--color-naranja-hover);
             color: var(--color-blanco);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 107, 34, 0.5);
         }
 
         .btn-hero-secondary {
@@ -405,7 +390,7 @@ $brand_pillars = [
 
         .btn-hero-secondary:hover {
             background-color: var(--color-blanco);
-            color: var(--color-azul-oscuro);
+            color: var(--color-azul-peru-safe);
             transform: translateY(-3px);
         }
 
@@ -417,11 +402,11 @@ $brand_pillars = [
         }
 
         .section-header {
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-tag {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -434,13 +419,13 @@ $brand_pillars = [
             font-family: 'Playfair Display', serif;
             font-size: 2.6rem;
             font-weight: 800;
-            color: var(--color-azul-oscuro);
+            color: var(--color-azul-peru-safe);
         }
 
         .cards-slider-container {
             position: relative;
             overflow: hidden;
-            padding: 1rem 0;
+            padding: 1.2rem 0.5rem;
         }
 
         .cards-track {
@@ -462,7 +447,7 @@ $brand_pillars = [
             display: flex;
             flex-direction: column;
             position: relative;
-            box-shadow: 0 8px 20px rgba(11, 27, 61, 0.06);
+            box-shadow: 0 8px 20px rgba(0, 50, 80, 0.06);
         }
 
         @media (max-width: 1200px) {
@@ -479,8 +464,8 @@ $brand_pillars = [
 
         .tour-card:hover {
             transform: translateY(-10px);
-            border-color: var(--color-naranja);
-            box-shadow: 0 20px 35px rgba(255, 107, 0, 0.2);
+            border-color: var(--color-naranja-journey);
+            box-shadow: 0 20px 35px rgba(255, 107, 34, 0.2);
         }
 
         .card-img-wrapper {
@@ -504,14 +489,14 @@ $brand_pillars = [
             position: absolute;
             top: 15px;
             left: 15px;
-            background: rgba(11, 27, 61, 0.88);
+            background: rgba(0, 50, 80, 0.88);
             backdrop-filter: blur(6px);
             color: var(--color-blanco);
             font-weight: 700;
             font-size: 0.75rem;
             padding: 0.35rem 0.85rem;
             border-radius: 30px;
-            border: 1px solid rgba(255, 107, 0, 0.5);
+            border: 1px solid rgba(217, 164, 65, 0.5);
             text-transform: uppercase;
         }
 
@@ -525,7 +510,7 @@ $brand_pillars = [
         .card-title-custom {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--color-azul-oscuro);
+            color: var(--color-azul-peru-safe);
             margin-bottom: 0.75rem;
         }
 
@@ -539,8 +524,8 @@ $brand_pillars = [
 
         .btn-card-action {
             background-color: transparent;
-            color: var(--color-naranja);
-            border: 1.5px solid var(--color-naranja);
+            color: var(--color-naranja-journey);
+            border: 1.5px solid var(--color-naranja-journey);
             border-radius: 50px;
             padding: 0.55rem 1.2rem;
             font-weight: 700;
@@ -554,45 +539,73 @@ $brand_pillars = [
         }
 
         .btn-card-action:hover {
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             color: var(--color-blanco);
             box-shadow: 0 4px 15px var(--color-naranja-glow);
         }
 
-        /* Botones de desplazamiento slider */
+        /* Botones de desplazamiento slider mejorados */
         .slider-controls {
             display: flex;
+            align-items: center;
             gap: 12px;
         }
 
         .btn-slider-nav {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             background-color: var(--color-blanco);
-            border: 1px solid var(--color-gris-border);
-            color: var(--color-azul-oscuro);
+            border: 2px solid var(--color-gris-border);
+            color: var(--color-azul-peru-safe);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            position: relative;
         }
 
         .btn-slider-nav:hover {
-            background-color: var(--color-naranja);
-            border-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
+            border-color: var(--color-naranja-journey);
             color: var(--color-blanco);
-            box-shadow: 0 4px 15px var(--color-naranja-glow);
-            transform: scale(1.05);
+            box-shadow: 0 6px 20px var(--color-naranja-glow);
+            transform: scale(1.1);
+        }
+
+        .btn-slider-nav:active {
+            transform: scale(0.95);
+        }
+
+        .slider-indicator-dots {
+            display: flex;
+            gap: 6px;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #CBD5E1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            width: 30px;
+            border-radius: 20px;
+            background-color: var(--color-naranja-journey);
         }
 
         /* Sección Concepto de la Agencia con Imágenes Creativas */
         .concept-section {
             padding: 6rem 0;
-            background-color: var(--color-gris-bg);
+            background-color: var(--color-gris-claro);
             position: relative;
             border-top: 1px solid var(--color-gris-border);
             border-bottom: 1px solid var(--color-gris-border);
@@ -603,7 +616,7 @@ $brand_pillars = [
             border-radius: 24px;
             padding: 3rem;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 15px 40px rgba(11, 27, 61, 0.08);
+            box-shadow: 0 15px 40px rgba(0, 50, 80, 0.08);
             margin-bottom: 4rem;
         }
 
@@ -611,12 +624,12 @@ $brand_pillars = [
             font-family: 'Playfair Display', serif;
             font-size: 2.3rem;
             font-weight: 800;
-            color: var(--color-azul-oscuro);
+            color: var(--color-azul-peru-safe);
             margin-bottom: 1.5rem;
         }
 
         .agency-title span {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
         }
 
         .text-lead-custom {
@@ -635,7 +648,7 @@ $brand_pillars = [
             height: 380px;
             object-fit: cover;
             border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(11, 27, 61, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 50, 80, 0.15);
         }
 
         .img-creative-overlay {
@@ -654,7 +667,7 @@ $brand_pillars = [
             position: absolute;
             top: 20px;
             right: 20px;
-            background: var(--color-naranja);
+            background: var(--color-naranja-journey);
             color: var(--color-blanco);
             padding: 0.75rem 1.25rem;
             border-radius: 16px;
@@ -674,7 +687,7 @@ $brand_pillars = [
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 10px 25px rgba(11, 27, 61, 0.05);
+            box-shadow: 0 10px 25px rgba(0, 50, 80, 0.05);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 100%;
             display: flex;
@@ -684,8 +697,8 @@ $brand_pillars = [
 
         .pillar-card-creative:hover {
             transform: translateY(-10px);
-            border-color: var(--color-naranja);
-            box-shadow: 0 20px 40px rgba(255, 107, 0, 0.2);
+            border-color: var(--color-naranja-journey);
+            box-shadow: 0 20px 40px rgba(255, 107, 34, 0.2);
         }
 
         .pillar-img-box {
@@ -711,7 +724,7 @@ $brand_pillars = [
             right: 20px;
             width: 52px;
             height: 52px;
-            background: var(--color-naranja);
+            background: var(--color-naranja-journey);
             color: var(--color-blanco);
             border-radius: 14px;
             display: flex;
@@ -737,7 +750,7 @@ $brand_pillars = [
         .pillar-title-creative {
             font-size: 1.35rem;
             font-weight: 800;
-            color: var(--color-azul-oscuro);
+            color: var(--color-azul-peru-safe);
             margin-bottom: 0.75rem;
         }
 
@@ -749,12 +762,12 @@ $brand_pillars = [
 
         /* Banner Promocional Creativo */
         .creative-banner {
-            background: linear-gradient(135deg, var(--color-azul-oscuro) 0%, #132752 100%);
+            background: linear-gradient(135deg, var(--color-azul-peru-safe) 0%, var(--color-azul-andino) 100%);
             border-radius: 24px;
             padding: 3.5rem 2.5rem;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(11, 27, 61, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 50, 80, 0.2);
             color: var(--color-blanco);
             margin-top: 4rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -767,7 +780,7 @@ $brand_pillars = [
             right: -10%;
             width: 350px;
             height: 350px;
-            background: radial-gradient(circle, rgba(255, 107, 0, 0.25) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(255, 107, 34, 0.25) 0%, rgba(0,0,0,0) 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -787,7 +800,7 @@ $brand_pillars = [
         }
 
         .btn-banner {
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
             font-weight: 800;
             padding: 0.85rem 2.2rem;
@@ -801,12 +814,12 @@ $brand_pillars = [
         .btn-banner:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.5);
+            box-shadow: 0 10px 25px rgba(255, 107, 34, 0.5);
         }
 
         /* Footer */
         .footer-custom {
-            background-color: #040A18;
+            background-color: #001A2B;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: 4rem;
             padding-bottom: 2rem;
@@ -825,7 +838,7 @@ $brand_pillars = [
         }
 
         .footer-logo span {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
         }
 
         .footer-contact-item {
@@ -844,7 +857,7 @@ $brand_pillars = [
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
             font-size: 1.1rem;
         }
 
@@ -855,7 +868,7 @@ $brand_pillars = [
         }
 
         .footer-contact-item a:hover {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
         }
 
         .footer-heading {
@@ -874,7 +887,7 @@ $brand_pillars = [
             left: 0;
             width: 35px;
             height: 2px;
-            background-color: var(--color-naranja);
+            background-color: var(--color-naranja-journey);
         }
 
         .footer-links {
@@ -897,7 +910,7 @@ $brand_pillars = [
         }
 
         .footer-links a:hover {
-            color: var(--color-naranja);
+            color: var(--color-naranja-journey);
             transform: translateX(4px);
         }
 
@@ -971,15 +984,9 @@ $brand_pillars = [
     <!-- Menú Pegajoso (Sticky Navbar) -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
         <div class="container">
-            <!-- Imagen / Logo -->
+            <!-- Imagen del Logo -->
             <a class="navbar-brand-logo" href="page-inicio.php">
-                <div class="logo-icon-box">
-                    <i class="bi bi-compass text-white fs-4"></i>
-                </div>
-                <div class="brand-text">
-                    Perú Safe Journeys
-                    <span>Travel Agency</span>
-                </div>
+                <img src="http://www.perusafejourneys.todowebcusco.com/wp-content/uploads/2026/09/Peru-Safe-Journeys-logo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
             <!-- Toggle Mobile -->
@@ -1030,8 +1037,8 @@ $brand_pillars = [
         <!-- Hero Slider / Video Background -->
         <section class="hero-section">
             <div class="video-background-container">
-                <iframe src="https://www.youtube.com/embed/1-fIilS45Q0?autoplay=1&mute=1&controls=0&loop=1&playlist=1-fIilS45Q0&showinfo=0&rel=0&enablejsapi=1"
-                        title="Perú Travel Video"
+                <iframe src="https://www.youtube.com/embed/QPBMvXbjjUI?autoplay=1&mute=1&controls=0&loop=1&playlist=QPBMvXbjjUI&showinfo=0&rel=0&enablejsapi=1"
+                        title="Perú Safe Journeys Video"
                         frameborder="0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
@@ -1040,7 +1047,7 @@ $brand_pillars = [
             <div class="hero-overlay"></div>
 
             <div class="container hero-content animate__animated animate__fadeIn">
-                <span class="hero-badge animate__animated animate__fadeInDown"><i class="bi bi-star-fill text-warning me-2"></i> Experiencias Únicas e Inolvidables</span>
+                <span class="hero-badge animate__animated animate__fadeInDown"><i class="bi bi-star-fill me-2"></i> Experiencias Únicas e Inolvidables</span>
                 <h1 class="hero-title">
                     Perú Safe Journeys
                     <span>Vive el Perú a tu manera</span>
@@ -1068,19 +1075,19 @@ $brand_pillars = [
                         <span class="section-tag"><i class="bi bi-map me-1"></i> Categorías Principales</span>
                         <h2 class="section-title mb-0">Explora Nuestras Experiencias</h2>
                     </div>
-                    <!-- Botones de Desplazamiento -->
+                    <!-- Botones de Desplazamiento Mejorados -->
                     <div class="slider-controls">
                         <button class="btn-slider-nav" id="btn-prev" aria-label="Anterior">
-                            <i class="bi bi-chevron-left"></i>
+                            <i class="bi bi-arrow-left"></i>
                         </button>
                         <button class="btn-slider-nav" id="btn-next" aria-label="Siguiente">
-                            <i class="bi bi-chevron-right"></i>
+                            <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Slider Track con 5 Tarjetas -->
-                <div class="cards-slider-container">
+                <div class="cards-slider-container" id="sliderContainer">
                     <div class="cards-track" id="cardsTrack">
                         <?php foreach($tour_cards as $card): ?>
                         <div class="tour-card" id="<?php echo str_replace('#', '', $card['link']); ?>">
@@ -1099,6 +1106,8 @@ $brand_pillars = [
                         </div>
                         <?php endforeach; ?>
                     </div>
+                    <!-- Dots Indicadores -->
+                    <div class="slider-indicator-dots" id="sliderDots"></div>
                 </div>
             </div>
         </section>
@@ -1120,7 +1129,7 @@ $brand_pillars = [
                             <p class="text-lead-custom">
                                 Desde la majestuosidad de Cusco y Machu Picchu, pasando por el Valle Sagrado, los Andes y la Amazonía, hasta las costas del Pacífico, acompañamos a nuestros viajeros con atención personalizada, planificación profesional, seguridad y confort en cada etapa de su aventura.
                             </p>
-                            <div class="p-3 mt-4 rounded-3" style="background: rgba(255, 107, 0, 0.08); border-left: 4px solid var(--color-naranja);">
+                            <div class="p-3 mt-4 rounded-3" style="background: rgba(255, 107, 34, 0.08); border-left: 4px solid var(--color-naranja-journey);">
                                 <p class="mb-0 text-dark fw-semibold fs-6">
                                     <i class="bi bi-quote fs-4 text-warning me-2"></i>
                                     <strong>Nuestro propósito:</strong> Convertir cada viaje en una experiencia memorable, combinando la riqueza cultural del Perú con la confianza de viajar acompañado por especialistas locales.
@@ -1287,7 +1296,7 @@ $brand_pillars = [
     <!-- Scripts Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS Script -->
+    <!-- Custom JS Script con slider altamente interactivo -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Navbar cambio de fondo al hacer scroll
@@ -1300,26 +1309,83 @@ $brand_pillars = [
                 }
             });
 
-            // Lógica de desplazamiento para las 5 Tarjetas Creativas
+            // Lógica e interactividad avanzada para las Tarjetas Creativas
             const track = document.getElementById('cardsTrack');
             const btnPrev = document.getElementById('btn-prev');
             const btnNext = document.getElementById('btn-next');
+            const sliderContainer = document.getElementById('sliderContainer');
+            const dotsContainer = document.getElementById('sliderDots');
+            const cards = document.querySelectorAll('.tour-card');
 
-            if (track && btnPrev && btnNext) {
-                const scrollAmount = 320;
+            if (track && cards.length > 0) {
+                // Crear indicador de dots
+                cards.forEach((_, idx) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('slider-dot');
+                    if (idx === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+
+                const dots = document.querySelectorAll('.slider-dot');
+
+                const updateActiveDot = () => {
+                    const scrollPosition = track.scrollLeft;
+                    const cardWidth = cards[0].offsetWidth + 24; // width + gap
+                    const activeIndex = Math.round(scrollPosition / cardWidth);
+
+                    dots.forEach((dot, index) => {
+                        if (index === activeIndex) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                };
+
+                track.addEventListener('scroll', updateActiveDot);
+
+                const getScrollAmount = () => {
+                    return cards[0].offsetWidth + 24;
+                };
 
                 btnNext.addEventListener('click', function() {
                     track.scrollBy({
-                        left: scrollAmount,
+                        left: getScrollAmount(),
                         behavior: 'smooth'
                     });
                 });
 
                 btnPrev.addEventListener('click', function() {
                     track.scrollBy({
-                        left: -scrollAmount,
+                        left: -getScrollAmount(),
                         behavior: 'smooth'
                     });
+                });
+
+                // Auto Scroll Timer interactivo (se detiene si el usuario interactúa)
+                let autoScrollTimer = setInterval(() => {
+                    if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+                        track.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                    }
+                }, 4000);
+
+                // Pausar auto scroll al pasar el cursor o al tocar
+                sliderContainer.addEventListener('mouseenter', () => clearInterval(autoScrollTimer));
+                sliderContainer.addEventListener('touchstart', () => clearInterval(autoScrollTimer));
+                sliderContainer.addEventListener('mouseleave', () => {
+                    clearInterval(autoScrollTimer);
+                    autoScrollTimer = setInterval(() => {
+                        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+                            track.scrollTo({ left: 0, behavior: 'smooth' });
+                        } else {
+                            track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                        }
+                    }, 4000);
                 });
             }
 
