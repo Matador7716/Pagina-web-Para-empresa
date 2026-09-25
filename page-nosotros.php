@@ -216,6 +216,26 @@ $reasons = [
             color: var(--color-naranja);
         }
 
+        .topbar-social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #CBD5E1 !important;
+            font-size: 0.88rem;
+            transition: all 0.3s ease;
+        }
+
+        .topbar-social-icon:hover {
+            background: var(--color-naranja);
+            color: var(--color-blanco) !important;
+            transform: translateY(-2px) scale(1.1);
+            box-shadow: 0 4px 10px var(--color-naranja-glow);
+        }
+
         /* Sticky Navigation Bar */
         .navbar-custom {
             background-color: rgba(11, 27, 61, 0.95);
@@ -720,8 +740,12 @@ $reasons = [
                     <span><?php echo $email_address; ?></span>
                 </a>
             </div>
-            <div class="d-none d-md-flex align-items-center gap-3 text-muted">
-                <small class="text-light"><i class="bi bi-shield-check text-warning me-1"></i> Agencia Oficial Certificada</small>
+            <div class="d-none d-md-flex align-items-center gap-3">
+                <small class="text-light me-1">Síguenos:</small>
+                <a href="https://facebook.com" target="_blank" class="topbar-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" class="topbar-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://tiktok.com" target="_blank" class="topbar-social-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                <a href="https://youtube.com" target="_blank" class="topbar-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
             </div>
         </div>
     </div>
@@ -749,22 +773,22 @@ $reasons = [
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="page-inicio.php#inicio">INICIO</a>
+                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="page-destinos.php">DESTINOS</a>
+                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/destinos/">DESTINOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="page-experiencias.php">EXPERIENCIAS</a>
+                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/experiencias/">EXPERIENCIAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="page-programas.php">PROGRAMAS</a>
+                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/programas/">PROGRAMAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="page-nosotros.php">NOSOTROS</a>
+                        <a class="nav-link active" href="https://www.perusafejourneys.todowebcusco.com/nosotros/">NOSOTROS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="page-contacto.php">CONTACTO</a>
+                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/contacto/">CONTACTO</a>
                     </li>
                 </ul>
 
