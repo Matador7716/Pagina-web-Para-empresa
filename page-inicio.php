@@ -32,7 +32,7 @@
             --color-blue-deep: #061578;
             --color-blue-cyan: #00a7fa;
             --color-dark-bg: #020617;
-            --color-card-bg: #0b132b;
+            --color-card-bg: rgba(11, 19, 43, 0.85);
             --color-text-white: #ffffff;
             --color-text-light: #f8f9fa;
         }
@@ -46,6 +46,41 @@
             background-color: var(--color-dark-bg);
             color: var(--color-text-white);
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient Glow Background Orbs */
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        .glow-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--color-blue-cyan);
+            top: -100px;
+            left: -150px;
+        }
+
+        .glow-2 {
+            width: 450px;
+            height: 450px;
+            background: var(--color-gold);
+            top: 40%;
+            right: -150px;
+        }
+
+        .glow-3 {
+            width: 550px;
+            height: 550px;
+            background: var(--color-green);
+            bottom: 10%;
+            left: -200px;
         }
 
         /* Top Bar */
@@ -54,63 +89,69 @@
             border-bottom: 2px solid var(--color-blue-deep);
             font-size: 0.88rem;
             padding: 8px 0;
-            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1040;
         }
 
         .top-bar a {
             color: var(--color-text-white);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .top-bar a:hover {
             color: var(--color-blue-cyan);
+            text-shadow: 0 0 10px rgba(0, 167, 250, 0.8);
         }
 
         .top-bar .social-icons a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 167, 250, 0.3);
             color: var(--color-text-white);
-            margin-left: 6px;
-            transition: all 0.3s ease;
+            margin-left: 8px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
         }
 
         .top-bar .social-icons a:hover {
-            background: var(--color-blue-cyan);
+            background: linear-gradient(135deg, var(--color-blue-cyan), var(--color-gold));
             color: var(--color-black);
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 167, 250, 0.8);
         }
 
-        /* Navbar Header */
+        /* Main Header Navigation */
         .main-header {
-            background: rgba(6, 21, 120, 0.95);
-            backdrop-filter: blur(12px);
+            background: rgba(2, 6, 23, 0.92);
+            backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 1030;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            border-bottom: 1px solid rgba(0, 167, 250, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid rgba(0, 167, 250, 0.25);
         }
 
         .navbar-brand {
             font-weight: 800;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             letter-spacing: -0.5px;
             color: var(--color-text-white) !important;
+            transition: transform 0.3s ease;
         }
 
-        .navbar-brand span.gold {
-            color: var(--color-gold);
+        .navbar-brand:hover {
+            transform: scale(1.03);
         }
 
         .navbar-brand span.cyan {
             color: var(--color-blue-cyan);
+            text-shadow: 0 0 12px rgba(0, 167, 250, 0.6);
         }
 
         .nav-link {
@@ -124,6 +165,7 @@
 
         .nav-link:hover, .nav-link.active {
             color: var(--color-blue-cyan) !important;
+            text-shadow: 0 0 10px rgba(0, 167, 250, 0.5);
         }
 
         .nav-link::after {
@@ -132,104 +174,176 @@
             bottom: 0;
             left: 50%;
             width: 0;
-            height: 2px;
+            height: 3px;
+            border-radius: 2px;
             background: linear-gradient(90deg, var(--color-gold), var(--color-blue-cyan));
             transition: all 0.3s ease;
             transform: translateX(-50%);
+            box-shadow: 0 0 10px var(--color-blue-cyan);
         }
 
         .nav-link:hover::after, .nav-link.active::after {
-            width: 80%;
+            width: 85%;
         }
 
         .dropdown-menu {
-            background-color: var(--color-card-bg);
-            border: 1px solid rgba(0, 167, 250, 0.3);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            border-radius: 8px;
-            padding: 0.5rem;
+            background-color: rgba(11, 19, 43, 0.96);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 167, 250, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            padding: 0.6rem;
         }
 
         .dropdown-item {
             color: var(--color-text-white);
             font-weight: 500;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
             transition: all 0.3s ease;
         }
 
         .dropdown-item:hover {
             background: linear-gradient(90deg, var(--color-blue-deep), var(--color-blue-cyan));
             color: var(--color-text-white);
-            transform: translateX(4px);
+            transform: translateX(6px);
+            box-shadow: 0 4px 15px rgba(0, 167, 250, 0.4);
         }
 
-        /* Hero Carousel Slider */
+        /* 1. CREATIVE & AUTOMATIC HERO CAROUSEL SLIDER */
+        .hero-slider {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid rgba(0, 167, 250, 0.3);
+        }
+
         .hero-slider .carousel-item {
-            height: 85vh;
-            min-height: 550px;
+            height: 88vh;
+            min-height: 600px;
             background-size: cover;
             background-position: center;
             position: relative;
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s ease-in-out;
         }
 
         .hero-slider .carousel-item::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.88) 0%, rgba(6,21,120,0.82) 55%, rgba(3,99,38,0.7) 100%);
+            background: linear-gradient(135deg, rgba(2, 6, 23, 0.92) 0%, rgba(6, 21, 120, 0.85) 50%, rgba(3, 99, 38, 0.75) 100%);
+            z-index: 1;
         }
 
-        .hero-content {
+        .hero-slider .carousel-item::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 167, 250, 0.25), transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-card-glass {
             position: relative;
             z-index: 2;
+            background: rgba(2, 6, 23, 0.65);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 167, 250, 0.35);
+            border-radius: 24px;
+            padding: 45px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 167, 250, 0.15);
+            max-width: 850px;
         }
 
         .hero-badge {
             background: linear-gradient(90deg, var(--color-gold), #e0cb1c);
             color: var(--color-black);
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            padding: 6px 18px;
+            letter-spacing: 1.8px;
+            padding: 8px 20px;
             border-radius: 50px;
-            display: inline-block;
-            font-size: 0.85rem;
-            box-shadow: 0 0 15px rgba(196, 174, 4, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            box-shadow: 0 0 20px rgba(196, 174, 4, 0.6);
         }
 
         .hero-title {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-top: 15px;
-            margin-bottom: 20px;
+            font-size: 3.4rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-top: 18px;
+            margin-bottom: 22px;
             color: var(--color-text-white);
-            text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+            letter-spacing: -1px;
         }
 
         .hero-title span {
             background: linear-gradient(90deg, var(--color-blue-cyan), var(--color-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 8px rgba(0, 167, 250, 0.5));
         }
 
         .hero-desc {
-            font-size: 1.2rem;
-            color: var(--color-text-white);
-            max-width: 700px;
-            margin-bottom: 30px;
+            font-size: 1.22rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 32px;
             font-weight: 400;
+            line-height: 1.7;
         }
 
+        .carousel-indicators [data-bs-target] {
+            width: 45px;
+            height: 8px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border: none;
+            transition: all 0.4s ease;
+        }
+
+        .carousel-indicators .active {
+            width: 70px;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-blue-cyan));
+            box-shadow: 0 0 15px var(--color-blue-cyan);
+        }
+
+        .hero-control-btn {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(6, 21, 120, 0.75);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--color-blue-cyan);
+            color: var(--color-text-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 167, 250, 0.4);
+        }
+
+        .hero-control-btn:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+            border-color: var(--color-gold);
+            transform: scale(1.15);
+            box-shadow: 0 0 25px rgba(196, 174, 4, 0.8);
+        }
+
+        /* Buttons Styling */
         .btn-custom-primary {
-            background: linear-gradient(135deg, var(--color-blue-cyan), var(--color-blue-deep));
+            background: linear-gradient(135deg, var(--color-blue-cyan) 0%, var(--color-blue-deep) 100%);
             color: var(--color-text-white);
             border: none;
-            padding: 14px 32px;
-            font-weight: 600;
+            padding: 15px 34px;
+            font-weight: 700;
             border-radius: 50px;
-            box-shadow: 0 6px 20px rgba(0, 167, 250, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 167, 250, 0.5);
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
@@ -238,19 +352,19 @@
         }
 
         .btn-custom-primary:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 10px 25px rgba(0, 167, 250, 0.6);
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 167, 250, 0.8);
             color: var(--color-text-white);
         }
 
         .btn-custom-gold {
-            background: linear-gradient(135deg, var(--color-gold), #e5d122);
+            background: linear-gradient(135deg, var(--color-gold) 0%, #e5d122 100%);
             color: var(--color-black);
             border: none;
-            padding: 14px 32px;
-            font-weight: 700;
+            padding: 15px 34px;
+            font-weight: 800;
             border-radius: 50px;
-            box-shadow: 0 6px 20px rgba(196, 174, 4, 0.4);
+            box-shadow: 0 8px 25px rgba(196, 174, 4, 0.5);
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
@@ -259,74 +373,62 @@
         }
 
         .btn-custom-gold:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 10px 25px rgba(196, 174, 4, 0.6);
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(196, 174, 4, 0.8);
             color: var(--color-black);
         }
 
         /* Section Titles */
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 55px;
+            position: relative;
+            z-index: 2;
         }
 
         .section-subtitle {
             color: var(--color-gold);
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
+            letter-spacing: 2.5px;
+            font-size: 0.92rem;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(196, 174, 4, 0.4);
         }
 
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2.6rem;
+            font-weight: 900;
             color: var(--color-text-white);
             position: relative;
             display: inline-block;
+            letter-spacing: -0.5px;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-blue-cyan), var(--color-gold));
-            margin: 12px auto 0;
-            border-radius: 2px;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--color-blue-cyan), var(--color-green), var(--color-gold));
+            margin: 14px auto 0;
+            border-radius: 3px;
+            box-shadow: 0 0 12px var(--color-blue-cyan);
         }
 
-        /* Custom Cards with White Text on Dark Background */
-        .card-dark-custom {
-            background: var(--color-card-bg);
-            border: 1px solid rgba(0, 167, 250, 0.2);
-            border-radius: 16px;
-            padding: 30px;
-            height: 100%;
-            transition: all 0.4s ease;
-            position: relative;
-            color: var(--color-text-white);
-        }
-
-        .card-dark-custom:hover {
-            transform: translateY(-6px);
-            border-color: var(--color-blue-cyan);
-            box-shadow: 0 12px 30px rgba(0, 167, 250, 0.25);
-        }
-
-        /* Services Cards */
+        /* 2. ENHANCED ICON STYLING & CREATIVE CARDS */
         .service-card {
             background: var(--color-card-bg);
-            border: 1px solid rgba(0, 167, 250, 0.18);
-            border-radius: 16px;
-            padding: 30px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 167, 250, 0.22);
+            border-radius: 20px;
+            padding: 35px 28px;
             height: 100%;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
-            color: var(--color-text-white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .service-card::before {
@@ -335,49 +437,61 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(90deg, var(--color-blue-cyan), var(--color-green), var(--color-gold));
             opacity: 0;
             transition: opacity 0.4s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 167, 250, 0.5);
-            box-shadow: 0 15px 35px rgba(0, 167, 250, 0.25);
+            transform: translateY(-10px);
+            border-color: var(--color-blue-cyan);
+            box-shadow: 0 20px 45px rgba(0, 167, 250, 0.3);
+            background: rgba(11, 19, 43, 0.95);
         }
 
         .service-card:hover::before {
             opacity: 1;
         }
 
-        .service-icon-box {
-            width: 65px;
-            height: 65px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, rgba(6,21,120,0.8), rgba(0,167,250,0.2));
+        /* ENHANCED SERVICE ICON BOX */
+        .service-icon-wrapper {
+            width: 75px;
+            height: 75px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(6, 21, 120, 0.9), rgba(0, 167, 250, 0.25));
+            border: 2px solid var(--color-blue-cyan);
+            box-shadow: 0 0 25px rgba(0, 167, 250, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: var(--color-blue-cyan);
-            margin-bottom: 22px;
-            border: 1px solid rgba(0, 167, 250, 0.3);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .service-card:hover .service-icon-wrapper {
+            background: linear-gradient(135deg, var(--color-gold), #e0cb1c);
+            color: var(--color-black);
+            border-color: var(--color-gold);
+            transform: rotate(8deg) scale(1.1);
+            box-shadow: 0 0 30px rgba(196, 174, 4, 0.8);
         }
 
         .service-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 12px;
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 14px;
             color: var(--color-text-white);
         }
 
         .service-description {
-            color: var(--color-text-white);
+            color: rgba(255, 255, 255, 0.92);
             font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            opacity: 0.95;
+            line-height: 1.65;
+            margin-bottom: 22px;
         }
 
         .service-list {
@@ -387,54 +501,116 @@
         }
 
         .service-list li {
-            padding: 6px 0;
+            padding: 7px 0;
             font-size: 0.92rem;
             color: var(--color-text-white);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .service-list li i {
             color: var(--color-gold);
-            font-size: 0.85rem;
+            font-size: 1rem;
+            filter: drop-shadow(0 0 6px rgba(196, 174, 4, 0.6));
+        }
+
+        /* 3. ENHANCED CATEGORIES & CREATIVE CARDS */
+        .card-dark-custom {
+            background: var(--color-card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 167, 250, 0.22);
+            border-radius: 20px;
+            padding: 32px 25px;
+            height: 100%;
+            transition: all 0.4s ease;
+            position: relative;
+            color: var(--color-text-white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-dark-custom:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-gold);
+            box-shadow: 0 15px 40px rgba(196, 174, 4, 0.3);
+        }
+
+        /* ICON BADGES WITH NEON GLOW */
+        .icon-badge-glow {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin: 0 auto 20px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .icon-badge-blue {
+            background: rgba(0, 167, 250, 0.15);
+            border: 2px solid var(--color-blue-cyan);
+            color: var(--color-blue-cyan);
+            box-shadow: 0 0 20px rgba(0, 167, 250, 0.4);
+        }
+
+        .icon-badge-gold {
+            background: rgba(196, 174, 4, 0.15);
+            border: 2px solid var(--color-gold);
+            color: var(--color-gold);
+            box-shadow: 0 0 20px rgba(196, 174, 4, 0.4);
+        }
+
+        .icon-badge-green {
+            background: rgba(3, 99, 38, 0.25);
+            border: 2px solid var(--color-green);
+            color: #28d053;
+            box-shadow: 0 0 20px rgba(3, 99, 38, 0.6);
+        }
+
+        .card-dark-custom:hover .icon-badge-glow {
+            transform: scale(1.15) rotate(-5deg);
         }
 
         /* Slogans Banner */
         .slogans-box {
-            background: linear-gradient(135deg, rgba(6,21,120,0.6) 0%, rgba(3,99,38,0.5) 100%);
-            border: 1px solid rgba(196, 174, 4, 0.4);
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, rgba(6, 21, 120, 0.8) 0%, rgba(3, 99, 38, 0.7) 100%);
+            border: 2px solid var(--color-gold);
+            border-radius: 24px;
+            padding: 42px 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7), inset 0 0 20px rgba(196, 174, 4, 0.2);
+            position: relative;
         }
 
         .slogan-pill {
-            background: rgba(8, 17, 43, 0.8);
-            border: 1px solid rgba(0, 167, 250, 0.3);
+            background: rgba(2, 6, 23, 0.85);
+            border: 1px solid rgba(0, 167, 250, 0.4);
             color: var(--color-text-white);
-            padding: 10px 20px;
+            padding: 11px 22px;
             border-radius: 30px;
             font-size: 0.95rem;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             transition: all 0.3s ease;
         }
 
         .slogan-pill:hover {
             border-color: var(--color-gold);
-            background: rgba(6, 21, 120, 0.9);
-            transform: translateY(-3px);
+            background: rgba(6, 21, 120, 0.95);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 5px 15px rgba(196, 174, 4, 0.4);
         }
 
         /* Structure Section */
         .structure-card {
             background: rgba(11, 19, 43, 0.9);
-            border: 1px solid rgba(0, 167, 250, 0.2);
-            border-radius: 12px;
-            padding: 20px;
+            border: 1px solid rgba(0, 167, 250, 0.25);
+            border-radius: 16px;
+            padding: 24px;
             height: 100%;
             transition: all 0.3s ease;
             position: relative;
@@ -443,39 +619,41 @@
 
         .structure-card:hover {
             border-color: var(--color-gold);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(196, 174, 4, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(196, 174, 4, 0.3);
         }
 
         .structure-num {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--color-blue-cyan), var(--color-blue-deep));
             color: var(--color-text-white);
-            font-weight: 800;
+            font-weight: 900;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
+            font-size: 1.15rem;
+            margin-bottom: 14px;
+            box-shadow: 0 0 15px rgba(0, 167, 250, 0.5);
         }
 
-        /* Sección Visual de Impacto - Digital Transformation Pipeline */
+        /* Digital Transformation Visual Section */
         .impact-section {
             background: linear-gradient(180deg, #020617 0%, #061578 50%, #020617 100%);
-            padding: 90px 0;
+            padding: 95px 0;
             position: relative;
             overflow: hidden;
+            border-y: 2px solid rgba(0, 167, 250, 0.2);
         }
 
         .flow-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
-            max-width: 850px;
-            margin: 40px auto 0;
+            gap: 20px;
+            max-width: 950px;
+            margin: 45px auto 0;
         }
 
         @media (min-width: 992px) {
@@ -488,49 +666,54 @@
         }
 
         .flow-step {
-            background: rgba(8, 17, 43, 0.9);
+            background: rgba(2, 6, 23, 0.92);
+            backdrop-filter: blur(10px);
             border: 2px solid var(--color-blue-cyan);
-            border-radius: 16px;
-            padding: 24px 20px;
+            border-radius: 20px;
+            padding: 26px 20px;
             text-align: center;
             width: 100%;
-            max-width: 160px;
+            max-width: 170px;
             position: relative;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             color: var(--color-text-white);
         }
 
         .flow-step:hover {
-            transform: scale(1.1) translateY(-6px);
+            transform: scale(1.12) translateY(-8px);
             border-color: var(--color-gold);
-            box-shadow: 0 0 25px rgba(196, 174, 4, 0.6);
-            background: rgba(12, 25, 60, 0.95);
+            box-shadow: 0 0 30px rgba(196, 174, 4, 0.8);
+            background: rgba(11, 19, 43, 0.98);
         }
 
         .flow-step-num {
-            width: 32px;
-            height: 32px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             background: var(--color-gold);
             color: var(--color-black);
-            font-weight: 800;
-            font-size: 0.85rem;
+            font-weight: 900;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 10px;
+            margin: 0 auto 12px;
+            box-shadow: 0 0 12px rgba(196, 174, 4, 0.8);
         }
 
         .flow-step-icon {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--color-blue-cyan);
-            margin-bottom: 10px;
-            transition: color 0.3s ease;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 8px rgba(0, 167, 250, 0.6));
         }
 
         .flow-step:hover .flow-step-icon {
             color: var(--color-gold);
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 12px rgba(196, 174, 4, 0.9));
         }
 
         .flow-step-title {
@@ -543,13 +726,14 @@
 
         .flow-arrow {
             color: var(--color-gold);
-            font-size: 2rem;
+            font-size: 2.2rem;
             animation: pulseArrow 1.5s infinite alternate;
+            filter: drop-shadow(0 0 10px rgba(196, 174, 4, 0.8));
         }
 
         @keyframes pulseArrow {
             0% { transform: scale(0.9); opacity: 0.6; }
-            100% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1.25); opacity: 1; }
         }
 
         @media (max-width: 991px) {
@@ -558,12 +742,13 @@
             }
         }
 
-        /* Why Choose Us Section */
+        /* Why Choose Us Cards */
         .why-card {
-            background: rgba(8, 17, 43, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 14px;
-            padding: 28px 24px;
+            background: rgba(11, 19, 43, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 18px;
+            padding: 32px 26px;
             height: 100%;
             transition: all 0.3s ease;
             position: relative;
@@ -571,100 +756,108 @@
         }
 
         .why-card:hover {
-            background: rgba(6, 21, 120, 0.5);
+            background: rgba(6, 21, 120, 0.65);
             border-color: var(--color-green);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(3, 99, 38, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(3, 99, 38, 0.4);
         }
 
-        .why-icon {
-            font-size: 2.2rem;
-            color: var(--color-green);
-            margin-bottom: 15px;
+        .why-icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: rgba(3, 99, 38, 0.3);
+            border: 1px solid var(--color-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #28d053;
+            margin-bottom: 18px;
+            box-shadow: 0 0 18px rgba(3, 99, 38, 0.5);
+            transition: all 0.3s ease;
         }
 
-        .why-card:hover .why-icon {
-            color: var(--color-gold);
+        .why-card:hover .why-icon-box {
+            background: var(--color-gold);
+            color: var(--color-black);
+            border-color: var(--color-gold);
+            box-shadow: 0 0 25px rgba(196, 174, 4, 0.8);
         }
 
         .why-title {
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-bottom: 10px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: var(--color-text-white);
         }
 
         .why-desc {
-            color: var(--color-text-white);
+            color: rgba(255, 255, 255, 0.92);
             font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.65;
             margin: 0;
-            opacity: 0.92;
         }
 
         /* Tech Badges */
         .tech-box {
             background: var(--color-card-bg);
-            border: 1px solid rgba(0, 167, 250, 0.2);
-            border-radius: 12px;
-            padding: 20px 15px;
+            border: 1px solid rgba(0, 167, 250, 0.25);
+            border-radius: 16px;
+            padding: 24px 18px;
             text-align: center;
             transition: all 0.3s ease;
             color: var(--color-text-white);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
 
         .tech-box:hover {
             border-color: var(--color-blue-cyan);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 167, 250, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 167, 250, 0.4);
+            background: rgba(6, 21, 120, 0.8);
         }
 
         .tech-icon {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: var(--color-blue-cyan);
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-box:hover .tech-icon {
+            transform: scale(1.2);
         }
 
         /* Call To Action Banner */
         .cta-banner {
             background: linear-gradient(135deg, var(--color-blue-deep) 0%, var(--color-green) 100%);
-            border-radius: 20px;
-            padding: 50px 30px;
-            border: 1px solid rgba(0, 167, 250, 0.3);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            border-radius: 24px;
+            padding: 55px 35px;
+            border: 2px solid var(--color-blue-cyan);
+            box-shadow: 0 20px 50px rgba(0, 167, 250, 0.3);
             position: relative;
             overflow: hidden;
             color: var(--color-text-white);
         }
 
-        .cta-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 300px;
-            height: 300px;
-            background: rgba(196, 174, 4, 0.15);
-            border-radius: 50%;
-            filter: blur(50px);
-        }
-
         /* Footer */
         footer {
             background-color: var(--color-black);
-            border-top: 1px solid rgba(0, 167, 250, 0.2);
-            padding-top: 60px;
+            border-top: 1px solid rgba(0, 167, 250, 0.25);
+            padding-top: 65px;
             padding-bottom: 25px;
             color: var(--color-text-white);
             font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
         }
 
         footer h5 {
             color: var(--color-text-white);
-            font-weight: 700;
-            margin-bottom: 20px;
+            font-weight: 800;
+            margin-bottom: 22px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
         }
 
         footer h5::after {
@@ -672,9 +865,10 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 35px;
+            width: 40px;
             height: 3px;
             background: var(--color-gold);
+            box-shadow: 0 0 8px var(--color-gold);
         }
 
         footer ul {
@@ -683,67 +877,72 @@
         }
 
         footer ul li {
-            margin-bottom: 10px;
+            margin-bottom: 11px;
         }
 
         footer ul li a {
-            color: var(--color-text-white);
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            transition: color 0.3s ease;
-            opacity: 0.9;
+            transition: all 0.3s ease;
         }
 
         footer ul li a:hover {
             color: var(--color-blue-cyan);
-            opacity: 1;
-            padding-left: 4px;
+            padding-left: 6px;
+            text-shadow: 0 0 8px rgba(0, 167, 250, 0.6);
         }
 
         /* Floating WhatsApp Button */
         .btn-whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
+            bottom: 28px;
+            right: 28px;
+            width: 65px;
+            height: 65px;
             background-color: #25d366;
             color: #ffffff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
-            z-index: 1000;
-            transition: all 0.3s ease;
+            font-size: 32px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            z-index: 1050;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
+            border: 2px solid #ffffff;
         }
 
         .btn-whatsapp-float:hover {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(10deg);
             color: #ffffff;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.8);
+            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.9);
         }
     </style>
 </head>
 <body>
+
+    <!-- Ambient Background Glow Orbs -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
 
     <!-- TOP BAR -->
     <div class="top-bar">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-8 text-center text-md-start mb-2 mb-md-0">
-                    <span class="me-3">
-                        <i class="bi bi-telephone-fill text-warning me-1"></i>
+                    <span class="me-4 fw-medium">
+                        <i class="bi bi-telephone-fill text-warning me-2"></i>
                         <a href="https://wa.me/51935209781" target="_blank">+51 935 209 781</a>
                     </span>
-                    <span>
-                        <i class="bi bi-envelope-fill text-info me-1"></i>
+                    <span class="fw-medium">
+                        <i class="bi bi-envelope-fill text-info me-2"></i>
                         <a href="mailto:adminweb@todowebcusco.com">adminweb@todowebcusco.com</a>
                     </span>
                 </div>
                 <div class="col-md-4 text-center text-md-end">
-                    <span class="me-2 d-none d-lg-inline text-white opacity-75">Síguenos:</span>
+                    <span class="me-2 d-none d-lg-inline text-white opacity-75 fw-medium">Síguenos:</span>
                     <div class="social-icons d-inline-block">
                         <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -759,7 +958,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark py-2">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-2" href="https://www.todowebcusco.com/">
-                    <i class="bi bi-fire text-warning fs-2"></i>
+                    <i class="bi bi-fire text-warning fs-2" style="filter: drop-shadow(0 0 8px rgba(196, 174, 4, 0.8));"></i>
                     <span>CANDELA<span class="cyan">WEB</span></span>
                 </a>
 
@@ -813,8 +1012,8 @@
                             <a class="nav-link" href="https://www.todowebcusco.com/portafolio/">Portafolio</a>
                         </li>
                         <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                            <a class="btn btn-custom-gold btn-sm px-3" href="https://www.todowebcusco.com/contacto/">
-                                <i class="bi bi-chat-left-dots-fill"></i> Contacto
+                            <a class="btn btn-custom-gold btn-sm px-4" href="https://www.todowebcusco.com/contacto/">
+                                <i class="bi bi-chat-left-dots-fill me-1"></i> Contacto
                             </a>
                         </li>
                     </ul>
@@ -823,10 +1022,10 @@
         </nav>
     </header>
 
-    <!-- 1. HERO CAROUSEL SLIDER WITH ANIMATIONS & SLOGAN -->
+    <!-- 1. CREATIVE & AUTOMATIC HERO CAROUSEL SLIDER -->
     <section class="hero-slider" id="hero">
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
-            <div class="carousel-indicators">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-indicators mb-4">
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -836,13 +1035,15 @@
                 <!-- Slide 1 -->
                 <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80');">
                     <div class="container h-100 d-flex align-items-center">
-                        <div class="hero-content text-start col-lg-9">
-                            <span class="hero-badge animate__animated animate__fadeInDown mb-2">CANDELAWEB</span>
-                            <h1 class="hero-title animate__animated animate__fadeInLeft">
+                        <div class="hero-card-glass animate__animated animate__fadeInLeft">
+                            <span class="hero-badge animate__animated animate__fadeInDown">
+                                <i class="bi bi-fire"></i> CANDELAWEB
+                            </span>
+                            <h1 class="hero-title animate__animated animate__fadeInUp">
                                 “Encendemos tus ideas <span>con tecnología.”</span>
                             </h1>
                             <p class="hero-desc animate__animated animate__fadeInUp">
-                                Soluciones digitales integrales que transforman proyectos en marcas potentes y rentables.
+                                Soluciones digitales integrales que transforman proyectos en marcas potentes, eficientes y altamente rentables.
                             </p>
                             <div class="d-flex flex-wrap gap-3 animate__animated animate__zoomIn">
                                 <a href="https://www.todowebcusco.com/contacto/" class="btn-custom-primary">
@@ -859,13 +1060,15 @@
                 <!-- Slide 2 -->
                 <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80');">
                     <div class="container h-100 d-flex align-items-center">
-                        <div class="hero-content text-start col-lg-9">
-                            <span class="hero-badge animate__animated animate__fadeInDown mb-2">Sistemas & Software</span>
-                            <h1 class="hero-title animate__animated animate__fadeInRight">
+                        <div class="hero-card-glass animate__animated animate__fadeInRight">
+                            <span class="hero-badge animate__animated animate__fadeInDown">
+                                <i class="bi bi-cpu-fill"></i> Sistemas & Software
+                            </span>
+                            <h1 class="hero-title animate__animated animate__fadeInUp">
                                 Digitalizamos y <span>Optimizamos Tus Procesos</span>
                             </h1>
                             <p class="hero-desc animate__animated animate__fadeInUp">
-                                Sistemas de ventas, inventarios, reservas y plataformas empresariales adaptadas exactamente a tus requerimientos.
+                                Sistemas de ventas, inventarios, reservas y plataformas empresariales adaptadas exactamente a tus requerimientos corporativos.
                             </p>
                             <div class="d-flex flex-wrap gap-3 animate__animated animate__zoomIn">
                                 <a href="https://www.todowebcusco.com/desarrollo-de-apps/" class="btn-custom-primary">
@@ -882,13 +1085,15 @@
                 <!-- Slide 3 -->
                 <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80');">
                     <div class="container h-100 d-flex align-items-center">
-                        <div class="hero-content text-start col-lg-9">
-                            <span class="hero-badge animate__animated animate__fadeInDown mb-2">Crecimiento Digital</span>
+                        <div class="hero-card-glass animate__animated animate__fadeInUp">
+                            <span class="hero-badge animate__animated animate__fadeInDown">
+                                <i class="bi bi-graph-up-arrow"></i> Crecimiento Digital
+                            </span>
                             <h1 class="hero-title animate__animated animate__fadeInUp">
                                 Posicionamiento SEO y <span>Estrategias de Marketing</span>
                             </h1>
                             <p class="hero-desc animate__animated animate__fadeInUp">
-                                Aumenta tu visibilidad en Google y atrae clientes potenciales calificados con nuestras campañas de marketing digital.
+                                Aumenta tu visibilidad en Google y atrae clientes potenciales calificados con nuestras campañas avanzadas de marketing digital.
                             </p>
                             <div class="d-flex flex-wrap gap-3 animate__animated animate__zoomIn">
                                 <a href="https://www.todowebcusco.com/posicionamiento-web-seo/" class="btn-custom-primary">
@@ -904,18 +1109,18 @@
             </div>
 
             <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="hero-control-btn"><i class="bi bi-chevron-left"></i></span>
                 <span class="visually-hidden">Anterior</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="hero-control-btn"><i class="bi bi-chevron-right"></i></span>
                 <span class="visually-hidden">Siguiente</span>
             </button>
         </div>
     </section>
 
     <!-- 2. PRESENTACIÓN & SOBRE CANDELAWEB + SLOGANS -->
-    <section class="py-5" id="sobre-candelaweb">
+    <section class="py-5 position-relative" id="sobre-candelaweb">
         <div class="container py-4">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
@@ -924,14 +1129,14 @@
                         Tecnología creada para hacer crecer tus ideas
                     </h2>
                     <p class="fs-5 text-white mb-3 fw-medium">
-                        <strong class="text-warning">CANDELAWEB</strong> nace con la visión de acercar la tecnología a empresas, emprendedores, instituciones y profesionales, ofreciendo soluciones digitales que combinen diseño, funcionalidad y tecnología.
+                        <strong class="text-warning">CANDELAWEB</strong> nace con la visión de acercar la tecnología a empresas, emprendedores, instituciones y profesionales, ofreciendo soluciones digitales que combinen diseño, funcionalidad y alta precisión técnica.
                     </p>
-                    <p class="text-white mb-3 fs-6" style="line-height: 1.8;">
-                        Nuestro trabajo va desde la creación de una página web hasta el desarrollo de sistemas personalizados capaces de transformar procesos completos de una organización.
+                    <p class="text-white mb-3 fs-6" style="line-height: 1.8; opacity: 0.95;">
+                        Nuestro trabajo va desde la creación de una página web corporativa hasta el desarrollo de sistemas personalizados capaces de transformar procesos completos de una organización.
                     </p>
-                    <div class="p-3 my-4 rounded-3 border border-warning" style="background: rgba(196, 174, 4, 0.1);">
+                    <div class="p-4 my-4 rounded-4 border border-warning" style="background: rgba(196, 174, 4, 0.12); backdrop-filter: blur(8px);">
                         <p class="mb-0 text-white fs-5 font-italic fw-semibold">
-                            <i class="bi bi-quote fs-2 text-warning me-2 align-middle"></i>
+                            <i class="bi bi-quote fs-1 text-warning me-2 align-middle"></i>
                             Tu proyecto comienza con una idea. Nosotros ayudamos a convertirla en tecnología.
                         </p>
                     </div>
@@ -939,27 +1144,27 @@
 
                 <div class="col-lg-6">
                     <div class="slogans-box">
-                        <h4 class="text-warning fw-bold mb-3 d-flex align-items-center gap-2">
-                            <i class="bi bi-fire fs-3"></i> Slogans para CANDELAWEB
+                        <h4 class="text-warning fw-extrabold mb-4 d-flex align-items-center gap-2 fs-3">
+                            <i class="bi bi-fire text-warning fs-2"></i> Slogans para CANDELAWEB
                         </h4>
 
                         <!-- Main Slogan Highlight -->
-                        <div class="p-3 mb-4 rounded-3 border border-info" style="background: rgba(0, 167, 250, 0.15);">
-                            <span class="badge bg-warning text-dark mb-1 fw-bold">Opción Principal</span>
-                            <h3 class="text-white fw-bold m-0">
+                        <div class="p-4 mb-4 rounded-4 border border-info" style="background: rgba(0, 167, 250, 0.18); backdrop-filter: blur(10px);">
+                            <span class="badge bg-warning text-dark mb-2 fw-extrabold px-3 py-1 fs-6">Opción Principal</span>
+                            <h3 class="text-white fw-bold m-0 fs-2">
                                 CANDELAWEB <br>
-                                <span style="color: var(--color-blue-cyan);">“Encendemos tus ideas con tecnología.”</span>
+                                <span style="color: var(--color-blue-cyan); filter: drop-shadow(0 0 10px rgba(0, 167, 250, 0.6));">“Encendemos tus ideas con tecnología.”</span>
                             </h3>
                         </div>
 
-                        <p class="text-white fw-semibold mb-3">Otras alternativas de valor:</p>
+                        <p class="text-white fw-semibold mb-3 fs-6">Otras alternativas de valor:</p>
                         <div class="d-flex flex-wrap gap-2">
-                            <span class="slogan-pill"><i class="bi bi-stars text-warning"></i> “Tecnología que transforma ideas.”</span>
-                            <span class="slogan-pill"><i class="bi bi-lightning-charge text-warning"></i> “Tu idea. Nuestra tecnología.”</span>
-                            <span class="slogan-pill"><i class="bi bi-graph-up-arrow text-warning"></i> “Soluciones digitales que hacen crecer tu negocio.”</span>
-                            <span class="slogan-pill"><i class="bi bi-code-slash text-warning"></i> “Creamos tecnología para tus proyectos.”</span>
-                            <span class="slogan-pill"><i class="bi bi-arrow-right-circle text-warning"></i> “De una idea a una solución digital.”</span>
-                            <span class="slogan-pill"><i class="bi bi-lightbulb text-warning"></i> “Innovación que empieza con una idea.”</span>
+                            <span class="slogan-pill"><i class="bi bi-stars text-warning fs-5"></i> “Tecnología que transforma ideas.”</span>
+                            <span class="slogan-pill"><i class="bi bi-lightning-charge text-warning fs-5"></i> “Tu idea. Nuestra tecnología.”</span>
+                            <span class="slogan-pill"><i class="bi bi-graph-up-arrow text-warning fs-5"></i> “Soluciones digitales que hacen crecer tu negocio.”</span>
+                            <span class="slogan-pill"><i class="bi bi-code-slash text-warning fs-5"></i> “Creamos tecnología para tus proyectos.”</span>
+                            <span class="slogan-pill"><i class="bi bi-arrow-right-circle text-warning fs-5"></i> “De una idea a una solución digital.”</span>
+                            <span class="slogan-pill"><i class="bi bi-lightbulb text-warning fs-5"></i> “Innovación que empieza con una idea.”</span>
                         </div>
                     </div>
                 </div>
@@ -968,12 +1173,12 @@
     </section>
 
     <!-- SPECIAL SECTION: ESTRUCTURA RECOMENDADA PARA TU PÁGINA WEB (10 PUNTOS) -->
-    <section class="py-5" id="estructura-recomendada" style="background: rgba(6, 21, 120, 0.2); border-y: 1px solid rgba(0,167,250,0.15);">
+    <section class="py-5 position-relative" id="estructura-recomendada" style="background: rgba(6, 21, 120, 0.25); border-y: 1px solid rgba(0,167,250,0.2);">
         <div class="container py-4">
             <div class="section-header">
                 <span class="section-subtitle">Arquitectura Digital Estratégica</span>
                 <h2 class="section-title">Estructura recomendada para tu página web</h2>
-                <p class="text-white fs-5 mt-2 max-w-2xl mx-auto opacity-90">
+                <p class="text-white fs-5 mt-3 max-w-2xl mx-auto opacity-90">
                     Yo organizaría la Home de CANDELAWEB así para lograr el máximo impacto y conversión:
                 </p>
             </div>
@@ -984,7 +1189,7 @@
                     <div class="structure-card">
                         <div class="structure-num">1</div>
                         <h4 class="text-info fw-bold mb-2">Hero</h4>
-                        <p class="text-white m-0">
+                        <p class="text-white m-0 opacity-90">
                             <strong>Mensaje clave:</strong> Encendemos tus ideas con tecnología. Impacto directo al ingresar al sitio.
                         </p>
                     </div>
@@ -995,7 +1200,7 @@
                     <div class="structure-card">
                         <div class="structure-num">2</div>
                         <h4 class="text-info fw-bold mb-2">Presentación</h4>
-                        <p class="text-white m-0">
+                        <p class="text-white m-0 opacity-90">
                             Desarrollo web, sistemas web y soluciones informáticas orientadas a resultados.
                         </p>
                     </div>
@@ -1006,7 +1211,7 @@
                     <div class="structure-card">
                         <div class="structure-num">3</div>
                         <h4 class="text-info fw-bold mb-2">Servicios</h4>
-                        <p class="text-white m-0">
+                        <p class="text-white m-0 opacity-90">
                             Páginas Web | Sistemas Web | Servicios Informáticos | Posicionamiento SEO
                         </p>
                     </div>
@@ -1017,7 +1222,7 @@
                     <div class="structure-card">
                         <div class="structure-num">4</div>
                         <h4 class="text-info fw-bold mb-2">¿Qué podemos desarrollar?</h4>
-                        <p class="text-white m-0">
+                        <p class="text-white m-0 opacity-90">
                             Empresas | Emprendimientos | Instituciones | Profesionales
                         </p>
                     </div>
@@ -1028,7 +1233,7 @@
                     <div class="structure-card">
                         <div class="structure-num">5</div>
                         <h4 class="text-info fw-bold mb-2">Proceso de trabajo</h4>
-                        <p class="text-white m-0">
+                        <p class="text-white m-0 opacity-90">
                             Analizamos → Diseñamos → Desarrollamos → Implementamos → Acompañamos
                         </p>
                     </div>
@@ -1039,7 +1244,7 @@
                     <div class="structure-card">
                         <div class="structure-num">6</div>
                         <h4 class="text-info fw-bold mb-2">Proyectos / Portafolio</h4>
-                        <p class="text-white m-0">
+                        <p class="text-white m-0 opacity-90">
                             Muestra visual de nuestros casos de éxito y soluciones implementadas.
                         </p>
                     </div>
@@ -1050,7 +1255,7 @@
                     <div class="structure-card">
                         <div class="structure-num">7</div>
                         <h4 class="text-info fw-bold mb-2">¿Por qué CANDELAWEB?</h4>
-                        <p class="text-white m-0">
+                        <p class="text-white m-0 opacity-90">
                             Creatividad, tecnología, personalización, soporte continuo y orientación a resultados.
                         </p>
                     </div>
@@ -1061,7 +1266,7 @@
                     <div class="structure-card">
                         <div class="structure-num">8</div>
                         <h4 class="text-info fw-bold mb-2">Tecnologías</h4>
-                        <p class="text-white m-0">
+                        <p class="text-white m-0 opacity-90">
                             Herramientas y lenguajes modernos para garantizar soluciones rápidas, seguras y escalables.
                         </p>
                     </div>
@@ -1072,7 +1277,7 @@
                     <div class="structure-card">
                         <div class="structure-num">9</div>
                         <h4 class="text-info fw-bold mb-2">Testimonios / Clientes</h4>
-                        <p class="text-white m-0">
+                        <p class="text-white m-0 opacity-90">
                             Reseñas y experiencia de empresas y profesionales que confían en nuestro trabajo.
                         </p>
                     </div>
@@ -1080,7 +1285,7 @@
 
                 <!-- 10. CTA Final -->
                 <div class="col-12">
-                    <div class="p-4 rounded-4 text-center border border-warning" style="background: linear-gradient(135deg, var(--color-blue-deep), var(--color-green));">
+                    <div class="p-4 rounded-4 text-center border border-warning" style="background: linear-gradient(135deg, var(--color-blue-deep), var(--color-green)); box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
                         <div class="d-inline-block px-3 py-1 rounded-pill bg-warning text-dark fw-bold mb-2">Punto 10: CTA Final</div>
                         <h3 class="text-white fw-bold fs-2 mb-3">
                             ¿Tienes una idea? Enciéndela con CANDELAWEB.
@@ -1094,8 +1299,8 @@
         </div>
     </section>
 
-    <!-- 3. NUESTROS SERVICIOS -->
-    <section class="py-5" id="servicios">
+    <!-- 3. NUESTROS SERVICIOS WITH ENHANCED ICON VISUALS -->
+    <section class="py-5 position-relative" id="servicios">
         <div class="container py-4">
             <div class="section-header">
                 <span class="section-subtitle">Soluciones Integrales</span>
@@ -1106,7 +1311,7 @@
                 <!-- Card 1: Desarrollo de Páginas Web -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
-                        <div class="service-icon-box">
+                        <div class="service-icon-wrapper">
                             <i class="bi bi-window-sidebar"></i>
                         </div>
                         <h3 class="service-title">Desarrollo de Páginas Web</h3>
@@ -1128,8 +1333,8 @@
                 <!-- Card 2: Sistemas Web -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
-                        <div class="service-icon-box">
-                            <i class="bi bi-cpu"></i>
+                        <div class="service-icon-wrapper">
+                            <i class="bi bi-cpu-fill"></i>
                         </div>
                         <h3 class="service-title">Sistemas Web</h3>
                         <p class="service-description">
@@ -1150,7 +1355,7 @@
                 <!-- Card 3: Servicios Informáticos -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
-                        <div class="service-icon-box">
+                        <div class="service-icon-wrapper">
                             <i class="bi bi-tools"></i>
                         </div>
                         <h3 class="service-title">Servicios Informáticos</h3>
@@ -1172,7 +1377,7 @@
                 <!-- Card 4: Posicionamiento y Presencia Digital -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
-                        <div class="service-icon-box">
+                        <div class="service-icon-wrapper">
                             <i class="bi bi-graph-up-arrow"></i>
                         </div>
                         <h3 class="service-title">Posicionamiento & Presencia Digital</h3>
@@ -1193,7 +1398,7 @@
     </section>
 
     <!-- 4. ¿QUÉ PODEMOS DESARROLLAR? -->
-    <section class="py-5" id="que-desarrollamos">
+    <section class="py-5 position-relative" id="que-desarrollamos">
         <div class="container py-4">
             <div class="section-header">
                 <span class="section-subtitle">Soluciones adaptadas a cada perfil</span>
@@ -1203,28 +1408,36 @@
             <div class="row g-4 text-center">
                 <div class="col-md-6 col-lg-3">
                     <div class="card-dark-custom">
-                        <div class="mb-3 text-info fs-1"><i class="bi bi-building"></i></div>
+                        <div class="icon-badge-glow icon-badge-blue">
+                            <i class="bi bi-building"></i>
+                        </div>
                         <h4 class="fw-bold text-white mb-2">Empresas</h4>
                         <p class="text-white opacity-90 m-0">Sistemas corporativos, plataformas de gestión y portales institucionales de alto impacto.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="card-dark-custom">
-                        <div class="mb-3 text-warning fs-1"><i class="bi bi-rocket"></i></div>
+                        <div class="icon-badge-glow icon-badge-gold">
+                            <i class="bi bi-rocket-takeoff-fill"></i>
+                        </div>
                         <h4 class="fw-bold text-white mb-2">Emprendimientos</h4>
                         <p class="text-white opacity-90 m-0">Landing pages, tiendas virtuales y soluciones ágiles para arrancar con fuerza en el mercado.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="card-dark-custom">
-                        <div class="mb-3 text-success fs-1"><i class="bi bi-bank"></i></div>
+                        <div class="icon-badge-glow icon-badge-green">
+                            <i class="bi bi-bank"></i>
+                        </div>
                         <h4 class="fw-bold text-white mb-2">Instituciones</h4>
                         <p class="text-white opacity-90 m-0">Sitios oficiales, aulas virtuales y plataformas de atención e información al ciudadano.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="card-dark-custom">
-                        <div class="mb-3 text-cyan fs-1" style="color: var(--color-blue-cyan);"><i class="bi bi-person-badge"></i></div>
+                        <div class="icon-badge-glow icon-badge-blue">
+                            <i class="bi bi-person-badge-fill"></i>
+                        </div>
                         <h4 class="fw-bold text-white mb-2">Profesionales</h4>
                         <p class="text-white opacity-90 m-0">Portafolios profesionales, blogs de autor y sistemas de reservas de citas personalizadas.</p>
                     </div>
@@ -1235,9 +1448,9 @@
 
     <!-- 5. PROCESO DE TRABAJO & SECCIÓN VISUAL DE IMPACTO -->
     <section class="impact-section" id="proceso-de-trabajo">
-        <div class="container text-center">
-            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase">Proceso de Trabajo</span>
-            <h2 class="display-5 fw-extrabold text-white mt-3 mb-2" style="font-weight: 900; letter-spacing: -1px;">
+        <div class="container text-center position-relative z-2">
+            <span class="badge bg-warning text-dark px-4 py-2 rounded-pill fw-extrabold text-uppercase fs-6 shadow-sm">Proceso de Trabajo</span>
+            <h2 class="display-5 fw-extrabold text-white mt-3 mb-2" style="font-weight: 900; letter-spacing: -1px; text-shadow: 0 0 20px rgba(0,167,250,0.5);">
                 ENCENDEMOS TU TRANSFORMACIÓN DIGITAL
             </h2>
             <p class="fs-5 text-white max-w-2xl mx-auto opacity-90">
@@ -1301,7 +1514,7 @@
     </section>
 
     <!-- 6. PROYECTOS / PORTAFOLIO -->
-    <section class="py-5" id="portafolio">
+    <section class="py-5 position-relative" id="portafolio">
         <div class="container py-4">
             <div class="section-header">
                 <span class="section-subtitle">Casos de Éxito</span>
@@ -1343,8 +1556,8 @@
         </div>
     </section>
 
-    <!-- 7. ¿POR QUÉ CANDELAWEB? -->
-    <section class="py-5" id="nosotros">
+    <!-- 7. ¿POR QUÉ CANDELAWEB? WITH STYLISH ICON BOXES -->
+    <section class="py-5 position-relative" id="nosotros">
         <div class="container py-4">
             <div class="section-header">
                 <span class="section-subtitle">Nuestro Valor Agregado</span>
@@ -1355,7 +1568,7 @@
                 <!-- Item 1: Creatividad -->
                 <div class="col-md-6 col-lg-4">
                     <div class="why-card">
-                        <div class="why-icon"><i class="bi bi-brush-fill"></i></div>
+                        <div class="why-icon-box"><i class="bi bi-brush-fill"></i></div>
                         <h3 class="why-title">Creatividad</h3>
                         <p class="why-desc">
                             Convertimos conceptos e ideas en experiencias digitales atractivas, funcionales y memorables.
@@ -1366,7 +1579,7 @@
                 <!-- Item 2: Tecnología -->
                 <div class="col-md-6 col-lg-4">
                     <div class="why-card">
-                        <div class="why-icon"><i class="bi bi-gear-wide-connected"></i></div>
+                        <div class="why-icon-box"><i class="bi bi-gear-wide-connected"></i></div>
                         <h3 class="why-title">Tecnología</h3>
                         <p class="why-desc">
                             Utilizamos herramientas y tecnologías actuales para desarrollar soluciones altamente eficientes e innovadoras.
@@ -1377,7 +1590,7 @@
                 <!-- Item 3: Personalización -->
                 <div class="col-md-6 col-lg-4">
                     <div class="why-card">
-                        <div class="why-icon"><i class="bi bi-sliders"></i></div>
+                        <div class="why-icon-box"><i class="bi bi-sliders"></i></div>
                         <h3 class="why-title">Personalización</h3>
                         <p class="why-desc">
                             Cada proyecto se adapta meticulosamente a las necesidades reales y objetivos específicos de cada cliente.
@@ -1388,7 +1601,7 @@
                 <!-- Item 4: Soporte -->
                 <div class="col-md-6 col-lg-6">
                     <div class="why-card">
-                        <div class="why-icon"><i class="bi bi-headset"></i></div>
+                        <div class="why-icon-box"><i class="bi bi-headset"></i></div>
                         <h3 class="why-title">Soporte Continuo</h3>
                         <p class="why-desc">
                             Te acompañamos de forma activa después de poner tu proyecto en funcionamiento, garantizando tranquilidad total.
@@ -1399,7 +1612,7 @@
                 <!-- Item 5: Orientación a resultados -->
                 <div class="col-md-12 col-lg-6">
                     <div class="why-card">
-                        <div class="why-icon"><i class="bi bi-bullseye"></i></div>
+                        <div class="why-icon-box"><i class="bi bi-bullseye"></i></div>
                         <h3 class="why-title">Orientación a Resultados</h3>
                         <p class="why-desc">
                             Desarrollamos pensando estratégicamente en los objetivos reales de tu negocio, no solamente en la apariencia estética.
@@ -1411,7 +1624,7 @@
     </section>
 
     <!-- 8. TECNOLOGÍAS -->
-    <section class="py-5" id="tecnologias" style="background: rgba(8, 17, 43, 0.5);">
+    <section class="py-5 position-relative" id="tecnologias" style="background: rgba(8, 17, 43, 0.6);">
         <div class="container py-4">
             <div class="section-header">
                 <span class="section-subtitle">Stack Tecnológico</span>
@@ -1460,7 +1673,7 @@
     </section>
 
     <!-- 9. TESTIMONIOS / CLIENTES -->
-    <section class="py-5" id="testimonios">
+    <section class="py-5 position-relative" id="testimonios">
         <div class="container py-4">
             <div class="section-header">
                 <span class="section-subtitle">Confianza y Garantía</span>
@@ -1502,7 +1715,7 @@
     </section>
 
     <!-- 10. CTA FINAL & CALL TO ACTION BANNER -->
-    <section class="py-5" id="cta-final">
+    <section class="py-5 position-relative" id="cta-final">
         <div class="container">
             <div class="cta-banner text-center text-lg-start">
                 <div class="row align-items-center">
@@ -1597,6 +1810,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // Explicitly initialize Bootstrap Carousel for automatic sliding
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroCarouselEl = document.querySelector('#heroCarousel');
+            if (heroCarouselEl) {
+                const heroCarousel = new bootstrap.Carousel(heroCarouselEl, {
+                    interval: 4000,
+                    ride: 'carousel',
+                    pause: 'hover',
+                    wrap: true
+                });
+            }
+        });
+
         // Smooth scroll for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
