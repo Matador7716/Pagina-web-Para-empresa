@@ -457,85 +457,153 @@
             transform: translateY(-2px);
         }
 
-        /* Creative Comparison Table */
-        .table-custom-wrapper {
-            background: rgba(11, 19, 43, 0.92);
-            backdrop-filter: blur(16px);
-            border: 2px solid rgba(0, 167, 250, 0.35);
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-            overflow-x: auto;
+        /* Creative Comparison Box & Table */
+        .comparison-wrapper {
+            background: linear-gradient(145deg, rgba(11, 19, 43, 0.98), rgba(2, 6, 23, 0.98));
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(0, 167, 250, 0.4);
+            border-radius: 28px;
+            padding: 35px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0, 167, 250, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .table-custom {
+        .comparison-cards-header {
+            margin-bottom: 30px;
+        }
+
+        .comp-card-head {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .comp-card-head.estatica {
+            border-color: rgba(0, 167, 250, 0.5);
+            background: linear-gradient(180deg, rgba(0, 167, 250, 0.18) 0%, rgba(6, 21, 120, 0.25) 100%);
+            box-shadow: 0 10px 30px rgba(0, 167, 250, 0.2);
+        }
+
+        .comp-card-head.dinamica {
+            border-color: rgba(196, 174, 4, 0.5);
+            background: linear-gradient(180deg, rgba(196, 174, 4, 0.18) 0%, rgba(3, 99, 38, 0.25) 100%);
+            box-shadow: 0 10px 30px rgba(196, 174, 4, 0.2);
+        }
+
+        .comp-card-head h4 {
+            color: #ffffff !important;
+            font-weight: 800;
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+        }
+
+        .comp-card-head p {
+            color: #ffffff !important;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            opacity: 0.95;
+        }
+
+        .table-custom-enhanced {
             width: 100%;
             margin-bottom: 0;
-            color: var(--color-text-white);
-            vertical-align: middle;
+            color: #ffffff !important;
             border-collapse: separate;
-            border-spacing: 0 8px;
+            border-spacing: 0 10px;
         }
 
-        .table-custom th {
-            background: rgba(2, 6, 23, 0.95);
-            color: var(--color-gold);
+        .table-custom-enhanced th {
+            background: rgba(2, 6, 23, 0.95) !important;
+            color: #ffffff !important;
             font-weight: 800;
             font-size: 1.15rem;
-            padding: 18px 24px;
+            padding: 20px 24px;
             border: none;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .table-custom th:first-child {
+        .table-custom-enhanced th:first-child {
             border-radius: 14px 0 0 14px;
         }
 
-        .table-custom th:last-child {
+        .table-custom-enhanced th:last-child {
             border-radius: 0 14px 14px 0;
         }
 
-        .table-custom td {
-            background: rgba(6, 21, 120, 0.25);
-            padding: 16px 24px;
-            border-top: 1px solid rgba(0, 167, 250, 0.15);
-            border-bottom: 1px solid rgba(0, 167, 250, 0.15);
+        .table-custom-enhanced td {
+            background: rgba(255, 255, 255, 0.04) !important;
+            color: #ffffff !important;
+            padding: 18px 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 1rem;
-            font-weight: 500;
-        }
-
-        .table-custom tr td:first-child {
-            border-left: 1px solid rgba(0, 167, 250, 0.15);
-            border-radius: 12px 0 0 12px;
             font-weight: 600;
+            vertical-align: middle;
         }
 
-        .table-custom tr td:last-child {
-            border-right: 1px solid rgba(0, 167, 250, 0.15);
-            border-radius: 0 12px 12px 0;
+        .table-custom-enhanced tr td:first-child {
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px 0 0 14px;
+            color: #ffffff !important;
         }
 
-        .table-custom tr:hover td {
-            background: rgba(0, 167, 250, 0.2);
+        .table-custom-enhanced tr td:last-child {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0 14px 14px 0;
         }
 
-        .badge-check {
-            color: #28d053;
-            font-size: 1.3rem;
-            filter: drop-shadow(0 0 8px rgba(40, 208, 83, 0.8));
+        .table-custom-enhanced tr:hover td {
+            background: rgba(0, 167, 250, 0.2) !important;
+            border-color: rgba(0, 167, 250, 0.4);
+            color: #ffffff !important;
         }
 
-        .badge-minus {
-            color: var(--color-gold);
-            font-size: 1.3rem;
-            filter: drop-shadow(0 0 8px rgba(196, 174, 4, 0.8));
+        .badge-status-included {
+            background: linear-gradient(135deg, #036326 0%, #28a745 100%);
+            color: #ffffff !important;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 0 12px rgba(40, 167, 69, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .badge-cross {
-            color: #ff4d4d;
-            font-size: 1.3rem;
-            filter: drop-shadow(0 0 8px rgba(255, 77, 77, 0.8));
+        .badge-status-excluded {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff !important;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            opacity: 0.85;
+        }
+
+        .badge-status-limited {
+            background: linear-gradient(135deg, rgba(196, 174, 4, 0.4) 0%, rgba(196, 174, 4, 0.8) 100%);
+            border: 1px solid #c4ae04;
+            color: #ffffff !important;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 0 12px rgba(196, 174, 4, 0.4);
         }
 
         /* Concept Banner Section */
@@ -904,90 +972,96 @@
     <section class="py-5 position-relative" id="comparativa">
         <div class="container py-4">
             <div class="section-header">
-                <span class="section-subtitle">Guía de Decisión</span>
-                <h2 class="section-title">3. ESTÁTICA vs DINÁMICA</h2>
+                <span class="section-subtitle" style="color: #ffffff !important;">Cuadro Comparativo</span>
+                <h2 class="section-title" style="color: #ffffff !important;">3. ESTÁTICA vs DINÁMICA</h2>
                 <p class="text-white fs-5 mt-3 opacity-90">
-                    Compara de un vistazo las capacidades de cada solución para elegir la ideal para tu proyecto.
+                    Compara de un vistazo las características y alcance de cada tipo de desarrollo web.
                 </p>
             </div>
 
-            <div class="table-custom-wrapper">
-                <table class="table table-custom align-middle text-center">
-                    <thead>
-                        <tr>
-                            <th class="text-start">Característica</th>
-                            <th>🌐 Estática</th>
-                            <th>🚀 Dinámica</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-start">Información corporativa</td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Diseño personalizado</td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Adaptable a celulares (Responsive)</td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Formulario de contacto</td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">WhatsApp e integración social</td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Contenido administrable</td>
-                            <td><i class="bi bi-dash-circle-fill badge-minus"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Base de datos</td>
-                            <td><i class="bi bi-x-circle-fill badge-cross"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Gestión de usuarios / clientes</td>
-                            <td><i class="bi bi-x-circle-fill badge-cross"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Panel administrativo de control</td>
-                            <td><i class="bi bi-x-circle-fill badge-cross"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Sistema de reservas / citas</td>
-                            <td><i class="bi bi-dash-circle-fill badge-minus"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Tienda online (E-Commerce)</td>
-                            <td><i class="bi bi-x-circle-fill badge-cross"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Sistemas personalizados a medida</td>
-                            <td><i class="bi bi-x-circle-fill badge-cross"></i></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">Integraciones de APIs y Servicios</td>
-                            <td><span class="badge bg-secondary">Limitadas</span></td>
-                            <td><i class="bi bi-check-circle-fill badge-check"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="comparison-wrapper">
+                <!-- Header Summary Cards -->
+                <div class="row g-4 comparison-cards-header">
+                    <div class="col-md-6">
+                        <div class="comp-card-head estatica">
+                            <span class="badge bg-info text-dark fw-bold mb-2">OPCIÓN 1</span>
+                            <h4 class="text-white fw-bold">🌐 WEB ESTÁTICA</h4>
+                            <p class="text-white">Para presentar tu empresa con rapidez, elegancia y alto impacto visual.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="comp-card-head dinamica">
+                            <span class="badge bg-warning text-dark fw-bold mb-2">OPCIÓN 2</span>
+                            <h4 class="text-white fw-bold">🚀 WEB DINÁMICA</h4>
+                            <p class="text-white">Para autogestionar contenidos, vender online e interactuar con usuarios.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="table-responsive">
+                    <table class="table table-custom-enhanced align-middle text-center">
+                        <thead>
+                            <tr>
+                                <th class="text-start text-white">CARACTERÍSTICA / FUNCIONALIDAD</th>
+                                <th class="text-white">🌐 ESTÁTICA</th>
+                                <th class="text-white">🚀 DINÁMICA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start text-white">Información corporativa y catálogo básico</td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start text-white">Diseño personalizado adaptable a celulares</td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start text-white">Formularios de contacto e integración WhatsApp</td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start text-white">Certificado SSL de Seguridad y Optimización SEO</td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start text-white">Contenido administrable sin programar</td>
+                                <td><span class="badge-status-excluded"><i class="bi bi-dash-circle"></i> No aplica</span></td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start text-white">Base de datos relacional y panel administrativo</td>
+                                <td><span class="badge-status-excluded"><i class="bi bi-dash-circle"></i> No incluye</span></td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start text-white">Gestión de usuarios, clientes y perfiles</td>
+                                <td><span class="badge-status-excluded"><i class="bi bi-dash-circle"></i> No incluye</span></td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start text-white">Sistema de reservas, citas o eventos</td>
+                                <td><span class="badge-status-limited"><i class="bi bi-exclamation-triangle-fill"></i> Vía WhatsApp</span></td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Automatizado</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start text-white">Tienda online con pasarela de pagos (E-Commerce)</td>
+                                <td><span class="badge-status-excluded"><i class="bi bi-dash-circle"></i> No incluye</span></td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Incluido</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start text-white">Integraciones avanzadas con APIs externas</td>
+                                <td><span class="badge-status-limited"><i class="bi bi-dash-circle-fill"></i> Limitadas</span></td>
+                                <td><span class="badge-status-included"><i class="bi bi-check-circle-fill"></i> Completa</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
