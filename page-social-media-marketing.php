@@ -1,515 +1,352 @@
-<?php
-/**
- * Template Name: CANDELAWEB - Social Media Marketing
- * Single-file PHP template with HTML5, CSS3, JS, Bootstrap 5, FontAwesome & Animate.css
- */
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Marketing | CANDELAWEB - Haz que tu marca tenga algo que decir</title>
-    <meta name="description" content="Convertimos tus redes sociales en una experiencia que atrae, conecta y genera oportunidades reales. Estrategia, contenido, publicidad y analítica en CANDELAWEB.">
+    <title>Social Media Marketing | CANDELAWEB - Todo Web Cusco</title>
+    <meta name="description" content="Gestión profesional de redes sociales en Cusco. Estrategia de contenidos, diseño creativo, reels, crecimiento orgánico y campañas publicitarias para transformar seguidores en clientes.">
 
-    <!-- Google Fonts: Poppins -->
+    <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons & FontAwesome -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
         :root {
-            --cw-black: #000000;
-            --cw-gold: #c4ae04;
-            --cw-green: #036326;
-            --cw-blue: #061578;
-            --cw-cyan: #00a7fa;
-            --cw-dark-bg: #020617;
-            --cw-card-bg: #0b1120;
-            --cw-glass-bg: rgba(15, 23, 42, 0.75);
-            --cw-glass-border: rgba(255, 255, 255, 0.12);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            --primary-black: #000000;
+            --primary-yellow: #c4ae04;
+            --primary-green: #036326;
+            --primary-navy: #061578;
+            --primary-cyan: #00a7fa;
+            --light-bg: #090e1a;
+            --card-bg: #111827;
+            --dark-card: #0d1322;
+            --font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--cw-dark-bg);
-            color: #f8fafc;
+            font-family: var(--font-family);
+            background-color: var(--light-bg);
+            color: #ffffff;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        /* Top bar */
-        .cw-topbar {
+        /* Top Bar */
+        .top-bar {
             background-color: #000000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 0.88rem;
-            padding: 8px 0;
+            color: #ffffff;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
-        .cw-topbar a {
-            color: #cbd5e1;
+        .top-bar a {
+            color: #ffffff;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
-        .cw-topbar a:hover {
-            color: var(--cw-cyan);
+        .top-bar a:hover {
+            color: var(--primary-cyan);
         }
-        .cw-social-icon {
+        .social-icons a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.08);
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
             color: #fff !important;
+            border-radius: 50%;
             margin-left: 6px;
             transition: all 0.3s ease;
         }
-        .cw-social-icon:hover {
-            background: var(--cw-cyan);
+        .social-icons a:hover {
+            background: var(--primary-yellow);
             color: #000 !important;
             transform: translateY(-2px);
         }
 
-        /* Main Nav Header */
-        .cw-navbar {
-            background: rgba(2, 6, 23, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--cw-glass-border);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        /* Navbar */
+        .navbar {
+            background-color: rgba(6, 21, 120, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--primary-yellow);
         }
-        .cw-brand {
+        .navbar-brand {
+            font-weight: 800;
             font-size: 1.6rem;
-            font-weight: 900;
+            color: #ffffff !important;
+        }
+        .navbar-brand span.candela {
             color: #ffffff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            letter-spacing: -0.5px;
         }
-        .cw-brand span.flame {
-            color: var(--cw-gold);
-            text-shadow: 0 0 12px rgba(196, 174, 4, 0.6);
+        .navbar-brand span.web {
+            color: var(--primary-cyan);
         }
-        .cw-brand span.highlight {
-            color: var(--cw-cyan);
-        }
-
         .nav-link {
-            color: #e2e8f0 !important;
+            color: #ffffff !important;
             font-weight: 500;
-            font-size: 0.93rem;
-            padding: 8px 14px !important;
-            transition: all 0.25s ease;
-            border-radius: 6px;
+            font-size: 0.95rem;
+            padding: 0.5rem 0.9rem !important;
+            transition: all 0.3s ease;
         }
         .nav-link:hover, .nav-link.active {
-            color: var(--cw-cyan) !important;
-            background: rgba(0, 167, 250, 0.08);
+            color: var(--primary-yellow) !important;
         }
-
-        .dropdown-menu-dark {
-            background-color: #0b1120;
-            border: 1px solid var(--cw-glass-border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            border-radius: 12px;
-            padding: 10px;
+        .dropdown-menu {
+            background-color: var(--primary-navy);
+            border: 1px solid var(--primary-yellow);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
         .dropdown-item {
-            color: #cbd5e1;
+            color: #ffffff !important;
             font-size: 0.9rem;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
-        .dropdown-item:hover, .dropdown-item.active {
-            background-color: rgba(0, 167, 250, 0.15);
-            color: var(--cw-cyan);
+        .dropdown-item:hover {
+            background-color: rgba(196, 174, 4, 0.2);
+            color: var(--primary-yellow) !important;
+            padding-left: 1.5rem;
         }
-
-        .btn-cw-contact {
-            background: linear-gradient(135deg, var(--cw-gold), #e0cb10);
-            color: #000;
+        .btn-contacto {
+            background: linear-gradient(135deg, var(--primary-yellow), #e5cb05);
+            color: #000 !important;
             font-weight: 700;
-            padding: 10px 22px;
             border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(196, 174, 4, 0.4);
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            padding: 0.5rem 1.4rem;
             border: none;
-        }
-        .btn-cw-contact:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(196, 174, 4, 0.7);
-            color: #000;
-        }
-
-        .btn-cw-cyan {
-            background: linear-gradient(135deg, var(--cw-cyan), #0077c8);
-            color: #ffffff;
-            font-weight: 700;
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 0 20px rgba(0, 167, 250, 0.4);
+            box-shadow: 0 4px 15px rgba(196, 174, 4, 0.4);
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.05rem;
         }
-        .btn-cw-cyan:hover {
-            color: #fff;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 0 30px rgba(0, 167, 250, 0.7);
+        .btn-contacto:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 174, 4, 0.6);
+            background: linear-gradient(135deg, #e5cb05, var(--primary-yellow));
         }
 
-        /* Section Styling */
-        .cw-section {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .cw-badge {
+        /* Custom Section Titles */
+        .section-tag {
             display: inline-block;
-            padding: 6px 16px;
-            border-radius: 50px;
-            background: rgba(0, 167, 250, 0.12);
-            border: 1px solid rgba(0, 167, 250, 0.3);
-            color: var(--cw-cyan);
-            font-weight: 600;
+            background: rgba(0, 167, 250, 0.15);
+            color: var(--primary-cyan);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 700;
             font-size: 0.85rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 15px;
+            border: 1px solid rgba(0, 167, 250, 0.3);
+            margin-bottom: 12px;
         }
-
-        .cw-badge-gold {
-            background: rgba(196, 174, 4, 0.15);
-            border-color: rgba(196, 174, 4, 0.4);
-            color: var(--cw-gold);
-        }
-
-        .cw-badge-green {
-            background: rgba(3, 99, 38, 0.25);
-            border-color: rgba(40, 167, 69, 0.4);
-            color: #2ecc71;
-        }
-
-        .cw-title-lg {
-            font-size: 2.8rem;
+        .section-title {
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            font-size: 2.4rem;
             color: #ffffff;
-        }
-        @media (max-width: 768px) {
-            .cw-title-lg { font-size: 2.1rem; }
+            margin-bottom: 15px;
         }
 
         /* Hero Section */
-        .cw-hero {
-            padding: 90px 0 70px 0;
-            background: radial-gradient(circle at 50% 20%, rgba(6, 21, 120, 0.35) 0%, rgba(2, 6, 23, 1) 75%);
-            border-bottom: 1px solid var(--cw-glass-border);
+        .hero-section {
+            background: linear-gradient(135deg, #020617 0%, var(--primary-navy) 60%, #031046 100%);
+            padding: 90px 0 70px;
             position: relative;
-            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Hero Concept Animated Funnel Pill */
-        .funnel-container {
-            background: var(--cw-glass-bg);
-            border: 1px solid var(--cw-glass-border);
-            border-radius: 24px;
+        /* Interactive Funnel Visual in Hero */
+        .hero-funnel-card {
+            background: rgba(13, 19, 34, 0.85);
+            border: 1px solid rgba(0, 167, 250, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
             padding: 30px;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-            position: relative;
         }
 
         .funnel-step {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 14px 20px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            padding: 14px 20px;
-            margin-bottom: 12px;
             transition: all 0.3s ease;
         }
         .funnel-step:hover {
-            transform: translateX(8px);
+            transform: translateX(6px);
+            border-color: var(--primary-cyan);
             background: rgba(0, 167, 250, 0.1);
-            border-color: var(--cw-cyan);
         }
-        .funnel-step .icon-box {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
         .funnel-arrow {
             text-align: center;
-            color: var(--cw-cyan);
-            font-size: 1.1rem;
-            margin: -6px 0 6px 0;
-            opacity: 0.8;
-            animation: bounceDown 2s infinite;
+            color: var(--primary-yellow);
+            font-size: 1.2rem;
+            margin: -4px 0 6px;
         }
 
-        @keyframes bounceDown {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(4px); }
-        }
-
-        /* Cards and UI Elements */
-        .cw-card {
-            background: var(--cw-card-bg);
-            border: 1px solid var(--cw-glass-border);
-            border-radius: 18px;
-            padding: 30px;
+        /* Cards & Styling */
+        .smm-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 28px;
             height: 100%;
-            transition: all 0.35s ease;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.35 ease;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
-        .cw-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 167, 250, 0.4);
-            box-shadow: 0 15px 35px rgba(0, 167, 250, 0.15);
+        .smm-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 15px 35px rgba(0, 167, 250, 0.2);
         }
 
-        .icon-circle {
+        .icon-box {
             width: 60px;
             height: 60px;
-            border-radius: 16px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             margin-bottom: 20px;
+            background: linear-gradient(135deg, rgba(0, 167, 250, 0.2), rgba(6, 21, 120, 0.4));
+            color: var(--primary-cyan);
+            border: 1px solid rgba(0, 167, 250, 0.3);
         }
 
-        /* Flow diagram for IDEA -> CLIENTES */
-        .flow-horizontal {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 30px;
-        }
-        .flow-pill {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--cw-glass-border);
-            padding: 12px 22px;
-            border-radius: 50px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            transition: all 0.3s;
-        }
-        .flow-pill:hover {
-            border-color: var(--cw-gold);
-            transform: translateY(-3px);
-        }
-        .flow-arrow-right {
-            color: var(--cw-cyan);
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        /* Social Platform Cards */
-        .social-platform-card {
-            background: rgba(11, 17, 32, 0.8);
-            border: 1px solid var(--cw-glass-border);
+        /* Platform Badge */
+        .platform-card {
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 16px;
-            padding: 25px;
+            padding: 24px;
             text-align: center;
             transition: all 0.3s ease;
         }
-        .social-platform-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+        .platform-card:hover {
+            border-color: var(--primary-yellow);
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(196, 174, 4, 0.15);
         }
 
-        /* Content Pillars Grid */
-        .pillar-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 16px;
-            padding: 22px;
-            transition: all 0.3s;
+        /* Timeline Process */
+        .timeline-box {
+            position: relative;
+            padding-left: 30px;
+            border-left: 3px solid var(--primary-cyan);
         }
-        .pillar-card:hover {
-            background: rgba(0, 167, 250, 0.05);
-            border-color: var(--cw-cyan);
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
         }
-
-        /* Process Steps Timeline */
-        .process-num {
-            width: 45px;
-            height: 45px;
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -39px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--cw-blue), var(--cw-cyan));
-            color: #fff;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            box-shadow: 0 0 15px rgba(0, 167, 250, 0.3);
+            background: var(--primary-yellow);
+            border: 3px solid var(--primary-navy);
         }
 
-        /* Target Audience Pills/Cards */
-        .target-card {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--cw-glass-border);
-            border-radius: 14px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s;
+        /* Text Contrast Overrides - Guaranteeing white readable text */
+        .text-white-sub {
+            color: #ffffff !important;
+            opacity: 0.95;
         }
-        .target-card:hover {
-            border-color: var(--cw-gold);
-            background: rgba(196, 174, 4, 0.05);
-            transform: translateY(-4px);
+        p, span, small, label, div {
+            color: #ffffff;
         }
-
-        /* Banners */
-        .banner-quote {
-            background: linear-gradient(135deg, rgba(6, 21, 120, 0.6), rgba(3, 99, 38, 0.5));
-            border: 1px solid rgba(0, 167, 250, 0.3);
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        .text-muted {
+            color: #ffffff !important;
+            opacity: 0.9;
         }
 
         /* Floating WhatsApp Button */
-        .cw-whatsapp-float {
+        .whatsapp-float {
             position: fixed;
-            bottom: 28px;
-            right: 28px;
-            width: 62px;
-            height: 62px;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
             background-color: #25d366;
             color: #ffffff;
-            border-radius: 50%;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+            z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-            z-index: 9999;
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        .cw-whatsapp-float:hover {
-            transform: scale(1.1) rotate(8deg);
+        .whatsapp-float:hover {
+            transform: scale(1.1);
             color: #ffffff;
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.8);
+            box-shadow: 0px 6px 20px rgba(37, 211, 102, 0.6);
         }
 
         /* Footer */
-        .cw-footer {
-            background: #000000;
-            border-top: 1px solid var(--cw-glass-border);
-            padding: 60px 0 30px 0;
-            color: #94a3b8;
+        footer {
+            background-color: #000000;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #ffffff;
             font-size: 0.9rem;
         }
-        .cw-footer h5 {
+        footer a {
             color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .cw-footer a {
-            color: #94a3b8;
             text-decoration: none;
-            transition: color 0.25s;
+            transition: color 0.3s;
         }
-        .cw-footer a:hover {
-            color: var(--cw-cyan);
-        }
-
-        .pulse-btn {
-            animation: pulseGlow 2.5s infinite;
-        }
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(0, 167, 250, 0.6); }
-            70% { box-shadow: 0 0 0 18px rgba(0, 167, 250, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 167, 250, 0); }
+        footer a:hover {
+            color: var(--primary-cyan);
         }
     </style>
 </head>
 <body>
 
     <!-- TOP BAR -->
-    <div class="cw-topbar">
-        <div class="container d-flex flex-wrap justify-content-between align-items-center">
-            <div class="d-flex align-items-center gap-3 flex-wrap">
-                <a href="tel:+51935209781"><i class="bi bi-telephone-fill me-1 text-warning"></i> +51 935 209 781</a>
-                <span class="text-secondary">|</span>
-                <a href="mailto:adminweb@todowebcusco.com"><i class="bi bi-envelope-fill me-1 text-warning"></i> adminweb@todowebcusco.com</a>
+    <div class="top-bar py-2">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <div class="d-flex align-items-center gap-3">
+                <a href="tel:+51935209781"><i class="bi bi-telephone-fill text-warning me-1"></i> +51 935 209 781</a>
+                <span class="text-white-50">|</span>
+                <a href="mailto:adminweb@todowebcusco.com"><i class="bi bi-envelope-fill text-warning me-1"></i> adminweb@todowebcusco.com</a>
             </div>
-            <div class="d-flex align-items-center mt-1 mt-md-0">
-                <span class="text-secondary me-2 d-none d-sm-inline">Síguenos:</span>
-                <a href="https://facebook.com" target="_blank" class="cw-social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com" target="_blank" class="cw-social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://tiktok.com" target="_blank" class="cw-social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <div class="d-flex align-items-center gap-2 mt-1 mt-md-0">
+                <span class="me-1">Síguenos:</span>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://tiktok.com" target="_blank" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- NAVIGATION MENU -->
-    <nav class="navbar navbar-expand-lg cw-navbar">
+    <!-- MAIN MENU NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
         <div class="container">
-            <a class="cw-brand" href="https://www.todowebcusco.com/">
-                <span class="flame"><i class="fa-solid fa-fire"></i></span> CANDELA<span class="highlight">WEB</span>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="https://www.todowebcusco.com/">
+                <i class="bi bi-fire text-warning fs-3"></i>
+                <span><span class="candela">CANDELA</span><span class="web">WEB</span></span>
             </a>
-
-            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="bi bi-list fs-1 text-white"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.todowebcusco.com/">Inicio</a>
                     </li>
@@ -525,25 +362,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.todowebcusco.com/anuncios-en-google/">Anuncios en Google</a>
                     </li>
-
-                    <!-- Dropdown for Marketing & SEO -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="marketingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Marketing Digital
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="marketingDropdown">
-                            <li><a class="dropdown-item active" href="https://www.todowebcusco.com/social-media-marketing/"><i class="bi bi-share me-2 text-info"></i> Social Media Marketing</a></li>
-                            <li><a class="dropdown-item" href="https://www.todowebcusco.com/posicionamiento-web-seo/"><i class="bi bi-search me-2 text-warning"></i> Posicionamiento Web (SEO)</a></li>
-                            <li><a class="dropdown-item" href="https://www.todowebcusco.com/marketing-digital/"><i class="bi bi-bullseye me-2 text-success"></i> Marketing Digital Integral</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="marketingDropdown">
+                            <li><a class="dropdown-item active" href="https://www.todowebcusco.com/social-media-marketing/"><i class="bi bi-share me-2 text-info"></i>Social Media Marketing</a></li>
+                            <li><a class="dropdown-item" href="https://www.todowebcusco.com/posicionamiento-web-seo/"><i class="bi bi-search me-2 text-warning"></i>Posicionamiento Web (SEO)</a></li>
+                            <li><a class="dropdown-item" href="https://www.todowebcusco.com/marketing-digital/"><i class="bi bi-megaphone me-2 text-success"></i>Marketing Digital Integral</a></li>
                         </ul>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.todowebcusco.com/portafolio/">Portafolio</a>
                     </li>
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                        <a class="btn-cw-contact" href="https://www.todowebcusco.com/contacto/">
-                            <i class="bi bi-chat-dots-fill"></i> Contacto
+                        <a class="btn btn-contacto" href="https://www.todowebcusco.com/contacto/">
+                            <i class="bi bi-chat-dots-fill me-1"></i> Contacto
                         </a>
                     </li>
                 </ul>
@@ -552,67 +386,70 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="cw-hero">
+    <section class="hero-section">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 animate__animated animate__fadeInLeft">
-                    <span class="cw-badge"><i class="bi bi-chat-quote-fill me-1"></i> SOCIAL MEDIA MARKETING</span>
-                    <h1 class="cw-title-lg text-uppercase fw-extrabold mb-3">
-                        NO PUBLIQUES.<br><span style="color: var(--cw-gold);">HAZTE NOTAR.</span>
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6">
+                    <span class="section-tag animate__animated animate__fadeInDown"><i class="bi bi-chat-heart me-1"></i> Social Media Marketing</span>
+                    <h1 class="display-4 fw-extrabold text-white mb-3 leading-tight animate__animated animate__fadeInLeft">
+                        NO PUBLIQUES.<br>
+                        <span style="color: var(--primary-yellow); background: linear-gradient(90deg, #c4ae04, #00a7fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">HAZTE NOTAR.</span>
                     </h1>
-                    <p class="fs-5 text-slate-300 mb-4" style="color: #cbd5e1; line-height: 1.6;">
-                        Haz que tu marca tenga algo que decir. Convertimos tus redes sociales en una experiencia que atrae, conecta y genera oportunidades reales para tu negocio.
+                    <p class="fs-5 text-white-sub mb-4" style="line-height: 1.7;">
+                        Haz que tu marca tenga algo que decir. Convertimos tus redes sociales en una experiencia visual envolvente que atrae audiencia real, conecta emocionalmente y genera ventas constantes.
                     </p>
-
                     <div class="d-flex flex-wrap gap-3 mb-4">
-                        <a href="https://wa.me/51935209781?text=Hola%20CANDELAWEB,%20quiero%20potenciar%20mi%20marca%20en%20redes%20sociales" target="_blank" class="btn-cw-cyan pulse-btn">
-                            🔥 QUIERO POTENCIAR MI MARCA
+                        <a href="https://wa.me/51935209781?text=Hola%20CANDELAWEB,%20quiero%20potenciar%20mis%20Redes%20Sociales" target="_blank" class="btn btn-contacto px-4 py-3 text-uppercase fw-bold">
+                            <i class="bi bi-fire me-2"></i> Quiero Potenciar mi Marca
+                        </a>
+                        <a href="#estrategia" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold">
+                            <i class="bi bi-compass me-2"></i> Ver Estrategia
                         </a>
                     </div>
 
-                    <div class="p-3 border-start border-3 border-info rounded bg-dark bg-opacity-50">
-                        <small class="text-light fst-italic">"La pregunta no es si tu negocio debe estar en redes. La pregunta es cómo quieres que te recuerden."</small>
+                    <div class="p-3 rounded-4 border border-secondary" style="background: rgba(255, 255, 255, 0.05);">
+                        <i class="bi bi-quote text-warning fs-3"></i>
+                        <p class="mb-0 text-white fst-italic">"La pregunta no es si tu negocio debe estar en redes. La pregunta es cómo quieres que te recuerden cuando pasen por tu perfil."</p>
                     </div>
                 </div>
 
-                <!-- Interactive Hero Concept Funnel -->
-                <div class="col-lg-6 animate__animated animate__fadeInRight">
-                    <div class="funnel-container">
+                <div class="col-lg-6">
+                    <div class="hero-funnel-card animate__animated animate__fadeInRight">
                         <div class="text-center mb-4">
-                            <span class="cw-badge-gold">CONCEPTO CREATIVO CANDELAWEB</span>
-                            <h4 class="fw-bold text-white mb-0">De Publicar a Convertir</h4>
+                            <span class="badge bg-warning text-dark text-uppercase px-3 py-2 fw-bold">CONCEPTO CREATIVO CANDELAWEB</span>
+                            <h3 class="fw-bold text-white mt-2">De Publicar a Convertir</h3>
                         </div>
 
                         <div class="funnel-step">
                             <div class="d-flex align-items-center gap-3">
-                                <div class="icon-box bg-secondary bg-opacity-25 text-white">📱</div>
+                                <div class="bg-primary p-2 rounded-3 text-white"><i class="bi bi-phone fs-4"></i></div>
                                 <div>
-                                    <h6 class="fw-bold text-white mb-0">PUBLICAR</h6>
-                                    <small class="text-slate-300" style="color: #cbd5e1;">Presencia constante y diseño profesional</small>
+                                    <h6 class="fw-bold mb-0 text-white">PUBLICAR</h6>
+                                    <small class="text-white-sub">Presencia constante y diseño profesional</small>
                                 </div>
                             </div>
-                            <i class="bi bi-check-circle-fill text-secondary"></i>
+                            <i class="bi bi-check-circle-fill text-info"></i>
                         </div>
                         <div class="funnel-arrow"><i class="bi bi-chevron-down"></i></div>
 
                         <div class="funnel-step">
                             <div class="d-flex align-items-center gap-3">
-                                <div class="icon-box bg-primary bg-opacity-25 text-info">👀</div>
+                                <div class="bg-success p-2 rounded-3 text-white"><i class="bi bi-eye fs-4"></i></div>
                                 <div>
-                                    <h6 class="fw-bold text-info mb-0">ATRAER</h6>
-                                    <small class="text-slate-300" style="color: #cbd5e1;">Detén el scroll con piezas disruptivas</small>
+                                    <h6 class="fw-bold mb-0 text-white">ATRAER</h6>
+                                    <small class="text-white-sub">Detén el scroll con piezas disruptivas</small>
                                 </div>
                             </div>
-                            <i class="bi bi-eye-fill text-info"></i>
+                            <i class="bi bi-eye-fill text-success"></i>
                         </div>
                         <div class="funnel-arrow"><i class="bi bi-chevron-down"></i></div>
 
                         <div class="funnel-step">
                             <div class="d-flex align-items-center gap-3">
-                                <div class="icon-box bg-danger bg-opacity-25 text-danger">❤️</div>
+                                <div class="bg-danger p-2 rounded-3 text-white"><i class="bi bi-heart fs-4"></i></div>
                                 <div>
-                                    <h6 class="fw-bold text-danger mb-0">CONECTAR</h6>
-                                    <small class="text-slate-300" style="color: #cbd5e1;">Genera emociones y comunidad fiel</small>
+                                    <h6 class="fw-bold mb-0 text-white">CONECTAR</h6>
+                                    <small class="text-white-sub">Genera emociones y comunidad fiel</small>
                                 </div>
                             </div>
                             <i class="bi bi-heart-fill text-danger"></i>
@@ -621,79 +458,25 @@
 
                         <div class="funnel-step">
                             <div class="d-flex align-items-center gap-3">
-                                <div class="icon-box bg-warning bg-opacity-25 text-warning">💬</div>
+                                <div class="bg-warning p-2 rounded-3 text-dark"><i class="bi bi-chat-quote fs-4"></i></div>
                                 <div>
-                                    <h6 class="fw-bold text-warning mb-0">CONVERSAR</h6>
-                                    <small class="text-slate-300" style="color: #cbd5e1;">Comentarios, compartidos y mensajes directos</small>
+                                    <h6 class="fw-bold mb-0 text-white">CONVERSAR</h6>
+                                    <small class="text-white-sub">Comentarios, compartidos y mensajes directos</small>
                                 </div>
                             </div>
-                            <i class="bi bi-chat-square-text-fill text-warning"></i>
+                            <i class="bi bi-chat-fill text-warning"></i>
                         </div>
                         <div class="funnel-arrow"><i class="bi bi-chevron-down"></i></div>
 
-                        <div class="funnel-step" style="border-color: #2ecc71; background: rgba(46, 204, 113, 0.1);">
+                        <div class="funnel-step" style="border-color: #2ecc71; background: rgba(46, 204, 113, 0.15);">
                             <div class="d-flex align-items-center gap-3">
-                                <div class="icon-box bg-success bg-opacity-25 text-success">🤝</div>
+                                <div class="p-2 rounded-3 text-white" style="background: #2ecc71;"><i class="bi bi-cash-coin fs-4"></i></div>
                                 <div>
-                                    <h6 class="fw-bold text-success mb-0">CONVERTIR</h6>
-                                    <small class="text-light">Seguidores transformados en clientes reales</small>
+                                    <h6 class="fw-bold mb-0 text-white">CONVERTIR</h6>
+                                    <small class="text-white-sub">Nuevos clientes y ventas reales</small>
                                 </div>
                             </div>
-                            <i class="bi bi-award-fill text-success fs-5"></i>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTRO STATEMENT SECTION -->
-    <section class="cw-section bg-black bg-opacity-50">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <span class="cw-badge-gold">NUESTRA FILOSOFÍA</span>
-                    <h2 class="cw-title-lg text-white mb-3">HOY TUS CLIENTES ESTÁN EN LAS REDES SOCIALES</h2>
-                    <p class="fs-5 text-light mb-4" style="line-height: 1.8;">
-                        Miran, descubren, comparan, comentan, comparten y compran.
-                    </p>
-                    <p class="text-slate-300 mb-4" style="color: #cbd5e1;">
-                        En <strong>CANDELAWEB</strong> desarrollamos estrategias de Social Media Marketing para convertir tus redes sociales en un canal activo de comunicación, posicionamiento y crecimiento para tu negocio.
-                    </p>
-                    <div class="p-3 rounded bg-dark border border-secondary border-opacity-25">
-                        <h5 class="fw-bold text-warning mb-1"><i class="bi bi-lightning-charge-fill me-2"></i> No publicamos por publicar.</h5>
-                        <p class="mb-0 text-white-50">Creamos contenido con propósito alineado a los objetivos comerciales de tu empresa.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="cw-card">
-                        <span class="cw-badge mb-3"><i class="bi bi-diagram-3-fill me-1"></i> RUTA DE IMPACTO</span>
-                        <h4 class="fw-bold text-white mb-3">🚀 De una Publicación a una Conexión</h4>
-                        <p class="text-muted mb-4">
-                            Una buena estrategia empieza con una idea clara y termina construyendo una relación sólida y duradera con el público.
-                        </p>
-
-                        <!-- Flow pills container -->
-                        <div class="flow-horizontal">
-                            <div class="flow-pill"><span class="text-warning">💡</span> IDEA</div>
-                            <div class="flow-arrow-right">→</div>
-                            <div class="flow-pill"><span class="text-info">🎨</span> CONTENIDO</div>
-                            <div class="flow-arrow-right">→</div>
-                            <div class="flow-pill"><span class="text-primary">📱</span> PUBLICACIÓN</div>
-                            <div class="flow-arrow-right">→</div>
-                            <div class="flow-pill"><span class="text-danger">👀</span> ATENCIÓN</div>
-                            <div class="flow-arrow-right">→</div>
-                            <div class="flow-pill"><span class="text-warning">💬</span> INTERACCIÓN</div>
-                            <div class="flow-arrow-right">→</div>
-                            <div class="flow-pill"><span class="text-info">❤️</span> COMUNIDAD</div>
-                            <div class="flow-arrow-right">→</div>
-                            <div class="flow-pill border-success bg-success bg-opacity-25"><span class="text-success">🤝</span> CLIENTES</div>
-                        </div>
-
-                        <div class="mt-4 pt-3 border-top border-secondary border-opacity-25 text-center">
-                            <p class="fw-bold text-white mb-0">Tu marca merece estar presente. Pero, sobre todo, <span class="text-warning">merece ser recordada</span>.</p>
+                            <i class="bi bi-trophy-fill text-success"></i>
                         </div>
                     </div>
                 </div>
@@ -701,141 +484,323 @@
         </div>
     </section>
 
-    <!-- ¿QUÉ HACEMOS? ESTRATEGIA -->
-    <section class="cw-section">
-        <div class="container">
+    <!-- ROUTE FLOW SECTION: EL CAMINO DE TU AUDIENCIA -->
+    <section class="py-5 bg-dark">
+        <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="cw-badge">🔥 ¿QUÉ HACEMOS?</span>
-                <h2 class="cw-title-lg text-white">ESTRATEGIA DE REDES SOCIALES</h2>
-                <p class="text-muted mx-auto" style="max-width: 700px;">
-                    Antes de publicar, definimos hacia dónde queremos llegar. Cada pieza debe tener un porqué.
+                <span class="section-tag"><i class="bi bi-diagram-3 me-1"></i> RUTA DE RESULTADOS</span>
+                <h2 class="section-title">El Camino de tu Público hacia tu Cliente</h2>
+                <p class="text-white-sub max-w-700 mx-auto">Diseñamos una línea estratégica clara desde el primer vistazo hasta la conversión final.</p>
+            </div>
+
+            <div class="row g-3 text-center">
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 border border-secondary bg-black h-100">
+                        <span class="badge bg-warning text-dark mb-2">Paso 01</span>
+                        <h5 class="fw-bold text-white mb-2">IDEA</h5>
+                        <p class="text-white mb-0 small">Estrategia de marca y concepto visual</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 border border-secondary bg-black h-100">
+                        <span class="badge bg-info text-dark mb-2">Paso 02</span>
+                        <h5 class="fw-bold text-white mb-2">CONTENIDO</h5>
+                        <p class="text-white mb-0 small">Reels, carruseles, flyers y textos clave</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 border border-secondary bg-black h-100">
+                        <span class="badge bg-success text-white mb-2">Paso 03</span>
+                        <h5 class="fw-bold text-white mb-2">INTERACCIÓN</h5>
+                        <p class="text-white mb-0 small">Comunidad activa que comparte y opina</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 border border-secondary bg-black h-100">
+                        <span class="badge bg-primary text-white mb-2">Paso 04</span>
+                        <h5 class="fw-bold text-white mb-2">VENTAS</h5>
+                        <p class="text-white mb-0 small">Mensajes directos y prospectos calificados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE SERVICES / ESTRATEGIA STRATEGY GRID -->
+    <section id="estrategia" class="py-5" style="background: #090e1a;">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="section-tag"><i class="bi bi-gear-wide-connected me-1"></i> NUESTROS PILARES</span>
+                <h2 class="section-title">Estrategia Integral para tus Redes Sociales</h2>
+                <p class="text-white mx-auto" style="max-width: 700px;">
+                    No hacemos publicaciones al azar. Creamos un plan estructurado acorde a la personalidad de tu negocio.
                 </p>
             </div>
 
             <div class="row g-4">
-                <div class="col-md-4 col-lg-2">
-                    <div class="cw-card text-center py-4">
-                        <div class="icon-circle bg-primary bg-opacity-25 text-info mx-auto">🏢</div>
-                        <h6 class="fw-bold text-white">Tu Negocio</h6>
-                        <small class="text-muted">Entendemos tu propuesta de valor única</small>
+                <!-- Pillars Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="smm-card">
+                        <div class="icon-box"><i class="bi bi-lightbulb"></i></div>
+                        <h4 class="fw-bold text-white mb-3">1. Estrategia & Identidad</h4>
+                        <p class="text-white mb-3">Definimos el tono de voz, colores de marca y arquetipo de cliente ideal para comunicar con coherencia y autoridad.</p>
+                        <ul class="list-unstyled text-white d-flex flex-column gap-2 mb-0">
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Análisis de competencia y sector</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Pilares de contenido mensuales</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Manual de identidad en redes</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
-                    <div class="cw-card text-center py-4">
-                        <div class="icon-circle bg-warning bg-opacity-25 text-warning mx-auto">🎯</div>
-                        <h6 class="fw-bold text-white">Tu Público</h6>
-                        <small class="text-muted">Identificamos tu cliente ideal</small>
+
+                <!-- Pillars Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="smm-card">
+                        <div class="icon-box"><i class="bi bi-palette"></i></div>
+                        <h4 class="fw-bold text-white mb-3">2. Diseño & Producción</h4>
+                        <p class="text-white mb-3">Diseños atractivos, reels dinámicos y carruseles educativos adaptados a las tendencias actuales de cada plataforma.</p>
+                        <ul class="list-unstyled text-white d-flex flex-column gap-2 mb-0">
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Videos Reels y TikToks de alto impacto</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Carruseles interactivos</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Historias con interacción</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
-                    <div class="cw-card text-center py-4">
-                        <div class="icon-circle bg-danger bg-opacity-25 text-danger mx-auto">🥊</div>
-                        <h6 class="fw-bold text-white">Competencia</h6>
-                        <small class="text-muted">Analizamos el entorno del sector</small>
+
+                <!-- Pillars Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="smm-card">
+                        <div class="icon-box"><i class="bi bi-calendar-check"></i></div>
+                        <h4 class="fw-bold text-white mb-3">3. Gestión & Publicación</h4>
+                        <p class="text-white mb-3">Mantenemos tus perfiles activos en horarios de mayor tráfico con calendarios de contenido programados.</p>
+                        <ul class="list-unstyled text-white d-flex flex-column gap-2 mb-0">
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Calendario mensual anticipado</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Copywriting persuasivo con hashtags</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Optimización de bio y enlaces</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
-                    <div class="cw-card text-center py-4">
-                        <div class="icon-circle bg-success bg-opacity-25 text-success mx-auto">🚀</div>
-                        <h6 class="fw-bold text-white">Objetivos</h6>
-                        <small class="text-muted">Fijamos metas medibles y alcanzables</small>
+
+                <!-- Pillars Card 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="smm-card">
+                        <div class="icon-box"><i class="bi bi-people"></i></div>
+                        <h4 class="fw-bold text-white mb-3">4. Comunidad & Interacción</h4>
+                        <p class="text-white mb-3">Fomentamos la conversación con tus seguidores, incrementando el engagement orgánico y el algoritmo a tu favor.</p>
+                        <ul class="list-unstyled text-white d-flex flex-column gap-2 mb-0">
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Respuesta activa a preguntas</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Dinámicas, encuestas y stickers</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Fidelización de clientes</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
-                    <div class="cw-card text-center py-4">
-                        <div class="icon-circle bg-info bg-opacity-25 text-cyan mx-auto">✨</div>
-                        <h6 class="fw-bold text-white">Identidad</h6>
-                        <small class="text-muted">Coherencia visual y tono de voz</small>
+
+                <!-- Pillars Card 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="smm-card">
+                        <div class="icon-box"><i class="bi bi-graph-up-arrow"></i></div>
+                        <h4 class="fw-bold text-white mb-3">5. Campañas Publicitarias</h4>
+                        <p class="text-white mb-3">Complementamos el contenido orgánico con Meta Ads para impulsar tus promociones directamente al público comprador.</p>
+                        <ul class="list-unstyled text-white d-flex flex-column gap-2 mb-0">
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Segmentación geográfica precisa</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Anuncios orientados a WhatsApp</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Retargeting estratégico</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
-                    <div class="cw-card text-center py-4">
-                        <div class="icon-circle bg-secondary bg-opacity-25 text-light mx-auto">📡</div>
-                        <h6 class="fw-bold text-white">Canales</h6>
-                        <small class="text-muted">Selección de redes adecuadas</small>
+
+                <!-- Pillars Card 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="smm-card">
+                        <div class="icon-box"><i class="bi bi-pie-chart"></i></div>
+                        <h4 class="fw-bold text-white mb-3">6. Reportes & Analítica</h4>
+                        <p class="text-white mb-3">Evaluamos métricas reales de alcance, interacción y crecimiento para ajustar la estrategia en beneficio de tu inversión.</p>
+                        <ul class="list-unstyled text-white d-flex flex-column gap-2 mb-0">
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Informes mensuales claros</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Métricas de rendimiento clave (KPIs)</li>
+                            <li><i class="bi bi-check2-circle text-warning me-2"></i>Propuestas de mejora continua</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTENIDO QUE LLAMA LA ATENCIÓN -->
-    <section class="cw-section bg-black bg-opacity-40">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-5">
-                    <span class="cw-badge-gold">🎨 CREATIVIDAD DISRUPTIVA</span>
-                    <h2 class="cw-title-lg text-white">CREAMOS CONTENIDO QUE LLAMA LA ATENCIÓN</h2>
-                    <p class="text-light fs-5 mb-4">
-                        En un mundo lleno de publicaciones... Tienes pocos segundos para detener el scroll.
-                    </p>
-                    <div class="p-4 rounded-4 bg-dark border border-info border-opacity-25 mb-4">
-                        <div class="d-flex align-items-center gap-3">
-                            <span class="fs-1">⚡</span>
+    <!-- FORMATS & CONTENT TYPES -->
+    <section class="py-5 bg-dark border-top border-bottom border-secondary">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="section-tag"><i class="bi bi-film me-1"></i> FORMATOS DE IMPACTO</span>
+                <h2 class="section-title">Contenido que Detiene el Scroll</h2>
+                <p class="text-white mx-auto" style="max-width: 650px;">
+                    Utilizamos diversidad de formatos diseñados estratégicamente para capturar la atención en segundos.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border border-secondary" style="background: rgba(255,255,255,0.03);">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="p-3 bg-danger rounded-3 text-white fs-4"><i class="bi bi-camera-reels"></i></span>
                             <div>
-                                <h6 class="fw-bold text-info mb-1">Scroll → Pausa → Atención → Interacción</h6>
-                                <small class="text-muted">Diseñamos cada pieza con psicología visual para captar miradas al instante.</small>
+                                <h5 class="fw-bold text-white mb-0">Reels & Videos Cortos</h5>
+                                <span class="badge bg-danger">Máximo Alcance</span>
                             </div>
                         </div>
+                        <p class="text-white mb-0">Videos dinámicos con tendencias, música en tendencia y guiones persuasivos que el algoritmo favorece.</p>
                     </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border border-secondary" style="background: rgba(255,255,255,0.03);">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="p-3 bg-primary rounded-3 text-white fs-4"><i class="bi bi-images"></i></span>
+                            <div>
+                                <h5 class="fw-bold text-white mb-0">Carruseles Educativos</h5>
+                                <span class="badge bg-primary">Mayor Guardados</span>
+                            </div>
+                        </div>
+                        <p class="text-white mb-0">Secuencias de imágenes informativas que transmiten autoridad y fomentan la interacción paso a paso.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border border-secondary" style="background: rgba(255,255,255,0.03);">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="p-3 bg-warning text-dark rounded-3 fs-4"><i class="bi bi-lightning-charge"></i></span>
+                            <div>
+                                <h5 class="fw-bold text-white mb-0">Historias Diarias</h5>
+                                <span class="badge bg-warning text-dark">Alta Conversión</span>
+                            </div>
+                        </div>
+                        <p class="text-white mb-0">Contenido cercano, encuestas, enlaces directos a WhatsApp y novedades para mantener el contacto diario.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLATFORMS WE MANAGE -->
+    <section class="py-5" style="background: #0d1322;">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="section-tag"><i class="bi bi-share me-1"></i> COBERUTRA MULTICANAL</span>
+                <h2 class="section-title">Canales donde tu Marca Debe Destacar</h2>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="platform-card">
+                        <i class="bi bi-facebook fs-1 text-primary mb-3"></i>
+                        <h5 class="fw-bold text-white">Facebook</h5>
+                        <p class="text-white small mb-0">Construye comunidad sólida y conecta con clientes locales.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="platform-card">
+                        <i class="bi bi-instagram fs-1 text-danger mb-3"></i>
+                        <h5 class="fw-bold text-white">Instagram</h5>
+                        <p class="text-white small mb-0">Haz que tu marca entre por los ojos con estética impecable.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="platform-card">
+                        <i class="bi bi-tiktok fs-1 text-white mb-3"></i>
+                        <h5 class="fw-bold text-white">TikTok</h5>
+                        <p class="text-white small mb-0">Convierte la creatividad en alcance masivo orgánico.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="platform-card">
+                        <i class="bi bi-linkedin fs-1 text-info mb-3"></i>
+                        <h5 class="fw-bold text-white">LinkedIn</h5>
+                        <p class="text-white small mb-0">Construye autoridad B2B y presencia corporativa.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="platform-card">
+                        <i class="bi bi-youtube fs-1 text-danger mb-3"></i>
+                        <h5 class="fw-bold text-white">YouTube</h5>
+                        <p class="text-white small mb-0">Cuenta historias profundas que duren más de unos segundos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENT PILLARS breakdown -->
+    <section class="py-5" style="background: #080d19;">
+        <div class="container py-4">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-5">
+                    <span class="section-tag"><i class="bi bi-pie-chart-fill me-1"></i> MATRIZ DE CONTENIDOS</span>
+                    <h2 class="section-title">Equilibrio Perfecto en tus Publicaciones</h2>
+                    <p class="text-white mb-4">
+                        Publicar solo ofertas cansa a la audiencia. Aplicamos una matriz equilibrada para educar, entretener, posicionar y vender en el momento oportuno.
+                    </p>
+                    <a href="https://wa.me/51935209781?text=Hola,%20deseo%20una%20propuesta%20para%20mis%20Redes%20Sociales" class="btn btn-contacto px-4 py-3 fw-bold">
+                        <i class="bi bi-chat-left-text-fill me-2"></i> Solicitar Propuesta de Contenido
+                    </a>
                 </div>
 
                 <div class="col-lg-7">
                     <div class="row g-3">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="pillar-card">
-                                <div class="fs-3 mb-2 text-info"><i class="bi bi-image"></i></div>
-                                <h6 class="fw-bold text-white">📸 Publicaciones</h6>
-                                <small class="text-muted">Diseños estáticos impecables</small>
+                        <div class="col-md-6">
+                            <div class="p-4 rounded-4 border border-secondary bg-black">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="bi bi-journal-bookmark-fill text-info fs-4"></i>
+                                    <h5 class="fw-bold text-white mb-0">1. Educar</h5>
+                                </div>
+                                <p class="text-white mb-0">Comparte conocimiento valioso y demuestra tu experiencia en el sector.</p>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="pillar-card">
-                                <div class="fs-3 mb-2 text-danger"><i class="bi bi-play-btn-fill"></i></div>
-                                <h6 class="fw-bold text-white">🎬 Reels</h6>
-                                <small class="text-muted">Videos cortos de alto impacto</small>
+
+                        <div class="col-md-6">
+                            <div class="p-4 rounded-4 border border-secondary bg-black">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="bi bi-info-circle-fill text-warning fs-4"></i>
+                                    <h5 class="fw-bold text-white mb-0">2. Informar</h5>
+                                </div>
+                                <p class="text-white mb-0">Presenta tus productos, servicios, horarios y novedades de forma clara.</p>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="pillar-card">
-                                <div class="fs-3 mb-2 text-warning"><i class="bi bi-circle-square"></i></div>
-                                <h6 class="fw-bold text-white">📱 Stories</h6>
-                                <small class="text-muted">Contenido fresco cotidiano</small>
+
+                        <div class="col-md-6">
+                            <div class="p-4 rounded-4 border border-secondary bg-black">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="bi bi-people-fill text-success fs-4"></i>
+                                    <h5 class="fw-bold text-white mb-0">3. Conectar</h5>
+                                </div>
+                                <p class="text-white mb-0">Muestra el lado humano de tu marca, tu equipo y el detrás de cámaras.</p>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="pillar-card">
-                                <div class="fs-3 mb-2 text-primary"><i class="bi bi-images"></i></div>
-                                <h6 class="fw-bold text-white">🎨 Carruseles</h6>
-                                <small class="text-muted">Historias deslizables continuas</small>
+
+                        <div class="col-md-6">
+                            <div class="p-4 rounded-4 border border-secondary bg-black">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="bi bi-emoji-smile-fill text-danger fs-4"></i>
+                                    <h5 class="fw-bold text-white mb-0">4. Entretener</h5>
+                                </div>
+                                <p class="text-white mb-0">Crea contenido ameno y tendencias que las personas deseen compartir.</p>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="pillar-card">
-                                <div class="fs-3 mb-2 text-success"><i class="bi bi-camera-reels"></i></div>
-                                <h6 class="fw-bold text-white">🎥 Videos</h6>
-                                <small class="text-muted">Edición dinámica y profesional</small>
+
+                        <div class="col-md-6">
+                            <div class="p-4 rounded-4 border border-secondary bg-black">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="bi bi-cart-check-fill text-primary fs-4"></i>
+                                    <h5 class="fw-bold text-white mb-0">5. Vender</h5>
+                                </div>
+                                <p class="text-white mb-0">Presenta tus productos con llamados a la acción que conviertan en ventas.</p>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="pillar-card">
-                                <div class="fs-3 mb-2 text-info"><i class="bi bi-lightbulb-fill"></i></div>
-                                <h6 class="fw-bold text-white">💡 Educativo</h6>
-                                <small class="text-muted">Aporta valor real al cliente</small>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <div class="pillar-card">
-                                <div class="fs-3 mb-2 text-warning"><i class="bi bi-fire"></i></div>
-                                <h6 class="fw-bold text-white">🔥 Promocional</h6>
-                                <small class="text-muted">Llamados a la acción claros y persuasivos</small>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="pillar-card">
-                                <div class="fs-3 mb-2 text-danger"><i class="bi bi-chat-dots-fill"></i></div>
-                                <h6 class="fw-bold text-white">💬 Interactivo</h6>
-                                <small class="text-muted">Encuestas, preguntas y stickers activa-audiencia</small>
+
+                        <div class="col-md-6">
+                            <div class="p-4 rounded-4 border border-secondary bg-black">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <i class="bi bi-star-fill text-warning fs-4"></i>
+                                    <h5 class="fw-bold text-white mb-0">6. Posicionar</h5>
+                                </div>
+                                <p class="text-white mb-0">Haz que las personas asocien instantáneamente tu marca con la solución que buscan.</p>
                             </div>
                         </div>
                     </div>
@@ -844,444 +809,219 @@
         </div>
     </section>
 
-    <!-- PLATAFORMAS DIGITALES -->
-    <section class="cw-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="cw-badge"><i class="bi bi-globe me-1"></i> PLATAFORMAS</span>
-                <h2 class="cw-title-lg text-white">REDES QUE TRABAJAN PARA TU MARCA</h2>
-                <p class="text-muted mx-auto" style="max-width: 650px;">
-                    Desarrollamos contenido y estrategias adaptadas a las dinámicas propias de cada plataforma.
-                </p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-4 col-lg border-hover">
-                    <div class="social-platform-card">
-                        <i class="fab fa-facebook text-primary display-4 mb-3"></i>
-                        <h5 class="fw-bold text-white">Facebook</h5>
-                        <p class="text-muted small mb-0">Construye comunidad sólida y conecta con clientes locales.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg">
-                    <div class="social-platform-card">
-                        <i class="fab fa-instagram text-danger display-4 mb-3"></i>
-                        <h5 class="fw-bold text-white">Instagram</h5>
-                        <p class="text-muted small mb-0">Haz que tu marca entre por los ojos con estética impecable.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg">
-                    <div class="social-platform-card">
-                        <i class="fab fa-tiktok text-light display-4 mb-3"></i>
-                        <h5 class="fw-bold text-white">TikTok</h5>
-                        <p class="text-muted small mb-0">Convierte la creatividad en alcance masivo orgánico.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg">
-                    <div class="social-platform-card">
-                        <i class="fab fa-linkedin text-info display-4 mb-3"></i>
-                        <h5 class="fw-bold text-white">LinkedIn</h5>
-                        <p class="text-muted small mb-0">Construye autoridad B2B y presencia corporativa.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg">
-                    <div class="social-platform-card">
-                        <i class="fab fa-youtube text-danger display-4 mb-3"></i>
-                        <h5 class="fw-bold text-white">YouTube</h5>
-                        <p class="text-muted small mb-0">Cuenta historias profundas que duren más de unos segundos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PILARES DE CONTENIDO CON PERSONALIDAD -->
-    <section class="cw-section bg-black bg-opacity-60">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="cw-badge-gold">🧠 IDENTIDAD DE MARCA</span>
-                <h2 class="cw-title-lg text-white">CONTENIDO CON PERSONALIDAD</h2>
-                <p class="text-light mx-auto" style="max-width: 700px;">
-                    No queremos que tu negocio publique lo mismo que todos. Queremos que tenga su propia voz distintiva.
-                </p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="cw-card">
-                        <div class="icon-circle bg-info bg-opacity-25 text-info">📚</div>
-                        <h5 class="fw-bold text-white">EDUCAR</h5>
-                        <p class="text-muted mb-0">Comparte conocimiento valioso y demuestra tu experiencia en el sector.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="cw-card">
-                        <div class="icon-circle bg-warning bg-opacity-25 text-warning">🎯</div>
-                        <h5 class="fw-bold text-white">INFORMAR</h5>
-                        <p class="text-muted mb-0">Presenta tus productos, servicios, horarios y novedades de forma clara.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="cw-card">
-                        <div class="icon-circle bg-danger bg-opacity-25 text-danger">❤️</div>
-                        <h5 class="fw-bold text-white">CONECTAR</h5>
-                        <p class="text-muted mb-0">Muestra el lado humano de tu marca, tu equipo y el detrás de cámaras.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="cw-card">
-                        <div class="icon-circle bg-primary bg-opacity-25 text-primary">😂</div>
-                        <h5 class="fw-bold text-white">ENTRETENER</h5>
-                        <p class="text-muted mb-0">Crea contenido ameno y tendencias que las personas deseen compartir.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="cw-card">
-                        <div class="icon-circle bg-success bg-opacity-25 text-success">🛍️</div>
-                        <h5 class="fw-bold text-white">VENDER</h5>
-                        <p class="text-muted mb-0">Presenta tus productos con llamados a la acción que conviertan en ventas.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="cw-card">
-                        <div class="icon-circle bg-secondary bg-opacity-25 text-gold">🏆</div>
-                        <h5 class="fw-bold text-white">POSICIONAR</h5>
-                        <p class="text-muted mb-0">Haz que las personas asocien instantáneamente tu marca con la solución que buscan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONVERSIÓN DEL SCROLL AL CLIENTE -->
-    <section class="cw-section">
-        <div class="container">
-            <div class="cw-card bg-gradient border-info p-5 text-center">
-                <span class="cw-badge mb-3">⚡ DEJA DE PUBLICAR. EMPIEZA A COMUNICAR.</span>
-                <h2 class="cw-title-lg text-white mb-4">EL VERDADERO POTENCIAL DE LAS REDES SOCIALES</h2>
-
-                <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 my-4 fs-5 fw-bold">
-                    <span class="px-3 py-2 rounded-pill bg-dark border border-secondary text-info">👀 Atención</span>
-                    <span class="text-cyan">↓</span>
-                    <span class="px-3 py-2 rounded-pill bg-dark border border-secondary text-danger">❤️ Reacción</span>
-                    <span class="text-cyan">↓</span>
-                    <span class="px-3 py-2 rounded-pill bg-dark border border-secondary text-warning">💬 Comentario</span>
-                    <span class="text-cyan">↓</span>
-                    <span class="px-3 py-2 rounded-pill bg-dark border border-secondary text-primary">🔄 Compartido</span>
-                    <span class="text-cyan">↓</span>
-                    <span class="px-3 py-2 rounded-pill bg-dark border border-secondary text-info">📩 Mensaje</span>
-                    <span class="text-cyan">↓</span>
-                    <span class="px-3 py-2 rounded-pill bg-success text-white border border-success">🤝 Cliente</span>
-                </div>
-                <p class="text-light fs-5 mx-auto mt-3" style="max-width: 700px;">
-                    Transformamos interacciones pasivas en conversaciones comerciales de alto valor.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- MARKETING BASADO EN DATOS + REDES Y PUBLICIDAD -->
-    <section class="cw-section bg-black bg-opacity-50">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <!-- Data Driven -->
+    <!-- METRICS & RESULTS -->
+    <section class="py-5" style="background: linear-gradient(135deg, var(--primary-navy), #020617);">
+        <div class="container py-4">
+            <div class="row align-items-center gy-4">
                 <div class="col-lg-6">
-                    <span class="cw-badge-green"><i class="bi bi-graph-up-arrow me-1"></i> ANALÍTICA CONSTANTE</span>
-                    <h2 class="cw-title-lg text-white">📈 MARKETING BASADO EN DATOS</h2>
-                    <p class="text-light mb-4">
-                        No todo lo que funciona para una marca funciona para otra. Por eso analizamos el comportamiento exacto de tu comunidad.
+                    <span class="section-tag text-warning border-warning"><i class="bi bi-bar-chart-line me-1"></i> MÉTRICAS QUE IMPORTAN</span>
+                    <h2 class="section-title text-white">No Solo Likes, Resultados Medibles</h2>
+                    <p class="text-white fs-5 mb-4">
+                        Nos enfocamos en métricas que impactan directamente en el crecimiento de tu marca y tus ventas.
                     </p>
-
                     <div class="row g-3">
-                        <div class="col-6"><div class="p-2 border border-secondary rounded text-slate-200"><i class="bi bi-check2-circle text-success me-2"></i> Alcance</div></div>
-                        <div class="col-6"><div class="p-2 border border-secondary rounded text-slate-200"><i class="bi bi-check2-circle text-success me-2"></i> Impresiones</div></div>
-                        <div class="col-6"><div class="p-2 border border-secondary rounded text-slate-200"><i class="bi bi-check2-circle text-success me-2"></i> Interacciones</div></div>
-                        <div class="col-6"><div class="p-2 border border-secondary rounded text-slate-200"><i class="bi bi-check2-circle text-success me-2"></i> Seguidores</div></div>
-                        <div class="col-6"><div class="p-2 border border-secondary rounded text-slate-200"><i class="bi bi-check2-circle text-success me-2"></i> Reproducciones</div></div>
-                        <div class="col-6"><div class="p-2 border border-secondary rounded text-slate-200"><i class="bi bi-check2-circle text-success me-2"></i> Clics y Mensajes</div></div>
-                    </div>
-
-                    <div class="p-3 bg-dark rounded border border-secondary border-opacity-25 mt-4 text-center">
-                        <span class="fw-bold text-warning">Publicamos → Medimos → Aprendemos → Optimizamos</span>
+                        <div class="col-6"><div class="p-3 border border-secondary rounded-3 bg-black text-white"><i class="bi bi-check2-circle text-success me-2"></i> Alcance Real</div></div>
+                        <div class="col-6"><div class="p-3 border border-secondary rounded-3 bg-black text-white"><i class="bi bi-check2-circle text-success me-2"></i> Impresiones</div></div>
+                        <div class="col-6"><div class="p-3 border border-secondary rounded-3 bg-black text-white"><i class="bi bi-check2-circle text-success me-2"></i> Interacciones</div></div>
+                        <div class="col-6"><div class="p-3 border border-secondary rounded-3 bg-black text-white"><i class="bi bi-check2-circle text-success me-2"></i> Seguidores Reales</div></div>
+                        <div class="col-6"><div class="p-3 border border-secondary rounded-3 bg-black text-white"><i class="bi bi-check2-circle text-success me-2"></i> Reproducciones</div></div>
+                        <div class="col-6"><div class="p-3 border border-secondary rounded-3 bg-black text-white"><i class="bi bi-check2-circle text-success me-2"></i> Clics y Mensajes</div></div>
                     </div>
                 </div>
 
-                <!-- Organic + Ads -->
-                <div class="col-lg-6">
-                    <div class="cw-card border-warning">
-                        <span class="cw-badge-gold">📢 REDES + PUBLICIDAD</span>
-                        <h3 class="fw-bold text-white mb-3">POTENCIA TU IMPACTO CON ADS</h3>
-                        <p class="text-light">
-                            Tu contenido puede llegar de forma orgánica... Pero también podemos potenciarlo mediante campañas publicitarias altamente segmentadas.
-                        </p>
-
-                        <ul class="list-unstyled d-flex flex-column gap-2 text-white-50 my-3">
-                            <li class="d-flex align-items-center gap-2"><i class="bi bi-fire text-warning"></i> <span><strong>Más alcance:</strong> Llama la atención de miles de personas.</span></li>
-                            <li class="d-flex align-items-center gap-2"><i class="bi bi-crosshair text-info"></i> <span><strong>Más segmentación:</strong> Llega solo a tu cliente ideal.</span></li>
-                            <li class="d-flex align-items-center gap-2"><i class="bi bi-people-fill text-primary"></i> <span><strong>Más personas interesadas:</strong> Tráfico calificado a tu perfil.</span></li>
-                            <li class="d-flex align-items-center gap-2"><i class="bi bi-chat-dots-fill text-success"></i> <span><strong>Más contactos directos:</strong> Mensajes directo a WhatsApp.</span></li>
-                        </ul>
-
-                        <div class="p-3 bg-black rounded text-center">
-                            <small class="text-info fw-bold">Campañas orientadas a: Reconocimiento · Interacción · Tráfico · Mensajes · Leads · Ventas</small>
-                        </div>
+                <div class="col-lg-6 text-center">
+                    <div class="p-5 rounded-4 border border-warning" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);">
+                        <i class="bi bi-trophy text-warning display-1 mb-3"></i>
+                        <h3 class="fw-bold text-white mb-2">Transforma tu Presencia Digital</h3>
+                        <p class="text-white mb-4 fs-5">Permítenos gestionar tus redes para que puedas enfocarte en atender a tus nuevos clientes.</p>
+                        <a href="https://wa.me/51935209781?text=Hola,%20necesito%20asesoria%20de%20Social%20Media%20Marketing" target="_blank" class="btn btn-contacto btn-lg w-100 fw-bold py-3 text-uppercase">
+                            <i class="bi bi-whatsapp me-2"></i> Iniciar Asesoría en WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MARCA PRESENTE & CONFIANZA -->
-    <section class="cw-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <span class="cw-badge"><i class="bi bi-shield-check me-1"></i> CONFIANZA Y AUTORIDAD</span>
-                    <h2 class="cw-title-lg text-white">🌎 HAZ QUE TU MARCA ESTÉ PRESENTE</h2>
-                    <p class="text-light mb-4">
-                        Imagina que alguien escucha hablar de tu negocio. Lo primero que hace es <strong>buscarte en redes</strong>.
-                    </p>
-                    <p class="text-muted mb-4">
-                        Y cuando entra a tus redes encuentra una marca profesional, una identidad coherente, contenido útil, actividad constante y una comunidad activa.
-                    </p>
-                    <div class="p-3 bg-primary bg-opacity-10 border border-info rounded">
-                        <h6 class="fw-bold text-info mb-1"><i class="bi bi-star-fill text-warning me-2"></i> Eso también es vender.</h6>
-                        <small class="text-light">Porque antes de comprar, muchas personas necesitan confiar en tu marca.</small>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="banner-quote">
-                        <h3 class="fw-extrabold text-white mb-3">“Contenido que atrae. Estrategias que conectan.”</h3>
-                        <p class="text-info fs-5 mb-0">Del scroll al contacto directo con tu empresa.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NUESTRO PROCESO EN 7 PASOS -->
-    <section class="cw-section bg-black bg-opacity-40">
-        <div class="container">
+    <!-- WORKFLOW PROCESS (7 STEPS) -->
+    <section class="py-5 bg-dark">
+        <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="cw-badge-gold">🚀 NUESTRO PROCESO</span>
-                <h2 class="cw-title-lg text-white">CÓMO TRABAJAMOS JUNTO A TI</h2>
-                <p class="text-muted mx-auto" style="max-width: 650px;">
-                    Un método estructurado en 7 etapas para garantizar resultados sostenibles.
+                <span class="section-tag"><i class="bi bi-arrow-repeat me-1"></i> PROCESO PASO A PASO</span>
+                <h2 class="section-title">Cómo Trabajamos Tu Marca</h2>
+                <p class="text-white mx-auto" style="max-width: 650px;">
+                    Un flujo organizado y transparente desde el primer día.
                 </p>
             </div>
 
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="cw-card">
-                        <div class="process-num">01</div>
-                        <h5 class="fw-bold text-white">🔎 DESCUBRIMOS</h5>
-                        <p class="text-muted mb-0">Conocemos a fondo tu marca, público objetivo y metas comerciales.</p>
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border border-secondary bg-black h-100">
+                        <div class="badge bg-warning text-dark mb-2">Paso 01</div>
+                        <h5 class="fw-bold text-white">1. Diagnóstico & Brief</h5>
+                        <p class="text-white mb-0">Conocemos a fondo tu marca, público objetivo y metas comerciales.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="cw-card">
-                        <div class="process-num">02</div>
-                        <h5 class="fw-bold text-white">🧠 PLANIFICAMOS</h5>
-                        <p class="text-muted mb-0">Creamos una estrategia de contenido mensual personalizada.</p>
+
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border border-secondary bg-black h-100">
+                        <div class="badge bg-info text-dark mb-2">Paso 02</div>
+                        <h5 class="fw-bold text-white">2. Estrategia de Contenido</h5>
+                        <p class="text-white mb-0">Creamos una estrategia de contenido mensual personalizada.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="cw-card">
-                        <div class="process-num">03</div>
-                        <h5 class="fw-bold text-white">🎨 CREAMOS</h5>
-                        <p class="text-muted mb-0">Diseñamos piezas visuales, redactamos copypersuasivo y editamos videos.</p>
+
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border border-secondary bg-black h-100">
+                        <div class="badge bg-primary text-white mb-2">Paso 03</div>
+                        <h5 class="fw-bold text-white">3. Diseño & Edición</h5>
+                        <p class="text-white mb-0">Diseñamos piezas visuales, redactamos copy persuasivo y editamos videos.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="cw-card">
-                        <div class="process-num">04</div>
-                        <h5 class="fw-bold text-white">📲 PUBLICAMOS</h5>
-                        <p class="text-muted mb-0">Mantenemos una presencia constante y profesional en tus redes.</p>
+
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border border-secondary bg-black h-100">
+                        <div class="badge bg-success text-white mb-2">Paso 04</div>
+                        <h5 class="fw-bold text-white">4. Programación</h5>
+                        <p class="text-white mb-0">Mantenemos una presencia constante y profesional en tus redes.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="cw-card">
-                        <div class="process-num">05</div>
-                        <h5 class="fw-bold text-white">💬 CONECTAMOS</h5>
-                        <p class="text-muted mb-0">Impulsamos la interacción constante con tu comunidad.</p>
+
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border border-secondary bg-black h-100">
+                        <div class="badge bg-danger text-white mb-2">Paso 05</div>
+                        <h5 class="fw-bold text-white">5. Interacción con la Comunidad</h5>
+                        <p class="text-white mb-0">Impulsamos la interacción constante con tu comunidad.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="cw-card">
-                        <div class="process-num">06</div>
-                        <h5 class="fw-bold text-white">📊 ANALIZAMOS</h5>
-                        <p class="text-muted mb-0">Medimos resultados exactos y detectamos nuevas oportunidades.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="cw-card border-success">
-                        <div class="process-num bg-success">07</div>
-                        <h5 class="fw-bold text-white">🔥 OPTIMIZAMOS</h5>
-                        <p class="text-muted mb-0">Mejoramos la estrategia continuamente para acelerar tu crecimiento.</p>
+
+                <div class="col-md-4">
+                    <div class="p-4 rounded-4 border border-secondary bg-black h-100">
+                        <div class="badge bg-warning text-dark mb-2">Paso 06</div>
+                        <h5 class="fw-bold text-white">6. Análisis de Métricas</h5>
+                        <p class="text-white mb-0">Medimos resultados exactos y detectamos nuevas oportunidades.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ¿PARA QUIÉN ES? -->
-    <section class="cw-section">
-        <div class="container">
+    <!-- IDEAL FOR TARGET AUDIENCE -->
+    <section class="py-5" style="background: #090e1a;">
+        <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="cw-badge">🎯 ¿PARA QUIÉN ES?</span>
-                <h2 class="cw-title-lg text-white">SOLUCIONES ADAPTADAS A TU SECTOR</h2>
+                <span class="section-tag"><i class="bi bi-bullseye me-1"></i> PÚBLICO OBJETIVO</span>
+                <h2 class="section-title">¿Para Quién es Ideal este Servicio?</h2>
             </div>
 
-            <div class="row g-3">
-                <div class="col-md-4 col-lg-3">
-                    <div class="target-card">
-                        <span class="fs-2">🏢</span>
-                        <div>
-                            <h6 class="fw-bold text-white mb-0">Empresas</h6>
-                            <small class="text-muted">Haz crecer tu presencia digital</small>
-                        </div>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 border border-secondary bg-dark text-center h-100">
+                        <i class="bi bi-shop fs-1 text-warning mb-3"></i>
+                        <h6 class="fw-bold text-white">Negocios Locales</h6>
+                        <small class="text-white d-block">Haz crecer tu presencia digital</small>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-3">
-                    <div class="target-card">
-                        <span class="fs-2">🛍️</span>
-                        <div>
-                            <h6 class="fw-bold text-white mb-0">Tiendas</h6>
-                            <small class="text-muted">Convierte seguidores en compradores</small>
-                        </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 border border-secondary bg-dark text-center h-100">
+                        <i class="bi bi-bag-check fs-1 text-info mb-3"></i>
+                        <h6 class="fw-bold text-white">E-Commerce / Tiendas</h6>
+                        <small class="text-white d-block">Convierte seguidores en compradores</small>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-3">
-                    <div class="target-card">
-                        <span class="fs-2">🍔</span>
-                        <div>
-                            <h6 class="fw-bold text-white mb-0">Restaurantes</h6>
-                            <small class="text-muted">Haz que tus platillos entren por los ojos</small>
-                        </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 border border-secondary bg-dark text-center h-100">
+                        <i class="bi bi-cup-hot fs-1 text-danger mb-3"></i>
+                        <h6 class="fw-bold text-white">Restaurantes & Cafés</h6>
+                        <small class="text-white d-block">Haz que tus platillos entren por los ojos</small>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-3">
-                    <div class="target-card">
-                        <span class="fs-2">✈️</span>
-                        <div>
-                            <h6 class="fw-bold text-white mb-0">Agencias de Viajes</h6>
-                            <small class="text-muted">Inspira a tus próximos viajeros</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <div class="target-card">
-                        <span class="fs-2">🎓</span>
-                        <div>
-                            <h6 class="fw-bold text-white mb-0">Instituciones</h6>
-                            <small class="text-muted">Comunica valores y construye comunidad</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <div class="target-card">
-                        <span class="fs-2">👨‍💼</span>
-                        <div>
-                            <h6 class="fw-bold text-white mb-0">Profesionales</h6>
-                            <small class="text-muted">Construye una marca personal sólida</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <div class="target-card">
-                        <span class="fs-2">🚀</span>
-                        <div>
-                            <h6 class="fw-bold text-white mb-0">Emprendedores</h6>
-                            <small class="text-muted">Haz que tu nueva marca comience visible</small>
-                        </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 border border-secondary bg-dark text-center h-100">
+                        <i class="bi bi-airplane fs-1 text-success mb-3"></i>
+                        <h6 class="fw-bold text-white">Agencias de Turismo</h6>
+                        <small class="text-white d-block">Inspira a tus próximos viajeros</small>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CAROUSEL DE BANNERS / FRASES DESTACADAS -->
-    <section class="cw-section bg-gradient">
-        <div class="container">
-            <div id="bannerQuotesCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active text-center py-4">
-                        <h2 class="fw-extrabold text-warning display-5">“Tu marca merece ser vista.”</h2>
-                        <p class="text-light fs-5">Haz ruido. Haz conexión. Haz crecer tu marca con CANDELAWEB.</p>
-                    </div>
-                    <div class="carousel-item text-center py-4">
-                        <h2 class="fw-extrabold text-info display-5">“Del scroll al contacto.”</h2>
-                        <p class="text-light fs-5">No publiques por publicar. Convierte atención en oportunidades reales.</p>
-                    </div>
-                    <div class="carousel-item text-center py-4">
-                        <h2 class="fw-extrabold text-success display-5">“Tu comunidad puede convertirse en tu mejor cliente.”</h2>
-                        <p class="text-light fs-5">Enciende tus redes. Conecta con tu audiencia hoy mismo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CALL TO ACTION FINAL -->
-    <section class="cw-section text-center" style="background: radial-gradient(circle at center, rgba(6, 21, 120, 0.4), #000);">
-        <div class="container">
-            <span class="cw-badge-gold mb-3">📱 CANDELAWEB</span>
-            <h2 class="cw-title-lg text-white mb-3">ENCIENDE TUS REDES. CONECTA CON TU AUDIENCIA.</h2>
-            <p class="text-light fs-5 mx-auto mb-4" style="max-width: 650px;">
-                ¿Listo para transformar tus redes sociales en un canal activo de clientes? Conversemos hoy mismo.
+    <!-- CALL TO ACTION BANNER -->
+    <section class="py-5" style="background: linear-gradient(135deg, var(--primary-cyan), var(--primary-navy));">
+        <div class="container text-center py-4">
+            <span class="badge bg-warning text-dark text-uppercase px-3 py-2 mb-3 fw-bold">¿Listo para encender tus Redes?</span>
+            <h2 class="display-5 fw-extrabold text-white mb-3">Haz que tu Marca Sobresalga en el Feed</h2>
+            <p class="fs-5 text-white max-w-700 mx-auto mb-4">
+                Déjanos ayudarte a transmitir el verdadero valor de tu empresa con contenidos profesionales y llamativos.
             </p>
-            <a href="https://wa.me/51935209781?text=Hola%20CANDELAWEB,%20quiero%20potenciar%20mis%20redes%20sociales" target="_blank" class="btn-cw-cyan pulse-btn fs-5">
-                🔥 QUIERO POTENCIAR MI MARCA
-            </a>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="https://wa.me/51935209781?text=Hola%20CANDELAWEB,%20quiero%20cotizar%20Social%20Media%20Marketing" target="_blank" class="btn btn-warning btn-lg px-5 py-3 fw-bold rounded-pill text-dark text-uppercase shadow">
+                    <i class="bi bi-whatsapp me-2"></i> Cotizar Servicio por WhatsApp
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/51935209781?text=Hola%20CANDELAWEB,%20deseo%20informacion%20sobre%20Social%20Media%20Marketing" target="_blank" class="cw-whatsapp-float" title="Contactar por WhatsApp">
+    <a href="https://wa.me/51935209781?text=Hola%20CANDELAWEB,%20deseo%20información%20sobre%20Social%20Media%20Marketing" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
         <i class="bi bi-whatsapp"></i>
     </a>
 
     <!-- FOOTER -->
-    <footer class="cw-footer">
+    <footer class="py-5">
         <div class="container">
-            <div class="row g-4 mb-4">
+            <div class="row gy-4">
                 <div class="col-lg-4">
-                    <a class="cw-brand mb-3 d-inline-block" href="https://www.todowebcusco.com/">
-                        <span class="flame"><i class="fa-solid fa-fire"></i></span> CANDELA<span class="highlight">WEB</span>
+                    <a class="navbar-brand d-flex align-items-center gap-2 mb-3" href="#">
+                        <i class="bi bi-fire text-warning fs-3"></i>
+                        <span class="text-white fw-extrabold fs-4">CANDELAWEB</span>
                     </a>
-                    <p class="text-muted">
-                        Agencia de desarrollo web y marketing digital de alto impacto en Cusco, Perú. Transformamos ideas en experiencias digitales exitosas.
+                    <p class="text-white">
+                        Desarrollamos soluciones digitales que transforman negocios: Páginas Web, Tiendas Online, Apps Móviles, Google Ads y Social Media Marketing en Cusco y todo el Perú.
                     </p>
                 </div>
+
                 <div class="col-lg-2 col-md-4">
-                    <h5>Servicios</h5>
+                    <h6 class="fw-bold text-warning mb-3 text-uppercase">Navegación</h6>
                     <ul class="list-unstyled d-flex flex-column gap-2">
-                        <li><a href="https://www.todowebcusco.com/paginas-web/">Páginas Web</a></li>
+                        <li><a href="https://www.todowebcusco.com/">Inicio</a></li>
+                        <li><a href="https://www.todowebcusco.com/paginas-web/">Página Web</a></li>
                         <li><a href="https://www.todowebcusco.com/tiendas-virtuales/">Tiendas Virtuales</a></li>
                         <li><a href="https://www.todowebcusco.com/desarrollo-de-apps/">Desarrollo de Apps</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <h6 class="fw-bold text-warning mb-3 text-uppercase">Servicios Digitales</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
                         <li><a href="https://www.todowebcusco.com/anuncios-en-google/">Anuncios en Google</a></li>
+                        <li><a href="https://www.todowebcusco.com/social-media-marketing/">Social Media Marketing</a></li>
+                        <li><a href="https://www.todowebcusco.com/posicionamiento-web-seo/">Posicionamiento Web (SEO)</a></li>
+                        <li><a href="https://www.todowebcusco.com/marketing-digital/">Marketing Digital</a></li>
                     </ul>
                 </div>
+
                 <div class="col-lg-3 col-md-4">
-                    <h5>Marketing Digital</h5>
-                    <ul class="list-unstyled d-flex flex-column gap-2">
-                        <li><a href="https://www.todowebcusco.com/social-media-marketing/" class="text-info fw-bold">Social Media Marketing</a></li>
-                        <li><a href="https://www.todowebcusco.com/posicionamiento-web-seo/">Posicionamiento SEO</a></li>
-                        <li><a href="https://www.todowebcusco.com/marketing-digital/">Marketing Digital Integral</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5>Contacto</h5>
-                    <ul class="list-unstyled d-flex flex-column gap-2">
-                        <li><i class="bi bi-telephone text-warning me-2"></i> +51 935 209 781</li>
-                        <li><i class="bi bi-envelope text-warning me-2"></i> adminweb@todowebcusco.com</li>
-                        <li><i class="bi bi-geo-alt text-warning me-2"></i> Cusco, Perú</li>
-                    </ul>
+                    <h6 class="fw-bold text-warning mb-3 text-uppercase">Contacto</h6>
+                    <p class="text-white mb-2"><i class="bi bi-geo-alt-fill text-warning me-2"></i> Cusco, Perú</p>
+                    <p class="text-white mb-2"><i class="bi bi-telephone-fill text-warning me-2"></i> +51 935 209 781</p>
+                    <p class="text-white mb-3"><i class="bi bi-envelope-fill text-warning me-2"></i> adminweb@todowebcusco.com</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank"><i class="bi bi-tiktok"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="border-top border-secondary border-opacity-25 pt-4 text-center">
-                <p class="mb-0 text-muted">&copy; <?php echo date('Y'); ?> CANDELAWEB / Todo Web Cusco. Todos los derechos reservados.</p>
+
+            <hr class="my-4 border-secondary">
+
+            <div class="text-center">
+                <p class="mb-0 text-white">&copy; <?php echo date('Y'); ?> CANDELAWEB / Todo Web Cusco. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
