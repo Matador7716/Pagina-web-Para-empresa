@@ -1,97 +1,61 @@
 <?php
 // page-experiencias.php - Perú Safe Journeys
 $company_name = "Perú Safe Journeys";
-$company_tagline = "tu camino hacia un Perú auténtico";
-$phone_number = "+51 948 364 822";
-$phone_clean = "51948364822";
-$email_address = "informesweb@perusafejourneyscorp.com";
+$company_tagline = "Travel Agency";
+
+// Teléfonos de contacto por área
+$phones = [
+    'ventas' => ['number' => '+51 931 352 810', 'clean' => '51931352810', 'label' => 'Ventas'],
+    'operaciones' => ['number' => '+51 930 823 110', 'clean' => '51930823110', 'label' => 'Operaciones'],
+    'calidad' => ['number' => '+51 913 716 197', 'clean' => '51913716197', 'label' => 'Calidad 24/7']
+];
+
+$email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
-// Array de las 7 Experiencias
-$experiencias = [
+// Lista de experiencias
+$experiences = [
     [
-        'id' => 'aventuras-andes',
-        'num' => '01',
-        'title' => 'AVENTURAS EN LOS ANDES',
-        'subtitle' => 'Camina por senderos ancestrales y desafía tus límites',
-        'desc' => 'Conecta con la majestuosidad de las montañas andinas a través de rutas de senderismo y trekking diseñadas para todos los niveles. Recorre paisajes sobrecogedores, pasa por comunidades locales tradicionales y llega a cumbres deslumbrantes como la Montaña de 7 Colores o el nevado Salkantay.',
-        'experience' => 'Trekking • Senderismo • Montañismo • Paisajes Épicos',
-        'ideal' => 'amantes de la naturaleza, fotógrafos y caminantes que buscan superar sus metas.',
-        'tagline' => 'Cada paso en los Andes te acerca más a la esencia de la tierra.',
-        'img' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🏔️ Trekking & Alta Montaña'
+        'title' => 'Tours Tradicionales & Culturales',
+        'desc' => 'Descubre lugares imprescindibles del Perú con guiado profesional en historia, arquitectura colonial e inca.',
+        'badge' => '🏛️ Historia & Patrimonio',
+        'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
+        'icon' => 'bi-bank'
     ],
     [
-        'id' => 'inmersion-cultural',
-        'num' => '02',
-        'title' => 'INMERSIÓN CULTURAL & HISTÓRICA',
-        'subtitle' => 'Descubre los secretos de civilizaciones milenarias',
-        'desc' => 'Camina junto a historiadores y guías locales expertos que te revelarán la fascinante historia de los Incas y las culturas preincas. Visita fortalezas monumentales, templos sagrados, museos y centros arqueológicos que conservan la memoria histórica del continente.',
-        'experience' => 'Arqueología • Guiado Especializado • Historia Viva • Museos',
-        'ideal' => 'viajeros curiosos, familias e investigadores culturales.',
-        'tagline' => 'Viajar en el tiempo es posible cuando caminas por el Perú.',
-        'img' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🏛️ Historia & Arqueología'
+        'title' => 'Tours de Caminata & Trekking',
+        'desc' => 'Rutas, montañas y paisajes ancestrales que te conectan con la naturaleza en estado puro.',
+        'badge' => '🏔️ Aventura Andina',
+        'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+        'icon' => 'bi-geo-alt-fill'
     ],
     [
-        'id' => 'legado-inca',
-        'num' => '03',
-        'title' => 'MUNDO INCA & MACHU PICCHU',
-        'subtitle' => 'Un viaje sagrado al corazón de la arquitectura ancestral',
-        'desc' => 'Vive una experiencia integral recorriendo Cusco, el Valle Sagrado y el santuario histórico de Machu Picchu. Disfruta de trayectos escénicos en trenes panorámicos, alojamiento de confort y atención prioritaria para descubrir el enigma de la maravilla incaica con tranquilidad.',
-        'experience' => 'Machu Picchu • Tren Panorámico • Valle Sagrado • Templos',
-        'ideal' => 'todos los viajeros que sueñan con conocer la joya del Imperio Inca.',
-        'tagline' => 'Machu Picchu no se contempla, se siente en el alma.',
-        'img' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '✨ Maravilla del Mundo'
+        'title' => 'Aventura & Deportes de Acción',
+        'desc' => 'Canotaje en ríos sagrados, zipline sobre valles profundos y cuatrimotos hacia las Salineras de Maras.',
+        'badge' => '⚡ Adrenalina Viva',
+        'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
+        'icon' => 'bi-lightning-charge-fill'
     ],
     [
-        'id' => 'selva-biodiversa',
-        'num' => '04',
-        'title' => 'EXPEDICIONES EN LA AMAZONÍA',
-        'subtitle' => 'Sumérgete en el ecosistema más biodiverso del planeta',
-        'desc' => 'Aventúrate en lodges ecológicos de selva profunda, navega por ríos caudalosos, avista fauna silvestre única (guacamayos, nutrias gigantes, caimanes) y aprende de la sabiduría medicinal de las comunidades nativas amazónicas.',
-        'experience' => 'Navegación • Avistamiento de Fauna • Caminatas Nocturnas • Ecolodges',
-        'ideal' => 'amantes de la naturaleza, observadores de aves y aventureros ecológicos.',
-        'tagline' => 'Siente el latido de la naturaleza viva en la selva peruana.',
-        'img' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🌿 Amazonía & Naturaleza'
+        'title' => 'Expediciones Selva & Montaña',
+        'desc' => 'Territorios únicos en la Amazonía y glaciares andinos para explorar con guías especializados.',
+        'badge' => '🌿 Exploración Profunda',
+        'image' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+        'icon' => 'bi-tree-fill'
     ],
     [
-        'id' => 'rutas-gastronomicas',
-        'num' => '05',
-        'title' => 'SABORES DEL PERÚ & RUTA GASTRONÓMICA',
-        'subtitle' => 'Degusta la cocina elegida entre las mejores del mundo',
-        'desc' => 'De la costa al altiplano, experimenta un viaje sensorial inolvidable. Disfruta de tours gastronómicos urbanos, clases de cocina con chefs locales, catas de Pisco y café de especialidad, y cenas exclusivas con insumos ancestrales peruanos.',
-        'experience' => 'Clases de Cocina • Catas de Pisco • Restaurants Culinarios • Mercados',
-        'ideal' => 'foodies, gourmets y viajeros entusiastas del buen comer.',
-        'tagline' => 'Descubre la cultura de un país a través de su paladar.',
-        'img' => 'https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🍽️ Gastronomía de Autor'
+        'title' => 'Turismo Vivencial & Comunitario',
+        'desc' => 'Comparte, aprende y vive nuestras tradiciones con comunidades locales andinas y amazónicas.',
+        'badge' => '🤝 Conexión Humana',
+        'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+        'icon' => 'bi-people-fill'
     ],
     [
-        'id' => 'turismo-vivencial',
-        'num' => '06',
-        'title' => 'TURISMO VIVENCIAL & COMUNITARIO',
-        'subtitle' => 'Comparte momentos auténticos con comunidades locales',
-        'desc' => 'Sé parte de las costumbres de las familias andinas y amazónicas. Participa en talleres de textilería tradicional, faenas agrícolas ancestrales, ritos de agradecimiento a la Pachamama y degustaciones de gastronomía comunitaria.',
-        'experience' => 'Convivencia Comunitarias • Textilería Tradicional • Pago a la Tierra',
-        'ideal' => 'viajeros conscientes que buscan intercambios culturales genuinos.',
-        'tagline' => 'Conecta con las personas que mantienen viva la memoria de un pueblo.',
-        'img' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '👥 Cultura Viva & Tradición'
-    ],
-    [
-        'id' => 'fotografia-paisaje',
-        'num' => '07',
-        'title' => 'EXPEDICIONES DE FOTOGRAFÍA & PAISAJES',
-        'subtitle' => 'Captura la luz y la magia de escenarios impresionantes',
-        'desc' => 'Acompañado de tiempos logísticos optimizados para las mejores horas de luz (amaneceres y atardeceres), recorre lagunas turquesas, desiertos junto al océano Pacífico, cañones profundos y celajes andinos inolvidables.',
-        'experience' => 'Fotografía de Paisaje • Horas Doradas • Puntos Panorámicos • Asistencia',
-        'ideal' => 'fotógrafos aficionados y profesionales, creadores de contenido.',
-        'tagline' => 'Transforma momentos mágicos en recuerdos eternos.',
-        'img' => 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '📸 Paisajes & Fotografía'
+        'title' => 'Experiencias Gastronómicas',
+        'desc' => 'Saborea la galardonada cocina peruana, clases de cocina interactivas y catas de pisco en lugares de ensueño.',
+        'badge' => '🍲 Sabores del Perú',
+        'image' => 'https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&w=800&q=80',
+        'icon' => 'bi-cup-hot-fill'
     ]
 ];
 ?>
@@ -139,9 +103,9 @@ $experiencias = [
         }
 
         h1, h2, h3, h4, h5, h6,
-        .experiencias-hero-title, .exp-title, .cta-final-title,
-        .brand-text, .nav-link, .btn-reserva-llama, .btn-exp-whatsapp,
-        .badge, .exp-number-badge {
+        .experiencias-hero-title, .section-title,
+        .brand-text, .nav-link, .btn-reserva-llama, .btn-banner,
+        .badge, .section-badge {
             font-family: 'Poppins', sans-serif;
         }
 
@@ -162,6 +126,20 @@ $experiencias = [
 
         .top-bar a:hover {
             color: var(--color-naranja-journey);
+        }
+
+        .topbar-phone-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.2rem 0.65rem;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+        }
+
+        .topbar-phone-badge:hover {
+            background: rgba(255, 107, 34, 0.2);
+            border-color: var(--color-naranja-journey);
         }
 
         .topbar-social-icon {
@@ -286,12 +264,12 @@ $experiencias = [
             transform: scale(1.15) rotate(-8deg);
         }
 
-        /* Hero Banner Section para Experiencias */
+        /* Hero Banner Section */
         .hero-banner-experiencias {
             position: relative;
             padding: 8.5rem 0 6.5rem;
             background: linear-gradient(180deg, rgba(0, 34, 56, 0.85) 0%, rgba(0, 50, 80, 0.92) 100%),
-                        url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: var(--color-blanco);
             text-align: center;
             overflow: hidden;
@@ -315,171 +293,113 @@ $experiencias = [
         }
 
         .experiencias-hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: #E2E8F0;
-            max-width: 820px;
+            max-width: 850px;
             margin: 0 auto;
-            line-height: 1.7;
+            line-height: 1.8;
+            font-weight: 500;
         }
 
-        /* Card de Experiencia con tamaño de imágenes uniforme */
+        /* Section Title Styling */
+        .section-badge {
+            display: inline-block;
+            background-color: rgba(255, 107, 34, 0.12);
+            color: var(--color-naranja-journey);
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 107, 34, 0.3);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--color-azul-peru-safe);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        /* Experience Cards */
         .exp-card {
             background: var(--color-blanco);
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 12px 35px rgba(0, 50, 80, 0.07);
-            margin-bottom: 4.5rem;
-            transition: all 0.4s ease;
+            box-shadow: 0 12px 35px rgba(0, 50, 80, 0.06);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .exp-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--color-naranja-journey);
+            transform: translateY(-8px);
             box-shadow: 0 20px 45px rgba(255, 107, 34, 0.18);
+            border-color: var(--color-naranja-journey);
         }
 
-        .exp-number-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: var(--color-naranja-journey);
-            color: var(--color-blanco);
-            font-weight: 800;
-            font-size: 1.2rem;
-            border-radius: 14px;
-            margin-bottom: 1rem;
-            box-shadow: 0 6px 18px var(--color-naranja-glow);
-        }
-
-        /* Estandarización de tamaño de imagen a un solo alto uniforme */
-        .exp-img-box {
+        /* Estandarización de tamaño de imagen a alto uniforme */
+        .exp-img-wrapper {
             position: relative;
             width: 100%;
             height: 420px;
             overflow: hidden;
         }
 
-        .exp-img-box img {
+        .exp-img-wrapper img {
             width: 100%;
             height: 420px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
 
-        .exp-card:hover .exp-img-box img {
+        .exp-card:hover .exp-img-wrapper img {
             transform: scale(1.08);
         }
 
-        .exp-badge-top {
+        .exp-badge-tag {
             position: absolute;
             top: 20px;
             left: 20px;
             background: rgba(0, 50, 80, 0.88);
             backdrop-filter: blur(8px);
             color: var(--color-blanco);
-            padding: 0.5rem 1.1rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 700;
-            border: 1px solid rgba(217, 164, 65, 0.5);
+            padding: 0.45rem 1rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-family: 'Poppins', sans-serif;
+        }
+
+        .exp-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
         }
 
         .exp-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--color-azul-peru-safe);
-            margin-bottom: 0.5rem;
-        }
-
-        .exp-subtitle {
-            color: var(--color-naranja-journey);
+            font-size: 1.4rem;
             font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
+            color: var(--color-azul-peru-safe);
+            margin-bottom: 0.6rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .exp-desc {
-            color: #334155;
-            font-size: 1.02rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .exp-feature-box {
-            background-color: var(--color-gris-claro);
-            border-radius: 16px;
-            padding: 1.25rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--color-naranja-journey);
-        }
-
-        .exp-feature-item {
-            margin-bottom: 0.6rem;
-            font-size: 0.95rem;
-            color: var(--color-texto-oscuro);
-        }
-
-        .exp-feature-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .exp-quote-tagline {
-            font-style: italic;
-            font-weight: 700;
-            color: var(--color-azul-peru-safe);
-            font-size: 1.05rem;
+            color: var(--color-texto-suave);
+            font-size: 0.98rem;
+            line-height: 1.7;
             margin-bottom: 1.8rem;
-        }
-
-        .btn-exp-whatsapp {
-            background-color: var(--color-naranja-journey);
-            color: var(--color-blanco) !important;
-            font-weight: 700;
-            padding: 0.75rem 1.8rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px var(--color-naranja-glow);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .btn-exp-whatsapp:hover {
-            background-color: var(--color-naranja-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 34, 0.4);
-        }
-
-        /* Call To Action Final */
-        .cta-final-section {
-            background: linear-gradient(135deg, var(--color-azul-peru-safe) 0%, #001A2B 100%);
-            color: var(--color-blanco);
-            padding: 6rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-final-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-final-subtitle {
-            font-size: 1.15rem;
-            color: #CBD5E1;
-            max-width: 820px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
         }
 
         /* Footer */
@@ -631,12 +551,20 @@ $experiencias = [
     <!-- Top Bar -->
     <div class="top-bar py-2">
         <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
-            <div class="d-flex align-items-center gap-4 flex-wrap">
-                <a href="tel:<?php echo $phone_clean; ?>" class="d-flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
                     <i class="bi bi-telephone-fill text-warning"></i>
-                    <span><?php echo $phone_number; ?></span>
+                    <span><strong><?php echo $phones['ventas']['label']; ?>:</strong> <?php echo $phones['ventas']['number']; ?></span>
                 </a>
-                <a href="mailto:<?php echo $email_address; ?>" class="d-flex align-items-center gap-2">
+                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
+                    <i class="bi bi-gear-fill text-warning"></i>
+                    <span><strong><?php echo $phones['operaciones']['label']; ?>:</strong> <?php echo $phones['operaciones']['number']; ?></span>
+                </a>
+                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
+                    <i class="bi bi-shield-check text-warning"></i>
+                    <span><strong><?php echo $phones['calidad']['label']; ?>:</strong> <?php echo $phones['calidad']['number']; ?></span>
+                </a>
+                <a href="mailto:<?php echo $email_address; ?>" class="d-none d-xl-flex align-items-center gap-2 ms-2">
                     <i class="bi bi-envelope-fill text-warning"></i>
                     <span><?php echo $email_address; ?></span>
                 </a>
@@ -655,8 +583,8 @@ $experiencias = [
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
         <div class="container">
             <!-- Imagen del Logo -->
-            <a class="navbar-brand-logo" href="https://www.perusafejourneys.todowebcusco.com/">
-                <img src="http://www.perusafejourneys.todowebcusco.com/wp-content/uploads/2026/09/Peru-Safe-Journeys-logo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
+            <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
+                <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
             <!-- Toggle Mobile -->
@@ -668,28 +596,28 @@ $experiencias = [
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/">INICIO</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/destinos/">DESTINOS</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/destinos/">DESTINOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="https://www.perusafejourneys.todowebcusco.com/experiencias/">EXPERIENCIAS</a>
+                        <a class="nav-link active" href="https://www.perusafejourneysgroup.com/experiencias/">EXPERIENCIAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/programas/">PROGRAMAS</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/programas/">PROGRAMAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/nosotros/">NOSOTROS</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/nosotros/">NOSOTROS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/contacto/">CONTACTO</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/contacto/">CONTACTO</a>
                     </li>
                 </ul>
 
                 <!-- BOTON "Reserva tu Viaje" con icono llamita -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
-                    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20reservar%20una%20experiencia%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
+                    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
                             <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
                         </svg>
@@ -701,101 +629,58 @@ $experiencias = [
     </nav>
 
 
-    <!-- HERO BANNER CON IMAGEN DE FONDO -->
+    <!-- HERO BANNER EXPERIENCIAS -->
     <header class="hero-banner-experiencias">
         <div class="container animate__animated animate__fadeIn">
             <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
-                ✨ MÁS ALLÁ DEL TURISMO CONVENCIONAL
+                ✨ MÁS QUE UN VIAJE
             </span>
             <h1 class="experiencias-hero-title">
-                EXPERIENCIAS
-                <span>Formas únicas de vivir la magia del Perú</span>
+                Experiencias Auténticas & Inolvidables
+                <span>Momentos que perduran en la memoria</span>
             </h1>
             <p class="experiencias-hero-subtitle">
-                Elegir cómo viajas transforma por completo lo que recuerdas. Diseñamos experiencias pensadas para conectar con la verdadera esencia de cada lugar.
+                Diseñamos vivencias únicas conectadas con la cultura, tradiciones, aventura y naturaleza del Perú.
             </p>
         </div>
     </header>
 
 
-    <!-- INTRODUCCIÓN -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <div class="p-4 p-md-5 rounded-4 text-center" style="background-color: var(--color-gris-claro); border: 1px solid var(--color-gris-border);">
-                <h2 class="fw-bold text-dark fs-2 mb-3" style="font-family: 'Poppins', sans-serif;">
-                    Un viaje inolvidable no se mide en kilómetros, sino en emociones
-                </h2>
-                <p class="fs-5 text-secondary mb-0" style="max-width: 880px; margin: 0 auto; line-height: 1.8;">
-                    En <strong>Perú Safe Journeys</strong> combinamos seguridad, confort y autenticidad local para estructurar experiencias temáticas adaptadas a tu ritmo, tiempo y expectativas de viaje.
+    <!-- SECCIÓN LISTA DE EXPERIENCIAS -->
+    <section class="py-5" style="background-color: var(--color-gris-claro);">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="section-badge">🌟 TUS SUEÑOS HECHOS REALIDAD</span>
+                <h2 class="section-title">Elige tu Tipo de Experiencia</h2>
+                <p class="text-secondary fs-5">
+                    Descubre cómo puedes vivir el Perú según tus gustos, estilo y ritmo de viaje.
                 </p>
             </div>
-        </div>
-    </section>
 
-
-    <!-- LISTA DE LAS 7 EXPERIENCIAS -->
-    <section class="py-3">
-        <div class="container">
-            <?php foreach($experiencias as $index => $item): ?>
-            <div class="exp-card" id="<?php echo $item['id']; ?>">
-                <div class="row g-0 align-items-stretch <?php echo ($index % 2 != 0) ? 'flex-row-reverse' : ''; ?>">
-                    <!-- Imagen de la Experiencia Estandarizada -->
-                    <div class="col-lg-6">
-                        <div class="exp-img-box">
-                            <img src="<?php echo $item['img']; ?>" alt="<?php echo $item['title']; ?>" loading="lazy">
-                            <span class="exp-badge-top"><?php echo $item['badge']; ?></span>
+            <div class="row g-4">
+                <?php foreach($experiences as $exp): ?>
+                <div class="col-lg-4 col-md-6">
+                    <div class="exp-card">
+                        <div class="exp-img-wrapper">
+                            <img src="<?php echo $exp['image']; ?>" alt="<?php echo $exp['title']; ?>">
+                            <span class="exp-badge-tag"><?php echo $exp['badge']; ?></span>
                         </div>
-                    </div>
-
-                    <!-- Contenido de la Experiencia -->
-                    <div class="col-lg-6 d-flex align-items-center">
-                        <div class="p-4 p-md-5 w-100">
-                            <span class="exp-number-badge"><?php echo $item['num']; ?></span>
-                            <h2 class="exp-title"><?php echo $item['title']; ?></h2>
-                            <h3 class="exp-subtitle"><?php echo $item['subtitle']; ?></h3>
-                            <p class="exp-desc"><?php echo $item['desc']; ?></p>
-
-                            <div class="exp-feature-box">
-                                <div class="exp-feature-item">
-                                    <strong>✨ Incluye componentes de:</strong> <?php echo $item['experience']; ?>
-                                </div>
-                                <div class="exp-feature-item">
-                                    <strong>👉 Perfil recomendado:</strong> <?php echo $item['ideal']; ?>
-                                </div>
+                        <div class="exp-body">
+                            <div>
+                                <h3 class="exp-title"><i class="bi <?php echo $exp['icon']; ?> text-warning me-2"></i><?php echo $exp['title']; ?></h3>
+                                <p class="exp-desc"><?php echo $exp['desc']; ?></p>
                             </div>
-
-                            <p class="exp-quote-tagline">
-                                "<?php echo $item['tagline']; ?>"
-                            </p>
-
-                            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20planificar%20una%20experiencia%20de%20<?php echo urlencode($item['title']); ?>" target="_blank" class="btn-exp-whatsapp">
-                                <i class="bi bi-whatsapp"></i> Diseñar Experiencia de <?php echo $item['title']; ?>
+                            <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20<?php echo urlencode($exp['title']); ?>"
+                               target="_blank"
+                               class="btn-reserva-llama justify-content-center w-100">
+                                <span>Reservar Experiencia</span>
+                                <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
+                <?php endforeach; ?>
             </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
-
-
-    <!-- SECCIÓN CALL TO ACTION FINAL -->
-    <section class="cta-final-section">
-        <div class="container position-relative z-2">
-            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3">
-                🚀 DISEÑA TU EXPERIENCIA A MEDIDA
-            </span>
-            <h2 class="cta-final-title">
-                ¿Tienes una idea especial para tu viaje?
-            </h2>
-            <p class="cta-final-subtitle">
-                Cuéntanos con quién viajas, cuántos días dispones y qué tipo de experiencias te inspiran. Nuestros especialistas locales armarán una propuesta totalmente personalizada con la garantía y seguridad de <strong>Perú Safe Journeys</strong>.
-            </p>
-
-            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20crear%20un%20itinerario%20personalizado%20a%20mi%20medida" target="_blank" class="btn-reserva-llama fs-5 px-4 py-3">
-                <i class="bi bi-sliders"></i> Crear Mi Experiencia Personalizada
-            </a>
         </div>
     </section>
 
@@ -806,7 +691,7 @@ $experiencias = [
             <div class="row g-4 justify-content-between">
                 <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
-                    <a href="https://www.perusafejourneys.todowebcusco.com/" class="footer-logo">
+                    <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
                     <p class="pe-lg-4" style="color: #94A3B8;">
@@ -823,12 +708,12 @@ $experiencias = [
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading">Navegación</h5>
                     <ul class="footer-links">
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/destinos/"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/experiencias/"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/programas/"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/nosotros/"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/contacto/"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/destinos/"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/experiencias/"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/programas/"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/nosotros/"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/contacto/"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
                     </ul>
                 </div>
 
@@ -840,8 +725,26 @@ $experiencias = [
                             <i class="bi bi-telephone-fill"></i>
                         </div>
                         <div>
-                            <small class="d-block" style="color: #94A3B8;">Teléfono de contacto:</small>
-                            <a href="tel:<?php echo $phone_clean; ?>" class="fw-bold fs-6"><?php echo $phone_number; ?></a>
+                            <small class="d-block" style="color: #94A3B8;">Ventas:</small>
+                            <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="fw-bold fs-6"><?php echo $phones['ventas']['number']; ?></a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="bi bi-gear-fill"></i>
+                        </div>
+                        <div>
+                            <small class="d-block" style="color: #94A3B8;">Operaciones:</small>
+                            <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="fw-bold fs-6"><?php echo $phones['operaciones']['number']; ?></a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div>
+                            <small class="d-block" style="color: #94A3B8;">Calidad 24/7:</small>
+                            <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="fw-bold fs-6"><?php echo $phones['calidad']['number']; ?></a>
                         </div>
                     </div>
                     <div class="footer-contact-item">
@@ -851,15 +754,6 @@ $experiencias = [
                         <div>
                             <small class="d-block" style="color: #94A3B8;">Correo de contacto:</small>
                             <a href="mailto:<?php echo $email_address; ?>" class="fw-bold fs-6"><?php echo $email_address; ?></a>
-                        </div>
-                    </div>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <div>
-                            <small class="d-block" style="color: #94A3B8;">Ubicación:</small>
-                            <span class="text-light">Cusco - Perú</span>
                         </div>
                     </div>
                 </div>
@@ -875,7 +769,7 @@ $experiencias = [
     </footer>
 
     <!-- Icono flotante de WhatsApp -->
-    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20experiencias"
+    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Per%C3%BA%20Safe%20Journeys"
        class="whatsapp-float"
        target="_blank"
        aria-label="Contactar por WhatsApp">

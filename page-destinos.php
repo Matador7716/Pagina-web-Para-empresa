@@ -1,97 +1,67 @@
 <?php
 // page-destinos.php - Perú Safe Journeys
 $company_name = "Perú Safe Journeys";
-$company_tagline = "tu camino hacia un Perú auténtico";
-$phone_number = "+51 948 364 822";
-$phone_clean = "51948364822";
-$email_address = "informesweb@perusafejourneyscorp.com";
+$company_tagline = "Travel Agency";
+
+// Teléfonos de contacto por área
+$phones = [
+    'ventas' => ['number' => '+51 931 352 810', 'clean' => '51931352810', 'label' => 'Ventas'],
+    'operaciones' => ['number' => '+51 930 823 110', 'clean' => '51930823110', 'label' => 'Operaciones'],
+    'calidad' => ['number' => '+51 913 716 197', 'clean' => '51913716197', 'label' => 'Calidad 24/7']
+];
+
+$email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
-// Array de los 7 Destinos
-$destinos = [
+// Lista completa de destinos
+$destinations_list = [
     [
-        'id' => 'machu-picchu',
-        'num' => '01',
-        'title' => 'MACHU PICCHU',
-        'subtitle' => 'El misterio que vive entre las montañas',
-        'desc' => 'Hay lugares que fotografías y lugares que nunca olvidas. Entre las montañas de los Andes se encuentra Machu Picchu, la extraordinaria ciudadela inca que continúa sorprendiendo al mundo. Camina por sus antiguos caminos, contempla sus impresionantes construcciones y déjate envolver por la energía de un lugar donde historia y naturaleza se encuentran.',
-        'experience' => 'Ciudadela Inca • Montañas • Historia • Cultura',
-        'ideal' => 'viajeros que quieren conocer una de las grandes maravillas del mundo.',
-        'tagline' => 'Machu Picchu: una historia que merece ser vivida.',
-        'img' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🏛️ Maravilla del Mundo'
+        'title' => 'Machu Picchu & Cusco',
+        'sub' => 'La Joya del Imperio Inca',
+        'desc' => 'Descubre la imponente ciudadela inca, la Plaza de Armas de Cusco, Sacsayhuamán y los secretos arqueológicos del ombligo del mundo.',
+        'badge' => '🏛️ Maravilla del Mundo',
+        'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
+        'duration' => '4 Días / 3 Noches'
     ],
     [
-        'id' => 'cusco',
-        'num' => '02',
-        'title' => 'CUSCO',
-        'subtitle' => 'Donde cada calle cuenta una historia',
-        'desc' => 'Bienvenido a Cusco, la antigua capital del Imperio Inca. Camina por sus calles empedradas, descubre sus templos y plazas, contempla la arquitectura que une dos mundos y déjate sorprender por la cultura andina que permanece viva. Cusco es el punto de partida perfecto para explorar los grandes tesoros del sur del Perú.',
-        'experience' => 'Centro Histórico • Cultura Andina • Arqueología • Gastronomía',
-        'ideal' => 'viajeros que buscan historia, cultura y experiencias auténticas.',
-        'tagline' => 'Cusco: el corazón de los Andes te espera.',
-        'img' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🏔️ Capital Inca'
+        'title' => 'Valle Sagrado de los Incas',
+        'sub' => 'Tradición & Paisajes Andinos',
+        'desc' => 'Explora Pisac, Ollantaytambo, Chinchero y las salineras de Maras en un recorrido mágico rodeado de impresionantes montañas.',
+        'badge' => '🌄 Mística & Naturaleza',
+        'image' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80',
+        'duration' => '1 a 2 Días'
     ],
     [
-        'id' => 'valle-sagrado',
-        'num' => '03',
-        'title' => 'VALLE SAGRADO DE LOS INCAS',
-        'subtitle' => 'Un viaje entre montañas, historia y tradición',
-        'desc' => 'Imagina recorrer un valle rodeado de enormes montañas, pueblos tradicionales y antiguos centros arqueológicos. El Valle Sagrado de los Incas es una experiencia donde la naturaleza y la historia se encuentran en cada recorrido. Conoce sus comunidades, descubre sus tradiciones y contempla los paisajes que alguna vez fueron parte fundamental del mundo inca.',
-        'experience' => 'Paisajes Andinos • Cultura • Arqueología • Comunidades',
-        'ideal' => 'viajeros que desean conectar con la naturaleza y la cultura local.',
-        'tagline' => 'Valle Sagrado: descubre la esencia viva de los Andes.',
-        'img' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🌄 Mística & Naturaleza'
+        'title' => 'Ruta del Trekking & Caminata',
+        'sub' => 'Salkantay & Camino Inca',
+        'desc' => 'Rutas legendarias a través de pasos nevados, bosques de neblina y senderos ancestrales hacia Machu Picchu.',
+        'badge' => '🥾 Trekking de Altura',
+        'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+        'duration' => '4 a 5 Días'
     ],
     [
-        'id' => 'montana-7-colores',
-        'num' => '04',
-        'title' => 'MONTAÑA DE 7 COLORES',
-        'subtitle' => 'Un paisaje que parece pintado por la naturaleza',
-        'desc' => 'Prepárate para descubrir uno de los paisajes naturales más sorprendentes de los Andes. La Montaña de 7 Colores te espera con sus increíbles tonalidades naturales y un paisaje de alta montaña que convierte cada paso en una aventura. El camino es parte de la experiencia: respira profundo, contempla los Andes y disfruta de una vista que quedará grabada en tu memoria.',
-        'experience' => 'Aventura • Trekking • Andes • Paisajes',
-        'ideal' => 'aventureros, amantes de la fotografía y viajeros que buscan experiencias únicas.',
-        'tagline' => 'Camina hacia un paisaje que no parece real.',
-        'img' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🌈 Maravilla Natural'
+        'title' => 'Montaña de 7 Colores & Humantay',
+        'sub' => 'Lagunas & Maravillas Naturales',
+        'desc' => 'Visita la impactante Laguna Humantay de aguas turquesas y la radiante Montaña Vinicunca.',
+        'badge' => '🌈 Naturaleza Extrema',
+        'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
+        'duration' => 'Full Day'
     ],
     [
-        'id' => 'amazona-peruana',
-        'num' => '05',
-        'title' => 'AMAZONÍA PERUANA',
-        'subtitle' => 'Una aventura en el corazón de la naturaleza',
-        'desc' => 'Cambia las montañas por la selva y descubre un Perú completamente diferente. La Amazonía peruana te invita a navegar por sus ríos, descubrir su biodiversidad y conectar con uno de los ecosistemas más extraordinarios del planeta. Una experiencia de naturaleza, aventura y descubrimiento que te permitirá conocer otra de las grandes riquezas del Perú.',
-        'experience' => 'Naturaleza • Biodiversidad • Aventura • Cultura',
-        'ideal' => 'amantes de la naturaleza y viajeros que buscan aventura.',
-        'tagline' => 'Amazonía: donde la naturaleza escribe su propia historia.',
-        'img' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🌿 Pulmón del Mundo'
+        'title' => 'Amazonía & Selva de Tambopata',
+        'sub' => 'Biodiversidad & Selva Viva',
+        'desc' => 'Adéntrate en la selva virgen de Puerto Maldonado, avista guacamayos, nutrias gigantes y la flora tropical del Amazonas.',
+        'badge' => '🌿 Selva & Expedición',
+        'image' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+        'duration' => '3 a 4 Días'
     ],
     [
-        'id' => 'paracas-huacachina',
-        'num' => '06',
-        'title' => 'PARACAS & HUACACHINA',
-        'subtitle' => 'Desierto, océano y aventura en un solo viaje',
-        'desc' => '¿Desierto junto al océano? Sí, y está en Perú. Descubre Paracas, con sus impresionantes paisajes costeros y su extraordinaria vida marina, y continúa hasta Huacachina, el famoso oasis rodeado de enormes dunas. Disfruta de una combinación perfecta de naturaleza y aventura con actividades que harán de tu viaje una experiencia inolvidable.',
-        'experience' => 'Océano • Desierto • Oasis • Aventura',
-        'ideal' => 'viajeros que buscan adrenalina, paisajes y experiencias diferentes.',
-        'tagline' => 'Dos mundos. Un solo viaje. Una experiencia inolvidable.',
-        'img' => 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🏜️ Oasis & Costa'
-    ],
-    [
-        'id' => 'lima',
-        'num' => '07',
-        'title' => 'LIMA',
-        'subtitle' => 'La puerta de entrada a las maravillas del Perú',
-        'desc' => 'Tu aventura peruana comienza en Lima, una ciudad donde la historia, la cultura, la gastronomía y la modernidad se encuentran frente al océano Pacífico. Descubre su centro histórico, disfruta de su reconocida gastronomía y conoce una ciudad llena de contrastes. Lima es mucho más que una parada: es el primer capítulo de tu historia en el Perú.',
-        'experience' => 'Gastronomía • Historia • Cultura • Modernidad',
-        'ideal' => 'viajeros que quieren descubrir la esencia urbana y gastronómica del Perú.',
-        'tagline' => 'Lima: comienza aquí tu historia peruana.',
-        'img' => 'https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&w=1000&q=80',
-        'badge' => '🌊 Capital Gastronómica'
+        'title' => 'Lago Titicaca & Puno',
+        'sub' => 'El Lago Navegable Más Alto',
+        'desc' => 'Conoce las islas flotantes de los Uros, Taquile y Amantaní en una inmersión cultural viva única en el mundo.',
+        'badge' => '⛵ Cultura Vivencial',
+        'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+        'duration' => '2 Días / 1 Noche'
     ]
 ];
 ?>
@@ -139,9 +109,9 @@ $destinos = [
         }
 
         h1, h2, h3, h4, h5, h6,
-        .destinos-hero-title, .destino-title, .cta-final-title,
-        .brand-text, .nav-link, .btn-reserva-llama, .btn-destino-whatsapp,
-        .badge, .destino-number-badge {
+        .destinos-hero-title, .section-title,
+        .brand-text, .nav-link, .btn-reserva-llama, .btn-banner,
+        .badge, .section-badge {
             font-family: 'Poppins', sans-serif;
         }
 
@@ -162,6 +132,20 @@ $destinos = [
 
         .top-bar a:hover {
             color: var(--color-naranja-journey);
+        }
+
+        .topbar-phone-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.2rem 0.65rem;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+        }
+
+        .topbar-phone-badge:hover {
+            background: rgba(255, 107, 34, 0.2);
+            border-color: var(--color-naranja-journey);
         }
 
         .topbar-social-icon {
@@ -286,10 +270,10 @@ $destinos = [
             transform: scale(1.15) rotate(-8deg);
         }
 
-        /* Hero Banner Section para Destinos */
+        /* Hero Banner Section */
         .hero-banner-destinos {
             position: relative;
-            padding: 8rem 0 6rem;
+            padding: 8.5rem 0 6.5rem;
             background: linear-gradient(180deg, rgba(0, 34, 56, 0.85) 0%, rgba(0, 50, 80, 0.92) 100%),
                         url('https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: var(--color-blanco);
@@ -299,7 +283,7 @@ $destinos = [
 
         .destinos-hero-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 1.2rem;
@@ -308,7 +292,6 @@ $destinos = [
 
         .destinos-hero-title span {
             color: var(--color-dorado-andino);
-            font-family: 'Poppins', sans-serif;
             font-size: 2.8rem;
             display: block;
             margin-top: 0.2rem;
@@ -316,204 +299,131 @@ $destinos = [
         }
 
         .destinos-hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: #E2E8F0;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
-            line-height: 1.7;
+            line-height: 1.8;
+            font-weight: 500;
         }
 
-        /* Sección Introducción */
-        .intro-destinos-section {
-            padding: 4.5rem 0 3.5rem;
-            background-color: var(--color-blanco);
+        /* Section Title Styling */
+        .section-badge {
+            display: inline-block;
+            background-color: rgba(255, 107, 34, 0.12);
+            color: var(--color-naranja-journey);
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 107, 34, 0.3);
+            font-family: 'Poppins', sans-serif;
         }
 
-        .intro-box {
-            background: var(--color-gris-claro);
-            border-radius: 24px;
-            padding: 3rem 2.5rem;
-            border: 1px solid var(--color-gris-border);
-            box-shadow: 0 10px 30px rgba(0, 50, 80, 0.05);
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--color-azul-peru-safe);
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
-        /* Item de Destino Creativo con Imágenes estandarizadas */
+        /* Card Styling & Hover Effects */
         .destino-card {
             background: var(--color-blanco);
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 12px 35px rgba(0, 50, 80, 0.07);
-            margin-bottom: 4.5rem;
-            transition: all 0.4s ease;
+            box-shadow: 0 12px 35px rgba(0, 50, 80, 0.06);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .destino-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--color-naranja-journey);
+            transform: translateY(-8px);
             box-shadow: 0 20px 45px rgba(255, 107, 34, 0.18);
+            border-color: var(--color-naranja-journey);
         }
 
-        .destino-number-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: var(--color-naranja-journey);
-            color: var(--color-blanco);
-            font-weight: 800;
-            font-size: 1.2rem;
-            border-radius: 14px;
-            margin-bottom: 1rem;
-            box-shadow: 0 6px 18px var(--color-naranja-glow);
-        }
-
-        /* Estandarización de tamaño de imágenes a un solo alto uniforme */
-        .destino-img-box {
+        /* Estandarización de tamaño de imagen a alto uniforme */
+        .destino-img-wrapper {
             position: relative;
             width: 100%;
             height: 420px;
             overflow: hidden;
         }
 
-        .destino-img-box img {
+        .destino-img-wrapper img {
             width: 100%;
             height: 420px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
 
-        .destino-card:hover .destino-img-box img {
+        .destino-card:hover .destino-img-wrapper img {
             transform: scale(1.08);
         }
 
-        .destino-badge-top {
+        .card-badge-tag {
             position: absolute;
             top: 20px;
             left: 20px;
             background: rgba(0, 50, 80, 0.88);
             backdrop-filter: blur(8px);
             color: var(--color-blanco);
-            padding: 0.5rem 1.1rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 0.45rem 1rem;
             border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .destino-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .destino-duration {
             font-size: 0.85rem;
             font-weight: 700;
-            border: 1px solid rgba(217, 164, 65, 0.5);
+            color: var(--color-naranja-journey);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
             font-family: 'Poppins', sans-serif;
         }
 
         .destino-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .destino-subtitle {
-            color: var(--color-naranja-journey);
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
+        .destino-sub {
+            font-size: 0.95rem;
+            color: var(--color-azul-andino);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .destino-desc {
-            color: #334155;
-            font-size: 1.02rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .destino-feature-box {
-            background-color: var(--color-gris-claro);
-            border-radius: 16px;
-            padding: 1.25rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--color-naranja-journey);
-        }
-
-        .destino-feature-item {
-            margin-bottom: 0.6rem;
-            font-size: 0.95rem;
-            color: var(--color-texto-oscuro);
-        }
-
-        .destino-feature-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .destino-quote-tagline {
-            font-style: italic;
-            font-weight: 700;
-            color: var(--color-azul-peru-safe);
-            font-size: 1.05rem;
+            color: var(--color-texto-suave);
+            font-size: 0.98rem;
+            line-height: 1.7;
             margin-bottom: 1.8rem;
-        }
-
-        .btn-destino-whatsapp {
-            background-color: var(--color-naranja-journey);
-            color: var(--color-blanco) !important;
-            font-weight: 700;
-            padding: 0.75rem 1.8rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px var(--color-naranja-glow);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .btn-destino-whatsapp:hover {
-            background-color: var(--color-naranja-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 34, 0.4);
-        }
-
-        /* Call To Action Final */
-        .cta-final-section {
-            background: linear-gradient(135deg, var(--color-azul-peru-safe) 0%, #001A2B 100%);
-            color: var(--color-blanco);
-            padding: 6rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-final-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-final-subtitle {
-            font-size: 1.15rem;
-            color: #CBD5E1;
-            max-width: 820px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
-        }
-
-        .pilar-badges-final {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .pilar-badge-item {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.6rem 1.4rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--color-blanco);
-            font-family: 'Poppins', sans-serif;
         }
 
         /* Footer */
@@ -665,12 +575,20 @@ $destinos = [
     <!-- Top Bar -->
     <div class="top-bar py-2">
         <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
-            <div class="d-flex align-items-center gap-4 flex-wrap">
-                <a href="tel:<?php echo $phone_clean; ?>" class="d-flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
                     <i class="bi bi-telephone-fill text-warning"></i>
-                    <span><?php echo $phone_number; ?></span>
+                    <span><strong><?php echo $phones['ventas']['label']; ?>:</strong> <?php echo $phones['ventas']['number']; ?></span>
                 </a>
-                <a href="mailto:<?php echo $email_address; ?>" class="d-flex align-items-center gap-2">
+                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
+                    <i class="bi bi-gear-fill text-warning"></i>
+                    <span><strong><?php echo $phones['operaciones']['label']; ?>:</strong> <?php echo $phones['operaciones']['number']; ?></span>
+                </a>
+                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
+                    <i class="bi bi-shield-check text-warning"></i>
+                    <span><strong><?php echo $phones['calidad']['label']; ?>:</strong> <?php echo $phones['calidad']['number']; ?></span>
+                </a>
+                <a href="mailto:<?php echo $email_address; ?>" class="d-none d-xl-flex align-items-center gap-2 ms-2">
                     <i class="bi bi-envelope-fill text-warning"></i>
                     <span><?php echo $email_address; ?></span>
                 </a>
@@ -689,8 +607,8 @@ $destinos = [
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
         <div class="container">
             <!-- Imagen del Logo -->
-            <a class="navbar-brand-logo" href="https://www.perusafejourneys.todowebcusco.com/">
-                <img src="http://www.perusafejourneys.todowebcusco.com/wp-content/uploads/2026/09/Peru-Safe-Journeys-logo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
+            <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
+                <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
             <!-- Toggle Mobile -->
@@ -702,28 +620,28 @@ $destinos = [
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/">INICIO</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="https://www.perusafejourneys.todowebcusco.com/destinos/">DESTINOS</a>
+                        <a class="nav-link active" href="https://www.perusafejourneysgroup.com/destinos/">DESTINOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/experiencias/">EXPERIENCIAS</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/experiencias/">EXPERIENCIAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/programas/">PROGRAMAS</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/programas/">PROGRAMAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/nosotros/">NOSOTROS</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/nosotros/">NOSOTROS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/contacto/">CONTACTO</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/contacto/">CONTACTO</a>
                     </li>
                 </ul>
 
                 <!-- BOTON "Reserva tu Viaje" con icono llamita -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
-                    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
+                    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
                             <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
                         </svg>
@@ -735,107 +653,59 @@ $destinos = [
     </nav>
 
 
-    <!-- HERO BANNER CON IMAGEN DE FONDO -->
+    <!-- HERO BANNER DESTINOS -->
     <header class="hero-banner-destinos">
         <div class="container animate__animated animate__fadeIn">
             <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
-                🇵🇪 Descubre el Perú
+                🗺️ RUTA PERÚ SAFE JOURNEYS
             </span>
             <h1 class="destinos-hero-title">
-                DESTINOS
-                <span>7 lugares mágicos para vivir el Perú</span>
+                Destinos Mágicos del Perú
+                <span>Cusco, Machu Picchu, Andes & Selva</span>
             </h1>
             <p class="destinos-hero-subtitle">
-                Viaja seguro. Vive auténticamente. Descubre el Perú.
+                Diseñamos experiencias a tu medida para descubrir los tesoros naturales y culturales del Perú con la máxima seguridad y confort.
             </p>
         </div>
     </header>
 
 
-    <!-- INTRODUCCIÓN -->
-    <section class="intro-destinos-section">
-        <div class="container">
-            <div class="intro-box text-center">
-                <h2 class="fw-bold text-dark fs-2 mb-3" style="font-family: 'Poppins', sans-serif;">
-                    El Perú es mucho más que un destino
-                </h2>
-                <p class="fs-5 text-secondary mb-0" style="max-width: 850px; margin: 0 auto; line-height: 1.8;">
-                    Es una colección de historias, paisajes, sabores y culturas que esperan ser descubiertos.
-                    En <strong>Perú Safe Journeys</strong>, seleccionamos experiencias que te permiten conocer el Perú de una manera auténtica, emocionante y memorable.
+    <!-- SECCIÓN LISTA DE DESTINOS -->
+    <section class="py-5" style="background-color: var(--color-gris-claro);">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="section-badge">✨ EXPLORA CADA RINCÓN</span>
+                <h2 class="section-title">Nuestros Destinos Principales</h2>
+                <p class="text-secondary fs-5">
+                    Selecciona tu próximo destino y contáctanos para personalizar tu itinerario ideal.
                 </p>
             </div>
-        </div>
-    </section>
 
-
-    <!-- LISTA DE LOS 7 DESTINOS -->
-    <section class="py-4">
-        <div class="container">
-            <?php foreach($destinos as $index => $item): ?>
-            <div class="destino-card" id="<?php echo $item['id']; ?>">
-                <div class="row g-0 align-items-stretch <?php echo ($index % 2 != 0) ? 'flex-row-reverse' : ''; ?>">
-                    <!-- Imagen del Destino Estandarizada -->
-                    <div class="col-lg-6">
-                        <div class="destino-img-box">
-                            <img src="<?php echo $item['img']; ?>" alt="<?php echo $item['title']; ?>" loading="lazy">
-                            <span class="destino-badge-top"><?php echo $item['badge']; ?></span>
+            <div class="row g-4">
+                <?php foreach($destinations_list as $dest): ?>
+                <div class="col-lg-4 col-md-6">
+                    <div class="destino-card">
+                        <div class="destino-img-wrapper">
+                            <img src="<?php echo $dest['image']; ?>" alt="<?php echo $dest['title']; ?>">
+                            <span class="card-badge-tag"><?php echo $dest['badge']; ?></span>
                         </div>
-                    </div>
-
-                    <!-- Contenido del Destino -->
-                    <div class="col-lg-6 d-flex align-items-center">
-                        <div class="p-4 p-md-5 w-100">
-                            <span class="destino-number-badge"><?php echo $item['num']; ?></span>
-                            <h2 class="destino-title"><?php echo $item['title']; ?></h2>
-                            <h3 class="destino-subtitle"><?php echo $item['subtitle']; ?></h3>
-                            <p class="destino-desc"><?php echo $item['desc']; ?></p>
-
-                            <div class="destino-feature-box">
-                                <div class="destino-feature-item">
-                                    <strong>✨ Vive la experiencia:</strong> <?php echo $item['experience']; ?>
-                                </div>
-                                <div class="destino-feature-item">
-                                    <strong>👉 Ideal para:</strong> <?php echo $item['ideal']; ?>
-                                </div>
+                        <div class="destino-body">
+                            <div>
+                                <div class="destino-duration"><i class="bi bi-clock me-1"></i> <?php echo $dest['duration']; ?></div>
+                                <h3 class="destino-title"><?php echo $dest['title']; ?></h3>
+                                <div class="destino-sub"><?php echo $dest['sub']; ?></div>
+                                <p class="destino-desc"><?php echo $dest['desc']; ?></p>
                             </div>
-
-                            <p class="destino-quote-tagline">
-                                "<?php echo $item['tagline']; ?>"
-                            </p>
-
-                            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20planificar%20un%20viaje%20a%20<?php echo urlencode($item['title']); ?>" target="_blank" class="btn-destino-whatsapp">
-                                <i class="bi bi-whatsapp"></i> Consultar Tour a <?php echo $item['title']; ?>
+                            <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20<?php echo urlencode($dest['title']); ?>"
+                               target="_blank"
+                               class="btn-reserva-llama justify-content-center w-100">
+                                <span>Cotizar Destino</span>
+                                <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
-
-
-    <!-- SECCIÓN CALL TO ACTION FINAL -->
-    <section class="cta-final-section">
-        <div class="container position-relative z-2">
-            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3">
-                🇵🇪 TU PRÓXIMA AVENTURA COMIENZA EN PERÚ
-            </span>
-            <h2 class="cta-final-title">
-                Elige tu destino. Nosotros diseñamos tu experiencia.
-            </h2>
-            <p class="cta-final-subtitle">
-                Desde la majestuosidad de <strong>Machu Picchu</strong> hasta la inmensidad de la Amazonía, desde las montañas de Cusco hasta las dunas de Huacachina, el Perú tiene una experiencia esperando por ti. En <strong>Perú Safe Journeys</strong> diseñamos viajes pensados para que descubras cada destino con tranquilidad, confianza y atención personalizada.
-            </p>
-
-            <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20dise%C3%B1ar%20mi%20experiencia%20de%20viaje%20por%20el%20Per%C3%BA" target="_blank" class="btn-reserva-llama fs-5 px-4 py-3">
-                <i class="bi bi-compass-fill"></i> Comienza Tu Viaje Ahora
-            </a>
-
-            <div class="pilar-badges-final">
-                <div class="pilar-badge-item">🛡️ Viaja seguro.</div>
-                <div class="pilar-badge-item">❤️ Vive auténticamente.</div>
-                <div class="pilar-badge-item">🇵🇪 Descubre el Perú.</div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -847,7 +717,7 @@ $destinos = [
             <div class="row g-4 justify-content-between">
                 <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
-                    <a href="https://www.perusafejourneys.todowebcusco.com/" class="footer-logo">
+                    <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
                     <p class="pe-lg-4" style="color: #94A3B8;">
@@ -864,12 +734,12 @@ $destinos = [
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading">Navegación</h5>
                     <ul class="footer-links">
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/destinos/"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/experiencias/"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/programas/"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/nosotros/"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/contacto/"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/destinos/"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/experiencias/"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/programas/"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/nosotros/"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/contacto/"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
                     </ul>
                 </div>
 
@@ -881,8 +751,26 @@ $destinos = [
                             <i class="bi bi-telephone-fill"></i>
                         </div>
                         <div>
-                            <small class="d-block" style="color: #94A3B8;">Teléfono de contacto:</small>
-                            <a href="tel:<?php echo $phone_clean; ?>" class="fw-bold fs-6"><?php echo $phone_number; ?></a>
+                            <small class="d-block" style="color: #94A3B8;">Ventas:</small>
+                            <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="fw-bold fs-6"><?php echo $phones['ventas']['number']; ?></a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="bi bi-gear-fill"></i>
+                        </div>
+                        <div>
+                            <small class="d-block" style="color: #94A3B8;">Operaciones:</small>
+                            <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="fw-bold fs-6"><?php echo $phones['operaciones']['number']; ?></a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div>
+                            <small class="d-block" style="color: #94A3B8;">Calidad 24/7:</small>
+                            <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="fw-bold fs-6"><?php echo $phones['calidad']['number']; ?></a>
                         </div>
                     </div>
                     <div class="footer-contact-item">
@@ -892,15 +780,6 @@ $destinos = [
                         <div>
                             <small class="d-block" style="color: #94A3B8;">Correo de contacto:</small>
                             <a href="mailto:<?php echo $email_address; ?>" class="fw-bold fs-6"><?php echo $email_address; ?></a>
-                        </div>
-                    </div>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <div>
-                            <small class="d-block" style="color: #94A3B8;">Ubicación:</small>
-                            <span class="text-light">Cusco - Perú</span>
                         </div>
                     </div>
                 </div>
@@ -916,7 +795,7 @@ $destinos = [
     </footer>
 
     <!-- Icono flotante de WhatsApp -->
-    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%207%20destinos"
+    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Per%C3%BA%20Safe%20Journeys"
        class="whatsapp-float"
        target="_blank"
        aria-label="Contactar por WhatsApp">

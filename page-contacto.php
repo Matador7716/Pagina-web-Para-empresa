@@ -2,9 +2,15 @@
 // page-contacto.php - Perú Safe Journeys
 $company_name = "Perú Safe Journeys";
 $company_tagline = "Travel Agency";
-$phone_number = "+51 948 364 822";
-$phone_clean = "51948364822";
-$email_address = "informesweb@perusafejourneyscorp.com";
+
+// Teléfonos de contacto por área
+$phones = [
+    'ventas' => ['number' => '+51 931 352 810', 'clean' => '51931352810', 'label' => 'Ventas'],
+    'operaciones' => ['number' => '+51 930 823 110', 'clean' => '51930823110', 'label' => 'Operaciones'],
+    'calidad' => ['number' => '+51 913 716 197', 'clean' => '51913716197', 'label' => 'Calidad 24/7']
+];
+
+$email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
 // Mensaje de respuesta del formulario si se envía
@@ -94,6 +100,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .top-bar a:hover {
             color: var(--color-naranja-journey);
+        }
+
+        .topbar-phone-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.2rem 0.65rem;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+        }
+
+        .topbar-phone-badge:hover {
+            background: rgba(255, 107, 34, 0.2);
+            border-color: var(--color-naranja-journey);
         }
 
         .topbar-social-icon {
@@ -501,12 +521,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Top Bar -->
     <div class="top-bar py-2">
         <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
-            <div class="d-flex align-items-center gap-4 flex-wrap">
-                <a href="tel:<?php echo $phone_clean; ?>" class="d-flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
                     <i class="bi bi-telephone-fill text-warning"></i>
-                    <span><?php echo $phone_number; ?></span>
+                    <span><strong><?php echo $phones['ventas']['label']; ?>:</strong> <?php echo $phones['ventas']['number']; ?></span>
                 </a>
-                <a href="mailto:<?php echo $email_address; ?>" class="d-flex align-items-center gap-2">
+                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
+                    <i class="bi bi-gear-fill text-warning"></i>
+                    <span><strong><?php echo $phones['operaciones']['label']; ?>:</strong> <?php echo $phones['operaciones']['number']; ?></span>
+                </a>
+                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
+                    <i class="bi bi-shield-check text-warning"></i>
+                    <span><strong><?php echo $phones['calidad']['label']; ?>:</strong> <?php echo $phones['calidad']['number']; ?></span>
+                </a>
+                <a href="mailto:<?php echo $email_address; ?>" class="d-none d-xl-flex align-items-center gap-2 ms-2">
                     <i class="bi bi-envelope-fill text-warning"></i>
                     <span><?php echo $email_address; ?></span>
                 </a>
@@ -525,8 +553,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
         <div class="container">
             <!-- Imagen del Logo -->
-            <a class="navbar-brand-logo" href="https://www.perusafejourneys.todowebcusco.com/">
-                <img src="http://www.perusafejourneys.todowebcusco.com/wp-content/uploads/2026/09/Peru-Safe-Journeys-logo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
+            <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
+                <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
             <!-- Toggle Mobile -->
@@ -538,28 +566,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/">INICIO</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/destinos/">DESTINOS</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/destinos/">DESTINOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/experiencias/">EXPERIENCIAS</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/experiencias/">EXPERIENCIAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/programas/">PROGRAMAS</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/programas/">PROGRAMAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneys.todowebcusco.com/nosotros/">NOSOTROS</a>
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/nosotros/">NOSOTROS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="https://www.perusafejourneys.todowebcusco.com/contacto/">CONTACTO</a>
+                        <a class="nav-link active" href="https://www.perusafejourneysgroup.com/contacto/">CONTACTO</a>
                     </li>
                 </ul>
 
                 <!-- BOTON "Reserva tu Viaje" con icono llamita -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
-                    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
+                    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
                             <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
                         </svg>
@@ -597,10 +625,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="contacto-icon-box">
                             <i class="bi bi-telephone-fill"></i>
                         </div>
-                        <h4 class="fw-bold mb-2" style="color: var(--color-azul-peru-safe); font-family: 'Poppins', sans-serif;">Teléfono Directo</h4>
-                        <p class="text-secondary small mb-3">Atención telefónica de lunes a domingo de 8:00 am a 8:00 pm.</p>
-                        <a href="tel:<?php echo $phone_clean; ?>" class="fs-5 fw-bold text-decoration-none" style="color: var(--color-naranja-journey);">
-                            <?php echo $phone_number; ?>
+                        <h4 class="fw-bold mb-2" style="color: var(--color-azul-peru-safe); font-family: 'Poppins', sans-serif;">Ventas & Cotizaciones</h4>
+                        <p class="text-secondary small mb-3">Asesoría telefónica y reservas de 8:00 am a 8:00 pm.</p>
+                        <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="fs-5 fw-bold text-decoration-none" style="color: var(--color-naranja-journey);">
+                            <?php echo $phones['ventas']['number']; ?>
                         </a>
                     </div>
                 </div>
@@ -610,9 +638,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="contacto-icon-box">
                             <i class="bi bi-whatsapp"></i>
                         </div>
-                        <h4 class="fw-bold mb-2" style="color: var(--color-azul-peru-safe); font-family: 'Poppins', sans-serif;">WhatsApp Express</h4>
-                        <p class="text-secondary small mb-3">Respuesta inmediata para cotizaciones y reservas inmediatas.</p>
-                        <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20deseo%20planificar%20un%20viaje" target="_blank" class="fs-5 fw-bold text-decoration-none text-success">
+                        <h4 class="fw-bold mb-2" style="color: var(--color-azul-peru-safe); font-family: 'Poppins', sans-serif;">WhatsApp Directo</h4>
+                        <p class="text-secondary small mb-3">Respuesta inmediata para itinerarios personalizados.</p>
+                        <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20planificar%20un%20viaje" target="_blank" class="fs-5 fw-bold text-decoration-none text-success">
                             Chat en WhatsApp <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -683,7 +711,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         <?php endif; ?>
 
-                        <form action="https://www.perusafejourneys.todowebcusco.com/contacto/" method="POST">
+                        <form action="https://www.perusafejourneysgroup.com/contacto/" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold small text-uppercase">Nombre Completo *</label>
@@ -695,7 +723,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold small text-uppercase">Teléfono / WhatsApp</label>
-                                    <input type="tel" name="telefono" class="form-control" placeholder="+51 900 000 000">
+                                    <input type="tel" name="telefono" class="form-control" placeholder="+51 931 352 810">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold small text-uppercase">Destino de Interés</label>
@@ -753,7 +781,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="row g-4 justify-content-between">
                 <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
-                    <a href="https://www.perusafejourneys.todowebcusco.com/" class="footer-logo">
+                    <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
                     <p class="pe-lg-4" style="color: #94A3B8;">
@@ -770,12 +798,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading">Navegación</h5>
                     <ul class="footer-links">
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/destinos/"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/experiencias/"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/programas/"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/nosotros/"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
-                        <li><a href="https://www.perusafejourneys.todowebcusco.com/contacto/"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/"><i class="bi bi-chevron-right text-warning fs-6"></i> INICIO</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/destinos/"><i class="bi bi-chevron-right text-warning fs-6"></i> DESTINOS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/experiencias/"><i class="bi bi-chevron-right text-warning fs-6"></i> EXPERIENCIAS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/programas/"><i class="bi bi-chevron-right text-warning fs-6"></i> PROGRAMAS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/nosotros/"><i class="bi bi-chevron-right text-warning fs-6"></i> NOSOTROS</a></li>
+                        <li><a href="https://www.perusafejourneysgroup.com/contacto/"><i class="bi bi-chevron-right text-warning fs-6"></i> CONTACTO</a></li>
                     </ul>
                 </div>
 
@@ -787,8 +815,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <i class="bi bi-telephone-fill"></i>
                         </div>
                         <div>
-                            <small class="d-block" style="color: #94A3B8;">Teléfono de contacto:</small>
-                            <a href="tel:<?php echo $phone_clean; ?>" class="fw-bold fs-6"><?php echo $phone_number; ?></a>
+                            <small class="d-block" style="color: #94A3B8;">Ventas:</small>
+                            <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="fw-bold fs-6"><?php echo $phones['ventas']['number']; ?></a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="bi bi-gear-fill"></i>
+                        </div>
+                        <div>
+                            <small class="d-block" style="color: #94A3B8;">Operaciones:</small>
+                            <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="fw-bold fs-6"><?php echo $phones['operaciones']['number']; ?></a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div>
+                            <small class="d-block" style="color: #94A3B8;">Calidad 24/7:</small>
+                            <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="fw-bold fs-6"><?php echo $phones['calidad']['number']; ?></a>
                         </div>
                     </div>
                     <div class="footer-contact-item">
@@ -798,15 +844,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div>
                             <small class="d-block" style="color: #94A3B8;">Correo de contacto:</small>
                             <a href="mailto:<?php echo $email_address; ?>" class="fw-bold fs-6"><?php echo $email_address; ?></a>
-                        </div>
-                    </div>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <div>
-                            <small class="d-block" style="color: #94A3B8;">Ubicación:</small>
-                            <span class="text-light">Cusco - Perú</span>
                         </div>
                     </div>
                 </div>
@@ -822,7 +859,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </footer>
 
     <!-- Icono flotante de WhatsApp -->
-    <a href="https://wa.me/<?php echo $phone_clean; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Per%C3%BA%20Safe%20Journeys"
+    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Per%C3%BA%20Safe%20Journeys"
        class="whatsapp-float"
        target="_blank"
        aria-label="Contactar por WhatsApp">
