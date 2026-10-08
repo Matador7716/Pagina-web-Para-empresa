@@ -255,38 +255,38 @@ $programs = [
             color: var(--color-naranja-journey) !important;
         }
 
-        /* ESTILOS DEL DROPDOWN MEJORADO PARA DESTINOS */
+        /* DROPDOWN MENU REDISEÑADO PARA DESTINOS */
         .dropdown-menu-custom {
             background: rgba(0, 22, 38, 0.96) !important;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.15) !important;
             border-top: 3px solid var(--color-naranja-journey) !important;
             border-radius: 16px !important;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
-            padding: 0.75rem 0.5rem !important;
-            min-width: 290px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45) !important;
+            padding: 0.6rem 0.4rem !important;
+            min-width: 280px;
             margin-top: 0.5rem !important;
-            animation: fadeInDropdown 0.3s ease forwards;
-        }
-
-        @keyframes fadeInDropdown {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (min-width: 992px) {
             .nav-item.dropdown:hover .dropdown-menu-custom {
                 display: block;
+                animation: fadeInDropdown 0.3s ease forwards;
             }
+        }
+
+        @keyframes fadeInDropdown {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .dropdown-item-custom {
             color: #E2E8F0 !important;
-            font-size: 0.85rem !important;
+            font-size: 0.83rem !important;
             font-weight: 600 !important;
             letter-spacing: 0.5px;
-            padding: 0.65rem 1rem !important;
+            padding: 0.55rem 0.9rem !important;
             border-radius: 10px;
             transition: all 0.25s ease !important;
             display: flex;
@@ -297,61 +297,57 @@ $programs = [
 
         .dropdown-item-custom i {
             color: var(--color-naranja-journey);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: transform 0.25s ease;
         }
 
         .dropdown-item-custom:hover {
-            background-color: rgba(233, 77, 0, 0.15) !important;
+            background-color: rgba(233, 77, 0, 0.18) !important;
             color: var(--color-blanco) !important;
-            transform: translateX(5px);
+            transform: translateX(4px);
         }
 
         .dropdown-item-custom:hover i {
-            transform: scale(1.25) rotate(5deg);
+            transform: scale(1.2) rotate(6deg);
             color: var(--color-dorado-andino);
         }
 
         .dropdown-divider-custom {
-            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-            margin: 0.4rem 0 !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+            margin: 0.35rem 0 !important;
         }
 
-        /* Botón Llama */
+        /* Botones con Ancho Reducido */
         .btn-reserva-llama {
             background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco) !important;
             font-weight: 700;
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             letter-spacing: 0.5px;
             border-radius: 50px;
-            padding: 0.75rem 1.8rem;
+            padding: 0.65rem 1.4rem;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             text-decoration: none;
-            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 6px 20px var(--color-naranja-glow);
+            transition: all 0.35s ease;
+            box-shadow: 0 4px 16px var(--color-naranja-glow);
             border: 2px solid rgba(255, 255, 255, 0.2);
             text-transform: uppercase;
+            width: auto;
         }
 
         .btn-reserva-llama:hover {
             background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 10px 28px rgba(233, 77, 0, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(233, 77, 0, 0.55);
             color: var(--color-blanco);
         }
 
         .llama-svg {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             fill: currentColor;
-            transition: transform 0.3s ease;
-        }
-
-        .btn-reserva-llama:hover .llama-svg {
-            transform: scale(1.2) rotate(-10deg);
         }
 
         /* Hero Banner Section */
@@ -439,13 +435,13 @@ $programs = [
         .program-img-wrapper {
             position: relative;
             width: 100%;
-            height: 280px;
+            height: 260px;
             overflow: hidden;
         }
 
         .program-img-wrapper img {
             width: 100%;
-            height: 280px;
+            height: 260px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
@@ -470,7 +466,7 @@ $programs = [
         }
 
         .program-body {
-            padding: 1.6rem;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -815,7 +811,7 @@ $programs = [
                     <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
-                    <p class="pe-lg-4" style="color: #94A3B8; font-size: 1rem;">
+                    <p class="pe-lg-4" style="color: #94A3B8; font-size: 0.98rem;">
                         Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas. Conectamos viajeros con el corazón cultural, histórico y natural del Perú.
                     </p>
                     <div class="d-flex gap-3 mt-3">

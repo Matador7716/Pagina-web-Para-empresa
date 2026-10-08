@@ -27,11 +27,11 @@ $destinos_submenu = [
     ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
 ];
 
-// Tarjetas creativas reducidas para el carrusel/slider
+// Tarjetas creativas para la sección "Encuentra tu próximo destino"
 $tour_cards = [
     [
         'title' => 'Tours Tradicionales',
-        'desc' => 'Descubre lugares imprescindibles del Perú.',
+        'desc' => 'Descubre lugares imprescindibles del Perú con guías locales.',
         'badge' => '🏛️ Clásico & Imprescindible',
         'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
         'link' => 'https://www.perusafejourneysgroup.com/destinos/'
@@ -52,17 +52,61 @@ $tour_cards = [
     ],
     [
         'title' => 'Expediciones',
-        'desc' => 'Selva y montaña para explorar con territorios únicos.',
+        'desc' => 'Selva y montaña para explorar territorios únicos.',
         'badge' => '🌿 Exploración Única',
         'image' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
         'link' => 'https://www.perusafejourneysgroup.com/destinos/'
     ],
     [
         'title' => 'Turismo Vivencial',
-        'desc' => 'Comparte, aprende y vive nuestras tradiciones.',
+        'desc' => 'Comparte, aprende y vive nuestras tradiciones andinas.',
         'badge' => '🤝 Cultura & Tradición',
         'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
         'link' => 'https://www.perusafejourneysgroup.com/nosotros/'
+    ]
+];
+
+// Tarjetas Creativas Destacadas de la Sección "Destinos"
+$creative_destinations = [
+    [
+        'title' => 'Machu Picchu & Cusco Mágico',
+        'location' => 'Cusco, Perú',
+        'duration' => '4 Días / 3 Noches',
+        'rating' => '4.9 (128 Reseñas)',
+        'price' => 'Desde $380 USD',
+        'badge' => '🔥 Maravilla Mundial',
+        'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'
+    ],
+    [
+        'title' => 'Laguna Humantay FD',
+        'location' => 'Anta, Cusco',
+        'duration' => '1 Día Completo',
+        'rating' => '4.8 (95 Reseñas)',
+        'price' => 'Desde $45 USD',
+        'badge' => '💧 Laguna Turquesa',
+        'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'
+    ],
+    [
+        'title' => 'Montaña Vinicunca FD',
+        'location' => 'Quispicanchi, Cusco',
+        'duration' => '1 Día Completo',
+        'rating' => '4.9 (110 Reseñas)',
+        'price' => 'Desde $50 USD',
+        'badge' => '🌈 7 Colores',
+        'image' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'
+    ],
+    [
+        'title' => '7 Lagunas del Ausangate',
+        'location' => 'Pacchanta, Cusco',
+        'duration' => '1 Día Completo',
+        'rating' => '5.0 (82 Reseñas)',
+        'price' => 'Desde $55 USD',
+        'badge' => '🏔️ Aguas Termales',
+        'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'
     ]
 ];
 
@@ -122,19 +166,19 @@ $brand_pillars = [
     <style>
         :root {
             /* Colores Principales */
-            --color-azul-peru-safe: #002238;  /* Azul oscuro profundo */
-            --color-azul-andino: #0B527A;     /* Azul secundario */
-            --color-naranja-journey: #E94D00; /* Naranja corporativo */
-            --color-naranja-hover: #C74000;   /* Naranja hover */
-            --color-dorado-andino: #D9A441;   /* Dorado acento */
-            --color-blanco: #FFFFFF;          /* Blanco */
-            --color-gris-claro: #F8FAFC;      /* Gris claro sutil */
+            --color-azul-peru-safe: #002238;
+            --color-azul-andino: #0B527A;
+            --color-naranja-journey: #E94D00;
+            --color-naranja-hover: #C74000;
+            --color-dorado-andino: #D9A441;
+            --color-blanco: #FFFFFF;
+            --color-gris-claro: #F8FAFC;
 
             --color-topbar: #001726;
             --color-texto-oscuro: #0F172A;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(233, 77, 0, 0.4);
+            --color-naranja-glow: rgba(233, 77, 0, 0.35);
         }
 
         * {
@@ -151,7 +195,6 @@ $brand_pillars = [
             padding: 0;
         }
 
-        /* Tipografía Amigable y Creativa */
         h1, h2, h3, h4, h5, h6,
         .hero-title, .section-title, .brand-motto-title,
         .brand-text, .nav-link, .dropdown-item, .btn-reserva-llama, .btn-banner,
@@ -159,7 +202,7 @@ $brand_pillars = [
             font-family: 'Poppins', sans-serif;
         }
 
-        /* 1. HEADER & TOP BAR */
+        /* 1. HEADER & TOP BAR REDISEÑADOS */
         .top-bar {
             background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
             font-size: 0.85rem;
@@ -171,9 +214,9 @@ $brand_pillars = [
         }
 
         .topbar-phone-badge {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 0.3rem 0.85rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.28rem 0.8rem;
             border-radius: 50px;
             font-size: 0.82rem;
             color: #E2E8F0 !important;
@@ -201,17 +244,6 @@ $brand_pillars = [
             color: var(--color-blanco);
         }
 
-        .topbar-email-link {
-            color: #94A3B8 !important;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
-        }
-
-        .topbar-email-link:hover {
-            color: var(--color-naranja-journey) !important;
-        }
-
         .topbar-social-icon {
             display: inline-flex;
             align-items: center;
@@ -233,21 +265,21 @@ $brand_pillars = [
             box-shadow: 0 4px 12px var(--color-naranja-glow);
         }
 
-        /* Menú Pegajoso (Navbar) */
+        /* Menú Pegajoso (Navbar con Glassmorphism) */
         .navbar-custom {
-            background: rgba(0, 26, 43, 0.88);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(0, 26, 43, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             transition: all 0.4s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             width: 100%;
-            padding: 0.6rem 0;
+            padding: 0.5rem 0;
         }
 
         .navbar-custom.scrolled {
             background: rgba(0, 18, 32, 0.98);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-            padding: 0.35rem 0;
+            padding: 0.3rem 0;
         }
 
         .navbar-brand-logo {
@@ -257,7 +289,7 @@ $brand_pillars = [
         }
 
         .logo-img-header {
-            height: 92px;
+            height: 88px;
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
@@ -265,24 +297,24 @@ $brand_pillars = [
         }
 
         .navbar-brand-logo:hover .logo-img-header {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
 
         .nav-link {
             color: var(--color-blanco) !important;
             font-weight: 600;
-            font-size: 0.92rem;
-            padding: 0.6rem 1.1rem !important;
+            font-size: 0.9rem;
+            padding: 0.6rem 1rem !important;
             letter-spacing: 0.8px;
             text-transform: uppercase;
             position: relative;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: 4px;
+            bottom: 2px;
             left: 50%;
             width: 0%;
             height: 2px;
@@ -300,42 +332,40 @@ $brand_pillars = [
         .nav-link:hover,
         .nav-link.active {
             color: var(--color-naranja-journey) !important;
-            text-shadow: 0 0 10px rgba(233, 77, 0, 0.3);
         }
 
-        /* ESTILOS DEL DROPDOWN MEJORADO PARA DESTINOS */
+        /* DROPDOWN MENU REDISEÑADO CON ANCHO Y PADDING OPTIMIZADO */
         .dropdown-menu-custom {
-            background: rgba(0, 22, 38, 0.96) !important;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(0, 20, 35, 0.98) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.15) !important;
             border-top: 3px solid var(--color-naranja-journey) !important;
             border-radius: 16px !important;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
-            padding: 0.75rem 0.5rem !important;
-            min-width: 290px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45) !important;
+            padding: 0.6rem 0.4rem !important;
+            min-width: 280px;
             margin-top: 0.5rem !important;
-            animation: fadeInDropdown 0.3s ease forwards;
         }
 
-        @keyframes fadeInDropdown {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Hover para abrir el dropdown en pantallas desktop */
         @media (min-width: 992px) {
             .nav-item.dropdown:hover .dropdown-menu-custom {
                 display: block;
+                animation: fadeInDropdown 0.3s ease forwards;
             }
+        }
+
+        @keyframes fadeInDropdown {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .dropdown-item-custom {
             color: #E2E8F0 !important;
-            font-size: 0.85rem !important;
+            font-size: 0.83rem !important;
             font-weight: 600 !important;
             letter-spacing: 0.5px;
-            padding: 0.65rem 1rem !important;
+            padding: 0.55rem 0.9rem !important;
             border-radius: 10px;
             transition: all 0.25s ease !important;
             display: flex;
@@ -346,70 +376,79 @@ $brand_pillars = [
 
         .dropdown-item-custom i {
             color: var(--color-naranja-journey);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: transform 0.25s ease;
         }
 
         .dropdown-item-custom:hover {
-            background-color: rgba(233, 77, 0, 0.15) !important;
+            background-color: rgba(233, 77, 0, 0.18) !important;
             color: var(--color-blanco) !important;
-            transform: translateX(5px);
+            transform: translateX(4px);
         }
 
         .dropdown-item-custom:hover i {
-            transform: scale(1.25) rotate(5deg);
+            transform: scale(1.2) rotate(6deg);
             color: var(--color-dorado-andino);
         }
 
         .dropdown-divider-custom {
-            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-            margin: 0.4rem 0 !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+            margin: 0.35rem 0 !important;
         }
 
-        /* BOTON "Reserva tu Viaje" */
+        /* 2. BOTONES CON ANCHO REDUCIDO / COMPACTOS */
+        .btn-compact {
+            padding: 0.6rem 1.4rem !important; /* Ancho de botón reducido */
+            font-size: 0.88rem !important;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: auto !important; /* Ancho ajustado al contenido */
+        }
+
         .btn-reserva-llama {
             background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco) !important;
             font-weight: 700;
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             letter-spacing: 0.5px;
             border-radius: 50px;
-            padding: 0.75rem 1.8rem;
+            padding: 0.65rem 1.4rem; /* Reducido */
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             text-decoration: none;
-            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 6px 20px var(--color-naranja-glow);
+            transition: all 0.35s ease;
+            box-shadow: 0 4px 16px var(--color-naranja-glow);
             border: 2px solid rgba(255, 255, 255, 0.2);
             text-transform: uppercase;
+            width: auto;
         }
 
         .btn-reserva-llama:hover {
             background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 10px 28px rgba(233, 77, 0, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(233, 77, 0, 0.55);
             color: var(--color-blanco);
-            border-color: rgba(255, 255, 255, 0.4);
         }
 
         .llama-svg {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             fill: currentColor;
-            transition: transform 0.3s ease;
         }
 
-        .btn-reserva-llama:hover .llama-svg {
-            transform: scale(1.2) rotate(-10deg);
-        }
-
-        /* 2. SLIDER CON VIDEO DE FONDO */
+        /* 3. HERO SLIDER CON VIDEO DE FONDO Y ANCHO COMPLETO */
         .hero-video-slider {
             position: relative;
-            height: 92vh;
-            min-height: 640px;
-            max-height: 900px;
+            height: 88vh;
+            min-height: 600px;
+            max-height: 850px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -451,7 +490,7 @@ $brand_pillars = [
             background: linear-gradient(
                 180deg,
                 rgba(0, 18, 32, 0.75) 0%,
-                rgba(0, 34, 56, 0.4) 50%,
+                rgba(0, 34, 56, 0.45) 50%,
                 rgba(0, 18, 32, 0.9) 100%
             );
             z-index: 2;
@@ -460,18 +499,18 @@ $brand_pillars = [
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 1150px;
+            max-width: 1100px;
             text-align: center;
             padding: 2rem 1rem;
         }
 
         .hero-title {
-            font-size: 4.4rem;
+            font-size: 4.2rem;
             font-weight: 900;
             letter-spacing: -1px;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
+            margin-bottom: 1.4rem;
+            text-transform: uppercase; /* VIVE EL PERÚ A TU MANERA */
             text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
             background: linear-gradient(135deg, #FFFFFF 20%, #FFE0B2 100%);
             -webkit-background-clip: text;
@@ -479,13 +518,13 @@ $brand_pillars = [
         }
 
         .hero-subtitle {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             font-weight: 500;
             line-height: 1.8;
-            margin-bottom: 2.8rem;
+            margin-bottom: 2.5rem;
             color: #F1F5F9;
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
-            max-width: 920px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -495,22 +534,23 @@ $brand_pillars = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 1.05rem 2.6rem;
-            font-size: 1.05rem;
+            padding: 0.8rem 2rem; /* Ancho de botón reducido */
+            font-size: 0.98rem;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
             transition: all 0.35s ease;
-            box-shadow: 0 8px 25px var(--color-naranja-glow);
+            box-shadow: 0 6px 20px var(--color-naranja-glow);
             border: 2px solid rgba(255, 255, 255, 0.3);
             text-transform: uppercase;
+            width: auto;
         }
 
         .btn-banner-primary:hover {
             background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 14px 32px rgba(233, 77, 0, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(233, 77, 0, 0.55);
         }
 
         .btn-banner-secondary {
@@ -518,26 +558,27 @@ $brand_pillars = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 1.05rem 2.6rem;
-            font-size: 1.05rem;
+            padding: 0.8rem 2rem; /* Ancho de botón reducido */
+            font-size: 0.98rem;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
             backdrop-filter: blur(10px);
             transition: all 0.35s ease;
             border: 2px solid rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
+            width: auto;
         }
 
         .btn-banner-secondary:hover {
             background-color: var(--color-blanco);
             color: var(--color-azul-peru-safe) !important;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 28px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
         }
 
-        /* 3. SECCIÓN "ENCUENTRA TU PRÓXIMO DESTINO" */
+        /* 4. SECCIÓN TARJETAS CREATIVAS DE DESTINOS DE LA PAGINA INICIO */
         .cards-slider-section {
             background: linear-gradient(180deg, var(--color-gris-claro) 0%, #EDF2F7 100%);
             padding: 5rem 0;
@@ -587,7 +628,7 @@ $brand_pillars = [
         }
 
         .creative-card {
-            flex: 0 0 290px;
+            flex: 0 0 280px; /* Tamaño reducido de tarjeta */
             background: var(--color-blanco);
             border-radius: 18px;
             overflow: hidden;
@@ -602,22 +643,21 @@ $brand_pillars = [
         }
 
         .creative-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 35px rgba(233, 77, 0, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 35px rgba(233, 77, 0, 0.18);
             border-color: var(--color-naranja-journey);
-            color: var(--color-texto-oscuro);
         }
 
         .card-img-container {
             position: relative;
             width: 100%;
-            height: 270px;
+            height: 250px; /* Tamaño de imagen reducido */
             overflow: hidden;
         }
 
         .card-img-container img {
             width: 100%;
-            height: 270px;
+            height: 250px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
@@ -651,7 +691,7 @@ $brand_pillars = [
         }
 
         .card-title-text {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.5rem;
@@ -663,120 +703,134 @@ $brand_pillars = [
         }
 
         .card-desc-text {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--color-texto-suave);
             line-height: 1.55;
             margin-bottom: 1.2rem;
         }
 
-        .card-btn-action {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 700;
-            font-size: 0.88rem;
-            color: var(--color-naranja-journey);
-            font-family: 'Poppins', sans-serif;
-            transition: gap 0.3s ease;
+        /* NUEVA SECCIÓN: TARJETAS CREATIVAS DE DESTINOS IMPRESCINDIBLES */
+        .destinos-creative-section {
+            padding: 5.5rem 0;
+            background: var(--color-blanco);
+            width: 100vw;
         }
 
-        .creative-card:hover .card-btn-action {
-            gap: 10px;
-            color: var(--color-naranja-hover);
-        }
-
-        .slider-nav-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background-color: var(--color-blanco);
-            border: 2px solid var(--color-gris-border);
-            color: var(--color-azul-peru-safe);
+        .dest-card-creative {
+            background: var(--color-blanco);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--color-gris-border);
+            box-shadow: 0 10px 30px rgba(0, 34, 56, 0.05);
+            transition: all 0.35s ease;
+            height: 100%;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            flex-direction: column;
+            position: relative;
         }
 
-        .slider-nav-btn:hover {
-            background-color: var(--color-naranja-journey);
-            color: var(--color-blanco);
+        .dest-card-creative:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(233, 77, 0, 0.16);
             border-color: var(--color-naranja-journey);
-            box-shadow: 0 6px 20px var(--color-naranja-glow);
+        }
+
+        .dest-card-img-box {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .dest-card-img-box img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .dest-card-creative:hover .dest-card-img-box img {
             transform: scale(1.08);
         }
 
-        /* 4. CONTENIDO CREATIVO CON MOVIMIENTO */
+        .dest-card-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(233, 77, 0, 0.9);
+            color: var(--color-blanco);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.85rem;
+            border-radius: 30px;
+            backdrop-filter: blur(6px);
+        }
+
+        .dest-card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .dest-card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            color: var(--color-texto-suave);
+            margin-bottom: 0.6rem;
+        }
+
+        .dest-card-title {
+            font-size: 1.28rem;
+            font-weight: 700;
+            color: var(--color-azul-peru-safe);
+            margin-bottom: 0.8rem;
+        }
+
+        .dest-card-price {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--color-naranja-journey);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* 5. SECCIÓN REDISEÑADA: PERÚ SAFE JOURNEYS – TRAVEL AGENCY */
         .creative-narrative-section {
-            padding: 6.5rem 0;
+            padding: 6rem 0;
             background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
             position: relative;
             overflow: hidden;
             width: 100vw;
         }
 
-        .animated-bg-shape {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(90px);
-            opacity: 0.22;
-            z-index: 0;
-            animation: floatShape 9s infinite alternate ease-in-out;
-        }
-
-        .bg-shape-1 {
-            width: 500px;
-            height: 500px;
-            background: var(--color-naranja-journey);
-            top: -120px;
-            right: -120px;
-        }
-
-        .bg-shape-2 {
-            width: 600px;
-            height: 600px;
-            background: var(--color-azul-peru-safe);
-            bottom: -180px;
-            left: -180px;
-            animation-delay: -4.5s;
-        }
-
-        @keyframes floatShape {
-            0% { transform: translateY(0px) rotate(0deg) scale(1); }
-            100% { transform: translateY(35px) rotate(18deg) scale(1.08); }
-        }
-
-        .narrative-card-wrapper {
-            position: relative;
-            z-index: 1;
+        .agency-glass-card {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(24px);
-            border-radius: 32px;
-            padding: 4rem 3.5rem;
+            backdrop-filter: blur(20px);
+            border-radius: 28px;
+            padding: 3.5rem;
             border: 1px solid rgba(226, 232, 240, 0.9);
-            box-shadow: 0 25px 60px rgba(0, 34, 56, 0.07);
-            width: 100%;
+            box-shadow: 0 20px 50px rgba(0, 34, 56, 0.06);
         }
 
         .narrative-paragraph {
-            font-size: 1.18rem;
-            line-height: 1.9;
+            font-size: 1.12rem;
+            line-height: 1.85;
             color: #334155;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .brand-motto-box {
-            background: linear-gradient(135deg, #001A2B 0%, var(--color-azul-peru-safe) 100%);
+            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
             color: var(--color-blanco);
-            border-radius: 28px;
-            padding: 3.8rem;
-            margin: 4rem 0;
+            border-radius: 24px;
+            padding: 3.2rem 2.5rem;
+            margin: 3.5rem 0;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 45px rgba(0, 26, 43, 0.25);
+            box-shadow: 0 20px 40px rgba(0, 18, 32, 0.25);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -785,80 +839,80 @@ $brand_pillars = [
             position: absolute;
             top: -50%;
             right: -20%;
-            width: 400px;
-            height: 400px;
-            background: rgba(233, 77, 0, 0.3);
+            width: 350px;
+            height: 350px;
+            background: rgba(233, 77, 0, 0.25);
             border-radius: 50%;
             filter: blur(60px);
         }
 
         .brand-motto-title {
-            font-size: 2.6rem;
+            font-size: 2.4rem;
             font-weight: 800;
             color: var(--color-dorado-andino);
-            margin-bottom: 1.4rem;
+            margin-bottom: 1.2rem;
         }
 
-        /* PILARES DE MARCA */
+        /* 6. PILARES DE MARCA REDISEÑADOS */
         .pillar-card {
             background: var(--color-blanco);
-            border-radius: 22px;
-            padding: 2.4rem 2rem;
+            border-radius: 20px;
+            padding: 2rem 1.8rem;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
             transition: all 0.35s ease;
             height: 100%;
         }
 
         .pillar-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             border-color: var(--color-naranja-journey);
-            box-shadow: 0 18px 40px rgba(233, 77, 0, 0.14);
+            box-shadow: 0 16px 36px rgba(233, 77, 0, 0.12);
         }
 
         .pillar-icon-box {
-            width: 64px;
-            height: 64px;
-            border-radius: 18px;
-            background: rgba(233, 77, 0, 0.12);
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            background: rgba(233, 77, 0, 0.1);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.85rem;
-            margin-bottom: 1.4rem;
+            font-size: 1.75rem;
+            margin-bottom: 1.2rem;
             transition: all 0.35s ease;
         }
 
         .pillar-card:hover .pillar-icon-box {
             background: var(--color-naranja-journey);
             color: var(--color-blanco);
-            transform: rotate(-8deg) scale(1.08);
-            box-shadow: 0 8px 20px var(--color-naranja-glow);
+            transform: rotate(-6deg) scale(1.05);
+            box-shadow: 0 6px 18px var(--color-naranja-glow);
         }
 
         .pillar-name {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             font-family: 'Poppins', sans-serif;
         }
 
-        /* 5. FOOTER */
+        /* FOOTER */
         .footer-custom {
             background: #001220;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 5rem;
             padding-bottom: 2rem;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             color: #CBD5E1;
             width: 100vw;
         }
 
         .footer-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.85rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--color-blanco);
             margin-bottom: 1.2rem;
@@ -874,20 +928,20 @@ $brand_pillars = [
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.1rem;
             color: #94A3B8;
         }
 
         .footer-contact-icon {
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             background-color: rgba(255, 255, 255, 0.06);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--color-naranja-journey);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .footer-contact-item a {
@@ -901,10 +955,10 @@ $brand_pillars = [
         }
 
         .footer-heading {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--color-blanco);
-            margin-bottom: 1.6rem;
+            margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 0.5rem;
             font-family: 'Poppins', sans-serif;
@@ -915,7 +969,7 @@ $brand_pillars = [
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
+            width: 38px;
             height: 3px;
             background-color: var(--color-naranja-journey);
             border-radius: 2px;
@@ -928,7 +982,7 @@ $brand_pillars = [
         }
 
         .footer-links li {
-            margin-bottom: 0.85rem;
+            margin-bottom: 0.8rem;
         }
 
         .footer-links a {
@@ -942,30 +996,29 @@ $brand_pillars = [
 
         .footer-links a:hover {
             color: var(--color-naranja-journey);
-            transform: translateX(6px);
+            transform: translateX(5px);
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            margin-top: 4rem;
-            padding-top: 2rem;
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
             text-align: center;
             color: #94A3B8;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
 
-        /* Botón Flotante de WhatsApp */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 34px;
+            font-size: 32px;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             z-index: 1050;
             display: flex;
@@ -989,31 +1042,26 @@ $brand_pillars = [
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* Responsivo */
         @media (max-width: 991.98px) {
-            .hero-title { font-size: 3.2rem; }
+            .hero-title { font-size: 3rem; }
             .hero-subtitle { font-size: 1.15rem; }
-            .narrative-card-wrapper { padding: 2.5rem 1.8rem; }
-            .brand-motto-title { font-size: 2rem; }
+            .agency-glass-card { padding: 2.2rem 1.6rem; }
+            .brand-motto-title { font-size: 1.9rem; }
             .section-title { font-size: 2.1rem; }
-            .logo-img-header { height: 75px; }
-            .dropdown-menu-custom {
-                background: rgba(0, 18, 32, 0.98) !important;
-                border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            }
+            .logo-img-header { height: 72px; }
         }
 
         @media (max-width: 575.98px) {
-            .hero-title { font-size: 2.3rem; }
-            .creative-card { flex: 0 0 260px; }
-            .card-img-container, .card-img-container img { height: 230px; }
-            .logo-img-header { height: 60px; }
+            .hero-title { font-size: 2.2rem; }
+            .creative-card { flex: 0 0 250px; }
+            .card-img-container, .card-img-container img { height: 210px; }
+            .logo-img-header { height: 58px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. HEADER & TOP BAR REDISEÑADOS -->
+    <!-- 1. HEADER & TOP BAR MEJORADO -->
     <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
@@ -1045,7 +1093,7 @@ $brand_pillars = [
         </div>
     </div>
 
-    <!-- Menú Pegajoso (Navbar con Dropdown de DESTINOS) -->
+    <!-- Menú Pegajoso con Submenú Destinos y Botón con Ancho Ajustado -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
@@ -1062,7 +1110,7 @@ $brand_pillars = [
                         <a class="nav-link active" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
 
-                    <!-- DESTINOS DROPDOWN REDISEÑADO -->
+                    <!-- DESTINOS DROPDOWN -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" id="destinosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             DESTINOS <i class="bi bi-chevron-down ms-1 fs-6 text-warning"></i>
@@ -1098,6 +1146,7 @@ $brand_pillars = [
                     </li>
                 </ul>
 
+                <!-- BOTÓN RESERVA CON ANCHO AJUSTADO COMPACTO -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
                     <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
@@ -1146,7 +1195,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 3. SECCIÓN "ENCUENTRA TU PRÓXIMO DESTINO" -->
+    <!-- 3. SECCIÓN "ENCUENTRA TU PRÓXIMO DESTINO" CON ANCHO Y BOTONES COMPACTOS -->
     <section class="cards-slider-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4">
@@ -1192,13 +1241,60 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 4. CONTENIDO CREATIVO CON MOVIMIENTO -->
-    <section class="creative-narrative-section">
-        <div class="animated-bg-shape bg-shape-1"></div>
-        <div class="animated-bg-shape bg-shape-2"></div>
-
+    <!-- NUEVA SECCIÓN SOLICITADA: TARJETAS CREATIVAS DE LA SECCIÓN "DESTINOS" -->
+    <section class="destinos-creative-section">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="narrative-card-wrapper">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="section-badge">🏔️ DESTINOS DESTACADOS</span>
+                <h2 class="section-title">Nuestras Rutas e Itinerarios Estrellas</h2>
+                <p class="text-muted fs-5">Rutas planificadas por especialistas locales con máxima seguridad y confort.</p>
+            </div>
+
+            <div class="row g-4">
+                <?php foreach($creative_destinations as $dest): ?>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dest-card-creative">
+                            <div class="dest-card-img-box">
+                                <img src="<?php echo $dest['image']; ?>" alt="<?php echo $dest['title']; ?>" loading="lazy">
+                                <span class="dest-card-badge"><?php echo $dest['badge']; ?></span>
+                            </div>
+                            <div class="dest-card-body">
+                                <div>
+                                    <div class="dest-card-meta">
+                                        <span><i class="bi bi-geo-alt-fill text-warning me-1"></i> <?php echo $dest['location']; ?></span>
+                                        <span><i class="bi bi-clock me-1 text-warning"></i> <?php echo $dest['duration']; ?></span>
+                                    </div>
+                                    <h3 class="dest-card-title"><?php echo $dest['title']; ?></h3>
+                                    <div class="d-flex align-items-center gap-1 mb-3 text-warning small fw-bold">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <span class="text-secondary ms-1">(<?php echo $dest['rating']; ?>)</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+                                    <div class="dest-card-price"><?php echo $dest['price']; ?></div>
+                                    <a href="<?php echo $dest['url']; ?>" class="btn btn-compact btn-reserva-llama">
+                                        <span>Ver Detalle</span>
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 5. SECCIÓN REDISEÑADA: PERÚ SAFE JOURNEYS – TRAVEL AGENCY -->
+    <section class="creative-narrative-section">
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="agency-glass-card">
                 <div class="row align-items-center g-5 mb-5">
                     <div class="col-lg-7">
                         <span class="section-badge">✨ QUIÉNES SOMOS</span>
@@ -1211,9 +1307,15 @@ $brand_pillars = [
                         <p class="narrative-paragraph">
                             Desde la majestuosidad de <strong>Cusco y Machu Picchu</strong>, pasando por el Valle Sagrado, los Andes y la Amazonía, hasta las costas del Pacífico, acompañamos a nuestros viajeros con atención personalizada, planificación profesional, seguridad y confort en cada etapa de su aventura.
                         </p>
-                        <p class="narrative-paragraph fw-semibold text-dark">
+                        <p class="narrative-paragraph fw-semibold text-dark mb-4">
                             Nuestro propósito es convertir cada viaje en una experiencia memorable, combinando la riqueza cultural del Perú con la confianza de viajar acompañado por especialistas locales.
                         </p>
+
+                        <!-- Botón compacto -->
+                        <a href="https://www.perusafejourneysgroup.com/nosotros/" class="btn btn-compact btn-banner-primary">
+                            <span>Conoce Nuestra Historia</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
 
                     <div class="col-lg-5">
@@ -1227,6 +1329,7 @@ $brand_pillars = [
                     </div>
                 </div>
 
+                <!-- BANNER DE PROPÓSITO -->
                 <div class="brand-motto-box text-center">
                     <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                         🌟 CONTENIDO CREATIVO
@@ -1242,7 +1345,8 @@ $brand_pillars = [
                     </p>
                 </div>
 
-                <div class="pt-4">
+                <!-- 6. PILARES DE MARCA REDISEÑADOS -->
+                <div class="pt-3">
                     <div class="text-center mb-5">
                         <span class="section-badge">💎 NUESTROS VALORES</span>
                         <h2 class="section-title">Pilares de Marca</h2>
@@ -1257,7 +1361,7 @@ $brand_pillars = [
                                         <i class="bi <?php echo $pillar['icon']; ?>"></i>
                                     </div>
                                     <h4 class="pillar-name"><?php echo $pillar['name']; ?></h4>
-                                    <p class="text-secondary mb-0" style="line-height: 1.7; font-size: 1rem;"><?php echo $pillar['desc']; ?></p>
+                                    <p class="text-secondary mb-0" style="line-height: 1.7; font-size: 0.95rem;"><?php echo $pillar['desc']; ?></p>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -1269,7 +1373,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 5. FOOTER -->
+    <!-- FOOTER ANCHO COMPLETO -->
     <footer class="footer-custom" id="contacto">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
@@ -1277,7 +1381,7 @@ $brand_pillars = [
                     <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
-                    <p class="pe-lg-4" style="color: #94A3B8; font-size: 1rem;">
+                    <p class="pe-lg-4" style="color: #94A3B8; font-size: 0.98rem;">
                         Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas. Conectamos viajeros con el corazón cultural, histórico y natural del Perú.
                     </p>
                     <div class="d-flex gap-3 mt-3">
@@ -1376,7 +1480,7 @@ $brand_pillars = [
             const nextBtn = document.getElementById('slideNextBtn');
 
             if (track && prevBtn && nextBtn) {
-                const scrollAmount = 310;
+                const scrollAmount = 300;
 
                 nextBtn.addEventListener('click', () => {
                     track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
