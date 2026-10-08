@@ -13,7 +13,7 @@ $phones = [
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
-// Tarjetas creativas para el carrusel/slider
+// Tarjetas creativas reducidas para el carrusel/slider
 $tour_cards = [
     [
         'title' => 'Tours Tradicionales',
@@ -96,7 +96,7 @@ $brand_pillars = [
     <!-- Google Fonts: Poppins & Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -108,19 +108,23 @@ $brand_pillars = [
     <style>
         :root {
             /* Colores Principales */
-            --color-azul-peru-safe: #003250;  /* Azul oscuro elegante */
+            --color-azul-peru-safe: #002238;  /* Azul oscuro profundo */
             --color-azul-andino: #0B527A;     /* Azul secundario */
-            --color-naranja-journey: #E94D00; /* Nuevo naranja intenso */
-            --color-naranja-hover: #C74000;   /* Naranja oscuro para hover */
-            --color-dorado-andino: #D9A441;   /* Dorado/Amarillo acento */
+            --color-naranja-journey: #E94D00; /* Naranja corporativo */
+            --color-naranja-hover: #C74000;   /* Naranja hover */
+            --color-dorado-andino: #D9A441;   /* Dorado acento */
             --color-blanco: #FFFFFF;          /* Blanco */
-            --color-gris-claro: #F4F6F7;      /* Gris claro para secciones */
+            --color-gris-claro: #F8FAFC;      /* Gris claro sutil */
 
-            --color-topbar: #002238;
-            --color-texto-oscuro: #1E293B;
+            --color-topbar: #001726;
+            --color-texto-oscuro: #0F172A;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(233, 77, 0, 0.35);
+            --color-naranja-glow: rgba(233, 77, 0, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -128,10 +132,12 @@ $brand_pillars = [
             background-color: var(--color-blanco);
             color: var(--color-texto-oscuro);
             overflow-x: hidden;
-            width: 100%;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Tipografía Amigable y Creativa (Poppins para títulos y botones) */
+        /* Tipografía Amigable y Creativa */
         h1, h2, h3, h4, h5, h6,
         .hero-title, .section-title, .brand-motto-title,
         .brand-text, .nav-link, .btn-reserva-llama, .btn-banner,
@@ -139,39 +145,58 @@ $brand_pillars = [
             font-family: 'Poppins', sans-serif;
         }
 
-        /* 1. HEADER */
-        /* Top Bar Superior Con Fondo Oscuro */
+        /* 1. HEADER & TOP BAR REDISEÑADOS */
+        /* Top Bar Superior Con Estilo Ultra Moderno */
         .top-bar {
-            background-color: var(--color-topbar);
-            font-size: 0.88rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            z-index: 1040;
+            background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1050;
             position: relative;
             width: 100%;
-        }
-
-        .top-bar a {
-            color: #CBD5E1;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .top-bar a:hover {
-            color: var(--color-naranja-journey);
+            padding: 0.45rem 0;
         }
 
         .topbar-phone-badge {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.25rem 0.75rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            color: #E2E8F0 !important;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .topbar-phone-badge:hover {
-            background: rgba(233, 77, 0, 0.25);
+            background: var(--color-naranja-journey);
             border-color: var(--color-naranja-journey);
+            color: var(--color-blanco) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--color-naranja-glow);
+        }
+
+        .topbar-phone-badge i {
+            color: var(--color-dorado-andino);
+            transition: color 0.3s ease;
+        }
+
+        .topbar-phone-badge:hover i {
+            color: var(--color-blanco);
+        }
+
+        .topbar-email-link {
+            color: #94A3B8 !important;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .topbar-email-link:hover {
+            color: var(--color-naranja-journey) !important;
         }
 
         .topbar-social-icon {
@@ -181,49 +206,49 @@ $brand_pillars = [
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             color: #CBD5E1 !important;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .topbar-social-icon:hover {
             background: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
-            transform: translateY(-2px) scale(1.1);
-            box-shadow: 0 4px 10px var(--color-naranja-glow);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 4px 12px var(--color-naranja-glow);
         }
 
-        /* Menú Pegajoso (Sticky Header) Transparente sobre el video / scroll */
+        /* Menú Pegajoso (Navbar Rediseñado con Glassmorphism) */
         .navbar-custom {
-            background-color: rgba(0, 50, 80, 0.88);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(0, 26, 43, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             transition: all 0.4s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             width: 100%;
+            padding: 0.6rem 0;
         }
 
         .navbar-custom.scrolled {
-            background-color: rgba(0, 34, 56, 0.98);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            padding-top: 0.4rem;
-            padding-bottom: 0.4rem;
+            background: rgba(0, 18, 32, 0.98);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            padding: 0.35rem 0;
         }
 
         .navbar-brand-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
             text-decoration: none;
         }
 
-        /* Aumento del tamaño del logo */
+        /* Ancho e Imagen del Logo Aumentado */
         .logo-img-header {
-            height: 80px; /* Aumentado considerablemente */
+            height: 92px; /* Mayor visibilidad del logo */
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
             transition: transform 0.3s ease;
         }
 
@@ -234,82 +259,88 @@ $brand_pillars = [
         .nav-link {
             color: var(--color-blanco) !important;
             font-weight: 600;
-            font-size: 0.98rem;
-            padding: 0.6rem 1.2rem !important;
-            letter-spacing: 0.5px;
+            font-size: 0.92rem;
+            padding: 0.6rem 1.1rem !important;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
             position: relative;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: 4px;
             left: 50%;
             width: 0%;
             height: 2px;
-            background-color: var(--color-naranja-journey);
+            background: linear-gradient(90deg, var(--color-naranja-journey), var(--color-dorado-andino));
             transition: all 0.3s ease;
             transform: translateX(-50%);
+            border-radius: 2px;
         }
 
         .nav-link:hover::after,
         .nav-link.active::after {
-            width: 70%;
+            width: 75%;
         }
 
         .nav-link:hover,
         .nav-link.active {
             color: var(--color-naranja-journey) !important;
+            text-shadow: 0 0 10px rgba(233, 77, 0, 0.3);
         }
 
-        /* BOTON "Reserva tu Viaje" - Color Naranja #E94D00 */
+        /* BOTON "Reserva tu Viaje" - Naranja #E94D00 */
         .btn-reserva-llama {
-            background-color: var(--color-naranja-journey);
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco) !important;
             font-weight: 700;
+            font-size: 0.92rem;
+            letter-spacing: 0.5px;
             border-radius: 50px;
             padding: 0.75rem 1.8rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 4px 18px var(--color-naranja-glow);
-            border: 2px solid transparent;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 20px var(--color-naranja-glow);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
         }
 
         .btn-reserva-llama:hover {
-            background-color: var(--color-naranja-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(233, 77, 0, 0.5);
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 28px rgba(233, 77, 0, 0.6);
             color: var(--color-blanco);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
         .llama-svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: currentColor;
             transition: transform 0.3s ease;
         }
 
         .btn-reserva-llama:hover .llama-svg {
-            transform: scale(1.15) rotate(-8deg);
+            transform: scale(1.2) rotate(-10deg);
         }
 
-        /* 2. CONTENIDO DE LA PAGINA: SLIDER CON VIDEO DE FONDO */
+        /* 2. SLIDER CON VIDEO DE FONDO - ANCHO COMPLETO Y MAYÚSCULA */
         .hero-video-slider {
             position: relative;
-            height: 90vh;
-            min-height: 620px;
-            max-height: 850px;
+            height: 92vh;
+            min-height: 640px;
+            max-height: 900px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--color-blanco);
-            width: 100%;
+            width: 100vw;
         }
 
         /* Contenedor del Video Embed YouTube */
@@ -326,15 +357,15 @@ $brand_pillars = [
 
         .video-background-wrapper iframe {
             width: 100vw;
-            height: 56.25vw; /* 16:9 ratio */
+            height: 56.25vw;
             min-height: 100vh;
-            min-width: 177.77vh; /* 16:9 ratio */
+            min-width: 177.77vh;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             object-fit: cover;
-            filter: brightness(0.62) contrast(1.1);
+            filter: brightness(0.55) contrast(1.15);
         }
 
         .video-overlay-gradient {
@@ -345,9 +376,9 @@ $brand_pillars = [
             height: 100%;
             background: linear-gradient(
                 180deg,
-                rgba(0, 34, 56, 0.65) 0%,
-                rgba(0, 50, 80, 0.45) 50%,
-                rgba(0, 26, 43, 0.85) 100%
+                rgba(0, 18, 32, 0.75) 0%,
+                rgba(0, 34, 56, 0.4) 50%,
+                rgba(0, 18, 32, 0.9) 100%
             );
             z-index: 2;
         }
@@ -355,20 +386,21 @@ $brand_pillars = [
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 1100px;
+            max-width: 1150px;
             text-align: center;
             padding: 2rem 1rem;
         }
 
-        /* Letras Creativas con Tipografía Amigable */
+        /* Título en Mayúscula Solicitado */
         .hero-title {
-            font-size: 4.2rem;
-            font-weight: 800;
+            font-size: 4.4rem;
+            font-weight: 900;
             letter-spacing: -1px;
-            line-height: 1.15;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-            background: linear-gradient(135deg, #FFFFFF 30%, #FFE0B2 100%);
+            text-transform: uppercase; /* VIVE EL PERÚ A TU MANERA */
+            text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
+            background: linear-gradient(135deg, #FFFFFF 20%, #FFE0B2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -377,101 +409,103 @@ $brand_pillars = [
             font-size: 1.35rem;
             font-weight: 500;
             line-height: 1.8;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.8rem;
             color: #F1F5F9;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-            max-width: 950px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+            max-width: 920px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .btn-banner-primary {
-            background-color: var(--color-naranja-journey);
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
+            padding: 1.05rem 2.6rem;
+            font-size: 1.05rem;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
             box-shadow: 0 8px 25px var(--color-naranja-glow);
-            border: 2px solid var(--color-naranja-journey);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
         }
 
         .btn-banner-primary:hover {
-            background-color: var(--color-naranja-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(233, 77, 0, 0.5);
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 32px rgba(233, 77, 0, 0.6);
         }
 
         .btn-banner-secondary {
-            background-color: rgba(255, 255, 255, 0.12);
+            background-color: rgba(255, 255, 255, 0.15);
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
+            padding: 1.05rem 2.6rem;
+            font-size: 1.05rem;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
-            backdrop-filter: blur(8px);
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            transition: all 0.35s ease;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
         }
 
         .btn-banner-secondary:hover {
             background-color: var(--color-blanco);
             color: var(--color-azul-peru-safe) !important;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 28px rgba(255, 255, 255, 0.3);
         }
 
-        /* 5 TARJETAS CREATIVAS CON BOTONES DE DESPLAZAMIENTO - Ancho Completo */
+        /* 3. SECCIÓN "ENCUENTRA TU PRÓXIMO DESTINO" - ANCHO COMPLETO & TARJETAS REDUCIDAS */
         .cards-slider-section {
-            background-color: var(--color-gris-claro);
-            padding: 5.5rem 0;
+            background: linear-gradient(180deg, var(--color-gris-claro) 0%, #EDF2F7 100%);
+            padding: 5rem 0;
             position: relative;
-            width: 100%;
+            width: 100vw;
         }
 
         .section-badge {
             display: inline-block;
-            background-color: rgba(233, 77, 0, 0.12);
+            background-color: rgba(233, 77, 0, 0.1);
             color: var(--color-naranja-journey);
             font-weight: 800;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             padding: 0.4rem 1.2rem;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(233, 77, 0, 0.3);
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(233, 77, 0, 0.25);
         }
 
         .section-title {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .cards-track-wrapper {
             position: relative;
             overflow: hidden;
-            padding: 1rem 0 2rem;
+            padding: 1rem 0 1.5rem;
             width: 100%;
         }
 
         .cards-track {
             display: flex;
-            gap: 28px;
+            gap: 20px;
             overflow-x: auto;
             scroll-behavior: smooth;
-            padding: 10px 5px 25px;
+            padding: 10px 5px 20px;
             scrollbar-width: none;
         }
 
@@ -479,13 +513,14 @@ $brand_pillars = [
             display: none;
         }
 
+        /* REDUCCIÓN DEL TAMAÑO DE LAS TARJETAS SOLICITADO */
         .creative-card {
-            flex: 0 0 360px;
+            flex: 0 0 290px; /* Tamaño compacto optimizado */
             background: var(--color-blanco);
-            border-radius: 20px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 50, 80, 0.08);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 8px 25px rgba(0, 34, 56, 0.06);
+            transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
             border: 1px solid var(--color-gris-border);
             display: flex;
             flex-direction: column;
@@ -495,22 +530,23 @@ $brand_pillars = [
         }
 
         .creative-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(233, 77, 0, 0.18);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 35px rgba(233, 77, 0, 0.2);
             border-color: var(--color-naranja-journey);
             color: var(--color-texto-oscuro);
         }
 
+        /* Reducción de la altura de la imagen */
         .card-img-container {
             position: relative;
             width: 100%;
-            height: 420px;
+            height: 270px; /* Reducido de 420px a 270px */
             overflow: hidden;
         }
 
         .card-img-container img {
             width: 100%;
-            height: 420px;
+            height: 270px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
@@ -521,21 +557,21 @@ $brand_pillars = [
 
         .card-badge-overlay {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(0, 50, 80, 0.85);
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 34, 56, 0.88);
             backdrop-filter: blur(8px);
             color: var(--color-blanco);
-            font-size: 0.82rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            padding: 0.45rem 1rem;
+            padding: 0.35rem 0.8rem;
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             font-family: 'Poppins', sans-serif;
         }
 
         .card-body-content {
-            padding: 1.8rem;
+            padding: 1.3rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -544,10 +580,10 @@ $brand_pillars = [
         }
 
         .card-title-text {
-            font-size: 1.45rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             transition: color 0.3s ease;
         }
 
@@ -556,32 +592,32 @@ $brand_pillars = [
         }
 
         .card-desc-text {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--color-texto-suave);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+            line-height: 1.55;
+            margin-bottom: 1.2rem;
         }
 
         .card-btn-action {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             color: var(--color-naranja-journey);
             font-family: 'Poppins', sans-serif;
             transition: gap 0.3s ease;
         }
 
         .creative-card:hover .card-btn-action {
-            gap: 14px;
+            gap: 10px;
             color: var(--color-naranja-hover);
         }
 
-        /* Botones de desplazamiento del Slider */
+        /* Botones de navegación del slider */
         .slider-nav-btn {
-            width: 52px;
-            height: 52px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background-color: var(--color-blanco);
             border: 2px solid var(--color-gris-border);
@@ -589,10 +625,10 @@ $brand_pillars = [
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
         }
 
         .slider-nav-btn:hover {
@@ -603,74 +639,75 @@ $brand_pillars = [
             transform: scale(1.08);
         }
 
-        /* CONTENIDO CREATIVO CON MOVIMIENTO */
+        /* 4. CONTENIDO CREATIVO CON MOVIMIENTO - ANCHO COMPLETO REDISEÑADO */
         .creative-narrative-section {
             padding: 6.5rem 0;
-            background: linear-gradient(180deg, var(--color-blanco) 0%, #F8FAFC 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
             position: relative;
             overflow: hidden;
-            width: 100%;
+            width: 100vw;
         }
 
         .animated-bg-shape {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.25;
+            filter: blur(90px);
+            opacity: 0.22;
             z-index: 0;
-            animation: floatShape 8s infinite alternate ease-in-out;
+            animation: floatShape 9s infinite alternate ease-in-out;
         }
 
         .bg-shape-1 {
-            width: 450px;
-            height: 450px;
+            width: 500px;
+            height: 500px;
             background: var(--color-naranja-journey);
-            top: -100px;
-            right: -100px;
+            top: -120px;
+            right: -120px;
         }
 
         .bg-shape-2 {
-            width: 550px;
-            height: 550px;
+            width: 600px;
+            height: 600px;
             background: var(--color-azul-peru-safe);
-            bottom: -150px;
-            left: -150px;
-            animation-delay: -4s;
+            bottom: -180px;
+            left: -180px;
+            animation-delay: -4.5s;
         }
 
         @keyframes floatShape {
             0% { transform: translateY(0px) rotate(0deg) scale(1); }
-            100% { transform: translateY(30px) rotate(15deg) scale(1.05); }
+            100% { transform: translateY(35px) rotate(18deg) scale(1.08); }
         }
 
         .narrative-card-wrapper {
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(20px);
-            border-radius: 30px;
-            padding: 4rem;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 20px 50px rgba(0, 50, 80, 0.06);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(24px);
+            border-radius: 32px;
+            padding: 4rem 3.5rem;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 25px 60px rgba(0, 34, 56, 0.07);
             width: 100%;
         }
 
         .narrative-paragraph {
-            font-size: 1.2rem;
-            line-height: 1.95;
+            font-size: 1.18rem;
+            line-height: 1.9;
             color: #334155;
             margin-bottom: 1.8rem;
         }
 
         .brand-motto-box {
-            background: linear-gradient(135deg, var(--color-azul-peru-safe) 0%, var(--color-azul-andino) 100%);
+            background: linear-gradient(135deg, #001A2B 0%, var(--color-azul-peru-safe) 100%);
             color: var(--color-blanco);
-            border-radius: 24px;
-            padding: 3.5rem;
+            border-radius: 28px;
+            padding: 3.8rem;
             margin: 4rem 0;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 50, 80, 0.2);
+            box-shadow: 0 20px 45px rgba(0, 26, 43, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .brand-motto-box::after {
@@ -678,79 +715,80 @@ $brand_pillars = [
             position: absolute;
             top: -50%;
             right: -20%;
-            width: 350px;
-            height: 350px;
-            background: rgba(233, 77, 0, 0.25);
+            width: 400px;
+            height: 400px;
+            background: rgba(233, 77, 0, 0.3);
             border-radius: 50%;
-            filter: blur(50px);
+            filter: blur(60px);
         }
 
         .brand-motto-title {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 800;
             color: var(--color-dorado-andino);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.4rem;
         }
 
-        /* PILARES DE MARCA */
+        /* PILARES DE MARCA REDISEÑADOS */
         .pillar-card {
             background: var(--color-blanco);
-            border-radius: 20px;
-            padding: 2.2rem;
+            border-radius: 22px;
+            padding: 2.4rem 2rem;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: all 0.35s ease;
             height: 100%;
         }
 
         .pillar-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             border-color: var(--color-naranja-journey);
-            box-shadow: 0 15px 35px rgba(233, 77, 0, 0.12);
+            box-shadow: 0 18px 40px rgba(233, 77, 0, 0.14);
         }
 
         .pillar-icon-box {
-            width: 62px;
-            height: 62px;
-            border-radius: 16px;
-            background: rgba(233, 77, 0, 0.1);
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: rgba(233, 77, 0, 0.12);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             margin-bottom: 1.4rem;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
         }
 
         .pillar-card:hover .pillar-icon-box {
             background: var(--color-naranja-journey);
             color: var(--color-blanco);
-            transform: rotate(-6deg) scale(1.05);
+            transform: rotate(-8deg) scale(1.08);
+            box-shadow: 0 8px 20px var(--color-naranja-glow);
         }
 
         .pillar-name {
             font-size: 1.35rem;
             font-weight: 700;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             font-family: 'Poppins', sans-serif;
         }
 
-        /* 3. FOOTER CREATIVO & DINAMICO - Ancho Completo */
+        /* 5. FOOTER CREATIVO & DINÁMICO - ANCHO COMPLETO */
         .footer-custom {
-            background-color: #001A2B;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: #001220;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 5rem;
             padding-bottom: 2rem;
             font-size: 0.98rem;
             color: #CBD5E1;
-            width: 100%;
+            width: 100vw;
         }
 
         .footer-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             font-weight: 800;
             color: var(--color-blanco);
             margin-bottom: 1.2rem;
@@ -810,6 +848,7 @@ $brand_pillars = [
             width: 40px;
             height: 3px;
             background-color: var(--color-naranja-journey);
+            border-radius: 2px;
         }
 
         .footer-links {
@@ -837,7 +876,7 @@ $brand_pillars = [
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             margin-top: 4rem;
             padding-top: 2rem;
             text-align: center;
@@ -882,50 +921,50 @@ $brand_pillars = [
 
         /* Responsivo */
         @media (max-width: 991.98px) {
-            .hero-title { font-size: 3rem; }
+            .hero-title { font-size: 3.2rem; }
             .hero-subtitle { font-size: 1.15rem; }
-            .narrative-card-wrapper { padding: 2.2rem; }
+            .narrative-card-wrapper { padding: 2.5rem 1.8rem; }
             .brand-motto-title { font-size: 2rem; }
-            .section-title { font-size: 2.2rem; }
-            .logo-img-header { height: 65px; }
+            .section-title { font-size: 2.1rem; }
+            .logo-img-header { height: 75px; }
         }
 
         @media (max-width: 575.98px) {
-            .hero-title { font-size: 2.2rem; }
-            .creative-card { flex: 0 0 300px; }
-            .logo-img-header { height: 55px; }
+            .hero-title { font-size: 2.3rem; }
+            .creative-card { flex: 0 0 260px; }
+            .card-img-container, .card-img-container img { height: 230px; }
+            .logo-img-header { height: 60px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. HEADER - Ancho Completo -->
-    <!-- Top Bar Superior -->
-    <div class="top-bar py-2">
+    <!-- 1. HEADER & TOP BAR REDISEÑADOS - ANCHO COMPLETO -->
+    <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
-            <!-- Teléfonos de contacto y Correo -->
-            <div class="d-flex align-items-center gap-3 flex-wrap">
-                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
-                    <i class="bi bi-telephone-fill text-warning"></i>
+            <!-- Teléfonos de contacto por departamento -->
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-telephone-fill"></i>
                     <span><strong><?php echo $phones['ventas']['label']; ?>:</strong> <?php echo $phones['ventas']['number']; ?></span>
                 </a>
-                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
-                    <i class="bi bi-gear-fill text-warning"></i>
+                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-gear-fill"></i>
                     <span><strong><?php echo $phones['operaciones']['label']; ?>:</strong> <?php echo $phones['operaciones']['number']; ?></span>
                 </a>
-                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
-                    <i class="bi bi-shield-check text-warning"></i>
+                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-shield-check"></i>
                     <span><strong><?php echo $phones['calidad']['label']; ?>:</strong> <?php echo $phones['calidad']['number']; ?></span>
                 </a>
-                <a href="mailto:<?php echo $email_address; ?>" class="d-none d-xl-flex align-items-center gap-2 ms-2">
+                <a href="mailto:<?php echo $email_address; ?>" class="topbar-email-link d-none d-xl-flex align-items-center gap-2 ms-3">
                     <i class="bi bi-envelope-fill text-warning"></i>
                     <span><?php echo $email_address; ?></span>
                 </a>
             </div>
 
-            <!-- Social Links con Hover -->
+            <!-- Redes sociales con animaciones -->
             <div class="d-none d-md-flex align-items-center gap-3">
-                <small class="text-light me-1">Síguenos:</small>
+                <small class="text-light me-1 opacity-75">Síguenos:</small>
                 <a href="https://facebook.com" target="_blank" class="topbar-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
                 <a href="https://instagram.com" target="_blank" class="topbar-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
                 <a href="https://tiktok.com" target="_blank" class="topbar-social-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
@@ -934,15 +973,15 @@ $brand_pillars = [
         </div>
     </div>
 
-    <!-- Menú Pegajoso (Sticky Navbar) Ancho Completo -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
+    <!-- Menú Pegajoso (Navbar Elegante) - Ancho Completo -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
-            <!-- Imagen del Logo (Tamaño Aumentado) -->
+            <!-- Imagen del Logo Aumentada -->
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
-            <!-- Toggle Mobile -->
+            <!-- Mobile Toggler -->
             <button class="navbar-toggler text-white border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list fs-1 text-white"></i>
             </button>
@@ -970,7 +1009,7 @@ $brand_pillars = [
                     </li>
                 </ul>
 
-                <!-- BOTON "Reserva tu Viaje" con icono llamita -->
+                <!-- BOTÓN "Reserva tu Viaje" con icono llamita -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
                     <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
@@ -984,10 +1023,8 @@ $brand_pillars = [
     </nav>
 
 
-    <!-- 2. CONTENIDO DE LA PAGINA -->
-    <!-- Slider con Video de Fondo (YouTube Video Background) Ancho Completo -->
+    <!-- 2. SLIDER CON VIDEO DE FONDO - TÍTULO EN MAYÚSCULAS Y ANCHO COMPLETO -->
     <section class="hero-video-slider">
-        <!-- Contenedor del video embed de YouTube con autoplay, loop, mute -->
         <div class="video-background-wrapper">
             <iframe src="https://www.youtube.com/embed/QPBMvXbjjUI?autoplay=1&mute=1&controls=0&loop=1&playlist=QPBMvXbjjUI&showinfo=0&rel=0&iv_load_policy=3&enablejsapi=1"
                     title="Perú Safe Journeys Background Video"
@@ -997,14 +1034,14 @@ $brand_pillars = [
         </div>
         <div class="video-overlay-gradient"></div>
 
-        <!-- Letras Creativas -->
         <div class="container-fluid px-3 px-lg-5 position-relative">
             <div class="hero-content mx-auto animate__animated animate__fadeInUp">
                 <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
-                    🇵🇪 Experiencias Auténticas en el Perú
+                    🇵🇪 EXPERIENCIAS AUTÉNTICAS EN EL PERÚ
                 </span>
+                <!-- Cambiado a Mayúsculas según solicitud -->
                 <h1 class="hero-title">
-                    Vive el Perú a tu manera
+                    VIVE EL PERÚ A TU MANERA
                 </h1>
                 <p class="hero-subtitle">
                     Diseñamos viajes personalizados con seguridad, confort y una profunda conexión con nuestra cultura, historia y naturaleza.
@@ -1022,7 +1059,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 5 Tarjetas Creativas con Botones de Desplazamiento Ancho Completo -->
+    <!-- 3. SECCIÓN "ENCUENTRA TU PRÓXIMO DESTINO" - TARJETAS REDUCIDAS & ANCHO COMPLETO -->
     <section class="cards-slider-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4">
@@ -1032,7 +1069,7 @@ $brand_pillars = [
                     <p class="text-muted mb-0 fs-5">Explora nuestras categorías de viaje diseñadas para cada tipo de aventurero.</p>
                 </div>
 
-                <!-- Botones de desplazamiento -->
+                <!-- Botones de navegación del slider -->
                 <div class="d-flex gap-2">
                     <button class="slider-nav-btn" id="slidePrevBtn" aria-label="Anterior">
                         <i class="bi bi-chevron-left"></i>
@@ -1043,7 +1080,7 @@ $brand_pillars = [
                 </div>
             </div>
 
-            <!-- Contenedor del Slider con 5 Tarjetas -->
+            <!-- Contenedor del Slider con Tarjetas Reducidas -->
             <div class="cards-track-wrapper">
                 <div class="cards-track" id="cardsTrack">
                     <?php foreach($tour_cards as $card): ?>
@@ -1070,14 +1107,14 @@ $brand_pillars = [
     </section>
 
 
-    <!-- Contenido Creativo con Movimiento utilizando los colores principales - Ancho Completo -->
+    <!-- 4. CONTENIDO CREATIVO CON MOVIMIENTO - ANCHO COMPLETO Y DISEÑO MEJORADO -->
     <section class="creative-narrative-section">
         <div class="animated-bg-shape bg-shape-1"></div>
         <div class="animated-bg-shape bg-shape-2"></div>
 
         <div class="container-fluid px-3 px-lg-5">
             <div class="narrative-card-wrapper">
-                <!-- Bloque de Introducción de la Marca -->
+                <!-- Bloque de Introducción -->
                 <div class="row align-items-center g-5 mb-5">
                     <div class="col-lg-7">
                         <span class="section-badge">✨ QUIÉNES SOMOS</span>
@@ -1098,7 +1135,7 @@ $brand_pillars = [
                     <div class="col-lg-5">
                         <div class="position-relative">
                             <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Perú Safe Journeys" class="img-fluid rounded-4 shadow-lg w-100" style="border: 4px solid #fff;">
-                            <div class="position-absolute bottom-0 start-0 m-4 p-4 rounded-3 text-white shadow-lg" style="background: rgba(0, 50, 80, 0.92); backdrop-filter: blur(8px);">
+                            <div class="position-absolute bottom-0 start-0 m-4 p-4 rounded-3 text-white shadow-lg" style="background: rgba(0, 34, 56, 0.92); backdrop-filter: blur(8px);">
                                 <i class="bi bi-quote fs-2 text-warning"></i>
                                 <p class="fs-6 mb-0">"Convertimos cada recorrido en una historia para recordar."</p>
                             </div>
@@ -1106,7 +1143,7 @@ $brand_pillars = [
                     </div>
                 </div>
 
-                <!-- CONTENIDO CREATIVO BANNER DESTACADO -->
+                <!-- BANNER DESTACADO -->
                 <div class="brand-motto-box text-center">
                     <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                         🌟 CONTENIDO CREATIVO
@@ -1150,7 +1187,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 3. FOOTER CREATIVO Y DINÁMICO - Ancho Completo -->
+    <!-- 5. FOOTER CREATIVO Y DINÁMICO - ANCHO COMPLETO -->
     <footer class="footer-custom" id="contacto">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
@@ -1233,7 +1270,7 @@ $brand_pillars = [
         </div>
     </footer>
 
-    <!-- Icono flotante de WhatsApp que lleva al contacto de Ventas (+51 931 352 810) -->
+    <!-- Icono flotante de WhatsApp -->
     <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Per%C3%BA%20Safe%20Journeys"
        class="whatsapp-float"
        target="_blank"
@@ -1257,13 +1294,13 @@ $brand_pillars = [
                 }
             });
 
-            // Slider Nav Controls
+            // Slider Nav Controls para tarjetas reducidas
             const track = document.getElementById('cardsTrack');
             const prevBtn = document.getElementById('slidePrevBtn');
             const nextBtn = document.getElementById('slideNextBtn');
 
             if (track && prevBtn && nextBtn) {
-                const scrollAmount = 388; // width of card + gap
+                const scrollAmount = 310; // width of compact card + gap
 
                 nextBtn.addEventListener('click', () => {
                     track.scrollBy({ left: scrollAmount, behavior: 'smooth' });

@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Google Fonts: Poppins & Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -54,19 +54,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <style>
         :root {
-            --color-azul-peru-safe: #003250;
+            --color-azul-peru-safe: #002238;
             --color-azul-andino: #0B527A;
             --color-naranja-journey: #E94D00;
             --color-naranja-hover: #C74000;
             --color-dorado-andino: #D9A441;
             --color-blanco: #FFFFFF;
-            --color-gris-claro: #F4F6F7;
+            --color-gris-claro: #F8FAFC;
 
-            --color-topbar: #002238;
-            --color-texto-oscuro: #1E293B;
+            --color-topbar: #001726;
+            --color-texto-oscuro: #0F172A;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(233, 77, 0, 0.35);
+            --color-naranja-glow: rgba(233, 77, 0, 0.4);
         }
 
         body {
@@ -74,7 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: var(--color-blanco);
             color: var(--color-texto-oscuro);
             overflow-x: hidden;
-            width: 100%;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
         }
 
         h1, h2, h3, h4, h5, h6,
@@ -86,36 +88,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* TopBar Superior */
         .top-bar {
-            background-color: var(--color-topbar);
-            font-size: 0.88rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            z-index: 1040;
+            background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1050;
             position: relative;
             width: 100%;
-        }
-
-        .top-bar a {
-            color: #CBD5E1;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .top-bar a:hover {
-            color: var(--color-naranja-journey);
+            padding: 0.45rem 0;
         }
 
         .topbar-phone-badge {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.25rem 0.75rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            color: #E2E8F0 !important;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .topbar-phone-badge:hover {
-            background: rgba(233, 77, 0, 0.25);
+            background: var(--color-naranja-journey);
             border-color: var(--color-naranja-journey);
+            color: var(--color-blanco) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--color-naranja-glow);
         }
 
         .topbar-social-icon {
@@ -125,48 +126,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             color: #CBD5E1 !important;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .topbar-social-icon:hover {
             background: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
-            transform: translateY(-2px) scale(1.1);
-            box-shadow: 0 4px 10px var(--color-naranja-glow);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 4px 12px var(--color-naranja-glow);
         }
 
         /* Sticky Navigation Bar */
         .navbar-custom {
-            background-color: rgba(0, 50, 80, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(0, 26, 43, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             transition: all 0.4s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             width: 100%;
+            padding: 0.6rem 0;
         }
 
         .navbar-custom.scrolled {
-            background-color: rgba(0, 34, 56, 0.98);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            padding-top: 0.4rem;
-            padding-bottom: 0.4rem;
+            background: rgba(0, 18, 32, 0.98);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            padding: 0.35rem 0;
         }
 
         .navbar-brand-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
             text-decoration: none;
         }
 
         .logo-img-header {
-            height: 80px;
+            height: 92px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
             transition: transform 0.3s ease;
         }
 
@@ -177,9 +178,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .nav-link {
             color: var(--color-blanco) !important;
             font-weight: 600;
-            font-size: 0.98rem;
-            padding: 0.6rem 1.2rem !important;
-            letter-spacing: 0.5px;
+            font-size: 0.92rem;
+            padding: 0.6rem 1.1rem !important;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
             position: relative;
             transition: color 0.3s ease;
@@ -188,18 +189,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: 4px;
             left: 50%;
             width: 0%;
             height: 2px;
-            background-color: var(--color-naranja-journey);
+            background: linear-gradient(90deg, var(--color-naranja-journey), var(--color-dorado-andino));
             transition: all 0.3s ease;
             transform: translateX(-50%);
+            border-radius: 2px;
         }
 
         .nav-link:hover::after,
         .nav-link.active::after {
-            width: 70%;
+            width: 75%;
         }
 
         .nav-link:hover,
@@ -209,48 +211,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* Botón Llama */
         .btn-reserva-llama {
-            background-color: var(--color-naranja-journey);
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco) !important;
             font-weight: 700;
+            font-size: 0.92rem;
+            letter-spacing: 0.5px;
             border-radius: 50px;
             padding: 0.75rem 1.8rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 4px 18px var(--color-naranja-glow);
-            border: 2px solid transparent;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 20px var(--color-naranja-glow);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
         }
 
         .btn-reserva-llama:hover {
-            background-color: var(--color-naranja-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(233, 77, 0, 0.5);
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 28px rgba(233, 77, 0, 0.6);
             color: var(--color-blanco);
         }
 
         .llama-svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: currentColor;
             transition: transform 0.3s ease;
         }
 
         .btn-reserva-llama:hover .llama-svg {
-            transform: scale(1.15) rotate(-8deg);
+            transform: scale(1.2) rotate(-10deg);
         }
 
         /* Hero Banner Section */
         .hero-banner-contacto {
             position: relative;
             padding: 8.5rem 0 6.5rem;
-            background: linear-gradient(180deg, rgba(0, 34, 56, 0.88) 0%, rgba(0, 50, 80, 0.94) 100%),
+            background: linear-gradient(180deg, rgba(0, 18, 32, 0.88) 0%, rgba(0, 34, 56, 0.94) 100%),
                         url('https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: var(--color-blanco);
             text-align: center;
             overflow: hidden;
-            width: 100%;
+            width: 100vw;
         }
 
         .hero-title {
@@ -259,7 +264,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 1.2rem;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            text-transform: uppercase;
         }
 
         .hero-title span {
@@ -282,7 +288,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         /* Section Title Styling */
         .section-badge {
             display: inline-block;
-            background-color: rgba(233, 77, 0, 0.12);
+            background-color: rgba(233, 77, 0, 0.1);
             color: var(--color-naranja-journey);
             font-weight: 800;
             font-size: 0.85rem;
@@ -291,7 +297,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 1rem;
-            border: 1px solid rgba(233, 77, 0, 0.3);
+            border: 1px solid rgba(233, 77, 0, 0.25);
             font-family: 'Poppins', sans-serif;
         }
 
@@ -310,15 +316,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: 1px solid var(--color-gris-border);
             border-radius: 20px;
             padding: 2.2rem;
-            box-shadow: 0 10px 30px rgba(0, 50, 80, 0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 34, 56, 0.05);
+            transition: all 0.35s ease;
             height: 100%;
         }
 
         .contacto-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             border-color: var(--color-naranja-journey);
-            box-shadow: 0 15px 35px rgba(233, 77, 0, 0.12);
+            box-shadow: 0 18px 38px rgba(233, 77, 0, 0.14);
         }
 
         .contacto-icon-box {
@@ -340,7 +346,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 24px;
             border: 1px solid var(--color-gris-border);
             padding: 3rem;
-            box-shadow: 0 15px 40px rgba(0, 50, 80, 0.08);
+            box-shadow: 0 15px 40px rgba(0, 34, 56, 0.08);
         }
 
         .form-control, .form-select {
@@ -357,7 +363,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .btn-submit-contacto {
-            background-color: var(--color-naranja-journey);
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco);
             font-weight: 700;
             border-radius: 50px;
@@ -370,26 +376,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .btn-submit-contacto:hover {
-            background-color: var(--color-naranja-hover);
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(233, 77, 0, 0.45);
+            box-shadow: 0 12px 30px rgba(233, 77, 0, 0.5);
             color: var(--color-blanco);
         }
 
         /* Footer */
         .footer-custom {
-            background-color: #001A2B;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: #001220;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 5rem;
             padding-bottom: 2rem;
             font-size: 0.98rem;
             color: #CBD5E1;
-            width: 100%;
+            width: 100vw;
         }
 
         .footer-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             font-weight: 800;
             color: var(--color-blanco);
             margin-bottom: 1.2rem;
@@ -476,7 +482,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             margin-top: 4rem;
             padding-top: 2rem;
             text-align: center;
@@ -522,30 +528,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-    <!-- 1. HEADER Ancho Completo -->
-    <!-- Top Bar -->
-    <div class="top-bar py-2">
+    <!-- 1. HEADER ANCHO COMPLETO -->
+    <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
-            <div class="d-flex align-items-center gap-3 flex-wrap">
-                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
-                    <i class="bi bi-telephone-fill text-warning"></i>
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-telephone-fill"></i>
                     <span><strong><?php echo $phones['ventas']['label']; ?>:</strong> <?php echo $phones['ventas']['number']; ?></span>
                 </a>
-                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
-                    <i class="bi bi-gear-fill text-warning"></i>
+                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-gear-fill"></i>
                     <span><strong><?php echo $phones['operaciones']['label']; ?>:</strong> <?php echo $phones['operaciones']['number']; ?></span>
                 </a>
-                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
-                    <i class="bi bi-shield-check text-warning"></i>
+                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-shield-check"></i>
                     <span><strong><?php echo $phones['calidad']['label']; ?>:</strong> <?php echo $phones['calidad']['number']; ?></span>
-                </a>
-                <a href="mailto:<?php echo $email_address; ?>" class="d-none d-xl-flex align-items-center gap-2 ms-2">
-                    <i class="bi bi-envelope-fill text-warning"></i>
-                    <span><?php echo $email_address; ?></span>
                 </a>
             </div>
             <div class="d-none d-md-flex align-items-center gap-3">
-                <small class="text-light me-1">Síguenos:</small>
+                <small class="text-light me-1 opacity-75">Síguenos:</small>
                 <a href="https://facebook.com" target="_blank" class="topbar-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
                 <a href="https://instagram.com" target="_blank" class="topbar-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
                 <a href="https://tiktok.com" target="_blank" class="topbar-social-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
@@ -554,20 +555,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-    <!-- Menú Pegajoso (Sticky Navbar) Ancho Completo -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
-            <!-- Imagen del Logo -->
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
-            <!-- Toggle Mobile -->
             <button class="navbar-toggler text-white border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list fs-1 text-white"></i>
             </button>
 
-            <!-- Menú Links & Botón Llama -->
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
@@ -590,7 +588,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </li>
                 </ul>
 
-                <!-- BOTON "Reserva tu Viaje" con icono llamita -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
                     <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
@@ -604,15 +601,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </nav>
 
 
-    <!-- HERO BANNER CONTACTO Ancho Completo -->
+    <!-- HERO BANNER CONTACTO ANCHO COMPLETO -->
     <header class="hero-banner-contacto">
         <div class="container-fluid px-3 px-lg-5 animate__animated animate__fadeIn">
             <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                 📞 CONTACTO OFICIAL
             </span>
             <h1 class="hero-title">
-                Estamos listos para planificar
-                <span>tu viaje soñado al Perú</span>
+                ESTAMOS LISTOS PARA PLANIFICAR
+                <span>TU VIAJE SOÑADO AL PERÚ</span>
             </h1>
             <p class="hero-subtitle">
                 Escríbenos, llámanos o envíanos un mensaje. Nuestros especialistas locales te responderán con atención personalizada para armar el itinerario perfecto.
@@ -621,7 +618,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
 
-    <!-- TARJETAS DE CONTACTO RÁPIDO Ancho Completo -->
+    <!-- TARJETAS DE CONTACTO RÁPIDO ANCHO COMPLETO -->
     <section class="py-5 bg-white">
         <div class="container-fluid px-3 px-lg-5 py-3">
             <div class="row g-4">
@@ -668,7 +665,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
 
-    <!-- FORMULARIO DE CONTACTO Ancho Completo -->
+    <!-- FORMULARIO DE CONTACTO ANCHO COMPLETO -->
     <section class="py-5" style="background-color: var(--color-gris-claro);">
         <div class="container-fluid px-3 px-lg-5 py-4">
             <div class="row align-items-center g-5">
@@ -758,7 +755,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
 
-    <!-- MAPA UBICACIÓN CUSCO Ancho Completo -->
+    <!-- MAPA UBICACIÓN CUSCO ANCHO COMPLETO -->
     <section class="py-5 bg-white">
         <div class="container-fluid px-3 px-lg-5 text-center py-3">
             <span class="section-badge">📍 UBICACIÓN</span>
@@ -780,11 +777,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
 
-    <!-- 3. FOOTER Ancho Completo -->
+    <!-- FOOTER ANCHO COMPLETO -->
     <footer class="footer-custom" id="contacto">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
-                <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
                     <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
@@ -799,7 +795,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
 
-                <!-- Enlaces Rápidos -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading">Navegación</h5>
                     <ul class="footer-links">
@@ -812,7 +807,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </ul>
                 </div>
 
-                <!-- Datos de Contacto Requeridos -->
                 <div class="col-lg-4 col-md-6">
                     <h5 class="footer-heading">Contacto Oficial</h5>
                     <div class="footer-contact-item">
@@ -854,7 +848,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
 
-            <!-- Pie de página copyright -->
             <div class="footer-bottom">
                 <p class="mb-0">
                     &copy; <?php echo $current_year; ?> Todos los derechos reservados para: <strong>Perú Safe Journeys | Viajes Perú</strong>

@@ -69,7 +69,7 @@ $experiences = [
     <!-- Google Fonts: Poppins & Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -80,19 +80,19 @@ $experiences = [
 
     <style>
         :root {
-            --color-azul-peru-safe: #003250;
+            --color-azul-peru-safe: #002238;
             --color-azul-andino: #0B527A;
             --color-naranja-journey: #E94D00;
             --color-naranja-hover: #C74000;
             --color-dorado-andino: #D9A441;
             --color-blanco: #FFFFFF;
-            --color-gris-claro: #F4F6F7;
+            --color-gris-claro: #F8FAFC;
 
-            --color-topbar: #002238;
-            --color-texto-oscuro: #1E293B;
+            --color-topbar: #001726;
+            --color-texto-oscuro: #0F172A;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(233, 77, 0, 0.35);
+            --color-naranja-glow: rgba(233, 77, 0, 0.4);
         }
 
         body {
@@ -100,7 +100,9 @@ $experiences = [
             background-color: var(--color-blanco);
             color: var(--color-texto-oscuro);
             overflow-x: hidden;
-            width: 100%;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
         }
 
         h1, h2, h3, h4, h5, h6,
@@ -112,36 +114,35 @@ $experiences = [
 
         /* TopBar Superior */
         .top-bar {
-            background-color: var(--color-topbar);
-            font-size: 0.88rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            z-index: 1040;
+            background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1050;
             position: relative;
             width: 100%;
-        }
-
-        .top-bar a {
-            color: #CBD5E1;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .top-bar a:hover {
-            color: var(--color-naranja-journey);
+            padding: 0.45rem 0;
         }
 
         .topbar-phone-badge {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.25rem 0.75rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            color: #E2E8F0 !important;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .topbar-phone-badge:hover {
-            background: rgba(233, 77, 0, 0.25);
+            background: var(--color-naranja-journey);
             border-color: var(--color-naranja-journey);
+            color: var(--color-blanco) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--color-naranja-glow);
         }
 
         .topbar-social-icon {
@@ -151,48 +152,48 @@ $experiences = [
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             color: #CBD5E1 !important;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .topbar-social-icon:hover {
             background: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
-            transform: translateY(-2px) scale(1.1);
-            box-shadow: 0 4px 10px var(--color-naranja-glow);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 4px 12px var(--color-naranja-glow);
         }
 
         /* Sticky Navigation Bar */
         .navbar-custom {
-            background-color: rgba(0, 50, 80, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(0, 26, 43, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             transition: all 0.4s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             width: 100%;
+            padding: 0.6rem 0;
         }
 
         .navbar-custom.scrolled {
-            background-color: rgba(0, 34, 56, 0.98);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            padding-top: 0.4rem;
-            padding-bottom: 0.4rem;
+            background: rgba(0, 18, 32, 0.98);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            padding: 0.35rem 0;
         }
 
         .navbar-brand-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
             text-decoration: none;
         }
 
         .logo-img-header {
-            height: 80px;
+            height: 92px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
             transition: transform 0.3s ease;
         }
 
@@ -203,9 +204,9 @@ $experiences = [
         .nav-link {
             color: var(--color-blanco) !important;
             font-weight: 600;
-            font-size: 0.98rem;
-            padding: 0.6rem 1.2rem !important;
-            letter-spacing: 0.5px;
+            font-size: 0.92rem;
+            padding: 0.6rem 1.1rem !important;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
             position: relative;
             transition: color 0.3s ease;
@@ -214,18 +215,19 @@ $experiences = [
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: 4px;
             left: 50%;
             width: 0%;
             height: 2px;
-            background-color: var(--color-naranja-journey);
+            background: linear-gradient(90deg, var(--color-naranja-journey), var(--color-dorado-andino));
             transition: all 0.3s ease;
             transform: translateX(-50%);
+            border-radius: 2px;
         }
 
         .nav-link:hover::after,
         .nav-link.active::after {
-            width: 70%;
+            width: 75%;
         }
 
         .nav-link:hover,
@@ -235,48 +237,51 @@ $experiences = [
 
         /* Botón Llama */
         .btn-reserva-llama {
-            background-color: var(--color-naranja-journey);
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco) !important;
             font-weight: 700;
+            font-size: 0.92rem;
+            letter-spacing: 0.5px;
             border-radius: 50px;
             padding: 0.75rem 1.8rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 4px 18px var(--color-naranja-glow);
-            border: 2px solid transparent;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 20px var(--color-naranja-glow);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
         }
 
         .btn-reserva-llama:hover {
-            background-color: var(--color-naranja-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(233, 77, 0, 0.5);
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 28px rgba(233, 77, 0, 0.6);
             color: var(--color-blanco);
         }
 
         .llama-svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: currentColor;
             transition: transform 0.3s ease;
         }
 
         .btn-reserva-llama:hover .llama-svg {
-            transform: scale(1.15) rotate(-8deg);
+            transform: scale(1.2) rotate(-10deg);
         }
 
         /* Hero Banner Section */
         .hero-banner-experiencias {
             position: relative;
             padding: 8.5rem 0 6.5rem;
-            background: linear-gradient(180deg, rgba(0, 34, 56, 0.85) 0%, rgba(0, 50, 80, 0.92) 100%),
+            background: linear-gradient(180deg, rgba(0, 18, 32, 0.82) 0%, rgba(0, 34, 56, 0.92) 100%),
                         url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: var(--color-blanco);
             text-align: center;
             overflow: hidden;
-            width: 100%;
+            width: 100vw;
         }
 
         .experiencias-hero-title {
@@ -285,7 +290,8 @@ $experiences = [
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 1.2rem;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            text-transform: uppercase;
         }
 
         .experiencias-hero-title span {
@@ -308,7 +314,7 @@ $experiences = [
         /* Section Title Styling */
         .section-badge {
             display: inline-block;
-            background-color: rgba(233, 77, 0, 0.12);
+            background-color: rgba(233, 77, 0, 0.1);
             color: var(--color-naranja-journey);
             font-weight: 800;
             font-size: 0.85rem;
@@ -317,8 +323,7 @@ $experiences = [
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 1rem;
-            border: 1px solid rgba(233, 77, 0, 0.3);
-            font-family: 'Poppins', sans-serif;
+            border: 1px solid rgba(233, 77, 0, 0.25);
         }
 
         .section-title {
@@ -333,11 +338,11 @@ $experiences = [
         /* Experience Cards */
         .exp-card {
             background: var(--color-blanco);
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 12px 35px rgba(0, 50, 80, 0.06);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(0, 34, 56, 0.05);
+            transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -345,20 +350,20 @@ $experiences = [
 
         .exp-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 45px rgba(233, 77, 0, 0.18);
+            box-shadow: 0 18px 40px rgba(233, 77, 0, 0.18);
             border-color: var(--color-naranja-journey);
         }
 
         .exp-img-wrapper {
             position: relative;
             width: 100%;
-            height: 420px;
+            height: 280px;
             overflow: hidden;
         }
 
         .exp-img-wrapper img {
             width: 100%;
-            height: 420px;
+            height: 280px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
@@ -369,21 +374,21 @@ $experiences = [
 
         .exp-badge-tag {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(0, 50, 80, 0.88);
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 34, 56, 0.88);
             backdrop-filter: blur(8px);
             color: var(--color-blanco);
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             font-weight: 700;
-            padding: 0.45rem 1rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             font-family: 'Poppins', sans-serif;
         }
 
         .exp-body {
-            padding: 2rem;
+            padding: 1.6rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -391,7 +396,7 @@ $experiences = [
         }
 
         .exp-title {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.6rem;
@@ -400,25 +405,25 @@ $experiences = [
 
         .exp-desc {
             color: var(--color-texto-suave);
-            font-size: 0.98rem;
-            line-height: 1.7;
-            margin-bottom: 1.8rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
 
         /* Footer */
         .footer-custom {
-            background-color: #001A2B;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: #001220;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 5rem;
             padding-bottom: 2rem;
             font-size: 0.98rem;
             color: #CBD5E1;
-            width: 100%;
+            width: 100vw;
         }
 
         .footer-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             font-weight: 800;
             color: var(--color-blanco);
             margin-bottom: 1.2rem;
@@ -505,7 +510,7 @@ $experiences = [
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             margin-top: 4rem;
             padding-top: 2rem;
             text-align: center;
@@ -551,30 +556,25 @@ $experiences = [
 </head>
 <body>
 
-    <!-- 1. HEADER Ancho Completo -->
-    <!-- Top Bar -->
-    <div class="top-bar py-2">
+    <!-- 1. HEADER ANCHO COMPLETO -->
+    <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
-            <div class="d-flex align-items-center gap-3 flex-wrap">
-                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
-                    <i class="bi bi-telephone-fill text-warning"></i>
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-telephone-fill"></i>
                     <span><strong><?php echo $phones['ventas']['label']; ?>:</strong> <?php echo $phones['ventas']['number']; ?></span>
                 </a>
-                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
-                    <i class="bi bi-gear-fill text-warning"></i>
+                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-gear-fill"></i>
                     <span><strong><?php echo $phones['operaciones']['label']; ?>:</strong> <?php echo $phones['operaciones']['number']; ?></span>
                 </a>
-                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
-                    <i class="bi bi-shield-check text-warning"></i>
+                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-shield-check"></i>
                     <span><strong><?php echo $phones['calidad']['label']; ?>:</strong> <?php echo $phones['calidad']['number']; ?></span>
-                </a>
-                <a href="mailto:<?php echo $email_address; ?>" class="d-none d-xl-flex align-items-center gap-2 ms-2">
-                    <i class="bi bi-envelope-fill text-warning"></i>
-                    <span><?php echo $email_address; ?></span>
                 </a>
             </div>
             <div class="d-none d-md-flex align-items-center gap-3">
-                <small class="text-light me-1">Síguenos:</small>
+                <small class="text-light me-1 opacity-75">Síguenos:</small>
                 <a href="https://facebook.com" target="_blank" class="topbar-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
                 <a href="https://instagram.com" target="_blank" class="topbar-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
                 <a href="https://tiktok.com" target="_blank" class="topbar-social-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
@@ -583,20 +583,17 @@ $experiences = [
         </div>
     </div>
 
-    <!-- Menú Pegajoso (Sticky Navbar) Ancho Completo -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
-            <!-- Imagen del Logo -->
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
-            <!-- Toggle Mobile -->
             <button class="navbar-toggler text-white border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list fs-1 text-white"></i>
             </button>
 
-            <!-- Menú Links & Botón Llama -->
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
@@ -619,7 +616,6 @@ $experiences = [
                     </li>
                 </ul>
 
-                <!-- BOTON "Reserva tu Viaje" con icono llamita -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
                     <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
@@ -633,15 +629,15 @@ $experiences = [
     </nav>
 
 
-    <!-- HERO BANNER EXPERIENCIAS Ancho Completo -->
+    <!-- HERO BANNER EXPERIENCIAS ANCHO COMPLETO -->
     <header class="hero-banner-experiencias">
         <div class="container-fluid px-3 px-lg-5 animate__animated animate__fadeIn">
             <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                 ✨ MÁS QUE UN VIAJE
             </span>
             <h1 class="experiencias-hero-title">
-                Experiencias Auténticas & Inolvidables
-                <span>Momentos que perduran en la memoria</span>
+                EXPERIENCIAS AUTÉNTICAS & INOLVIDABLES
+                <span>MOMENTOS QUE PERDURAN EN LA MEMORIA</span>
             </h1>
             <p class="experiencias-hero-subtitle">
                 Diseñamos vivencias únicas conectadas con la cultura, tradiciones, aventura y naturaleza del Perú.
@@ -650,7 +646,7 @@ $experiences = [
     </header>
 
 
-    <!-- SECCIÓN LISTA DE EXPERIENCIAS Ancho Completo -->
+    <!-- SECCIÓN LISTA DE EXPERIENCIAS ANCHO COMPLETO -->
     <section class="py-5" style="background-color: var(--color-gris-claro);">
         <div class="container-fluid px-3 px-lg-5 py-4">
             <div class="text-center max-w-700 mx-auto mb-5">
@@ -689,11 +685,10 @@ $experiences = [
     </section>
 
 
-    <!-- 3. FOOTER Ancho Completo -->
+    <!-- FOOTER ANCHO COMPLETO -->
     <footer class="footer-custom" id="contacto">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
-                <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
                     <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
@@ -708,7 +703,6 @@ $experiences = [
                     </div>
                 </div>
 
-                <!-- Enlaces Rápidos -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading">Navegación</h5>
                     <ul class="footer-links">
@@ -721,7 +715,6 @@ $experiences = [
                     </ul>
                 </div>
 
-                <!-- Datos de Contacto Requeridos -->
                 <div class="col-lg-4 col-md-6">
                     <h5 class="footer-heading">Contacto Oficial</h5>
                     <div class="footer-contact-item">
@@ -763,7 +756,6 @@ $experiences = [
                 </div>
             </div>
 
-            <!-- Pie de página copyright -->
             <div class="footer-bottom">
                 <p class="mb-0">
                     &copy; <?php echo $current_year; ?> Todos los derechos reservados para: <strong>Perú Safe Journeys | Viajes Perú</strong>
