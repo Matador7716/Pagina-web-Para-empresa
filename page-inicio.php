@@ -110,8 +110,8 @@ $brand_pillars = [
             /* Colores Principales */
             --color-azul-peru-safe: #003250;  /* Azul oscuro elegante */
             --color-azul-andino: #0B527A;     /* Azul secundario */
-            --color-naranja-journey: #FF6B22; /* Naranja vibrante principal */
-            --color-naranja-hover: #E0540F;   /* Naranja oscuro para hover */
+            --color-naranja-journey: #E94D00; /* Nuevo naranja intenso */
+            --color-naranja-hover: #C74000;   /* Naranja oscuro para hover */
             --color-dorado-andino: #D9A441;   /* Dorado/Amarillo acento */
             --color-blanco: #FFFFFF;          /* Blanco */
             --color-gris-claro: #F4F6F7;      /* Gris claro para secciones */
@@ -120,7 +120,7 @@ $brand_pillars = [
             --color-texto-oscuro: #1E293B;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(255, 107, 34, 0.35);
+            --color-naranja-glow: rgba(233, 77, 0, 0.35);
         }
 
         body {
@@ -128,6 +128,7 @@ $brand_pillars = [
             background-color: var(--color-blanco);
             color: var(--color-texto-oscuro);
             overflow-x: hidden;
+            width: 100%;
         }
 
         /* Tipografía Amigable y Creativa (Poppins para títulos y botones) */
@@ -146,6 +147,7 @@ $brand_pillars = [
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             z-index: 1040;
             position: relative;
+            width: 100%;
         }
 
         .top-bar a {
@@ -161,14 +163,14 @@ $brand_pillars = [
         .topbar-phone-badge {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.2rem 0.65rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 30px;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
         }
 
         .topbar-phone-badge:hover {
-            background: rgba(255, 107, 34, 0.2);
+            background: rgba(233, 77, 0, 0.25);
             border-color: var(--color-naranja-journey);
         }
 
@@ -176,12 +178,12 @@ $brand_pillars = [
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             color: #CBD5E1 !important;
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
         }
 
@@ -194,18 +196,19 @@ $brand_pillars = [
 
         /* Menú Pegajoso (Sticky Header) Transparente sobre el video / scroll */
         .navbar-custom {
-            background-color: rgba(0, 50, 80, 0.85);
+            background-color: rgba(0, 50, 80, 0.88);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             transition: all 0.4s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
         }
 
         .navbar-custom.scrolled {
             background-color: rgba(0, 34, 56, 0.98);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
         }
 
         .navbar-brand-logo {
@@ -215,23 +218,24 @@ $brand_pillars = [
             text-decoration: none;
         }
 
+        /* Aumento del tamaño del logo */
         .logo-img-header {
-            height: 52px;
+            height: 80px; /* Aumentado considerablemente */
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
             transition: transform 0.3s ease;
         }
 
         .navbar-brand-logo:hover .logo-img-header {
-            transform: scale(1.04);
+            transform: scale(1.05);
         }
 
         .nav-link {
             color: var(--color-blanco) !important;
             font-weight: 600;
-            font-size: 0.92rem;
-            padding: 0.5rem 1rem !important;
+            font-size: 0.98rem;
+            padding: 0.6rem 1.2rem !important;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             position: relative;
@@ -260,13 +264,13 @@ $brand_pillars = [
             color: var(--color-naranja-journey) !important;
         }
 
-        /* BOTON "Reserva tu Viaje" - Color Naranja con icono llamita */
+        /* BOTON "Reserva tu Viaje" - Color Naranja #E94D00 */
         .btn-reserva-llama {
             background-color: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.65rem 1.6rem;
+            padding: 0.75rem 1.8rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -279,13 +283,13 @@ $brand_pillars = [
         .btn-reserva-llama:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 34, 0.5);
+            box-shadow: 0 8px 25px rgba(233, 77, 0, 0.5);
             color: var(--color-blanco);
         }
 
         .llama-svg {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             fill: currentColor;
             transition: transform 0.3s ease;
         }
@@ -298,13 +302,14 @@ $brand_pillars = [
         .hero-video-slider {
             position: relative;
             height: 90vh;
-            min-height: 600px;
+            min-height: 620px;
             max-height: 850px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--color-blanco);
+            width: 100%;
         }
 
         /* Contenedor del Video Embed YouTube */
@@ -350,14 +355,14 @@ $brand_pillars = [
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 950px;
+            max-width: 1100px;
             text-align: center;
             padding: 2rem 1rem;
         }
 
         /* Letras Creativas con Tipografía Amigable */
         .hero-title {
-            font-size: 3.8rem;
+            font-size: 4.2rem;
             font-weight: 800;
             letter-spacing: -1px;
             line-height: 1.15;
@@ -369,13 +374,13 @@ $brand_pillars = [
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 500;
             line-height: 1.8;
             margin-bottom: 2.5rem;
             color: #F1F5F9;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-            max-width: 820px;
+            max-width: 950px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -385,8 +390,8 @@ $brand_pillars = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.9rem 2.2rem;
-            font-size: 1.05rem;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -399,7 +404,7 @@ $brand_pillars = [
         .btn-banner-primary:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(255, 107, 34, 0.5);
+            box-shadow: 0 12px 30px rgba(233, 77, 0, 0.5);
         }
 
         .btn-banner-secondary {
@@ -407,8 +412,8 @@ $brand_pillars = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.9rem 2.2rem;
-            font-size: 1.05rem;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -425,16 +430,17 @@ $brand_pillars = [
             box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
         }
 
-        /* 5 TARJETAS CREATIVAS CON BOTONES DE DESPLAZAMIENTO */
+        /* 5 TARJETAS CREATIVAS CON BOTONES DE DESPLAZAMIENTO - Ancho Completo */
         .cards-slider-section {
             background-color: var(--color-gris-claro);
-            padding: 5rem 0;
+            padding: 5.5rem 0;
             position: relative;
+            width: 100%;
         }
 
         .section-badge {
             display: inline-block;
-            background-color: rgba(255, 107, 34, 0.12);
+            background-color: rgba(233, 77, 0, 0.12);
             color: var(--color-naranja-journey);
             font-weight: 800;
             font-size: 0.85rem;
@@ -443,11 +449,11 @@ $brand_pillars = [
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 1rem;
-            border: 1px solid rgba(255, 107, 34, 0.3);
+            border: 1px solid rgba(233, 77, 0, 0.3);
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.5rem;
@@ -457,23 +463,24 @@ $brand_pillars = [
             position: relative;
             overflow: hidden;
             padding: 1rem 0 2rem;
+            width: 100%;
         }
 
         .cards-track {
             display: flex;
-            gap: 24px;
+            gap: 28px;
             overflow-x: auto;
             scroll-behavior: smooth;
             padding: 10px 5px 25px;
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
         }
 
         .cards-track::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
+            display: none;
         }
 
         .creative-card {
-            flex: 0 0 320px;
+            flex: 0 0 360px;
             background: var(--color-blanco);
             border-radius: 20px;
             overflow: hidden;
@@ -489,12 +496,11 @@ $brand_pillars = [
 
         .creative-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255, 107, 34, 0.18);
+            box-shadow: 0 20px 40px rgba(233, 77, 0, 0.18);
             border-color: var(--color-naranja-journey);
             color: var(--color-texto-oscuro);
         }
 
-        /* Estandarización de tamaño de imagen a alto uniforme */
         .card-img-container {
             position: relative;
             width: 100%;
@@ -520,16 +526,16 @@ $brand_pillars = [
             background: rgba(0, 50, 80, 0.85);
             backdrop-filter: blur(8px);
             color: var(--color-blanco);
-            font-size: 0.78rem;
+            font-size: 0.82rem;
             font-weight: 700;
-            padding: 0.4rem 0.9rem;
+            padding: 0.45rem 1rem;
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             font-family: 'Poppins', sans-serif;
         }
 
         .card-body-content {
-            padding: 1.6rem;
+            padding: 1.8rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -538,7 +544,7 @@ $brand_pillars = [
         }
 
         .card-title-text {
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             font-weight: 700;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.6rem;
@@ -550,7 +556,7 @@ $brand_pillars = [
         }
 
         .card-desc-text {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--color-texto-suave);
             line-height: 1.6;
             margin-bottom: 1.5rem;
@@ -561,21 +567,21 @@ $brand_pillars = [
             align-items: center;
             gap: 8px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--color-naranja-journey);
             font-family: 'Poppins', sans-serif;
             transition: gap 0.3s ease;
         }
 
         .creative-card:hover .card-btn-action {
-            gap: 12px;
+            gap: 14px;
             color: var(--color-naranja-hover);
         }
 
         /* Botones de desplazamiento del Slider */
         .slider-nav-btn {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             background-color: var(--color-blanco);
             border: 2px solid var(--color-gris-border);
@@ -583,7 +589,7 @@ $brand_pillars = [
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -599,10 +605,11 @@ $brand_pillars = [
 
         /* CONTENIDO CREATIVO CON MOVIMIENTO */
         .creative-narrative-section {
-            padding: 6rem 0;
+            padding: 6.5rem 0;
             background: linear-gradient(180deg, var(--color-blanco) 0%, #F8FAFC 100%);
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .animated-bg-shape {
@@ -615,16 +622,16 @@ $brand_pillars = [
         }
 
         .bg-shape-1 {
-            width: 400px;
-            height: 400px;
+            width: 450px;
+            height: 450px;
             background: var(--color-naranja-journey);
             top: -100px;
             right: -100px;
         }
 
         .bg-shape-2 {
-            width: 500px;
-            height: 500px;
+            width: 550px;
+            height: 550px;
             background: var(--color-azul-peru-safe);
             bottom: -150px;
             left: -150px;
@@ -639,17 +646,18 @@ $brand_pillars = [
         .narrative-card-wrapper {
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(20px);
             border-radius: 30px;
-            padding: 3.5rem;
+            padding: 4rem;
             border: 1px solid rgba(226, 232, 240, 0.8);
             box-shadow: 0 20px 50px rgba(0, 50, 80, 0.06);
+            width: 100%;
         }
 
         .narrative-paragraph {
-            font-size: 1.15rem;
-            line-height: 1.9;
+            font-size: 1.2rem;
+            line-height: 1.95;
             color: #334155;
             margin-bottom: 1.8rem;
         }
@@ -658,8 +666,8 @@ $brand_pillars = [
             background: linear-gradient(135deg, var(--color-azul-peru-safe) 0%, var(--color-azul-andino) 100%);
             color: var(--color-blanco);
             border-radius: 24px;
-            padding: 3rem;
-            margin: 3.5rem 0;
+            padding: 3.5rem;
+            margin: 4rem 0;
             position: relative;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0, 50, 80, 0.2);
@@ -670,15 +678,15 @@ $brand_pillars = [
             position: absolute;
             top: -50%;
             right: -20%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 107, 34, 0.25);
+            width: 350px;
+            height: 350px;
+            background: rgba(233, 77, 0, 0.25);
             border-radius: 50%;
             filter: blur(50px);
         }
 
         .brand-motto-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--color-dorado-andino);
             margin-bottom: 1.2rem;
@@ -688,7 +696,7 @@ $brand_pillars = [
         .pillar-card {
             background: var(--color-blanco);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 2.2rem;
             border: 1px solid var(--color-gris-border);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
             transition: all 0.3s ease;
@@ -698,20 +706,20 @@ $brand_pillars = [
         .pillar-card:hover {
             transform: translateY(-6px);
             border-color: var(--color-naranja-journey);
-            box-shadow: 0 15px 35px rgba(255, 107, 34, 0.12);
+            box-shadow: 0 15px 35px rgba(233, 77, 0, 0.12);
         }
 
         .pillar-icon-box {
-            width: 58px;
-            height: 58px;
+            width: 62px;
+            height: 62px;
             border-radius: 16px;
-            background: rgba(255, 107, 34, 0.1);
+            background: rgba(233, 77, 0, 0.1);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.4rem;
             transition: all 0.3s ease;
         }
 
@@ -722,26 +730,27 @@ $brand_pillars = [
         }
 
         .pillar-name {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.5rem;
             font-family: 'Poppins', sans-serif;
         }
 
-        /* 3. FOOTER CREATIVO & DINAMICO */
+        /* 3. FOOTER CREATIVO & DINAMICO - Ancho Completo */
         .footer-custom {
             background-color: #001A2B;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 4.5rem;
+            padding-top: 5rem;
             padding-bottom: 2rem;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: #CBD5E1;
+            width: 100%;
         }
 
         .footer-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--color-blanco);
             margin-bottom: 1.2rem;
@@ -756,21 +765,21 @@ $brand_pillars = [
         .footer-contact-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 1rem;
+            gap: 14px;
+            margin-bottom: 1.2rem;
             color: #94A3B8;
         }
 
         .footer-contact-icon {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             background-color: rgba(255, 255, 255, 0.06);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--color-naranja-journey);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .footer-contact-item a {
@@ -784,10 +793,10 @@ $brand_pillars = [
         }
 
         .footer-heading {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--color-blanco);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.6rem;
             position: relative;
             padding-bottom: 0.5rem;
             font-family: 'Poppins', sans-serif;
@@ -798,8 +807,8 @@ $brand_pillars = [
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 35px;
-            height: 2px;
+            width: 40px;
+            height: 3px;
             background-color: var(--color-naranja-journey);
         }
 
@@ -810,7 +819,7 @@ $brand_pillars = [
         }
 
         .footer-links li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
         }
 
         .footer-links a {
@@ -819,21 +828,21 @@ $brand_pillars = [
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .footer-links a:hover {
             color: var(--color-naranja-journey);
-            transform: translateX(4px);
+            transform: translateX(6px);
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: 3.5rem;
-            padding-top: 1.8rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
             text-align: center;
             color: #94A3B8;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
         }
 
         /* Icono Flotante de WhatsApp */
@@ -841,13 +850,13 @@ $brand_pillars = [
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 32px;
+            font-size: 34px;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             z-index: 1050;
             display: flex;
@@ -873,25 +882,27 @@ $brand_pillars = [
 
         /* Responsivo */
         @media (max-width: 991.98px) {
-            .hero-title { font-size: 2.8rem; }
-            .hero-subtitle { font-size: 1.1rem; }
-            .narrative-card-wrapper { padding: 2rem; }
-            .brand-motto-title { font-size: 1.8rem; }
-            .section-title { font-size: 2rem; }
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.15rem; }
+            .narrative-card-wrapper { padding: 2.2rem; }
+            .brand-motto-title { font-size: 2rem; }
+            .section-title { font-size: 2.2rem; }
+            .logo-img-header { height: 65px; }
         }
 
         @media (max-width: 575.98px) {
-            .hero-title { font-size: 2.1rem; }
-            .creative-card { flex: 0 0 280px; }
+            .hero-title { font-size: 2.2rem; }
+            .creative-card { flex: 0 0 300px; }
+            .logo-img-header { height: 55px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. HEADER -->
+    <!-- 1. HEADER - Ancho Completo -->
     <!-- Top Bar Superior -->
     <div class="top-bar py-2">
-        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <!-- Teléfonos de contacto y Correo -->
             <div class="d-flex align-items-center gap-3 flex-wrap">
                 <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
@@ -923,10 +934,10 @@ $brand_pillars = [
         </div>
     </div>
 
-    <!-- Menú Pegajoso (Sticky Navbar) -->
+    <!-- Menú Pegajoso (Sticky Navbar) Ancho Completo -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
-        <div class="container">
-            <!-- Imagen del Logo -->
+        <div class="container-fluid px-3 px-lg-5">
+            <!-- Imagen del Logo (Tamaño Aumentado) -->
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
@@ -974,7 +985,7 @@ $brand_pillars = [
 
 
     <!-- 2. CONTENIDO DE LA PAGINA -->
-    <!-- Slider con Video de Fondo (YouTube Video Background) -->
+    <!-- Slider con Video de Fondo (YouTube Video Background) Ancho Completo -->
     <section class="hero-video-slider">
         <!-- Contenedor del video embed de YouTube con autoplay, loop, mute -->
         <div class="video-background-wrapper">
@@ -987,9 +998,9 @@ $brand_pillars = [
         <div class="video-overlay-gradient"></div>
 
         <!-- Letras Creativas -->
-        <div class="container position-relative">
+        <div class="container-fluid px-3 px-lg-5 position-relative">
             <div class="hero-content mx-auto animate__animated animate__fadeInUp">
-                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
+                <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                     🇵🇪 Experiencias Auténticas en el Perú
                 </span>
                 <h1 class="hero-title">
@@ -1011,14 +1022,14 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 5 Tarjetas Creativas con Botones de Desplazamiento -->
+    <!-- 5 Tarjetas Creativas con Botones de Desplazamiento Ancho Completo -->
     <section class="cards-slider-section">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4">
                 <div>
                     <span class="section-badge">🗺️ EXPERIENCIAS DESTACADAS</span>
                     <h2 class="section-title">Encuentra tu próximo destino</h2>
-                    <p class="text-muted mb-0">Explora nuestras categorías de viaje diseñadas para cada tipo de aventurero.</p>
+                    <p class="text-muted mb-0 fs-5">Explora nuestras categorías de viaje diseñadas para cada tipo de aventurero.</p>
                 </div>
 
                 <!-- Botones de desplazamiento -->
@@ -1059,12 +1070,12 @@ $brand_pillars = [
     </section>
 
 
-    <!-- Contenido Creativo con Movimiento utilizando los colores principales -->
+    <!-- Contenido Creativo con Movimiento utilizando los colores principales - Ancho Completo -->
     <section class="creative-narrative-section">
         <div class="animated-bg-shape bg-shape-1"></div>
         <div class="animated-bg-shape bg-shape-2"></div>
 
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <div class="narrative-card-wrapper">
                 <!-- Bloque de Introducción de la Marca -->
                 <div class="row align-items-center g-5 mb-5">
@@ -1086,10 +1097,10 @@ $brand_pillars = [
 
                     <div class="col-lg-5">
                         <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Perú Safe Journeys" class="img-fluid rounded-4 shadow-lg" style="border: 4px solid #fff;">
-                            <div class="position-absolute bottom-0 start-0 m-3 p-3 rounded-3 text-white shadow" style="background: rgba(0, 50, 80, 0.9); backdrop-filter: blur(8px);">
-                                <i class="bi bi-quote fs-3 text-warning"></i>
-                                <p class="small mb-0">"Convertimos cada recorrido en una historia para recordar."</p>
+                            <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Perú Safe Journeys" class="img-fluid rounded-4 shadow-lg w-100" style="border: 4px solid #fff;">
+                            <div class="position-absolute bottom-0 start-0 m-4 p-4 rounded-3 text-white shadow-lg" style="background: rgba(0, 50, 80, 0.92); backdrop-filter: blur(8px);">
+                                <i class="bi bi-quote fs-2 text-warning"></i>
+                                <p class="fs-6 mb-0">"Convertimos cada recorrido en una historia para recordar."</p>
                             </div>
                         </div>
                     </div>
@@ -1097,7 +1108,7 @@ $brand_pillars = [
 
                 <!-- CONTENIDO CREATIVO BANNER DESTACADO -->
                 <div class="brand-motto-box text-center">
-                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3">
+                    <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                         🌟 CONTENIDO CREATIVO
                     </span>
                     <h3 class="brand-motto-title">
@@ -1116,7 +1127,7 @@ $brand_pillars = [
                     <div class="text-center mb-5">
                         <span class="section-badge">💎 NUESTROS VALORES</span>
                         <h2 class="section-title">Pilares de Marca</h2>
-                        <p class="text-muted">Las columnas que fundamentan el compromiso con nuestros viajeros.</p>
+                        <p class="text-muted fs-5">Las columnas que fundamentan el compromiso con nuestros viajeros.</p>
                     </div>
 
                     <div class="row g-4">
@@ -1127,7 +1138,7 @@ $brand_pillars = [
                                         <i class="bi <?php echo $pillar['icon']; ?>"></i>
                                     </div>
                                     <h4 class="pillar-name"><?php echo $pillar['name']; ?></h4>
-                                    <p class="text-secondary small mb-0" style="line-height: 1.7;"><?php echo $pillar['desc']; ?></p>
+                                    <p class="text-secondary mb-0" style="line-height: 1.7; font-size: 1rem;"><?php echo $pillar['desc']; ?></p>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -1139,16 +1150,16 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 3. FOOTER CREATIVO Y DINÁMICO -->
+    <!-- 3. FOOTER CREATIVO Y DINÁMICO - Ancho Completo -->
     <footer class="footer-custom" id="contacto">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
                 <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
                     <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
-                    <p class="pe-lg-4" style="color: #94A3B8;">
+                    <p class="pe-lg-4" style="color: #94A3B8; font-size: 1rem;">
                         Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas. Conectamos viajeros con el corazón cultural, histórico y natural del Perú.
                     </p>
                     <div class="d-flex gap-3 mt-3">
@@ -1252,7 +1263,7 @@ $brand_pillars = [
             const nextBtn = document.getElementById('slideNextBtn');
 
             if (track && prevBtn && nextBtn) {
-                const scrollAmount = 344; // width of card + gap
+                const scrollAmount = 388; // width of card + gap
 
                 nextBtn.addEventListener('click', () => {
                     track.scrollBy({ left: scrollAmount, behavior: 'smooth' });

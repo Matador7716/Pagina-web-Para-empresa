@@ -88,8 +88,8 @@ $programs = [
         :root {
             --color-azul-peru-safe: #003250;
             --color-azul-andino: #0B527A;
-            --color-naranja-journey: #FF6B22;
-            --color-naranja-hover: #E0540F;
+            --color-naranja-journey: #E94D00;
+            --color-naranja-hover: #C74000;
             --color-dorado-andino: #D9A441;
             --color-blanco: #FFFFFF;
             --color-gris-claro: #F4F6F7;
@@ -98,7 +98,7 @@ $programs = [
             --color-texto-oscuro: #1E293B;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(255, 107, 34, 0.35);
+            --color-naranja-glow: rgba(233, 77, 0, 0.35);
         }
 
         body {
@@ -106,6 +106,7 @@ $programs = [
             background-color: var(--color-blanco);
             color: var(--color-texto-oscuro);
             overflow-x: hidden;
+            width: 100%;
         }
 
         h1, h2, h3, h4, h5, h6,
@@ -122,6 +123,7 @@ $programs = [
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             z-index: 1040;
             position: relative;
+            width: 100%;
         }
 
         .top-bar a {
@@ -137,14 +139,14 @@ $programs = [
         .topbar-phone-badge {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.2rem 0.65rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 30px;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
         }
 
         .topbar-phone-badge:hover {
-            background: rgba(255, 107, 34, 0.2);
+            background: rgba(233, 77, 0, 0.25);
             border-color: var(--color-naranja-journey);
         }
 
@@ -152,12 +154,12 @@ $programs = [
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             color: #CBD5E1 !important;
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
         }
 
@@ -175,13 +177,14 @@ $programs = [
             -webkit-backdrop-filter: blur(12px);
             transition: all 0.4s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
         }
 
         .navbar-custom.scrolled {
             background-color: rgba(0, 34, 56, 0.98);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
         }
 
         .navbar-brand-logo {
@@ -192,22 +195,22 @@ $programs = [
         }
 
         .logo-img-header {
-            height: 52px;
+            height: 80px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
             transition: transform 0.3s ease;
         }
 
         .navbar-brand-logo:hover .logo-img-header {
-            transform: scale(1.04);
+            transform: scale(1.05);
         }
 
         .nav-link {
             color: var(--color-blanco) !important;
             font-weight: 600;
-            font-size: 0.92rem;
-            padding: 0.5rem 1rem !important;
+            font-size: 0.98rem;
+            padding: 0.6rem 1.2rem !important;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             position: relative;
@@ -242,7 +245,7 @@ $programs = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.65rem 1.6rem;
+            padding: 0.75rem 1.8rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -255,13 +258,13 @@ $programs = [
         .btn-reserva-llama:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 34, 0.5);
+            box-shadow: 0 8px 25px rgba(233, 77, 0, 0.5);
             color: var(--color-blanco);
         }
 
         .llama-svg {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             fill: currentColor;
             transition: transform 0.3s ease;
         }
@@ -279,6 +282,7 @@ $programs = [
             color: var(--color-blanco);
             text-align: center;
             overflow: hidden;
+            width: 100%;
         }
 
         .programas-hero-title {
@@ -310,7 +314,7 @@ $programs = [
         /* Section Title Styling */
         .section-badge {
             display: inline-block;
-            background-color: rgba(255, 107, 34, 0.12);
+            background-color: rgba(233, 77, 0, 0.12);
             color: var(--color-naranja-journey);
             font-weight: 800;
             font-size: 0.85rem;
@@ -319,7 +323,7 @@ $programs = [
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 1rem;
-            border: 1px solid rgba(255, 107, 34, 0.3);
+            border: 1px solid rgba(233, 77, 0, 0.3);
             font-family: 'Poppins', sans-serif;
         }
 
@@ -347,11 +351,10 @@ $programs = [
 
         .program-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 45px rgba(255, 107, 34, 0.18);
+            box-shadow: 0 20px 45px rgba(233, 77, 0, 0.18);
             border-color: var(--color-naranja-journey);
         }
 
-        /* Estandarización de tamaño de imagen a alto uniforme */
         .program-img-wrapper {
             position: relative;
             width: 100%;
@@ -430,15 +433,16 @@ $programs = [
         .footer-custom {
             background-color: #001A2B;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 4rem;
+            padding-top: 5rem;
             padding-bottom: 2rem;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: #CBD5E1;
+            width: 100%;
         }
 
         .footer-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--color-blanco);
             margin-bottom: 1.2rem;
@@ -453,21 +457,21 @@ $programs = [
         .footer-contact-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 1rem;
+            gap: 14px;
+            margin-bottom: 1.2rem;
             color: #94A3B8;
         }
 
         .footer-contact-icon {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             background-color: rgba(255, 255, 255, 0.06);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--color-naranja-journey);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .footer-contact-item a {
@@ -481,10 +485,10 @@ $programs = [
         }
 
         .footer-heading {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--color-blanco);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.6rem;
             position: relative;
             padding-bottom: 0.5rem;
             font-family: 'Poppins', sans-serif;
@@ -495,8 +499,8 @@ $programs = [
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 35px;
-            height: 2px;
+            width: 40px;
+            height: 3px;
             background-color: var(--color-naranja-journey);
         }
 
@@ -507,7 +511,7 @@ $programs = [
         }
 
         .footer-links li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
         }
 
         .footer-links a {
@@ -516,21 +520,21 @@ $programs = [
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .footer-links a:hover {
             color: var(--color-naranja-journey);
-            transform: translateX(4px);
+            transform: translateX(6px);
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: 3.5rem;
-            padding-top: 1.8rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
             text-align: center;
             color: #94A3B8;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
         }
 
         /* Botón Flotante de WhatsApp */
@@ -538,13 +542,13 @@ $programs = [
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 32px;
+            font-size: 34px;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             z-index: 1050;
             display: flex;
@@ -571,10 +575,10 @@ $programs = [
 </head>
 <body>
 
-    <!-- 1. HEADER -->
+    <!-- 1. HEADER Ancho Completo -->
     <!-- Top Bar -->
     <div class="top-bar py-2">
-        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-3 flex-wrap">
                 <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
                     <i class="bi bi-telephone-fill text-warning"></i>
@@ -603,9 +607,9 @@ $programs = [
         </div>
     </div>
 
-    <!-- Menú Pegajoso (Sticky Navbar) -->
+    <!-- Menú Pegajoso (Sticky Navbar) Ancho Completo -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <!-- Imagen del Logo -->
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
@@ -653,10 +657,10 @@ $programs = [
     </nav>
 
 
-    <!-- HERO BANNER PROGRAMAS -->
+    <!-- HERO BANNER PROGRAMAS Ancho Completo -->
     <header class="hero-banner-programas">
-        <div class="container animate__animated animate__fadeIn">
-            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
+        <div class="container-fluid px-3 px-lg-5 animate__animated animate__fadeIn">
+            <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                 🎒 ITINERARIOS A MEDIDA
             </span>
             <h1 class="programas-hero-title">
@@ -670,9 +674,9 @@ $programs = [
     </header>
 
 
-    <!-- SECCIÓN LISTA DE PROGRAMAS -->
+    <!-- SECCIÓN LISTA DE PROGRAMAS Ancho Completo -->
     <section class="py-5" style="background-color: var(--color-gris-claro);">
-        <div class="container py-4">
+        <div class="container-fluid px-3 px-lg-5 py-4">
             <div class="text-center max-w-700 mx-auto mb-5">
                 <span class="section-badge">✨ TU ITINERARIO IDEAL</span>
                 <h2 class="section-title">Nuestros Programas Recomendados</h2>
@@ -711,16 +715,16 @@ $programs = [
     </section>
 
 
-    <!-- 3. FOOTER -->
+    <!-- 3. FOOTER Ancho Completo -->
     <footer class="footer-custom" id="contacto">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
                 <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
                     <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
-                    <p class="pe-lg-4" style="color: #94A3B8;">
+                    <p class="pe-lg-4" style="color: #94A3B8; font-size: 1rem;">
                         Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas. Conectamos viajeros con el corazón cultural, histórico y natural del Perú.
                     </p>
                     <div class="d-flex gap-3 mt-3">

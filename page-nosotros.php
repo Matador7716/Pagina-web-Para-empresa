@@ -178,8 +178,8 @@ $reasons = [
         :root {
             --color-azul-peru-safe: #003250;
             --color-azul-andino: #0B527A;
-            --color-naranja-journey: #FF6B22;
-            --color-naranja-hover: #E0540F;
+            --color-naranja-journey: #E94D00;
+            --color-naranja-hover: #C74000;
             --color-dorado-andino: #D9A441;
             --color-blanco: #FFFFFF;
             --color-gris-claro: #F4F6F7;
@@ -188,7 +188,7 @@ $reasons = [
             --color-texto-oscuro: #1E293B;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(255, 107, 34, 0.35);
+            --color-naranja-glow: rgba(233, 77, 0, 0.35);
         }
 
         body {
@@ -196,6 +196,7 @@ $reasons = [
             background-color: var(--color-blanco);
             color: var(--color-texto-oscuro);
             overflow-x: hidden;
+            width: 100%;
         }
 
         h1, h2, h3, h4, h5, h6,
@@ -212,6 +213,7 @@ $reasons = [
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             z-index: 1040;
             position: relative;
+            width: 100%;
         }
 
         .top-bar a {
@@ -227,14 +229,14 @@ $reasons = [
         .topbar-phone-badge {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.2rem 0.65rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 30px;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
         }
 
         .topbar-phone-badge:hover {
-            background: rgba(255, 107, 34, 0.2);
+            background: rgba(233, 77, 0, 0.25);
             border-color: var(--color-naranja-journey);
         }
 
@@ -242,12 +244,12 @@ $reasons = [
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             color: #CBD5E1 !important;
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
         }
 
@@ -265,13 +267,14 @@ $reasons = [
             -webkit-backdrop-filter: blur(12px);
             transition: all 0.4s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
         }
 
         .navbar-custom.scrolled {
             background-color: rgba(0, 34, 56, 0.98);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
         }
 
         .navbar-brand-logo {
@@ -282,22 +285,22 @@ $reasons = [
         }
 
         .logo-img-header {
-            height: 52px;
+            height: 80px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
             transition: transform 0.3s ease;
         }
 
         .navbar-brand-logo:hover .logo-img-header {
-            transform: scale(1.04);
+            transform: scale(1.05);
         }
 
         .nav-link {
             color: var(--color-blanco) !important;
             font-weight: 600;
-            font-size: 0.92rem;
-            padding: 0.5rem 1rem !important;
+            font-size: 0.98rem;
+            padding: 0.6rem 1.2rem !important;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             position: relative;
@@ -332,7 +335,7 @@ $reasons = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.65rem 1.6rem;
+            padding: 0.75rem 1.8rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -345,13 +348,13 @@ $reasons = [
         .btn-reserva-llama:hover {
             background-color: var(--color-naranja-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 107, 34, 0.5);
+            box-shadow: 0 8px 25px rgba(233, 77, 0, 0.5);
             color: var(--color-blanco);
         }
 
         .llama-svg {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             fill: currentColor;
             transition: transform 0.3s ease;
         }
@@ -369,6 +372,7 @@ $reasons = [
             color: var(--color-blanco);
             text-align: center;
             overflow: hidden;
+            width: 100%;
         }
 
         .nosotros-hero-title {
@@ -400,7 +404,7 @@ $reasons = [
         /* Section Title Styling */
         .section-badge {
             display: inline-block;
-            background-color: rgba(255, 107, 34, 0.12);
+            background-color: rgba(233, 77, 0, 0.12);
             color: var(--color-naranja-journey);
             font-weight: 800;
             font-size: 0.85rem;
@@ -409,7 +413,7 @@ $reasons = [
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 1rem;
-            border: 1px solid rgba(255, 107, 34, 0.3);
+            border: 1px solid rgba(233, 77, 0, 0.3);
             font-family: 'Poppins', sans-serif;
         }
 
@@ -450,7 +454,7 @@ $reasons = [
         .glass-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 50, 80, 0.12);
-            border-color: rgba(255, 107, 34, 0.4);
+            border-color: rgba(233, 77, 0, 0.4);
         }
 
         .glass-card:hover::before {
@@ -460,7 +464,7 @@ $reasons = [
         .card-icon-box {
             width: 60px;
             height: 60px;
-            background: rgba(255, 107, 34, 0.1);
+            background: rgba(233, 77, 0, 0.1);
             color: var(--color-naranja-journey);
             border-radius: 16px;
             display: flex;
@@ -482,6 +486,7 @@ $reasons = [
         .essences-section {
             background-color: var(--color-gris-claro);
             padding: 5.5rem 0;
+            width: 100%;
         }
 
         /* Misión & Visión Dark Banner */
@@ -490,6 +495,7 @@ $reasons = [
             color: var(--color-blanco);
             padding: 6rem 0;
             position: relative;
+            width: 100%;
         }
 
         .dark-card {
@@ -520,7 +526,7 @@ $reasons = [
 
         .what-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 18px 35px rgba(255, 107, 34, 0.15);
+            box-shadow: 0 18px 35px rgba(233, 77, 0, 0.15);
             border-color: var(--color-naranja-journey);
         }
 
@@ -569,7 +575,7 @@ $reasons = [
         .destino-pill-card:hover {
             border-color: var(--color-naranja-journey);
             transform: translateY(-4px);
-            box-shadow: 0 12px 28px rgba(255, 107, 34, 0.12);
+            box-shadow: 0 12px 28px rgba(233, 77, 0, 0.12);
         }
 
         /* Call To Action Final */
@@ -580,6 +586,7 @@ $reasons = [
             text-align: center;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .cta-nosotros-title {
@@ -593,15 +600,16 @@ $reasons = [
         .footer-custom {
             background-color: #001A2B;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 4rem;
+            padding-top: 5rem;
             padding-bottom: 2rem;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: #CBD5E1;
+            width: 100%;
         }
 
         .footer-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--color-blanco);
             margin-bottom: 1.2rem;
@@ -616,21 +624,21 @@ $reasons = [
         .footer-contact-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 1rem;
+            gap: 14px;
+            margin-bottom: 1.2rem;
             color: #94A3B8;
         }
 
         .footer-contact-icon {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             background-color: rgba(255, 255, 255, 0.06);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--color-naranja-journey);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .footer-contact-item a {
@@ -644,10 +652,10 @@ $reasons = [
         }
 
         .footer-heading {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--color-blanco);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.6rem;
             position: relative;
             padding-bottom: 0.5rem;
             font-family: 'Poppins', sans-serif;
@@ -658,8 +666,8 @@ $reasons = [
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 35px;
-            height: 2px;
+            width: 40px;
+            height: 3px;
             background-color: var(--color-naranja-journey);
         }
 
@@ -670,7 +678,7 @@ $reasons = [
         }
 
         .footer-links li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
         }
 
         .footer-links a {
@@ -679,21 +687,21 @@ $reasons = [
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .footer-links a:hover {
             color: var(--color-naranja-journey);
-            transform: translateX(4px);
+            transform: translateX(6px);
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: 3.5rem;
-            padding-top: 1.8rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
             text-align: center;
             color: #94A3B8;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
         }
 
         /* Botón Flotante de WhatsApp */
@@ -701,13 +709,13 @@ $reasons = [
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 32px;
+            font-size: 34px;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             z-index: 1050;
             display: flex;
@@ -734,10 +742,10 @@ $reasons = [
 </head>
 <body>
 
-    <!-- 1. HEADER -->
+    <!-- 1. HEADER Ancho Completo -->
     <!-- Top Bar -->
     <div class="top-bar py-2">
-        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-3 flex-wrap">
                 <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge d-flex align-items-center gap-2">
                     <i class="bi bi-telephone-fill text-warning"></i>
@@ -766,9 +774,9 @@ $reasons = [
         </div>
     </div>
 
-    <!-- Menú Pegajoso (Sticky Navbar) -->
+    <!-- Menú Pegajoso (Sticky Navbar) Ancho Completo -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <!-- Imagen del Logo -->
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
@@ -816,10 +824,10 @@ $reasons = [
     </nav>
 
 
-    <!-- HERO BANNER NOSOTROS -->
+    <!-- HERO BANNER NOSOTROS Ancho Completo -->
     <header class="hero-banner-nosotros">
-        <div class="container animate__animated animate__fadeIn">
-            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
+        <div class="container-fluid px-3 px-lg-5 animate__animated animate__fadeIn">
+            <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                 🇵🇪 PERÚ SAFE JOURNEYS | Travel Agency
             </span>
             <h1 class="nosotros-hero-title">
@@ -833,9 +841,9 @@ $reasons = [
     </header>
 
 
-    <!-- SOBRE NOSOTROS -->
+    <!-- SOBRE NOSOTROS Ancho Completo -->
     <section class="py-5 bg-white" id="sobre-nosotros">
-        <div class="container py-4">
+        <div class="container-fluid px-3 px-lg-5 py-4">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 animate__animated animate__fadeInLeft">
                     <span class="section-badge">🌎 SOBRE NOSOTROS</span>
@@ -849,7 +857,7 @@ $reasons = [
                     <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
                         Desde la majestuosidad de <strong>Cusco y Machu Picchu</strong>, pasando por el mágico <strong>Valle Sagrado, los Andes y la Amazonía</strong>, hasta las costas del Pacífico, acompañamos a nuestros viajeros con atención personalizada, planificación profesional, seguridad y confort en cada etapa de su aventura.
                     </p>
-                    <div class="p-4 rounded-4 my-4" style="background: rgba(255, 107, 34, 0.08); border-left: 5px solid var(--color-naranja-journey);">
+                    <div class="p-4 rounded-4 my-4" style="background: rgba(233, 77, 0, 0.08); border-left: 5px solid var(--color-naranja-journey);">
                         <h4 class="fw-bold mb-1" style="color: var(--color-azul-peru-safe); font-family: 'Poppins', sans-serif;">
                             ❤️ No solo organizamos viajes.
                         </h4>
@@ -861,8 +869,8 @@ $reasons = [
 
                 <div class="col-lg-6">
                     <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Safe Journeys" class="img-fluid rounded-5 shadow-lg">
-                        <div class="position-absolute bottom-0 start-0 m-4 p-4 rounded-4 text-white shadow-lg d-none d-md-block" style="background: rgba(0, 34, 56, 0.9); backdrop-filter: blur(10px); max-width: 320px; border: 1px solid rgba(255, 107, 34, 0.4);">
+                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Safe Journeys" class="img-fluid rounded-5 shadow-lg w-100">
+                        <div class="position-absolute bottom-0 start-0 m-4 p-4 rounded-4 text-white shadow-lg d-none d-md-block" style="background: rgba(0, 34, 56, 0.9); backdrop-filter: blur(10px); max-width: 340px; border: 1px solid rgba(233, 77, 0, 0.4);">
                             <div class="d-flex align-items-center gap-3">
                                 <i class="bi bi-stars text-warning fs-1"></i>
                                 <div>
@@ -878,9 +886,9 @@ $reasons = [
     </section>
 
 
-    <!-- NUESTRA ESENCIA / PILARES -->
+    <!-- NUESTRA ESENCIA / PILARES Ancho Completo -->
     <section class="essences-section">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <div class="text-center max-w-700 mx-auto mb-5">
                 <span class="section-badge">✨ NUESTRA ESENCIA</span>
                 <h2 class="section-title">El significado de viajar con nosotros</h2>
@@ -911,9 +919,9 @@ $reasons = [
     </section>
 
 
-    <!-- MISIÓN & VISIÓN -->
+    <!-- MISIÓN & VISIÓN Ancho Completo -->
     <section class="mission-vision-section">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 align-items-stretch">
                 <!-- MISIÓN -->
                 <div class="col-lg-6">
@@ -926,7 +934,7 @@ $reasons = [
                         <p class="text-secondary mb-4">
                             Buscamos conectar a cada visitante con la riqueza cultural, histórica, gastronómica y natural del Perú, promoviendo una forma de viajar responsable, cercana y memorable.
                         </p>
-                        <div class="p-3 rounded-3" style="background: rgba(255, 107, 34, 0.15); border-left: 4px solid var(--color-naranja-journey);">
+                        <div class="p-3 rounded-3" style="background: rgba(233, 77, 0, 0.15); border-left: 4px solid var(--color-naranja-journey);">
                             <p class="fw-bold mb-0 text-white">
                                 "Nuestra misión es que cada viajero llegue como visitante y se vaya con una historia que contar."
                             </p>
@@ -945,7 +953,7 @@ $reasons = [
                         <p class="text-secondary mb-4">
                             Queremos crecer junto a nuestros viajeros, nuestros colaboradores y las comunidades locales, promoviendo un turismo que valore y contribuya a preservar la riqueza cultural y natural de nuestro país.
                         </p>
-                        <div class="p-3 rounded-3" style="background: rgba(255, 107, 34, 0.15); border-left: 4px solid var(--color-naranja-journey);">
+                        <div class="p-3 rounded-3" style="background: rgba(233, 77, 0, 0.15); border-left: 4px solid var(--color-naranja-journey);">
                             <p class="fw-bold mb-0 text-white">
                                 "Nuestra visión es llevar la esencia del Perú al mundo a través de experiencias que inspiren, conecten y perduren."
                             </p>
@@ -957,9 +965,9 @@ $reasons = [
     </section>
 
 
-    <!-- NUESTRO PROPÓSITO -->
+    <!-- NUESTRO PROPÓSITO Ancho Completo -->
     <section class="py-5 bg-white">
-        <div class="container py-4 text-center">
+        <div class="container-fluid px-3 px-lg-5 py-4 text-center">
             <span class="section-badge">💛 NUESTRO PROPÓSITO</span>
             <h2 class="section-title max-w-800 mx-auto mb-4">
                 Hacer que descubrir el Perú sea una experiencia que quieras recordar para siempre.
@@ -979,9 +987,9 @@ $reasons = [
     </section>
 
 
-    <!-- ¿QUÉ HACEMOS? -->
+    <!-- ¿QUÉ HACEMOS? Ancho Completo -->
     <section class="py-5" style="background-color: var(--color-gris-claro);">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <div class="text-center max-w-700 mx-auto mb-5">
                 <span class="section-badge">🗺️ ¿QUÉ HACEMOS?</span>
                 <h2 class="section-title">Experiencias para cada estilo de viajero</h2>
@@ -1008,9 +1016,9 @@ $reasons = [
     </section>
 
 
-    <!-- NUESTROS DESTINOS DESTACADOS -->
+    <!-- NUESTROS DESTINOS DESTACADOS Ancho Completo -->
     <section class="py-5 bg-white">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <div class="text-center max-w-700 mx-auto mb-5">
                 <span class="section-badge">🏔️ NUESTROS DESTINOS</span>
                 <h2 class="section-title">Los mejores rincones del Perú te esperan</h2>
@@ -1035,9 +1043,9 @@ $reasons = [
     </section>
 
 
-    <!-- NUESTRA PROMESA & POR QUÉ ELEGIRNOS -->
+    <!-- NUESTRA PROMESA & POR QUÉ ELEGIRNOS Ancho Completo -->
     <section class="py-5" style="background-color: var(--color-topbar); color: var(--color-blanco);">
-        <div class="container py-4">
+        <div class="container-fluid px-3 px-lg-5 py-4">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5">
                     <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill mb-3">🌟 NUESTRA PROMESA</span>
@@ -1073,10 +1081,10 @@ $reasons = [
     </section>
 
 
-    <!-- SECCIÓN CALL TO ACTION FINAL -->
+    <!-- SECCIÓN CALL TO ACTION FINAL Ancho Completo -->
     <section class="cta-nosotros-section">
-        <div class="container position-relative z-2">
-            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3">
+        <div class="container-fluid px-3 px-lg-5 position-relative z-2">
+            <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                 ✈️ TU PRÓXIMA HISTORIA COMIENZA AQUÍ
             </span>
             <h2 class="cta-nosotros-title">
@@ -1105,16 +1113,16 @@ $reasons = [
     </section>
 
 
-    <!-- 3. FOOTER -->
+    <!-- 3. FOOTER Ancho Completo -->
     <footer class="footer-custom" id="contacto">
-        <div class="container">
+        <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
                 <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
                     <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
-                    <p class="pe-lg-4" style="color: #94A3B8;">
+                    <p class="pe-lg-4" style="color: #94A3B8; font-size: 1rem;">
                         Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas. Conectamos viajeros con el corazón cultural, histórico y natural del Perú.
                     </p>
                     <div class="d-flex gap-3 mt-3">
