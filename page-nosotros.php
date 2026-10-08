@@ -13,18 +13,68 @@ $phones = [
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
-// Submenú de Destinos
+// Submenú de Destinos con Precios
 $destinos_submenu = [
-    ['name' => '7 LAGUNAS DEL AUSANGATE', 'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'],
-    ['name' => 'ATV MONTAÑA DE COLORES FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'],
-    ['name' => 'LAGUNA HUMANTAY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'],
-    ['name' => 'MONTAÑA VINICUNCA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'],
-    ['name' => 'PALLAY PUNCHOY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'],
-    ['name' => 'QUELCAYA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'],
-    ['name' => 'VALLE SAGRADO BIG', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'],
-    ['name' => 'VALLE SAGRADO FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'],
-    ['name' => 'VALLE SUR', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'],
-    ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
+    [
+        'name' => '7 LAGUNAS DEL AUSANGATE',
+        'price_usd' => '$ 80.00',
+        'price_pen' => 'S/. 275.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'
+    ],
+    [
+        'name' => 'ATV MONTAÑA DE COLORES FD',
+        'price_usd' => '$ 85.00 Simp. / $ 65.00 Dob.',
+        'price_pen' => 'S/. 292.60 Simp. / S/. 223.73 Dob.',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'
+    ],
+    [
+        'name' => 'LAGUNA HUMANTAY FD',
+        'price_usd' => '$ 30.00',
+        'price_pen' => 'S/. 103.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'
+    ],
+    [
+        'name' => 'MONTAÑA VINICUNCA FD',
+        'price_usd' => '$ 30.00',
+        'price_pen' => 'S/. 103.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'
+    ],
+    [
+        'name' => 'PALLAY PUNCHOY FD',
+        'price_usd' => '$ 45.00',
+        'price_pen' => 'S/. 154.90',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'
+    ],
+    [
+        'name' => 'QUELCAYA FD',
+        'price_usd' => '$ 80.00',
+        'price_pen' => 'S/. 275.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'
+    ],
+    [
+        'name' => 'VALLE SAGRADO BIG',
+        'price_usd' => '$ 35.00',
+        'price_pen' => 'S/. 120.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'
+    ],
+    [
+        'name' => 'VALLE SAGRADO FD',
+        'price_usd' => '$ 30.00',
+        'price_pen' => 'S/. 103.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'
+    ],
+    [
+        'name' => 'VALLE SUR',
+        'price_usd' => '$ 25.00',
+        'price_pen' => 'S/. 86.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'
+    ],
+    [
+        'name' => 'WAQRAPUKARA FD',
+        'price_usd' => '$ 40.00',
+        'price_pen' => 'S/. 138.00',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/'
+    ]
 ];
 
 // Pilares / Esencia
@@ -345,17 +395,17 @@ $reasons = [
             color: var(--color-naranja-journey) !important;
         }
 
-        /* DROPDOWN MENU REDISEÑADO PARA DESTINOS */
+        /* DROPDOWN MENU REDISEÑADO CON PRECIOS VISIBLES */
         .dropdown-menu-custom {
-            background: rgba(0, 22, 38, 0.96) !important;
+            background: rgba(0, 18, 32, 0.98) !important;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.15) !important;
             border-top: 3px solid var(--color-naranja-journey) !important;
             border-radius: 16px !important;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45) !important;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5) !important;
             padding: 0.6rem 0.4rem !important;
-            min-width: 280px;
+            min-width: 380px;
             margin-top: 0.5rem !important;
         }
 
@@ -373,16 +423,24 @@ $reasons = [
 
         .dropdown-item-custom {
             color: #E2E8F0 !important;
-            font-size: 0.83rem !important;
+            font-size: 0.82rem !important;
             font-weight: 600 !important;
             letter-spacing: 0.5px;
-            padding: 0.55rem 0.9rem !important;
+            padding: 0.6rem 0.9rem !important;
             border-radius: 10px;
             transition: all 0.25s ease !important;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-between;
+            gap: 12px;
             text-transform: uppercase;
+        }
+
+        .dropdown-item-custom .dest-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            max-width: 220px;
         }
 
         .dropdown-item-custom i {
@@ -391,10 +449,27 @@ $reasons = [
             transition: transform 0.25s ease;
         }
 
+        .menu-price-tag {
+            background: rgba(233, 77, 0, 0.18);
+            color: var(--color-dorado-andino);
+            border: 1px solid rgba(217, 164, 65, 0.3);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
         .dropdown-item-custom:hover {
-            background-color: rgba(233, 77, 0, 0.18) !important;
+            background-color: rgba(233, 77, 0, 0.22) !important;
             color: var(--color-blanco) !important;
             transform: translateX(4px);
+        }
+
+        .dropdown-item-custom:hover .menu-price-tag {
+            background: var(--color-naranja-journey);
+            color: var(--color-blanco);
+            border-color: var(--color-naranja-journey);
         }
 
         .dropdown-item-custom:hover i {
@@ -504,7 +579,7 @@ $reasons = [
             line-height: 1.2;
         }
 
-        /* Glass Cards & Pillars */
+        /* Glass Cards */
         .glass-card {
             background: var(--color-blanco);
             border-radius: 20px;
@@ -637,41 +712,6 @@ $reasons = [
             font-size: 0.75rem;
             font-weight: 700;
             font-family: 'Poppins', sans-serif;
-        }
-
-        /* Destinos Highlight Grid */
-        .destino-pill-card {
-            background: var(--color-blanco);
-            border-radius: 18px;
-            padding: 1.8rem;
-            border: 1px solid var(--color-gris-border);
-            box-shadow: 0 8px 20px rgba(0, 34, 56, 0.05);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .destino-pill-card:hover {
-            border-color: var(--color-naranja-journey);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 28px rgba(233, 77, 0, 0.12);
-        }
-
-        /* Call To Action Final */
-        .cta-nosotros-section {
-            background: linear-gradient(135deg, var(--color-azul-peru-safe) 0%, #001220 100%);
-            color: var(--color-blanco);
-            padding: 6.5rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            width: 100vw;
-        }
-
-        .cta-nosotros-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.2rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
         }
 
         /* Footer */
@@ -864,7 +904,7 @@ $reasons = [
                         <a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
 
-                    <!-- DESTINOS DROPDOWN -->
+                    <!-- DESTINOS DROPDOWN CON PRECIOS -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" id="destinosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             DESTINOS <i class="bi bi-chevron-down ms-1 fs-6 text-warning"></i>
@@ -872,14 +912,15 @@ $reasons = [
                         <ul class="dropdown-menu dropdown-menu-custom shadow-lg" aria-labelledby="destinosDropdown">
                             <li>
                                 <a class="dropdown-item dropdown-item-custom fw-bold text-warning" href="https://www.perusafejourneysgroup.com/destinos/">
-                                    <i class="bi bi-compass-fill"></i> VER TODOS LOS DESTINOS
+                                    <span><i class="bi bi-compass-fill"></i> VER TODOS LOS DESTINOS</span>
                                 </a>
                             </li>
                             <li><hr class="dropdown-divider dropdown-divider-custom"></li>
                             <?php foreach($destinos_submenu as $sub_item): ?>
                                 <li>
                                     <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
-                                        <i class="bi bi-geo-alt-fill"></i> <?php echo $sub_item['name']; ?>
+                                        <span class="dest-title"><i class="bi bi-geo-alt-fill"></i> <?php echo $sub_item['name']; ?></span>
+                                        <span class="menu-price-tag"><?php echo $sub_item['price_usd']; ?> | <?php echo $sub_item['price_pen']; ?></span>
                                     </a>
                                 </li>
                             <?php endforeach; ?>

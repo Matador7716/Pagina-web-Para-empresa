@@ -13,18 +13,68 @@ $phones = [
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
-// Submenú de Destinos
+// Submenú de Destinos con Precios en $ USD y S/. Soles
 $destinos_submenu = [
-    ['name' => '7 LAGUNAS DEL AUSANGATE', 'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'],
-    ['name' => 'ATV MONTAÑA DE COLORES FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'],
-    ['name' => 'LAGUNA HUMANTAY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'],
-    ['name' => 'MONTAÑA VINICUNCA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'],
-    ['name' => 'PALLAY PUNCHOY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'],
-    ['name' => 'QUELCAYA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'],
-    ['name' => 'VALLE SAGRADO BIG', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'],
-    ['name' => 'VALLE SAGRADO FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'],
-    ['name' => 'VALLE SUR', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'],
-    ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
+    [
+        'name' => '7 LAGUNAS DEL AUSANGATE',
+        'price_usd' => '$ 80.00',
+        'price_pen' => 'S/. 275.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'
+    ],
+    [
+        'name' => 'ATV MONTAÑA DE COLORES FD',
+        'price_usd' => '$ 85.00 Simp. / $ 65.00 Dob.',
+        'price_pen' => 'S/. 292.60 Simp. / S/. 223.73 Dob.',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'
+    ],
+    [
+        'name' => 'LAGUNA HUMANTAY FD',
+        'price_usd' => '$ 30.00',
+        'price_pen' => 'S/. 103.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'
+    ],
+    [
+        'name' => 'MONTAÑA VINICUNCA FD',
+        'price_usd' => '$ 30.00',
+        'price_pen' => 'S/. 103.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'
+    ],
+    [
+        'name' => 'PALLAY PUNCHOY FD',
+        'price_usd' => '$ 45.00',
+        'price_pen' => 'S/. 154.90',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'
+    ],
+    [
+        'name' => 'QUELCAYA FD',
+        'price_usd' => '$ 80.00',
+        'price_pen' => 'S/. 275.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'
+    ],
+    [
+        'name' => 'VALLE SAGRADO BIG',
+        'price_usd' => '$ 35.00',
+        'price_pen' => 'S/. 120.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'
+    ],
+    [
+        'name' => 'VALLE SAGRADO FD',
+        'price_usd' => '$ 30.00',
+        'price_pen' => 'S/. 103.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'
+    ],
+    [
+        'name' => 'VALLE SUR',
+        'price_usd' => '$ 25.00',
+        'price_pen' => 'S/. 86.50',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'
+    ],
+    [
+        'name' => 'WAQRAPUKARA FD',
+        'price_usd' => '$ 40.00',
+        'price_pen' => 'S/. 138.00',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/'
+    ]
 ];
 
 // Tarjetas creativas para la sección "Encuentra tu próximo destino"
@@ -66,15 +116,16 @@ $tour_cards = [
     ]
 ];
 
-// Tarjetas Creativas Destacadas de la Sección "Destinos"
+// Tarjetas Creativas Destacadas de la Sección "Destinos" con precios reales
 $creative_destinations = [
     [
-        'title' => 'Machu Picchu & Cusco Mágico',
-        'location' => 'Cusco, Perú',
-        'duration' => '4 Días / 3 Noches',
+        'title' => 'Valle Sagrado Big',
+        'location' => 'Valle Sagrado, Cusco',
+        'duration' => '1 Día Completo',
         'rating' => '4.9 (128 Reseñas)',
-        'price' => 'Desde $380 USD',
-        'badge' => '🔥 Maravilla Mundial',
+        'price_usd' => '$ 35.00',
+        'price_pen' => 'S/. 120.50',
+        'badge' => '🔥 Valle Inca',
         'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'
     ],
@@ -83,7 +134,8 @@ $creative_destinations = [
         'location' => 'Anta, Cusco',
         'duration' => '1 Día Completo',
         'rating' => '4.8 (95 Reseñas)',
-        'price' => 'Desde $45 USD',
+        'price_usd' => '$ 30.00',
+        'price_pen' => 'S/. 103.50',
         'badge' => '💧 Laguna Turquesa',
         'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'
@@ -93,7 +145,8 @@ $creative_destinations = [
         'location' => 'Quispicanchi, Cusco',
         'duration' => '1 Día Completo',
         'rating' => '4.9 (110 Reseñas)',
-        'price' => 'Desde $50 USD',
+        'price_usd' => '$ 30.00',
+        'price_pen' => 'S/. 103.50',
         'badge' => '🌈 7 Colores',
         'image' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'
@@ -103,7 +156,8 @@ $creative_destinations = [
         'location' => 'Pacchanta, Cusco',
         'duration' => '1 Día Completo',
         'rating' => '5.0 (82 Reseñas)',
-        'price' => 'Desde $55 USD',
+        'price_usd' => '$ 80.00',
+        'price_pen' => 'S/. 275.50',
         'badge' => '🏔️ Aguas Termales',
         'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'
@@ -195,6 +249,7 @@ $brand_pillars = [
             padding: 0;
         }
 
+        /* Tipografía Amigable y Creativa */
         h1, h2, h3, h4, h5, h6,
         .hero-title, .section-title, .brand-motto-title,
         .brand-text, .nav-link, .dropdown-item, .btn-reserva-llama, .btn-banner,
@@ -334,17 +389,17 @@ $brand_pillars = [
             color: var(--color-naranja-journey) !important;
         }
 
-        /* DROPDOWN MENU REDISEÑADO CON ANCHO Y PADDING OPTIMIZADO */
+        /* DROPDOWN MENU REDISEÑADO CON PRECIOS VISIBLES */
         .dropdown-menu-custom {
-            background: rgba(0, 20, 35, 0.98) !important;
+            background: rgba(0, 18, 32, 0.98) !important;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.15) !important;
             border-top: 3px solid var(--color-naranja-journey) !important;
             border-radius: 16px !important;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45) !important;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5) !important;
             padding: 0.6rem 0.4rem !important;
-            min-width: 280px;
+            min-width: 380px; /* Expandido para mostrar precios */
             margin-top: 0.5rem !important;
         }
 
@@ -362,16 +417,24 @@ $brand_pillars = [
 
         .dropdown-item-custom {
             color: #E2E8F0 !important;
-            font-size: 0.83rem !important;
+            font-size: 0.82rem !important;
             font-weight: 600 !important;
             letter-spacing: 0.5px;
-            padding: 0.55rem 0.9rem !important;
+            padding: 0.6rem 0.9rem !important;
             border-radius: 10px;
             transition: all 0.25s ease !important;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-between;
+            gap: 12px;
             text-transform: uppercase;
+        }
+
+        .dropdown-item-custom .dest-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            max-width: 220px;
         }
 
         .dropdown-item-custom i {
@@ -380,10 +443,27 @@ $brand_pillars = [
             transition: transform 0.25s ease;
         }
 
+        .menu-price-tag {
+            background: rgba(233, 77, 0, 0.18);
+            color: var(--color-dorado-andino);
+            border: 1px solid rgba(217, 164, 65, 0.3);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
         .dropdown-item-custom:hover {
-            background-color: rgba(233, 77, 0, 0.18) !important;
+            background-color: rgba(233, 77, 0, 0.22) !important;
             color: var(--color-blanco) !important;
             transform: translateX(4px);
+        }
+
+        .dropdown-item-custom:hover .menu-price-tag {
+            background: var(--color-naranja-journey);
+            color: var(--color-blanco);
+            border-color: var(--color-naranja-journey);
         }
 
         .dropdown-item-custom:hover i {
@@ -396,9 +476,9 @@ $brand_pillars = [
             margin: 0.35rem 0 !important;
         }
 
-        /* 2. BOTONES CON ANCHO REDUCIDO / COMPACTOS */
+        /* Botones con Ancho Reducido */
         .btn-compact {
-            padding: 0.6rem 1.4rem !important; /* Ancho de botón reducido */
+            padding: 0.6rem 1.4rem !important;
             font-size: 0.88rem !important;
             display: inline-flex;
             align-items: center;
@@ -408,7 +488,7 @@ $brand_pillars = [
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            width: auto !important; /* Ancho ajustado al contenido */
+            width: auto !important;
         }
 
         .btn-reserva-llama {
@@ -418,7 +498,7 @@ $brand_pillars = [
             font-size: 0.88rem;
             letter-spacing: 0.5px;
             border-radius: 50px;
-            padding: 0.65rem 1.4rem; /* Reducido */
+            padding: 0.65rem 1.4rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -510,7 +590,7 @@ $brand_pillars = [
             letter-spacing: -1px;
             line-height: 1.1;
             margin-bottom: 1.4rem;
-            text-transform: uppercase; /* VIVE EL PERÚ A TU MANERA */
+            text-transform: uppercase;
             text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
             background: linear-gradient(135deg, #FFFFFF 20%, #FFE0B2 100%);
             -webkit-background-clip: text;
@@ -534,7 +614,7 @@ $brand_pillars = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.8rem 2rem; /* Ancho de botón reducido */
+            padding: 0.8rem 2rem;
             font-size: 0.98rem;
             display: inline-flex;
             align-items: center;
@@ -558,7 +638,7 @@ $brand_pillars = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.8rem 2rem; /* Ancho de botón reducido */
+            padding: 0.8rem 2rem;
             font-size: 0.98rem;
             display: inline-flex;
             align-items: center;
@@ -578,7 +658,7 @@ $brand_pillars = [
             box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
         }
 
-        /* 4. SECCIÓN TARJETAS CREATIVAS DE DESTINOS DE LA PAGINA INICIO */
+        /* 4. SECCIÓN TARJETAS CREATIVAS DE DESTINOS */
         .cards-slider-section {
             background: linear-gradient(180deg, var(--color-gris-claro) 0%, #EDF2F7 100%);
             padding: 5rem 0;
@@ -628,7 +708,7 @@ $brand_pillars = [
         }
 
         .creative-card {
-            flex: 0 0 280px; /* Tamaño reducido de tarjeta */
+            flex: 0 0 280px;
             background: var(--color-blanco);
             border-radius: 18px;
             overflow: hidden;
@@ -651,7 +731,7 @@ $brand_pillars = [
         .card-img-container {
             position: relative;
             width: 100%;
-            height: 250px; /* Tamaño de imagen reducido */
+            height: 250px;
             overflow: hidden;
         }
 
@@ -709,7 +789,7 @@ $brand_pillars = [
             margin-bottom: 1.2rem;
         }
 
-        /* NUEVA SECCIÓN: TARJETAS CREATIVAS DE DESTINOS IMPRESCINDIBLES */
+        /* SECCIÓN TARJETAS CREATIVAS DE DESTINOS DESTACADOS CON DUAL CURRENCY PRECIOS */
         .destinos-creative-section {
             padding: 5.5rem 0;
             background: var(--color-blanco);
@@ -790,10 +870,24 @@ $brand_pillars = [
             margin-bottom: 0.8rem;
         }
 
-        .dest-card-price {
-            font-size: 1.1rem;
+        .dest-card-prices-box {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .price-usd {
+            font-size: 1.15rem;
             font-weight: 800;
             color: var(--color-naranja-journey);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.2;
+        }
+
+        .price-pen {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--color-azul-andino);
             font-family: 'Poppins', sans-serif;
         }
 
@@ -969,7 +1063,7 @@ $brand_pillars = [
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 38px;
+            width: 40px;
             height: 3px;
             background-color: var(--color-naranja-journey);
             border-radius: 2px;
@@ -1049,6 +1143,7 @@ $brand_pillars = [
             .brand-motto-title { font-size: 1.9rem; }
             .section-title { font-size: 2.1rem; }
             .logo-img-header { height: 72px; }
+            .dropdown-menu-custom { min-width: 300px; }
         }
 
         @media (max-width: 575.98px) {
@@ -1061,7 +1156,7 @@ $brand_pillars = [
 </head>
 <body>
 
-    <!-- 1. HEADER & TOP BAR MEJORADO -->
+    <!-- 1. HEADER & TOP BAR -->
     <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
@@ -1093,7 +1188,7 @@ $brand_pillars = [
         </div>
     </div>
 
-    <!-- Menú Pegajoso con Submenú Destinos y Botón con Ancho Ajustado -->
+    <!-- Menú Pegajoso con Submenú Destinos y Precios $ USD / S/. Soles -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
@@ -1110,7 +1205,7 @@ $brand_pillars = [
                         <a class="nav-link active" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
 
-                    <!-- DESTINOS DROPDOWN -->
+                    <!-- DESTINOS DROPDOWN CON PRECIOS -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" id="destinosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             DESTINOS <i class="bi bi-chevron-down ms-1 fs-6 text-warning"></i>
@@ -1118,14 +1213,15 @@ $brand_pillars = [
                         <ul class="dropdown-menu dropdown-menu-custom shadow-lg" aria-labelledby="destinosDropdown">
                             <li>
                                 <a class="dropdown-item dropdown-item-custom fw-bold text-warning" href="https://www.perusafejourneysgroup.com/destinos/">
-                                    <i class="bi bi-compass-fill"></i> VER TODOS LOS DESTINOS
+                                    <span><i class="bi bi-compass-fill"></i> VER TODOS LOS DESTINOS</span>
                                 </a>
                             </li>
                             <li><hr class="dropdown-divider dropdown-divider-custom"></li>
                             <?php foreach($destinos_submenu as $sub_item): ?>
                                 <li>
                                     <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
-                                        <i class="bi bi-geo-alt-fill"></i> <?php echo $sub_item['name']; ?>
+                                        <span class="dest-title"><i class="bi bi-geo-alt-fill"></i> <?php echo $sub_item['name']; ?></span>
+                                        <span class="menu-price-tag"><?php echo $sub_item['price_usd']; ?> | <?php echo $sub_item['price_pen']; ?></span>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
@@ -1241,13 +1337,13 @@ $brand_pillars = [
     </section>
 
 
-    <!-- NUEVA SECCIÓN SOLICITADA: TARJETAS CREATIVAS DE LA SECCIÓN "DESTINOS" -->
+    <!-- SECCIÓN: TARJETAS CREATIVAS DE DESTINOS DESTACADOS CON DUAL CURRENCY PRECIOS -->
     <section class="destinos-creative-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center max-w-700 mx-auto mb-5">
                 <span class="section-badge">🏔️ DESTINOS DESTACADOS</span>
                 <h2 class="section-title">Nuestras Rutas e Itinerarios Estrellas</h2>
-                <p class="text-muted fs-5">Rutas planificadas por especialistas locales con máxima seguridad y confort.</p>
+                <p class="text-muted fs-5">Rutas planificadas por especialistas locales con máxima seguridad y tarifas claras.</p>
             </div>
 
             <div class="row g-4">
@@ -1276,7 +1372,10 @@ $brand_pillars = [
                                 </div>
 
                                 <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
-                                    <div class="dest-card-price"><?php echo $dest['price']; ?></div>
+                                    <div class="dest-card-prices-box">
+                                        <span class="price-usd"><?php echo $dest['price_usd']; ?></span>
+                                        <span class="price-pen"><?php echo $dest['price_pen']; ?></span>
+                                    </div>
                                     <a href="<?php echo $dest['url']; ?>" class="btn btn-compact btn-reserva-llama">
                                         <span>Ver Detalle</span>
                                         <i class="bi bi-arrow-right"></i>
@@ -1311,7 +1410,6 @@ $brand_pillars = [
                             Nuestro propósito es convertir cada viaje en una experiencia memorable, combinando la riqueza cultural del Perú con la confianza de viajar acompañado por especialistas locales.
                         </p>
 
-                        <!-- Botón compacto -->
                         <a href="https://www.perusafejourneysgroup.com/nosotros/" class="btn btn-compact btn-banner-primary">
                             <span>Conoce Nuestra Historia</span>
                             <i class="bi bi-arrow-right"></i>
@@ -1329,7 +1427,6 @@ $brand_pillars = [
                     </div>
                 </div>
 
-                <!-- BANNER DE PROPÓSITO -->
                 <div class="brand-motto-box text-center">
                     <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                         🌟 CONTENIDO CREATIVO
@@ -1345,7 +1442,6 @@ $brand_pillars = [
                     </p>
                 </div>
 
-                <!-- 6. PILARES DE MARCA REDISEÑADOS -->
                 <div class="pt-3">
                     <div class="text-center mb-5">
                         <span class="section-badge">💎 NUESTROS VALORES</span>
@@ -1373,7 +1469,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- FOOTER ANCHO COMPLETO -->
+    <!-- FOOTER -->
     <footer class="footer-custom" id="contacto">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
@@ -1463,7 +1559,7 @@ $brand_pillars = [
     <!-- Scripts Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS Script para Interactividad -->
+    <!-- Custom JS Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navbar = document.querySelector('.navbar-custom');
