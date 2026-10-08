@@ -77,7 +77,7 @@ $destinos_submenu = [
     ]
 ];
 
-// Tarjetas creativas para la sección "Encuentra tu próximo destino"
+// Categorías de Viaje / Carrusel
 $tour_cards = [
     [
         'title' => 'Tours Tradicionales',
@@ -116,51 +116,117 @@ $tour_cards = [
     ]
 ];
 
-// Tarjetas Creativas Destacadas de la Sección "Destinos" con precios reales
-$creative_destinations = [
+// DEDICADA SECCIÓN DESTINOS CON TARJETAS CREATIVAS Y PRECIOS EN TODAS LAS TARJETAS
+$destinos_cards_section = [
     [
-        'title' => 'Valle Sagrado Big',
-        'location' => 'Valle Sagrado, Cusco',
-        'duration' => '1 Día Completo',
-        'rating' => '4.9 (128 Reseñas)',
-        'price_usd' => '$ 35.00',
-        'price_pen' => 'S/. 120.50',
-        'badge' => '🔥 Valle Inca',
-        'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
-        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'
+        'title' => '7 LAGUNAS DEL AUSANGATE',
+        'location' => 'Ausangate, Cusco',
+        'duration' => 'Full Day (FD)',
+        'rating' => '5.0 (86 Reseñas)',
+        'price_usd' => '$ 80.00',
+        'price_pen' => 'S/. 275.50',
+        'badge' => '🏔️ Aguas Termales & Glaciares',
+        'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'
     ],
     [
-        'title' => 'Laguna Humantay FD',
-        'location' => 'Anta, Cusco',
-        'duration' => '1 Día Completo',
-        'rating' => '4.8 (95 Reseñas)',
+        'title' => 'ATV MONTAÑA DE COLORES FD',
+        'location' => 'Pitumarca, Cusco',
+        'duration' => 'Full Day (FD)',
+        'rating' => '4.9 (112 Reseñas)',
+        'price_usd' => '$ 85.00 Simp / $ 65.00 Dob',
+        'price_pen' => 'S/. 292.60 Simp / S/. 223.73 Dob',
+        'badge' => '⚡ Adrenalina en Cuatrimoto',
+        'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'
+    ],
+    [
+        'title' => 'LAGUNA HUMANTAY FD',
+        'location' => 'Mollepata, Cusco',
+        'duration' => 'Full Day (FD)',
+        'rating' => '4.9 (140 Reseñas)',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
-        'badge' => '💧 Laguna Turquesa',
-        'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
+        'badge' => '💧 Aguas Turquesas',
+        'image' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'
     ],
     [
-        'title' => 'Montaña Vinicunca FD',
+        'title' => 'MONTAÑA VINICUNCA FD',
         'location' => 'Quispicanchi, Cusco',
-        'duration' => '1 Día Completo',
-        'rating' => '4.9 (110 Reseñas)',
+        'duration' => 'Full Day (FD)',
+        'rating' => '4.8 (155 Reseñas)',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
-        'badge' => '🌈 7 Colores',
+        'badge' => '🌈 Montaña de 7 Colores',
         'image' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'
     ],
     [
-        'title' => '7 Lagunas del Ausangate',
-        'location' => 'Pacchanta, Cusco',
-        'duration' => '1 Día Completo',
-        'rating' => '5.0 (82 Reseñas)',
+        'title' => 'PALLAY PUNCHOY FD',
+        'location' => 'Canas, Cusco',
+        'duration' => 'Full Day (FD)',
+        'rating' => '4.9 (78 Reseñas)',
+        'price_usd' => '$ 45.00',
+        'price_pen' => 'S/. 154.90',
+        'badge' => '🏔️ Cerro Afilado',
+        'image' => 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'
+    ],
+    [
+        'title' => 'QUELCAYA FD',
+        'location' => 'Canchis, Cusco',
+        'duration' => 'Full Day (FD)',
+        'rating' => '5.0 (64 Reseñas)',
         'price_usd' => '$ 80.00',
         'price_pen' => 'S/. 275.50',
-        'badge' => '🏔️ Aguas Termales',
+        'badge' => '❄️ Glacial Tropical',
         'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
-        'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'
+    ],
+    [
+        'title' => 'VALLE SAGRADO BIG',
+        'location' => 'Valle Sagrado, Cusco',
+        'duration' => 'Full Day Extendido',
+        'rating' => '4.9 (130 Reseñas)',
+        'price_usd' => '$ 35.00',
+        'price_pen' => 'S/. 120.50',
+        'badge' => '🏛️ Pisac, Ollantaytambo & Chinchero',
+        'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'
+    ],
+    [
+        'title' => 'VALLE SAGRADO FD',
+        'location' => 'Urubamba, Cusco',
+        'duration' => 'Full Day Clásico',
+        'rating' => '4.8 (98 Reseñas)',
+        'price_usd' => '$ 30.00',
+        'price_pen' => 'S/. 103.50',
+        'badge' => '🌾 Tradición & Mercado Inca',
+        'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'
+    ],
+    [
+        'title' => 'VALLE SUR',
+        'location' => 'Tipón & Pikillacta',
+        'duration' => 'Half Day',
+        'rating' => '4.7 (72 Reseñas)',
+        'price_usd' => '$ 25.00',
+        'price_pen' => 'S/. 86.50',
+        'badge' => '🕌 Arqueología & Gastronomía',
+        'image' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'
+    ],
+    [
+        'title' => 'WAQRAPUKARA FD',
+        'location' => 'Acomayo, Cusco',
+        'duration' => 'Full Day (FD)',
+        'rating' => '5.0 (90 Reseñas)',
+        'price_usd' => '$ 40.00',
+        'price_pen' => 'S/. 138.00',
+        'badge' => '🏰 Fortaleza mística',
+        'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/'
     ]
 ];
 
@@ -219,20 +285,21 @@ $brand_pillars = [
 
     <style>
         :root {
-            /* Colores Principales */
-            --color-azul-peru-safe: #002238;
-            --color-azul-andino: #0B527A;
-            --color-naranja-journey: #E94D00;
-            --color-naranja-hover: #C74000;
-            --color-dorado-andino: #D9A441;
-            --color-blanco: #FFFFFF;
-            --color-gris-claro: #F8FAFC;
+            /* 3 Colores Principales Solicitados */
+            --color-naranja-journey: #E94D00; /* Naranja corporativo vivo */
+            --color-naranja-hover: #C74000;   /* Naranja intenso para hover */
+            --color-blanco: #FFFFFF;          /* Blanco */
+            --color-azul-peru-safe: #002238;  /* Azul oscuro principal */
+            --color-azul-andino: #0B527A;     /* Azul secundario */
+            --color-dorado-andino: #D9A441;   /* Dorado acento */
+            --color-gris-claro: #F8FAFC;      /* Gris claro */
 
-            --color-topbar: #001726;
+            --color-topbar: #001220;
             --color-texto-oscuro: #0F172A;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(233, 77, 0, 0.35);
+            --color-naranja-glow: rgba(233, 77, 0, 0.4);
+            --color-azul-glow: rgba(0, 34, 56, 0.4);
         }
 
         * {
@@ -249,7 +316,6 @@ $brand_pillars = [
             padding: 0;
         }
 
-        /* Tipografía Amigable y Creativa */
         h1, h2, h3, h4, h5, h6,
         .hero-title, .section-title, .brand-motto-title,
         .brand-text, .nav-link, .dropdown-item, .btn-reserva-llama, .btn-banner,
@@ -257,7 +323,7 @@ $brand_pillars = [
             font-family: 'Poppins', sans-serif;
         }
 
-        /* 1. HEADER & TOP BAR REDISEÑADOS */
+        /* 1. TOP BAR Y MENÚ DE NAVEGACIÓN MEJORADOS */
         .top-bar {
             background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
             font-size: 0.85rem;
@@ -265,13 +331,13 @@ $brand_pillars = [
             z-index: 1050;
             position: relative;
             width: 100%;
-            padding: 0.45rem 0;
+            padding: 0.5rem 0;
         }
 
         .topbar-phone-badge {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.28rem 0.8rem;
+            padding: 0.3rem 0.85rem;
             border-radius: 50px;
             font-size: 0.82rem;
             color: #E2E8F0 !important;
@@ -287,11 +353,11 @@ $brand_pillars = [
             border-color: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px var(--color-naranja-glow);
+            box-shadow: 0 4px 14px var(--color-naranja-glow);
         }
 
         .topbar-phone-badge i {
-            color: var(--color-dorado-andino);
+            color: var(--color-naranja-journey);
             transition: color 0.3s ease;
         }
 
@@ -303,38 +369,41 @@ $brand_pillars = [
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.08);
             color: #CBD5E1 !important;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .topbar-social-icon:hover {
             background: var(--color-naranja-journey);
             color: var(--color-blanco) !important;
-            transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 4px 12px var(--color-naranja-glow);
+            border-color: var(--color-naranja-journey);
+            transform: translateY(-3px) scale(1.12);
+            box-shadow: 0 6px 16px var(--color-naranja-glow);
         }
 
-        /* Menú Pegajoso (Navbar con Glassmorphism) */
+        /* Sticky Navbar con Efectos Visuales Eleva */
         .navbar-custom {
-            background: rgba(0, 26, 43, 0.92);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            background: rgba(0, 34, 56, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             transition: all 0.4s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            border-bottom: 1px solid rgba(233, 77, 0, 0.25);
             width: 100%;
-            padding: 0.5rem 0;
+            padding: 0.55rem 0;
         }
 
         .navbar-custom.scrolled {
             background: rgba(0, 18, 32, 0.98);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-            padding: 0.3rem 0;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+            padding: 0.35rem 0;
+            border-bottom-color: var(--color-naranja-journey);
         }
 
         .navbar-brand-logo {
@@ -344,22 +413,22 @@ $brand_pillars = [
         }
 
         .logo-img-header {
-            height: 88px;
+            height: 92px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
-            transition: transform 0.3s ease;
+            filter: drop-shadow(0 4px 14px rgba(0,0,0,0.35));
+            transition: transform 0.35s ease;
         }
 
         .navbar-brand-logo:hover .logo-img-header {
-            transform: scale(1.04);
+            transform: scale(1.05) rotate(-1deg);
         }
 
         .nav-link {
             color: var(--color-blanco) !important;
             font-weight: 600;
-            font-size: 0.9rem;
-            padding: 0.6rem 1rem !important;
+            font-size: 0.92rem;
+            padding: 0.6rem 1.1rem !important;
             letter-spacing: 0.8px;
             text-transform: uppercase;
             position: relative;
@@ -372,57 +441,58 @@ $brand_pillars = [
             bottom: 2px;
             left: 50%;
             width: 0%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--color-naranja-journey), var(--color-dorado-andino));
-            transition: all 0.3s ease;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-naranja-journey), #FF7B25);
+            transition: all 0.35s ease;
             transform: translateX(-50%);
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
         .nav-link:hover::after,
         .nav-link.active::after {
-            width: 75%;
+            width: 80%;
         }
 
         .nav-link:hover,
         .nav-link.active {
             color: var(--color-naranja-journey) !important;
+            text-shadow: 0 0 12px rgba(233, 77, 0, 0.4);
         }
 
-        /* DROPDOWN MENU REDISEÑADO CON PRECIOS VISIBLES */
+        /* DROPDOWN SUBMENU CON EFECTOS LLAMATIVOS Y PRECIOS */
         .dropdown-menu-custom {
             background: rgba(0, 18, 32, 0.98) !important;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15) !important;
-            border-top: 3px solid var(--color-naranja-journey) !important;
-            border-radius: 16px !important;
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5) !important;
-            padding: 0.6rem 0.4rem !important;
-            min-width: 380px; /* Expandido para mostrar precios */
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(233, 77, 0, 0.3) !important;
+            border-top: 4px solid var(--color-naranja-journey) !important;
+            border-radius: 18px !important;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55) !important;
+            padding: 0.75rem 0.5rem !important;
+            min-width: 390px;
             margin-top: 0.5rem !important;
         }
 
         @media (min-width: 992px) {
             .nav-item.dropdown:hover .dropdown-menu-custom {
                 display: block;
-                animation: fadeInDropdown 0.3s ease forwards;
+                animation: dropdownGlow 0.35s ease forwards;
             }
         }
 
-        @keyframes fadeInDropdown {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes dropdownGlow {
+            from { opacity: 0; transform: translateY(12px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .dropdown-item-custom {
             color: #E2E8F0 !important;
-            font-size: 0.82rem !important;
-            font-weight: 600 !important;
+            font-size: 0.83rem !important;
+            font-weight: 700 !important;
             letter-spacing: 0.5px;
-            padding: 0.6rem 0.9rem !important;
-            border-radius: 10px;
-            transition: all 0.25s ease !important;
+            padding: 0.65rem 1rem !important;
+            border-radius: 12px;
+            transition: all 0.28s ease !important;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -439,44 +509,41 @@ $brand_pillars = [
 
         .dropdown-item-custom i {
             color: var(--color-naranja-journey);
-            font-size: 0.9rem;
-            transition: transform 0.25s ease;
+            font-size: 0.95rem;
+            transition: transform 0.28s ease;
         }
 
         .menu-price-tag {
-            background: rgba(233, 77, 0, 0.18);
-            color: var(--color-dorado-andino);
-            border: 1px solid rgba(217, 164, 65, 0.3);
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 0.2rem 0.55rem;
+            background: rgba(233, 77, 0, 0.2);
+            color: var(--color-blanco);
+            border: 1px solid rgba(233, 77, 0, 0.4);
+            font-size: 0.73rem;
+            font-weight: 800;
+            padding: 0.25rem 0.65rem;
             border-radius: 20px;
             white-space: nowrap;
+            transition: all 0.28s ease;
         }
 
         .dropdown-item-custom:hover {
-            background-color: rgba(233, 77, 0, 0.22) !important;
+            background-color: var(--color-naranja-journey) !important;
             color: var(--color-blanco) !important;
-            transform: translateX(4px);
+            transform: translateX(6px);
+            box-shadow: 0 4px 15px var(--color-naranja-glow);
         }
 
         .dropdown-item-custom:hover .menu-price-tag {
-            background: var(--color-naranja-journey);
+            background: var(--color-azul-peru-safe);
             color: var(--color-blanco);
-            border-color: var(--color-naranja-journey);
+            border-color: var(--color-blanco);
         }
 
         .dropdown-item-custom:hover i {
-            transform: scale(1.2) rotate(6deg);
-            color: var(--color-dorado-andino);
+            transform: scale(1.3) rotate(8deg);
+            color: var(--color-blanco);
         }
 
-        .dropdown-divider-custom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-            margin: 0.35rem 0 !important;
-        }
-
-        /* Botones con Ancho Reducido */
+        /* 2. BOTONES CON ANCHO AJUSTADO COMPACTO */
         .btn-compact {
             padding: 0.6rem 1.4rem !important;
             font-size: 0.88rem !important;
@@ -505,16 +572,17 @@ $brand_pillars = [
             text-decoration: none;
             transition: all 0.35s ease;
             box-shadow: 0 4px 16px var(--color-naranja-glow);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.25);
             text-transform: uppercase;
             width: auto;
         }
 
         .btn-reserva-llama:hover {
             background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(233, 77, 0, 0.55);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(233, 77, 0, 0.6);
             color: var(--color-blanco);
+            border-color: var(--color-blanco);
         }
 
         .llama-svg {
@@ -523,12 +591,12 @@ $brand_pillars = [
             fill: currentColor;
         }
 
-        /* 3. HERO SLIDER CON VIDEO DE FONDO Y ANCHO COMPLETO */
+        /* 3. HERO SLIDER CON VIDEO DE FONDO */
         .hero-video-slider {
             position: relative;
-            height: 88vh;
-            min-height: 600px;
-            max-height: 850px;
+            height: 90vh;
+            min-height: 620px;
+            max-height: 880px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -558,7 +626,7 @@ $brand_pillars = [
             left: 50%;
             transform: translate(-50%, -50%);
             object-fit: cover;
-            filter: brightness(0.55) contrast(1.15);
+            filter: brightness(0.52) contrast(1.18);
         }
 
         .video-overlay-gradient {
@@ -569,9 +637,9 @@ $brand_pillars = [
             height: 100%;
             background: linear-gradient(
                 180deg,
-                rgba(0, 18, 32, 0.75) 0%,
+                rgba(0, 18, 32, 0.8) 0%,
                 rgba(0, 34, 56, 0.45) 50%,
-                rgba(0, 18, 32, 0.9) 100%
+                rgba(0, 18, 32, 0.92) 100%
             );
             z-index: 2;
         }
@@ -579,32 +647,32 @@ $brand_pillars = [
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 1100px;
+            max-width: 1150px;
             text-align: center;
             padding: 2rem 1rem;
         }
 
         .hero-title {
-            font-size: 4.2rem;
+            font-size: 4.4rem;
             font-weight: 900;
             letter-spacing: -1px;
             line-height: 1.1;
             margin-bottom: 1.4rem;
             text-transform: uppercase;
-            text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
-            background: linear-gradient(135deg, #FFFFFF 20%, #FFE0B2 100%);
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+            background: linear-gradient(135deg, #FFFFFF 30%, #FFE8D6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 500;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-            color: #F1F5F9;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
-            max-width: 900px;
+            line-height: 1.85;
+            margin-bottom: 2.6rem;
+            color: #F8FAFC;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+            max-width: 920px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -614,14 +682,14 @@ $brand_pillars = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.8rem 2rem;
+            padding: 0.85rem 2.2rem;
             font-size: 0.98rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             text-decoration: none;
             transition: all 0.35s ease;
-            box-shadow: 0 6px 20px var(--color-naranja-glow);
+            box-shadow: 0 8px 25px var(--color-naranja-glow);
             border: 2px solid rgba(255, 255, 255, 0.3);
             text-transform: uppercase;
             width: auto;
@@ -629,8 +697,8 @@ $brand_pillars = [
 
         .btn-banner-primary:hover {
             background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(233, 77, 0, 0.55);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(233, 77, 0, 0.65);
         }
 
         .btn-banner-secondary {
@@ -638,7 +706,7 @@ $brand_pillars = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.8rem 2rem;
+            padding: 0.85rem 2.2rem;
             font-size: 0.98rem;
             display: inline-flex;
             align-items: center;
@@ -654,21 +722,21 @@ $brand_pillars = [
         .btn-banner-secondary:hover {
             background-color: var(--color-blanco);
             color: var(--color-azul-peru-safe) !important;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(255, 255, 255, 0.35);
         }
 
-        /* 4. SECCIÓN TARJETAS CREATIVAS DE DESTINOS */
+        /* 4. SECCIÓN CATEGOÍAS DE VIAJE / CARRUSEL CON COMPACT CARDS */
         .cards-slider-section {
             background: linear-gradient(180deg, var(--color-gris-claro) 0%, #EDF2F7 100%);
-            padding: 5rem 0;
+            padding: 5.5rem 0;
             position: relative;
             width: 100vw;
         }
 
         .section-badge {
             display: inline-block;
-            background-color: rgba(233, 77, 0, 0.1);
+            background-color: rgba(233, 77, 0, 0.12);
             color: var(--color-naranja-journey);
             font-weight: 800;
             font-size: 0.82rem;
@@ -677,11 +745,11 @@ $brand_pillars = [
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 0.8rem;
-            border: 1px solid rgba(233, 77, 0, 0.25);
+            border: 1px solid rgba(233, 77, 0, 0.28);
         }
 
         .section-title {
-            font-size: 2.6rem;
+            font-size: 2.7rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.4rem;
@@ -696,7 +764,7 @@ $brand_pillars = [
 
         .cards-track {
             display: flex;
-            gap: 20px;
+            gap: 22px;
             overflow-x: auto;
             scroll-behavior: smooth;
             padding: 10px 5px 20px;
@@ -710,10 +778,10 @@ $brand_pillars = [
         .creative-card {
             flex: 0 0 280px;
             background: var(--color-blanco);
-            border-radius: 18px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 34, 56, 0.06);
-            transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(0, 34, 56, 0.06);
+            transition: all 0.38s cubic-bezier(0.165, 0.84, 0.44, 1);
             border: 1px solid var(--color-gris-border);
             display: flex;
             flex-direction: column;
@@ -723,8 +791,8 @@ $brand_pillars = [
         }
 
         .creative-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 35px rgba(233, 77, 0, 0.18);
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(233, 77, 0, 0.22);
             border-color: var(--color-naranja-journey);
         }
 
@@ -739,30 +807,30 @@ $brand_pillars = [
             width: 100%;
             height: 250px;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.65s ease;
         }
 
         .creative-card:hover .card-img-container img {
-            transform: scale(1.08);
+            transform: scale(1.1);
         }
 
         .card-badge-overlay {
             position: absolute;
             top: 12px;
             left: 12px;
-            background: rgba(0, 34, 56, 0.88);
+            background: rgba(0, 34, 56, 0.9);
             backdrop-filter: blur(8px);
             color: var(--color-blanco);
             font-size: 0.75rem;
             font-weight: 700;
-            padding: 0.35rem 0.8rem;
+            padding: 0.35rem 0.85rem;
             border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             font-family: 'Poppins', sans-serif;
         }
 
         .card-body-content {
-            padding: 1.3rem;
+            padding: 1.4rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -771,7 +839,7 @@ $brand_pillars = [
         }
 
         .card-title-text {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.5rem;
@@ -789,20 +857,21 @@ $brand_pillars = [
             margin-bottom: 1.2rem;
         }
 
-        /* SECCIÓN TARJETAS CREATIVAS DE DESTINOS DESTACADOS CON DUAL CURRENCY PRECIOS */
+        /* 5. SECCIÓN DESTINOS DEDICADA CON TARJETAS CREATIVAS Y PRECIOS EN CADA TARJETA */
         .destinos-creative-section {
-            padding: 5.5rem 0;
+            padding: 6rem 0;
             background: var(--color-blanco);
             width: 100vw;
+            position: relative;
         }
 
         .dest-card-creative {
             background: var(--color-blanco);
-            border-radius: 20px;
+            border-radius: 22px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 10px 30px rgba(0, 34, 56, 0.05);
-            transition: all 0.35s ease;
+            box-shadow: 0 12px 35px rgba(0, 34, 56, 0.06);
+            transition: all 0.38s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -810,44 +879,45 @@ $brand_pillars = [
         }
 
         .dest-card-creative:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 40px rgba(233, 77, 0, 0.16);
+            transform: translateY(-10px);
+            box-shadow: 0 22px 48px rgba(233, 77, 0, 0.22);
             border-color: var(--color-naranja-journey);
         }
 
         .dest-card-img-box {
             position: relative;
             width: 100%;
-            height: 240px;
+            height: 250px;
             overflow: hidden;
         }
 
         .dest-card-img-box img {
             width: 100%;
-            height: 240px;
+            height: 250px;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.65s ease;
         }
 
         .dest-card-creative:hover .dest-card-img-box img {
-            transform: scale(1.08);
+            transform: scale(1.1);
         }
 
         .dest-card-badge {
             position: absolute;
             top: 14px;
             right: 14px;
-            background: rgba(233, 77, 0, 0.9);
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco);
             font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.35rem 0.85rem;
+            font-weight: 800;
+            padding: 0.38rem 0.9rem;
             border-radius: 30px;
-            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 12px rgba(233, 77, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .dest-card-body {
-            padding: 1.5rem;
+            padding: 1.6rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -861,13 +931,15 @@ $brand_pillars = [
             font-size: 0.82rem;
             color: var(--color-texto-suave);
             margin-bottom: 0.6rem;
+            font-weight: 600;
         }
 
         .dest-card-title {
-            font-size: 1.28rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 800;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.8rem;
+            line-height: 1.3;
         }
 
         .dest-card-prices-box {
@@ -877,8 +949,8 @@ $brand_pillars = [
         }
 
         .price-usd {
-            font-size: 1.15rem;
-            font-weight: 800;
+            font-size: 1.2rem;
+            font-weight: 900;
             color: var(--color-naranja-journey);
             font-family: 'Poppins', sans-serif;
             line-height: 1.2;
@@ -891,41 +963,74 @@ $brand_pillars = [
             font-family: 'Poppins', sans-serif;
         }
 
-        /* 5. SECCIÓN REDISEÑADA: PERÚ SAFE JOURNEYS – TRAVEL AGENCY */
+        /* 6. SECCIÓN PERÚ SAFE JOURNEYS – TRAVEL AGENCY REDISEÑADA */
         .creative-narrative-section {
-            padding: 6rem 0;
+            padding: 6.5rem 0;
             background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
             position: relative;
             overflow: hidden;
             width: 100vw;
         }
 
+        .animated-bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(95px);
+            opacity: 0.24;
+            z-index: 0;
+            animation: floatShape 10s infinite alternate ease-in-out;
+        }
+
+        .bg-shape-1 {
+            width: 520px;
+            height: 520px;
+            background: var(--color-naranja-journey);
+            top: -120px;
+            right: -120px;
+        }
+
+        .bg-shape-2 {
+            width: 620px;
+            height: 620px;
+            background: var(--color-azul-peru-safe);
+            bottom: -180px;
+            left: -180px;
+            animation-delay: -5s;
+        }
+
+        @keyframes floatShape {
+            0% { transform: translateY(0px) rotate(0deg) scale(1); }
+            100% { transform: translateY(38px) rotate(20deg) scale(1.08); }
+        }
+
         .agency-glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 28px;
-            padding: 3.5rem;
-            border: 1px solid rgba(226, 232, 240, 0.9);
-            box-shadow: 0 20px 50px rgba(0, 34, 56, 0.06);
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(25px);
+            border-radius: 32px;
+            padding: 4rem;
+            border: 1px solid rgba(226, 232, 240, 0.95);
+            box-shadow: 0 25px 65px rgba(0, 34, 56, 0.08);
         }
 
         .narrative-paragraph {
-            font-size: 1.12rem;
-            line-height: 1.85;
+            font-size: 1.15rem;
+            line-height: 1.9;
             color: #334155;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.6rem;
         }
 
         .brand-motto-box {
             background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
             color: var(--color-blanco);
-            border-radius: 24px;
-            padding: 3.2rem 2.5rem;
-            margin: 3.5rem 0;
+            border-radius: 28px;
+            padding: 3.5rem 3rem;
+            margin: 4rem 0;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 18, 32, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 22px 50px rgba(0, 18, 32, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .brand-motto-box::after {
@@ -933,80 +1038,80 @@ $brand_pillars = [
             position: absolute;
             top: -50%;
             right: -20%;
-            width: 350px;
-            height: 350px;
-            background: rgba(233, 77, 0, 0.25);
+            width: 420px;
+            height: 420px;
+            background: rgba(233, 77, 0, 0.28);
             border-radius: 50%;
-            filter: blur(60px);
+            filter: blur(65px);
         }
 
         .brand-motto-title {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--color-dorado-andino);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.4rem;
         }
 
-        /* 6. PILARES DE MARCA REDISEÑADOS */
+        /* 7. PILARES DE MARCA REDISEÑADOS CON ILUMINACIÓN */
         .pillar-card {
             background: var(--color-blanco);
-            border-radius: 20px;
-            padding: 2rem 1.8rem;
+            border-radius: 22px;
+            padding: 2.2rem 1.8rem;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
-            transition: all 0.35s ease;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.03);
+            transition: all 0.38s ease;
             height: 100%;
         }
 
         .pillar-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             border-color: var(--color-naranja-journey);
-            box-shadow: 0 16px 36px rgba(233, 77, 0, 0.12);
+            box-shadow: 0 18px 42px rgba(233, 77, 0, 0.15);
         }
 
         .pillar-icon-box {
-            width: 58px;
-            height: 58px;
-            border-radius: 16px;
-            background: rgba(233, 77, 0, 0.1);
+            width: 62px;
+            height: 62px;
+            border-radius: 18px;
+            background: rgba(233, 77, 0, 0.12);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.75rem;
-            margin-bottom: 1.2rem;
-            transition: all 0.35s ease;
+            font-size: 1.85rem;
+            margin-bottom: 1.3rem;
+            transition: all 0.38s ease;
         }
 
         .pillar-card:hover .pillar-icon-box {
             background: var(--color-naranja-journey);
             color: var(--color-blanco);
-            transform: rotate(-6deg) scale(1.05);
-            box-shadow: 0 6px 18px var(--color-naranja-glow);
+            transform: rotate(-8deg) scale(1.08);
+            box-shadow: 0 8px 20px var(--color-naranja-glow);
         }
 
         .pillar-name {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.5rem;
             font-family: 'Poppins', sans-serif;
         }
 
-        /* FOOTER */
+        /* FOOTER REDISEÑADO CON LOS 3 COLORES PRINCIPALES */
         .footer-custom {
             background: #001220;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 2px solid var(--color-naranja-journey);
             padding-top: 5rem;
             padding-bottom: 2rem;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: #CBD5E1;
             width: 100vw;
         }
 
         .footer-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             font-weight: 800;
             color: var(--color-blanco);
             margin-bottom: 1.2rem;
@@ -1022,20 +1127,21 @@ $brand_pillars = [
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 1.1rem;
+            margin-bottom: 1.2rem;
             color: #94A3B8;
         }
 
         .footer-contact-icon {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             background-color: rgba(255, 255, 255, 0.06);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--color-naranja-journey);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            border: 1px solid rgba(233, 77, 0, 0.2);
         }
 
         .footer-contact-item a {
@@ -1049,10 +1155,10 @@ $brand_pillars = [
         }
 
         .footer-heading {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--color-blanco);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.6rem;
             position: relative;
             padding-bottom: 0.5rem;
             font-family: 'Poppins', sans-serif;
@@ -1076,7 +1182,7 @@ $brand_pillars = [
         }
 
         .footer-links li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.85rem;
         }
 
         .footer-links a {
@@ -1090,29 +1196,29 @@ $brand_pillars = [
 
         .footer-links a:hover {
             color: var(--color-naranja-journey);
-            transform: translateX(5px);
+            transform: translateX(6px);
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            margin-top: 3.5rem;
-            padding-top: 1.8rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
             text-align: center;
             color: #94A3B8;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
         }
 
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 32px;
+            font-size: 34px;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             z-index: 1050;
             display: flex;
@@ -1137,13 +1243,13 @@ $brand_pillars = [
         }
 
         @media (max-width: 991.98px) {
-            .hero-title { font-size: 3rem; }
+            .hero-title { font-size: 3.1rem; }
             .hero-subtitle { font-size: 1.15rem; }
             .agency-glass-card { padding: 2.2rem 1.6rem; }
             .brand-motto-title { font-size: 1.9rem; }
             .section-title { font-size: 2.1rem; }
             .logo-img-header { height: 72px; }
-            .dropdown-menu-custom { min-width: 300px; }
+            .dropdown-menu-custom { min-width: 320px; }
         }
 
         @media (max-width: 575.98px) {
@@ -1156,7 +1262,7 @@ $brand_pillars = [
 </head>
 <body>
 
-    <!-- 1. HEADER & TOP BAR -->
+    <!-- 1. HEADER & TOP BAR REDISEÑADOS -->
     <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
@@ -1205,7 +1311,7 @@ $brand_pillars = [
                         <a class="nav-link active" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
 
-                    <!-- DESTINOS DROPDOWN CON PRECIOS -->
+                    <!-- DESTINOS DROPDOWN CON PRECIOS VISIBLES -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" id="destinosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             DESTINOS <i class="bi bi-chevron-down ms-1 fs-6 text-warning"></i>
@@ -1242,7 +1348,7 @@ $brand_pillars = [
                     </li>
                 </ul>
 
-                <!-- BOTÓN RESERVA CON ANCHO AJUSTADO COMPACTO -->
+                <!-- BOTÓN RESERVA CON ANCHO COMPACTO -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
                     <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
@@ -1291,7 +1397,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 3. SECCIÓN "ENCUENTRA TU PRÓXIMO DESTINO" CON ANCHO Y BOTONES COMPACTOS -->
+    <!-- 3. SECCIÓN CATEGORÍAS DE VIAJE CON ANCHO COMPLETO -->
     <section class="cards-slider-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4">
@@ -1337,18 +1443,18 @@ $brand_pillars = [
     </section>
 
 
-    <!-- SECCIÓN: TARJETAS CREATIVAS DE DESTINOS DESTACADOS CON DUAL CURRENCY PRECIOS -->
+    <!-- 4. DEDICADA SECCIÓN "DESTINOS" CON PRECIOS EN TODAS LAS TARJETAS Y TARJETAS CREATIVAS -->
     <section class="destinos-creative-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center max-w-700 mx-auto mb-5">
-                <span class="section-badge">🏔️ DESTINOS DESTACADOS</span>
-                <h2 class="section-title">Nuestras Rutas e Itinerarios Estrellas</h2>
-                <p class="text-muted fs-5">Rutas planificadas por especialistas locales con máxima seguridad y tarifas claras.</p>
+                <span class="section-badge">🏔️ SECCIÓN DESTINOS POPULARES</span>
+                <h2 class="section-title">Destinos con Precios Transparentes</h2>
+                <p class="text-muted fs-5">Planes organizados con máxima seguridad, atención personalizada y precios en USD ($) y Soles (S/.).</p>
             </div>
 
             <div class="row g-4">
-                <?php foreach($creative_destinations as $dest): ?>
-                    <div class="col-xl-3 col-md-6">
+                <?php foreach($destinos_cards_section as $dest): ?>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="dest-card-creative">
                             <div class="dest-card-img-box">
                                 <img src="<?php echo $dest['image']; ?>" alt="<?php echo $dest['title']; ?>" loading="lazy">
@@ -1372,6 +1478,7 @@ $brand_pillars = [
                                 </div>
 
                                 <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+                                    <!-- Precios visibles en USD y PEN -->
                                     <div class="dest-card-prices-box">
                                         <span class="price-usd"><?php echo $dest['price_usd']; ?></span>
                                         <span class="price-pen"><?php echo $dest['price_pen']; ?></span>
