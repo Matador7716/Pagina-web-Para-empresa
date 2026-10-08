@@ -33,7 +33,7 @@ $all_destinos = [
         'rating' => '5.0 (86 Reseñas)',
         'price_usd' => '$ 80.00',
         'price_pen' => 'S/. 275.50',
-        'badge' => '🏔️ Aguas Termales & Glaciares',
+        'badge' => 'Aguas Termales & Glaciares',
         'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'
     ],
@@ -44,7 +44,7 @@ $all_destinos = [
         'rating' => '4.9 (112 Reseñas)',
         'price_usd' => '$ 85.00 Simp / $ 65.00 Dob',
         'price_pen' => 'S/. 292.60 Simp / S/. 223.73 Dob',
-        'badge' => '⚡ Adrenalina en Cuatrimoto',
+        'badge' => 'Adrenalina en Cuatrimoto',
         'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'
     ],
@@ -55,7 +55,7 @@ $all_destinos = [
         'rating' => '4.9 (140 Reseñas)',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
-        'badge' => '💧 Aguas Turquesas',
+        'badge' => 'Aguas Turquesas',
         'image' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'
     ],
@@ -66,7 +66,7 @@ $all_destinos = [
         'rating' => '4.8 (155 Reseñas)',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
-        'badge' => '🌈 Montaña de 7 Colores',
+        'badge' => 'Montaña de 7 Colores',
         'image' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'
     ],
@@ -77,7 +77,7 @@ $all_destinos = [
         'rating' => '4.9 (78 Reseñas)',
         'price_usd' => '$ 45.00',
         'price_pen' => 'S/. 154.90',
-        'badge' => '🏔️ Cerro Afilado',
+        'badge' => 'Cerro Afilado',
         'image' => 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'
     ],
@@ -88,7 +88,7 @@ $all_destinos = [
         'rating' => '5.0 (64 Reseñas)',
         'price_usd' => '$ 80.00',
         'price_pen' => 'S/. 275.50',
-        'badge' => '❄️ Glacial Tropical',
+        'badge' => 'Glacial Tropical',
         'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'
     ],
@@ -99,7 +99,7 @@ $all_destinos = [
         'rating' => '4.9 (130 Reseñas)',
         'price_usd' => '$ 35.00',
         'price_pen' => 'S/. 120.50',
-        'badge' => '🏛️ Pisac, Ollantaytambo & Chinchero',
+        'badge' => 'Pisac, Ollantaytambo & Chinchero',
         'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'
     ],
@@ -110,7 +110,7 @@ $all_destinos = [
         'rating' => '4.8 (98 Reseñas)',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
-        'badge' => '🌾 Tradición & Mercado Inca',
+        'badge' => 'Tradición & Mercado Inca',
         'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'
     ],
@@ -121,7 +121,7 @@ $all_destinos = [
         'rating' => '4.7 (72 Reseñas)',
         'price_usd' => '$ 25.00',
         'price_pen' => 'S/. 86.50',
-        'badge' => '🕌 Arqueología & Gastronomía',
+        'badge' => 'Arqueología & Gastronomía',
         'image' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'
     ],
@@ -132,7 +132,7 @@ $all_destinos = [
         'rating' => '5.0 (90 Reseñas)',
         'price_usd' => '$ 40.00',
         'price_pen' => 'S/. 138.00',
-        'badge' => '🏰 Fortaleza mística',
+        'badge' => 'Fortaleza Mística',
         'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/'
     ]
@@ -184,15 +184,15 @@ $all_destinos = [
             background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
             font-size: 0.85rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 0;
+            padding: 0.45rem 0;
         }
 
         .topbar-phone-badge {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.3rem 0.85rem;
+            padding: 0.28rem 0.8rem;
             border-radius: 50px;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: #E2E8F0 !important;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -208,23 +208,23 @@ $all_destinos = [
         }
 
         .navbar-custom {
-            background: rgba(0, 34, 56, 0.95);
+            background: rgba(0, 34, 56, 0.96);
             backdrop-filter: blur(20px);
             border-bottom: 2px solid var(--color-naranja-journey);
-            padding: 0.65rem 0;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            padding: 0.55rem 0;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
         }
 
         .logo-img-header {
-            height: 88px;
+            height: 84px;
             object-fit: contain;
         }
 
         .nav-link {
             color: var(--color-blanco) !important;
             font-weight: 700;
-            font-size: 0.92rem;
-            padding: 0.65rem 1.15rem !important;
+            font-size: 0.9rem;
+            padding: 0.6rem 1.1rem !important;
             text-transform: uppercase;
         }
 
@@ -234,17 +234,17 @@ $all_destinos = [
 
         .dropdown-menu-custom {
             background: rgba(0, 22, 40, 0.98) !important;
-            border: 1px solid rgba(233, 77, 0, 0.35) !important;
+            border: 1px solid rgba(233, 77, 0, 0.3) !important;
             border-top: 4px solid var(--color-naranja-journey) !important;
-            border-radius: 16px !important;
-            min-width: 290px;
+            border-radius: 14px !important;
+            min-width: 270px;
         }
 
         .dropdown-item-custom {
             color: #F1F5F9 !important;
-            font-size: 0.85rem !important;
+            font-size: 0.84rem !important;
             font-weight: 700 !important;
-            padding: 0.7rem 1.1rem !important;
+            padding: 0.6rem 1rem !important;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -262,18 +262,18 @@ $all_destinos = [
             font-weight: 700;
             font-size: 0.88rem;
             border-radius: 50px;
-            padding: 0.65rem 1.4rem;
+            padding: 0.6rem 1.35rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             text-decoration: none;
-            box-shadow: 0 4px 16px var(--color-naranja-glow);
+            box-shadow: 0 4px 15px var(--color-naranja-glow);
             text-transform: uppercase;
         }
 
         .page-header-banner {
             background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
-            padding: 5rem 0 4rem;
+            padding: 4rem 0 3.2rem;
             color: var(--color-blanco);
             text-align: center;
             border-bottom: 3px solid var(--color-naranja-journey);
@@ -281,61 +281,61 @@ $all_destinos = [
 
         .dest-card-creative {
             background: var(--color-blanco);
-            border-radius: 22px;
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 12px 35px rgba(0, 34, 56, 0.06);
-            transition: all 0.38s ease;
+            box-shadow: 0 10px 30px rgba(0, 34, 56, 0.05);
+            transition: all 0.35s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
 
         .dest-card-creative:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 22px 48px rgba(233, 77, 0, 0.22);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(233, 77, 0, 0.2);
             border-color: var(--color-naranja-journey);
         }
 
         .dest-card-img-box {
             position: relative;
             width: 100%;
-            height: 250px;
+            height: 230px;
             overflow: hidden;
         }
 
         .dest-card-img-box img {
             width: 100%;
-            height: 250px;
+            height: 230px;
             object-fit: cover;
-            transition: transform 0.65s ease;
+            transition: transform 0.6s ease;
         }
 
         .dest-card-creative:hover .dest-card-img-box img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         .dest-card-badge {
             position: absolute;
-            top: 14px;
-            right: 14px;
+            top: 12px;
+            right: 12px;
             background: var(--color-naranja-journey);
             color: var(--color-blanco);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 800;
-            padding: 0.38rem 0.9rem;
-            border-radius: 30px;
+            padding: 0.32rem 0.8rem;
+            border-radius: 20px;
         }
 
         .price-usd {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 900;
             color: var(--color-naranja-journey);
             font-family: 'Poppins', sans-serif;
         }
 
         .price-pen {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--color-azul-andino);
             font-family: 'Poppins', sans-serif;
@@ -344,26 +344,26 @@ $all_destinos = [
         .footer-custom {
             background: #001220;
             border-top: 2px solid var(--color-naranja-journey);
-            padding-top: 5rem;
-            padding-bottom: 2rem;
+            padding-top: 4rem;
+            padding-bottom: 1.8rem;
             color: #CBD5E1;
             width: 100vw;
         }
 
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 65px;
-            height: 65px;
+            bottom: 25px;
+            right: 25px;
+            width: 62px;
+            height: 62px;
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 34px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            font-size: 32px;
+            box-shadow: 0 10px 22px rgba(37, 211, 102, 0.4);
             z-index: 1050;
             text-decoration: none;
         }
@@ -376,20 +376,16 @@ $all_destinos = [
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
                 <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge">
-                    <i class="bi bi-telephone-fill"></i>
                     <span><strong>Ventas:</strong> <?php echo $phones['ventas']['number']; ?></span>
                 </a>
                 <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge">
-                    <i class="bi bi-gear-fill"></i>
                     <span><strong>Operaciones:</strong> <?php echo $phones['operaciones']['number']; ?></span>
                 </a>
                 <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge">
-                    <i class="bi bi-shield-check"></i>
                     <span><strong>Calidad:</strong> <?php echo $phones['calidad']['number']; ?></span>
                 </a>
             </div>
             <div class="d-none d-md-flex align-items-center gap-2 text-white">
-                <i class="bi bi-envelope-fill text-warning"></i>
                 <span><?php echo $email_address; ?></span>
             </div>
         </div>
@@ -409,13 +405,12 @@ $all_destinos = [
                     <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="https://www.perusafejourneysgroup.com/destinos/" data-bs-toggle="dropdown">
-                            DESTINOS <i class="bi bi-chevron-down text-warning"></i>
+                            DESTINOS
                         </a>
                         <ul class="dropdown-menu dropdown-menu-custom shadow-lg">
                             <?php foreach($destinos_submenu as $sub_item): ?>
                                 <li>
                                     <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
-                                        <i class="bi bi-geo-alt-fill text-warning"></i>
                                         <span><?php echo $sub_item['name']; ?></span>
                                     </a>
                                 </li>
@@ -435,14 +430,14 @@ $all_destinos = [
     <!-- BANNER -->
     <section class="page-header-banner">
         <div class="container-fluid px-3 px-lg-5">
-            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3">🇵🇪 TODOS NUESTROS DESTINOS</span>
-            <h1 class="display-4 fw-extrabold text-white">Nuestros Destinos Turísticos</h1>
-            <p class="fs-5 text-light max-w-700 mx-auto">Explora la magia, historia y paisajes extraordinarios del Perú con precios transparentes en USD ($) y Soles (S/.).</p>
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-2">TODOS NUESTROS DESTINOS</span>
+            <h1 class="display-5 fw-extrabold text-white">Nuestros Destinos Turísticos</h1>
+            <p class="fs-6 text-light max-w-700 mx-auto">Explora la magia, historia y paisajes extraordinarios del Perú con precios transparentes en USD ($) y Soles (S/.).</p>
         </div>
     </section>
 
     <!-- CARDS DE DESTINOS CON PRECIOS EN TODAS LAS TARJETAS -->
-    <section class="py-5">
+    <section class="py-4">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4">
                 <?php foreach($all_destinos as $dest): ?>
@@ -452,15 +447,15 @@ $all_destinos = [
                                 <img src="<?php echo $dest['image']; ?>" alt="<?php echo $dest['title']; ?>" loading="lazy">
                                 <span class="dest-card-badge"><?php echo $dest['badge']; ?></span>
                             </div>
-                            <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                            <div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
                                 <div>
                                     <div class="d-flex justify-content-between text-muted small fw-bold mb-2">
-                                        <span><i class="bi bi-geo-alt-fill text-warning"></i> <?php echo $dest['location']; ?></span>
-                                        <span><i class="bi bi-clock text-warning"></i> <?php echo $dest['duration']; ?></span>
+                                        <span><?php echo $dest['location']; ?></span>
+                                        <span><?php echo $dest['duration']; ?></span>
                                     </div>
-                                    <h3 class="fs-5 fw-bold text-dark mb-2"><?php echo $dest['title']; ?></h3>
+                                    <h3 class="fs-6 fw-bold text-dark mb-2"><?php echo $dest['title']; ?></h3>
                                 </div>
-                                <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+                                <div class="pt-2 border-top d-flex align-items-center justify-content-between">
                                     <div>
                                         <div class="price-usd"><?php echo $dest['price_usd']; ?></div>
                                         <div class="price-pen"><?php echo $dest['price_pen']; ?></div>
