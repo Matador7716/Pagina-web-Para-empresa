@@ -13,6 +13,20 @@ $phones = [
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
+// Submenú de Destinos
+$destinos_submenu = [
+    ['name' => '7 LAGUNAS DEL AUSANGATE', 'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'],
+    ['name' => 'ATV MONTAÑA DE COLORES FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'],
+    ['name' => 'LAGUNA HUMANTAY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'],
+    ['name' => 'MONTAÑA VINICUNCA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'],
+    ['name' => 'PALLAY PUNCHOY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'],
+    ['name' => 'QUELCAYA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'],
+    ['name' => 'VALLE SAGRADO BIG', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'],
+    ['name' => 'VALLE SAGRADO FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'],
+    ['name' => 'VALLE SUR', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'],
+    ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
+];
+
 // Tarjetas creativas reducidas para el carrusel/slider
 $tour_cards = [
     [
@@ -140,13 +154,12 @@ $brand_pillars = [
         /* Tipografía Amigable y Creativa */
         h1, h2, h3, h4, h5, h6,
         .hero-title, .section-title, .brand-motto-title,
-        .brand-text, .nav-link, .btn-reserva-llama, .btn-banner,
+        .brand-text, .nav-link, .dropdown-item, .btn-reserva-llama, .btn-banner,
         .badge, .section-badge {
             font-family: 'Poppins', sans-serif;
         }
 
-        /* 1. HEADER & TOP BAR REDISEÑADOS */
-        /* Top Bar Superior Con Estilo Ultra Moderno */
+        /* 1. HEADER & TOP BAR */
         .top-bar {
             background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
             font-size: 0.85rem;
@@ -220,7 +233,7 @@ $brand_pillars = [
             box-shadow: 0 4px 12px var(--color-naranja-glow);
         }
 
-        /* Menú Pegajoso (Navbar Rediseñado con Glassmorphism) */
+        /* Menú Pegajoso (Navbar) */
         .navbar-custom {
             background: rgba(0, 26, 43, 0.88);
             backdrop-filter: blur(16px);
@@ -243,9 +256,8 @@ $brand_pillars = [
             text-decoration: none;
         }
 
-        /* Ancho e Imagen del Logo Aumentado */
         .logo-img-header {
-            height: 92px; /* Mayor visibilidad del logo */
+            height: 92px;
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
@@ -291,7 +303,70 @@ $brand_pillars = [
             text-shadow: 0 0 10px rgba(233, 77, 0, 0.3);
         }
 
-        /* BOTON "Reserva tu Viaje" - Naranja #E94D00 */
+        /* ESTILOS DEL DROPDOWN MEJORADO PARA DESTINOS */
+        .dropdown-menu-custom {
+            background: rgba(0, 22, 38, 0.96) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            border-top: 3px solid var(--color-naranja-journey) !important;
+            border-radius: 16px !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+            padding: 0.75rem 0.5rem !important;
+            min-width: 290px;
+            margin-top: 0.5rem !important;
+            animation: fadeInDropdown 0.3s ease forwards;
+        }
+
+        @keyframes fadeInDropdown {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hover para abrir el dropdown en pantallas desktop */
+        @media (min-width: 992px) {
+            .nav-item.dropdown:hover .dropdown-menu-custom {
+                display: block;
+            }
+        }
+
+        .dropdown-item-custom {
+            color: #E2E8F0 !important;
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.5px;
+            padding: 0.65rem 1rem !important;
+            border-radius: 10px;
+            transition: all 0.25s ease !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+        }
+
+        .dropdown-item-custom i {
+            color: var(--color-naranja-journey);
+            font-size: 0.95rem;
+            transition: transform 0.25s ease;
+        }
+
+        .dropdown-item-custom:hover {
+            background-color: rgba(233, 77, 0, 0.15) !important;
+            color: var(--color-blanco) !important;
+            transform: translateX(5px);
+        }
+
+        .dropdown-item-custom:hover i {
+            transform: scale(1.25) rotate(5deg);
+            color: var(--color-dorado-andino);
+        }
+
+        .dropdown-divider-custom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+            margin: 0.4rem 0 !important;
+        }
+
+        /* BOTON "Reserva tu Viaje" */
         .btn-reserva-llama {
             background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco) !important;
@@ -329,7 +404,7 @@ $brand_pillars = [
             transform: scale(1.2) rotate(-10deg);
         }
 
-        /* 2. SLIDER CON VIDEO DE FONDO - ANCHO COMPLETO Y MAYÚSCULA */
+        /* 2. SLIDER CON VIDEO DE FONDO */
         .hero-video-slider {
             position: relative;
             height: 92vh;
@@ -343,7 +418,6 @@ $brand_pillars = [
             width: 100vw;
         }
 
-        /* Contenedor del Video Embed YouTube */
         .video-background-wrapper {
             position: absolute;
             top: 50%;
@@ -391,14 +465,13 @@ $brand_pillars = [
             padding: 2rem 1rem;
         }
 
-        /* Título en Mayúscula Solicitado */
         .hero-title {
             font-size: 4.4rem;
             font-weight: 900;
             letter-spacing: -1px;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            text-transform: uppercase; /* VIVE EL PERÚ A TU MANERA */
+            text-transform: uppercase;
             text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
             background: linear-gradient(135deg, #FFFFFF 20%, #FFE0B2 100%);
             -webkit-background-clip: text;
@@ -464,7 +537,7 @@ $brand_pillars = [
             box-shadow: 0 10px 28px rgba(255, 255, 255, 0.3);
         }
 
-        /* 3. SECCIÓN "ENCUENTRA TU PRÓXIMO DESTINO" - ANCHO COMPLETO & TARJETAS REDUCIDAS */
+        /* 3. SECCIÓN "ENCUENTRA TU PRÓXIMO DESTINO" */
         .cards-slider-section {
             background: linear-gradient(180deg, var(--color-gris-claro) 0%, #EDF2F7 100%);
             padding: 5rem 0;
@@ -513,9 +586,8 @@ $brand_pillars = [
             display: none;
         }
 
-        /* REDUCCIÓN DEL TAMAÑO DE LAS TARJETAS SOLICITADO */
         .creative-card {
-            flex: 0 0 290px; /* Tamaño compacto optimizado */
+            flex: 0 0 290px;
             background: var(--color-blanco);
             border-radius: 18px;
             overflow: hidden;
@@ -536,11 +608,10 @@ $brand_pillars = [
             color: var(--color-texto-oscuro);
         }
 
-        /* Reducción de la altura de la imagen */
         .card-img-container {
             position: relative;
             width: 100%;
-            height: 270px; /* Reducido de 420px a 270px */
+            height: 270px;
             overflow: hidden;
         }
 
@@ -614,7 +685,6 @@ $brand_pillars = [
             color: var(--color-naranja-hover);
         }
 
-        /* Botones de navegación del slider */
         .slider-nav-btn {
             width: 48px;
             height: 48px;
@@ -639,7 +709,7 @@ $brand_pillars = [
             transform: scale(1.08);
         }
 
-        /* 4. CONTENIDO CREATIVO CON MOVIMIENTO - ANCHO COMPLETO REDISEÑADO */
+        /* 4. CONTENIDO CREATIVO CON MOVIMIENTO */
         .creative-narrative-section {
             padding: 6.5rem 0;
             background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
@@ -729,7 +799,7 @@ $brand_pillars = [
             margin-bottom: 1.4rem;
         }
 
-        /* PILARES DE MARCA REDISEÑADOS */
+        /* PILARES DE MARCA */
         .pillar-card {
             background: var(--color-blanco);
             border-radius: 22px;
@@ -775,7 +845,7 @@ $brand_pillars = [
             font-family: 'Poppins', sans-serif;
         }
 
-        /* 5. FOOTER CREATIVO & DINÁMICO - ANCHO COMPLETO */
+        /* 5. FOOTER */
         .footer-custom {
             background: #001220;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -884,7 +954,7 @@ $brand_pillars = [
             font-size: 0.92rem;
         }
 
-        /* Icono Flotante de WhatsApp */
+        /* Botón Flotante de WhatsApp */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -927,6 +997,10 @@ $brand_pillars = [
             .brand-motto-title { font-size: 2rem; }
             .section-title { font-size: 2.1rem; }
             .logo-img-header { height: 75px; }
+            .dropdown-menu-custom {
+                background: rgba(0, 18, 32, 0.98) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            }
         }
 
         @media (max-width: 575.98px) {
@@ -939,10 +1013,9 @@ $brand_pillars = [
 </head>
 <body>
 
-    <!-- 1. HEADER & TOP BAR REDISEÑADOS - ANCHO COMPLETO -->
+    <!-- 1. HEADER & TOP BAR REDISEÑADOS -->
     <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
-            <!-- Teléfonos de contacto por departamento -->
             <div class="d-flex align-items-center gap-2 flex-wrap">
                 <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge">
                     <i class="bi bi-telephone-fill"></i>
@@ -962,7 +1035,6 @@ $brand_pillars = [
                 </a>
             </div>
 
-            <!-- Redes sociales con animaciones -->
             <div class="d-none d-md-flex align-items-center gap-3">
                 <small class="text-light me-1 opacity-75">Síguenos:</small>
                 <a href="https://facebook.com" target="_blank" class="topbar-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
@@ -973,28 +1045,45 @@ $brand_pillars = [
         </div>
     </div>
 
-    <!-- Menú Pegajoso (Navbar Elegante) - Ancho Completo -->
+    <!-- Menú Pegajoso (Navbar con Dropdown de DESTINOS) -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
-            <!-- Imagen del Logo Aumentada -->
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
-            <!-- Mobile Toggler -->
             <button class="navbar-toggler text-white border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list fs-1 text-white"></i>
             </button>
 
-            <!-- Menú Links & Botón Llama -->
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/destinos/">DESTINOS</a>
+
+                    <!-- DESTINOS DROPDOWN REDISEÑADO -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" id="destinosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            DESTINOS <i class="bi bi-chevron-down ms-1 fs-6 text-warning"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom shadow-lg" aria-labelledby="destinosDropdown">
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom fw-bold text-warning" href="https://www.perusafejourneysgroup.com/destinos/">
+                                    <i class="bi bi-compass-fill"></i> VER TODOS LOS DESTINOS
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider dropdown-divider-custom"></li>
+                            <?php foreach($destinos_submenu as $sub_item): ?>
+                                <li>
+                                    <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
+                                        <i class="bi bi-geo-alt-fill"></i> <?php echo $sub_item['name']; ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.perusafejourneysgroup.com/experiencias/">EXPERIENCIAS</a>
                     </li>
@@ -1009,7 +1098,6 @@ $brand_pillars = [
                     </li>
                 </ul>
 
-                <!-- BOTÓN "Reserva tu Viaje" con icono llamita -->
                 <div class="text-center text-lg-end mt-3 mt-lg-0">
                     <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
                         <svg class="llama-svg" viewBox="0 0 512 512">
@@ -1023,7 +1111,7 @@ $brand_pillars = [
     </nav>
 
 
-    <!-- 2. SLIDER CON VIDEO DE FONDO - TÍTULO EN MAYÚSCULAS Y ANCHO COMPLETO -->
+    <!-- 2. SLIDER CON VIDEO DE FONDO -->
     <section class="hero-video-slider">
         <div class="video-background-wrapper">
             <iframe src="https://www.youtube.com/embed/QPBMvXbjjUI?autoplay=1&mute=1&controls=0&loop=1&playlist=QPBMvXbjjUI&showinfo=0&rel=0&iv_load_policy=3&enablejsapi=1"
@@ -1039,7 +1127,6 @@ $brand_pillars = [
                 <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                     🇵🇪 EXPERIENCIAS AUTÉNTICAS EN EL PERÚ
                 </span>
-                <!-- Cambiado a Mayúsculas según solicitud -->
                 <h1 class="hero-title">
                     VIVE EL PERÚ A TU MANERA
                 </h1>
@@ -1059,7 +1146,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 3. SECCIÓN "ENCUENTRA TU PRÓXIMO DESTINO" - TARJETAS REDUCIDAS & ANCHO COMPLETO -->
+    <!-- 3. SECCIÓN "ENCUENTRA TU PRÓXIMO DESTINO" -->
     <section class="cards-slider-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4">
@@ -1069,7 +1156,6 @@ $brand_pillars = [
                     <p class="text-muted mb-0 fs-5">Explora nuestras categorías de viaje diseñadas para cada tipo de aventurero.</p>
                 </div>
 
-                <!-- Botones de navegación del slider -->
                 <div class="d-flex gap-2">
                     <button class="slider-nav-btn" id="slidePrevBtn" aria-label="Anterior">
                         <i class="bi bi-chevron-left"></i>
@@ -1080,7 +1166,6 @@ $brand_pillars = [
                 </div>
             </div>
 
-            <!-- Contenedor del Slider con Tarjetas Reducidas -->
             <div class="cards-track-wrapper">
                 <div class="cards-track" id="cardsTrack">
                     <?php foreach($tour_cards as $card): ?>
@@ -1107,14 +1192,13 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 4. CONTENIDO CREATIVO CON MOVIMIENTO - ANCHO COMPLETO Y DISEÑO MEJORADO -->
+    <!-- 4. CONTENIDO CREATIVO CON MOVIMIENTO -->
     <section class="creative-narrative-section">
         <div class="animated-bg-shape bg-shape-1"></div>
         <div class="animated-bg-shape bg-shape-2"></div>
 
         <div class="container-fluid px-3 px-lg-5">
             <div class="narrative-card-wrapper">
-                <!-- Bloque de Introducción -->
                 <div class="row align-items-center g-5 mb-5">
                     <div class="col-lg-7">
                         <span class="section-badge">✨ QUIÉNES SOMOS</span>
@@ -1143,7 +1227,6 @@ $brand_pillars = [
                     </div>
                 </div>
 
-                <!-- BANNER DESTACADO -->
                 <div class="brand-motto-box text-center">
                     <span class="badge bg-warning text-dark px-4 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
                         🌟 CONTENIDO CREATIVO
@@ -1159,7 +1242,6 @@ $brand_pillars = [
                     </p>
                 </div>
 
-                <!-- PILARES DE MARCA -->
                 <div class="pt-4">
                     <div class="text-center mb-5">
                         <span class="section-badge">💎 NUESTROS VALORES</span>
@@ -1187,11 +1269,10 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 5. FOOTER CREATIVO Y DINÁMICO - ANCHO COMPLETO -->
+    <!-- 5. FOOTER -->
     <footer class="footer-custom" id="contacto">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
-                <!-- Branding & Descripción -->
                 <div class="col-lg-4 col-md-6">
                     <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
                         Perú Safe Journeys <span>| Viajes Perú</span>
@@ -1206,7 +1287,6 @@ $brand_pillars = [
                     </div>
                 </div>
 
-                <!-- Enlaces Rápidos -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading">Navegación</h5>
                     <ul class="footer-links">
@@ -1219,7 +1299,6 @@ $brand_pillars = [
                     </ul>
                 </div>
 
-                <!-- Datos de Contacto Requeridos -->
                 <div class="col-lg-4 col-md-6">
                     <h5 class="footer-heading">Contacto Oficial</h5>
                     <div class="footer-contact-item">
@@ -1261,7 +1340,6 @@ $brand_pillars = [
                 </div>
             </div>
 
-            <!-- Pie de página copyright -->
             <div class="footer-bottom">
                 <p class="mb-0">
                     &copy; <?php echo $current_year; ?> Todos los derechos reservados para: <strong>Perú Safe Journeys | Viajes Perú</strong>
@@ -1281,10 +1359,9 @@ $brand_pillars = [
     <!-- Scripts Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS Script para Interactividad del Slider -->
+    <!-- Custom JS Script para Interactividad -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Navbar Scroll Effect
             const navbar = document.querySelector('.navbar-custom');
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 50) {
@@ -1294,13 +1371,12 @@ $brand_pillars = [
                 }
             });
 
-            // Slider Nav Controls para tarjetas reducidas
             const track = document.getElementById('cardsTrack');
             const prevBtn = document.getElementById('slidePrevBtn');
             const nextBtn = document.getElementById('slideNextBtn');
 
             if (track && prevBtn && nextBtn) {
-                const scrollAmount = 310; // width of compact card + gap
+                const scrollAmount = 310;
 
                 nextBtn.addEventListener('click', () => {
                     track.scrollBy({ left: scrollAmount, behavior: 'smooth' });

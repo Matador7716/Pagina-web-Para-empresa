@@ -13,7 +13,21 @@ $phones = [
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
-// Lista completa de destinos con dimensiones optimizadas
+// Submenú de Destinos
+$destinos_submenu = [
+    ['name' => '7 LAGUNAS DEL AUSANGATE', 'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'],
+    ['name' => 'ATV MONTAÑA DE COLORES FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'],
+    ['name' => 'LAGUNA HUMANTAY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'],
+    ['name' => 'MONTAÑA VINICUNCA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'],
+    ['name' => 'PALLAY PUNCHOY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'],
+    ['name' => 'QUELCAYA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'],
+    ['name' => 'VALLE SAGRADO BIG', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'],
+    ['name' => 'VALLE SAGRADO FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'],
+    ['name' => 'VALLE SUR', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'],
+    ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
+];
+
+// Lista completa de destinos
 $destinations_list = [
     [
         'title' => 'Machu Picchu & Cusco',
@@ -113,7 +127,7 @@ $destinations_list = [
 
         h1, h2, h3, h4, h5, h6,
         .destinos-hero-title, .section-title,
-        .brand-text, .nav-link, .btn-reserva-llama, .btn-banner,
+        .brand-text, .nav-link, .dropdown-item, .btn-reserva-llama, .btn-banner,
         .badge, .section-badge {
             font-family: 'Poppins', sans-serif;
         }
@@ -241,6 +255,68 @@ $destinations_list = [
             color: var(--color-naranja-journey) !important;
         }
 
+        /* ESTILOS DEL DROPDOWN MEJORADO PARA DESTINOS */
+        .dropdown-menu-custom {
+            background: rgba(0, 22, 38, 0.96) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            border-top: 3px solid var(--color-naranja-journey) !important;
+            border-radius: 16px !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+            padding: 0.75rem 0.5rem !important;
+            min-width: 290px;
+            margin-top: 0.5rem !important;
+            animation: fadeInDropdown 0.3s ease forwards;
+        }
+
+        @keyframes fadeInDropdown {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (min-width: 992px) {
+            .nav-item.dropdown:hover .dropdown-menu-custom {
+                display: block;
+            }
+        }
+
+        .dropdown-item-custom {
+            color: #E2E8F0 !important;
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.5px;
+            padding: 0.65rem 1rem !important;
+            border-radius: 10px;
+            transition: all 0.25s ease !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+        }
+
+        .dropdown-item-custom i {
+            color: var(--color-naranja-journey);
+            font-size: 0.95rem;
+            transition: transform 0.25s ease;
+        }
+
+        .dropdown-item-custom:hover {
+            background-color: rgba(233, 77, 0, 0.15) !important;
+            color: var(--color-blanco) !important;
+            transform: translateX(5px);
+        }
+
+        .dropdown-item-custom:hover i {
+            transform: scale(1.25) rotate(5deg);
+            color: var(--color-dorado-andino);
+        }
+
+        .dropdown-divider-custom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+            margin: 0.4rem 0 !important;
+        }
+
         /* Botón Llama */
         .btn-reserva-llama {
             background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
@@ -363,7 +439,7 @@ $destinations_list = [
         .destino-img-wrapper {
             position: relative;
             width: 100%;
-            height: 280px; /* Reducido para alineación elegante */
+            height: 280px;
             overflow: hidden;
         }
 
@@ -580,7 +656,7 @@ $destinations_list = [
 </head>
 <body>
 
-    <!-- 1. HEADER - ANCHO COMPLETO -->
+    <!-- 1. HEADER ANCHO COMPLETO -->
     <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
@@ -607,7 +683,7 @@ $destinations_list = [
         </div>
     </div>
 
-    <!-- Sticky Navbar -->
+    <!-- Sticky Navbar con Dropdown de Destinos -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
@@ -623,9 +699,29 @@ $destinations_list = [
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="https://www.perusafejourneysgroup.com/destinos/">DESTINOS</a>
+
+                    <!-- DESTINOS DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="https://www.perusafejourneysgroup.com/destinos/" id="destinosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            DESTINOS <i class="bi bi-chevron-down ms-1 fs-6 text-warning"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom shadow-lg" aria-labelledby="destinosDropdown">
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom fw-bold text-warning" href="https://www.perusafejourneysgroup.com/destinos/">
+                                    <i class="bi bi-compass-fill"></i> VER TODOS LOS DESTINOS
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider dropdown-divider-custom"></li>
+                            <?php foreach($destinos_submenu as $sub_item): ?>
+                                <li>
+                                    <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
+                                        <i class="bi bi-geo-alt-fill"></i> <?php echo $sub_item['name']; ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.perusafejourneysgroup.com/experiencias/">EXPERIENCIAS</a>
                     </li>
