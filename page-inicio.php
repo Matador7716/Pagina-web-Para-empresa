@@ -13,75 +13,55 @@ $phones = [
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
-// Submenú de Destinos con Precios en $ USD y S/. Soles
+// Submenú de Destinos (sin precios según requerimiento)
 $destinos_submenu = [
     [
         'name' => '7 LAGUNAS DEL AUSANGATE',
-        'price_usd' => '$ 80.00',
-        'price_pen' => 'S/. 275.50',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'
     ],
     [
         'name' => 'ATV MONTAÑA DE COLORES FD',
-        'price_usd' => '$ 85.00 Simp. / $ 65.00 Dob.',
-        'price_pen' => 'S/. 292.60 Simp. / S/. 223.73 Dob.',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'
     ],
     [
         'name' => 'LAGUNA HUMANTAY FD',
-        'price_usd' => '$ 30.00',
-        'price_pen' => 'S/. 103.50',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'
     ],
     [
         'name' => 'MONTAÑA VINICUNCA FD',
-        'price_usd' => '$ 30.00',
-        'price_pen' => 'S/. 103.50',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'
     ],
     [
         'name' => 'PALLAY PUNCHOY FD',
-        'price_usd' => '$ 45.00',
-        'price_pen' => 'S/. 154.90',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'
     ],
     [
         'name' => 'QUELCAYA FD',
-        'price_usd' => '$ 80.00',
-        'price_pen' => 'S/. 275.50',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'
     ],
     [
         'name' => 'VALLE SAGRADO BIG',
-        'price_usd' => '$ 35.00',
-        'price_pen' => 'S/. 120.50',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'
     ],
     [
         'name' => 'VALLE SAGRADO FD',
-        'price_usd' => '$ 30.00',
-        'price_pen' => 'S/. 103.50',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'
     ],
     [
         'name' => 'VALLE SUR',
-        'price_usd' => '$ 25.00',
-        'price_pen' => 'S/. 86.50',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'
     ],
     [
         'name' => 'WAQRAPUKARA FD',
-        'price_usd' => '$ 40.00',
-        'price_pen' => 'S/. 138.00',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/'
     ]
 ];
 
-// Categorías de Viaje / Carrusel
+// 5 Tarjetas Creativas para la sección inmediatamente debajo del Slider
 $tour_cards = [
     [
         'title' => 'Tours Tradicionales',
-        'desc' => 'Descubre lugares imprescindibles del Perú con guías locales.',
+        'desc' => 'Descubre lugares imprescindibles del Perú.',
         'badge' => '🏛️ Clásico & Imprescindible',
         'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
         'link' => 'https://www.perusafejourneysgroup.com/destinos/'
@@ -109,14 +89,14 @@ $tour_cards = [
     ],
     [
         'title' => 'Turismo Vivencial',
-        'desc' => 'Comparte, aprende y vive nuestras tradiciones andinas.',
+        'desc' => 'Comparte, aprende y vive nuestras tradiciones.',
         'badge' => '🤝 Cultura & Tradición',
         'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
         'link' => 'https://www.perusafejourneysgroup.com/nosotros/'
     ]
 ];
 
-// DEDICADA SECCIÓN DESTINOS CON TARJETAS CREATIVAS Y PRECIOS EN TODAS LAS TARJETAS
+// Sección Destinos con Tarjetas Creativas y Precios en cada Tarjeta
 $destinos_cards_section = [
     [
         'title' => '7 LAGUNAS DEL AUSANGATE',
@@ -388,22 +368,22 @@ $brand_pillars = [
             box-shadow: 0 6px 16px var(--color-naranja-glow);
         }
 
-        /* Sticky Navbar con Efectos Visuales Eleva */
+        /* Sticky Navbar Eleva unificada */
         .navbar-custom {
-            background: rgba(0, 34, 56, 0.92);
+            background: rgba(0, 34, 56, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             transition: all 0.4s ease;
-            border-bottom: 1px solid rgba(233, 77, 0, 0.25);
+            border-bottom: 2px solid var(--color-naranja-journey);
             width: 100%;
-            padding: 0.55rem 0;
+            padding: 0.65rem 0;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
 
         .navbar-custom.scrolled {
             background: rgba(0, 18, 32, 0.98);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-            padding: 0.35rem 0;
-            border-bottom-color: var(--color-naranja-journey);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+            padding: 0.45rem 0;
         }
 
         .navbar-brand-logo {
@@ -413,7 +393,7 @@ $brand_pillars = [
         }
 
         .logo-img-header {
-            height: 92px;
+            height: 88px;
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 4px 14px rgba(0,0,0,0.35));
@@ -421,18 +401,18 @@ $brand_pillars = [
         }
 
         .navbar-brand-logo:hover .logo-img-header {
-            transform: scale(1.05) rotate(-1deg);
+            transform: scale(1.05);
         }
 
         .nav-link {
             color: var(--color-blanco) !important;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.92rem;
-            padding: 0.6rem 1.1rem !important;
+            padding: 0.65rem 1.15rem !important;
             letter-spacing: 0.8px;
             text-transform: uppercase;
             position: relative;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .nav-link::after {
@@ -459,24 +439,24 @@ $brand_pillars = [
             text-shadow: 0 0 12px rgba(233, 77, 0, 0.4);
         }
 
-        /* DROPDOWN SUBMENU CON EFECTOS LLAMATIVOS Y PRECIOS */
+        /* DROPDOWN SUBMENU REFINED (SIN PRECIOS) */
         .dropdown-menu-custom {
-            background: rgba(0, 18, 32, 0.98) !important;
+            background: rgba(0, 22, 40, 0.98) !important;
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(233, 77, 0, 0.3) !important;
+            border: 1px solid rgba(233, 77, 0, 0.35) !important;
             border-top: 4px solid var(--color-naranja-journey) !important;
-            border-radius: 18px !important;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55) !important;
+            border-radius: 16px !important;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
             padding: 0.75rem 0.5rem !important;
-            min-width: 390px;
+            min-width: 290px;
             margin-top: 0.5rem !important;
         }
 
         @media (min-width: 992px) {
             .nav-item.dropdown:hover .dropdown-menu-custom {
                 display: block;
-                animation: dropdownGlow 0.35s ease forwards;
+                animation: dropdownGlow 0.32s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
             }
         }
 
@@ -486,25 +466,17 @@ $brand_pillars = [
         }
 
         .dropdown-item-custom {
-            color: #E2E8F0 !important;
-            font-size: 0.83rem !important;
+            color: #F1F5F9 !important;
+            font-size: 0.85rem !important;
             font-weight: 700 !important;
             letter-spacing: 0.5px;
-            padding: 0.65rem 1rem !important;
-            border-radius: 12px;
+            padding: 0.7rem 1.1rem !important;
+            border-radius: 10px;
             transition: all 0.28s ease !important;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 12px;
+            gap: 10px;
             text-transform: uppercase;
-        }
-
-        .dropdown-item-custom .dest-title {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            max-width: 220px;
         }
 
         .dropdown-item-custom i {
@@ -513,29 +485,11 @@ $brand_pillars = [
             transition: transform 0.28s ease;
         }
 
-        .menu-price-tag {
-            background: rgba(233, 77, 0, 0.2);
-            color: var(--color-blanco);
-            border: 1px solid rgba(233, 77, 0, 0.4);
-            font-size: 0.73rem;
-            font-weight: 800;
-            padding: 0.25rem 0.65rem;
-            border-radius: 20px;
-            white-space: nowrap;
-            transition: all 0.28s ease;
-        }
-
         .dropdown-item-custom:hover {
             background-color: var(--color-naranja-journey) !important;
             color: var(--color-blanco) !important;
             transform: translateX(6px);
             box-shadow: 0 4px 15px var(--color-naranja-glow);
-        }
-
-        .dropdown-item-custom:hover .menu-price-tag {
-            background: var(--color-azul-peru-safe);
-            color: var(--color-blanco);
-            border-color: var(--color-blanco);
         }
 
         .dropdown-item-custom:hover i {
@@ -594,9 +548,9 @@ $brand_pillars = [
         /* 3. HERO SLIDER CON VIDEO DE FONDO */
         .hero-video-slider {
             position: relative;
-            height: 90vh;
-            min-height: 620px;
-            max-height: 880px;
+            height: 88vh;
+            min-height: 600px;
+            max-height: 850px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -726,10 +680,10 @@ $brand_pillars = [
             box-shadow: 0 10px 28px rgba(255, 255, 255, 0.35);
         }
 
-        /* 4. SECCIÓN CATEGOÍAS DE VIAJE / CARRUSEL CON COMPACT CARDS */
+        /* 4. SECCIÓN INMEDIATAMENTE DEBAJO DEL SLIDER: 5 TARJETAS CREATIVAS */
         .cards-slider-section {
             background: linear-gradient(180deg, var(--color-gris-claro) 0%, #EDF2F7 100%);
-            padding: 5.5rem 0;
+            padding: 5rem 0;
             position: relative;
             width: 100vw;
         }
@@ -753,6 +707,30 @@ $brand_pillars = [
             font-weight: 800;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.4rem;
+        }
+
+        .slider-nav-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--color-blanco);
+            border: 1px solid var(--color-gris-border);
+            color: var(--color-azul-peru-safe);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .slider-nav-btn:hover {
+            background: var(--color-naranja-journey);
+            color: var(--color-blanco);
+            border-color: var(--color-naranja-journey);
+            box-shadow: 0 6px 18px var(--color-naranja-glow);
+            transform: scale(1.08);
         }
 
         .cards-track-wrapper {
@@ -855,6 +833,22 @@ $brand_pillars = [
             color: var(--color-texto-suave);
             line-height: 1.55;
             margin-bottom: 1.2rem;
+        }
+
+        .card-btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: var(--color-naranja-journey);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s ease;
+        }
+
+        .creative-card:hover .card-btn-action {
+            transform: translateX(6px);
         }
 
         /* 5. SECCIÓN DESTINOS DEDICADA CON TARJETAS CREATIVAS Y PRECIOS EN CADA TARJETA */
@@ -972,37 +966,6 @@ $brand_pillars = [
             width: 100vw;
         }
 
-        .animated-bg-shape {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(95px);
-            opacity: 0.24;
-            z-index: 0;
-            animation: floatShape 10s infinite alternate ease-in-out;
-        }
-
-        .bg-shape-1 {
-            width: 520px;
-            height: 520px;
-            background: var(--color-naranja-journey);
-            top: -120px;
-            right: -120px;
-        }
-
-        .bg-shape-2 {
-            width: 620px;
-            height: 620px;
-            background: var(--color-azul-peru-safe);
-            bottom: -180px;
-            left: -180px;
-            animation-delay: -5s;
-        }
-
-        @keyframes floatShape {
-            0% { transform: translateY(0px) rotate(0deg) scale(1); }
-            100% { transform: translateY(38px) rotate(20deg) scale(1.08); }
-        }
-
         .agency-glass-card {
             position: relative;
             z-index: 1;
@@ -1033,18 +996,6 @@ $brand_pillars = [
             border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
-        .brand-motto-box::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 420px;
-            height: 420px;
-            background: rgba(233, 77, 0, 0.28);
-            border-radius: 50%;
-            filter: blur(65px);
-        }
-
         .brand-motto-title {
             font-size: 2.5rem;
             font-weight: 800;
@@ -1052,7 +1003,6 @@ $brand_pillars = [
             margin-bottom: 1.4rem;
         }
 
-        /* 7. PILARES DE MARCA REDISEÑADOS CON ILUMINACIÓN */
         .pillar-card {
             background: var(--color-blanco);
             border-radius: 22px;
@@ -1098,7 +1048,7 @@ $brand_pillars = [
             font-family: 'Poppins', sans-serif;
         }
 
-        /* FOOTER REDISEÑADO CON LOS 3 COLORES PRINCIPALES */
+        /* FOOTER REDISEÑADO */
         .footer-custom {
             background: #001220;
             border-top: 2px solid var(--color-naranja-journey);
@@ -1249,7 +1199,7 @@ $brand_pillars = [
             .brand-motto-title { font-size: 1.9rem; }
             .section-title { font-size: 2.1rem; }
             .logo-img-header { height: 72px; }
-            .dropdown-menu-custom { min-width: 320px; }
+            .dropdown-menu-custom { min-width: 280px; }
         }
 
         @media (max-width: 575.98px) {
@@ -1278,7 +1228,7 @@ $brand_pillars = [
                     <i class="bi bi-shield-check"></i>
                     <span><strong><?php echo $phones['calidad']['label']; ?>:</strong> <?php echo $phones['calidad']['number']; ?></span>
                 </a>
-                <a href="mailto:<?php echo $email_address; ?>" class="topbar-email-link d-none d-xl-flex align-items-center gap-2 ms-3">
+                <a href="mailto:<?php echo $email_address; ?>" class="topbar-email-link d-none d-xl-flex align-items-center gap-2 ms-3 text-white text-decoration-none">
                     <i class="bi bi-envelope-fill text-warning"></i>
                     <span><?php echo $email_address; ?></span>
                 </a>
@@ -1294,7 +1244,7 @@ $brand_pillars = [
         </div>
     </div>
 
-    <!-- Menú Pegajoso con Submenú Destinos y Precios $ USD / S/. Soles -->
+    <!-- Menú Pegajoso con Submenú Destinos Limpio (Sin Precios) -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
@@ -1311,7 +1261,7 @@ $brand_pillars = [
                         <a class="nav-link active" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
 
-                    <!-- DESTINOS DROPDOWN CON PRECIOS VISIBLES -->
+                    <!-- DESTINOS DROPDOWN (SIN PRECIOS) -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" id="destinosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             DESTINOS <i class="bi bi-chevron-down ms-1 fs-6 text-warning"></i>
@@ -1322,12 +1272,12 @@ $brand_pillars = [
                                     <span><i class="bi bi-compass-fill"></i> VER TODOS LOS DESTINOS</span>
                                 </a>
                             </li>
-                            <li><hr class="dropdown-divider dropdown-divider-custom"></li>
+                            <li><hr class="dropdown-divider my-1 border-secondary opacity-25"></li>
                             <?php foreach($destinos_submenu as $sub_item): ?>
                                 <li>
                                     <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
-                                        <span class="dest-title"><i class="bi bi-geo-alt-fill"></i> <?php echo $sub_item['name']; ?></span>
-                                        <span class="menu-price-tag"><?php echo $sub_item['price_usd']; ?> | <?php echo $sub_item['price_pen']; ?></span>
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <span><?php echo $sub_item['name']; ?></span>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
@@ -1397,14 +1347,14 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 3. SECCIÓN CATEGORÍAS DE VIAJE CON ANCHO COMPLETO -->
+    <!-- 3. DEBAJO DEL SLIDER: 5 TARJETAS CREATIVAS CON BOTONES DE DESPLAZAMIENTO -->
     <section class="cards-slider-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4">
                 <div>
-                    <span class="section-badge">🗺️ EXPERIENCIAS DESTACADAS</span>
-                    <h2 class="section-title">Encuentra tu próximo destino</h2>
-                    <p class="text-muted mb-0 fs-5">Explora nuestras categorías de viaje diseñadas para cada tipo de aventurero.</p>
+                    <span class="section-badge">🗺️ EXPERIENCIAS EXCLUSIVAS</span>
+                    <h2 class="section-title">Elige tu Tipo de Viaje</h2>
+                    <p class="text-muted mb-0 fs-5">Las 5 modalidades principales para descubrir lo mejor del Perú a tu medida.</p>
                 </div>
 
                 <div class="d-flex gap-2">
@@ -1417,6 +1367,7 @@ $brand_pillars = [
                 </div>
             </div>
 
+            <!-- Carrusel con las 5 Tarjetas Creativas -->
             <div class="cards-track-wrapper">
                 <div class="cards-track" id="cardsTrack">
                     <?php foreach($tour_cards as $card): ?>
@@ -1443,13 +1394,13 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 4. DEDICADA SECCIÓN "DESTINOS" CON PRECIOS EN TODAS LAS TARJETAS Y TARJETAS CREATIVAS -->
+    <!-- 4. DEDICADA SECCIÓN "DESTINOS" CON PRECIOS EN TODAS LAS TARJETAS -->
     <section class="destinos-creative-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center max-w-700 mx-auto mb-5">
-                <span class="section-badge">🏔️ SECCIÓN DESTINOS POPULARES</span>
-                <h2 class="section-title">Destinos con Precios Transparentes</h2>
-                <p class="text-muted fs-5">Planes organizados con máxima seguridad, atención personalizada y precios en USD ($) y Soles (S/.).</p>
+                <span class="section-badge">🏔️ DESTINOS POPULARES</span>
+                <h2 class="section-title">Nuestros Tours y Destinos Estrellas</h2>
+                <p class="text-muted fs-5">Explora nuestros itinerarios organizados con precios transparentes en USD ($) y Soles (S/.).</p>
             </div>
 
             <div class="row g-4">
@@ -1478,7 +1429,6 @@ $brand_pillars = [
                                 </div>
 
                                 <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
-                                    <!-- Precios visibles en USD y PEN -->
                                     <div class="dest-card-prices-box">
                                         <span class="price-usd"><?php echo $dest['price_usd']; ?></span>
                                         <span class="price-pen"><?php echo $dest['price_pen']; ?></span>
@@ -1497,7 +1447,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 5. SECCIÓN REDISEÑADA: PERÚ SAFE JOURNEYS – TRAVEL AGENCY -->
+    <!-- 5. SECCIÓN CONTENIDO CREATIVO: PERÚ SAFE JOURNEYS – TRAVEL AGENCY -->
     <section class="creative-narrative-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="agency-glass-card">

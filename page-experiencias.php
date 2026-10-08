@@ -13,16 +13,16 @@ $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
 $destinos_submenu = [
-    ['name' => '7 LAGUNAS DEL AUSANGATE', 'price_usd' => '$ 80.00', 'price_pen' => 'S/. 275.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'],
-    ['name' => 'ATV MONTAÑA DE COLORES FD', 'price_usd' => '$ 85.00 Simp. / $ 65.00 Dob.', 'price_pen' => 'S/. 292.60 Simp. / S/. 223.73 Dob.', 'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'],
-    ['name' => 'LAGUNA HUMANTAY FD', 'price_usd' => '$ 30.00', 'price_pen' => 'S/. 103.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'],
-    ['name' => 'MONTAÑA VINICUNCA FD', 'price_usd' => '$ 30.00', 'price_pen' => 'S/. 103.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'],
-    ['name' => 'PALLAY PUNCHOY FD', 'price_usd' => '$ 45.00', 'price_pen' => 'S/. 154.90', 'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'],
-    ['name' => 'QUELCAYA FD', 'price_usd' => '$ 80.00', 'price_pen' => 'S/. 275.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'],
-    ['name' => 'VALLE SAGRADO BIG', 'price_usd' => '$ 35.00', 'price_pen' => 'S/. 120.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'],
-    ['name' => 'VALLE SAGRADO FD', 'price_usd' => '$ 30.00', 'price_pen' => 'S/. 103.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'],
-    ['name' => 'VALLE SUR', 'price_usd' => '$ 25.00', 'price_pen' => 'S/. 86.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'],
-    ['name' => 'WAQRAPUKARA FD', 'price_usd' => '$ 40.00', 'price_pen' => 'S/. 138.00', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
+    ['name' => '7 LAGUNAS DEL AUSANGATE', 'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'],
+    ['name' => 'ATV MONTAÑA DE COLORES FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'],
+    ['name' => 'LAGUNA HUMANTAY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'],
+    ['name' => 'MONTAÑA VINICUNCA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'],
+    ['name' => 'PALLAY PUNCHOY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'],
+    ['name' => 'QUELCAYA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'],
+    ['name' => 'VALLE SAGRADO BIG', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'],
+    ['name' => 'VALLE SAGRADO FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'],
+    ['name' => 'VALLE SUR', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'],
+    ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
 ];
 ?>
 <!DOCTYPE html>
@@ -58,13 +58,13 @@ $destinos_submenu = [
         .top-bar { background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%); font-size: 0.85rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 0.5rem 0; }
         .topbar-phone-badge { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 0.3rem 0.85rem; border-radius: 50px; font-size: 0.82rem; color: #E2E8F0 !important; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
 
-        .navbar-custom { background: rgba(0, 34, 56, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(233, 77, 0, 0.25); padding: 0.55rem 0; }
-        .logo-img-header { height: 92px; object-fit: contain; }
-        .nav-link { color: var(--color-blanco) !important; font-weight: 600; font-size: 0.92rem; padding: 0.6rem 1.1rem !important; text-transform: uppercase; }
+        .navbar-custom { background: rgba(0, 34, 56, 0.95); backdrop-filter: blur(20px); border-bottom: 2px solid var(--color-naranja-journey); padding: 0.65rem 0; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); }
+        .logo-img-header { height: 88px; object-fit: contain; }
+        .nav-link { color: var(--color-blanco) !important; font-weight: 700; font-size: 0.92rem; padding: 0.65rem 1.15rem !important; text-transform: uppercase; }
         .nav-link:hover, .nav-link.active { color: var(--color-naranja-journey) !important; }
 
-        .dropdown-menu-custom { background: rgba(0, 18, 32, 0.98) !important; border: 1px solid rgba(233, 77, 0, 0.3) !important; border-top: 4px solid var(--color-naranja-journey) !important; border-radius: 18px !important; min-width: 390px; }
-        .dropdown-item-custom { color: #E2E8F0 !important; font-size: 0.83rem !important; font-weight: 700 !important; padding: 0.65rem 1rem !important; display: flex; align-items: center; justify-content: space-between; }
+        .dropdown-menu-custom { background: rgba(0, 22, 40, 0.98) !important; border: 1px solid rgba(233, 77, 0, 0.35) !important; border-top: 4px solid var(--color-naranja-journey) !important; border-radius: 16px !important; min-width: 290px; }
+        .dropdown-item-custom { color: #F1F5F9 !important; font-size: 0.85rem !important; font-weight: 700 !important; padding: 0.7rem 1.1rem !important; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
         .dropdown-item-custom:hover { background-color: var(--color-naranja-journey) !important; color: var(--color-blanco) !important; }
 
         .btn-reserva-llama { background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%); color: var(--color-blanco) !important; font-weight: 700; font-size: 0.88rem; border-radius: 50px; padding: 0.65rem 1.4rem; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 16px var(--color-naranja-glow); text-transform: uppercase; }
@@ -109,8 +109,8 @@ $destinos_submenu = [
                             <?php foreach($destinos_submenu as $sub_item): ?>
                                 <li>
                                     <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
-                                        <span><i class="bi bi-geo-alt-fill text-warning"></i> <?php echo $sub_item['name']; ?></span>
-                                        <span class="badge bg-warning text-dark"><?php echo $sub_item['price_usd']; ?></span>
+                                        <i class="bi bi-geo-alt-fill text-warning"></i>
+                                        <span><?php echo $sub_item['name']; ?></span>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
@@ -156,7 +156,7 @@ $destinos_submenu = [
                         <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Aventura ATV" style="height: 220px; object-fit: cover;">
                         <div class="card-body p-4">
                             <span class="badge bg-warning text-dark mb-2">Adrenalina</span>
-                            <h3 class="fs-5 fw-bold text-dark">Rutas Extrenas & ATVs</h3>
+                            <h3 class="fs-5 fw-bold text-dark">Rutas Extremas & ATVs</h3>
                             <p class="text-secondary">Siente la velocidad en la Montaña de 7 Colores conduciendo cuatrimotos de última generación.</p>
                             <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="btn btn-sm btn-reserva-llama">Consultar Experiencia</a>
                         </div>

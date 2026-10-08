@@ -13,16 +13,16 @@ $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
 $destinos_submenu = [
-    ['name' => '7 LAGUNAS DEL AUSANGATE', 'price_usd' => '$ 80.00', 'price_pen' => 'S/. 275.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'],
-    ['name' => 'ATV MONTAÑA DE COLORES FD', 'price_usd' => '$ 85.00 Simp. / $ 65.00 Dob.', 'price_pen' => 'S/. 292.60 Simp. / S/. 223.73 Dob.', 'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'],
-    ['name' => 'LAGUNA HUMANTAY FD', 'price_usd' => '$ 30.00', 'price_pen' => 'S/. 103.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'],
-    ['name' => 'MONTAÑA VINICUNCA FD', 'price_usd' => '$ 30.00', 'price_pen' => 'S/. 103.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'],
-    ['name' => 'PALLAY PUNCHOY FD', 'price_usd' => '$ 45.00', 'price_pen' => 'S/. 154.90', 'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'],
-    ['name' => 'QUELCAYA FD', 'price_usd' => '$ 80.00', 'price_pen' => 'S/. 275.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'],
-    ['name' => 'VALLE SAGRADO BIG', 'price_usd' => '$ 35.00', 'price_pen' => 'S/. 120.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'],
-    ['name' => 'VALLE SAGRADO FD', 'price_usd' => '$ 30.00', 'price_pen' => 'S/. 103.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'],
-    ['name' => 'VALLE SUR', 'price_usd' => '$ 25.00', 'price_pen' => 'S/. 86.50', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'],
-    ['name' => 'WAQRAPUKARA FD', 'price_usd' => '$ 40.00', 'price_pen' => 'S/. 138.00', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
+    ['name' => '7 LAGUNAS DEL AUSANGATE', 'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'],
+    ['name' => 'ATV MONTAÑA DE COLORES FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'],
+    ['name' => 'LAGUNA HUMANTAY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/laguna-humantay-fd/'],
+    ['name' => 'MONTAÑA VINICUNCA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/montana-vinicunca-fd/'],
+    ['name' => 'PALLAY PUNCHOY FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/pallay-punchoy-fd/'],
+    ['name' => 'QUELCAYA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/quelcaya-fd/'],
+    ['name' => 'VALLE SAGRADO BIG', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'],
+    ['name' => 'VALLE SAGRADO FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'],
+    ['name' => 'VALLE SUR', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'],
+    ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
 ];
 
 $all_destinos = [
@@ -210,20 +210,21 @@ $all_destinos = [
         .navbar-custom {
             background: rgba(0, 34, 56, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(233, 77, 0, 0.25);
-            padding: 0.55rem 0;
+            border-bottom: 2px solid var(--color-naranja-journey);
+            padding: 0.65rem 0;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
 
         .logo-img-header {
-            height: 92px;
+            height: 88px;
             object-fit: contain;
         }
 
         .nav-link {
             color: var(--color-blanco) !important;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.92rem;
-            padding: 0.6rem 1.1rem !important;
+            padding: 0.65rem 1.15rem !important;
             text-transform: uppercase;
         }
 
@@ -232,35 +233,27 @@ $all_destinos = [
         }
 
         .dropdown-menu-custom {
-            background: rgba(0, 18, 32, 0.98) !important;
-            border: 1px solid rgba(233, 77, 0, 0.3) !important;
+            background: rgba(0, 22, 40, 0.98) !important;
+            border: 1px solid rgba(233, 77, 0, 0.35) !important;
             border-top: 4px solid var(--color-naranja-journey) !important;
-            border-radius: 18px !important;
-            min-width: 390px;
+            border-radius: 16px !important;
+            min-width: 290px;
         }
 
         .dropdown-item-custom {
-            color: #E2E8F0 !important;
-            font-size: 0.83rem !important;
+            color: #F1F5F9 !important;
+            font-size: 0.85rem !important;
             font-weight: 700 !important;
-            padding: 0.65rem 1rem !important;
+            padding: 0.7rem 1.1rem !important;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 10px;
+            text-transform: uppercase;
         }
 
         .dropdown-item-custom:hover {
             background-color: var(--color-naranja-journey) !important;
             color: var(--color-blanco) !important;
-        }
-
-        .menu-price-tag {
-            background: rgba(233, 77, 0, 0.2);
-            color: var(--color-blanco);
-            border: 1px solid rgba(233, 77, 0, 0.4);
-            font-size: 0.73rem;
-            padding: 0.25rem 0.65rem;
-            border-radius: 20px;
         }
 
         .btn-reserva-llama {
@@ -422,8 +415,8 @@ $all_destinos = [
                             <?php foreach($destinos_submenu as $sub_item): ?>
                                 <li>
                                     <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
-                                        <span><i class="bi bi-geo-alt-fill text-warning"></i> <?php echo $sub_item['name']; ?></span>
-                                        <span class="menu-price-tag"><?php echo $sub_item['price_usd']; ?></span>
+                                        <i class="bi bi-geo-alt-fill text-warning"></i>
+                                        <span><?php echo $sub_item['name']; ?></span>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
