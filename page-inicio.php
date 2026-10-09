@@ -821,7 +821,7 @@ $tripadvisor_reviews = [
             display: none;
         }
 
-        /* 3. TARJETAS "DESTINOS POPULARES" - NUEVO DISEÑO DE PRECIO Y BOTONES DE COLOR VIBRANTE */
+        /* 3. TARJETAS "DESTINOS POPULARES" - SIN FONDO EN EL PRECIO Y ACOMODADO AL COSTADO DEL TÍTULO */
         .dest-card-enhanced {
             flex: 0 0 calc(25% - 17px);
             min-width: 280px;
@@ -877,48 +877,6 @@ $tripadvisor_reviews = [
             z-index: 2;
         }
 
-        /* 3. CAMBIO DE DISEÑO DE PRECIO: BADGE DE DOBLE FILA RECTANGULAR ELEGANTE Y VISIBLE */
-        .dest-price-box-new {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-            background: rgba(233, 77, 0, 0.95);
-            border: 1px solid #FFFFFF;
-            border-radius: 12px;
-            padding: 0.35rem 0.75rem;
-            color: #FFFFFF;
-            text-align: right;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-            backdrop-filter: blur(6px);
-            z-index: 2;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .dest-card-enhanced:hover .dest-price-box-new {
-            transform: scale(1.06);
-            background: var(--color-azul-peru-safe);
-            border-color: var(--color-naranja-journey);
-        }
-
-        .price-new-usd {
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            line-height: 1;
-        }
-
-        .price-new-pen {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: #FFD29D;
-            line-height: 1.1;
-            margin-top: 2px;
-        }
-
-        .dest-card-enhanced:hover .price-new-pen {
-            color: #FFB800;
-        }
-
         .dest-body-content {
             padding: 1.35rem;
             display: flex;
@@ -937,12 +895,43 @@ $tripadvisor_reviews = [
             margin-bottom: 0.6rem;
         }
 
+        /* FILA CON TÍTULO Y PRECIO AL COSTADO (SIN FONDO) */
+        .dest-header-price-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 0.5rem;
+        }
+
         .dest-title-text {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
             line-height: 1.35;
+            flex: 1;
+        }
+
+        .dest-inline-price {
+            text-align: right;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .inline-price-usd {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--color-naranja-journey);
+            line-height: 1;
+        }
+
+        .inline-price-pen {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--color-texto-suave);
+            line-height: 1.1;
+            margin-top: 2px;
         }
 
         .dest-rating-stars {
@@ -954,7 +943,6 @@ $tripadvisor_reviews = [
             margin-bottom: 1rem;
         }
 
-        /* 3. CAMBIO DE COLOR DE BOTONES: NARANJA INTENSO CON TEXTO BLANCO */
         .btn-tour-completo {
             background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: #FFFFFF !important;
@@ -1414,7 +1402,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 1. & 2. QUIENES SOMOS (LIMPIO SIN TARJETAS DE CARACTERÍSTICAS NI RATING BADGES) -->
+    <!-- QUIENES SOMOS -->
     <section class="narrative-section-compact">
         <div class="container-fluid px-3 px-lg-5">
             <div class="agency-glass-card">
@@ -1518,7 +1506,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. DESTINOS POPULARES (NUEVO DISEÑO DE PRECIO Y BOTÓN DE COLOR) -->
+    <!-- 1. DESTINOS POPULARES (PRECIO AL COSTADO DEL TÍTULO Y SIN FONDO DE PRECIO) -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-2">
@@ -1535,12 +1523,6 @@ $tripadvisor_reviews = [
                         <div class="dest-img-header">
                             <img src="<?php echo $dest['image']; ?>" alt="<?php echo $dest['title']; ?>" loading="lazy">
                             <span class="dest-badge-top"><?php echo $dest['badge']; ?></span>
-
-                            <!-- 3. NUEVO DISEÑO DE PRECIO -->
-                            <div class="dest-price-box-new">
-                                <div class="price-new-usd">$<?php echo $dest['price_usd']; ?></div>
-                                <div class="price-new-pen">S/. <?php echo $dest['price_pen']; ?></div>
-                            </div>
                         </div>
 
                         <div class="dest-body-content">
@@ -1549,7 +1531,15 @@ $tripadvisor_reviews = [
                                     <span><i class="bi bi-geo-alt-fill text-warning me-1"></i><?php echo $dest['location']; ?></span>
                                     <span><i class="bi bi-clock me-1"></i><?php echo $dest['duration']; ?></span>
                                 </div>
-                                <h3 class="dest-title-text"><?php echo $dest['title']; ?></h3>
+
+                                <!-- FILA CON TÍTULO Y PRECIO AL COSTADO (SIN FONDO) -->
+                                <div class="dest-header-price-row">
+                                    <h3 class="dest-title-text"><?php echo $dest['title']; ?></h3>
+                                    <div class="dest-inline-price">
+                                        <div class="inline-price-usd">$<?php echo $dest['price_usd']; ?></div>
+                                        <div class="inline-price-pen">S/. <?php echo $dest['price_pen']; ?></div>
+                                    </div>
+                                </div>
 
                                 <div class="dest-rating-stars">
                                     <i class="bi bi-star-fill"></i>
@@ -1562,7 +1552,6 @@ $tripadvisor_reviews = [
                                 </div>
                             </div>
 
-                            <!-- 3. NUEVO COLOR Y ESTILO DE BOTÓN -->
                             <a href="<?php echo $dest['url']; ?>" class="btn-tour-completo w-100 mt-2">
                                 <span>Ver Tour Completo</span>
                                 <i class="bi bi-arrow-right"></i>
