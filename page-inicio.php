@@ -202,36 +202,36 @@ $destinos_cards_section = [
     ]
 ];
 
-// Pilares de marca
+// Pilares de marca minimalistas y atractivos
 $brand_pillars = [
     [
         'name' => 'Autenticidad',
-        'desc' => 'Experiencias conectadas con la verdadera esencia del Perú.',
+        'desc' => 'Experiencias genuinas en contacto directo con las raíces y cultura viva del Perú.',
         'icon' => 'bi-compass-fill'
     ],
     [
         'name' => 'Seguridad',
-        'desc' => 'Planificación responsable y acompañamiento constante durante tu viaje.',
+        'desc' => 'Planificación responsable y asistencia profesional en cada tramo de tu ruta.',
         'icon' => 'bi-shield-check'
     ],
     [
         'name' => 'Personalización',
-        'desc' => 'Itinerarios adaptados a los intereses y necesidades de cada viajero.',
+        'desc' => 'Itinerarios a tu medida adaptados a tus tiempos, gustos y presupuesto.',
         'icon' => 'bi-sliders'
     ],
     [
         'name' => 'Confianza',
-        'desc' => 'Atención cercana antes, durante y después de cada experiencia.',
+        'desc' => 'Soporte cercano antes, durante y después de tu viaje con atención constante.',
         'icon' => 'bi-heart-fill'
     ],
     [
         'name' => 'Conexión',
-        'desc' => 'Cultura, historia, naturaleza, gastronomía y comunidades locales.',
+        'desc' => 'Vínculos reales con las comunidades, historias, gastronomía y paisajes andinos.',
         'icon' => 'bi-people-fill'
     ],
     [
         'name' => 'Confort',
-        'desc' => 'Servicios pensados para disfrutar cada destino sin preocupaciones.',
+        'desc' => 'Transporte de nivel, atención cálida y servicios pensados para tu máximo confort.',
         'icon' => 'bi-stars'
     ]
 ];
@@ -309,25 +309,25 @@ $tripadvisor_reviews = [
             padding: 0;
         }
 
-        /* TOP BAR */
+        /* 1. TOP BAR REDISEÑADO CON ESTILO ELEGANTE */
         .top-bar {
             background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
             font-size: 0.82rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.45rem 0;
             z-index: 1050;
             position: relative;
         }
 
         .topbar-phone-badge {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.28rem 0.8rem;
             border-radius: 50px;
             font-size: 0.78rem;
-            color: #E2E8F0 !important;
+            color: #F1F5F9 !important;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.28s ease;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -349,7 +349,7 @@ $tripadvisor_reviews = [
             background: rgba(255, 255, 255, 0.08);
             color: #CBD5E1 !important;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
+            transition: all 0.28s ease;
             text-decoration: none;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -360,7 +360,7 @@ $tripadvisor_reviews = [
             border-color: var(--color-naranja-journey);
         }
 
-        /* NAVBAR PEGAJOSO */
+        /* 1. NAVBAR-CUSTOM REDISEÑADO MAS ATRACTIVO */
         .navbar-custom {
             background: rgba(0, 34, 56, 0.96);
             backdrop-filter: blur(20px);
@@ -368,7 +368,7 @@ $tripadvisor_reviews = [
             transition: all 0.35s ease;
             border-bottom: 2px solid var(--color-naranja-journey);
             width: 100%;
-            padding: 0.5rem 0;
+            padding: 0.45rem 0;
         }
 
         .navbar-custom.scrolled {
@@ -601,10 +601,10 @@ $tripadvisor_reviews = [
             box-shadow: none !important;
         }
 
-        /* SECTION BADGES & COMPACT PADDING */
+        /* BADGES Y TITULOS DE SECCIÓN */
         .section-badge-clean {
             display: inline-block;
-            background-color: rgba(233, 77, 0, 0.1);
+            background-color: rgba(233, 77, 0, 0.08);
             color: var(--color-naranja-journey);
             font-weight: 800;
             font-size: 0.78rem;
@@ -613,7 +613,7 @@ $tripadvisor_reviews = [
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 0.4rem;
-            border: 1px solid rgba(233, 77, 0, 0.25);
+            border: 1px solid rgba(233, 77, 0, 0.2);
         }
 
         .section-title {
@@ -629,7 +629,7 @@ $tripadvisor_reviews = [
             width: 100vw;
         }
 
-        /* 2. REQUISITO EXACTO: QUITAR ESPACIOS DE .agency-glass-card (border-radius, padding, background) */
+        /* SIN ESPACIOS EN .agency-glass-card */
         .agency-glass-card {
             border-radius: 0 !important;
             padding: 0 !important;
@@ -645,74 +645,61 @@ $tripadvisor_reviews = [
             margin-bottom: 1rem;
         }
 
-        .creative-content-box {
-            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
-            color: var(--color-blanco);
-            border-radius: 22px;
-            padding: 2.5rem 2rem;
-            margin: 2.2rem 0;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            position: relative;
-            overflow: hidden;
-            box-shadow: none !important;
-        }
-
-        .creative-content-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 250px;
-            height: 250px;
-            background: radial-gradient(circle, rgba(233, 77, 0, 0.25) 0%, rgba(233, 77, 0, 0) 70%);
-            pointer-events: none;
-        }
-
-        .creative-title-sub {
-            font-size: 1.85rem;
-            font-weight: 800;
-            color: var(--color-dorado-andino);
-            margin-bottom: 1rem;
-        }
-
-        .pillar-card {
-            background: var(--color-blanco);
+        /* 3. SECCIÓN "NUESTROS VALORES" CON DISEÑO MINIMALISTA Y SÚPER ATRACTIVO */
+        .minimalist-value-card {
+            background: #FFFFFF;
             border-radius: 16px;
-            padding: 1.6rem 1.3rem;
+            padding: 1.8rem 1.4rem;
             border: 1px solid var(--color-gris-border);
-            box-shadow: none !important;
-            transition: border-color 0.3s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            justify-content: flex-start;
+            transition: all 0.3s ease;
+            box-shadow: none !important;
+            position: relative;
         }
 
-        .pillar-card:hover {
+        .minimalist-value-card:hover {
             border-color: var(--color-naranja-journey);
+            transform: translateY(-4px);
         }
 
-        .pillar-icon-box {
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
+        .minimalist-icon-badge {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             background: rgba(233, 77, 0, 0.08);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 0.85rem;
-            border: 1px solid rgba(233, 77, 0, 0.2);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(233, 77, 0, 0.18);
+            transition: all 0.3s ease;
         }
 
-        .pillar-name {
+        .minimalist-value-card:hover .minimalist-icon-badge {
+            background: var(--color-naranja-journey);
+            color: #FFFFFF;
+        }
+
+        .minimalist-value-title {
             font-size: 1.15rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.4rem;
         }
 
+        .minimalist-value-desc {
+            font-size: 0.88rem;
+            color: var(--color-texto-suave);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* SLIDERS Y TARJETAS */
         .cards-slider-unified-section {
             padding: 2.5rem 0;
             width: 100vw;
@@ -1109,7 +1096,7 @@ $tripadvisor_reviews = [
         </div>
     </div>
 
-    <!-- NAVBAR PEGAJOSO -->
+    <!-- NAVBAR PEGAJOSO REDISEÑADO MAS ATRACTIVO -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
@@ -1209,11 +1196,11 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 1. QUIENES SOMOS -->
+    <!-- 1. QUIENES SOMOS (SECCIÓN "CONTENIDO CREATIVO" REMOVIDA SEGÚN SOLICITUD) -->
     <section class="narrative-section-compact">
         <div class="container-fluid px-3 px-lg-5">
             <div class="agency-glass-card">
-                <div class="row align-items-center g-4 mb-3">
+                <div class="row align-items-center g-4">
                     <div class="col-lg-7">
                         <span class="section-badge-clean">QUIENES SOMOS</span>
                         <h2 class="section-title mb-3">
@@ -1240,22 +1227,6 @@ $tripadvisor_reviews = [
                             <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Perú Safe Journeys" class="img-fluid rounded-4 w-100" style="border: 3px solid #fff;">
                         </div>
                     </div>
-                </div>
-
-                <!-- CONTENIDO CREATIVO -->
-                <div class="creative-content-box">
-                    <div class="d-inline-block badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-3 small">
-                        CONTENIDO CREATIVO
-                    </div>
-                    <h3 class="creative-title-sub">
-                        Perú Safe Journeys: tu camino hacia un Perú auténtico.
-                    </h3>
-                    <p class="fs-6 text-light mb-3" style="line-height: 1.8;">
-                        Creamos viajes que van más allá del turismo convencional. Diseñamos experiencias a tu medida para descubrir el Perú de manera segura, cómoda y auténtica, conectándote con sus pueblos, culturas, historia, naturaleza y tradiciones.
-                    </p>
-                    <p class="fs-6 fw-bold text-warning mb-0" style="line-height: 1.7;">
-                        Con conocimiento local y atención personalizada, transformamos cada recorrido en una historia para recordar. Tú eliges cómo quieres vivir el Perú; nosotros nos encargamos de hacer del camino una experiencia segura y extraordinaria.
-                    </p>
                 </div>
             </div>
         </div>
@@ -1345,23 +1316,24 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 4. NUESTROS VALORES -->
+    <!-- 3. NUESTROS VALORES (PILARES DE MARCA MINIMALISTA Y SÚPER ATRACTIVO) -->
     <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
                 <span class="section-badge-clean">NUESTROS VALORES</span>
                 <h2 class="section-title">Pilares de Marca</h2>
+                <p class="text-muted small max-w-700 mx-auto">Nuestros seis compromisos fundamentales para garantizar un viaje extraordinario.</p>
             </div>
 
             <div class="row g-3">
                 <?php foreach($brand_pillars as $pillar): ?>
                     <div class="col-lg-4 col-md-6">
-                        <div class="pillar-card">
-                            <div class="pillar-icon-box">
+                        <div class="minimalist-value-card">
+                            <div class="minimalist-icon-badge">
                                 <i class="bi <?php echo $pillar['icon']; ?>"></i>
                             </div>
-                            <h4 class="pillar-name"><?php echo $pillar['name']; ?></h4>
-                            <p class="text-secondary mb-0" style="line-height: 1.6; font-size: 0.88rem;"><?php echo $pillar['desc']; ?></p>
+                            <h4 class="minimalist-value-title"><?php echo $pillar['name']; ?></h4>
+                            <p class="minimalist-value-desc"><?php echo $pillar['desc']; ?></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
