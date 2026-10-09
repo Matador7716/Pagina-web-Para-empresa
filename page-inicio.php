@@ -660,7 +660,7 @@ $tripadvisor_reviews = [
             font-weight: 400;
         }
 
-        /* 1. SECCIÓN QUIENES SOMOS (LIMPIA SIN TARJETAS DE CARACTERÍSTICAS NI RATING BADGES) */
+        /* QUIENES SOMOS */
         .narrative-section-compact {
             background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
             padding: 2.2rem 0;
@@ -821,7 +821,7 @@ $tripadvisor_reviews = [
             display: none;
         }
 
-        /* 3. TARJETAS "DESTINOS POPULARES" - SIN FONDO EN EL PRECIO Y ACOMODADO AL COSTADO DEL TÍTULO */
+        /* 1. TARJETAS "DESTINOS POPULARES" MEJORADAS CON TAMAÑO MAYOR DE PRECIO SINO NEGRITA, Y BOTONES #001220 SIN BORDES */
         .dest-card-enhanced {
             flex: 0 0 calc(25% - 17px);
             min-width: 280px;
@@ -895,7 +895,7 @@ $tripadvisor_reviews = [
             margin-bottom: 0.6rem;
         }
 
-        /* FILA CON TÍTULO Y PRECIO AL COSTADO (SIN FONDO) */
+        /* FILA CON TÍTULO Y PRECIO AL COSTADO SIN FONDO Y TAMAÑO MAYOR SIN NEGRITA */
         .dest-header-price-row {
             display: flex;
             align-items: flex-start;
@@ -919,16 +919,17 @@ $tripadvisor_reviews = [
             white-space: nowrap;
         }
 
+        /* AUMENTO DE TAMAÑO Y SIN NEGRITA (FW: 500) */
         .inline-price-usd {
-            font-size: 1.2rem;
-            font-weight: 900;
+            font-size: 1.38rem;
+            font-weight: 500;
             color: var(--color-naranja-journey);
             line-height: 1;
         }
 
         .inline-price-pen {
-            font-size: 0.7rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 400;
             color: var(--color-texto-suave);
             line-height: 1.1;
             margin-top: 2px;
@@ -943,13 +944,14 @@ $tripadvisor_reviews = [
             margin-bottom: 1rem;
         }
 
+        /* COLOR DE BOTONES A #001220 Y SIN BORDES */
         .btn-tour-completo {
-            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            background-color: #001220;
             color: #FFFFFF !important;
-            border: 1px solid var(--color-naranja-journey);
+            border: none !important;
             font-weight: 700;
             font-size: 0.83rem;
-            padding: 0.65rem 1rem;
+            padding: 0.7rem 1rem;
             border-radius: 50px;
             display: inline-flex;
             align-items: center;
@@ -959,14 +961,12 @@ $tripadvisor_reviews = [
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.4px;
-            box-shadow: 0 4px 12px rgba(233, 77, 0, 0.25);
         }
 
         .dest-card-enhanced:hover .btn-tour-completo {
-            background: linear-gradient(135deg, var(--color-azul-peru-safe) 0%, #001220 100%);
+            background-color: var(--color-naranja-journey);
             color: #FFFFFF !important;
-            border-color: var(--color-azul-peru-safe);
-            box-shadow: 0 6px 16px rgba(0, 34, 56, 0.3);
+            transform: translateY(-2px);
         }
 
         /* NUESTROS VALORES */
@@ -1506,7 +1506,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 1. DESTINOS POPULARES (PRECIO AL COSTADO DEL TÍTULO Y SIN FONDO DE PRECIO) -->
+    <!-- 1. DESTINOS POPULARES (PRECIO AUMENTADO SINO NEGRITA, Y BOTONES COLOR #001220 SIN BORDES) -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-2">
@@ -1532,7 +1532,6 @@ $tripadvisor_reviews = [
                                     <span><i class="bi bi-clock me-1"></i><?php echo $dest['duration']; ?></span>
                                 </div>
 
-                                <!-- FILA CON TÍTULO Y PRECIO AL COSTADO (SIN FONDO) -->
                                 <div class="dest-header-price-row">
                                     <h3 class="dest-title-text"><?php echo $dest['title']; ?></h3>
                                     <div class="dest-inline-price">
