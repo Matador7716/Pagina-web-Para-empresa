@@ -27,30 +27,30 @@ $destinos_submenu = [
     ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
 ];
 
-// Experiencias destacadas
+// Experiencias destacadas con descripciones enriquecidas y detalladas
 $experiences_list = [
     [
-        'title' => 'Turismo Vivencial & Comunidades Local',
+        'title' => 'Turismo Vivencial & Comunidades Locales',
         'badge' => 'Cultura Viva',
-        'desc' => 'Comparte con familias locales en el Valle Sagrado y el Titicaca, aprende sus técnicas textiles ancestrales y disfruta de la gastronomía autóctona.',
+        'desc' => 'Vive una inmersión auténtica compartiendo momentos memorables con familias autóctonas en el Valle Sagrado y los Andes. Participa activamente en talleres de teñido y telar ancestral con fibras de alpaca, descubre los secretos de la agricultura Incaica, degusta platillos preparados con insumos orgánicos locales y conecta de manera profunda y respetuosa con el verdadero corazón cultural del Perú.',
         'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'
     ],
     [
-        'title' => 'Rutas Extremas & ATVs en Montaña',
+        'title' => 'Rutas Extremas & Cuatrimotos (ATV) en Montaña',
         'badge' => 'Adrenalina Pura',
-        'desc' => 'Siente la velocidad hacia la Montaña de Colores conduciendo cuatrimotos de última generación con la máxima seguridad y guías expertos.',
+        'desc' => 'Desata tu espíritu aventurero cruzando valles imponentes, riachuelos y senderos de altura hacia la majestuosa Montaña de Colores (Vinicunca). Equipado con cuatrimotos modernas y de alta potencia, esta travesía combina la velocidad y la emoción extrema con la máxima seguridad, asistencia médica preventiva y acompañamiento constante de guías profesionales especializados.',
         'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80'
     ],
     [
-        'title' => 'Caminatas por Glaciares & Lagunas',
+        'title' => 'Caminatas por Glaciares & Lagunas Turquesas',
         'badge' => 'Trekking & Naturaleza',
-        'desc' => 'Explora la majestuosidad de la Laguna Humantay y el glaciar Quelcaya en itinerarios guiados por especialistas locales apasionados.',
+        'desc' => 'Desconéctate de la rutina y adéntrate en las cordilleras más sobrecogedoras del sur peruano. Desde la famosa caminata hacia las espectaculares aguas turquesas de la Laguna Humantay hasta las expediciones únicas al glaciar tropical Quelcaya y las 7 Lagunas del Ausangate, disfrutarás de paisajes andinos de ensueño con la tranquilidad de contar con oxígeno, equipos de calidad y guías locales expertos.',
         'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'
     ],
     [
-        'title' => 'Tours Arqueológicos & Santuarios',
+        'title' => 'Tours Arqueológicos & Santuarios Ancestrales',
         'badge' => 'Historia Ancestral',
-        'desc' => 'Recorre Ollantaytambo, Pisac y Waqrapukara conectando con la mística y los secretos mejor guardados del Imperio Incaico.',
+        'desc' => 'Explora los grandes enigmas de la civilización Inca recorriendo fortalezas imponentes como Ollantaytambo, Pisac, la misteriosa ciudadela de Waqrapukara y el mítico Valle Sagrado de los Incas. Viaja con comodidad en transporte turístico privado, escuchando relatos fascinantes y explicaciones históricas detalladas que transformarán cada sitio arqueológico en una experiencia educativa e inspiradora.',
         'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80'
     ]
 ];
@@ -287,31 +287,31 @@ $experiences_list = [
         /* TARJETAS EXPERIENCIAS */
         .exp-card-item {
             background: #FFFFFF;
-            border-radius: 20px;
+            border-radius: 22px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
         }
 
         .exp-card-item:hover {
             border-color: var(--color-naranja-journey);
-            transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(0, 34, 56, 0.08);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0, 34, 56, 0.09);
         }
 
         .exp-card-img-box {
             position: relative;
-            height: 220px;
+            height: 240px;
             overflow: hidden;
         }
 
         .exp-card-img-box img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
@@ -326,19 +326,35 @@ $experiences_list = [
             right: 14px;
             background: var(--color-naranja-journey);
             color: #FFFFFF;
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 800;
-            padding: 0.35rem 0.85rem;
+            padding: 0.38rem 0.95rem;
             border-radius: 50px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .exp-card-body {
-            padding: 1.5rem;
+            padding: 1.6rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
             justify-content: space-between;
+        }
+
+        .exp-card-title {
+            font-size: 1.22rem;
+            font-weight: 800;
+            color: var(--color-azul-peru-safe);
+            margin-bottom: 0.65rem;
+            line-height: 1.35;
+        }
+
+        .exp-card-desc {
+            font-size: 0.94rem;
+            color: #475569;
+            line-height: 1.75;
+            margin-bottom: 1.4rem;
         }
 
         .btn-consultar-exp {
@@ -346,8 +362,8 @@ $experiences_list = [
             color: #FFFFFF !important;
             border: none !important;
             font-weight: 700;
-            font-size: 0.83rem;
-            padding: 0.7rem 1.2rem;
+            font-size: 0.85rem;
+            padding: 0.75rem 1.3rem;
             border-radius: 50px;
             display: inline-flex;
             align-items: center;
@@ -356,6 +372,7 @@ $experiences_list = [
             text-decoration: none;
             transition: all 0.3s ease;
             text-transform: uppercase;
+            letter-spacing: 0.4px;
         }
 
         .btn-consultar-exp:hover {
@@ -568,8 +585,8 @@ $experiences_list = [
                             </div>
                             <div class="exp-card-body">
                                 <div>
-                                    <h3 class="fs-5 fw-bold text-dark mb-2"><?php echo $exp['title']; ?></h3>
-                                    <p class="text-secondary small mb-4" style="line-height: 1.7;"><?php echo $exp['desc']; ?></p>
+                                    <h3 class="exp-card-title"><?php echo $exp['title']; ?></h3>
+                                    <p class="exp-card-desc"><?php echo $exp['desc']; ?></p>
                                 </div>
                                 <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20experiencia%20<?php echo urlencode($exp['title']); ?>"
                                    target="_blank"
