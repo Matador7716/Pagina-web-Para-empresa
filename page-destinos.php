@@ -30,7 +30,6 @@ $all_destinos = [
         'title' => '7 LAGUNAS DEL AUSANGATE',
         'location' => 'Ausangate, Cusco',
         'duration' => 'Full Day (FD)',
-        'rating' => '5.0 (86 Reseñas)',
         'price_usd' => '$ 80.00',
         'price_pen' => 'S/. 275.50',
         'badge' => 'Aguas Termales & Glaciares',
@@ -41,7 +40,6 @@ $all_destinos = [
         'title' => 'ATV MONTAÑA DE COLORES FD',
         'location' => 'Pitumarca, Cusco',
         'duration' => 'Full Day (FD)',
-        'rating' => '4.9 (112 Reseñas)',
         'price_usd' => '$ 85.00 Simp / $ 65.00 Dob',
         'price_pen' => 'S/. 292.60 Simp / S/. 223.73 Dob',
         'badge' => 'Adrenalina en Cuatrimoto',
@@ -52,7 +50,6 @@ $all_destinos = [
         'title' => 'LAGUNA HUMANTAY FD',
         'location' => 'Mollepata, Cusco',
         'duration' => 'Full Day (FD)',
-        'rating' => '4.9 (140 Reseñas)',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
         'badge' => 'Aguas Turquesas',
@@ -63,7 +60,6 @@ $all_destinos = [
         'title' => 'MONTAÑA VINICUNCA FD',
         'location' => 'Quispicanchi, Cusco',
         'duration' => 'Full Day (FD)',
-        'rating' => '4.8 (155 Reseñas)',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
         'badge' => 'Montaña de 7 Colores',
@@ -74,7 +70,6 @@ $all_destinos = [
         'title' => 'PALLAY PUNCHOY FD',
         'location' => 'Canas, Cusco',
         'duration' => 'Full Day (FD)',
-        'rating' => '4.9 (78 Reseñas)',
         'price_usd' => '$ 45.00',
         'price_pen' => 'S/. 154.90',
         'badge' => 'Cerro Afilado',
@@ -85,7 +80,6 @@ $all_destinos = [
         'title' => 'QUELCAYA FD',
         'location' => 'Canchis, Cusco',
         'duration' => 'Full Day (FD)',
-        'rating' => '5.0 (64 Reseñas)',
         'price_usd' => '$ 80.00',
         'price_pen' => 'S/. 275.50',
         'badge' => 'Glacial Tropical',
@@ -96,10 +90,9 @@ $all_destinos = [
         'title' => 'VALLE SAGRADO BIG',
         'location' => 'Valle Sagrado, Cusco',
         'duration' => 'Full Day Extendido',
-        'rating' => '4.9 (130 Reseñas)',
         'price_usd' => '$ 35.00',
         'price_pen' => 'S/. 120.50',
-        'badge' => 'Pisac, Ollantaytambo & Chinchero',
+        'badge' => 'Pisac & Ollantaytambo',
         'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/'
     ],
@@ -107,10 +100,9 @@ $all_destinos = [
         'title' => 'VALLE SAGRADO FD',
         'location' => 'Urubamba, Cusco',
         'duration' => 'Full Day Clásico',
-        'rating' => '4.8 (98 Reseñas)',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
-        'badge' => 'Tradición & Mercado Inca',
+        'badge' => 'Tradición Inca',
         'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sagrado-fd/'
     ],
@@ -118,7 +110,6 @@ $all_destinos = [
         'title' => 'VALLE SUR',
         'location' => 'Tipón & Pikillacta',
         'duration' => 'Half Day',
-        'rating' => '4.7 (72 Reseñas)',
         'price_usd' => '$ 25.00',
         'price_pen' => 'S/. 86.50',
         'badge' => 'Arqueología & Gastronomía',
@@ -129,7 +120,6 @@ $all_destinos = [
         'title' => 'WAQRAPUKARA FD',
         'location' => 'Acomayo, Cusco',
         'duration' => 'Full Day (FD)',
-        'rating' => '5.0 (90 Reseñas)',
         'price_usd' => '$ 40.00',
         'price_pen' => 'S/. 138.00',
         'badge' => 'Fortaleza Mística',
@@ -147,7 +137,7 @@ $all_destinos = [
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
@@ -163,11 +153,14 @@ $all_destinos = [
             --color-texto-oscuro: #0F172A;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(233, 77, 0, 0.4);
+            --color-naranja-glow: rgba(233, 77, 0, 0.35);
+        }
+
+        body, button, input, select, textarea, .nav-link, .dropdown-item, .btn {
+            font-family: 'Poppins', sans-serif !important;
         }
 
         body {
-            font-family: 'Manrope', sans-serif;
             background-color: var(--color-blanco);
             color: var(--color-texto-oscuro);
             overflow-x: hidden;
@@ -176,23 +169,19 @@ $all_destinos = [
             padding: 0;
         }
 
-        h1, h2, h3, h4, h5, h6, .nav-link, .dropdown-item, .btn-reserva-llama {
-            font-family: 'Poppins', sans-serif;
-        }
-
         .top-bar {
             background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0.45rem 0;
+            padding: 0.4rem 0;
         }
 
         .topbar-phone-badge {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.28rem 0.8rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: #E2E8F0 !important;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -211,12 +200,12 @@ $all_destinos = [
             background: rgba(0, 34, 56, 0.96);
             backdrop-filter: blur(20px);
             border-bottom: 2px solid var(--color-naranja-journey);
-            padding: 0.55rem 0;
+            padding: 0.5rem 0;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
         }
 
         .logo-img-header {
-            height: 84px;
+            height: 86px;
             object-fit: contain;
         }
 
@@ -224,7 +213,7 @@ $all_destinos = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             font-size: 0.9rem;
-            padding: 0.6rem 1.1rem !important;
+            padding: 0.6rem 1.15rem !important;
             text-transform: uppercase;
         }
 
@@ -273,7 +262,7 @@ $all_destinos = [
 
         .page-header-banner {
             background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
-            padding: 4rem 0 3.2rem;
+            padding: 3.5rem 0 2.8rem;
             color: var(--color-blanco);
             text-align: center;
             border-bottom: 3px solid var(--color-naranja-journey);
@@ -281,10 +270,10 @@ $all_destinos = [
 
         .dest-card-creative {
             background: var(--color-blanco);
-            border-radius: 20px;
+            border-radius: 18px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 10px 30px rgba(0, 34, 56, 0.05);
+            box-shadow: 0 8px 24px rgba(0, 34, 56, 0.04);
             transition: all 0.35s ease;
             height: 100%;
             display: flex;
@@ -292,21 +281,21 @@ $all_destinos = [
         }
 
         .dest-card-creative:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 40px rgba(233, 77, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 36px rgba(233, 77, 0, 0.18);
             border-color: var(--color-naranja-journey);
         }
 
         .dest-card-img-box {
             position: relative;
             width: 100%;
-            height: 230px;
+            height: 210px;
             overflow: hidden;
         }
 
         .dest-card-img-box img {
             width: 100%;
-            height: 230px;
+            height: 210px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
@@ -317,53 +306,73 @@ $all_destinos = [
 
         .dest-card-badge {
             position: absolute;
-            top: 12px;
-            right: 12px;
+            top: 10px;
+            right: 10px;
             background: var(--color-naranja-journey);
             color: var(--color-blanco);
             font-size: 0.72rem;
             font-weight: 800;
-            padding: 0.32rem 0.8rem;
+            padding: 0.3rem 0.75rem;
             border-radius: 20px;
         }
 
         .price-usd {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 900;
             color: var(--color-naranja-journey);
-            font-family: 'Poppins', sans-serif;
         }
 
         .price-pen {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 700;
             color: var(--color-azul-andino);
-            font-family: 'Poppins', sans-serif;
         }
 
         .footer-custom {
             background: #001220;
             border-top: 2px solid var(--color-naranja-journey);
-            padding-top: 4rem;
-            padding-bottom: 1.8rem;
+            padding-top: 3.5rem;
+            padding-bottom: 1.5rem;
             color: #CBD5E1;
             width: 100vw;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.9rem;
+            color: #E2E8F0;
+        }
+
+        .footer-contact-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(233, 77, 0, 0.15);
+            color: var(--color-naranja-journey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            border: 1px solid rgba(233, 77, 0, 0.25);
+            flex-shrink: 0;
         }
 
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            width: 62px;
-            height: 62px;
+            width: 60px;
+            height: 60px;
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 10px 22px rgba(37, 211, 102, 0.4);
+            font-size: 30px;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
             z-index: 1050;
             text-decoration: none;
         }
@@ -376,16 +385,20 @@ $all_destinos = [
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
                 <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-telephone-fill text-warning"></i>
                     <span><strong>Ventas:</strong> <?php echo $phones['ventas']['number']; ?></span>
                 </a>
                 <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-gear-fill text-warning"></i>
                     <span><strong>Operaciones:</strong> <?php echo $phones['operaciones']['number']; ?></span>
                 </a>
                 <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-shield-check text-warning"></i>
                     <span><strong>Calidad:</strong> <?php echo $phones['calidad']['number']; ?></span>
                 </a>
             </div>
             <div class="d-none d-md-flex align-items-center gap-2 text-white">
+                <i class="bi bi-envelope-fill text-warning me-1"></i>
                 <span><?php echo $email_address; ?></span>
             </div>
         </div>
@@ -436,10 +449,10 @@ $all_destinos = [
         </div>
     </section>
 
-    <!-- CARDS DE DESTINOS CON PRECIOS EN TODAS LAS TARJETAS -->
+    <!-- CARDS DE DESTINOS -->
     <section class="py-4">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="row g-4">
+            <div class="row g-3">
                 <?php foreach($all_destinos as $dest): ?>
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="dest-card-creative">
@@ -449,7 +462,7 @@ $all_destinos = [
                             </div>
                             <div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
                                 <div>
-                                    <div class="d-flex justify-content-between text-muted small fw-bold mb-2">
+                                    <div class="d-flex justify-content-between text-muted small fw-bold mb-1">
                                         <span><?php echo $dest['location']; ?></span>
                                         <span><?php echo $dest['duration']; ?></span>
                                     </div>
@@ -460,7 +473,7 @@ $all_destinos = [
                                         <div class="price-usd"><?php echo $dest['price_usd']; ?></div>
                                         <div class="price-pen"><?php echo $dest['price_pen']; ?></div>
                                     </div>
-                                    <a href="<?php echo $dest['url']; ?>" class="btn btn-sm btn-reserva-llama">Ver Tour</a>
+                                    <a href="<?php echo $dest['url']; ?>" class="btn btn-sm btn-reserva-llama py-1 px-3">Ver Tour</a>
                                 </div>
                             </div>
                         </div>
@@ -470,10 +483,71 @@ $all_destinos = [
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER CON ICONOS -->
     <footer class="footer-custom">
-        <div class="container-fluid px-3 px-lg-5 text-center">
-            <p class="mb-0">&copy; <?php echo $current_year; ?> Todos los derechos reservados para: <strong>Perú Safe Journeys | Viajes Perú</strong></p>
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="row g-4 justify-content-between">
+                <div class="col-lg-4 col-md-6">
+                    <a href="https://www.perusafejourneysgroup.com/" class="fs-4 fw-extrabold text-white text-decoration-none">
+                        Perú Safe Journeys <span style="color: var(--color-naranja-journey);">| Viajes Perú</span>
+                    </a>
+                    <p class="pe-lg-3 mt-2" style="color: #94A3B8;">
+                        Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas. Conectamos viajeros con el corazón cultural del Perú.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold text-white mb-3">Navegación</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/" class="text-secondary text-decoration-none">INICIO</a></li>
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/destinos/" class="text-secondary text-decoration-none">DESTINOS</a></li>
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/experiencias/" class="text-secondary text-decoration-none">EXPERIENCIAS</a></li>
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/programas/" class="text-secondary text-decoration-none">PROGRAMAS</a></li>
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/nosotros/" class="text-secondary text-decoration-none">NOSOTROS</a></li>
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/contacto/" class="text-secondary text-decoration-none">CONTACTO</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold text-white mb-3">Contacto Oficial</h5>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div>
+                            <small class="d-block text-secondary">Ventas:</small>
+                            <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['ventas']['number']; ?></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-gear-fill"></i></div>
+                        <div>
+                            <small class="d-block text-secondary">Operaciones:</small>
+                            <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['operaciones']['number']; ?></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-shield-check"></i></div>
+                        <div>
+                            <small class="d-block text-secondary">Calidad 24/7:</small>
+                            <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['calidad']['number']; ?></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div>
+                            <small class="d-block text-secondary">Correo de contacto:</small>
+                            <a href="mailto:<?php echo $email_address; ?>" class="text-white text-decoration-none fw-bold"><?php echo $email_address; ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top border-secondary border-opacity-25 mt-4 pt-3 text-center text-secondary small">
+                <p class="mb-0">&copy; <?php echo $current_year; ?> Todos los derechos reservados para: <strong>Perú Safe Journeys | Viajes Perú</strong></p>
+            </div>
         </div>
     </footer>
 

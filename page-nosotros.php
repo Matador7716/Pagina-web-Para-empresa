@@ -34,7 +34,7 @@ $destinos_submenu = [
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
@@ -49,30 +49,36 @@ $destinos_submenu = [
             --color-texto-oscuro: #0F172A;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(233, 77, 0, 0.4);
+            --color-naranja-glow: rgba(233, 77, 0, 0.35);
         }
 
-        body { font-family: 'Manrope', sans-serif; background-color: var(--color-blanco); color: var(--color-texto-oscuro); overflow-x: hidden; width: 100vw; margin: 0; padding: 0; }
-        h1, h2, h3, h4, h5, h6, .nav-link, .dropdown-item, .btn-reserva-llama { font-family: 'Poppins', sans-serif; }
+        body, button, input, select, textarea, .nav-link, .dropdown-item, .btn {
+            font-family: 'Poppins', sans-serif !important;
+        }
 
-        .top-bar { background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%); font-size: 0.85rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 0.5rem 0; }
-        .topbar-phone-badge { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 0.3rem 0.85rem; border-radius: 50px; font-size: 0.82rem; color: #E2E8F0 !important; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--color-blanco); color: var(--color-texto-oscuro); overflow-x: hidden; width: 100vw; margin: 0; padding: 0; }
 
-        .navbar-custom { background: rgba(0, 34, 56, 0.95); backdrop-filter: blur(20px); border-bottom: 2px solid var(--color-naranja-journey); padding: 0.65rem 0; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); }
-        .logo-img-header { height: 88px; object-fit: contain; }
-        .nav-link { color: var(--color-blanco) !important; font-weight: 700; font-size: 0.92rem; padding: 0.65rem 1.15rem !important; text-transform: uppercase; }
+        .top-bar { background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%); font-size: 0.82rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 0.4rem 0; }
+        .topbar-phone-badge { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.78rem; color: #E2E8F0 !important; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+
+        .navbar-custom { background: rgba(0, 34, 56, 0.96); backdrop-filter: blur(20px); border-bottom: 2px solid var(--color-naranja-journey); padding: 0.5rem 0; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25); }
+        .logo-img-header { height: 86px; object-fit: contain; }
+        .nav-link { color: var(--color-blanco) !important; font-weight: 700; font-size: 0.9rem; padding: 0.6rem 1.15rem !important; text-transform: uppercase; }
         .nav-link:hover, .nav-link.active { color: var(--color-naranja-journey) !important; }
 
-        .dropdown-menu-custom { background: rgba(0, 22, 40, 0.98) !important; border: 1px solid rgba(233, 77, 0, 0.35) !important; border-top: 4px solid var(--color-naranja-journey) !important; border-radius: 16px !important; min-width: 290px; }
-        .dropdown-item-custom { color: #F1F5F9 !important; font-size: 0.85rem !important; font-weight: 700 !important; padding: 0.7rem 1.1rem !important; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
+        .dropdown-menu-custom { background: rgba(0, 22, 40, 0.98) !important; border: 1px solid rgba(233, 77, 0, 0.3) !important; border-top: 4px solid var(--color-naranja-journey) !important; border-radius: 14px !important; min-width: 270px; }
+        .dropdown-item-custom { color: #F1F5F9 !important; font-size: 0.84rem !important; font-weight: 700 !important; padding: 0.6rem 1rem !important; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
         .dropdown-item-custom:hover { background-color: var(--color-naranja-journey) !important; color: var(--color-blanco) !important; }
 
-        .btn-reserva-llama { background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%); color: var(--color-blanco) !important; font-weight: 700; font-size: 0.88rem; border-radius: 50px; padding: 0.65rem 1.4rem; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 16px var(--color-naranja-glow); text-transform: uppercase; }
+        .btn-reserva-llama { background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%); color: var(--color-blanco) !important; font-weight: 700; font-size: 0.88rem; border-radius: 50px; padding: 0.6rem 1.35rem; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 15px var(--color-naranja-glow); text-transform: uppercase; }
 
-        .page-header-banner { background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%); padding: 5rem 0 4rem; color: var(--color-blanco); text-align: center; border-bottom: 3px solid var(--color-naranja-journey); }
+        .page-header-banner { background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%); padding: 3.5rem 0 2.8rem; color: var(--color-blanco); text-align: center; border-bottom: 3px solid var(--color-naranja-journey); }
 
-        .footer-custom { background: #001220; border-top: 2px solid var(--color-naranja-journey); padding: 4rem 0 2rem; color: #CBD5E1; width: 100vw; }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 34px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 1050; text-decoration: none; }
+        .footer-custom { background: #001220; border-top: 2px solid var(--color-naranja-journey); padding-top: 3.5rem; padding-bottom: 1.5rem; color: #CBD5E1; width: 100vw; }
+        .footer-contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 0.9rem; color: #E2E8F0; }
+        .footer-contact-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(233, 77, 0, 0.15); color: var(--color-naranja-journey); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; border: 1px solid rgba(233, 77, 0, 0.25); flex-shrink: 0; }
+
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); z-index: 1050; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -81,11 +87,11 @@ $destinos_submenu = [
     <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
-                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-telephone-fill"></i> Ventas: <?php echo $phones['ventas']['number']; ?></a>
-                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-gear-fill"></i> Operaciones: <?php echo $phones['operaciones']['number']; ?></a>
-                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-shield-check"></i> Calidad: <?php echo $phones['calidad']['number']; ?></a>
+                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-telephone-fill text-warning"></i> Ventas: <?php echo $phones['ventas']['number']; ?></a>
+                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-gear-fill text-warning"></i> Operaciones: <?php echo $phones['operaciones']['number']; ?></a>
+                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-shield-check text-warning"></i> Calidad: <?php echo $phones['calidad']['number']; ?></a>
             </div>
-            <div class="text-white"><i class="bi bi-envelope-fill text-warning"></i> <?php echo $email_address; ?></div>
+            <div class="text-white"><i class="bi bi-envelope-fill text-warning me-1"></i> <?php echo $email_address; ?></div>
         </div>
     </div>
 
@@ -103,13 +109,12 @@ $destinos_submenu = [
                     <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" data-bs-toggle="dropdown">
-                            DESTINOS <i class="bi bi-chevron-down text-warning"></i>
+                            DESTINOS
                         </a>
                         <ul class="dropdown-menu dropdown-menu-custom shadow-lg">
                             <?php foreach($destinos_submenu as $sub_item): ?>
                                 <li>
                                     <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
-                                        <i class="bi bi-geo-alt-fill text-warning"></i>
                                         <span><?php echo $sub_item['name']; ?></span>
                                     </a>
                                 </li>
@@ -129,36 +134,97 @@ $destinos_submenu = [
     <!-- BANNER -->
     <section class="page-header-banner">
         <div class="container-fluid px-3 px-lg-5">
-            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3">🤝 TU EQUIPO EN EL PERÚ</span>
-            <h1 class="display-4 fw-extrabold text-white">Sobre Perú Safe Journeys</h1>
-            <p class="fs-5 text-light max-w-700 mx-auto">Especialistas locales comprometidos con tu seguridad, confort y una inmersión cultural genuina.</p>
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-2">TU EQUIPO EN EL PERÚ</span>
+            <h1 class="display-5 fw-extrabold text-white">Sobre Perú Safe Journeys</h1>
+            <p class="fs-6 text-light max-w-700 mx-auto">Especialistas locales comprometidos con tu seguridad, confort y una inmersión cultural genuina.</p>
         </div>
     </section>
 
-    <!-- SOBRE NOSOTROS DETALLE -->
-    <section class="py-5">
+    <!-- SOBRE NOSOTROS -->
+    <section class="py-4">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="row align-items-center g-5">
+            <div class="row align-items-center g-4">
                 <div class="col-lg-6">
-                    <h2 class="fs-2 fw-extrabold text-dark mb-3">Tu Camino Hacia un Perú Auténtico</h2>
-                    <p class="fs-5 text-secondary" style="line-height: 1.8;">
+                    <h2 class="fs-3 fw-bold text-dark mb-3">Tu Camino Hacia un Perú Auténtico</h2>
+                    <p class="text-secondary small" style="line-height: 1.8;">
                         En <strong>Perú Safe Journeys – Travel Agency</strong> creamos viajes que van más allá del turismo convencional. Diseñamos experiencias a tu medida para descubrir el Perú de manera segura, cómoda y auténtica, conectándote con sus pueblos, culturas, historia, naturaleza y tradiciones.
                     </p>
-                    <p class="fs-5 text-secondary" style="line-height: 1.8;">
+                    <p class="text-secondary small" style="line-height: 1.8;">
                         Con conocimiento local y atención personalizada, transformamos cada recorrido en una historia para recordar. Tú eliges cómo quieres vivir el Perú; nosotros nos encargamos de hacer del camino una experiencia segura y extraordinaria.
                     </p>
                 </div>
                 <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Nosotros Perú Safe Journeys" class="img-fluid rounded-4 shadow-lg w-100">
+                    <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Nosotros Perú Safe Journeys" class="img-fluid rounded-4 shadow-sm w-100">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer-custom text-center">
+    <!-- FOOTER CON ICONOS -->
+    <footer class="footer-custom">
         <div class="container-fluid px-3 px-lg-5">
-            <p class="mb-0">&copy; <?php echo $current_year; ?> Todos los derechos reservados para: <strong>Perú Safe Journeys | Viajes Perú</strong></p>
+            <div class="row g-4 justify-content-between">
+                <div class="col-lg-4 col-md-6">
+                    <a href="https://www.perusafejourneysgroup.com/" class="fs-4 fw-extrabold text-white text-decoration-none">
+                        Perú Safe Journeys <span style="color: var(--color-naranja-journey);">| Viajes Perú</span>
+                    </a>
+                    <p class="pe-lg-3 mt-2" style="color: #94A3B8;">
+                        Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold text-white mb-3">Navegación</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/" class="text-secondary text-decoration-none">INICIO</a></li>
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/destinos/" class="text-secondary text-decoration-none">DESTINOS</a></li>
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/experiencias/" class="text-secondary text-decoration-none">EXPERIENCIAS</a></li>
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/programas/" class="text-secondary text-decoration-none">PROGRAMAS</a></li>
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/nosotros/" class="text-secondary text-decoration-none">NOSOTROS</a></li>
+                        <li class="mb-2"><a href="https://www.perusafejourneysgroup.com/contacto/" class="text-secondary text-decoration-none">CONTACTO</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold text-white mb-3">Contacto Oficial</h5>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div>
+                            <small class="d-block text-secondary">Ventas:</small>
+                            <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['ventas']['number']; ?></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-gear-fill"></i></div>
+                        <div>
+                            <small class="d-block text-secondary">Operaciones:</small>
+                            <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['operaciones']['number']; ?></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-shield-check"></i></div>
+                        <div>
+                            <small class="d-block text-secondary">Calidad 24/7:</small>
+                            <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['calidad']['number']; ?></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div>
+                            <small class="d-block text-secondary">Correo de contacto:</small>
+                            <a href="mailto:<?php echo $email_address; ?>" class="text-white text-decoration-none fw-bold"><?php echo $email_address; ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top border-secondary border-opacity-25 mt-4 pt-3 text-center text-secondary small">
+                <p class="mb-0">&copy; <?php echo $current_year; ?> Todos los derechos reservados para: <strong>Perú Safe Journeys | Viajes Perú</strong></p>
+            </div>
         </div>
     </footer>
 
