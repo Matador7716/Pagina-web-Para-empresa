@@ -27,7 +27,7 @@ $destinos_submenu = [
     ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
 ];
 
-// Experiencias agrupadas con galería de imágenes
+// Experiencias agrupadas con galería de imágenes y detalles de paquete turístico
 $experiences_list = [
     [
         'title' => 'Turismo Vivencial & Comunidades Locales',
@@ -343,7 +343,7 @@ $experiences_list = [
             font-weight: 400;
         }
 
-        /* TARJETAS EXPERIENCIAS Y GALERÍA */
+        /* TARJETAS EXPERIENCIAS Y GALERÍA MODERNA DE PAQUETES TURÍSTICOS */
         .exp-card-item {
             background: #FFFFFF;
             border-radius: 22px;
@@ -364,13 +364,13 @@ $experiences_list = [
 
         .exp-card-img-main {
             position: relative;
-            height: 240px;
+            height: 250px;
             overflow: hidden;
         }
 
         .exp-card-img-main img {
             width: 100%;
-            height: 240px;
+            height: 250px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
@@ -438,7 +438,7 @@ $experiences_list = [
         }
 
         .exp-card-title {
-            font-size: 1.22rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.65rem;
@@ -452,28 +452,58 @@ $experiences_list = [
             margin-bottom: 1.4rem;
         }
 
-        .btn-consultar-exp {
-            background-color: #001220;
+        /* DOS BOTONES PARA ACCIÓN DIRECTA (WHATSAPP + LLAMADA) */
+        .exp-card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn-action-whatsapp {
+            background-color: #25D366;
             color: #FFFFFF !important;
-            border: none !important;
             font-weight: 700;
-            font-size: 0.85rem;
-            padding: 0.75rem 1.3rem;
+            font-size: 0.82rem;
+            padding: 0.72rem 0.8rem;
             border-radius: 50px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.28s ease;
             text-transform: uppercase;
-            letter-spacing: 0.4px;
+            border: none;
         }
 
-        .btn-consultar-exp:hover {
-            background-color: var(--color-naranja-journey);
-            color: #FFFFFF !important;
+        .btn-action-whatsapp:hover {
+            background-color: #1EBE5A;
             transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-action-call {
+            background-color: var(--color-azul-peru-safe);
+            color: #FFFFFF !important;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 0.72rem 0.8rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all 0.28s ease;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .btn-action-call:hover {
+            background-color: var(--color-naranja-journey);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(233, 77, 0, 0.3);
         }
 
         /* FOOTER */
@@ -564,6 +594,7 @@ $experiences_list = [
 
         @media (max-width: 575.98px) {
             .logo-img-header { height: 54px; }
+            .exp-card-actions { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -667,7 +698,7 @@ $experiences_list = [
         </div>
     </section>
 
-    <!-- 2. TÍTULO DIVISOR CON DESCRIPCIÓN -->
+    <!-- TÍTULO DIVISOR CON DESCRIPCIÓN -->
     <section class="divider-section">
         <div class="container-fluid px-3 px-lg-5 text-center">
             <span class="section-badge-clean">MODALIDADES EXCLUSIVAS DE VIAJE</span>
@@ -676,7 +707,7 @@ $experiences_list = [
         </div>
     </section>
 
-    <!-- 1. CONTENIDO EXPERIENCIAS MEJORADAS CON 3. GALERÍA PARA CADA TARJETA -->
+    <!-- CONTENIDO EXPERIENCIAS MEJORADAS CON GALERÍA Y 2 BOTONES DE CONTACTO VENTA DE PAQUETES -->
     <section class="pb-5">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4">
@@ -689,7 +720,7 @@ $experiences_list = [
                                 <span class="exp-card-badge"><?php echo $exp['badge']; ?></span>
                             </div>
 
-                            <!-- 3. GALERÍA DE MINIATURAS INTERACTIVAS -->
+                            <!-- GALERÍA DE MINIATURAS INTERACTIVAS -->
                             <div class="exp-gallery-grid">
                                 <?php foreach($exp['gallery'] as $gIndex => $gImg): ?>
                                     <div class="exp-gallery-thumb" onclick="switchGalleryImg('expMainImg_<?php echo $index; ?>', '<?php echo $gImg; ?>')">
@@ -703,12 +734,20 @@ $experiences_list = [
                                     <h3 class="exp-card-title"><?php echo $exp['title']; ?></h3>
                                     <p class="exp-card-desc"><?php echo $exp['desc']; ?></p>
                                 </div>
-                                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20experiencia%20<?php echo urlencode($exp['title']); ?>"
-                                   target="_blank"
-                                   class="btn-consultar-exp w-100">
-                                    <span>Consultar Experiencia</span>
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
+
+                                <!-- DOS BOTONES: WHATSAPP Y LLAMADA AL MISMOS NÚMERO +51 931 352 810 -->
+                                <div class="exp-card-actions">
+                                    <a href="https://wa.me/51931352810?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20para%20reservar%20el%20paquete%20tur%C3%ADstico:%20<?php echo urlencode($exp['title']); ?>"
+                                       target="_blank"
+                                       class="btn-action-whatsapp">
+                                        <i class="bi bi-whatsapp"></i>
+                                        <span>WhatsApp</span>
+                                    </a>
+                                    <a href="tel:+51931352810" class="btn-action-call">
+                                        <i class="bi bi-telephone-fill"></i>
+                                        <span>Llamar Ahora</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
