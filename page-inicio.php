@@ -629,11 +629,12 @@ $tripadvisor_reviews = [
             width: 100vw;
         }
 
+        /* 2. REQUISITO EXACTO: QUITAR ESPACIOS DE .agency-glass-card (border-radius, padding, background) */
         .agency-glass-card {
-            background: #FFFFFF;
-            border-radius: 20px;
-            padding: 2.2rem 1.8rem;
-            border: 1px solid var(--color-gris-border);
+            border-radius: 0 !important;
+            padding: 0 !important;
+            background: transparent !important;
+            border: none !important;
             box-shadow: none !important;
         }
 
@@ -801,7 +802,35 @@ $tripadvisor_reviews = [
             border-radius: 20px;
         }
 
-        /* NUEVO DISEÑO ELEGANTE Y ELEVADO PARA TARJETAS DE DESTINO */
+        .unified-card-body {
+            padding: 1.15rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .unified-card-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--color-azul-peru-safe);
+            margin-bottom: 0.35rem;
+            line-height: 1.3;
+        }
+
+        .price-usd {
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: var(--color-naranja-journey);
+        }
+
+        .price-pen {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--color-azul-andino);
+        }
+
+        /* DESTINOS POPULARES ENHANCED */
         .dest-card-enhanced {
             flex: 0 0 calc(25% - 14px);
             min-width: 270px;
@@ -1024,6 +1053,12 @@ $tripadvisor_reviews = [
             box-shadow: none !important;
         }
 
+        .whatsapp-float:hover {
+            color: #FFF;
+            background-color: #20BA5A;
+            transform: scale(1.06);
+        }
+
         @media (max-width: 1200px) {
             .unified-card, .dest-card-enhanced { flex: 0 0 calc(33.333% - 12px); }
         }
@@ -1031,7 +1066,7 @@ $tripadvisor_reviews = [
         @media (max-width: 991.98px) {
             .hero-title { font-size: 2.7rem; }
             .unified-card, .dest-card-enhanced { flex: 0 0 calc(50% - 10px); }
-            .agency-glass-card { padding: 1.6rem 1.1rem; }
+            .agency-glass-card { padding: 0; }
             .section-title { font-size: 1.8rem; }
             .logo-img-header { height: 68px; }
         }
@@ -1247,7 +1282,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. SECCIÓN REDISEÑADA Y ELEVADA: DESTINOS POPULARES -->
+    <!-- 3. DESTINOS POPULARES -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
@@ -1266,7 +1301,6 @@ $tripadvisor_reviews = [
                 </div>
             </div>
 
-            <!-- Carrusel de Tarjetas de Destinos con Diseño Atractivo -->
             <div class="unified-cards-track" id="destinosTrack">
                 <?php foreach($destinos_cards_section as $dest): ?>
                     <div class="dest-card-enhanced">
@@ -1274,7 +1308,6 @@ $tripadvisor_reviews = [
                             <img src="<?php echo $dest['image']; ?>" alt="<?php echo $dest['title']; ?>" loading="lazy">
                             <span class="dest-badge-top"><?php echo $dest['badge']; ?></span>
 
-                            <!-- Precio en USD y PEN destacado sobre la imagen -->
                             <div class="price-overlay-box">
                                 <div class="price-overlay-usd"><?php echo $dest['price_usd']; ?></div>
                                 <div class="price-overlay-pen"><?php echo $dest['price_pen']; ?></div>
