@@ -37,12 +37,22 @@ $all_destinos = [
         'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'
     ],
     [
-        'title' => 'ATV MONTAÑA DE COLORES FD',
+        'title' => 'ATV MONTAÑA DE COLORES FD (SIMPLE)',
         'location' => 'Pitumarca, Cusco',
         'duration' => 'Full Day (FD)',
-        'price_usd' => '$ 85.00 Simp / $ 65.00 Dob',
-        'price_pen' => 'S/. 292.60 Simp / S/. 223.73 Dob',
-        'badge' => 'Adrenalina en Cuatrimoto',
+        'price_usd' => '$ 85.00',
+        'price_pen' => 'S/. 292.60',
+        'badge' => 'Adrenalina Simple',
+        'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
+        'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'
+    ],
+    [
+        'title' => 'ATV MONTAÑA DE COLORES FD (DOBLE)',
+        'location' => 'Pitumarca, Cusco',
+        'duration' => 'Full Day (FD)',
+        'price_usd' => '$ 65.00',
+        'price_pen' => 'S/. 223.73',
+        'badge' => 'Adrenalina Doble',
         'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
         'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'
     ],
@@ -153,7 +163,6 @@ $all_destinos = [
             --color-texto-oscuro: #0F172A;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(233, 77, 0, 0.35);
         }
 
         body, button, input, select, textarea, .nav-link, .dropdown-item, .btn {
@@ -196,24 +205,45 @@ $all_destinos = [
             border-color: var(--color-naranja-journey);
         }
 
+        .topbar-btn-reserva {
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: var(--color-blanco) !important;
+            font-weight: 700;
+            font-size: 0.78rem;
+            border-radius: 50px;
+            padding: 0.32rem 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all 0.28s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
+
+        .topbar-btn-reserva:hover {
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+        }
+
         .navbar-custom {
-            background: rgba(0, 34, 56, 0.96);
-            backdrop-filter: blur(20px);
+            background: #FFFFFF;
+            transition: all 0.3s ease;
             border-bottom: 2px solid var(--color-naranja-journey);
-            padding: 0.5rem 0;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            padding: 0.35rem 0;
+            box-shadow: 0 4px 20px rgba(0, 34, 56, 0.05);
         }
 
         .logo-img-header {
-            height: 86px;
+            height: 82px;
             object-fit: contain;
         }
 
         .nav-link {
-            color: var(--color-blanco) !important;
+            color: var(--color-azul-peru-safe) !important;
             font-weight: 700;
-            font-size: 0.9rem;
-            padding: 0.6rem 1.15rem !important;
+            font-size: 0.88rem;
+            padding: 0.55rem 1.1rem !important;
             text-transform: uppercase;
         }
 
@@ -222,18 +252,19 @@ $all_destinos = [
         }
 
         .dropdown-menu-custom {
-            background: rgba(0, 22, 40, 0.98) !important;
-            border: 1px solid rgba(233, 77, 0, 0.3) !important;
-            border-top: 4px solid var(--color-naranja-journey) !important;
-            border-radius: 14px !important;
-            min-width: 270px;
+            background: #FFFFFF !important;
+            border: 1px solid var(--color-gris-border) !important;
+            border-top: 3px solid var(--color-naranja-journey) !important;
+            border-radius: 12px !important;
+            min-width: 260px;
+            box-shadow: 0 10px 30px rgba(0, 34, 56, 0.08) !important;
         }
 
         .dropdown-item-custom {
-            color: #F1F5F9 !important;
-            font-size: 0.84rem !important;
+            color: var(--color-texto-oscuro) !important;
+            font-size: 0.82rem !important;
             font-weight: 700 !important;
-            padding: 0.6rem 1rem !important;
+            padding: 0.55rem 0.9rem !important;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -241,23 +272,8 @@ $all_destinos = [
         }
 
         .dropdown-item-custom:hover {
-            background-color: var(--color-naranja-journey) !important;
-            color: var(--color-blanco) !important;
-        }
-
-        .btn-reserva-llama {
-            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
-            color: var(--color-blanco) !important;
-            font-weight: 700;
-            font-size: 0.88rem;
-            border-radius: 50px;
-            padding: 0.6rem 1.35rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px var(--color-naranja-glow);
-            text-transform: uppercase;
+            background-color: rgba(233, 77, 0, 0.08) !important;
+            color: var(--color-naranja-journey) !important;
         }
 
         .page-header-banner {
@@ -270,38 +286,37 @@ $all_destinos = [
 
         .dest-card-creative {
             background: var(--color-blanco);
-            border-radius: 18px;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
-            box-shadow: 0 8px 24px rgba(0, 34, 56, 0.04);
-            transition: all 0.35s ease;
+            transition: all 0.3s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
+            box-shadow: none !important;
         }
 
         .dest-card-creative:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 36px rgba(233, 77, 0, 0.18);
+            transform: translateY(-3px);
             border-color: var(--color-naranja-journey);
         }
 
         .dest-card-img-box {
             position: relative;
             width: 100%;
-            height: 210px;
+            height: 200px;
             overflow: hidden;
         }
 
         .dest-card-img-box img {
             width: 100%;
-            height: 210px;
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.5s ease;
         }
 
         .dest-card-creative:hover .dest-card-img-box img {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
 
         .dest-card-badge {
@@ -312,18 +327,18 @@ $all_destinos = [
             color: var(--color-blanco);
             font-size: 0.72rem;
             font-weight: 800;
-            padding: 0.3rem 0.75rem;
+            padding: 0.28rem 0.7rem;
             border-radius: 20px;
         }
 
         .price-usd {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 900;
             color: var(--color-naranja-journey);
         }
 
         .price-pen {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--color-azul-andino);
         }
@@ -331,7 +346,7 @@ $all_destinos = [
         .footer-custom {
             background: #001220;
             border-top: 2px solid var(--color-naranja-journey);
-            padding-top: 3.5rem;
+            padding-top: 3.2rem;
             padding-bottom: 1.5rem;
             color: #CBD5E1;
             width: 100vw;
@@ -341,7 +356,7 @@ $all_destinos = [
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.85rem;
             color: #E2E8F0;
         }
 
@@ -354,7 +369,7 @@ $all_destinos = [
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.05rem;
+            font-size: 1rem;
             border: 1px solid rgba(233, 77, 0, 0.25);
             flex-shrink: 0;
         }
@@ -363,18 +378,24 @@ $all_destinos = [
             position: fixed;
             bottom: 25px;
             right: 25px;
-            width: 60px;
-            height: 60px;
+            width: 58px;
+            height: 58px;
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            font-size: 28px;
             z-index: 1050;
             text-decoration: none;
+            box-shadow: none !important;
+        }
+
+        .llama-svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
     </style>
 </head>
@@ -397,9 +418,13 @@ $all_destinos = [
                     <span><strong>Calidad:</strong> <?php echo $phones['calidad']['number']; ?></span>
                 </a>
             </div>
-            <div class="d-none d-md-flex align-items-center gap-2 text-white">
-                <i class="bi bi-envelope-fill text-warning me-1"></i>
-                <span><?php echo $email_address; ?></span>
+            <div class="d-flex align-items-center gap-3">
+                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="topbar-btn-reserva">
+                    <svg class="llama-svg" viewBox="0 0 512 512">
+                        <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
+                    </svg>
+                    <span>Reserva tu Viaje</span>
+                </a>
             </div>
         </div>
     </div>
@@ -410,11 +435,11 @@ $all_destinos = [
             <a href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Logo" class="logo-img-header">
             </a>
-            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-                <i class="bi bi-list fs-1"></i>
+            <button class="navbar-toggler text-dark border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <i class="bi bi-list fs-1 text-dark"></i>
             </button>
             <div class="collapse navbar-collapse" id="navContent">
-                <ul class="navbar-nav mx-auto text-center">
+                <ul class="navbar-nav ms-auto text-center">
                     <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="https://www.perusafejourneysgroup.com/destinos/" data-bs-toggle="dropdown">
@@ -435,7 +460,6 @@ $all_destinos = [
                     <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/nosotros/">NOSOTROS</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/contacto/">CONTACTO</a></li>
                 </ul>
-                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="btn-reserva-llama">Reserva tu Viaje</a>
             </div>
         </div>
     </nav>
@@ -473,7 +497,7 @@ $all_destinos = [
                                         <div class="price-usd"><?php echo $dest['price_usd']; ?></div>
                                         <div class="price-pen"><?php echo $dest['price_pen']; ?></div>
                                     </div>
-                                    <a href="<?php echo $dest['url']; ?>" class="btn btn-sm btn-reserva-llama py-1 px-3">Ver Tour</a>
+                                    <a href="<?php echo $dest['url']; ?>" class="btn btn-sm btn-outline-warning text-dark fw-bold py-1 px-3">Ver Tour</a>
                                 </div>
                             </div>
                         </div>

@@ -202,7 +202,7 @@ $destinos_cards_section = [
     ]
 ];
 
-// Pilares de marca minimalistas y atractivos
+// Pilares de marca
 $brand_pillars = [
     [
         'name' => 'Autenticidad',
@@ -309,12 +309,12 @@ $tripadvisor_reviews = [
             padding: 0;
         }
 
-        /* 1. TOP BAR REDISEÑADO CON ESTILO ELEGANTE */
+        /* 1. TOP BAR REDISEÑADO CON BOTON "RESERVA TU VIAJE", REDES SOCIALES COMPLETA (CON YOUTUBE) Y SIN CORREO */
         .top-bar {
             background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
             font-size: 0.82rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 0.45rem 0;
+            padding: 0.4rem 0;
             z-index: 1050;
             position: relative;
         }
@@ -322,7 +322,7 @@ $tripadvisor_reviews = [
         .topbar-phone-badge {
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 0.28rem 0.8rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 50px;
             font-size: 0.78rem;
             color: #F1F5F9 !important;
@@ -360,42 +360,64 @@ $tripadvisor_reviews = [
             border-color: var(--color-naranja-journey);
         }
 
-        /* 1. NAVBAR-CUSTOM REDISEÑADO MAS ATRACTIVO */
+        .topbar-btn-reserva {
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: var(--color-blanco) !important;
+            font-weight: 700;
+            font-size: 0.78rem;
+            border-radius: 50px;
+            padding: 0.32rem 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all 0.28s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
+
+        .topbar-btn-reserva:hover {
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            transform: translateY(-1px);
+        }
+
+        /* 2. NAVBAR-CUSTOM MINIMALISTA Y AMIGABLE PARA AGENCIA DE TURISMO */
         .navbar-custom {
-            background: rgba(0, 34, 56, 0.96);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            transition: all 0.35s ease;
+            background: #FFFFFF;
+            transition: all 0.3s ease;
             border-bottom: 2px solid var(--color-naranja-journey);
             width: 100%;
-            padding: 0.45rem 0;
+            padding: 0.35rem 0;
+            box-shadow: 0 4px 20px rgba(0, 34, 56, 0.05);
         }
 
         .navbar-custom.scrolled {
-            background: rgba(0, 18, 32, 0.98);
-            padding: 0.35rem 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            padding: 0.25rem 0;
+            box-shadow: 0 6px 25px rgba(0, 34, 56, 0.08);
         }
 
         .logo-img-header {
-            height: 86px;
+            height: 82px;
             width: auto;
             object-fit: contain;
             transition: transform 0.3s ease;
         }
 
         .navbar-brand-logo:hover .logo-img-header {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
         .nav-link {
-            color: var(--color-blanco) !important;
+            color: var(--color-azul-peru-safe) !important;
             font-weight: 700;
-            font-size: 0.9rem;
-            padding: 0.6rem 1.15rem !important;
-            letter-spacing: 0.8px;
+            font-size: 0.88rem;
+            padding: 0.55rem 1.1rem !important;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
             position: relative;
-            transition: color 0.3s ease;
+            transition: color 0.25s ease;
         }
 
         .nav-link::after {
@@ -406,14 +428,14 @@ $tripadvisor_reviews = [
             width: 0%;
             height: 3px;
             background: var(--color-naranja-journey);
-            transition: all 0.35s ease;
+            transition: all 0.3s ease;
             transform: translateX(-50%);
             border-radius: 3px;
         }
 
         .nav-link:hover::after,
         .nav-link.active::after {
-            width: 80%;
+            width: 75%;
         }
 
         .nav-link:hover,
@@ -422,14 +444,14 @@ $tripadvisor_reviews = [
         }
 
         .dropdown-menu-custom {
-            background: rgba(0, 22, 40, 0.98) !important;
-            border: 1px solid rgba(233, 77, 0, 0.3) !important;
-            border-top: 4px solid var(--color-naranja-journey) !important;
-            border-radius: 14px !important;
-            padding: 0.6rem 0.4rem !important;
-            min-width: 270px;
-            margin-top: 0.4rem !important;
-            box-shadow: none !important;
+            background: #FFFFFF !important;
+            border: 1px solid var(--color-gris-border) !important;
+            border-top: 3px solid var(--color-naranja-journey) !important;
+            border-radius: 12px !important;
+            padding: 0.5rem 0.3rem !important;
+            min-width: 260px;
+            margin-top: 0.3rem !important;
+            box-shadow: 0 10px 30px rgba(0, 34, 56, 0.08) !important;
         }
 
         @media (min-width: 992px) {
@@ -439,48 +461,25 @@ $tripadvisor_reviews = [
         }
 
         .dropdown-item-custom {
-            color: #F1F5F9 !important;
-            font-size: 0.84rem !important;
+            color: var(--color-texto-oscuro) !important;
+            font-size: 0.82rem !important;
             font-weight: 700 !important;
-            letter-spacing: 0.5px;
-            padding: 0.6rem 1rem !important;
-            border-radius: 8px;
+            letter-spacing: 0.4px;
+            padding: 0.55rem 0.9rem !important;
+            border-radius: 6px;
             transition: all 0.25s ease !important;
             text-transform: uppercase;
         }
 
         .dropdown-item-custom:hover {
-            background-color: var(--color-naranja-journey) !important;
-            color: var(--color-blanco) !important;
-            transform: translateX(5px);
-        }
-
-        .btn-reserva-llama {
-            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
-            color: var(--color-blanco) !important;
-            font-weight: 700;
-            font-size: 0.88rem;
-            border-radius: 50px;
-            padding: 0.6rem 1.35rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.25);
-            text-transform: uppercase;
-            box-shadow: none !important;
-        }
-
-        .btn-reserva-llama:hover {
-            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
-            transform: translateY(-2px);
-            color: var(--color-blanco);
+            background-color: rgba(233, 77, 0, 0.08) !important;
+            color: var(--color-naranja-journey) !important;
+            transform: translateX(4px);
         }
 
         .llama-svg {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             fill: currentColor;
         }
 
@@ -601,7 +600,7 @@ $tripadvisor_reviews = [
             box-shadow: none !important;
         }
 
-        /* BADGES Y TITULOS DE SECCIÓN */
+        /* BADGES Y TITULOS */
         .section-badge-clean {
             display: inline-block;
             background-color: rgba(233, 77, 0, 0.08);
@@ -629,7 +628,6 @@ $tripadvisor_reviews = [
             width: 100vw;
         }
 
-        /* SIN ESPACIOS EN .agency-glass-card */
         .agency-glass-card {
             border-radius: 0 !important;
             padding: 0 !important;
@@ -645,39 +643,78 @@ $tripadvisor_reviews = [
             margin-bottom: 1rem;
         }
 
-        /* 3. SECCIÓN "NUESTROS VALORES" CON DISEÑO MINIMALISTA Y SÚPER ATRACTIVO */
+        /* POR QUÉ ELEGIRNOS CON COLOR DE FONDO Y ENLACE NOSOTROS */
+        .why-choose-us-section {
+            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
+            color: #FFFFFF;
+            padding: 3.2rem 0;
+            width: 100vw;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .why-choose-us-section .section-badge-clean {
+            background-color: rgba(233, 77, 0, 0.2);
+            color: #FFB800;
+            border-color: rgba(255, 184, 0, 0.3);
+        }
+
+        .why-choose-us-section .section-title {
+            color: #FFFFFF;
+        }
+
+        .btn-conoce-nosotros {
+            background: var(--color-naranja-journey);
+            color: #FFFFFF !important;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 0.7rem 1.6rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.28s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-conoce-nosotros:hover {
+            background: var(--color-naranja-hover);
+            transform: translateY(-2px);
+        }
+
+        /* TARJETAS MINIMALISTAS */
         .minimalist-value-card {
             background: #FFFFFF;
             border-radius: 16px;
-            padding: 1.8rem 1.4rem;
+            padding: 1.6rem 1.3rem;
             border: 1px solid var(--color-gris-border);
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            transition: all 0.3s ease;
+            transition: all 0.28s ease;
             box-shadow: none !important;
-            position: relative;
         }
 
         .minimalist-value-card:hover {
             border-color: var(--color-naranja-journey);
-            transform: translateY(-4px);
+            transform: translateY(-3px);
         }
 
         .minimalist-icon-badge {
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             border-radius: 12px;
             background: rgba(233, 77, 0, 0.08);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
+            font-size: 1.35rem;
+            margin-bottom: 0.85rem;
             border: 1px solid rgba(233, 77, 0, 0.18);
-            transition: all 0.3s ease;
+            transition: all 0.28s ease;
         }
 
         .minimalist-value-card:hover .minimalist-icon-badge {
@@ -686,20 +723,20 @@ $tripadvisor_reviews = [
         }
 
         .minimalist-value-title {
-            font-size: 1.15rem;
+            font-size: 1.12rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.35rem;
         }
 
         .minimalist-value-desc {
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             color: var(--color-texto-suave);
             line-height: 1.6;
             margin-bottom: 0;
         }
 
-        /* SLIDERS Y TARJETAS */
+        /* SLIDERS Y TARJETAS MINIMALISTAS */
         .cards-slider-unified-section {
             padding: 2.5rem 0;
             width: 100vw;
@@ -748,7 +785,7 @@ $tripadvisor_reviews = [
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
             box-shadow: none !important;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s ease, transform 0.3s ease;
             display: flex;
             flex-direction: column;
             text-decoration: none;
@@ -757,6 +794,7 @@ $tripadvisor_reviews = [
 
         .unified-card:hover {
             border-color: var(--color-naranja-journey);
+            transform: translateY(-3px);
         }
 
         .unified-card-img-box {
@@ -817,84 +855,82 @@ $tripadvisor_reviews = [
             color: var(--color-azul-andino);
         }
 
-        /* DESTINOS POPULARES ENHANCED */
+        /* DESTINOS POPULARES ENHANCED MINIMALISTA */
         .dest-card-enhanced {
             flex: 0 0 calc(25% - 14px);
-            min-width: 270px;
+            min-width: 265px;
             background: #FFFFFF;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.35s ease;
+            transition: all 0.3s ease;
             box-shadow: none !important;
         }
 
         .dest-card-enhanced:hover {
             border-color: var(--color-naranja-journey);
-            transform: translateY(-4px);
+            transform: translateY(-3px);
         }
 
         .dest-img-header {
             position: relative;
             width: 100%;
-            height: 210px;
+            height: 200px;
             overflow: hidden;
         }
 
         .dest-img-header img {
             width: 100%;
-            height: 210px;
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.5s ease;
         }
 
         .dest-card-enhanced:hover .dest-img-header img {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
 
         .dest-badge-top {
             position: absolute;
-            top: 12px;
-            left: 12px;
+            top: 10px;
+            left: 10px;
             background: rgba(0, 34, 56, 0.88);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(6px);
             color: #FFFFFF;
             font-size: 0.72rem;
             font-weight: 700;
-            padding: 0.3rem 0.8rem;
+            padding: 0.28rem 0.75rem;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .price-overlay-box {
             position: absolute;
-            bottom: 12px;
-            right: 12px;
+            bottom: 10px;
+            right: 10px;
             background: rgba(233, 77, 0, 0.95);
             color: #FFFFFF;
-            padding: 0.35rem 0.85rem;
-            border-radius: 12px;
+            padding: 0.3rem 0.75rem;
+            border-radius: 10px;
             text-align: right;
-            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .price-overlay-usd {
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             font-weight: 900;
             line-height: 1.1;
         }
 
         .price-overlay-pen {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 600;
             opacity: 0.95;
         }
 
         .dest-body-content {
-            padding: 1.25rem;
+            padding: 1.15rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -902,10 +938,10 @@ $tripadvisor_reviews = [
         }
 
         .dest-title-text {
-            font-size: 1.12rem;
+            font-size: 1.08rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.45rem;
             line-height: 1.35;
         }
 
@@ -913,9 +949,9 @@ $tripadvisor_reviews = [
             display: flex;
             align-items: center;
             gap: 4px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: #FFB800;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.75rem;
         }
 
         .tripadvisor-section {
@@ -944,8 +980,8 @@ $tripadvisor_reviews = [
 
         .review-card {
             background: #FFFFFF;
-            border-radius: 18px;
-            padding: 1.6rem 1.4rem;
+            border-radius: 16px;
+            padding: 1.5rem 1.3rem;
             border: 1px solid var(--color-gris-border);
             height: 100%;
             display: flex;
@@ -1067,7 +1103,7 @@ $tripadvisor_reviews = [
 </head>
 <body>
 
-    <!-- TOP BAR -->
+    <!-- 1. TOP BAR REDISEÑADO CON BOTÓN RESERVA TU VIAJE, REDES SOCIALES COMPLETA (CON YOUTUBE) Y SIN CORREO -->
     <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
@@ -1085,30 +1121,36 @@ $tripadvisor_reviews = [
                 </a>
             </div>
 
-            <div class="d-none d-md-flex align-items-center gap-3">
-                <a href="mailto:<?php echo $email_address; ?>" class="text-white text-decoration-none small me-2">
-                    <i class="bi bi-envelope-fill text-warning me-1"></i> <?php echo $email_address; ?>
-                </a>
+            <div class="d-flex align-items-center gap-3">
                 <a href="https://facebook.com" target="_blank" class="topbar-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
                 <a href="https://instagram.com" target="_blank" class="topbar-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
                 <a href="https://tiktok.com" target="_blank" class="topbar-social-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                <a href="https://youtube.com" target="_blank" class="topbar-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
+
+                <!-- BOTON RESERVA TU VIAJE EN EL TOP BAR -->
+                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="topbar-btn-reserva">
+                    <svg class="llama-svg" viewBox="0 0 512 512">
+                        <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
+                    </svg>
+                    <span>Reserva tu Viaje</span>
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- NAVBAR PEGAJOSO REDISEÑADO MAS ATRACTIVO -->
+    <!-- 2. NAVBAR-CUSTOM MINIMALISTA Y AMIGABLE -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
-            <button class="navbar-toggler text-white border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <i class="bi bi-list fs-1 text-white"></i>
+            <button class="navbar-toggler text-dark border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <i class="bi bi-list fs-1 text-dark"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="https://www.perusafejourneysgroup.com/">INICIO</a>
                     </li>
@@ -1147,15 +1189,6 @@ $tripadvisor_reviews = [
                         <a class="nav-link" href="https://www.perusafejourneysgroup.com/contacto/">CONTACTO</a>
                     </li>
                 </ul>
-
-                <div class="text-center text-lg-end mt-3 mt-lg-0">
-                    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="btn-reserva-llama">
-                        <svg class="llama-svg" viewBox="0 0 512 512">
-                            <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
-                        </svg>
-                        <span>Reserva tu Viaje</span>
-                    </a>
-                </div>
             </div>
         </div>
     </nav>
@@ -1196,7 +1229,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 1. QUIENES SOMOS (SECCIÓN "CONTENIDO CREATIVO" REMOVIDA SEGÚN SOLICITUD) -->
+    <!-- 1. QUIENES SOMOS -->
     <section class="narrative-section-compact">
         <div class="container-fluid px-3 px-lg-5">
             <div class="agency-glass-card">
@@ -1233,27 +1266,31 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 2. PORQUE ELEGIRNOS -->
-    <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
+    <!-- 3. POR QUÉ ELEGIRNOS CON COLOR DE FONDO Y ENLACE "CONOCE MÁS SOBRE NOSOTROS" -->
+    <section class="why-choose-us-section">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="agency-glass-card">
-                <div class="text-center max-w-800 mx-auto">
-                    <span class="section-badge-clean">¿POR QUÉ ELEGIRNOS?</span>
-                    <h2 class="section-title mb-2">Perú Safe Journeys: tu camino hacia un Perú auténtico</h2>
-                    <h4 class="fs-5 text-warning fw-bold mb-3">Tu aventura comienza con nosotros</h4>
-                    <p class="narrative-paragraph mb-3">
-                        Sabemos que viajar es mucho más que conocer nuevos lugares: es cumplir sueños, descubrir culturas, compartir momentos especiales y crear recuerdos que te acompañarán toda la vida.
-                    </p>
-                    <p class="narrative-paragraph fw-semibold text-dark mb-0">
-                        En <strong>Perú Safe Journeys</strong>, queremos que vivas el Perú de una manera auténtica, cómoda y segura. Por eso, diseñamos viajes a tu medida para que descubras la magia de nuestros destinos, la riqueza de nuestras tradiciones, la calidez de nuestra gente y la belleza de nuestros paisajes.
-                    </p>
-                </div>
+            <div class="text-center max-w-800 mx-auto">
+                <span class="section-badge-clean mb-2">¿POR QUÉ ELEGIRNOS?</span>
+                <h2 class="section-title mb-2">Perú Safe Journeys: tu camino hacia un Perú auténtico</h2>
+                <h4 class="fs-5 text-warning fw-bold mb-3">Tu aventura comienza con nosotros</h4>
+
+                <p class="narrative-paragraph text-light mb-3" style="line-height: 1.85;">
+                    Sabemos que viajar es mucho más que conocer nuevos lugares: es cumplir sueños, descubrir culturas, compartir momentos especiales y crear recuerdos que te acompañarán toda la vida.
+                </p>
+                <p class="narrative-paragraph text-light fw-medium mb-4" style="line-height: 1.85;">
+                    En <strong>Perú Safe Journeys</strong>, queremos que vivas el Perú de una manera auténtica, cómoda y segura. Por eso, diseñamos viajes a tu medida para que descubras la magia de nuestros destinos, la riqueza de nuestras tradiciones, la calidez de nuestra gente y la belleza de nuestros paisajes.
+                </p>
+
+                <a href="https://www.perusafejourneysgroup.com/nosotros/" class="btn-conoce-nosotros">
+                    <span>Conoce más sobre Nosotros</span>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
 
-    <!-- 3. DESTINOS POPULARES -->
+    <!-- 3. DESTINOS POPULARES MINIMALISTAS -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
@@ -1316,7 +1353,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. NUESTROS VALORES (PILARES DE MARCA MINIMALISTA Y SÚPER ATRACTIVO) -->
+    <!-- 3. NUESTROS VALORES MINIMALISTA -->
     <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
@@ -1342,7 +1379,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 5. EXPERIENCIAS EXCLUSIVAS -->
+    <!-- EXPERIENCIAS EXCLUSIVAS -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
@@ -1449,6 +1486,7 @@ $tripadvisor_reviews = [
                         <a href="https://facebook.com" target="_blank" class="topbar-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
                         <a href="https://instagram.com" target="_blank" class="topbar-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
                         <a href="https://tiktok.com" target="_blank" class="topbar-social-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://youtube.com" target="_blank" class="topbar-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
 
@@ -1526,7 +1564,7 @@ $tripadvisor_reviews = [
     </a>
 
     <!-- Scripts Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- JS para Sliders -->
     <script>

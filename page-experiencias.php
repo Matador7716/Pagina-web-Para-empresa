@@ -42,6 +42,7 @@ $destinos_submenu = [
     <style>
         :root {
             --color-naranja-journey: #E94D00;
+            --color-naranja-hover: #C74000;
             --color-blanco: #FFFFFF;
             --color-azul-peru-safe: #002238;
             --color-azul-andino: #0B527A;
@@ -49,7 +50,6 @@ $destinos_submenu = [
             --color-texto-oscuro: #0F172A;
             --color-texto-suave: #64748B;
             --color-gris-border: #E2E8F0;
-            --color-naranja-glow: rgba(233, 77, 0, 0.35);
         }
 
         body, button, input, select, textarea, .nav-link, .dropdown-item, .btn {
@@ -58,19 +58,22 @@ $destinos_submenu = [
 
         body { font-family: 'Poppins', sans-serif; background-color: var(--color-blanco); color: var(--color-texto-oscuro); overflow-x: hidden; width: 100vw; margin: 0; padding: 0; }
 
-        .top-bar { background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%); font-size: 0.82rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 0.4rem 0; }
+        .top-bar { background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%); font-size: 0.82rem; border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding: 0.4rem 0; }
         .topbar-phone-badge { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.78rem; color: #E2E8F0 !important; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
 
-        .navbar-custom { background: rgba(0, 34, 56, 0.96); backdrop-filter: blur(20px); border-bottom: 2px solid var(--color-naranja-journey); padding: 0.5rem 0; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25); }
-        .logo-img-header { height: 86px; object-fit: contain; }
-        .nav-link { color: var(--color-blanco) !important; font-weight: 700; font-size: 0.9rem; padding: 0.6rem 1.15rem !important; text-transform: uppercase; }
+        .topbar-social-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #CBD5E1 !important; font-size: 0.9rem; text-decoration: none; border: 1px solid rgba(255, 255, 255, 0.1); }
+
+        .topbar-btn-reserva { background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%); color: var(--color-blanco) !important; font-weight: 700; font-size: 0.78rem; border-radius: 50px; padding: 0.32rem 1.1rem; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; text-transform: uppercase; }
+
+        .navbar-custom { background: #FFFFFF; border-bottom: 2px solid var(--color-naranja-journey); padding: 0.35rem 0; }
+        .logo-img-header { height: 82px; object-fit: contain; }
+        .nav-link { color: var(--color-azul-peru-safe) !important; font-weight: 700; font-size: 0.88rem; padding: 0.55rem 1.1rem !important; text-transform: uppercase; }
         .nav-link:hover, .nav-link.active { color: var(--color-naranja-journey) !important; }
 
-        .dropdown-menu-custom { background: rgba(0, 22, 40, 0.98) !important; border: 1px solid rgba(233, 77, 0, 0.3) !important; border-top: 4px solid var(--color-naranja-journey) !important; border-radius: 14px !important; min-width: 270px; }
-        .dropdown-item-custom { color: #F1F5F9 !important; font-size: 0.84rem !important; font-weight: 700 !important; padding: 0.6rem 1rem !important; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
-        .dropdown-item-custom:hover { background-color: var(--color-naranja-journey) !important; color: var(--color-blanco) !important; }
+        .dropdown-menu-custom { background: #FFFFFF !important; border: 1px solid var(--color-gris-border) !important; border-top: 3px solid var(--color-naranja-journey) !important; border-radius: 12px !important; min-width: 260px; }
+        .dropdown-item-custom { color: var(--color-texto-oscuro) !important; font-size: 0.82rem !important; font-weight: 700 !important; padding: 0.55rem 0.9rem !important; text-transform: uppercase; }
 
-        .btn-reserva-llama { background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%); color: var(--color-blanco) !important; font-weight: 700; font-size: 0.88rem; border-radius: 50px; padding: 0.6rem 1.35rem; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 15px var(--color-naranja-glow); text-transform: uppercase; }
+        .btn-reserva-llama { background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%); color: var(--color-blanco) !important; font-weight: 700; font-size: 0.88rem; border-radius: 50px; padding: 0.6rem 1.35rem; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; text-transform: uppercase; box-shadow: none !important; }
 
         .page-header-banner { background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%); padding: 3.5rem 0 2.8rem; color: var(--color-blanco); text-align: center; border-bottom: 3px solid var(--color-naranja-journey); }
 
@@ -78,7 +81,9 @@ $destinos_submenu = [
         .footer-contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 0.9rem; color: #E2E8F0; }
         .footer-contact-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(233, 77, 0, 0.15); color: var(--color-naranja-journey); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; border: 1px solid rgba(233, 77, 0, 0.25); flex-shrink: 0; }
 
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); z-index: 1050; text-decoration: none; }
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; width: 58px; height: 58px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1050; text-decoration: none; box-shadow: none !important; }
+
+        .llama-svg { width: 16px; height: 16px; fill: currentColor; }
     </style>
 </head>
 <body>
@@ -91,7 +96,16 @@ $destinos_submenu = [
                 <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-gear-fill text-warning"></i> Operaciones: <?php echo $phones['operaciones']['number']; ?></a>
                 <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-shield-check text-warning"></i> Calidad: <?php echo $phones['calidad']['number']; ?></a>
             </div>
-            <div class="text-white"><i class="bi bi-envelope-fill text-warning me-1"></i> <?php echo $email_address; ?></div>
+            <div class="d-flex align-items-center gap-3">
+                <a href="https://facebook.com" target="_blank" class="topbar-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" class="topbar-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://tiktok.com" target="_blank" class="topbar-social-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                <a href="https://youtube.com" target="_blank" class="topbar-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
+                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje" target="_blank" class="topbar-btn-reserva">
+                    <svg class="llama-svg" viewBox="0 0 512 512"><path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/></svg>
+                    <span>Reserva tu Viaje</span>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -101,17 +115,17 @@ $destinos_submenu = [
             <a href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Logo" class="logo-img-header">
             </a>
-            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-                <i class="bi bi-list fs-1"></i>
+            <button class="navbar-toggler text-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <i class="bi bi-list fs-1 text-dark"></i>
             </button>
             <div class="collapse navbar-collapse" id="navContent">
-                <ul class="navbar-nav mx-auto text-center">
+                <ul class="navbar-nav ms-auto text-center">
                     <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" data-bs-toggle="dropdown">
                             DESTINOS
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-custom shadow-lg">
+                        <ul class="dropdown-menu dropdown-menu-custom">
                             <?php foreach($destinos_submenu as $sub_item): ?>
                                 <li>
                                     <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
@@ -126,7 +140,6 @@ $destinos_submenu = [
                     <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/nosotros/">NOSOTROS</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/contacto/">CONTACTO</a></li>
                 </ul>
-                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="btn-reserva-llama">Reserva tu Viaje</a>
             </div>
         </div>
     </nav>
@@ -136,46 +149,46 @@ $destinos_submenu = [
         <div class="container-fluid px-3 px-lg-5">
             <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-2">VIVE EL PERÚ AUTÉNTICO</span>
             <h1 class="display-5 fw-extrabold text-white">Experiencias Inolvidables</h1>
-            <p class="fs-6 text-light max-w-700 mx-auto">Desde trekings andinos hasta vivencias comunitarias con seguridad y confort garantizado.</p>
+            <p class="fs-6 text-light max-w-700 mx-auto">Desde trekkings andinos hasta vivencias comunitarias con seguridad y confort garantizado.</p>
         </div>
     </section>
 
-    <!-- CONTENIDO -->
+    <!-- CONTENIDO EXPERIENCIAS COMPLETO -->
     <section class="py-4">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-3">
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <div class="card h-100 border rounded-4 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Experiencia Vivencial" style="height: 210px; object-fit: cover;">
                         <div class="card-body p-3">
                             <span class="badge bg-warning text-dark mb-2">Cultura Live</span>
-                            <h3 class="fs-6 fw-bold text-dark">Turismo Vivencial Andino</h3>
-                            <p class="text-secondary small">Comparte con familias locales en el Valle Sagrado, aprende sus técnicas textiles y la gastronomía ancestral.</p>
-                            <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="btn btn-sm btn-reserva-llama py-1 px-3">Consultar Experiencia</a>
+                            <h3 class="fs-6 fw-bold text-dark">Turismo Vivencial & Comunidades</h3>
+                            <p class="text-secondary small">Comparte con familias locales en el Valle Sagrado, aprende sus técnicas textiles ancestrales y disfruta de la gastronomía autóctona.</p>
+                            <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="btn btn-sm btn-outline-warning text-dark fw-bold py-1 px-3">Consultar Experiencia</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <div class="card h-100 border rounded-4 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Aventura ATV" style="height: 210px; object-fit: cover;">
                         <div class="card-body p-3">
                             <span class="badge bg-warning text-dark mb-2">Adrenalina</span>
                             <h3 class="fs-6 fw-bold text-dark">Rutas Extremas & ATVs</h3>
-                            <p class="text-secondary small">Siente la velocidad en la Montaña de 7 Colores conduciendo cuatrimotos de última generación.</p>
-                            <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="btn btn-sm btn-reserva-llama py-1 px-3">Consultar Experiencia</a>
+                            <p class="text-secondary small">Siente la velocidad hacia la Montaña de Colores conduciendo cuatrimotos de última generación con la máxima seguridad.</p>
+                            <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="btn btn-sm btn-outline-warning text-dark fw-bold py-1 px-3">Consultar Experiencia</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <div class="card h-100 border rounded-4 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Trekking" style="height: 210px; object-fit: cover;">
                         <div class="card-body p-3">
                             <span class="badge bg-warning text-dark mb-2">Trekking</span>
-                            <h3 class="fs-6 fw-bold text-dark">Caminatas por Glaciares</h3>
-                            <p class="text-secondary small">Explora la majestuosidad de la Laguna Humantay y el glaciar Quelcaya en itinerarios seguros.</p>
-                            <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="btn btn-sm btn-reserva-llama py-1 px-3">Consultar Experiencia</a>
+                            <h3 class="fs-6 fw-bold text-dark">Caminatas por Glaciares & Lagunas</h3>
+                            <p class="text-secondary small">Explora la majestuosidad de la Laguna Humantay y el glaciar Quelcaya en itinerarios guiados por especialistas locales.</p>
+                            <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="btn btn-sm btn-outline-warning text-dark fw-bold py-1 px-3">Consultar Experiencia</a>
                         </div>
                     </div>
                 </div>
@@ -210,7 +223,6 @@ $destinos_submenu = [
 
                 <div class="col-lg-4 col-md-6">
                     <h5 class="fw-bold text-white mb-3">Contacto Oficial</h5>
-
                     <div class="footer-contact-item">
                         <div class="footer-contact-icon"><i class="bi bi-telephone-fill"></i></div>
                         <div>
@@ -218,7 +230,6 @@ $destinos_submenu = [
                             <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['ventas']['number']; ?></a>
                         </div>
                     </div>
-
                     <div class="footer-contact-item">
                         <div class="footer-contact-icon"><i class="bi bi-gear-fill"></i></div>
                         <div>
@@ -226,7 +237,6 @@ $destinos_submenu = [
                             <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['operaciones']['number']; ?></a>
                         </div>
                     </div>
-
                     <div class="footer-contact-item">
                         <div class="footer-contact-icon"><i class="bi bi-shield-check"></i></div>
                         <div>
@@ -234,7 +244,6 @@ $destinos_submenu = [
                             <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['calidad']['number']; ?></a>
                         </div>
                     </div>
-
                     <div class="footer-contact-item">
                         <div class="footer-contact-icon"><i class="bi bi-envelope-fill"></i></div>
                         <div>
@@ -253,6 +262,6 @@ $destinos_submenu = [
 
     <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="whatsapp-float"><i class="bi bi-whatsapp"></i></a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
