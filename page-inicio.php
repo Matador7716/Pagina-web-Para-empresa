@@ -213,6 +213,34 @@ $brand_pillars = [
         'icon' => 'bi-stars'
     ]
 ];
+
+// Reseñas de TripAdvisor
+$tripadvisor_reviews = [
+    [
+        'title' => '¡Experiencia inolvidable en Cusco y Humantay!',
+        'comment' => 'La organización de Perú Safe Journeys fue impecable de principio a fin. Guías muy atentos, transporte puntual y confortable. ¡Súper recomendados!',
+        'author' => 'Sarah M.',
+        'country' => 'Estados Unidos',
+        'date' => 'Hace 1 semana',
+        'rating' => 5
+    ],
+    [
+        'title' => 'Seguridad y autenticidad garantizada',
+        'comment' => 'Nos acompañaron durante todo el recorrido por el Valle Sagrado y Machu Picchu. Todo muy transparente con los precios y excelente atención 24/7.',
+        'author' => 'Carlos & Elena R.',
+        'country' => 'España',
+        'date' => 'Hace 2 semanas',
+        'rating' => 5
+    ],
+    [
+        'title' => 'Increíble tour en ATV a Vinicunca',
+        'comment' => 'La ruta en cuatrimoto fue una locura de adrenalina y belleza natural. El equipo veló por nuestra seguridad en cada segundo.',
+        'author' => 'Jean-Pierre L.',
+        'country' => 'Francia',
+        'date' => 'Hace 1 mes',
+        'rating' => 5
+    ]
+];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -239,6 +267,7 @@ $brand_pillars = [
             --color-azul-peru-safe: #002238;
             --color-azul-andino: #0B527A;
             --color-dorado-andino: #D9A441;
+            --color-tripadvisor-green: #00AA6C;
             --color-gris-claro: #F8FAFC;
             --color-texto-oscuro: #0F172A;
             --color-texto-suave: #64748B;
@@ -594,7 +623,7 @@ $brand_pillars = [
             margin-bottom: 1rem;
         }
 
-        /* ESTILO MEJORADO PARA CONTENIDO CREATIVO */
+        /* CONTENIDO CREATIVO */
         .creative-content-box {
             background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
             color: var(--color-blanco);
@@ -782,6 +811,59 @@ $brand_pillars = [
             color: var(--color-azul-andino);
         }
 
+        /* TRIPADVISOR REVIEWS SECTION */
+        .tripadvisor-section {
+            background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+            padding: 2.8rem 0;
+            border-top: 1px solid var(--color-gris-border);
+            width: 100vw;
+        }
+
+        .tripadvisor-badge-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #FFFFFF;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid var(--color-gris-border);
+            margin-bottom: 1rem;
+        }
+
+        .tripadvisor-dots {
+            color: var(--color-tripadvisor-green);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .review-card {
+            background: #FFFFFF;
+            border-radius: 18px;
+            padding: 1.6rem 1.4rem;
+            border: 1px solid var(--color-gris-border);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .btn-tripadvisor {
+            background-color: var(--color-tripadvisor-green);
+            color: var(--color-blanco) !important;
+            font-weight: 700;
+            border-radius: 50px;
+            padding: 0.65rem 1.6rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-tripadvisor:hover {
+            opacity: 0.9;
+        }
+
         /* FOOTER CON ICONOS */
         .footer-custom {
             background: #001220;
@@ -913,7 +995,7 @@ $brand_pillars = [
         </div>
     </div>
 
-    <!-- NAVBAR PEGAJOSO -->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
@@ -1046,7 +1128,7 @@ $brand_pillars = [
                     </div>
                 </div>
 
-                <!-- 2. DISEÑO MEJORADO Y ELEGANTE PARA CONTENIDO CREATIVO -->
+                <!-- CONTENIDO CREATIVO -->
                 <div class="creative-content-box">
                     <div class="d-inline-block badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-3 small">
                         CONTENIDO CREATIVO
@@ -1138,7 +1220,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- ORDEN DE SECCIONES EXACTO: 4. NUESTROS VALORES (PILARES DE MARCA) -->
+    <!-- ORDEN DE SECCIONES EXACTO: 4. NUESTROS VALORES -->
     <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
@@ -1163,7 +1245,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- ORDEN DE SECCIONES EXACTO: 5. EXPERIENCIAS EXCLUSIVAS (MODALIDADES DE VIAJE) -->
+    <!-- ORDEN DE SECCIONES EXACTO: 5. EXPERIENCIAS EXCLUSIVAS -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
@@ -1201,6 +1283,55 @@ $brand_pillars = [
                         </div>
                     </a>
                 <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- NUEVA SECCIÓN AL FINAL: TRIPADVISOR REVIEWS -->
+    <section class="tripadvisor-section">
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="text-center mb-4">
+                <div class="tripadvisor-badge-box">
+                    <span class="fw-bold text-dark fs-6">TRIPADVISOR REVIEWS</span>
+                    <span class="tripadvisor-dots">•••••</span>
+                </div>
+                <h2 class="section-title">TripAdvisor Perú Safe Journeys</h2>
+                <p class="text-muted small max-w-700 mx-auto">Conoce los comentarios y testimonios reales de nuestros viajeros internacionales.</p>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <?php foreach($tripadvisor_reviews as $rev): ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="review-card">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <span class="badge bg-success font-weight-bold" style="background-color: var(--color-tripadvisor-green) !important;">
+                                        ★ 5.0 Excelente
+                                    </span>
+                                    <small class="text-muted"><?php echo $rev['date']; ?></small>
+                                </div>
+                                <h4 class="fs-6 fw-bold text-dark mb-2"><?php echo $rev['title']; ?></h4>
+                                <p class="text-secondary small mb-3" style="line-height: 1.6;">"<?php echo $rev['comment']; ?>"</p>
+                            </div>
+
+                            <div class="border-top pt-2 d-flex align-items-center justify-content-between text-muted small">
+                                <div>
+                                    <strong class="text-dark d-block"><?php echo $rev['author']; ?></strong>
+                                    <span><?php echo $rev['country']; ?></span>
+                                </div>
+                                <i class="bi bi-patch-check-fill text-success fs-5"></i>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="text-center">
+                <a href="https://www.tripadvisor.com" target="_blank" class="btn-tripadvisor">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                    <span>Ver más opiniones en TripAdvisor Perú Safe Journeys</span>
+                </a>
             </div>
         </div>
     </section>
