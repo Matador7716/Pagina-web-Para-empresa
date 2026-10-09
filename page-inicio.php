@@ -1422,14 +1422,9 @@ $tripadvisor_reviews = [
                             <strong>Perú Safe Journeys – Travel Agency</strong> es una agencia especializada en crear experiencias auténticas, seguras y personalizadas por el Perú. Diseñamos cada viaje pensando en que nuestros viajeros no solo conozcan destinos, sino que vivan la esencia de cada lugar, conectando con nuestras culturas, tradiciones, historia, gastronomía y extraordinarios paisajes.
                         </p>
 
-                        <p class="narrative-paragraph mb-4">
+                        <p class="narrative-paragraph mb-0">
                             Desde la majestuosidad de <strong>Cusco y Machu Picchu</strong>, pasando por el Valle Sagrado, los Andes y la Amazonía, hasta las costas del Pacífico, acompañamos a nuestros viajeros con atención personalizada, planificación profesional, seguridad y confort en cada etapa de su aventura.
                         </p>
-
-                        <a href="https://www.perusafejourneysgroup.com/nosotros/" class="btn-banner-primary">
-                            <span>Conoce Más Sobre Nosotros</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
                     </div>
 
                     <div class="col-lg-5">
