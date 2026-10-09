@@ -66,7 +66,7 @@ $tour_cards = [
     ]
 ];
 
-// Destinos Estrellas
+// Destinos Estrellas Rediseñados
 $destinos_cards_section = [
     [
         'title' => '7 LAGUNAS DEL AUSANGATE',
@@ -381,42 +381,51 @@ $tripadvisor_reviews = [
             transform: translateY(-1px);
         }
 
-        /* 1. NAVBAR-CUSTOM ULTRA MODERNO, MINIMALISTA Y AMIGABLE */
+        /* 1. NAVBAR-CUSTOM TRANSPARENTE SOBRE EL SLIDER CON ESTILO ULTRA MODERNO Y AMIGABLE */
         .navbar-custom {
-            background: #FFFFFF;
-            transition: all 0.3s ease;
-            border-bottom: 2px solid var(--color-naranja-journey);
+            background: transparent;
+            position: absolute;
+            top: 40px; /* Justo debajo de la top-bar */
+            left: 0;
             width: 100%;
-            padding: 0.45rem 0;
-            box-shadow: 0 4px 18px rgba(0, 34, 56, 0.05);
+            z-index: 1040;
+            transition: all 0.35s ease;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .navbar-custom.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(12px);
-            padding: 0.3rem 0;
-            box-shadow: 0 6px 22px rgba(0, 34, 56, 0.08);
+            position: fixed;
+            top: 0;
+            background: rgba(0, 18, 32, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 0.4rem 0;
+            border-bottom: 2px solid var(--color-naranja-journey);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
         }
 
         .logo-img-header {
-            height: 84px;
+            height: 90px;
             width: auto;
             object-fit: contain;
             transition: transform 0.3s ease;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
         }
 
         .navbar-brand-logo:hover .logo-img-header {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .nav-link {
-            color: var(--color-azul-peru-safe) !important;
+            color: #FFFFFF !important;
             font-weight: 700;
             font-size: 0.92rem;
-            padding: 0.6rem 1.15rem !important;
-            letter-spacing: 0.5px;
+            padding: 0.65rem 1.2rem !important;
+            letter-spacing: 0.6px;
             text-transform: uppercase;
             position: relative;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
             transition: color 0.25s ease;
         }
 
@@ -435,7 +444,7 @@ $tripadvisor_reviews = [
 
         .nav-link:hover::after,
         .nav-link.active::after {
-            width: 75%;
+            width: 80%;
         }
 
         .nav-link:hover,
@@ -444,14 +453,15 @@ $tripadvisor_reviews = [
         }
 
         .dropdown-menu-custom {
-            background: #FFFFFF !important;
-            border: 1px solid var(--color-gris-border) !important;
+            background: rgba(0, 18, 32, 0.96) !important;
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(233, 77, 0, 0.3) !important;
             border-top: 3px solid var(--color-naranja-journey) !important;
-            border-radius: 12px !important;
-            padding: 0.5rem 0.3rem !important;
-            min-width: 260px;
-            margin-top: 0.3rem !important;
-            box-shadow: 0 10px 30px rgba(0, 34, 56, 0.08) !important;
+            border-radius: 14px !important;
+            padding: 0.6rem 0.4rem !important;
+            min-width: 270px;
+            margin-top: 0.4rem !important;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5) !important;
         }
 
         @media (min-width: 992px) {
@@ -461,20 +471,20 @@ $tripadvisor_reviews = [
         }
 
         .dropdown-item-custom {
-            color: var(--color-texto-oscuro) !important;
-            font-size: 0.82rem !important;
+            color: #F1F5F9 !important;
+            font-size: 0.83rem !important;
             font-weight: 700 !important;
             letter-spacing: 0.4px;
-            padding: 0.55rem 0.9rem !important;
-            border-radius: 6px;
+            padding: 0.6rem 1rem !important;
+            border-radius: 8px;
             transition: all 0.25s ease !important;
             text-transform: uppercase;
         }
 
         .dropdown-item-custom:hover {
-            background-color: rgba(233, 77, 0, 0.08) !important;
-            color: var(--color-naranja-journey) !important;
-            transform: translateX(4px);
+            background-color: var(--color-naranja-journey) !important;
+            color: #FFFFFF !important;
+            transform: translateX(5px);
         }
 
         .llama-svg {
@@ -483,18 +493,19 @@ $tripadvisor_reviews = [
             fill: currentColor;
         }
 
-        /* HERO SLIDER */
+        /* 1. HERO SLIDER INTEGRADO CON NAVBAR TRANSPARENTE */
         .hero-video-slider {
             position: relative;
-            height: 76vh;
-            min-height: 500px;
-            max-height: 720px;
+            height: 90vh;
+            min-height: 580px;
+            max-height: 820px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--color-blanco);
             width: 100vw;
+            padding-top: 80px; /* Compensación para la barra de navegación superpuesta */
         }
 
         .video-background-wrapper {
@@ -518,7 +529,7 @@ $tripadvisor_reviews = [
             left: 50%;
             transform: translate(-50%, -50%);
             object-fit: cover;
-            filter: brightness(0.5) contrast(1.15);
+            filter: brightness(0.48) contrast(1.18);
         }
 
         .video-overlay-gradient {
@@ -529,9 +540,9 @@ $tripadvisor_reviews = [
             height: 100%;
             background: linear-gradient(
                 180deg,
-                rgba(0, 18, 32, 0.78) 0%,
-                rgba(0, 34, 56, 0.4) 50%,
-                rgba(0, 18, 32, 0.9) 100%
+                rgba(0, 18, 32, 0.75) 0%,
+                rgba(0, 34, 56, 0.35) 50%,
+                rgba(0, 18, 32, 0.88) 100%
             );
             z-index: 2;
         }
@@ -545,18 +556,19 @@ $tripadvisor_reviews = [
         }
 
         .hero-title {
-            font-size: 3.8rem;
+            font-size: 4rem;
             font-weight: 900;
             letter-spacing: -0.5px;
             line-height: 1.1;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             text-transform: uppercase;
             color: #FFFFFF;
+            text-shadow: 0 4px 25px rgba(0, 0, 0, 0.85);
         }
 
-        /* 2. PÁRRAFO SUBTÍTULO CON TAMAÑO AUMENTADO */
+        /* 2. PÁRRAFO SUBTÍTULO MEJORADO */
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.28rem;
             font-weight: 500;
             line-height: 1.85;
             margin-bottom: 2.2rem;
@@ -564,6 +576,7 @@ $tripadvisor_reviews = [
             max-width: 880px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
         }
 
         .btn-banner-primary {
@@ -571,8 +584,8 @@ $tripadvisor_reviews = [
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.75rem 1.8rem;
-            font-size: 0.92rem;
+            padding: 0.8rem 2rem;
+            font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -584,12 +597,12 @@ $tripadvisor_reviews = [
         }
 
         .btn-banner-secondary {
-            background-color: rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.18);
             color: var(--color-blanco) !important;
             font-weight: 700;
             border-radius: 50px;
-            padding: 0.75rem 1.8rem;
-            font-size: 0.92rem;
+            padding: 0.8rem 2rem;
+            font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -601,31 +614,32 @@ $tripadvisor_reviews = [
             box-shadow: none !important;
         }
 
-        /* 3. BADGES Y TITULOS CENTRADOS */
+        /* 2. BADGES Y TITULOS CENTRADOS Y VISUALMENTE MEJORADOS */
         .section-badge-clean {
             display: inline-block;
             background-color: rgba(233, 77, 0, 0.08);
             color: var(--color-naranja-journey);
             font-weight: 800;
-            font-size: 0.78rem;
-            padding: 0.28rem 0.9rem;
+            font-size: 0.8rem;
+            padding: 0.32rem 1rem;
             border-radius: 50px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.4rem;
-            border: 1px solid rgba(233, 77, 0, 0.2);
+            letter-spacing: 1.2px;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(233, 77, 0, 0.22);
         }
 
         .section-title {
-            font-size: 2.1rem;
+            font-size: 2.25rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.3px;
         }
 
         .narrative-section-compact {
             background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-            padding: 2.6rem 0;
+            padding: 2.8rem 0;
             width: 100vw;
         }
 
@@ -637,15 +651,15 @@ $tripadvisor_reviews = [
             box-shadow: none !important;
         }
 
-        /* 2. PÁRRAFOS GENERALES CON TAMAÑO AUMENTADO */
+        /* 2. PÁRRAFOS MEJORADOS Y MÁS LLEGADORES */
         .narrative-paragraph {
             font-size: 1.12rem;
             line-height: 1.85;
             color: #334155;
-            margin-bottom: 1.1rem;
+            margin-bottom: 1.2rem;
         }
 
-        /* 3. POR QUÉ ELEGIRNOS CENTRADO CON FONDO ELEGANTE */
+        /* 3. POR QUÉ ELEGIRNOS CON TÍTULO Y SUBTÍTULO CENTRADOS */
         .why-choose-us-section {
             background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
             color: #FFFFFF;
@@ -669,8 +683,8 @@ $tripadvisor_reviews = [
             background: var(--color-naranja-journey);
             color: #FFFFFF !important;
             font-weight: 700;
-            font-size: 0.88rem;
-            padding: 0.72rem 1.65rem;
+            font-size: 0.9rem;
+            padding: 0.75rem 1.8rem;
             border-radius: 50px;
             text-decoration: none;
             display: inline-flex;
@@ -738,15 +752,15 @@ $tripadvisor_reviews = [
             margin-bottom: 0;
         }
 
-        /* 3. SLIDERS Y TARJETAS MINIMALISTAS REDISEÑADAS */
+        /* 3. REDISEÑO ATRACTIVO Y MINIMALISTA DE TARJETAS PARA EXPERIENCIAS EXCLUSIVAS Y DESTINOS POPULARES */
         .cards-slider-unified-section {
             padding: 2.8rem 0;
             width: 100vw;
         }
 
         .slider-nav-btn {
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: var(--color-blanco);
             border: 1px solid var(--color-gris-border);
@@ -754,7 +768,7 @@ $tripadvisor_reviews = [
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: all 0.25s ease;
             cursor: pointer;
             box-shadow: none !important;
@@ -768,10 +782,10 @@ $tripadvisor_reviews = [
 
         .unified-cards-track {
             display: flex;
-            gap: 18px;
+            gap: 20px;
             overflow-x: auto;
             scroll-behavior: smooth;
-            padding: 8px 2px 14px;
+            padding: 10px 2px 16px;
             scrollbar-width: none;
         }
 
@@ -779,12 +793,12 @@ $tripadvisor_reviews = [
             display: none;
         }
 
-        /* TARJETAS EXPERIENCIAS EXCLUSIVAS REDISEÑADAS Y MINIMALISTAS */
+        /* 3. TARJETAS EXPERIENCIAS EXCLUSIVAS REDISEÑADAS */
         .unified-card {
-            flex: 0 0 calc(25% - 14px);
-            min-width: 265px;
-            background: var(--color-blanco);
-            border-radius: 16px;
+            flex: 0 0 calc(25% - 15px);
+            min-width: 270px;
+            background: #FFFFFF;
+            border-radius: 18px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
             box-shadow: none !important;
@@ -797,41 +811,41 @@ $tripadvisor_reviews = [
 
         .unified-card:hover {
             border-color: var(--color-naranja-journey);
-            transform: translateY(-3px);
+            transform: translateY(-4px);
         }
 
         .unified-card-img-box {
             position: relative;
             width: 100%;
-            height: 200px;
+            height: 210px;
             overflow: hidden;
         }
 
         .unified-card-img-box img {
             width: 100%;
-            height: 200px;
+            height: 210px;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.55s ease;
         }
 
         .unified-card:hover .unified-card-img-box img {
-            transform: scale(1.06);
+            transform: scale(1.08);
         }
 
         .unified-card-badge {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 12px;
+            right: 12px;
             background: var(--color-naranja-journey);
             color: var(--color-blanco);
             font-size: 0.72rem;
             font-weight: 800;
-            padding: 0.28rem 0.7rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 20px;
         }
 
         .unified-card-body {
-            padding: 1.25rem;
+            padding: 1.3rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -839,7 +853,7 @@ $tripadvisor_reviews = [
         }
 
         .unified-card-title {
-            font-size: 1.12rem;
+            font-size: 1.15rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.4rem;
@@ -850,15 +864,15 @@ $tripadvisor_reviews = [
             font-size: 0.92rem;
             color: var(--color-texto-suave);
             line-height: 1.6;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
-        /* 3. TARJETAS DESTINOS POPULARES REDISEÑADAS Y MINIMALISTAS */
+        /* 3. TARJETAS DESTINOS POPULARES REDISEÑADAS CON PRECIOS DESTACADOS Y NUEVO BOTÓN "VER TOUR COMPLETO" */
         .dest-card-enhanced {
-            flex: 0 0 calc(25% - 14px);
-            min-width: 265px;
+            flex: 0 0 calc(25% - 15px);
+            min-width: 270px;
             background: #FFFFFF;
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
             border: 1px solid var(--color-gris-border);
             display: flex;
@@ -870,65 +884,68 @@ $tripadvisor_reviews = [
 
         .dest-card-enhanced:hover {
             border-color: var(--color-naranja-journey);
-            transform: translateY(-3px);
+            transform: translateY(-4px);
         }
 
         .dest-img-header {
             position: relative;
             width: 100%;
-            height: 200px;
+            height: 210px;
             overflow: hidden;
         }
 
         .dest-img-header img {
             width: 100%;
-            height: 200px;
+            height: 210px;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.55s ease;
         }
 
         .dest-card-enhanced:hover .dest-img-header img {
-            transform: scale(1.06);
+            transform: scale(1.08);
         }
 
         .dest-badge-top {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0, 34, 56, 0.88);
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 34, 56, 0.9);
             backdrop-filter: blur(6px);
             color: #FFFFFF;
             font-size: 0.72rem;
             font-weight: 700;
-            padding: 0.28rem 0.75rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
+        /* 3. VISTA DE PRECIOS MEJORADA Y DESTACADA */
         .price-overlay-box {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(233, 77, 0, 0.95);
+            bottom: 12px;
+            right: 12px;
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: #FFFFFF;
-            padding: 0.3rem 0.75rem;
-            border-radius: 10px;
+            padding: 0.35rem 0.85rem;
+            border-radius: 12px;
             text-align: right;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .price-overlay-usd {
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 900;
             line-height: 1.1;
         }
 
         .price-overlay-pen {
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             font-weight: 600;
             opacity: 0.95;
         }
 
         .dest-body-content {
-            padding: 1.25rem;
+            padding: 1.3rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -936,7 +953,7 @@ $tripadvisor_reviews = [
         }
 
         .dest-title-text {
-            font-size: 1.1rem;
+            font-size: 1.12rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.45rem;
@@ -947,9 +964,33 @@ $tripadvisor_reviews = [
             display: flex;
             align-items: center;
             gap: 4px;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: #FFB800;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
+        }
+
+        /* 3. BOTÓN "VER TOUR COMPLETO" REDISEÑADO MAS ATRACTIVO */
+        .btn-tour-completo {
+            background: transparent;
+            color: var(--color-azul-peru-safe) !important;
+            border: 1.5px solid var(--color-azul-peru-safe);
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 0.55rem 1rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all 0.28s ease;
+            text-transform: uppercase;
+        }
+
+        .dest-card-enhanced:hover .btn-tour-completo {
+            background: var(--color-naranja-journey);
+            color: #FFFFFF !important;
+            border-color: var(--color-naranja-journey);
         }
 
         .tripadvisor-section {
@@ -1005,7 +1046,7 @@ $tripadvisor_reviews = [
             border-top: 2px solid var(--color-naranja-journey);
             padding-top: 3.2rem;
             padding-bottom: 1.5rem;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             color: #CBD5E1;
             width: 100vw;
         }
@@ -1051,7 +1092,7 @@ $tripadvisor_reviews = [
             padding-top: 1.4rem;
             text-align: center;
             color: #94A3B8;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
         }
 
         .whatsapp-float {
@@ -1085,6 +1126,8 @@ $tripadvisor_reviews = [
         }
 
         @media (max-width: 991.98px) {
+            .navbar-custom { position: relative; top: 0; background: #FFFFFF; }
+            .nav-link { color: var(--color-azul-peru-safe) !important; text-shadow: none; }
             .hero-title { font-size: 2.7rem; }
             .unified-card, .dest-card-enhanced { flex: 0 0 calc(50% - 10px); }
             .agency-glass-card { padding: 0; }
@@ -1101,7 +1144,7 @@ $tripadvisor_reviews = [
 </head>
 <body>
 
-    <!-- 1. TOP BAR -->
+    <!-- 1. TOP BAR REDISEÑADO CON BOTÓN RESERVA TU VIAJE Y REDES SOCIALES COMPLETA (CON YOUTUBE) -->
     <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
@@ -1135,15 +1178,15 @@ $tripadvisor_reviews = [
         </div>
     </div>
 
-    <!-- 1. NAVBAR-CUSTOM MINIMALISTA, MODERNO Y AMIGABLE -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
+    <!-- 1. NAVBAR-CUSTOM TRANSPARENTE SOBRE EL SLIDER CON DISEÑO ATRACTIVO Y MODERNO -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
                 <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
 
-            <button class="navbar-toggler text-dark border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <i class="bi bi-list fs-1 text-dark"></i>
+            <button class="navbar-toggler text-white border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <i class="bi bi-list fs-1 text-white"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarContent">
@@ -1191,7 +1234,7 @@ $tripadvisor_reviews = [
     </nav>
 
 
-    <!-- HERO SLIDER -->
+    <!-- 1. HERO SLIDER SOBRE EL CUAL SE SOBREPONE LA NAVEGACIÓN -->
     <section class="hero-video-slider">
         <div class="video-background-wrapper">
             <iframe src="https://www.youtube.com/embed/QPBMvXbjjUI?autoplay=1&mute=1&controls=0&loop=1&playlist=QPBMvXbjjUI&showinfo=0&rel=0&iv_load_policy=3&enablejsapi=1"
@@ -1287,7 +1330,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. DESTINOS POPULARES CON TÍTULO Y SUBTÍTULO CENTRADOS & TARJETAS MINIMALISTAS -->
+    <!-- 3. DESTINOS POPULARES CON REDISEÑO ATRACTIVO, PRECIOS DESTACADOS Y BOTÓN "VER TOUR COMPLETO" -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-3">
@@ -1310,6 +1353,7 @@ $tripadvisor_reviews = [
                             <img src="<?php echo $dest['image']; ?>" alt="<?php echo $dest['title']; ?>" loading="lazy">
                             <span class="dest-badge-top"><?php echo $dest['badge']; ?></span>
 
+                            <!-- 3. VISTA DE PRECIOS MEJORADA SOBRE IMAGEN -->
                             <div class="price-overlay-box">
                                 <div class="price-overlay-usd"><?php echo $dest['price_usd']; ?></div>
                                 <div class="price-overlay-pen"><?php echo $dest['price_pen']; ?></div>
@@ -1335,7 +1379,8 @@ $tripadvisor_reviews = [
                                 </div>
                             </div>
 
-                            <a href="<?php echo $dest['url']; ?>" class="btn btn-reserva-llama w-100 justify-content-center py-2 mt-2">
+                            <!-- 3. NUEVO BOTÓN "VER TOUR COMPLETO" -->
+                            <a href="<?php echo $dest['url']; ?>" class="btn-tour-completo w-100 mt-2">
                                 <span>Ver Tour Completo</span>
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -1347,7 +1392,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. NUESTROS VALORES CON TÍTULO Y SUBTÍTULO CENTRADOS -->
+    <!-- 3. NUESTROS VALORES -->
     <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
@@ -1373,7 +1418,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. EXPERIENCIAS EXCLUSIVAS CON TÍTULO Y SUBTÍTULO CENTRADOS & TARJETAS MINIMALISTAS -->
+    <!-- 3. EXPERIENCIAS EXCLUSIVAS CON TARJETAS REDISEÑADAS -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-3">
