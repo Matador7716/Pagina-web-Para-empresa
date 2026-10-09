@@ -66,12 +66,14 @@ $tour_cards = [
     ]
 ];
 
-// Destinos Estrellas
+// Destinos Estrellas Rediseñados
 $destinos_cards_section = [
     [
         'title' => '7 LAGUNAS DEL AUSANGATE',
         'location' => 'Ausangate, Cusco',
         'duration' => 'Full Day (FD)',
+        'rating' => '5.0',
+        'reviews' => '86',
         'price_usd' => '$ 80.00',
         'price_pen' => 'S/. 275.50',
         'badge' => 'Aguas Termales & Glaciares',
@@ -82,6 +84,8 @@ $destinos_cards_section = [
         'title' => 'ATV MONTAÑA DE COLORES FD (SIMPLE)',
         'location' => 'Pitumarca, Cusco',
         'duration' => 'Full Day (FD)',
+        'rating' => '4.9',
+        'reviews' => '112',
         'price_usd' => '$ 85.00',
         'price_pen' => 'S/. 292.60',
         'badge' => 'Adrenalina Simple',
@@ -92,6 +96,8 @@ $destinos_cards_section = [
         'title' => 'ATV MONTAÑA DE COLORES FD (DOBLE)',
         'location' => 'Pitumarca, Cusco',
         'duration' => 'Full Day (FD)',
+        'rating' => '4.9',
+        'reviews' => '98',
         'price_usd' => '$ 65.00',
         'price_pen' => 'S/. 223.73',
         'badge' => 'Adrenalina Doble',
@@ -102,6 +108,8 @@ $destinos_cards_section = [
         'title' => 'LAGUNA HUMANTAY FD',
         'location' => 'Mollepata, Cusco',
         'duration' => 'Full Day (FD)',
+        'rating' => '4.9',
+        'reviews' => '140',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
         'badge' => 'Aguas Turquesas',
@@ -112,6 +120,8 @@ $destinos_cards_section = [
         'title' => 'MONTAÑA VINICUNCA FD',
         'location' => 'Quispicanchi, Cusco',
         'duration' => 'Full Day (FD)',
+        'rating' => '4.8',
+        'reviews' => '155',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
         'badge' => 'Montaña de 7 Colores',
@@ -122,6 +132,8 @@ $destinos_cards_section = [
         'title' => 'PALLAY PUNCHOY FD',
         'location' => 'Canas, Cusco',
         'duration' => 'Full Day (FD)',
+        'rating' => '4.9',
+        'reviews' => '78',
         'price_usd' => '$ 45.00',
         'price_pen' => 'S/. 154.90',
         'badge' => 'Cerro Afilado',
@@ -132,6 +144,8 @@ $destinos_cards_section = [
         'title' => 'QUELCAYA FD',
         'location' => 'Canchis, Cusco',
         'duration' => 'Full Day (FD)',
+        'rating' => '5.0',
+        'reviews' => '64',
         'price_usd' => '$ 80.00',
         'price_pen' => 'S/. 275.50',
         'badge' => 'Glacial Tropical',
@@ -142,6 +156,8 @@ $destinos_cards_section = [
         'title' => 'VALLE SAGRADO BIG',
         'location' => 'Valle Sagrado, Cusco',
         'duration' => 'Full Day Extendido',
+        'rating' => '4.9',
+        'reviews' => '130',
         'price_usd' => '$ 35.00',
         'price_pen' => 'S/. 120.50',
         'badge' => 'Pisac & Ollantaytambo',
@@ -152,6 +168,8 @@ $destinos_cards_section = [
         'title' => 'VALLE SAGRADO FD',
         'location' => 'Urubamba, Cusco',
         'duration' => 'Full Day Clásico',
+        'rating' => '4.8',
+        'reviews' => '98',
         'price_usd' => '$ 30.00',
         'price_pen' => 'S/. 103.50',
         'badge' => 'Tradición Inca',
@@ -162,6 +180,8 @@ $destinos_cards_section = [
         'title' => 'VALLE SUR',
         'location' => 'Tipón & Pikillacta',
         'duration' => 'Half Day',
+        'rating' => '4.7',
+        'reviews' => '72',
         'price_usd' => '$ 25.00',
         'price_pen' => 'S/. 86.50',
         'badge' => 'Arqueología & Gastronomía',
@@ -172,6 +192,8 @@ $destinos_cards_section = [
         'title' => 'WAQRAPUKARA FD',
         'location' => 'Acomayo, Cusco',
         'duration' => 'Full Day (FD)',
+        'rating' => '5.0',
+        'reviews' => '90',
         'price_usd' => '$ 40.00',
         'price_pen' => 'S/. 138.00',
         'badge' => 'Fortaleza Mística',
@@ -601,7 +623,6 @@ $tripadvisor_reviews = [
             margin-bottom: 0.2rem;
         }
 
-        /* SECCIONES Y CONTENEDORES */
         .narrative-section-compact {
             background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
             padding: 2.5rem 0;
@@ -623,7 +644,6 @@ $tripadvisor_reviews = [
             margin-bottom: 1rem;
         }
 
-        /* CONTENIDO CREATIVO */
         .creative-content-box {
             background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
             color: var(--color-blanco);
@@ -654,7 +674,6 @@ $tripadvisor_reviews = [
             margin-bottom: 1rem;
         }
 
-        /* PILARES DE MARCA */
         .pillar-card {
             background: var(--color-blanco);
             border-radius: 16px;
@@ -693,7 +712,6 @@ $tripadvisor_reviews = [
             margin-bottom: 0.35rem;
         }
 
-        /* SLIDERS */
         .cards-slider-unified-section {
             padding: 2.5rem 0;
             width: 100vw;
@@ -783,35 +801,107 @@ $tripadvisor_reviews = [
             border-radius: 20px;
         }
 
-        .unified-card-body {
-            padding: 1.15rem;
+        /* NUEVO DISEÑO ELEGANTE Y ELEVADO PARA TARJETAS DE DESTINO */
+        .dest-card-enhanced {
+            flex: 0 0 calc(25% - 14px);
+            min-width: 270px;
+            background: #FFFFFF;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--color-gris-border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.35s ease;
+            box-shadow: none !important;
+        }
+
+        .dest-card-enhanced:hover {
+            border-color: var(--color-naranja-journey);
+            transform: translateY(-4px);
+        }
+
+        .dest-img-header {
+            position: relative;
+            width: 100%;
+            height: 210px;
+            overflow: hidden;
+        }
+
+        .dest-img-header img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .dest-card-enhanced:hover .dest-img-header img {
+            transform: scale(1.08);
+        }
+
+        .dest-badge-top {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 34, 56, 0.88);
+            backdrop-filter: blur(8px);
+            color: #FFFFFF;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .price-overlay-box {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(233, 77, 0, 0.95);
+            color: #FFFFFF;
+            padding: 0.35rem 0.85rem;
+            border-radius: 12px;
+            text-align: right;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .price-overlay-usd {
+            font-size: 0.98rem;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .price-overlay-pen {
+            font-size: 0.72rem;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        .dest-body-content {
+            padding: 1.25rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
             justify-content: space-between;
         }
 
-        .unified-card-title {
-            font-size: 1.1rem;
+        .dest-title-text {
+            font-size: 1.12rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
-            margin-bottom: 0.35rem;
-            line-height: 1.3;
+            margin-bottom: 0.5rem;
+            line-height: 1.35;
         }
 
-        .price-usd {
-            font-size: 1.05rem;
-            font-weight: 900;
-            color: var(--color-naranja-journey);
-        }
-
-        .price-pen {
+        .dest-rating-stars {
+            display: flex;
+            align-items: center;
+            gap: 4px;
             font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--color-azul-andino);
+            color: #FFB800;
+            margin-bottom: 0.8rem;
         }
 
-        /* TRIPADVISOR REVIEWS SECTION */
         .tripadvisor-section {
             background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
             padding: 2.8rem 0;
@@ -860,11 +950,6 @@ $tripadvisor_reviews = [
             transition: opacity 0.3s ease;
         }
 
-        .btn-tripadvisor:hover {
-            opacity: 0.9;
-        }
-
-        /* FOOTER CON ICONOS */
         .footer-custom {
             background: #001220;
             border-top: 2px solid var(--color-naranja-journey);
@@ -939,19 +1024,13 @@ $tripadvisor_reviews = [
             box-shadow: none !important;
         }
 
-        .whatsapp-float:hover {
-            color: #FFF;
-            background-color: #20BA5A;
-            transform: scale(1.06);
-        }
-
         @media (max-width: 1200px) {
-            .unified-card { flex: 0 0 calc(33.333% - 12px); }
+            .unified-card, .dest-card-enhanced { flex: 0 0 calc(33.333% - 12px); }
         }
 
         @media (max-width: 991.98px) {
             .hero-title { font-size: 2.7rem; }
-            .unified-card { flex: 0 0 calc(50% - 10px); }
+            .unified-card, .dest-card-enhanced { flex: 0 0 calc(50% - 10px); }
             .agency-glass-card { padding: 1.6rem 1.1rem; }
             .section-title { font-size: 1.8rem; }
             .logo-img-header { height: 68px; }
@@ -959,7 +1038,7 @@ $tripadvisor_reviews = [
 
         @media (max-width: 575.98px) {
             .hero-title { font-size: 1.95rem; }
-            .unified-card { flex: 0 0 245px; }
+            .unified-card, .dest-card-enhanced { flex: 0 0 245px; }
             .logo-img-header { height: 54px; }
         }
     </style>
@@ -995,7 +1074,7 @@ $tripadvisor_reviews = [
         </div>
     </div>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR PEGAJOSO -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
@@ -1095,7 +1174,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- ORDEN DE SECCIONES EXACTO: 1. QUIENES SOMOS -->
+    <!-- 1. QUIENES SOMOS -->
     <section class="narrative-section-compact">
         <div class="container-fluid px-3 px-lg-5">
             <div class="agency-glass-card">
@@ -1148,7 +1227,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- ORDEN DE SECCIONES EXACTO: 2. PORQUE ELEGIRNOS -->
+    <!-- 2. PORQUE ELEGIRNOS -->
     <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="agency-glass-card">
@@ -1168,7 +1247,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- ORDEN DE SECCIONES EXACTO: 3. DESTINOS POPULARES -->
+    <!-- 3. SECCIÓN REDISEÑADA Y ELEVADA: DESTINOS POPULARES -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
@@ -1187,31 +1266,44 @@ $tripadvisor_reviews = [
                 </div>
             </div>
 
+            <!-- Carrusel de Tarjetas de Destinos con Diseño Atractivo -->
             <div class="unified-cards-track" id="destinosTrack">
                 <?php foreach($destinos_cards_section as $dest): ?>
-                    <div class="unified-card">
-                        <div class="unified-card-img-box">
+                    <div class="dest-card-enhanced">
+                        <div class="dest-img-header">
                             <img src="<?php echo $dest['image']; ?>" alt="<?php echo $dest['title']; ?>" loading="lazy">
-                            <span class="unified-card-badge"><?php echo $dest['badge']; ?></span>
+                            <span class="dest-badge-top"><?php echo $dest['badge']; ?></span>
+
+                            <!-- Precio en USD y PEN destacado sobre la imagen -->
+                            <div class="price-overlay-box">
+                                <div class="price-overlay-usd"><?php echo $dest['price_usd']; ?></div>
+                                <div class="price-overlay-pen"><?php echo $dest['price_pen']; ?></div>
+                            </div>
                         </div>
-                        <div class="unified-card-body">
+
+                        <div class="dest-body-content">
                             <div>
-                                <div class="d-flex justify-content-between text-muted small fw-bold mb-1">
-                                    <span><?php echo $dest['location']; ?></span>
-                                    <span><?php echo $dest['duration']; ?></span>
+                                <div class="d-flex justify-content-between text-muted small fw-semibold mb-2">
+                                    <span><i class="bi bi-geo-alt-fill text-warning me-1"></i><?php echo $dest['location']; ?></span>
+                                    <span><i class="bi bi-clock me-1"></i><?php echo $dest['duration']; ?></span>
                                 </div>
-                                <h3 class="unified-card-title"><?php echo $dest['title']; ?></h3>
+                                <h3 class="dest-title-text"><?php echo $dest['title']; ?></h3>
+
+                                <div class="dest-rating-stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <span class="text-dark fw-bold ms-1"><?php echo $dest['rating']; ?></span>
+                                    <span class="text-muted font-weight-normal">(<?php echo $dest['reviews']; ?>)</span>
+                                </div>
                             </div>
 
-                            <div class="d-flex align-items-center justify-content-between pt-2 border-top mt-2">
-                                <div>
-                                    <div class="price-usd"><?php echo $dest['price_usd']; ?></div>
-                                    <div class="price-pen"><?php echo $dest['price_pen']; ?></div>
-                                </div>
-                                <a href="<?php echo $dest['url']; ?>" class="btn btn-sm btn-reserva-llama py-1 px-3">
-                                    <span>Ver Tour</span>
-                                </a>
-                            </div>
+                            <a href="<?php echo $dest['url']; ?>" class="btn btn-reserva-llama w-100 justify-content-center py-2 mt-2">
+                                <span>Ver Tour Completo</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -1220,7 +1312,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- ORDEN DE SECCIONES EXACTO: 4. NUESTROS VALORES -->
+    <!-- 4. NUESTROS VALORES -->
     <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
@@ -1245,7 +1337,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- ORDEN DE SECCIONES EXACTO: 5. EXPERIENCIAS EXCLUSIVAS -->
+    <!-- 5. EXPERIENCIAS EXCLUSIVAS -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
@@ -1288,7 +1380,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- NUEVA SECCIÓN AL FINAL: TRIPADVISOR REVIEWS -->
+    <!-- TRIPADVISOR REVIEWS -->
     <section class="tripadvisor-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
@@ -1337,7 +1429,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- FOOTER CON ICONOS EN TODOS LOS DATOS DE CONTACTO -->
+    <!-- FOOTER -->
     <footer class="footer-custom" id="contacto">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
