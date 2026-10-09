@@ -314,7 +314,7 @@ $tripadvisor_reviews = [
             padding: 0;
         }
 
-        /* 1. TOP BAR REDISEÑADO CON ESTILO ELEGANTE */
+        /* TOP BAR */
         .top-bar {
             background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
             font-size: 0.82rem;
@@ -386,7 +386,7 @@ $tripadvisor_reviews = [
             transform: translateY(-1px);
         }
 
-        /* 1. NAVBAR-CUSTOM TRANSPARENTE SOBRE EL SLIDER */
+        /* NAVBAR TRANSPARENTE SOBRE SLIDER */
         .navbar-custom {
             background: transparent;
             position: absolute;
@@ -660,7 +660,7 @@ $tripadvisor_reviews = [
             font-weight: 400;
         }
 
-        /* 1. SECCIÓN QUIENES SOMOS REDISEÑADA Y MÁS ATRACTIVA */
+        /* 1. SECCIÓN QUIENES SOMOS (LIMPIA SIN TARJETAS DE CARACTERÍSTICAS NI RATING BADGES) */
         .narrative-section-compact {
             background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
             padding: 2.2rem 0;
@@ -679,79 +679,25 @@ $tripadvisor_reviews = [
             margin-bottom: 1.2rem;
         }
 
-        .about-feature-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #FFFFFF;
-            padding: 0.85rem 1.2rem;
-            border-radius: 14px;
-            border: 1px solid var(--color-gris-border);
-            transition: all 0.28s ease;
-        }
-
-        .about-feature-item:hover {
-            border-color: var(--color-naranja-journey);
-            transform: translateX(4px);
-        }
-
-        .about-feature-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            background: rgba(233, 77, 0, 0.1);
-            color: var(--color-naranja-journey);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-
-        .about-image-wrapper {
+        .about-image-wrapper-clean {
             position: relative;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
-            border: 4px solid #FFFFFF;
-            box-shadow: 0 20px 40px rgba(0, 34, 56, 0.12);
+            border: 3px solid var(--color-gris-border);
         }
 
-        .about-image-wrapper img {
+        .about-image-wrapper-clean img {
             transition: transform 0.6s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .about-image-wrapper:hover img {
+        .about-image-wrapper-clean:hover img {
             transform: scale(1.05);
         }
 
-        .about-floating-badge {
-            position: absolute;
-            bottom: 24px;
-            left: 24px;
-            background: rgba(0, 34, 56, 0.92);
-            backdrop-filter: blur(12px);
-            color: #FFFFFF;
-            padding: 1rem 1.4rem;
-            border-radius: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .about-floating-badge-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: var(--color-naranja-journey);
-            color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-        }
-
-        /* 1. SECCIÓN ¿POR QUÉ ELEGIRNOS? REDISEÑADA Y MÁS AMIGABLE */
+        /* ¿POR QUÉ ELEGIRNOS? */
         .why-choose-us-section {
             background: linear-gradient(135deg, #001220 0%, #002238 60%, #001A2C 100%);
             color: #FFFFFF;
@@ -834,7 +780,7 @@ $tripadvisor_reviews = [
             box-shadow: 0 10px 25px rgba(233, 77, 0, 0.4);
         }
 
-        /* 1. REDUCCIÓN DE ESPACIOS ENTRE SECCIONES DE SLIDERS */
+        /* SLIDERS Y ESPACIOS */
         .cards-slider-unified-section {
             padding: 1.8rem 0;
             width: 100vw;
@@ -875,7 +821,7 @@ $tripadvisor_reviews = [
             display: none;
         }
 
-        /* 3. TARJETAS "DESTINOS POPULARES" MEJORADAS CON DISEÑO ULTRA ATRACTIVO Y MODERNO */
+        /* 3. TARJETAS "DESTINOS POPULARES" - NUEVO DISEÑO DE PRECIO Y BOTONES DE COLOR VIBRANTE */
         .dest-card-enhanced {
             flex: 0 0 calc(25% - 17px);
             min-width: 280px;
@@ -931,74 +877,46 @@ $tripadvisor_reviews = [
             z-index: 2;
         }
 
-        /* 3. VISTA DE PRECIOS MEJORADA Y MÁS ATRACTIVA */
-        .dest-price-pill-modern {
+        /* 3. CAMBIO DE DISEÑO DE PRECIO: BADGE DE DOBLE FILA RECTANGULAR ELEGANTE Y VISIBLE */
+        .dest-price-box-new {
             position: absolute;
             bottom: 12px;
             right: 12px;
-            background: linear-gradient(135deg, #001A2C 0%, var(--color-azul-peru-safe) 100%);
-            border: 1.5px solid var(--color-naranja-journey);
-            border-radius: 14px;
-            padding: 0.45rem 0.85rem;
+            background: rgba(233, 77, 0, 0.95);
+            border: 1px solid #FFFFFF;
+            border-radius: 12px;
+            padding: 0.35rem 0.75rem;
             color: #FFFFFF;
             text-align: right;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(6px);
             z-index: 2;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease;
         }
 
-        .dest-card-enhanced:hover .dest-price-pill-modern {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
-            border-color: #FFFFFF;
+        .dest-card-enhanced:hover .dest-price-box-new {
+            transform: scale(1.06);
+            background: var(--color-azul-peru-safe);
+            border-color: var(--color-naranja-journey);
         }
 
-        .price-label-small {
-            font-size: 0.62rem;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #FFB800;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 2px;
-            display: block;
-        }
-
-        .dest-card-enhanced:hover .price-label-small {
-            color: #FFFFFF;
-        }
-
-        .price-main-usd {
-            font-size: 1.18rem;
+        .price-new-usd {
+            font-size: 1.2rem;
             font-weight: 900;
             color: #FFFFFF;
             line-height: 1;
-            display: flex;
-            align-items: baseline;
-            justify-content: flex-end;
-            gap: 2px;
         }
 
-        .price-symbol {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #FFB800;
-        }
-
-        .dest-card-enhanced:hover .price-symbol {
-            color: #FFFFFF;
-        }
-
-        .price-sub-pen {
+        .price-new-pen {
             font-size: 0.7rem;
-            font-weight: 600;
-            color: #CBD5E1;
+            font-weight: 700;
+            color: #FFD29D;
             line-height: 1.1;
             margin-top: 2px;
         }
 
-        .dest-card-enhanced:hover .price-sub-pen {
-            color: rgba(255, 255, 255, 0.95);
+        .dest-card-enhanced:hover .price-new-pen {
+            color: #FFB800;
         }
 
         .dest-body-content {
@@ -1036,10 +954,11 @@ $tripadvisor_reviews = [
             margin-bottom: 1rem;
         }
 
+        /* 3. CAMBIO DE COLOR DE BOTONES: NARANJA INTENSO CON TEXTO BLANCO */
         .btn-tour-completo {
-            background: linear-gradient(135deg, rgba(0, 34, 56, 0.05) 0%, rgba(0, 34, 56, 0.08) 100%);
-            color: var(--color-azul-peru-safe) !important;
-            border: 1.5px solid var(--color-azul-peru-safe);
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: #FFFFFF !important;
+            border: 1px solid var(--color-naranja-journey);
             font-weight: 700;
             font-size: 0.83rem;
             padding: 0.65rem 1rem;
@@ -1052,15 +971,17 @@ $tripadvisor_reviews = [
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.4px;
+            box-shadow: 0 4px 12px rgba(233, 77, 0, 0.25);
         }
 
         .dest-card-enhanced:hover .btn-tour-completo {
-            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            background: linear-gradient(135deg, var(--color-azul-peru-safe) 0%, #001220 100%);
             color: #FFFFFF !important;
-            border-color: var(--color-naranja-journey);
+            border-color: var(--color-azul-peru-safe);
+            box-shadow: 0 6px 16px rgba(0, 34, 56, 0.3);
         }
 
-        /* 1. SECCIÓN NUESTROS VALORES REDISEÑADA */
+        /* NUESTROS VALORES */
         .minimalist-value-card {
             background: #FFFFFF;
             border-radius: 20px;
@@ -1114,7 +1035,7 @@ $tripadvisor_reviews = [
             margin-bottom: 0;
         }
 
-        /* 1. SECCIÓN EXPERIENCIAS EXCLUSIVAS */
+        /* EXPERIENCIAS EXCLUSIVAS */
         .unified-card {
             flex: 0 0 calc(25% - 17px);
             min-width: 280px;
@@ -1493,7 +1414,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 2. QUIENES SOMOS (SIN ICONO EN BADGE) -->
+    <!-- 1. & 2. QUIENES SOMOS (LIMPIO SIN TARJETAS DE CARACTERÍSTICAS NI RATING BADGES) -->
     <section class="narrative-section-compact">
         <div class="container-fluid px-3 px-lg-5">
             <div class="agency-glass-card">
@@ -1513,32 +1434,6 @@ $tripadvisor_reviews = [
                             <strong>Perú Safe Journeys – Travel Agency</strong> es una agencia especializada en crear experiencias auténticas, seguras y personalizadas por el Perú. Diseñamos cada viaje pensando en que nuestros viajeros no solo conozcan destinos, sino que vivan la esencia de cada lugar, conectando con nuestras culturas, tradiciones, historia, gastronomía y extraordinarios paisajes.
                         </p>
 
-                        <!-- FEATURE BADGES -->
-                        <div class="row g-3 mb-4">
-                            <div class="col-sm-6">
-                                <div class="about-feature-item">
-                                    <div class="about-feature-icon">
-                                        <i class="bi bi-shield-lock-fill"></i>
-                                    </div>
-                                    <div>
-                                        <strong class="d-block text-dark fs-6">Viajes 100% Seguros</strong>
-                                        <small class="text-muted">Asistencia & Soporte 24/7</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="about-feature-item">
-                                    <div class="about-feature-icon">
-                                        <i class="bi bi-award-fill"></i>
-                                    </div>
-                                    <div>
-                                        <strong class="d-block text-dark fs-6">Guías Especialistas</strong>
-                                        <small class="text-muted">Conocimiento Local Profundo</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <p class="narrative-paragraph mb-4">
                             Desde la majestuosidad de <strong>Cusco y Machu Picchu</strong>, pasando por el Valle Sagrado, los Andes y la Amazonía, hasta las costas del Pacífico, acompañamos a nuestros viajeros con atención personalizada, planificación profesional, seguridad y confort en cada etapa de su aventura.
                         </p>
@@ -1550,18 +1445,8 @@ $tripadvisor_reviews = [
                     </div>
 
                     <div class="col-lg-5">
-                        <div class="about-image-wrapper">
+                        <div class="about-image-wrapper-clean">
                             <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Perú Safe Journeys" class="img-fluid w-100">
-
-                            <div class="about-floating-badge">
-                                <div class="about-floating-badge-icon">
-                                    <i class="bi bi-star-fill"></i>
-                                </div>
-                                <div>
-                                    <strong class="d-block fs-5 text-white">4.9 / 5.0 Rating</strong>
-                                    <small class="text-warning fw-semibold">Garantía Perú Safe Journeys</small>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1570,7 +1455,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 2. ¿POR QUÉ ELEGIRNOS? (SIN ICONO EN BADGE) -->
+    <!-- ¿POR QUÉ ELEGIRNOS? -->
     <section class="why-choose-us-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center max-w-800 mx-auto mb-4">
@@ -1581,7 +1466,6 @@ $tripadvisor_reviews = [
                 <p class="section-lead-concept text-light opacity-90 mb-3">La tranquilidad de explorar el Perú con planificación impecable y el respaldo de expertos locales.</p>
             </div>
 
-            <!-- CARDS DE RAZONES -->
             <div class="row g-4 mb-4">
                 <div class="col-lg-3 col-md-6">
                     <div class="why-card-item">
@@ -1634,7 +1518,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 1. REDUCCIÓN ESPACIO Y 3. TARJETAS DESTINOS POPULARES MEJORADAS -->
+    <!-- 3. DESTINOS POPULARES (NUEVO DISEÑO DE PRECIO Y BOTÓN DE COLOR) -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-2">
@@ -1652,13 +1536,10 @@ $tripadvisor_reviews = [
                             <img src="<?php echo $dest['image']; ?>" alt="<?php echo $dest['title']; ?>" loading="lazy">
                             <span class="dest-badge-top"><?php echo $dest['badge']; ?></span>
 
-                            <!-- 3. VISTA DE PRECIOS MEJORADA Y ELEGANTE -->
-                            <div class="dest-price-pill-modern">
-                                <span class="price-label-small">DESDE SOLO</span>
-                                <div class="price-main-usd">
-                                    <span class="price-symbol">$</span><?php echo $dest['price_usd']; ?>
-                                </div>
-                                <div class="price-sub-pen">S/. <?php echo $dest['price_pen']; ?></div>
+                            <!-- 3. NUEVO DISEÑO DE PRECIO -->
+                            <div class="dest-price-box-new">
+                                <div class="price-new-usd">$<?php echo $dest['price_usd']; ?></div>
+                                <div class="price-new-pen">S/. <?php echo $dest['price_pen']; ?></div>
                             </div>
                         </div>
 
@@ -1681,6 +1562,7 @@ $tripadvisor_reviews = [
                                 </div>
                             </div>
 
+                            <!-- 3. NUEVO COLOR Y ESTILO DE BOTÓN -->
                             <a href="<?php echo $dest['url']; ?>" class="btn-tour-completo w-100 mt-2">
                                 <span>Ver Tour Completo</span>
                                 <i class="bi bi-arrow-right"></i>
@@ -1703,7 +1585,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 1. REDUCCIÓN ESPACIO Y 2. NUESTROS VALORES (SIN ICONO EN BADGE) -->
+    <!-- NUESTROS VALORES -->
     <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
@@ -1731,7 +1613,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 1. REDUCCIÓN ESPACIO Y 2. EXPERIENCIAS EXCLUSIVAS (SIN ICONO EN BADGE) -->
+    <!-- EXPERIENCIAS EXCLUSIVAS -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-2">
