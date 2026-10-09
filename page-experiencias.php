@@ -27,31 +27,51 @@ $destinos_submenu = [
     ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
 ];
 
-// Experiencias destacadas con descripciones enriquecidas y detalladas
+// Experiencias agrupadas con galería de imágenes
 $experiences_list = [
     [
         'title' => 'Turismo Vivencial & Comunidades Locales',
         'badge' => 'Cultura Viva',
         'desc' => 'Vive una inmersión auténtica compartiendo momentos memorables con familias autóctonas en el Valle Sagrado y los Andes. Participa activamente en talleres de teñido y telar ancestral con fibras de alpaca, descubre los secretos de la agricultura Incaica, degusta platillos preparados con insumos orgánicos locales y conecta de manera profunda y respetuosa con el verdadero corazón cultural del Perú.',
-        'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'
+        'main_image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+        'gallery' => [
+            'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80'
+        ]
     ],
     [
         'title' => 'Rutas Extremas & Cuatrimotos (ATV) en Montaña',
         'badge' => 'Adrenalina Pura',
         'desc' => 'Desata tu espíritu aventurero cruzando valles imponentes, riachuelos y senderos de altura hacia la majestuosa Montaña de Colores (Vinicunca). Equipado con cuatrimotos modernas y de alta potencia, esta travesía combina la velocidad y la emoción extrema con la máxima seguridad, asistencia médica preventiva y acompañamiento constante de guías profesionales especializados.',
-        'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80'
+        'main_image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
+        'gallery' => [
+            'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80'
+        ]
     ],
     [
         'title' => 'Caminatas por Glaciares & Lagunas Turquesas',
         'badge' => 'Trekking & Naturaleza',
         'desc' => 'Desconéctate de la rutina y adéntrate en las cordilleras más sobrecogedoras del sur peruano. Desde la famosa caminata hacia las espectaculares aguas turquesas de la Laguna Humantay hasta las expediciones únicas al glaciar tropical Quelcaya y las 7 Lagunas del Ausangate, disfrutarás de paisajes andinos de ensueño con la tranquilidad de contar con oxígeno, equipos de calidad y guías locales expertos.',
-        'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'
+        'main_image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+        'gallery' => [
+            'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
+        ]
     ],
     [
         'title' => 'Tours Arqueológicos & Santuarios Ancestrales',
         'badge' => 'Historia Ancestral',
         'desc' => 'Explora los grandes enigmas de la civilización Inca recorriendo fortalezas imponentes como Ollantaytambo, Pisac, la misteriosa ciudadela de Waqrapukara y el mítico Valle Sagrado de los Incas. Viaja con comodidad en transporte turístico privado, escuchando relatos fascinantes y explicaciones históricas detalladas que transformarán cada sitio arqueológico en una experiencia educativa e inspiradora.',
-        'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80'
+        'main_image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
+        'gallery' => [
+            'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'
+        ]
     ]
 ];
 ?>
@@ -284,7 +304,46 @@ $experiences_list = [
             border-bottom: 3px solid var(--color-naranja-journey);
         }
 
-        /* TARJETAS EXPERIENCIAS */
+        /* TITULO DIVISOR CON DESCRIPCIÓN */
+        .divider-section {
+            padding: 2.2rem 0 1.2rem;
+            text-align: center;
+        }
+
+        .section-badge-clean {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(233, 77, 0, 0.08);
+            color: var(--color-naranja-journey);
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 0.38rem 1.1rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 0.6rem;
+            border: 1px solid rgba(233, 77, 0, 0.22);
+        }
+
+        .section-title {
+            font-size: 2.35rem;
+            font-weight: 800;
+            color: var(--color-azul-peru-safe);
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.4px;
+        }
+
+        .section-lead-concept {
+            font-size: 1.08rem;
+            color: var(--color-texto-suave);
+            max-width: 820px;
+            margin: 0.3rem auto 1.4rem auto;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* TARJETAS EXPERIENCIAS Y GALERÍA */
         .exp-card-item {
             background: #FFFFFF;
             border-radius: 22px;
@@ -300,23 +359,23 @@ $experiences_list = [
         .exp-card-item:hover {
             border-color: var(--color-naranja-journey);
             transform: translateY(-6px);
-            box-shadow: 0 18px 36px rgba(0, 34, 56, 0.09);
+            box-shadow: 0 16px 32px rgba(0, 34, 56, 0.09);
         }
 
-        .exp-card-img-box {
+        .exp-card-img-main {
             position: relative;
             height: 240px;
             overflow: hidden;
         }
 
-        .exp-card-img-box img {
+        .exp-card-img-main img {
             width: 100%;
             height: 240px;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
 
-        .exp-card-item:hover .exp-card-img-box img {
+        .exp-card-item:hover .exp-card-img-main img {
             transform: scale(1.08);
         }
 
@@ -332,6 +391,42 @@ $experiences_list = [
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        /* GALERÍA DE FOTOS MINIATURA */
+        .exp-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            padding: 8px 12px 0;
+            background-color: #F8FAFC;
+            border-bottom: 1px solid var(--color-gris-border);
+        }
+
+        .exp-gallery-thumb {
+            position: relative;
+            height: 75px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1.5px solid transparent;
+            transition: all 0.25s ease;
+        }
+
+        .exp-gallery-thumb img {
+            width: 100%;
+            height: 75px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .exp-gallery-thumb:hover {
+            border-color: var(--color-naranja-journey);
+        }
+
+        .exp-gallery-thumb:hover img {
+            transform: scale(1.1);
         }
 
         .exp-card-body {
@@ -572,17 +667,37 @@ $experiences_list = [
         </div>
     </section>
 
-    <!-- CONTENIDO EXPERIENCIAS -->
-    <section class="py-5">
+    <!-- 2. TÍTULO DIVISOR CON DESCRIPCIÓN -->
+    <section class="divider-section">
+        <div class="container-fluid px-3 px-lg-5 text-center">
+            <span class="section-badge-clean">MODALIDADES EXCLUSIVAS DE VIAJE</span>
+            <h2 class="section-title">Encuentra Tu Estilo de Aventura en el Perú</h2>
+            <p class="section-lead-concept">Cada viajero busca una forma distinta de conectar con el mundo. Diseñamos itinerarios especializados que combinan la riqueza cultural de nuestros pueblos, la adrenalina de los andes y la paz de nuestros paisajes naturales.</p>
+        </div>
+    </section>
+
+    <!-- 1. CONTENIDO EXPERIENCIAS MEJORADAS CON 3. GALERÍA PARA CADA TARJETA -->
+    <section class="pb-5">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4">
-                <?php foreach($experiences_list as $exp): ?>
+                <?php foreach($experiences_list as $index => $exp): ?>
                     <div class="col-lg-6">
                         <div class="exp-card-item">
-                            <div class="exp-card-img-box">
-                                <img src="<?php echo $exp['image']; ?>" alt="<?php echo $exp['title']; ?>" loading="lazy">
+                            <!-- IMAGEN PRINCIPAL -->
+                            <div class="exp-card-img-main">
+                                <img src="<?php echo $exp['main_image']; ?>" id="expMainImg_<?php echo $index; ?>" alt="<?php echo $exp['title']; ?>" loading="lazy">
                                 <span class="exp-card-badge"><?php echo $exp['badge']; ?></span>
                             </div>
+
+                            <!-- 3. GALERÍA DE MINIATURAS INTERACTIVAS -->
+                            <div class="exp-gallery-grid">
+                                <?php foreach($exp['gallery'] as $gIndex => $gImg): ?>
+                                    <div class="exp-gallery-thumb" onclick="switchGalleryImg('expMainImg_<?php echo $index; ?>', '<?php echo $gImg; ?>')">
+                                        <img src="<?php echo $gImg; ?>" alt="Galería <?php echo $gIndex + 1; ?>" loading="lazy">
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+
                             <div class="exp-card-body">
                                 <div>
                                     <h3 class="exp-card-title"><?php echo $exp['title']; ?></h3>
@@ -696,5 +811,19 @@ $experiences_list = [
 
     <!-- Scripts Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS para Galería Interactiva -->
+    <script>
+        function switchGalleryImg(mainImgId, newSrc) {
+            const mainImg = document.getElementById(mainImgId);
+            if (mainImg) {
+                mainImg.style.opacity = '0.4';
+                setTimeout(() => {
+                    mainImg.src = newSrc;
+                    mainImg.style.opacity = '1';
+                }, 150);
+            }
+        }
+    </script>
 </body>
 </html>
