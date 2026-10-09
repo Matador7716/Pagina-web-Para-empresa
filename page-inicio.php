@@ -31,42 +31,42 @@ $destinos_submenu = [
 $tour_cards = [
     [
         'title' => 'Tours Tradicionales',
-        'desc' => 'Descubre lugares imprescindibles del Perú con guías expertos.',
+        'desc' => 'Descubre lugares imprescindibles del Perú con guías expertos locales.',
         'badge' => 'Clásico & Imprescindible',
         'image' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
         'link' => 'https://www.perusafejourneysgroup.com/destinos/'
     ],
     [
         'title' => 'Tours de Caminata',
-        'desc' => 'Rutas, Montañas y Paisajes que te conectan con la naturaleza.',
+        'desc' => 'Rutas, Montañas y Paisajes extraordinarios que te conectan con la naturaleza.',
         'badge' => 'Trekking & Naturaleza',
         'image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
         'link' => 'https://www.perusafejourneysgroup.com/experiencias/'
     ],
     [
         'title' => 'Aventura',
-        'desc' => 'Experiencias llenas de adrenalina para los más valientes.',
+        'desc' => 'Experiencias de acción y emoción para los viajeros más audaces.',
         'badge' => 'Adrenalina Pura',
         'image' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
         'link' => 'https://www.perusafejourneysgroup.com/programas/'
     ],
     [
         'title' => 'Expediciones',
-        'desc' => 'Selva y montaña para explorar territorios únicos.',
+        'desc' => 'Selva y alta montaña para explorar territorios fascinantes del Perú.',
         'badge' => 'Exploración Única',
         'image' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
         'link' => 'https://www.perusafejourneysgroup.com/destinos/'
     ],
     [
         'title' => 'Turismo Vivencial',
-        'desc' => 'Comparte, aprende y vive nuestras tradiciones andinas.',
+        'desc' => 'Comparte, aprende y vive nuestras tradiciones en comunidades andinas.',
         'badge' => 'Cultura & Tradición',
         'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
         'link' => 'https://www.perusafejourneysgroup.com/nosotros/'
     ]
 ];
 
-// Destinos Estrellas Rediseñados
+// Destinos Estrellas
 $destinos_cards_section = [
     [
         'title' => '7 LAGUNAS DEL AUSANGATE',
@@ -312,19 +312,19 @@ $tripadvisor_reviews = [
         /* 1. TOP BAR REDISEÑADO CON BOTON "RESERVA TU VIAJE", REDES SOCIALES COMPLETA (CON YOUTUBE) Y SIN CORREO */
         .top-bar {
             background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 0.4rem 0;
+            padding: 0.45rem 0;
             z-index: 1050;
             position: relative;
         }
 
         .topbar-phone-badge {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.28rem 0.82rem;
             border-radius: 50px;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: #F1F5F9 !important;
             text-decoration: none;
             transition: all 0.28s ease;
@@ -364,9 +364,9 @@ $tripadvisor_reviews = [
             background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco) !important;
             font-weight: 700;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             border-radius: 50px;
-            padding: 0.32rem 1.1rem;
+            padding: 0.35rem 1.15rem;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -381,25 +381,25 @@ $tripadvisor_reviews = [
             transform: translateY(-1px);
         }
 
-        /* 2. NAVBAR-CUSTOM MINIMALISTA Y AMIGABLE PARA AGENCIA DE TURISMO */
+        /* 1. NAVBAR-CUSTOM ULTRA ATRACTIVO, MINIMALISTA Y AMIGABLE */
         .navbar-custom {
             background: #FFFFFF;
             transition: all 0.3s ease;
             border-bottom: 2px solid var(--color-naranja-journey);
             width: 100%;
-            padding: 0.35rem 0;
+            padding: 0.4rem 0;
             box-shadow: 0 4px 20px rgba(0, 34, 56, 0.05);
         }
 
         .navbar-custom.scrolled {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(12px);
-            padding: 0.25rem 0;
+            padding: 0.3rem 0;
             box-shadow: 0 6px 25px rgba(0, 34, 56, 0.08);
         }
 
         .logo-img-header {
-            height: 82px;
+            height: 84px;
             width: auto;
             object-fit: contain;
             transition: transform 0.3s ease;
@@ -412,8 +412,8 @@ $tripadvisor_reviews = [
         .nav-link {
             color: var(--color-azul-peru-safe) !important;
             font-weight: 700;
-            font-size: 0.88rem;
-            padding: 0.55rem 1.1rem !important;
+            font-size: 0.9rem;
+            padding: 0.6rem 1.15rem !important;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             position: relative;
@@ -554,13 +554,14 @@ $tripadvisor_reviews = [
             color: #FFFFFF;
         }
 
+        /* 2. PÁRRAFO AUMENTADO LIGERAMENTE DE TAMAÑO */
         .hero-subtitle {
-            font-size: 1.18rem;
+            font-size: 1.25rem;
             font-weight: 500;
-            line-height: 1.75;
-            margin-bottom: 2rem;
+            line-height: 1.8;
+            margin-bottom: 2.2rem;
             color: #F8FAFC;
-            max-width: 850px;
+            max-width: 880px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -600,7 +601,7 @@ $tripadvisor_reviews = [
             box-shadow: none !important;
         }
 
-        /* BADGES Y TITULOS */
+        /* BADGES Y TITULOS CENTRADOS */
         .section-badge-clean {
             display: inline-block;
             background-color: rgba(233, 77, 0, 0.08);
@@ -616,7 +617,7 @@ $tripadvisor_reviews = [
         }
 
         .section-title {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.2rem;
@@ -624,7 +625,7 @@ $tripadvisor_reviews = [
 
         .narrative-section-compact {
             background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-            padding: 2.5rem 0;
+            padding: 2.6rem 0;
             width: 100vw;
         }
 
@@ -636,14 +637,15 @@ $tripadvisor_reviews = [
             box-shadow: none !important;
         }
 
+        /* 2. PÁRRAFOS GENERALES CON TAMAÑO LIGERAMENTE MAYOR */
         .narrative-paragraph {
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 1.08rem;
+            line-height: 1.85;
             color: #334155;
-            margin-bottom: 1rem;
+            margin-bottom: 1.1rem;
         }
 
-        /* POR QUÉ ELEGIRNOS CON COLOR DE FONDO Y ENLACE NOSOTROS */
+        /* 3. POR QUÉ ELEGIRNOS CON TÍTULOS CENTRADOS Y COLOR DE FONDO */
         .why-choose-us-section {
             background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
             color: #FFFFFF;
@@ -683,7 +685,7 @@ $tripadvisor_reviews = [
             transform: translateY(-2px);
         }
 
-        /* TARJETAS MINIMALISTAS */
+        /* 4. TARJETAS CON DISEÑO MINIMALISTA Y ATRACTIVO */
         .minimalist-value-card {
             background: #FFFFFF;
             border-radius: 16px;
@@ -703,15 +705,15 @@ $tripadvisor_reviews = [
         }
 
         .minimalist-icon-badge {
-            width: 46px;
-            height: 46px;
+            width: 48px;
+            height: 48px;
             border-radius: 12px;
             background: rgba(233, 77, 0, 0.08);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             margin-bottom: 0.85rem;
             border: 1px solid rgba(233, 77, 0, 0.18);
             transition: all 0.28s ease;
@@ -723,16 +725,16 @@ $tripadvisor_reviews = [
         }
 
         .minimalist-value-title {
-            font-size: 1.12rem;
+            font-size: 1.15rem;
             font-weight: 800;
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.35rem;
         }
 
         .minimalist-value-desc {
-            font-size: 0.86rem;
+            font-size: 0.92rem;
             color: var(--color-texto-suave);
-            line-height: 1.6;
+            line-height: 1.65;
             margin-bottom: 0;
         }
 
@@ -1103,7 +1105,7 @@ $tripadvisor_reviews = [
 </head>
 <body>
 
-    <!-- 1. TOP BAR REDISEÑADO CON BOTÓN RESERVA TU VIAJE, REDES SOCIALES COMPLETA (CON YOUTUBE) Y SIN CORREO -->
+    <!-- 1. TOP BAR REDISEÑADO CON BOTÓN RESERVA TU VIAJE Y REDES SOCIALES (CON YOUTUBE) -->
     <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
@@ -1127,7 +1129,6 @@ $tripadvisor_reviews = [
                 <a href="https://tiktok.com" target="_blank" class="topbar-social-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
                 <a href="https://youtube.com" target="_blank" class="topbar-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
 
-                <!-- BOTON RESERVA TU VIAJE EN EL TOP BAR -->
                 <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="topbar-btn-reserva">
                     <svg class="llama-svg" viewBox="0 0 512 512">
                         <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
@@ -1138,7 +1139,7 @@ $tripadvisor_reviews = [
         </div>
     </div>
 
-    <!-- 2. NAVBAR-CUSTOM MINIMALISTA Y AMIGABLE -->
+    <!-- 1. NAVBAR-CUSTOM MINIMALISTA Y AMIGABLE -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
@@ -1266,7 +1267,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. POR QUÉ ELEGIRNOS CON COLOR DE FONDO Y ENLACE "CONOCE MÁS SOBRE NOSOTROS" -->
+    <!-- 3. POR QUÉ ELEGIRNOS CON TÍTULO Y SUBTÍTULOS CENTRADOS -->
     <section class="why-choose-us-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center max-w-800 mx-auto">
@@ -1290,16 +1291,13 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. DESTINOS POPULARES MINIMALISTAS -->
+    <!-- 3. DESTINOS POPULARES CON TÍTULO Y SUBTÍTULO CENTRADOS -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
-                <div>
-                    <span class="section-badge-clean">DESTINOS POPULARES</span>
-                    <h2 class="section-title">Nuestros Tours y Destinos Estrellas</h2>
-                </div>
-
-                <div class="d-flex gap-2">
+            <div class="text-center mb-3">
+                <span class="section-badge-clean">DESTINOS POPULARES</span>
+                <h2 class="section-title">Nuestros Tours y Destinos Estrellas</h2>
+                <div class="d-flex justify-content-center gap-2 mt-2">
                     <button class="slider-nav-btn" id="slideDestPrevBtn" aria-label="Anterior">
                         <i class="bi bi-chevron-left"></i>
                     </button>
@@ -1309,7 +1307,7 @@ $tripadvisor_reviews = [
                 </div>
             </div>
 
-            <div class="unified-cards-track" id="destinosTrack">
+            <div class="unified-cards-track mt-3" id="destinosTrack">
                 <?php foreach($destinos_cards_section as $dest): ?>
                     <div class="dest-card-enhanced">
                         <div class="dest-img-header">
@@ -1353,7 +1351,7 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. NUESTROS VALORES MINIMALISTA -->
+    <!-- 3. NUESTROS VALORES CON TÍTULO Y SUBTÍTULO CENTRADOS -->
     <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
@@ -1379,16 +1377,13 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- EXPERIENCIAS EXCLUSIVAS -->
+    <!-- 3. EXPERIENCIAS EXCLUSIVAS CON TÍTULO Y SUBTÍTULO CENTRADOS -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
-                <div>
-                    <span class="section-badge-clean">EXPERIENCIAS EXCLUSIVAS</span>
-                    <h2 class="section-title">Modalidades de Viaje</h2>
-                </div>
-
-                <div class="d-flex gap-2">
+            <div class="text-center mb-3">
+                <span class="section-badge-clean">EXPERIENCIAS EXCLUSIVAS</span>
+                <h2 class="section-title">Modalidades de Viaje</h2>
+                <div class="d-flex justify-content-center gap-2 mt-2">
                     <button class="slider-nav-btn" id="slideModPrevBtn" aria-label="Anterior">
                         <i class="bi bi-chevron-left"></i>
                     </button>
@@ -1398,7 +1393,7 @@ $tripadvisor_reviews = [
                 </div>
             </div>
 
-            <div class="unified-cards-track" id="modalidadesTrack">
+            <div class="unified-cards-track mt-3" id="modalidadesTrack">
                 <?php foreach($tour_cards as $card): ?>
                     <a href="<?php echo $card['link']; ?>" class="unified-card">
                         <div class="unified-card-img-box">
