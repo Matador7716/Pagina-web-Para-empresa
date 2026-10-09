@@ -66,7 +66,7 @@ $tour_cards = [
     ]
 ];
 
-// Destinos Estrellas Rediseñados
+// Destinos Estrellas
 $destinos_cards_section = [
     [
         'title' => '7 LAGUNAS DEL AUSANGATE',
@@ -309,7 +309,7 @@ $tripadvisor_reviews = [
             padding: 0;
         }
 
-        /* 1. TOP BAR */
+        /* 1. TOP BAR REDISEÑADO CON ESTILO ELEGANTE */
         .top-bar {
             background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
             font-size: 0.82rem;
@@ -381,11 +381,11 @@ $tripadvisor_reviews = [
             transform: translateY(-1px);
         }
 
-        /* 1. NAVBAR-CUSTOM TRANSPARENTE SOBRE EL SLIDER CON ESTILO ULTRA MODERNO Y AMIGABLE */
+        /* 1. NAVBAR-CUSTOM TRANSPARENTE SOBRE EL SLIDER - ESTILO ULTRA MODERNO Y AMIGABLE */
         .navbar-custom {
             background: transparent;
             position: absolute;
-            top: 40px; /* Justo debajo de la top-bar */
+            top: 40px;
             left: 0;
             width: 100%;
             z-index: 1040;
@@ -493,7 +493,7 @@ $tripadvisor_reviews = [
             fill: currentColor;
         }
 
-        /* 1. HERO SLIDER INTEGRADO CON NAVBAR TRANSPARENTE */
+        /* HERO SLIDER */
         .hero-video-slider {
             position: relative;
             height: 90vh;
@@ -505,7 +505,7 @@ $tripadvisor_reviews = [
             justify-content: center;
             color: var(--color-blanco);
             width: 100vw;
-            padding-top: 80px; /* Compensación para la barra de navegación superpuesta */
+            padding-top: 80px;
         }
 
         .video-background-wrapper {
@@ -566,7 +566,7 @@ $tripadvisor_reviews = [
             text-shadow: 0 4px 25px rgba(0, 0, 0, 0.85);
         }
 
-        /* 2. PÁRRAFO SUBTÍTULO MEJORADO */
+        /* 2. PÁRRAFO SUBTÍTULO MEJORADO CON TAMAÑO MÁS LLEGADOR */
         .hero-subtitle {
             font-size: 1.28rem;
             font-weight: 500;
@@ -614,7 +614,7 @@ $tripadvisor_reviews = [
             box-shadow: none !important;
         }
 
-        /* 2. BADGES Y TITULOS CENTRADOS Y VISUALMENTE MEJORADOS */
+        /* 2. BADGES Y TITULOS CENTRADOS CON CONCEPTOS CORTOS */
         .section-badge-clean {
             display: inline-block;
             background-color: rgba(233, 77, 0, 0.08);
@@ -635,6 +635,15 @@ $tripadvisor_reviews = [
             color: var(--color-azul-peru-safe);
             margin-bottom: 0.3rem;
             letter-spacing: -0.3px;
+        }
+
+        .section-lead-concept {
+            font-size: 1.05rem;
+            color: var(--color-texto-suave);
+            max-width: 780px;
+            margin: 0.3rem auto 1.2rem auto;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         .narrative-section-compact {
@@ -752,23 +761,23 @@ $tripadvisor_reviews = [
             margin-bottom: 0;
         }
 
-        /* 3. REDISEÑO ATRACTIVO Y MINIMALISTA DE TARJETAS PARA EXPERIENCIAS EXCLUSIVAS Y DESTINOS POPULARES */
+        /* 3. REDISEÑO ATRACTIVO Y MINIMALISTA DE TARJETAS Y SLIDERS CON BOTONES EN LA PARTE INFERIOR DERECHA */
         .cards-slider-unified-section {
             padding: 2.8rem 0;
             width: 100vw;
         }
 
         .slider-nav-btn {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             background: var(--color-blanco);
-            border: 1px solid var(--color-gris-border);
+            border: 1.5px solid var(--color-gris-border);
             color: var(--color-azul-peru-safe);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 1.05rem;
             transition: all 0.25s ease;
             cursor: pointer;
             box-shadow: none !important;
@@ -778,6 +787,7 @@ $tripadvisor_reviews = [
             background: var(--color-naranja-journey);
             color: var(--color-blanco);
             border-color: var(--color-naranja-journey);
+            transform: scale(1.05);
         }
 
         .unified-cards-track {
@@ -793,7 +803,7 @@ $tripadvisor_reviews = [
             display: none;
         }
 
-        /* 3. TARJETAS EXPERIENCIAS EXCLUSIVAS REDISEÑADAS */
+        /* 3. TARJETAS EXPERIENCIAS EXCLUSIVAS REDISEÑADAS Y MINIMALISTAS */
         .unified-card {
             flex: 0 0 calc(25% - 15px);
             min-width: 270px;
@@ -919,7 +929,7 @@ $tripadvisor_reviews = [
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* 3. VISTA DE PRECIOS MEJORADA Y DESTACADA */
+        /* 3. VISTA DE PRECIOS MEJORADA SOBRE IMAGEN */
         .price-overlay-box {
             position: absolute;
             bottom: 12px;
@@ -1276,9 +1286,11 @@ $tripadvisor_reviews = [
                 <div class="row align-items-center g-4">
                     <div class="col-lg-7">
                         <span class="section-badge-clean">QUIENES SOMOS</span>
-                        <h2 class="section-title mb-3">
+                        <h2 class="section-title mb-2">
                             Perú Safe Journeys – <span style="color: var(--color-naranja-journey);">Travel Agency</span>
                         </h2>
+                        <p class="section-lead-concept text-start ms-0 mb-3">Conoce nuestra historia y el propósito que nos mueve a crear viajes extraordinarios por el Perú.</p>
+
                         <p class="narrative-paragraph">
                             <strong>Perú Safe Journeys – Travel Agency</strong> es una agencia especializada en crear experiencias auténticas, seguras y personalizadas por el Perú. Diseñamos cada viaje pensando en que nuestros viajeros no solo conozcan destinos, sino que vivan la esencia de cada lugar, conectando con nuestras culturas, tradiciones, historia, gastronomía y extraordinarios paisajes.
                         </p>
@@ -1306,13 +1318,14 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. POR QUÉ ELEGIRNOS CON TÍTULO Y SUBTÍTULO CENTRADOS -->
+    <!-- 3. POR QUÉ ELEGIRNOS CON TÍTULO Y SUBTÍTULO CENTRADOS Y CONCEPTO CORTO -->
     <section class="why-choose-us-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center max-w-800 mx-auto">
                 <span class="section-badge-clean mb-2">¿POR QUÉ ELEGIRNOS?</span>
                 <h2 class="section-title mb-2">Perú Safe Journeys: tu camino hacia un Perú auténtico</h2>
-                <h4 class="fs-5 text-warning fw-bold mb-3">Tu aventura comienza con nosotros</h4>
+                <h4 class="fs-5 text-warning fw-bold mb-2">Tu aventura comienza con nosotros</h4>
+                <p class="section-lead-concept text-light opacity-90 mb-3">La diferencia de viajar respaldado por especialistas locales apasionados por tu confort y tranquilidad.</p>
 
                 <p class="narrative-paragraph text-light mb-3">
                     Sabemos que viajar es mucho más que conocer nuevos lugares: es cumplir sueños, descubrir culturas, compartir momentos especiales y crear recuerdos que te acompañarán toda la vida.
@@ -1330,23 +1343,16 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. DESTINOS POPULARES CON REDISEÑO ATRACTIVO, PRECIOS DESTACADOS Y BOTÓN "VER TOUR COMPLETO" -->
+    <!-- 3. DESTINOS POPULARES CON TÍTULO Y SUBTÍTULO CENTRADOS & BOTONES DE DESPLAZAMIENTO EN LA PARTE INFERIOR DERECHA -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="text-center mb-3">
+            <div class="text-center mb-2">
                 <span class="section-badge-clean">DESTINOS POPULARES</span>
                 <h2 class="section-title">Nuestros Tours y Destinos Estrellas</h2>
-                <div class="d-flex justify-content-center gap-2 mt-2">
-                    <button class="slider-nav-btn" id="slideDestPrevBtn" aria-label="Anterior">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-                    <button class="slider-nav-btn" id="slideDestNextBtn" aria-label="Siguiente">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-                </div>
+                <p class="section-lead-concept mb-3">Explora los itinerarios más aclamados por nuestros viajeros en todo el Perú.</p>
             </div>
 
-            <div class="unified-cards-track mt-3" id="destinosTrack">
+            <div class="unified-cards-track" id="destinosTrack">
                 <?php foreach($destinos_cards_section as $dest): ?>
                     <div class="dest-card-enhanced">
                         <div class="dest-img-header">
@@ -1388,17 +1394,27 @@ $tripadvisor_reviews = [
                     </div>
                 <?php endforeach; ?>
             </div>
+
+            <!-- 3. UBICACIÓN DE BOTONES DE DESPLAZAMIENTO EN LA PARTE INFERIOR DERECHA -->
+            <div class="d-flex justify-content-end gap-2 mt-3">
+                <button class="slider-nav-btn" id="slideDestPrevBtn" aria-label="Anterior">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="slider-nav-btn" id="slideDestNextBtn" aria-label="Siguiente">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
         </div>
     </section>
 
 
-    <!-- 3. NUESTROS VALORES -->
+    <!-- 3. NUESTROS VALORES CON TÍTULO CENTRADO Y CONCEPTO CORTO -->
     <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
                 <span class="section-badge-clean">NUESTROS VALORES</span>
                 <h2 class="section-title">Pilares de Marca</h2>
-                <p class="text-muted small max-w-700 mx-auto">Nuestros seis compromisos fundamentales para garantizar un viaje extraordinario.</p>
+                <p class="section-lead-concept mb-3">Nuestros seis compromisos fundamentales para garantizar una aventura inolvidable y segura.</p>
             </div>
 
             <div class="row g-3">
@@ -1418,23 +1434,16 @@ $tripadvisor_reviews = [
     </section>
 
 
-    <!-- 3. EXPERIENCIAS EXCLUSIVAS CON TARJETAS REDISEÑADAS -->
+    <!-- 3. EXPERIENCIAS EXCLUSIVAS CON BOTONES EN LA PARTE INFERIOR DERECHA Y CONCEPTO CORTO -->
     <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="text-center mb-3">
+            <div class="text-center mb-2">
                 <span class="section-badge-clean">EXPERIENCIAS EXCLUSIVAS</span>
                 <h2 class="section-title">Modalidades de Viaje</h2>
-                <div class="d-flex justify-content-center gap-2 mt-2">
-                    <button class="slider-nav-btn" id="slideModPrevBtn" aria-label="Anterior">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-                    <button class="slider-nav-btn" id="slideModNextBtn" aria-label="Siguiente">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-                </div>
+                <p class="section-lead-concept mb-3">Estilos de itinerarios adaptados al ritmo y preferencias de cada explorador.</p>
             </div>
 
-            <div class="unified-cards-track mt-3" id="modalidadesTrack">
+            <div class="unified-cards-track mt-2" id="modalidadesTrack">
                 <?php foreach($tour_cards as $card): ?>
                     <a href="<?php echo $card['link']; ?>" class="unified-card">
                         <div class="unified-card-img-box">
@@ -1454,11 +1463,21 @@ $tripadvisor_reviews = [
                     </a>
                 <?php endforeach; ?>
             </div>
+
+            <!-- 3. UBICACIÓN DE BOTONES DE DESPLAZAMIENTO EN LA PARTE INFERIOR DERECHA -->
+            <div class="d-flex justify-content-end gap-2 mt-3">
+                <button class="slider-nav-btn" id="slideModPrevBtn" aria-label="Anterior">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="slider-nav-btn" id="slideModNextBtn" aria-label="Siguiente">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
         </div>
     </section>
 
 
-    <!-- TRIPADVISOR REVIEWS -->
+    <!-- TRIPADVISOR REVIEWS CON CONCEPTO CORTO -->
     <section class="tripadvisor-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
@@ -1467,7 +1486,7 @@ $tripadvisor_reviews = [
                     <span class="tripadvisor-dots">•••••</span>
                 </div>
                 <h2 class="section-title">TripAdvisor Perú Safe Journeys</h2>
-                <p class="text-muted small max-w-700 mx-auto">Conoce los comentarios y testimonios reales de nuestros viajeros internacionales.</p>
+                <p class="section-lead-concept mb-3">Testimonios auténticos de viajeros que confiaron en nosotros para su gran aventura.</p>
             </div>
 
             <div class="row g-3 mb-4">
