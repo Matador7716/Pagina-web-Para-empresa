@@ -66,7 +66,7 @@ $tour_cards = [
     ]
 ];
 
-// Destinos Estrellas (ATV Simple y ATV Doble como tarjetas independientes)
+// Destinos Estrellas
 $destinos_cards_section = [
     [
         'title' => '7 LAGUNAS DEL AUSANGATE',
@@ -245,7 +245,6 @@ $brand_pillars = [
             --color-gris-border: #E2E8F0;
         }
 
-        /* FUENTE POPPINS GLOBALES SIN BOX SHADOW EN PILARES O TARJETAS */
         body, button, input, select, textarea, .nav-link, .dropdown-item, .btn {
             font-family: 'Poppins', sans-serif !important;
         }
@@ -319,7 +318,6 @@ $brand_pillars = [
             border-bottom: 2px solid var(--color-naranja-journey);
             width: 100%;
             padding: 0.5rem 0;
-            /* SIN BOX SHADOW EXCESIVO */
         }
 
         .navbar-custom.scrolled {
@@ -552,7 +550,7 @@ $brand_pillars = [
             box-shadow: none !important;
         }
 
-        /* ESPACIO ENTRE SECCIONES ALTAMENTE COMPACTO */
+        /* SECTION BADGES & COMPACT PADDING */
         .section-badge-clean {
             display: inline-block;
             background-color: rgba(233, 77, 0, 0.1);
@@ -574,7 +572,7 @@ $brand_pillars = [
             margin-bottom: 0.2rem;
         }
 
-        /* 1. SECCIÓN QUIENES SOMOS DIRECTAMENTE DEBAJO DEL SLIDER */
+        /* SECCIONES Y CONTENEDORES */
         .narrative-section-compact {
             background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
             padding: 2.5rem 0;
@@ -596,25 +594,38 @@ $brand_pillars = [
             margin-bottom: 1rem;
         }
 
-        .brand-motto-box {
+        /* ESTILO MEJORADO PARA CONTENIDO CREATIVO */
+        .creative-content-box {
             background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
             color: var(--color-blanco);
-            border-radius: 18px;
-            padding: 2rem 1.6rem;
-            margin: 2rem 0;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 22px;
+            padding: 2.5rem 2rem;
+            margin: 2.2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            position: relative;
+            overflow: hidden;
             box-shadow: none !important;
         }
 
-        .brand-motto-title {
+        .creative-content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(233, 77, 0, 0.25) 0%, rgba(233, 77, 0, 0) 70%);
+            pointer-events: none;
+        }
+
+        .creative-title-sub {
             font-size: 1.85rem;
             font-weight: 800;
             color: var(--color-dorado-andino);
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
-        /* 4. PILARES DE MARCA SIN BOX-SHADOW */
+        /* PILARES DE MARCA */
         .pillar-card {
             background: var(--color-blanco);
             border-radius: 16px;
@@ -653,7 +664,7 @@ $brand_pillars = [
             margin-bottom: 0.35rem;
         }
 
-        /* SECCIONES SLIDERS SIN BOX-SHADOW */
+        /* SLIDERS */
         .cards-slider-unified-section {
             padding: 2.5rem 0;
             width: 100vw;
@@ -694,7 +705,6 @@ $brand_pillars = [
             display: none;
         }
 
-        /* 4 TARJETAS VISIBLES SIN BOX SHADOW */
         .unified-card {
             flex: 0 0 calc(25% - 14px);
             min-width: 265px;
@@ -903,7 +913,7 @@ $brand_pillars = [
         </div>
     </div>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR PEGAJOSO -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
             <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
@@ -1003,7 +1013,7 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 3. ORDEN DE SECCIONES SOLICITADO: 1. QUIENES SOMOS -->
+    <!-- ORDEN DE SECCIONES EXACTO: 1. QUIENES SOMOS -->
     <section class="narrative-section-compact">
         <div class="container-fluid px-3 px-lg-5">
             <div class="agency-glass-card">
@@ -1036,17 +1046,18 @@ $brand_pillars = [
                     </div>
                 </div>
 
-                <div class="brand-motto-box">
-                    <span class="badge bg-warning text-dark px-3 py-1 rounded-pill font-weight-bold text-uppercase mb-2 fs-6">
+                <!-- 2. DISEÑO MEJORADO Y ELEGANTE PARA CONTENIDO CREATIVO -->
+                <div class="creative-content-box">
+                    <div class="d-inline-block badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-3 small">
                         CONTENIDO CREATIVO
-                    </span>
-                    <h3 class="brand-motto-title">
+                    </div>
+                    <h3 class="creative-title-sub">
                         Perú Safe Journeys: tu camino hacia un Perú auténtico.
                     </h3>
-                    <p class="fs-6 text-light max-w-800 mx-auto mb-2" style="line-height: 1.7;">
+                    <p class="fs-6 text-light mb-3" style="line-height: 1.8;">
                         Creamos viajes que van más allá del turismo convencional. Diseñamos experiencias a tu medida para descubrir el Perú de manera segura, cómoda y auténtica, conectándote con sus pueblos, culturas, historia, naturaleza y tradiciones.
                     </p>
-                    <p class="fs-6 fw-bold text-warning mb-0">
+                    <p class="fs-6 fw-bold text-warning mb-0" style="line-height: 1.7;">
                         Con conocimiento local y atención personalizada, transformamos cada recorrido en una historia para recordar. Tú eliges cómo quieres vivir el Perú; nosotros nos encargamos de hacer del camino una experiencia segura y extraordinaria.
                     </p>
                 </div>
@@ -1055,76 +1066,28 @@ $brand_pillars = [
     </section>
 
 
-    <!-- 3. ORDEN DE SECCIONES SOLICITADO: 2. EXPERIENCIAS EXCLUSIVAS (MODALIDADES DE VIAJE) -->
-    <section class="cards-slider-unified-section" style="background-color: #F1F5F9;">
-        <div class="container-fluid px-3 px-lg-5">
-            <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
-                <div>
-                    <span class="section-badge-clean">EXPERIENCIAS EXCLUSIVAS</span>
-                    <h2 class="section-title">Modalidades de Viaje</h2>
-                </div>
-
-                <div class="d-flex gap-2">
-                    <button class="slider-nav-btn" id="slideModPrevBtn" aria-label="Anterior">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-                    <button class="slider-nav-btn" id="slideModNextBtn" aria-label="Siguiente">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="unified-cards-track" id="modalidadesTrack">
-                <?php foreach($tour_cards as $card): ?>
-                    <a href="<?php echo $card['link']; ?>" class="unified-card">
-                        <div class="unified-card-img-box">
-                            <img src="<?php echo $card['image']; ?>" alt="<?php echo $card['title']; ?>" loading="lazy">
-                            <span class="unified-card-badge"><?php echo $card['badge']; ?></span>
-                        </div>
-                        <div class="unified-card-body">
-                            <div>
-                                <h3 class="unified-card-title"><?php echo $card['title']; ?></h3>
-                                <p class="text-muted small mb-2"><?php echo $card['desc']; ?></p>
-                            </div>
-                            <div class="fw-bold text-warning small text-uppercase mt-2">
-                                <span>Ver Experiencia</span>
-                                <i class="bi bi-arrow-right ms-1"></i>
-                            </div>
-                        </div>
-                    </a>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- 3. ORDEN DE SECCIONES SOLICITADO: 3. NUESTROS VALORES (PILARES DE MARCA SIN BOX SHADOW) -->
-    <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
-        <div class="container-fluid px-3 px-lg-5">
-            <div class="text-center mb-4">
-                <span class="section-badge-clean">NUESTROS VALORES</span>
-                <h2 class="section-title">Pilares de Marca</h2>
-            </div>
-
-            <div class="row g-3">
-                <?php foreach($brand_pillars as $pillar): ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="pillar-card">
-                            <div class="pillar-icon-box">
-                                <i class="bi <?php echo $pillar['icon']; ?>"></i>
-                            </div>
-                            <h4 class="pillar-name"><?php echo $pillar['name']; ?></h4>
-                            <p class="text-secondary mb-0" style="line-height: 1.6; font-size: 0.88rem;"><?php echo $pillar['desc']; ?></p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- 3. ORDEN DE SECCIONES SOLICITADO: 4. DESTINOS POPULARES (INCLUYE ATV SIMPLE Y DOBLE) -->
+    <!-- ORDEN DE SECCIONES EXACTO: 2. PORQUE ELEGIRNOS -->
     <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="agency-glass-card">
+                <div class="text-center max-w-800 mx-auto">
+                    <span class="section-badge-clean">¿POR QUÉ ELEGIRNOS?</span>
+                    <h2 class="section-title mb-2">Perú Safe Journeys: tu camino hacia un Perú auténtico</h2>
+                    <h4 class="fs-5 text-warning fw-bold mb-3">Tu aventura comienza con nosotros</h4>
+                    <p class="narrative-paragraph mb-3">
+                        Sabemos que viajar es mucho más que conocer nuevos lugares: es cumplir sueños, descubrir culturas, compartir momentos especiales y crear recuerdos que te acompañarán toda la vida.
+                    </p>
+                    <p class="narrative-paragraph fw-semibold text-dark mb-0">
+                        En <strong>Perú Safe Journeys</strong>, queremos que vivas el Perú de una manera auténtica, cómoda y segura. Por eso, diseñamos viajes a tu medida para que descubras la magia de nuestros destinos, la riqueza de nuestras tradiciones, la calidez de nuestra gente y la belleza de nuestros paisajes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ORDEN DE SECCIONES EXACTO: 3. DESTINOS POPULARES -->
+    <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
                 <div>
@@ -1175,7 +1138,75 @@ $brand_pillars = [
     </section>
 
 
-    <!-- FOOTER CON ICONOS EN TODOS LOS DATOS -->
+    <!-- ORDEN DE SECCIONES EXACTO: 4. NUESTROS VALORES (PILARES DE MARCA) -->
+    <section class="cards-slider-unified-section" style="background-color: #F8FAFC;">
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="text-center mb-4">
+                <span class="section-badge-clean">NUESTROS VALORES</span>
+                <h2 class="section-title">Pilares de Marca</h2>
+            </div>
+
+            <div class="row g-3">
+                <?php foreach($brand_pillars as $pillar): ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="pillar-card">
+                            <div class="pillar-icon-box">
+                                <i class="bi <?php echo $pillar['icon']; ?>"></i>
+                            </div>
+                            <h4 class="pillar-name"><?php echo $pillar['name']; ?></h4>
+                            <p class="text-secondary mb-0" style="line-height: 1.6; font-size: 0.88rem;"><?php echo $pillar['desc']; ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ORDEN DE SECCIONES EXACTO: 5. EXPERIENCIAS EXCLUSIVAS (MODALIDADES DE VIAJE) -->
+    <section class="cards-slider-unified-section" style="background-color: #FFFFFF;">
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
+                <div>
+                    <span class="section-badge-clean">EXPERIENCIAS EXCLUSIVAS</span>
+                    <h2 class="section-title">Modalidades de Viaje</h2>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button class="slider-nav-btn" id="slideModPrevBtn" aria-label="Anterior">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="slider-nav-btn" id="slideModNextBtn" aria-label="Siguiente">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="unified-cards-track" id="modalidadesTrack">
+                <?php foreach($tour_cards as $card): ?>
+                    <a href="<?php echo $card['link']; ?>" class="unified-card">
+                        <div class="unified-card-img-box">
+                            <img src="<?php echo $card['image']; ?>" alt="<?php echo $card['title']; ?>" loading="lazy">
+                            <span class="unified-card-badge"><?php echo $card['badge']; ?></span>
+                        </div>
+                        <div class="unified-card-body">
+                            <div>
+                                <h3 class="unified-card-title"><?php echo $card['title']; ?></h3>
+                                <p class="text-muted small mb-2"><?php echo $card['desc']; ?></p>
+                            </div>
+                            <div class="fw-bold text-warning small text-uppercase mt-2">
+                                <span>Ver Experiencia</span>
+                                <i class="bi bi-arrow-right ms-1"></i>
+                            </div>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER CON ICONOS EN TODOS LOS DATOS DE CONTACTO -->
     <footer class="footer-custom" id="contacto">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
