@@ -1,5 +1,9 @@
 <?php
 // page-contacto.php - Perú Safe Journeys
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $company_name = "Perú Safe Journeys";
 $company_tagline = "Contacto y Reservas";
 
@@ -11,6 +15,51 @@ $phones = [
 
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
+
+// Generar Token CSRF
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+// Procesar Formulario de Contacto
+$form_status = null;
+$form_msg = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['action']) && $_POST['action'] === 'send_contact') {
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        $form_status = "danger";
+        $form_msg = "Error de validación de seguridad. Por favor reintente.";
+    } else {
+        $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_SPECIAL_CHARS);
+        $email_user = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+        $telefono = filter_input(INPUT_POST, 'telefono', FILTER_SANITIZE_SPECIAL_CHARS);
+        $asunto = filter_input(INPUT_POST, 'asunto', FILTER_SANITIZE_SPECIAL_CHARS);
+        $mensaje = filter_input(INPUT_POST, 'mensaje', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if ($nombre && $email_user && $mensaje) {
+            $to = $email_address;
+            $subject = "Consulta Web Contacto - " . ($asunto ?: $nombre);
+            $body = "Nueva consulta recibida desde el formulario de Contacto:\n\n";
+            $body .= "Nombre: " . $nombre . "\n";
+            $body .= "Correo Electrónico: " . $email_user . "\n";
+            $body .= "Teléfono/WhatsApp: " . ($telefono ?: 'No especificado') . "\n";
+            $body .= "Asunto/Tour: " . ($asunto ?: 'General') . "\n\n";
+            $body .= "Mensaje:\n" . $mensaje . "\n";
+
+            $headers = "From: " . $email_address . "\r\n";
+            $headers .= "Reply-To: " . $email_user . "\r\n";
+            $headers .= "X-Mailer: PHP/" . phpversion();
+
+            @mail($to, $subject, $body, $headers);
+
+            $form_status = "success";
+            $form_msg = "¡Gracias por comunicarte con Perú Safe Journeys! Tu mensaje ha sido enviado correctamente a " . $email_address . ". Te responderemos en breve.";
+        } else {
+            $form_status = "danger";
+            $form_msg = "Por favor, completa los campos requeridos con información válida.";
+        }
+    }
+}
 
 $destinos_submenu = [
     ['name' => '7 LAGUNAS DEL AUSANGATE', 'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'],
@@ -56,34 +105,344 @@ $destinos_submenu = [
             font-family: 'Poppins', sans-serif !important;
         }
 
-        body { font-family: 'Poppins', sans-serif; background-color: var(--color-blanco); color: var(--color-texto-oscuro); overflow-x: hidden; width: 100vw; margin: 0; padding: 0; }
+        body {
+            background-color: var(--color-blanco);
+            color: var(--color-texto-oscuro);
+            overflow-x: hidden;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
 
-        .top-bar { background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%); font-size: 0.82rem; border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding: 0.4rem 0; }
-        .topbar-phone-badge { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.78rem; color: #E2E8F0 !important; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+        /* TOP BAR */
+        .top-bar {
+            background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
+            font-size: 0.82rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.45rem 0;
+            z-index: 1050;
+            position: relative;
+        }
 
-        .topbar-social-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #CBD5E1 !important; font-size: 0.9rem; text-decoration: none; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .topbar-phone-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.28rem 0.82rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: #F1F5F9 !important;
+            text-decoration: none;
+            transition: all 0.28s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-        .topbar-btn-reserva { background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%); color: var(--color-blanco) !important; font-weight: 700; font-size: 0.78rem; border-radius: 50px; padding: 0.32rem 1.1rem; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; text-transform: uppercase; }
+        .topbar-phone-badge:hover {
+            background: var(--color-naranja-journey);
+            color: var(--color-blanco) !important;
+            border-color: var(--color-naranja-journey);
+        }
 
-        .navbar-custom { background: #FFFFFF; border-bottom: 2px solid var(--color-naranja-journey); padding: 0.35rem 0; }
-        .logo-img-header { height: 82px; object-fit: contain; }
-        .nav-link { color: var(--color-azul-peru-safe) !important; font-weight: 700; font-size: 0.88rem; padding: 0.55rem 1.1rem !important; text-transform: uppercase; }
-        .nav-link:hover, .nav-link.active { color: var(--color-naranja-journey) !important; }
+        .topbar-social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #CBD5E1 !important;
+            font-size: 0.9rem;
+            transition: all 0.28s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-        .dropdown-menu-custom { background: #FFFFFF !important; border: 1px solid var(--color-gris-border) !important; border-top: 3px solid var(--color-naranja-journey) !important; border-radius: 12px !important; min-width: 260px; }
-        .dropdown-item-custom { color: var(--color-texto-oscuro) !important; font-size: 0.82rem !important; font-weight: 700 !important; padding: 0.55rem 0.9rem !important; text-transform: uppercase; }
+        .topbar-social-icon:hover {
+            background: var(--color-naranja-journey);
+            color: var(--color-blanco) !important;
+            border-color: var(--color-naranja-journey);
+        }
 
-        .btn-reserva-llama { background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%); color: var(--color-blanco) !important; font-weight: 700; font-size: 0.88rem; border-radius: 50px; padding: 0.6rem 1.35rem; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; text-transform: uppercase; box-shadow: none !important; }
+        .topbar-btn-reserva {
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: var(--color-blanco) !important;
+            font-weight: 700;
+            font-size: 0.78rem;
+            border-radius: 50px;
+            padding: 0.35rem 1.15rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all 0.28s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
 
-        .page-header-banner { background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%); padding: 3.5rem 0 2.8rem; color: var(--color-blanco); text-align: center; border-bottom: 3px solid var(--color-naranja-journey); }
+        .topbar-btn-reserva:hover {
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            transform: translateY(-1px);
+        }
 
-        .footer-custom { background: #001220; border-top: 2px solid var(--color-naranja-journey); padding-top: 3.5rem; padding-bottom: 1.5rem; color: #CBD5E1; width: 100vw; }
-        .footer-contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 0.9rem; color: #E2E8F0; }
-        .footer-contact-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(233, 77, 0, 0.15); color: var(--color-naranja-journey); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; border: 1px solid rgba(233, 77, 0, 0.25); flex-shrink: 0; }
+        /* NAVBAR HEADER DARK TRANSPARENT OVERLAY MATCHING INICIO */
+        .navbar-custom {
+            background: rgba(0, 18, 32, 0.96);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1040;
+            transition: all 0.35s ease;
+            padding: 0.4rem 0;
+            border-bottom: 2px solid var(--color-naranja-journey);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+        }
 
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; width: 58px; height: 58px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1050; text-decoration: none; box-shadow: none !important; }
+        .logo-img-header {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+        }
 
-        .llama-svg { width: 16px; height: 16px; fill: currentColor; }
+        .navbar-brand-logo:hover .logo-img-header {
+            transform: scale(1.04);
+        }
+
+        .nav-link {
+            color: #FFFFFF !important;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 0.65rem 1.2rem !important;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            transition: color 0.25s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0%;
+            height: 3px;
+            background: var(--color-naranja-journey);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 80%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--color-naranja-journey) !important;
+        }
+
+        .dropdown-menu-custom {
+            background: rgba(0, 18, 32, 0.96) !important;
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(233, 77, 0, 0.3) !important;
+            border-top: 3px solid var(--color-naranja-journey) !important;
+            border-radius: 14px !important;
+            padding: 0.6rem 0.4rem !important;
+            min-width: 270px;
+            margin-top: 0.4rem !important;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        @media (min-width: 992px) {
+            .nav-item.dropdown:hover .dropdown-menu-custom {
+                display: block;
+            }
+        }
+
+        .dropdown-item-custom {
+            color: #F1F5F9 !important;
+            font-size: 0.83rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.4px;
+            padding: 0.6rem 1rem !important;
+            border-radius: 8px;
+            transition: all 0.25s ease !important;
+            text-transform: uppercase;
+        }
+
+        .dropdown-item-custom:hover {
+            background-color: var(--color-naranja-journey) !important;
+            color: #FFFFFF !important;
+            transform: translateX(5px);
+        }
+
+        /* BANNER HEADER */
+        .page-header-banner {
+            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
+            padding: 3.8rem 0 3.2rem;
+            color: var(--color-blanco);
+            text-align: center;
+            border-bottom: 3px solid var(--color-naranja-journey);
+        }
+
+        /* TARJETAS DE CONTACTO & MAPA */
+        .contact-info-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid var(--color-gris-border);
+            border-top: 4px solid var(--color-naranja-journey);
+            padding: 2.2rem 1.8rem;
+            height: 100%;
+        }
+
+        .contact-icon-wrapper {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(233, 77, 0, 0.12) 0%, rgba(233, 77, 0, 0.04) 100%);
+            color: var(--color-naranja-journey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 1px solid rgba(233, 77, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .contact-form-card {
+            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            color: #FFFFFF;
+            border: 1px solid rgba(233, 77, 0, 0.3);
+            border-top: 5px solid var(--color-naranja-journey);
+        }
+
+        .form-label-custom {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #E2E8F0;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control-custom {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            color: #FFFFFF !important;
+            border-radius: 12px !important;
+            padding: 0.75rem 1rem !important;
+            font-size: 0.92rem !important;
+        }
+
+        .form-control-custom:focus {
+            background: rgba(255, 255, 255, 0.14) !important;
+            border-color: var(--color-naranja-journey) !important;
+            box-shadow: 0 0 0 0.2rem rgba(233, 77, 0, 0.25) !important;
+        }
+
+        .form-control-custom::placeholder {
+            color: #94A3B8 !important;
+        }
+
+        .btn-submit-contact {
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: #FFFFFF !important;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit-contact:hover {
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            transform: translateY(-2px);
+        }
+
+        .map-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--color-gris-border);
+            box-shadow: none;
+        }
+
+        /* FOOTER */
+        .footer-custom {
+            background: #001220;
+            border-top: 2px solid var(--color-naranja-journey);
+            padding-top: 3.5rem;
+            padding-bottom: 1.5rem;
+            color: #CBD5E1;
+            width: 100vw;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.85rem;
+            color: #E2E8F0;
+        }
+
+        .footer-contact-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(233, 77, 0, 0.15);
+            color: var(--color-naranja-journey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            border: 1px solid rgba(233, 77, 0, 0.25);
+            flex-shrink: 0;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 58px;
+            height: 58px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            z-index: 1050;
+            text-decoration: none;
+            box-shadow: none !important;
+        }
+
+        .llama-svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-custom { position: relative; top: 0; background: #FFFFFF; }
+            .nav-link { color: var(--color-azul-peru-safe) !important; text-shadow: none; }
+            .logo-img-header { height: 68px; }
+        }
+
+        @media (max-width: 575.98px) {
+            .logo-img-header { height: 54px; }
+        }
     </style>
 </head>
 <body>
@@ -109,120 +468,211 @@ $destinos_submenu = [
         </div>
     </div>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
+    <!-- NAVBAR HEADER OVERLAY -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
-            <a href="https://www.perusafejourneysgroup.com/">
-                <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Logo" class="logo-img-header">
+            <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
+                <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
-            <button class="navbar-toggler text-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-                <i class="bi bi-list fs-1 text-dark"></i>
+
+            <button class="navbar-toggler text-white border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <i class="bi bi-list fs-1 text-white"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navContent">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a></li>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a>
+                    </li>
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" id="destinosDropdown" role="button" data-bs-toggle="dropdown">
                             DESTINOS
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-custom">
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="destinosDropdown">
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom text-warning" href="https://www.perusafejourneysgroup.com/destinos/">
+                                    VER TODOS LOS DESTINOS
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider my-1 border-secondary opacity-25"></li>
                             <?php foreach($destinos_submenu as $sub_item): ?>
                                 <li>
                                     <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
-                                        <span><?php echo $sub_item['name']; ?></span>
+                                        <?php echo $sub_item['name']; ?>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/experiencias/">EXPERIENCIAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/programas/">PROGRAMAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/nosotros/">NOSOTROS</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="https://www.perusafejourneysgroup.com/contacto/">CONTACTO</a></li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/experiencias/">EXPERIENCIAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/programas/">PROGRAMAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/nosotros/">NOSOTROS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://www.perusafejourneysgroup.com/contacto/">CONTACTO</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- BANNER -->
+    <!-- BANNER HEADER -->
     <section class="page-header-banner">
         <div class="container-fluid px-3 px-lg-5">
-            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-2">ESTAMOS LISTOS PARA ATENDERTE</span>
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">ESTAMOS LISTOS PARA ATENDERTE</span>
             <h1 class="display-5 fw-extrabold text-white">Contáctanos</h1>
-            <p class="fs-6 text-light max-w-700 mx-auto">Comunícate directamente con nuestros especialistas locales antes, durante y después de tu experiencia.</p>
+            <p class="fs-6 text-light max-w-700 mx-auto mb-0">Comunícate directamente con nuestros especialistas locales antes, durante y después de tu experiencia.</p>
         </div>
     </section>
 
-    <!-- FORMULARIO & DIRECCIONES -->
-    <section class="py-4">
+    <!-- SECCIÓN DE CONTACTO AMIGABLE & FORMULARIO -->
+    <section class="py-5">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="row g-4">
+            <div class="row g-5 align-items-start">
+
+                <!-- TARJETAS DE LÍNEAS DIRECTAS DE ATENCIÓN -->
                 <div class="col-lg-5">
-                    <div class="p-4 rounded-4 bg-light border">
-                        <h3 class="fs-5 fw-bold mb-3">Líneas Directas de Atención</h3>
+                    <div class="contact-info-card">
+                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">CANALES OFICIALES</span>
+                        <h2 class="fs-3 fw-extrabold text-dark mb-4">Líneas Directas de Atención</h2>
 
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <i class="bi bi-telephone-fill fs-3 text-warning"></i>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="contact-icon-wrapper">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
                             <div>
-                                <strong class="d-block small text-muted">Área de Ventas:</strong>
-                                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="text-dark fs-6 fw-bold text-decoration-none"><?php echo $phones['ventas']['number']; ?></a>
+                                <strong class="d-block small text-secondary text-uppercase fw-bold">Área de Ventas</strong>
+                                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="text-dark fs-5 fw-bold text-decoration-none me-2"><?php echo $phones['ventas']['number']; ?></a>
+                                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" target="_blank" class="badge bg-success text-white text-decoration-none px-2 py-1 rounded-pill small"><i class="bi bi-whatsapp"></i> WhatsApp</a>
                             </div>
                         </div>
 
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <i class="bi bi-gear-fill fs-3 text-warning"></i>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="contact-icon-wrapper">
+                                <i class="bi bi-gear-fill"></i>
+                            </div>
                             <div>
-                                <strong class="d-block small text-muted">Área de Operaciones:</strong>
-                                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="text-dark fs-6 fw-bold text-decoration-none"><?php echo $phones['operaciones']['number']; ?></a>
+                                <strong class="d-block small text-secondary text-uppercase fw-bold">Área de Operaciones</strong>
+                                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="text-dark fs-5 fw-bold text-decoration-none me-2"><?php echo $phones['operaciones']['number']; ?></a>
+                                <a href="https://wa.me/<?php echo $phones['operaciones']['clean']; ?>" target="_blank" class="badge bg-success text-white text-decoration-none px-2 py-1 rounded-pill small"><i class="bi bi-whatsapp"></i> WhatsApp</a>
                             </div>
                         </div>
 
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <i class="bi bi-shield-check fs-3 text-warning"></i>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="contact-icon-wrapper">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
                             <div>
-                                <strong class="d-block small text-muted">Atención de Calidad 24/7:</strong>
-                                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="text-dark fs-6 fw-bold text-decoration-none"><?php echo $phones['calidad']['number']; ?></a>
+                                <strong class="d-block small text-secondary text-uppercase fw-bold">Atención de Calidad 24/7</strong>
+                                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="text-dark fs-5 fw-bold text-decoration-none me-2"><?php echo $phones['calidad']['number']; ?></a>
+                                <a href="https://wa.me/<?php echo $phones['calidad']['clean']; ?>" target="_blank" class="badge bg-success text-white text-decoration-none px-2 py-1 rounded-pill small"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="contact-icon-wrapper">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <div>
+                                <strong class="d-block small text-secondary text-uppercase fw-bold">Correo Electrónico</strong>
+                                <a href="mailto:<?php echo $email_address; ?>" class="text-dark fs-6 fw-bold text-decoration-none"><?php echo $email_address; ?></a>
                             </div>
                         </div>
 
                         <div class="d-flex align-items-center gap-3">
-                            <i class="bi bi-envelope-fill fs-3 text-warning"></i>
+                            <div class="contact-icon-wrapper">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
                             <div>
-                                <strong class="d-block small text-muted">Correo Electrónico:</strong>
-                                <a href="mailto:<?php echo $email_address; ?>" class="text-dark fs-6 fw-bold text-decoration-none"><?php echo $email_address; ?></a>
+                                <strong class="d-block small text-secondary text-uppercase fw-bold">Oficina Central</strong>
+                                <span class="text-dark fs-6 fw-bold">Plaza de Armas del Cusco, Cusco – Perú</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- FORMULARIO ATRACTIVO -->
                 <div class="col-lg-7">
-                    <div class="p-4 rounded-4 border">
-                        <h3 class="fs-5 fw-bold mb-3">Envíanos un Mensaje</h3>
-                        <form action="#" method="POST">
+                    <div class="contact-form-card">
+                        <div class="mb-4">
+                            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">RESPUESTA RÁPIDA</span>
+                            <h2 class="fs-2 fw-extrabold text-white mb-2">Envíanos un Mensaje Directo</h2>
+                            <p class="fs-6 text-light opacity-90 mb-0">Escríbenos tus dudas, fechas o destinos preferidos. Recibirás respuesta directa a tu correo.</p>
+                        </div>
+
+                        <?php if ($form_status): ?>
+                            <div class="alert alert-<?php echo $form_status; ?> alert-dismissible fade show rounded-3 mb-4" role="alert">
+                                <i class="bi bi-info-circle-fill me-2"></i> <?php echo $form_msg; ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php endif; ?>
+
+                        <form action="page-contacto.php" method="POST">
+                            <input type="hidden" name="action" value="send_contact">
+                            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold small">Nombre Completo</label>
-                                    <input type="text" class="form-control" placeholder="Ej: Maria García" required>
+                                    <label for="nombre" class="form-label-custom">Nombre Completo *</label>
+                                    <input type="text" class="form-control form-control-custom" id="nombre" name="nombre" placeholder="Ej: María García" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold small">Correo Electrónico</label>
-                                    <input type="email" class="form-control" placeholder="nombre@correo.com" required>
+                                    <label for="email" class="form-label-custom">Correo Electrónico *</label>
+                                    <input type="email" class="form-control form-control-custom" id="email" name="email" placeholder="nombre@correo.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="telefono" class="form-label-custom">Teléfono / WhatsApp</label>
+                                    <input type="tel" class="form-control form-control-custom" id="telefono" name="telefono" placeholder="+51 900 000 000">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="asunto" class="form-label-custom">Destino / Asunto</label>
+                                    <input type="text" class="form-control form-control-custom" id="asunto" name="asunto" placeholder="Ej: Tour Machu Picchu 3D/2N">
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label fw-bold small">Teléfono / WhatsApp</label>
-                                    <input type="tel" class="form-control" placeholder="+51 900 000 000" required>
+                                    <label for="mensaje" class="form-label-custom">Detalles de tu Consulta *</label>
+                                    <textarea class="form-control form-control-custom" id="mensaje" name="mensaje" rows="4" placeholder="Indica fechas estimadas, número de personas o cualquier preferencia especial..." required></textarea>
                                 </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-bold small">Mensaje o Tour de Interés</label>
-                                    <textarea class="form-control" rows="3" placeholder="¿Qué lugar te gustaría visitar y en qué fechas?" required></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-reserva-llama w-100 justify-content-center">Enviar Consulta</button>
+                                <div class="col-12 mt-4 text-end">
+                                    <button type="submit" class="btn btn-submit-contact shadow">
+                                        <i class="bi bi-send-fill me-2"></i> Enviar Mensaje
+                                    </button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE UBICACIÓN GOOGLE MAPS - PLAZA DE ARMAS DEL CUSCO -->
+    <section class="py-5 bg-light border-top border-bottom">
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="text-center mb-4">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">UBICACIÓN ESTRATÉGICA</span>
+                <h2 class="display-6 fw-extrabold text-dark mb-2">Encuéntranos en el Corazón del Cusco</h2>
+                <p class="fs-6 text-secondary max-w-700 mx-auto mb-0">Visítanos a pocos pasos de la emblemática Plaza de Armas del Cusco, centro histórico e Inca del Perú.</p>
+            </div>
+
+            <div class="map-wrapper mx-auto max-w-1200">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.330419266782!2d-71.98108422394336!3d-13.516748487756184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd673f324ad77%3A0x6b803f2780775d5f!2sPlaza%20de%20Armas%20de%20Cusco!5e0!3m2!1ses-419!2spe!4v1700000000000!5m2!1ses-419!2spe"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación Plaza de Armas del Cusco - Perú Safe Journeys">
+                </iframe>
             </div>
         </div>
     </section>
