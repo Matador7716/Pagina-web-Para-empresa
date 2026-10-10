@@ -292,27 +292,47 @@ $destinos_submenu = [
             border-bottom: 3px solid var(--color-naranja-journey);
         }
 
-        /* TARJETAS DE CONTACTO & MAPA */
+        /* TARJETAS DE CONTACTO DE IGUAL TAMAÑO & MAPA */
         .contact-info-card {
             background: #FFFFFF;
-            border-radius: 20px;
+            border-radius: 24px;
             border: 1px solid var(--color-gris-border);
-            border-top: 4px solid var(--color-naranja-journey);
-            padding: 2.2rem 1.8rem;
+            border-top: 5px solid var(--color-naranja-journey);
+            padding: 2.5rem 2rem;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-item-box {
+            background: #F8FAFC;
+            border-radius: 16px;
+            border: 1px solid var(--color-gris-border);
+            padding: 1.1rem 1.2rem;
+            transition: all 0.28s ease;
+            height: 84px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-item-box:hover {
+            border-color: var(--color-naranja-journey);
+            background: #FFFFFF;
+            transform: translateY(-2px);
         }
 
         .contact-icon-wrapper {
-            width: 54px;
-            height: 54px;
-            border-radius: 16px;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
             background: linear-gradient(135deg, rgba(233, 77, 0, 0.12) 0%, rgba(233, 77, 0, 0.04) 100%);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            border: 1px solid rgba(233, 77, 0, 0.2);
+            font-size: 1.35rem;
+            border: 1px solid rgba(233, 77, 0, 0.25);
             flex-shrink: 0;
         }
 
@@ -323,6 +343,10 @@ $destinos_submenu = [
             color: #FFFFFF;
             border: 1px solid rgba(233, 77, 0, 0.3);
             border-top: 5px solid var(--color-naranja-journey);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .form-label-custom {
@@ -537,62 +561,82 @@ $destinos_submenu = [
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-5 align-items-start">
 
-                <!-- TARJETAS DE LÍNEAS DIRECTAS DE ATENCIÓN -->
+                <!-- TARJETAS DE LÍNEAS DIRECTAS DE ATENCIÓN DE IGUAL TAMAÑO -->
                 <div class="col-lg-5">
                     <div class="contact-info-card">
-                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">CANALES OFICIALES</span>
-                        <h2 class="fs-3 fw-extrabold text-dark mb-4">Líneas Directas de Atención</h2>
-
-                        <div class="d-flex align-items-center gap-3 mb-4">
-                            <div class="contact-icon-wrapper">
-                                <i class="bi bi-telephone-fill"></i>
-                            </div>
-                            <div>
-                                <strong class="d-block small text-secondary text-uppercase fw-bold">Área de Ventas</strong>
-                                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="text-dark fs-5 fw-bold text-decoration-none me-2"><?php echo $phones['ventas']['number']; ?></a>
-                                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" target="_blank" class="badge bg-success text-white text-decoration-none px-2 py-1 rounded-pill small"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-                            </div>
+                        <div>
+                            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">CANALES OFICIALES</span>
+                            <h2 class="fs-3 fw-extrabold text-dark mb-4">Líneas Directas de Atención</h2>
                         </div>
 
-                        <div class="d-flex align-items-center gap-3 mb-4">
-                            <div class="contact-icon-wrapper">
-                                <i class="bi bi-gear-fill"></i>
+                        <div class="d-flex flex-column gap-3">
+                            <div class="contact-item-box">
+                                <div class="d-flex align-items-center gap-3 w-100">
+                                    <div class="contact-icon-wrapper">
+                                        <i class="bi bi-telephone-fill"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <strong class="d-block text-secondary text-uppercase fw-bold" style="font-size: 0.75rem;">Área de Ventas</strong>
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-1">
+                                            <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="text-dark fw-bold text-decoration-none" style="font-size: 0.95rem;"><?php echo $phones['ventas']['number']; ?></a>
+                                            <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" target="_blank" class="badge bg-success text-white text-decoration-none px-2 py-1 rounded-pill" style="font-size: 0.72rem;"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <strong class="d-block small text-secondary text-uppercase fw-bold">Área de Operaciones</strong>
-                                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="text-dark fs-5 fw-bold text-decoration-none me-2"><?php echo $phones['operaciones']['number']; ?></a>
-                                <a href="https://wa.me/<?php echo $phones['operaciones']['clean']; ?>" target="_blank" class="badge bg-success text-white text-decoration-none px-2 py-1 rounded-pill small"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
 
-                        <div class="d-flex align-items-center gap-3 mb-4">
-                            <div class="contact-icon-wrapper">
-                                <i class="bi bi-shield-check"></i>
+                            <div class="contact-item-box">
+                                <div class="d-flex align-items-center gap-3 w-100">
+                                    <div class="contact-icon-wrapper">
+                                        <i class="bi bi-gear-fill"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <strong class="d-block text-secondary text-uppercase fw-bold" style="font-size: 0.75rem;">Área de Operaciones</strong>
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-1">
+                                            <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="text-dark fw-bold text-decoration-none" style="font-size: 0.95rem;"><?php echo $phones['operaciones']['number']; ?></a>
+                                            <a href="https://wa.me/<?php echo $phones['operaciones']['clean']; ?>" target="_blank" class="badge bg-success text-white text-decoration-none px-2 py-1 rounded-pill" style="font-size: 0.72rem;"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <strong class="d-block small text-secondary text-uppercase fw-bold">Atención de Calidad 24/7</strong>
-                                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="text-dark fs-5 fw-bold text-decoration-none me-2"><?php echo $phones['calidad']['number']; ?></a>
-                                <a href="https://wa.me/<?php echo $phones['calidad']['clean']; ?>" target="_blank" class="badge bg-success text-white text-decoration-none px-2 py-1 rounded-pill small"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
 
-                        <div class="d-flex align-items-center gap-3 mb-4">
-                            <div class="contact-icon-wrapper">
-                                <i class="bi bi-envelope-fill"></i>
+                            <div class="contact-item-box">
+                                <div class="d-flex align-items-center gap-3 w-100">
+                                    <div class="contact-icon-wrapper">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <strong class="d-block text-secondary text-uppercase fw-bold" style="font-size: 0.75rem;">Atención de Calidad 24/7</strong>
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-1">
+                                            <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="text-dark fw-bold text-decoration-none" style="font-size: 0.95rem;"><?php echo $phones['calidad']['number']; ?></a>
+                                            <a href="https://wa.me/<?php echo $phones['calidad']['clean']; ?>" target="_blank" class="badge bg-success text-white text-decoration-none px-2 py-1 rounded-pill" style="font-size: 0.72rem;"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <strong class="d-block small text-secondary text-uppercase fw-bold">Correo Electrónico</strong>
-                                <a href="mailto:<?php echo $email_address; ?>" class="text-dark fs-6 fw-bold text-decoration-none"><?php echo $email_address; ?></a>
-                            </div>
-                        </div>
 
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="contact-icon-wrapper">
-                                <i class="bi bi-geo-alt-fill"></i>
+                            <div class="contact-item-box">
+                                <div class="d-flex align-items-center gap-3 w-100">
+                                    <div class="contact-icon-wrapper">
+                                        <i class="bi bi-envelope-fill"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <strong class="d-block text-secondary text-uppercase fw-bold" style="font-size: 0.75rem;">Correo Electrónico</strong>
+                                        <a href="mailto:<?php echo $email_address; ?>" class="text-dark fw-bold text-decoration-none text-truncate d-block" style="font-size: 0.88rem;"><?php echo $email_address; ?></a>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <strong class="d-block small text-secondary text-uppercase fw-bold">Oficina Central</strong>
-                                <span class="text-dark fs-6 fw-bold">Plaza de Armas del Cusco, Cusco – Perú</span>
+
+                            <div class="contact-item-box">
+                                <div class="d-flex align-items-center gap-3 w-100">
+                                    <div class="contact-icon-wrapper">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <strong class="d-block text-secondary text-uppercase fw-bold" style="font-size: 0.75rem;">Oficina Central</strong>
+                                        <span class="text-dark fw-bold d-block" style="font-size: 0.88rem;">Plaza de Armas del Cusco, Perú</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
