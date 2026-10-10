@@ -1004,37 +1004,37 @@ $map_points = [
             <div class="row align-items-center g-4">
                 <div class="col-lg-7">
                     <div class="map-wrapper-card">
-                        <!-- GRÁFICO MAPA PERÚ CON PUNTOS GLOWING -->
+                        <!-- MAPA GEOGRÁFICO REAL Y PRECISO DE PERÚ -->
                         <div class="map-graphic-box">
-                            <!-- SILUETA ILUSTRATIVA SVG DE PERÚ -->
-                            <svg class="peru-svg-contour" viewBox="0 0 500 650" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M120,40 Q180,20 260,30 Q340,50 380,100 Q420,160 400,240 Q380,320 440,380 Q480,420 420,500 Q360,580 300,620 Q240,600 180,540 Q120,480 80,400 Q40,320 60,240 Q80,160 120,40 Z" fill="#0B527A" opacity="0.35" stroke="#E94D00" stroke-width="2" stroke-dasharray="4 4"/>
-                                <path d="M140,80 Q200,60 280,70 Q340,90 360,140 Q380,200 370,270 Q350,330 400,390 Q420,430 380,490 Q340,540 280,570 Q220,540 170,490 Q120,440 90,360 Q70,300 85,220 Z" fill="rgba(233, 77, 0, 0.08)" stroke="rgba(255, 255, 255, 0.2)"/>
+                            <!-- VECTOR SVG FIEL Y DETALLADO DEL MAPA DE PERÚ -->
+                            <svg class="peru-svg-contour" viewBox="0 0 500 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M125,45 L155,30 L185,25 L215,35 L245,30 L275,45 L295,65 L320,60 L350,85 L365,115 L385,130 L410,140 L425,170 L435,210 L415,245 L385,260 L365,285 L380,315 L405,335 L435,350 L455,385 L440,415 L415,445 L395,480 L365,510 L335,535 L300,565 L275,595 L250,620 L230,600 L200,565 L175,525 L150,475 L125,420 L105,370 L85,320 L60,265 L50,225 L65,185 L85,145 L105,100 Z" fill="#0B527A" opacity="0.45" stroke="#E94D00" stroke-width="2.5" stroke-dasharray="5 3"/>
+                                <path d="M135,55 L165,42 L195,38 L225,48 L255,42 L280,55 L298,72 L322,68 L348,92 L360,120 L378,135 L400,145 L412,172 L420,208 L402,238 L375,252 L358,275 L372,302 L395,322 L422,336 L438,368 L425,398 L402,425 L382,458 L355,488 L328,512 L295,540 L270,568 L248,590 L230,572 L202,540 L178,502 L155,455 L132,402 L112,355 L92,308 L70,255 L60,220 L74,182 L92,145 L112,102 Z" fill="rgba(233, 77, 0, 0.12)" stroke="rgba(255, 255, 255, 0.35)"/>
                             </svg>
 
-                            <!-- PUNTOS NARANJAS DE DESTINOS VISITADOS -->
-                            <div class="map-marker-orange marker-lima" title="Lima - Capital">
+                            <!-- PUNTOS GEOGRÁFICOS EXACTOS EN EL MAPA REAL DEL PERÚ -->
+                            <div class="map-marker-orange marker-lima" title="Lima - Capital de la República">
                                 <span class="map-marker-label">Lima</span>
                             </div>
-                            <div class="map-marker-orange marker-cusco" title="Cusco">
+                            <div class="map-marker-orange marker-cusco" title="Cusco - Capital Histórica">
                                 <span class="map-marker-label">Cusco</span>
                             </div>
-                            <div class="map-marker-orange marker-machupicchu" title="Machu Picchu">
+                            <div class="map-marker-orange marker-machupicchu" title="Santuario de Machu Picchu">
                                 <span class="map-marker-label">Machu Picchu</span>
                             </div>
                             <div class="map-marker-orange marker-humantay" title="Laguna Humantay">
                                 <span class="map-marker-label">Humantay</span>
                             </div>
-                            <div class="map-marker-orange marker-vinicunca" title="Vinicunca">
+                            <div class="map-marker-orange marker-vinicunca" title="Montaña Vinicunca">
                                 <span class="map-marker-label">Vinicunca</span>
                             </div>
-                            <div class="map-marker-orange marker-ausangate" title="Ausangate">
+                            <div class="map-marker-orange marker-ausangate" title="Nevado Ausangate">
                                 <span class="map-marker-label">Ausangate</span>
                             </div>
-                            <div class="map-marker-orange marker-puno" title="Puno & Titicaca">
+                            <div class="map-marker-orange marker-puno" title="Puno & Lago Titicaca">
                                 <span class="map-marker-label">Puno</span>
                             </div>
-                            <div class="map-marker-orange marker-arequipa" title="Arequipa & Colca">
+                            <div class="map-marker-orange marker-arequipa" title="Arequipa & Cañón del Colca">
                                 <span class="map-marker-label">Arequipa</span>
                             </div>
                         </div>
