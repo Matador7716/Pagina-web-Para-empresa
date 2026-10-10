@@ -1,8 +1,9 @@
 <?php
 // page-nosotros.php - Perú Safe Journeys
 $company_name = "Perú Safe Journeys";
-$company_tagline = "Nuestra Agencia y Filosofía";
+$company_tagline = "Travel Agency";
 
+// Teléfonos de contacto por área
 $phones = [
     'ventas' => ['number' => '+51 931 352 810', 'clean' => '51931352810', 'label' => 'Ventas'],
     'operaciones' => ['number' => '+51 930 823 110', 'clean' => '51930823110', 'label' => 'Operaciones'],
@@ -12,6 +13,7 @@ $phones = [
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
 
+// Submenú de Destinos
 $destinos_submenu = [
     ['name' => '7 LAGUNAS DEL AUSANGATE', 'url' => 'https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/'],
     ['name' => 'ATV MONTAÑA DE COLORES FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/'],
@@ -24,6 +26,51 @@ $destinos_submenu = [
     ['name' => 'VALLE SUR', 'url' => 'https://www.perusafejourneysgroup.com/destinos/valle-sur/'],
     ['name' => 'WAQRAPUKARA FD', 'url' => 'https://www.perusafejourneysgroup.com/destinos/waqrapukara-fd/']
 ];
+
+// Tabla de Personalidad de Marca
+$brand_personality_table = [
+    ['attribute' => 'Auténtica', 'feeling' => 'Perú real, cercano y con identidad.'],
+    ['attribute' => 'Segura', 'feeling' => 'Organización, respaldo y confianza.'],
+    ['attribute' => 'Premium', 'feeling' => 'Calidad, cuidado y sofisticación sin ostentación.'],
+    ['attribute' => 'Cercana', 'feeling' => 'Atención humana y personalizada.'],
+    ['attribute' => 'Aventurera', 'feeling' => 'Descubrimiento, emoción y exploración.'],
+    ['attribute' => 'Contemporánea', 'feeling' => 'Una marca peruana moderna y relevante.']
+];
+
+// Galería creativa de imágenes
+$about_gallery_images = [
+    [
+        'url' => 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
+        'title' => 'Santuario Histórico de Machu Picchu',
+        'subtitle' => 'Patrimonio de la Humanidad'
+    ],
+    [
+        'url' => 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80',
+        'title' => 'Montaña de Colores (Vinicunca)',
+        'subtitle' => 'Paisajes Andinos Únicos'
+    ],
+    [
+        'url' => 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+        'title' => 'Laguna Humantay',
+        'subtitle' => 'Aguas Turquesas y Glaciares'
+    ],
+    [
+        'url' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
+        'title' => 'Turismo Vivencial en Valle Sagrado',
+        'subtitle' => 'Comunidades & Tradición Ancestral'
+    ],
+    [
+        'url' => 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
+        'title' => 'Rutas de Aventura & ATVs',
+        'badge' => 'Adrenalina',
+        'subtitle' => 'Velocidad y Paisajes de Altura'
+    ],
+    [
+        'url' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+        'title' => 'Circuito Ausangate & 7 Lagunas',
+        'subtitle' => 'Glaciares & Naturaleza Virgen'
+    ]
+];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,22 +79,28 @@ $destinos_submenu = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros – <?php echo $company_name; ?></title>
 
+    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
     <style>
         :root {
             --color-naranja-journey: #E94D00;
+            --color-naranja-hover: #C74000;
             --color-blanco: #FFFFFF;
             --color-azul-peru-safe: #002238;
             --color-azul-andino: #0B527A;
+            --color-dorado-andino: #D9A441;
+            --color-tripadvisor-green: #00AA6C;
             --color-gris-claro: #F8FAFC;
             --color-texto-oscuro: #0F172A;
-            --color-texto-suave: #64748B;
+            --color-texto-suave: #475569;
             --color-gris-border: #E2E8F0;
         }
 
@@ -55,34 +108,427 @@ $destinos_submenu = [
             font-family: 'Poppins', sans-serif !important;
         }
 
-        body { font-family: 'Poppins', sans-serif; background-color: var(--color-blanco); color: var(--color-texto-oscuro); overflow-x: hidden; width: 100vw; margin: 0; padding: 0; }
+        body {
+            background-color: var(--color-blanco);
+            color: var(--color-texto-oscuro);
+            overflow-x: hidden;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
 
-        .top-bar { background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%); font-size: 0.82rem; border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding: 0.4rem 0; }
-        .topbar-phone-badge { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.78rem; color: #E2E8F0 !important; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+        /* TOP BAR */
+        .top-bar {
+            background: linear-gradient(90deg, #001220 0%, #002238 50%, #001220 100%);
+            font-size: 0.82rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.45rem 0;
+            z-index: 1050;
+            position: relative;
+        }
 
-        .topbar-social-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #CBD5E1 !important; font-size: 0.9rem; text-decoration: none; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .topbar-phone-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.28rem 0.82rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: #F1F5F9 !important;
+            text-decoration: none;
+            transition: all 0.28s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-        .topbar-btn-reserva { background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%); color: var(--color-blanco) !important; font-weight: 700; font-size: 0.78rem; border-radius: 50px; padding: 0.32rem 1.1rem; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; text-transform: uppercase; }
+        .topbar-phone-badge:hover {
+            background: var(--color-naranja-journey);
+            color: var(--color-blanco) !important;
+            border-color: var(--color-naranja-journey);
+        }
 
-        .navbar-custom { background: #FFFFFF; border-bottom: 2px solid var(--color-naranja-journey); padding: 0.35rem 0; }
-        .logo-img-header { height: 82px; object-fit: contain; }
-        .nav-link { color: var(--color-azul-peru-safe) !important; font-weight: 700; font-size: 0.88rem; padding: 0.55rem 1.1rem !important; text-transform: uppercase; }
-        .nav-link:hover, .nav-link.active { color: var(--color-naranja-journey) !important; }
+        .topbar-social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #CBD5E1 !important;
+            font-size: 0.9rem;
+            transition: all 0.28s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-        .dropdown-menu-custom { background: #FFFFFF !important; border: 1px solid var(--color-gris-border) !important; border-top: 3px solid var(--color-naranja-journey) !important; border-radius: 12px !important; min-width: 260px; }
-        .dropdown-item-custom { color: var(--color-texto-oscuro) !important; font-size: 0.82rem !important; font-weight: 700 !important; padding: 0.55rem 0.9rem !important; text-transform: uppercase; }
+        .topbar-social-icon:hover {
+            background: var(--color-naranja-journey);
+            color: var(--color-blanco) !important;
+            border-color: var(--color-naranja-journey);
+        }
 
-        .btn-reserva-llama { background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%); color: var(--color-blanco) !important; font-weight: 700; font-size: 0.88rem; border-radius: 50px; padding: 0.6rem 1.35rem; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; text-transform: uppercase; box-shadow: none !important; }
+        .topbar-btn-reserva {
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: var(--color-blanco) !important;
+            font-weight: 700;
+            font-size: 0.78rem;
+            border-radius: 50px;
+            padding: 0.35rem 1.15rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all 0.28s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
 
-        .page-header-banner { background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%); padding: 3.5rem 0 2.8rem; color: var(--color-blanco); text-align: center; border-bottom: 3px solid var(--color-naranja-journey); }
+        .topbar-btn-reserva:hover {
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            transform: translateY(-1px);
+        }
 
-        .footer-custom { background: #001220; border-top: 2px solid var(--color-naranja-journey); padding-top: 3.5rem; padding-bottom: 1.5rem; color: #CBD5E1; width: 100vw; }
-        .footer-contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 0.9rem; color: #E2E8F0; }
-        .footer-contact-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(233, 77, 0, 0.15); color: var(--color-naranja-journey); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; border: 1px solid rgba(233, 77, 0, 0.25); flex-shrink: 0; }
+        /* NAVBAR HEADER */
+        .navbar-custom {
+            background: rgba(0, 18, 32, 0.96);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1040;
+            transition: all 0.35s ease;
+            padding: 0.4rem 0;
+            border-bottom: 2px solid var(--color-naranja-journey);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+        }
 
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; width: 58px; height: 58px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1050; text-decoration: none; box-shadow: none !important; }
+        .logo-img-header {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+        }
 
-        .llama-svg { width: 16px; height: 16px; fill: currentColor; }
+        .navbar-brand-logo:hover .logo-img-header {
+            transform: scale(1.04);
+        }
+
+        .nav-link {
+            color: #FFFFFF !important;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 0.65rem 1.2rem !important;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            transition: color 0.25s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0%;
+            height: 3px;
+            background: var(--color-naranja-journey);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 80%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--color-naranja-journey) !important;
+        }
+
+        .dropdown-menu-custom {
+            background: rgba(0, 18, 32, 0.96) !important;
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(233, 77, 0, 0.3) !important;
+            border-top: 3px solid var(--color-naranja-journey) !important;
+            border-radius: 14px !important;
+            padding: 0.6rem 0.4rem !important;
+            min-width: 270px;
+            margin-top: 0.4rem !important;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        @media (min-width: 992px) {
+            .nav-item.dropdown:hover .dropdown-menu-custom {
+                display: block;
+            }
+        }
+
+        .dropdown-item-custom {
+            color: #F1F5F9 !important;
+            font-size: 0.83rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.4px;
+            padding: 0.6rem 1rem !important;
+            border-radius: 8px;
+            transition: all 0.25s ease !important;
+            text-transform: uppercase;
+        }
+
+        .dropdown-item-custom:hover {
+            background-color: var(--color-naranja-journey) !important;
+            color: #FFFFFF !important;
+            transform: translateX(5px);
+        }
+
+        .llama-svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* BANNER HEADER */
+        .page-header-banner {
+            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
+            padding: 3.8rem 0 3.2rem;
+            color: var(--color-blanco);
+            text-align: center;
+            border-bottom: 3px solid var(--color-naranja-journey);
+        }
+
+        .section-badge-clean {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(233, 77, 0, 0.08);
+            color: var(--color-naranja-journey);
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 0.38rem 1.1rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 0.6rem;
+            border: 1px solid rgba(233, 77, 0, 0.22);
+        }
+
+        .section-title {
+            font-size: 2.35rem;
+            font-weight: 800;
+            color: var(--color-azul-peru-safe);
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.4px;
+        }
+
+        .section-lead-concept {
+            font-size: 1.08rem;
+            color: var(--color-texto-suave);
+            max-width: 820px;
+            margin: 0.3rem auto 1.4rem auto;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* TABLA DE PERSONALIDAD DE MARCA ELEGANTE Y MODERNA */
+        .brand-table-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid var(--color-gris-border);
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 34, 56, 0.05);
+        }
+
+        .custom-brand-table {
+            margin-bottom: 0;
+            width: 100%;
+        }
+
+        .custom-brand-table thead {
+            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
+            color: #FFFFFF;
+        }
+
+        .custom-brand-table th {
+            padding: 1rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            border: none;
+        }
+
+        .custom-brand-table td {
+            padding: 1.1rem 1.5rem;
+            font-size: 0.95rem;
+            vertical-align: middle;
+            border-bottom: 1px solid var(--color-gris-border);
+        }
+
+        .custom-brand-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .custom-brand-table tr:hover {
+            background-color: rgba(233, 77, 0, 0.03);
+        }
+
+        .attribute-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+
+        /* GALERÍA CREATIVA EN EL PIE DE DATOS */
+        .creative-gallery-section {
+            background-color: #F8FAFC;
+            padding: 3.5rem 0;
+            border-top: 1px solid var(--color-gris-border);
+        }
+
+        .creative-gallery-item {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            height: 260px;
+            border: 1px solid var(--color-gris-border);
+            transition: all 0.35s ease;
+        }
+
+        .creative-gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .creative-gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .creative-gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 18, 32, 0.92) 100%);
+            padding: 1.2rem;
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+        }
+
+        .creative-gallery-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 0.2rem;
+        }
+
+        .creative-gallery-subtitle {
+            font-size: 0.78rem;
+            color: var(--color-dorado-andino);
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        /* FOOTER */
+        .footer-custom {
+            background: #001220;
+            border-top: 2px solid var(--color-naranja-journey);
+            padding-top: 3.5rem;
+            padding-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #CBD5E1;
+            width: 100vw;
+        }
+
+        .footer-logo {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--color-blanco);
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .footer-logo span {
+            color: var(--color-naranja-journey);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.85rem;
+            color: #E2E8F0;
+        }
+
+        .footer-contact-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(233, 77, 0, 0.15);
+            color: var(--color-naranja-journey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            border: 1px solid rgba(233, 77, 0, 0.25);
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 2.5rem;
+            padding-top: 1.4rem;
+            text-align: center;
+            color: #94A3B8;
+            font-size: 0.85rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 58px;
+            height: 58px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 28px;
+            z-index: 1050;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .whatsapp-float:hover {
+            color: #FFF;
+            background-color: #20BA5A;
+            transform: scale(1.08);
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-custom { position: relative; top: 0; background: #FFFFFF; }
+            .nav-link { color: var(--color-azul-peru-safe) !important; text-shadow: none; }
+            .logo-img-header { height: 68px; }
+        }
+
+        @media (max-width: 575.98px) {
+            .logo-img-header { height: 54px; }
+        }
     </style>
 </head>
 <body>
@@ -91,116 +537,204 @@ $destinos_submenu = [
     <div class="top-bar">
         <div class="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="d-flex align-items-center gap-2 flex-wrap">
-                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-telephone-fill text-warning"></i> Ventas: <?php echo $phones['ventas']['number']; ?></a>
-                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-gear-fill text-warning"></i> Operaciones: <?php echo $phones['operaciones']['number']; ?></a>
-                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge"><i class="bi bi-shield-check text-warning"></i> Calidad: <?php echo $phones['calidad']['number']; ?></a>
+                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-telephone-fill text-warning"></i>
+                    <span><strong><?php echo $phones['ventas']['label']; ?>:</strong> <?php echo $phones['ventas']['number']; ?></span>
+                </a>
+                <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-gear-fill text-warning"></i>
+                    <span><strong><?php echo $phones['operaciones']['label']; ?>:</strong> <?php echo $phones['operaciones']['number']; ?></span>
+                </a>
+                <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="topbar-phone-badge">
+                    <i class="bi bi-shield-check text-warning"></i>
+                    <span><strong><?php echo $phones['calidad']['label']; ?>:</strong> <?php echo $phones['calidad']['number']; ?></span>
+                </a>
             </div>
+
             <div class="d-flex align-items-center gap-3">
                 <a href="https://facebook.com" target="_blank" class="topbar-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
                 <a href="https://instagram.com" target="_blank" class="topbar-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
                 <a href="https://tiktok.com" target="_blank" class="topbar-social-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
                 <a href="https://youtube.com" target="_blank" class="topbar-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
-                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje" target="_blank" class="topbar-btn-reserva">
-                    <svg class="llama-svg" viewBox="0 0 512 512"><path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/></svg>
+
+                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20un%20viaje%20con%20Per%C3%BA%20Safe%20Journeys" target="_blank" class="topbar-btn-reserva">
+                    <svg class="llama-svg" viewBox="0 0 512 512">
+                        <path d="M224 96c0-26.5 21.5-48 48-48s48 21.5 48 48c0 14.7-6.6 27.8-17 36.7 18.2 16.5 29 40 29 65.3v24h16c35.3 0 64 28.7 64 64v16c0 17.7-14.3 32-32 32h-16v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-80h-32v80c0 17.7-14.3 32-32 32h-16c-17.7 0-32-14.3-32-32v-96c0-44.2 35.8-80 80-80v-24c0-13.3-5.3-25.3-14-34.1-10.4-10.5-17-24.8-17-40.6zM272 80c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z"/>
+                    </svg>
                     <span>Reserva tu Viaje</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
+    <!-- NAVBAR HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid px-3 px-lg-5">
-            <a href="https://www.perusafejourneysgroup.com/">
-                <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Logo" class="logo-img-header">
+            <a class="navbar-brand-logo" href="https://www.perusafejourneysgroup.com/">
+                <img src="https://www.perusafejourneysgroup.com/wp-content/uploads/2026/10/Diseno-sin-titulo.png" alt="Perú Safe Journeys Logo" class="logo-img-header">
             </a>
-            <button class="navbar-toggler text-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-                <i class="bi bi-list fs-1 text-dark"></i>
+
+            <button class="navbar-toggler text-white border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <i class="bi bi-list fs-1 text-white"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navContent">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a></li>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/">INICIO</a>
+                    </li>
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://www.perusafejourneysgroup.com/destinos/" id="destinosDropdown" role="button" data-bs-toggle="dropdown">
                             DESTINOS
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-custom">
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="destinosDropdown">
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom text-warning" href="https://www.perusafejourneysgroup.com/destinos/">
+                                    VER TODOS LOS DESTINOS
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider my-1 border-secondary opacity-25"></li>
                             <?php foreach($destinos_submenu as $sub_item): ?>
                                 <li>
                                     <a class="dropdown-item dropdown-item-custom" href="<?php echo $sub_item['url']; ?>">
-                                        <span><?php echo $sub_item['name']; ?></span>
+                                        <?php echo $sub_item['name']; ?>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/experiencias/">EXPERIENCIAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/programas/">PROGRAMAS</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="https://www.perusafejourneysgroup.com/nosotros/">NOSOTROS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.perusafejourneysgroup.com/contacto/">CONTACTO</a></li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/experiencias/">EXPERIENCIAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/programas/">PROGRAMAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://www.perusafejourneysgroup.com/nosotros/">NOSOTROS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.perusafejourneysgroup.com/contacto/">CONTACTO</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- BANNER -->
+    <!-- BANNER HEADER -->
     <section class="page-header-banner">
         <div class="container-fluid px-3 px-lg-5">
-            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-2">TU EQUIPO EN EL PERÚ</span>
-            <h1 class="display-5 fw-extrabold text-white">Sobre Perú Safe Journeys</h1>
-            <p class="fs-6 text-light max-w-700 mx-auto">Especialistas locales comprometidos con tu seguridad, confort y una inmersión cultural genuina.</p>
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">ESPECIALISTAS LOCALES EN PERÚ</span>
+            <h1 class="display-5 fw-extrabold text-white">Nuestra Identidad & Esencia</h1>
+            <p class="fs-6 text-light max-w-700 mx-auto mb-0">Creamos viajes que van más allá del turismo convencional, conectando almas con la autenticidad del Perú.</p>
         </div>
     </section>
 
-    <!-- SOBRE NOSOTROS DETALLE COMPLETO -->
-    <section class="py-4">
+    <!-- SOBRE PERÚ SAFE JOURNEY - CONCEPTOS ENRIQUECIDOS -->
+    <section class="py-5">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="row align-items-center g-4 mb-5">
-                <div class="col-lg-6">
-                    <h2 class="fs-3 fw-bold text-dark mb-3">Tu Camino Hacia un Perú Auténtico</h2>
-                    <p class="text-secondary small" style="line-height: 1.8;">
-                        En <strong>Perú Safe Journeys – Travel Agency</strong> creamos viajes que van más allá del turismo convencional. Diseñamos experiencias a tu medida para descubrir el Perú de manera segura, cómoda y auténtica, conectándote con sus pueblos, culturas, historia, naturaleza y tradiciones.
+            <div class="row align-items-center g-5 mb-5">
+                <div class="col-lg-7">
+                    <span class="section-badge-clean">CONCEPTO DE MARCA</span>
+                    <h2 class="section-title mb-3">Perú Safe Journeys: Tu camino hacia un Perú auténtico</h2>
+
+                    <p class="fs-6 text-dark fw-medium mb-3" style="line-height: 1.8;">
+                        <strong>Perú Safe Journeys – Travel Agency</strong> es una agencia especializada en crear experiencias auténticas, seguras y personalizadas por el Perú. Diseñamos cada viaje pensando en que nuestros viajeros no solo conozcan destinos, sino que vivan la esencia de cada lugar, conectando con nuestras culturas, tradiciones, historia, gastronomía y extraordinarios paisajes.
                     </p>
-                    <p class="text-secondary small" style="line-height: 1.8;">
-                        Con conocimiento local y atención personalizada, transformamos cada recorrido en una historia para recordar. Tú eliges cómo quieres vivir el Perú; nosotros nos encargamos de hacer del camino una experiencia segura y extraordinaria.
+                    <p class="text-secondary mb-3" style="line-height: 1.8;">
+                        Desde la majestuosidad de <strong>Cusco y Machu Picchu</strong>, pasando por el Valle Sagrado, los Andes y la Amazonía, hasta las costas del Pacífico, acompañamos a nuestros viajeros con atención personalizada, planificación profesional, seguridad y confort en cada etapa de su aventura.
+                    </p>
+                    <p class="text-secondary mb-0" style="line-height: 1.8;">
+                        Nuestro propósito es convertir cada viaje en una experiencia memorable, combinando la riqueza cultural del Perú con la confianza de viajar acompañado por especialistas locales.
                     </p>
                 </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Nosotros Perú Safe Journeys" class="img-fluid rounded-4 shadow-sm w-100">
+
+                <div class="col-lg-5">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Perú Safe Journeys" class="img-fluid rounded-4 shadow-lg w-100" style="border: 4px solid #FFFFFF;">
+                    </div>
                 </div>
             </div>
 
-            <div class="row g-4 text-center">
-                <div class="col-md-6">
-                    <div class="p-4 rounded-4 border bg-light h-100">
-                        <i class="bi bi-compass-fill fs-2 text-warning mb-2"></i>
-                        <h3 class="fs-5 fw-bold text-dark">Nuestra Misión</h3>
-                        <p class="text-secondary small mb-0">Diseñar e implementar experiencias turísticas memorables y seguras en todo el Perú, promoviendo el respeto cultural, el turismo sostenible y el máximo confort para nuestros clientes.</p>
-                    </div>
+            <!-- TABLA DE PERSONALIDAD DE MARCA -->
+            <div class="my-5">
+                <div class="text-center mb-4">
+                    <span class="section-badge-clean">IDENTIDAD & VALORES</span>
+                    <h2 class="section-title">Personalidad de Marca</h2>
+                    <p class="section-lead-concept">Los pilares emotivos y profesionales que definen cómo se siente viajar con Perú Safe Journeys.</p>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="p-4 rounded-4 border bg-light h-100">
-                        <i class="bi bi-eye-fill fs-2 text-warning mb-2"></i>
-                        <h3 class="fs-5 fw-bold text-dark">Nuestra Visión</h3>
-                        <p class="text-secondary small mb-0">Ser la agencia líder referente en Perú por la excelencia operativa, personalización de itineraries y compromiso inquebrantable con la satisfacción y seguridad del viajero.</p>
+                <div class="brand-table-card mx-auto max-w-900">
+                    <div class="table-responsive">
+                        <table class="table custom-brand-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 35%;">Atributo</th>
+                                    <th style="width: 65%;">Cómo debe sentirse</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach($brand_personality_table as $row): ?>
+                                    <tr>
+                                        <td>
+                                            <span class="attribute-badge"><?php echo $row['attribute']; ?></span>
+                                        </td>
+                                        <td class="fw-semibold text-dark">
+                                            <?php echo $row['feeling']; ?>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER CON ICONOS -->
-    <footer class="footer-custom">
+    <!-- GALERÍA CREATIVA EN EL PIE DE LOS DATOS -->
+    <section class="creative-gallery-section">
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="text-center mb-4">
+                <span class="section-badge-clean">INSPIRACIÓN VISUAL</span>
+                <h2 class="section-title">Descubre el Perú a Través de Nuestras Rutas</h2>
+                <p class="section-lead-concept">Un vistazo a los paisajes sobrecogedores y vivencias culturales que te esperan en cada uno de nuestros itinerarios.</p>
+            </div>
+
+            <div class="row g-4">
+                <?php foreach($about_gallery_images as $gImg): ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="creative-gallery-item">
+                            <img src="<?php echo $gImg['url']; ?>" alt="<?php echo $gImg['title']; ?>" loading="lazy">
+                            <div class="creative-gallery-overlay">
+                                <h4 class="creative-gallery-title"><?php echo $gImg['title']; ?></h4>
+                                <p class="creative-gallery-subtitle"><?php echo $gImg['subtitle']; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-custom" id="contacto">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-4 justify-content-between">
                 <div class="col-lg-4 col-md-6">
-                    <a href="https://www.perusafejourneysgroup.com/" class="fs-4 fw-extrabold text-white text-decoration-none">
-                        Perú Safe Journeys <span style="color: var(--color-naranja-journey);">| Viajes Perú</span>
+                    <a href="https://www.perusafejourneysgroup.com/" class="footer-logo">
+                        Perú Safe Journeys <span>| Viajes Perú</span>
                     </a>
-                    <p class="pe-lg-3 mt-2" style="color: #94A3B8;">
-                        Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas.
+                    <p class="pe-lg-3" style="color: #94A3B8;">
+                        Agencia de viajes especializada en experiencias auténticas, seguras y personalizadas. Conectamos viajeros con el corazón cultural del Perú.
                     </p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://facebook.com" target="_blank" class="topbar-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="topbar-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="topbar-social-icon" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://youtube.com" target="_blank" class="topbar-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
@@ -217,29 +751,41 @@ $destinos_submenu = [
 
                 <div class="col-lg-4 col-md-6">
                     <h5 class="fw-bold text-white mb-3">Contacto Oficial</h5>
+
                     <div class="footer-contact-item">
-                        <div class="footer-contact-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div class="footer-contact-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
                         <div>
                             <small class="d-block text-secondary">Ventas:</small>
                             <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['ventas']['number']; ?></a>
                         </div>
                     </div>
+
                     <div class="footer-contact-item">
-                        <div class="footer-contact-icon"><i class="bi bi-gear-fill"></i></div>
+                        <div class="footer-contact-icon">
+                            <i class="bi bi-gear-fill"></i>
+                        </div>
                         <div>
                             <small class="d-block text-secondary">Operaciones:</small>
                             <a href="tel:<?php echo $phones['operaciones']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['operaciones']['number']; ?></a>
                         </div>
                     </div>
+
                     <div class="footer-contact-item">
-                        <div class="footer-contact-icon"><i class="bi bi-shield-check"></i></div>
+                        <div class="footer-contact-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
                         <div>
                             <small class="d-block text-secondary">Calidad 24/7:</small>
                             <a href="tel:<?php echo $phones['calidad']['clean']; ?>" class="text-white text-decoration-none fw-bold"><?php echo $phones['calidad']['number']; ?></a>
                         </div>
                     </div>
+
                     <div class="footer-contact-item">
-                        <div class="footer-contact-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div class="footer-contact-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
                         <div>
                             <small class="d-block text-secondary">Correo de contacto:</small>
                             <a href="mailto:<?php echo $email_address; ?>" class="text-white text-decoration-none fw-bold"><?php echo $email_address; ?></a>
@@ -248,14 +794,23 @@ $destinos_submenu = [
                 </div>
             </div>
 
-            <div class="border-top border-secondary border-opacity-25 mt-4 pt-3 text-center text-secondary small">
-                <p class="mb-0">&copy; <?php echo $current_year; ?> Todos los derechos reservados para: <strong>Perú Safe Journeys | Viajes Perú</strong></p>
+            <div class="footer-bottom">
+                <p class="mb-0">
+                    &copy; <?php echo $current_year; ?> Todos los derechos reservados para: <strong>Perú Safe Journeys | Viajes Perú</strong>
+                </p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>" class="whatsapp-float"><i class="bi bi-whatsapp"></i></a>
+    <!-- Icono flotante de WhatsApp -->
+    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Per%C3%BA%20Safe%20Journeys"
+       class="whatsapp-float"
+       target="_blank"
+       aria-label="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
+    <!-- Scripts Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
