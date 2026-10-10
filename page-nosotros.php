@@ -1,5 +1,9 @@
 <?php
 // page-nosotros.php - Perú Safe Journeys
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $company_name = "Perú Safe Journeys";
 $company_tagline = "Travel Agency";
 
@@ -12,6 +16,52 @@ $phones = [
 
 $email_address = "informes-web@perusafejourneys.com";
 $current_year = date('Y');
+
+// Generar Token CSRF
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+// Procesar Formulario de Solicitud de Información
+$form_status = null;
+$form_msg = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['action']) && $_POST['action'] === 'send_info_request') {
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        $form_status = "danger";
+        $form_msg = "Error de validación de seguridad. Por favor reintente.";
+    } else {
+        $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_SPECIAL_CHARS);
+        $email_user = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+        $telefono = filter_input(INPUT_POST, 'telefono', FILTER_SANITIZE_SPECIAL_CHARS);
+        $destino = filter_input(INPUT_POST, 'destino', FILTER_SANITIZE_SPECIAL_CHARS);
+        $mensaje = filter_input(INPUT_POST, 'mensaje', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if ($nombre && $email_user && $mensaje) {
+            $to = $email_address;
+            $subject = "Solicitud de Información Web - " . $nombre;
+            $body = "Ha recibido una nueva solicitud de información desde la página Nosotros:\n\n";
+            $body .= "Nombre: " . $nombre . "\n";
+            $body .= "Correo Electrónico: " . $email_user . "\n";
+            $body .= "Teléfono/WhatsApp: " . ($telefono ?: 'No especificado') . "\n";
+            $body .= "Destino de Interés: " . ($destino ?: 'General') . "\n\n";
+            $body .= "Mensaje / Consulta:\n" . $mensaje . "\n";
+
+            $headers = "From: " . $email_address . "\r\n";
+            $headers .= "Reply-To: " . $email_user . "\r\n";
+            $headers .= "X-Mailer: PHP/" . phpversion();
+
+            // Simular o enviar correo con mail()
+            @mail($to, $subject, $body, $headers);
+
+            $form_status = "success";
+            $form_msg = "¡Gracias por contactarnos! Tu solicitud ha sido enviada correctamente a " . $email_address . ". Nos comunicaremos contigo a la brevedad.";
+        } else {
+            $form_status = "danger";
+            $form_msg = "Por favor, completa todos los campos obligatorios con información válida.";
+        }
+    }
+}
 
 // Submenú de Destinos
 $destinos_submenu = [
@@ -551,89 +601,69 @@ $about_gallery_images = [
             margin-top: 1.8rem;
         }
 
-        /* GALERÍA CREATIVA Y MODAL PREVIEW */
-        .creative-gallery-section {
+        /* ESTILOS DEL FORMULARIO DE SOLICITUD DE INFORMACIÓN */
+        .info-request-section {
             background-color: #FFFFFF;
-            padding: 3.5rem 0;
+            padding: 4rem 0;
         }
 
-        .creative-gallery-item {
+        .info-request-card {
+            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
+            border-radius: 28px;
+            padding: 3.5rem 2.8rem;
+            color: #FFFFFF;
+            border: 2px solid rgba(233, 77, 0, 0.3);
+            border-top: 5px solid var(--color-naranja-journey);
             position: relative;
-            border-radius: 20px;
             overflow: hidden;
-            height: 260px;
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: all 0.38s ease;
-            box-shadow: 0 8px 24px rgba(0, 34, 56, 0.06);
         }
 
-        .creative-gallery-item:hover {
-            border-color: var(--color-naranja-journey);
-            transform: translateY(-5px);
-        }
-
-        .creative-gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .creative-gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .creative-gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 18, 32, 0.95) 100%);
-            padding: 1.4rem 1.2rem;
-            color: #FFFFFF;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-
-        .gallery-zoom-icon {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: rgba(233, 77, 0, 0.9);
-            color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.3s ease;
-            z-index: 2;
-        }
-
-        .creative-gallery-item:hover .gallery-zoom-icon {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .creative-gallery-title {
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: #FFFFFF;
-            margin-bottom: 0.15rem;
-        }
-
-        .creative-gallery-subtitle {
-            font-size: 0.8rem;
-            color: var(--color-dorado-andino);
+        .info-form-label {
             font-weight: 600;
-            margin-bottom: 0;
+            font-size: 0.88rem;
+            color: #E2E8F0;
+            margin-bottom: 0.45rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-form-control {
+            background: rgba(255, 255, 255, 0.07) !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            color: #FFFFFF !important;
+            border-radius: 12px !important;
+            padding: 0.75rem 1.1rem !important;
+            font-size: 0.95rem !important;
+            transition: all 0.28s ease !important;
+        }
+
+        .info-form-control:focus {
+            background: rgba(255, 255, 255, 0.12) !important;
+            border-color: var(--color-naranja-journey) !important;
+            box-shadow: 0 0 0 0.25rem rgba(233, 77, 0, 0.25) !important;
+        }
+
+        .info-form-control::placeholder {
+            color: #94A3B8 !important;
+        }
+
+        .btn-submit-request {
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: #FFFFFF !important;
+            font-weight: 800;
+            font-size: 0.98rem;
+            padding: 0.85rem 2.2rem;
+            border-radius: 50px;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit-request:hover {
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(233, 77, 0, 0.35);
         }
 
         /* FOOTER */
@@ -955,57 +985,6 @@ $about_gallery_images = [
                     </div>
                 </div>
 
-                <!-- GALERÍA CREATIVA DE PROPÓSITO -->
-                <div class="mt-5 pt-2">
-                    <div class="text-center mb-4">
-                        <span class="section-badge-clean">GALERÍA VISUAL</span>
-                        <h3 class="fs-3 fw-extrabold text-dark">Momentos & Destinos Emblemáticos</h3>
-                        <p class="text-secondary small">Haz clic en cualquier imagen para verla en tamaño completo.</p>
-                    </div>
-
-                    <div class="row g-3">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="creative-gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1200&q=80', 'Machu Picchu', 'Santuario Histórico de los Incas')">
-                                <div class="gallery-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
-                                <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=600&q=80" alt="Santuario Inca de Machu Picchu">
-                                <div class="creative-gallery-overlay">
-                                    <h5 class="creative-gallery-title fs-6 mb-0">Machu Picchu</h5>
-                                    <small class="creative-gallery-subtitle">Cultura Ancestral</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="creative-gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=1200&q=80', 'Montaña de Colores', 'Vinicunca - Cusco, Perú')">
-                                <div class="gallery-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
-                                <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=600&q=80" alt="Montaña Vinicunca">
-                                <div class="creative-gallery-overlay">
-                                    <h5 class="creative-gallery-title fs-6 mb-0">Montaña de Colores</h5>
-                                    <small class="creative-gallery-subtitle">Naturaleza & Andes</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="creative-gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', 'Laguna Humantay', 'Aguas Turquesas y Glaciares')">
-                                <div class="gallery-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
-                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Laguna Humantay">
-                                <div class="creative-gallery-overlay">
-                                    <h5 class="creative-gallery-title fs-6 mb-0">Laguna Humantay</h5>
-                                    <small class="creative-gallery-subtitle">Aventura Glaciar</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="creative-gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80', 'Valle Sagrado', 'Comunidades & Tradición Ancestral')">
-                                <div class="gallery-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
-                                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80" alt="Valle Sagrado de los Incas">
-                                <div class="creative-gallery-overlay">
-                                    <h5 class="creative-gallery-title fs-6 mb-0">Valle Sagrado</h5>
-                                    <small class="creative-gallery-subtitle">Tradición Vivencial</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1239,49 +1218,73 @@ $about_gallery_images = [
         </div>
     </section>
 
-    <!-- GALERÍA CREATIVA EN EL PIE DE LOS DATOS CON INTERACCIÓN MODAL -->
-    <section class="creative-gallery-section">
+    <!-- SECCIÓN FORMULARIO SOLICITUD DE INFORMACIÓN -->
+    <section class="info-request-section" id="solicitud-informacion">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="text-center mb-4">
-                <span class="section-badge-clean">INSPIRACIÓN VISUAL</span>
-                <h2 class="section-title">Descubre el Perú a Través de Nuestras Rutas</h2>
-                <p class="section-lead-concept">Haz clic en cualquiera de las imágenes para desplegar la vista completa en alta resolución.</p>
-            </div>
+            <div class="info-request-card max-w-1000 mx-auto">
+                <div class="text-center mb-4">
+                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">ATENCIÓN PERSONALIZADA</span>
+                    <h2 class="display-6 fw-extrabold text-white mb-2">Solicita Información Personalizada</h2>
+                    <p class="fs-6 text-light opacity-90 max-w-700 mx-auto mb-0">
+                        Completa el siguiente formulario y un especialista de <strong>Perú Safe Journeys</strong> se pondrá en contacto contigo a la brevedad al correo <strong><?php echo $email_address; ?></strong>.
+                    </p>
+                </div>
 
-            <div class="row g-4">
-                <?php foreach($about_gallery_images as $gImg): ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="creative-gallery-item" onclick="openImageModal('<?php echo $gImg['url']; ?>', '<?php echo addslashes($gImg['title']); ?>', '<?php echo addslashes($gImg['subtitle']); ?>')">
-                            <div class="gallery-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
-                            <img src="<?php echo $gImg['url']; ?>" alt="<?php echo $gImg['title']; ?>" loading="lazy">
-                            <div class="creative-gallery-overlay">
-                                <h4 class="creative-gallery-title"><?php echo $gImg['title']; ?></h4>
-                                <p class="creative-gallery-subtitle"><?php echo $gImg['subtitle']; ?></p>
-                            </div>
+                <?php if ($form_status): ?>
+                    <div class="alert alert-<?php echo $form_status; ?> alert-dismissible fade show rounded-3 mb-4" role="alert">
+                        <i class="bi bi-info-circle-fill me-2"></i> <?php echo $form_msg; ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php endif; ?>
+
+                <form action="page-nosotros.php#solicitud-informacion" method="POST" class="needs-validation" novalidate>
+                    <input type="hidden" name="action" value="send_info_request">
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="info-form-label">Nombre Completo *</label>
+                            <input type="text" class="form-control info-form-control" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email" class="info-form-label">Correo Electrónico *</label>
+                            <input type="email" class="form-control info-form-control" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="telefono" class="info-form-label">Teléfono / WhatsApp</label>
+                            <input type="tel" class="form-control info-form-control" id="telefono" name="telefono" placeholder="+51 900 000 000">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="destino" class="info-form-label">Destino o Tour de Interés</label>
+                            <select class="form-select info-form-control" id="destino" name="destino">
+                                <option value="" selected>Selecciona una opción...</option>
+                                <option value="Machu Picchu & Cusco">Machu Picchu & Cusco</option>
+                                <option value="Montaña de Colores Vinicunca">Montaña de Colores Vinicunca</option>
+                                <option value="Laguna Humantay">Laguna Humantay</option>
+                                <option value="Valle Sagrado de los Incas">Valle Sagrado de los Incas</option>
+                                <option value="7 Lagunas del Ausangate">7 Lagunas del Ausangate</option>
+                                <option value="Paquete Personalizado / A Medida">Paquete Personalizado / A Medida</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="mensaje" class="info-form-label">¿En qué podemos ayudarte? *</label>
+                            <textarea class="form-control info-form-control" id="mensaje" name="mensaje" rows="4" placeholder="Escribe tus fechas aproximadas de viaje, número de pasajeros o consultas específicas..." required></textarea>
+                        </div>
+
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn btn-submit-request shadow">
+                                <i class="bi bi-send-fill me-2"></i> Enviar Solicitud de Información
+                            </button>
                         </div>
                     </div>
-                <?php endforeach; ?>
+                </form>
             </div>
         </div>
     </section>
-
-    <!-- MODAL PARA MOSTRAR IMAGEN COMPLETA -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content bg-dark text-white border-0 rounded-4 overflow-hidden">
-                <div class="modal-header border-0 pb-0">
-                    <div>
-                        <h5 class="modal-title fw-bold text-white mb-0" id="modalImageTitle">Machu Picchu</h5>
-                        <small class="text-warning" id="modalImageSubtitle">Santuario Histórico de la Humanidad</small>
-                    </div>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body p-3 text-center">
-                    <img src="" id="modalImagePreview" class="img-fluid rounded-3 max-h-80vh object-fit-contain shadow-lg" alt="Vista completa">
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- FOOTER -->
     <footer class="footer-custom" id="contacto">
@@ -1395,13 +1398,6 @@ $about_gallery_images = [
             }
         });
 
-        function openImageModal(imgUrl, title, subtitle) {
-            document.getElementById('modalImagePreview').src = imgUrl;
-            document.getElementById('modalImageTitle').textContent = title || '';
-            document.getElementById('modalImageSubtitle').textContent = subtitle || '';
-            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-            modal.show();
-        }
     </script>
 </body>
 </html>
