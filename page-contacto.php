@@ -566,7 +566,10 @@ $destinos_submenu = [
                     <div class="contact-info-card">
                         <div>
                             <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">CANALES OFICIALES</span>
-                            <h2 class="fs-3 fw-extrabold text-dark mb-4">Líneas Directas de Atención</h2>
+                            <h2 class="fs-3 fw-extrabold text-dark mb-2">Líneas Directas de Atención</h2>
+                            <p class="small text-secondary mb-4" style="line-height: 1.6;">
+                                Comunícate directamente con nuestros especialistas locales según el tipo de atención que requieras: cotizaciones personalizadas, estado de tus reservas en ruta o asistencia en tiempo real las 24 horas.
+                            </p>
                         </div>
 
                         <div class="d-flex flex-column gap-3">
