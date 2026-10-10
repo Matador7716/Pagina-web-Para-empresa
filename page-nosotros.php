@@ -551,7 +551,7 @@ $about_gallery_images = [
             margin-top: 1.8rem;
         }
 
-        /* GALERÍA CREATIVA */
+        /* GALERÍA CREATIVA Y MODAL PREVIEW */
         .creative-gallery-section {
             background-color: #FFFFFF;
             padding: 3.5rem 0;
@@ -559,22 +559,29 @@ $about_gallery_images = [
 
         .creative-gallery-item {
             position: relative;
-            border-radius: 18px;
+            border-radius: 20px;
             overflow: hidden;
             height: 260px;
-            border: 1px solid var(--color-gris-border);
-            transition: all 0.35s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.38s ease;
+            box-shadow: 0 8px 24px rgba(0, 34, 56, 0.06);
+        }
+
+        .creative-gallery-item:hover {
+            border-color: var(--color-naranja-journey);
+            transform: translateY(-5px);
         }
 
         .creative-gallery-item img {
             width: 100%;
-            height: 260px;
+            height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .creative-gallery-item:hover img {
-            transform: scale(1.08);
+            transform: scale(1.1);
         }
 
         .creative-gallery-overlay {
@@ -582,21 +589,48 @@ $about_gallery_images = [
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 18, 32, 0.92) 100%);
-            padding: 1.2rem;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 18, 32, 0.95) 100%);
+            padding: 1.4rem 1.2rem;
             color: #FFFFFF;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .gallery-zoom-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(233, 77, 0, 0.9);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .creative-gallery-item:hover .gallery-zoom-icon {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .creative-gallery-title {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: #FFFFFF;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.15rem;
         }
 
         .creative-gallery-subtitle {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: var(--color-dorado-andino);
             font-weight: 600;
             margin-bottom: 0;
@@ -846,7 +880,7 @@ $about_gallery_images = [
                     <p class="section-lead-concept">Los principios estratégicos que guían cada uno de nuestros itinerarios y atenciones en ruta.</p>
                 </div>
 
-                <div class="row g-4">
+                <div class="row g-4 mb-4">
                     <div class="col-lg-4 col-md-6">
                         <div class="mvv-card">
                             <div class="mvv-icon-box">
@@ -887,12 +921,53 @@ $about_gallery_images = [
                     </div>
                 </div>
 
-                <!-- GALERÍA DE IMÁGENES DEBAJO DE LAS TARJETAS DE NUESTRO PROPÓSITO -->
-                <div class="mt-4 pt-2">
+                <!-- SECCIÓN IDENTIDAD DE MARCA (UBICADA DIRECTAMENTE DEBAJO DE NUESTRO PROPÓSITO) -->
+                <div class="my-5 pt-3">
+                    <div class="text-center mb-4">
+                        <span class="section-badge-clean">IDENTIDAD DE MARCA</span>
+                        <h2 class="section-title">Personalidad de Marca</h2>
+                        <p class="section-lead-concept">Los pilares emotivos y profesionales que definen cómo se siente viajar con Perú Safe Journeys.</p>
+                    </div>
+
+                    <div class="brand-table-card mx-auto max-w-900">
+                        <div class="table-responsive">
+                            <table class="table custom-brand-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 35%;">Atributo</th>
+                                        <th style="width: 65%;">Cómo debe sentirse</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($brand_personality_table as $row): ?>
+                                        <tr>
+                                            <td>
+                                                <span class="attribute-badge"><?php echo $row['attribute']; ?></span>
+                                            </td>
+                                            <td class="fw-semibold text-dark">
+                                                <?php echo $row['feeling']; ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GALERÍA CREATIVA DE PROPÓSITO -->
+                <div class="mt-5 pt-2">
+                    <div class="text-center mb-4">
+                        <span class="section-badge-clean">GALERÍA VISUAL</span>
+                        <h3 class="fs-3 fw-extrabold text-dark">Momentos & Destinos Emblemáticos</h3>
+                        <p class="text-secondary small">Haz clic en cualquier imagen para verla en tamaño completo.</p>
+                    </div>
+
                     <div class="row g-3">
                         <div class="col-lg-3 col-md-6">
-                            <div class="creative-gallery-item" style="height: 200px;">
-                                <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=600&q=80" alt="Santuario Inca de Machu Picchu" style="height: 200px;">
+                            <div class="creative-gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1200&q=80', 'Machu Picchu', 'Santuario Histórico de los Incas')">
+                                <div class="gallery-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
+                                <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=600&q=80" alt="Santuario Inca de Machu Picchu">
                                 <div class="creative-gallery-overlay">
                                     <h5 class="creative-gallery-title fs-6 mb-0">Machu Picchu</h5>
                                     <small class="creative-gallery-subtitle">Cultura Ancestral</small>
@@ -900,8 +975,9 @@ $about_gallery_images = [
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
-                            <div class="creative-gallery-item" style="height: 200px;">
-                                <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=600&q=80" alt="Montaña Vinicunca" style="height: 200px;">
+                            <div class="creative-gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=1200&q=80', 'Montaña de Colores', 'Vinicunca - Cusco, Perú')">
+                                <div class="gallery-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
+                                <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=600&q=80" alt="Montaña Vinicunca">
                                 <div class="creative-gallery-overlay">
                                     <h5 class="creative-gallery-title fs-6 mb-0">Montaña de Colores</h5>
                                     <small class="creative-gallery-subtitle">Naturaleza & Andes</small>
@@ -909,8 +985,9 @@ $about_gallery_images = [
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
-                            <div class="creative-gallery-item" style="height: 200px;">
-                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Laguna Humantay" style="height: 200px;">
+                            <div class="creative-gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', 'Laguna Humantay', 'Aguas Turquesas y Glaciares')">
+                                <div class="gallery-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
+                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Laguna Humantay">
                                 <div class="creative-gallery-overlay">
                                     <h5 class="creative-gallery-title fs-6 mb-0">Laguna Humantay</h5>
                                     <small class="creative-gallery-subtitle">Aventura Glaciar</small>
@@ -918,48 +995,15 @@ $about_gallery_images = [
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
-                            <div class="creative-gallery-item" style="height: 200px;">
-                                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80" alt="Valle Sagrado de los Incas" style="height: 200px;">
+                            <div class="creative-gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80', 'Valle Sagrado', 'Comunidades & Tradición Ancestral')">
+                                <div class="gallery-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
+                                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80" alt="Valle Sagrado de los Incas">
                                 <div class="creative-gallery-overlay">
                                     <h5 class="creative-gallery-title fs-6 mb-0">Valle Sagrado</h5>
                                     <small class="creative-gallery-subtitle">Tradición Vivencial</small>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TABLA DE PERSONALIDAD DE MARCA -->
-            <div class="my-5">
-                <div class="text-center mb-4">
-                    <span class="section-badge-clean">IDENTIDAD DE MARCA</span>
-                    <h2 class="section-title">Personalidad de Marca</h2>
-                    <p class="section-lead-concept">Los pilares emotivos y profesionales que definen cómo se siente viajar con Perú Safe Journeys.</p>
-                </div>
-
-                <div class="brand-table-card mx-auto max-w-900">
-                    <div class="table-responsive">
-                        <table class="table custom-brand-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 35%;">Atributo</th>
-                                    <th style="width: 65%;">Cómo debe sentirse</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach($brand_personality_table as $row): ?>
-                                    <tr>
-                                        <td>
-                                            <span class="attribute-badge"><?php echo $row['attribute']; ?></span>
-                                        </td>
-                                        <td class="fw-semibold text-dark">
-                                            <?php echo $row['feeling']; ?>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
@@ -1195,19 +1239,20 @@ $about_gallery_images = [
         </div>
     </section>
 
-    <!-- GALERÍA CREATIVA EN EL PIE DE LOS DATOS -->
+    <!-- GALERÍA CREATIVA EN EL PIE DE LOS DATOS CON INTERACCIÓN MODAL -->
     <section class="creative-gallery-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="text-center mb-4">
                 <span class="section-badge-clean">INSPIRACIÓN VISUAL</span>
                 <h2 class="section-title">Descubre el Perú a Través de Nuestras Rutas</h2>
-                <p class="section-lead-concept">Un vistazo a los paisajes sobrecogedores y vivencias culturales que te esperan en cada uno de nuestros itinerarios.</p>
+                <p class="section-lead-concept">Haz clic en cualquiera de las imágenes para desplegar la vista completa en alta resolución.</p>
             </div>
 
             <div class="row g-4">
                 <?php foreach($about_gallery_images as $gImg): ?>
                     <div class="col-lg-4 col-md-6">
-                        <div class="creative-gallery-item">
+                        <div class="creative-gallery-item" onclick="openImageModal('<?php echo $gImg['url']; ?>', '<?php echo addslashes($gImg['title']); ?>', '<?php echo addslashes($gImg['subtitle']); ?>')">
+                            <div class="gallery-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
                             <img src="<?php echo $gImg['url']; ?>" alt="<?php echo $gImg['title']; ?>" loading="lazy">
                             <div class="creative-gallery-overlay">
                                 <h4 class="creative-gallery-title"><?php echo $gImg['title']; ?></h4>
@@ -1219,6 +1264,24 @@ $about_gallery_images = [
             </div>
         </div>
     </section>
+
+    <!-- MODAL PARA MOSTRAR IMAGEN COMPLETA -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-dark text-white border-0 rounded-4 overflow-hidden">
+                <div class="modal-header border-0 pb-0">
+                    <div>
+                        <h5 class="modal-title fw-bold text-white mb-0" id="modalImageTitle">Machu Picchu</h5>
+                        <small class="text-warning" id="modalImageSubtitle">Santuario Histórico de la Humanidad</small>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-3 text-center">
+                    <img src="" id="modalImagePreview" class="img-fluid rounded-3 max-h-80vh object-fit-contain shadow-lg" alt="Vista completa">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer-custom" id="contacto">
@@ -1331,6 +1394,14 @@ $about_gallery_images = [
                 });
             }
         });
+
+        function openImageModal(imgUrl, title, subtitle) {
+            document.getElementById('modalImagePreview').src = imgUrl;
+            document.getElementById('modalImageTitle').textContent = title || '';
+            document.getElementById('modalImageSubtitle').textContent = subtitle || '';
+            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+            modal.show();
+        }
     </script>
 </body>
 </html>
