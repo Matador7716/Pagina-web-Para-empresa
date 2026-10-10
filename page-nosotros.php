@@ -334,7 +334,43 @@ $about_gallery_images = [
             font-weight: 400;
         }
 
-        /* TABLA DE PERSONALIDAD DE MARCA ELEGANTE Y MODERNA */
+        /* TARJETAS MISIÓN, VISIÓN Y VALORES */
+        .mvv-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 2rem 1.6rem;
+            border: 1px solid var(--color-gris-border);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .mvv-card:hover {
+            border-color: var(--color-naranja-journey);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px rgba(0, 34, 56, 0.08);
+        }
+
+        .mvv-icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(233, 77, 0, 0.1) 0%, rgba(233, 77, 0, 0.05) 100%);
+            color: var(--color-naranja-journey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(233, 77, 0, 0.2);
+        }
+
+        .mvv-card:hover .mvv-icon-box {
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: #FFFFFF;
+            border-color: var(--color-naranja-journey);
+        }
+
+        /* TABLA DE PERSONALIDAD DE MARCA */
         .brand-table-card {
             background: #FFFFFF;
             border-radius: 20px;
@@ -388,11 +424,127 @@ $about_gallery_images = [
             text-transform: uppercase;
         }
 
-        /* GALERÍA CREATIVA EN EL PIE DE DATOS */
-        .creative-gallery-section {
+        /* SECCIÓN DE POLÍTICA DE CANCELACIÓN Y REEMBOLSOS */
+        .policy-section {
             background-color: #F8FAFC;
-            padding: 3.5rem 0;
+            padding: 4rem 0;
             border-top: 1px solid var(--color-gris-border);
+            border-bottom: 1px solid var(--color-gris-border);
+        }
+
+        .policy-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            border: 1px solid var(--color-gris-border);
+            padding: 2.5rem;
+            box-shadow: 0 16px 36px rgba(0, 34, 56, 0.06);
+        }
+
+        .policy-header-box {
+            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
+            color: #FFFFFF;
+            padding: 1.8rem;
+            border-radius: 18px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--color-naranja-journey);
+        }
+
+        .policy-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        .policy-subtitle {
+            font-size: 0.9rem;
+            color: var(--color-dorado-andino);
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        .policy-point-item {
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.4rem;
+            border-bottom: 1px solid var(--color-gris-border);
+        }
+
+        .policy-point-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .policy-point-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--color-azul-peru-safe);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-point-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(233, 77, 0, 0.12);
+            color: var(--color-naranja-journey);
+            font-size: 0.85rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .policy-text {
+            font-size: 0.94rem;
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 0.6rem;
+        }
+
+        .policy-list-bullet {
+            list-style: none;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-list-bullet li {
+            position: relative;
+            font-size: 0.93rem;
+            color: #334155;
+            margin-bottom: 0.4rem;
+            line-height: 1.7;
+        }
+
+        .policy-list-bullet li::before {
+            content: '•';
+            color: var(--color-naranja-journey);
+            font-weight: 900;
+            font-size: 1.2rem;
+            position: absolute;
+            left: -1rem;
+            top: -2px;
+        }
+
+        .policy-notice-box {
+            background-color: rgba(255, 184, 0, 0.12);
+            border: 1px solid rgba(255, 184, 0, 0.4);
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+            font-size: 0.88rem;
+            color: #856404;
+            margin-top: 1.8rem;
+        }
+
+        /* GALERÍA CREATIVA */
+        .creative-gallery-section {
+            background-color: #FFFFFF;
+            padding: 3.5rem 0;
         }
 
         .creative-gallery-item {
@@ -524,6 +676,7 @@ $about_gallery_images = [
             .navbar-custom { position: relative; top: 0; background: #FFFFFF; }
             .nav-link { color: var(--color-azul-peru-safe) !important; text-shadow: none; }
             .logo-img-header { height: 68px; }
+            .policy-card { padding: 1.5rem; }
         }
 
         @media (max-width: 575.98px) {
@@ -626,7 +779,7 @@ $about_gallery_images = [
     <section class="page-header-banner">
         <div class="container-fluid px-3 px-lg-5">
             <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">ESPECIALISTAS LOCALES EN PERÚ</span>
-            <h1 class="display-5 fw-extrabold text-white">Nuestra Identidad & Esencia</h1>
+            <h1 class="display-5 fw-extrabold text-white">Nuestra Identidad & Filosofía</h1>
             <p class="fs-6 text-light max-w-700 mx-auto mb-0">Creamos viajes que van más allá del turismo convencional, conectando almas con la autenticidad del Perú.</p>
         </div>
     </section>
@@ -640,7 +793,7 @@ $about_gallery_images = [
                     <h2 class="section-title mb-3">Perú Safe Journeys: Tu camino hacia un Perú auténtico</h2>
 
                     <p class="fs-6 text-dark fw-medium mb-3" style="line-height: 1.8;">
-                        <strong>Perú Safe Journeys – Travel Agency</strong> es una agencia especializada en crear experiencias auténticas, seguras y personalizadas por el Perú. Diseñamos cada viaje pensando en que nuestros viajeros no solo conozcan destinos, sino que vivan la esencia de cada lugar, conectando con nuestras culturas, tradiciones, historia, gastronomía y extraordinarios paisajes.
+                        <strong>Perú Safe Journeys – Travel Agency SAC</strong> es una agencia especializada en crear experiencias auténticas, seguras y personalizadas por el Perú. Diseñamos cada viaje pensando en que nuestros viajeros no solo conozcan destinos, sino que vivan la esencia de cada lugar, conectando con nuestras culturas, tradiciones, historia, gastronomía y extraordinarios paisajes.
                     </p>
                     <p class="text-secondary mb-3" style="line-height: 1.8;">
                         Desde la majestuosidad de <strong>Cusco y Machu Picchu</strong>, pasando por el Valle Sagrado, los Andes y la Amazonía, hasta las costas del Pacífico, acompañamos a nuestros viajeros con atención personalizada, planificación profesional, seguridad y confort en cada etapa de su aventura.
@@ -657,10 +810,60 @@ $about_gallery_images = [
                 </div>
             </div>
 
+            <!-- SECCIÓN MISIÓN, VISIÓN Y VALORES -->
+            <div class="my-5">
+                <div class="text-center mb-4">
+                    <span class="section-badge-clean">NUESTRO PROPÓSITO</span>
+                    <h2 class="section-title">Misión, Visión y Valores</h2>
+                    <p class="section-lead-concept">Los principios estratégicos que guían cada uno de nuestros itinerarios y atenciones en ruta.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="mvv-card">
+                            <div class="mvv-icon-box">
+                                <i class="bi bi-compass-fill"></i>
+                            </div>
+                            <h3 class="fs-5 fw-bold text-dark mb-2">Misión</h3>
+                            <p class="text-secondary small mb-0" style="line-height: 1.75;">
+                                Diseñar e implementar experiencias turísticas memorables, auténticas y seguras en todo el Perú, promoviendo el desarrollo responsable, el respeto por las comunidades locales y el confort absoluto de cada viajero.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="mvv-card">
+                            <div class="mvv-icon-box">
+                                <i class="bi bi-eye-fill"></i>
+                            </div>
+                            <h3 class="fs-5 fw-bold text-dark mb-2">Visión</h3>
+                            <p class="text-secondary small mb-0" style="line-height: 1.75;">
+                                Ser la agencia de viajes peruana referente a nivel internacional por su excelencia operativa, autenticidad en la vivencia cultural, personalización de servicios y garantía total de seguridad y satisfacción.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="mvv-card">
+                            <div class="mvv-icon-box">
+                                <i class="bi bi-gem"></i>
+                            </div>
+                            <h3 class="fs-5 fw-bold text-dark mb-2">Valores</h3>
+                            <p class="text-secondary small mb-0" style="line-height: 1.75;">
+                                • <strong>Autenticidad:</strong> Vínculo real con la esencia del Perú.<br>
+                                • <strong>Seguridad:</strong> Planificación responsable y respuesta inmediata.<br>
+                                • <strong>Calidez:</strong> Atención humana, personalizada y cercana.<br>
+                                • <strong>Excelencia:</strong> Servicio impecable en cada detalle.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- TABLA DE PERSONALIDAD DE MARCA -->
             <div class="my-5">
                 <div class="text-center mb-4">
-                    <span class="section-badge-clean">IDENTIDAD & VALORES</span>
+                    <span class="section-badge-clean">IDENTIDAD DE MARCA</span>
                     <h2 class="section-title">Personalidad de Marca</h2>
                     <p class="section-lead-concept">Los pilares emotivos y profesionales que definen cómo se siente viajar con Perú Safe Journeys.</p>
                 </div>
@@ -689,6 +892,217 @@ $about_gallery_images = [
                         </table>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN POLÍTICA DE CANCELACIÓN Y REEMBOLSOS -->
+    <section class="policy-section" id="politica-cancelacion">
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="policy-card max-w-1000 mx-auto">
+
+                <div class="policy-header-box">
+                    <div class="policy-title">PERÚ SAFE JOURNEYS TRAVEL AGENCY SAC</div>
+                    <div class="policy-subtitle">POLÍTICA DE CANCELACIÓN Y REEMBOLSOS (Versión para publicación en página web)</div>
+                </div>
+
+                <!-- PUNTO 1 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">1</span>
+                        <span>Alcance</span>
+                    </div>
+                    <p class="policy-text">
+                        En PERÚ SAFE JOURNEYS TRAVEL AGENCY SAC sabemos que los planes de viaje pueden cambiar. Esta política establece las condiciones aplicables a las cancelaciones, reembolsos, modificaciones y reprogramaciones de los servicios turísticos contratados. Al confirmar una reserva, el cliente declara haber leído y aceptado estas condiciones, así como las condiciones particulares que correspondan a determinados servicios o proveedores.
+                    </p>
+                </div>
+
+                <!-- PUNTO 2 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">2</span>
+                        <span>Cancelación por parte del cliente</span>
+                    </div>
+                    <p class="policy-text">
+                        Cuando el cliente solicite la cancelación total o parcial de los servicios contratados, se aplicarán las siguientes penalidades según la anticipación con la que se reciba la solicitud:
+                    </p>
+                    <ul class="policy-list-bullet">
+                        <li><strong>Más de 30 días de anticipación:</strong> penalidad del 35% del monto total de los servicios contratados.</li>
+                        <li><strong>Entre 7 y 30 días de anticipación:</strong> penalidad del 45% del monto total de los servicios contratados.</li>
+                        <li><strong>Menos de 7 días de anticipación:</strong> penalidad del 100% del monto total de los servicios contratados; no corresponderá reembolso.</li>
+                    </ul>
+                    <p class="policy-text">
+                        La fecha considerada para determinar el plazo será la fecha en que PERÚ SAFE JOURNEYS reciba la solicitud de cancelación por un medio que permita dejar constancia de ella.
+                    </p>
+                </div>
+
+                <!-- PUNTO 3 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">3</span>
+                        <span>Cancelaciones con más de 95 días de anticipación</span>
+                    </div>
+                    <p class="policy-text">
+                        La documentación contractual actualmente utilizada por PERÚ SAFE JOURNEYS contempla expresamente una penalidad del 35% para cancelaciones realizadas con más de 30 y hasta 95 días de anticipación, pero no establece una condición específica para cancelaciones efectuadas con más de 95 días de anticipación. Por ello, esta situación deberá ser definida y comunicada expresamente en la cotización, contrato o confirmación de reserva correspondiente antes de publicar esta política como condición definitiva.
+                    </p>
+                </div>
+
+                <!-- PUNTO 4 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">4</span>
+                        <span>Vuelos</span>
+                    </div>
+                    <p class="policy-text">
+                        Los vuelos adquiridos a través de PERÚ SAFE JOURNEYS TRAVEL AGENCY SAC están sujetos a una penalidad del 100%, de acuerdo con las condiciones establecidas para dichos servicios. Asimismo, podrán aplicar las restricciones y condiciones particulares del proveedor o aerolínea correspondiente.
+                    </p>
+                </div>
+
+                <!-- PUNTO 5 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">5</span>
+                        <span>Reembolsos</span>
+                    </div>
+                    <p class="policy-text">
+                        Cuando, de acuerdo con las condiciones aplicables, corresponda realizar un reembolso, PERÚ SAFE JOURNEYS determinará el importe considerando el monto efectivamente pagado, las penalidades aplicables, los servicios ya emitidos, reservados o utilizados y las condiciones particulares de los proveedores.
+                    </p>
+                    <p class="policy-text">
+                        El importe final del reembolso será comunicado al cliente una vez evaluada la solicitud y verificadas las condiciones de los servicios contratados.
+                    </p>
+                </div>
+
+                <!-- PUNTO 6 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">6</span>
+                        <span>Servicios con condiciones particulares</span>
+                    </div>
+                    <p class="policy-text">
+                        Algunos servicios pueden estar sujetos a condiciones específicas de cancelación, modificación o reembolso establecidas por sus respectivos proveedores. Esto puede incluir vuelos, trenes, alojamientos, entradas, boletos turísticos, traslados, tours, excursiones y otros servicios. Cuando existan condiciones particulares, estas deberán ser informadas al cliente antes o durante el proceso de contratación, según corresponda.
+                    </p>
+                </div>
+
+                <!-- PUNTO 7 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">7</span>
+                        <span>Modificaciones y reprogramaciones</span>
+                    </div>
+                    <p class="policy-text">
+                        Las solicitudes de cambio de fechas, destinos, actividades u otros servicios serán evaluadas previamente por PERÚ SAFE JOURNEYS y estarán sujetas a disponibilidad, condiciones del proveedor, diferencias tarifarias y posibles gastos o penalidades.
+                    </p>
+                    <p class="policy-text">
+                        Ninguna modificación se considerará confirmada hasta que haya sido aceptada por la agencia y, cuando corresponda, por los proveedores involucrados.
+                    </p>
+                </div>
+
+                <!-- PUNTO 8 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">8</span>
+                        <span>No presentación (No-Show)</span>
+                    </div>
+                    <p class="policy-text">
+                        La no presentación del cliente a un servicio reservado, tour, traslado, alojamiento, transporte, actividad o cualquier otro servicio contratado será considerada una cancelación de último momento y podrá estar sujeta a una penalidad de hasta el 100%, dependiendo de las condiciones del servicio y del proveedor.
+                    </p>
+                    <p class="policy-text">
+                        Cuando un proveedor establezca una condición específica de no-show, prevalecerá dicha condición, siempre que haya sido comunicada o forme parte de las condiciones aplicables a la reserva.
+                    </p>
+                </div>
+
+                <!-- PUNTO 9 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">9</span>
+                        <span>Servicios parcialmente utilizados</span>
+                    </div>
+                    <p class="policy-text">
+                        Una vez iniciado el viaje, los servicios no utilizados voluntariamente por el cliente, así como las actividades que el cliente decida omitir durante el programa, no generan automáticamente derecho a reembolso.
+                    </p>
+                    <p class="policy-text">
+                        Cualquier solicitud relacionada con servicios parcialmente utilizados será evaluada de acuerdo con las condiciones del servicio y del proveedor correspondiente.
+                    </p>
+                </div>
+
+                <!-- PUNTO 10 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">10</span>
+                        <span>Cancelaciones por circunstancias fuera del control de la agencia</span>
+                    </div>
+                    <p class="policy-text">
+                        PERÚ SAFE JOURNEYS se compromete a gestionar los servicios contratados de manera diligente y profesional. Sin embargo, pueden presentarse circunstancias fuera del control directo de la agencia, tales como:
+                    </p>
+                    <ul class="policy-list-bullet">
+                        <li>Condiciones meteorológicas adversas.</li>
+                        <li>Huelgas, paralizaciones o bloqueos.</li>
+                        <li>Cancelaciones o modificaciones de vuelos.</li>
+                        <li>Cancelaciones, cambios o interrupciones de servicios por parte de proveedores.</li>
+                        <li>Otras circunstancias externas que puedan afectar la prestación de los servicios.</li>
+                    </ul>
+                    <p class="policy-text">
+                        En estas situaciones, la agencia comunicará al cliente la situación y las alternativas disponibles, de acuerdo con las condiciones y políticas de los proveedores correspondientes.
+                    </p>
+                </div>
+
+                <!-- PUNTO 11 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">11</span>
+                        <span>Seguro de viaje</span>
+                    </div>
+                    <p class="policy-text">
+                        PERÚ SAFE JOURNEYS recomienda contratar un seguro de viaje que incluya cobertura para cancelación o interrupción del viaje, accidentes, problemas de salud, pérdida o demora de equipaje y otros imprevistos.
+                    </p>
+                    <p class="policy-text">
+                        Salvo que se indique expresamente lo contrario en el programa o contrato de servicios, la contratación y responsabilidad del seguro de viaje corresponde al cliente.
+                    </p>
+                </div>
+
+                <!-- PUNTO 12 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">12</span>
+                        <span>Procedimiento para solicitar una cancelación</span>
+                    </div>
+                    <ul class="policy-list-bullet">
+                        <li>Enviar la solicitud de cancelación por un medio que permita dejar constancia.</li>
+                        <li>Indicar los datos de la reserva y los servicios que se desean cancelar.</li>
+                        <li>La agencia verificará la fecha de recepción de la solicitud y las condiciones aplicables.</li>
+                        <li>Se informará al cliente la penalidad correspondiente y, de existir, el importe estimado del reembolso.</li>
+                        <li>El reembolso, cuando corresponda, será gestionado conforme a las condiciones aplicables a la reserva.</li>
+                    </ul>
+                </div>
+
+                <!-- PUNTO 13 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">13</span>
+                        <span>Aceptación</span>
+                    </div>
+                    <p class="policy-text">
+                        La confirmación y/o pago de una reserva implica que el cliente declara haber leído, comprendido y aceptado esta Política de Cancelación y Reembolsos, además de las condiciones particulares indicadas en su cotización, contrato, voucher o confirmación de servicios.
+                    </p>
+                </div>
+
+                <!-- PUNTO 14 -->
+                <div class="policy-point-item">
+                    <div class="policy-point-title">
+                        <span class="policy-point-number">14</span>
+                        <span>Información de la empresa</span>
+                    </div>
+                    <p class="policy-text fw-bold text-dark mb-1">PERÚ SAFE JOURNEYS TRAVEL AGENCY SAC</p>
+                    <p class="policy-text mb-1"><strong>RUC:</strong> 20613753258</p>
+                    <p class="policy-text mb-0">Cusco – Perú</p>
+                </div>
+
+                <!-- NOTA IMPORTANTE -->
+                <div class="policy-notice-box">
+                    <strong><i class="bi bi-exclamation-triangle-fill me-1"></i> IMPORTANTE PARA PUBLICACIÓN:</strong><br>
+                    Antes de publicar esta política como versión definitiva, recomendamos completar la condición para cancelaciones con más de 95 días de anticipación y validar jurídicamente las cláusulas de no-show, servicios parcialmente utilizados y circunstancias fuera del control de la agencia.
+                </div>
+
             </div>
         </div>
     </section>
