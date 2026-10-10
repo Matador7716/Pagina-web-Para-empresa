@@ -338,30 +338,30 @@ $about_gallery_images = [
         .mvv-card {
             background: #FFFFFF;
             border-radius: 20px;
-            padding: 2rem 1.6rem;
+            padding: 2.2rem 1.8rem;
             border: 1px solid var(--color-gris-border);
+            border-top: 4px solid var(--color-naranja-journey);
             height: 100%;
             transition: all 0.3s ease;
         }
 
         .mvv-card:hover {
             border-color: var(--color-naranja-journey);
-            transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(0, 34, 56, 0.08);
+            transform: translateY(-6px);
         }
 
         .mvv-icon-box {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, rgba(233, 77, 0, 0.1) 0%, rgba(233, 77, 0, 0.05) 100%);
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(233, 77, 0, 0.12) 0%, rgba(233, 77, 0, 0.04) 100%);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 1.2rem;
-            border: 1px solid rgba(233, 77, 0, 0.2);
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(233, 77, 0, 0.25);
         }
 
         .mvv-card:hover .mvv-icon-box {
@@ -376,7 +376,6 @@ $about_gallery_images = [
             border-radius: 20px;
             border: 1px solid var(--color-gris-border);
             overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 34, 56, 0.05);
         }
 
         .custom-brand-table {
@@ -390,7 +389,7 @@ $about_gallery_images = [
         }
 
         .custom-brand-table th {
-            padding: 1rem 1.5rem;
+            padding: 1.1rem 1.6rem;
             font-size: 0.95rem;
             font-weight: 800;
             text-transform: uppercase;
@@ -399,7 +398,7 @@ $about_gallery_images = [
         }
 
         .custom-brand-table td {
-            padding: 1.1rem 1.5rem;
+            padding: 1.2rem 1.6rem;
             font-size: 0.95rem;
             vertical-align: middle;
             border-bottom: 1px solid var(--color-gris-border);
@@ -419,7 +418,7 @@ $about_gallery_images = [
             color: #FFFFFF;
             font-weight: 700;
             font-size: 0.85rem;
-            padding: 0.35rem 1rem;
+            padding: 0.38rem 1.1rem;
             border-radius: 50px;
             text-transform: uppercase;
         }
@@ -427,41 +426,52 @@ $about_gallery_images = [
         /* SECCIÓN DE POLÍTICA DE CANCELACIÓN Y REEMBOLSOS */
         .policy-section {
             background-color: #F8FAFC;
-            padding: 4rem 0;
+            padding: 0 0 4rem 0;
             border-top: 1px solid var(--color-gris-border);
             border-bottom: 1px solid var(--color-gris-border);
+        }
+
+        .policy-header-box {
+            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
+            color: #FFFFFF;
+            padding: 2.8rem 1.5rem;
+            margin-bottom: 2.5rem;
+            border-left: none;
+            border-bottom: 4px solid var(--color-naranja-journey);
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            box-shadow: none !important;
+            text-align: center;
         }
 
         .policy-card {
             background: #FFFFFF;
             border-radius: 24px;
             border: 1px solid var(--color-gris-border);
-            padding: 2.5rem;
-            box-shadow: 0 16px 36px rgba(0, 34, 56, 0.06);
-        }
-
-        .policy-header-box {
-            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
-            color: #FFFFFF;
-            padding: 1.8rem;
-            border-radius: 18px;
-            margin-bottom: 2rem;
-            border-left: 5px solid var(--color-naranja-journey);
+            padding: 2.8rem 2.5rem;
+            box-shadow: none;
         }
 
         .policy-title {
-            font-size: 1.45rem;
+            font-size: 1.65rem;
             font-weight: 800;
             color: #FFFFFF;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .policy-subtitle {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--color-dorado-andino);
             font-weight: 600;
             margin-bottom: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .policy-point-item {
@@ -916,13 +926,17 @@ $about_gallery_images = [
 
     <!-- SECCIÓN POLÍTICA DE CANCELACIÓN Y REEMBOLSOS -->
     <section class="policy-section" id="politica-cancelacion">
+        <!-- HEADER FULL WIDTH -->
+        <div class="policy-header-box">
+            <div class="container-fluid px-3 px-lg-5">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">MARCO LEGAL & OPERATIVO</span>
+                <div class="policy-title">PERÚ SAFE JOURNEYS TRAVEL AGENCY SAC</div>
+                <div class="policy-subtitle">POLÍTICA DE CANCELACIÓN Y REEMBOLSOS</div>
+            </div>
+        </div>
+
         <div class="container-fluid px-3 px-lg-5">
             <div class="policy-card max-w-1000 mx-auto">
-
-                <div class="policy-header-box">
-                    <div class="policy-title">PERÚ SAFE JOURNEYS TRAVEL AGENCY SAC</div>
-                    <div class="policy-subtitle">POLÍTICA DE CANCELACIÓN Y REEMBOLSOS (Versión para publicación en página web)</div>
-                </div>
 
                 <!-- PUNTO 1 -->
                 <div class="policy-point-item">
