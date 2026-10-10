@@ -818,10 +818,10 @@ $about_gallery_images = [
             <div class="row align-items-center g-5 mb-5">
                 <div class="col-lg-7">
                     <span class="section-badge-clean">CONCEPTO DE MARCA</span>
-                    <h2 class="section-title mb-3">Perú Safe Journeys: Tu camino hacia un Perú auténtico</h2>
+                    <h2 class="section-title mb-3"><span style="color: var(--color-naranja-journey);">Perú Safe Journeys</span>: Tu camino hacia un Perú auténtico</h2>
 
                     <p class="fs-6 text-dark fw-medium mb-3" style="line-height: 1.8;">
-                        <strong>Perú Safe Journeys – Travel Agency SAC</strong> es una agencia especializada en crear experiencias auténticas, seguras y personalizadas por el Perú. Diseñamos cada viaje pensando en que nuestros viajeros no solo conozcan destinos, sino que vivan la esencia de cada lugar, conectando con nuestras culturas, tradiciones, historia, gastronomía y extraordinarios paisajes.
+                        <strong style="color: var(--color-naranja-journey);">Perú Safe Journeys – Travel Agency SAC</strong> es una agencia especializada en crear experiencias auténticas, seguras y personalizadas por el Perú. Diseñamos cada viaje pensando en que nuestros viajeros no solo conozcan destinos, sino que vivan la esencia de cada lugar, conectando con nuestras culturas, tradiciones, historia, gastronomía y extraordinarios paisajes.
                     </p>
                     <p class="text-secondary mb-3" style="line-height: 1.8;">
                         Desde la majestuosidad de <strong>Cusco y Machu Picchu</strong>, pasando por el Valle Sagrado, los Andes y la Amazonía, hasta las costas del Pacífico, acompañamos a nuestros viajeros con atención personalizada, planificación profesional, seguridad y confort en cada etapa de su aventura.
@@ -883,6 +883,48 @@ $about_gallery_images = [
                                 • <strong>Calidez:</strong> Atención humana, personalizada y cercana.<br>
                                 • <strong>Excelencia:</strong> Servicio impecable en cada detalle.
                             </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GALERÍA DE IMÁGENES DEBAJO DE LAS TARJETAS DE NUESTRO PROPÓSITO -->
+                <div class="mt-4 pt-2">
+                    <div class="row g-3">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="creative-gallery-item" style="height: 200px;">
+                                <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=600&q=80" alt="Santuario Inca de Machu Picchu" style="height: 200px;">
+                                <div class="creative-gallery-overlay">
+                                    <h5 class="creative-gallery-title fs-6 mb-0">Machu Picchu</h5>
+                                    <small class="creative-gallery-subtitle">Cultura Ancestral</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="creative-gallery-item" style="height: 200px;">
+                                <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=600&q=80" alt="Montaña Vinicunca" style="height: 200px;">
+                                <div class="creative-gallery-overlay">
+                                    <h5 class="creative-gallery-title fs-6 mb-0">Montaña de Colores</h5>
+                                    <small class="creative-gallery-subtitle">Naturaleza & Andes</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="creative-gallery-item" style="height: 200px;">
+                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Laguna Humantay" style="height: 200px;">
+                                <div class="creative-gallery-overlay">
+                                    <h5 class="creative-gallery-title fs-6 mb-0">Laguna Humantay</h5>
+                                    <small class="creative-gallery-subtitle">Aventura Glaciar</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="creative-gallery-item" style="height: 200px;">
+                                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80" alt="Valle Sagrado de los Incas" style="height: 200px;">
+                                <div class="creative-gallery-overlay">
+                                    <h5 class="creative-gallery-title fs-6 mb-0">Valle Sagrado</h5>
+                                    <small class="creative-gallery-subtitle">Tradición Vivencial</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
