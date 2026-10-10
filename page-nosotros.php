@@ -897,7 +897,7 @@ $about_gallery_images = [
 
                 <div class="col-lg-5">
                     <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Perú Safe Journeys" class="img-fluid rounded-4 shadow-lg w-100" style="border: 4px solid #FFFFFF;">
+                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Perú Safe Journeys" class="img-fluid rounded-4 w-100" style="border: 4px solid #FFFFFF; box-shadow: none !important;">
                     </div>
                 </div>
             </div>
@@ -1218,70 +1218,86 @@ $about_gallery_images = [
         </div>
     </section>
 
-    <!-- SECCIÓN FORMULARIO SOLICITUD DE INFORMACIÓN -->
+    <!-- SECCIÓN FORMULARIO SOLICITUD DE INFORMACIÓN CON EXPLORADOR -->
     <section class="info-request-section" id="solicitud-informacion">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="info-request-card max-w-1000 mx-auto">
-                <div class="text-center mb-4">
-                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">ATENCIÓN PERSONALIZADA</span>
-                    <h2 class="display-6 fw-extrabold text-white mb-2">Solicita Información Personalizada</h2>
-                    <p class="fs-6 text-light opacity-90 max-w-700 mx-auto mb-0">
-                        Completa el siguiente formulario y un especialista de <strong>Perú Safe Journeys</strong> se pondrá en contacto contigo a la brevedad al correo <strong><?php echo $email_address; ?></strong>.
-                    </p>
+            <div class="info-request-card max-w-1200 mx-auto">
+                <div class="row align-items-center g-4">
+                    <!-- IMAGEN DEL EXPLORADOR ABRAZANDO EL FORMULARIO -->
+                    <div class="col-lg-5 text-center">
+                        <div class="position-relative h-100 d-flex flex-column justify-content-center align-items-center">
+                            <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80" alt="Explorador Perú Safe Journeys" class="img-fluid rounded-4 w-100" style="object-fit: cover; max-height: 480px; border: 3px solid rgba(255, 255, 255, 0.2);">
+                            <div class="position-absolute bottom-0 start-0 end-0 p-3 text-center" style="background: linear-gradient(180deg, transparent 0%, rgba(0,18,32,0.92) 100%); border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem;">
+                                <span class="badge bg-warning text-dark fw-bold text-uppercase mb-1"><i class="bi bi-compass-fill me-1"></i> Acompañamiento Experto</span>
+                                <p class="small text-light mb-0 fw-medium">Nuestros especialistas locales diseñan tu itinerario perfecto.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FORMULARIO -->
+                    <div class="col-lg-7">
+                        <div class="mb-4">
+                            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">ATENCIÓN PERSONALIZADA</span>
+                            <h2 class="fs-2 fw-extrabold text-white mb-2">Solicita Información Personalizada</h2>
+                            <p class="fs-6 text-light opacity-90 mb-0">
+                                Completa el siguiente formulario y un especialista de <strong>Perú Safe Journeys</strong> se pondrá en contacto contigo a la brevedad al correo <strong><?php echo $email_address; ?></strong>.
+                            </p>
+                        </div>
+
+                        <?php if ($form_status): ?>
+                            <div class="alert alert-<?php echo $form_status; ?> alert-dismissible fade show rounded-3 mb-4" role="alert">
+                                <i class="bi bi-info-circle-fill me-2"></i> <?php echo $form_msg; ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php endif; ?>
+
+                        <form action="page-nosotros.php#solicitud-informacion" method="POST" class="needs-validation" novalidate>
+                            <input type="hidden" name="action" value="send_info_request">
+                            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nombre" class="info-form-label">Nombre Completo *</label>
+                                    <input type="text" class="form-control info-form-control" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="email" class="info-form-label">Correo Electrónico *</label>
+                                    <input type="email" class="form-control info-form-control" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="telefono" class="info-form-label">Teléfono / WhatsApp</label>
+                                    <input type="tel" class="form-control info-form-control" id="telefono" name="telefono" placeholder="+51 900 000 000">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="destino" class="info-form-label">Destino o Tour de Interés</label>
+                                    <select class="form-select info-form-control" id="destino" name="destino">
+                                        <option value="" selected>Selecciona una opción...</option>
+                                        <option value="Machu Picchu & Cusco">Machu Picchu & Cusco</option>
+                                        <option value="Montaña de Colores Vinicunca">Montaña de Colores Vinicunca</option>
+                                        <option value="Laguna Humantay">Laguna Humantay</option>
+                                        <option value="Valle Sagrado de los Incas">Valle Sagrado de los Incas</option>
+                                        <option value="7 Lagunas del Ausangate">7 Lagunas del Ausangate</option>
+                                        <option value="Paquete Personalizado / A Medida">Paquete Personalizado / A Medida</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="mensaje" class="info-form-label">¿En qué podemos ayudarte? *</label>
+                                    <textarea class="form-control info-form-control" id="mensaje" name="mensaje" rows="3" placeholder="Escribe tus fechas aproximadas de viaje, número de pasajeros o consultas específicas..." required></textarea>
+                                </div>
+
+                                <div class="col-12 mt-4 text-center text-lg-start">
+                                    <button type="submit" class="btn btn-submit-request shadow">
+                                        <i class="bi bi-send-fill me-2"></i> Enviar Solicitud de Información
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
-                <?php if ($form_status): ?>
-                    <div class="alert alert-<?php echo $form_status; ?> alert-dismissible fade show rounded-3 mb-4" role="alert">
-                        <i class="bi bi-info-circle-fill me-2"></i> <?php echo $form_msg; ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                <?php endif; ?>
-
-                <form action="page-nosotros.php#solicitud-informacion" method="POST" class="needs-validation" novalidate>
-                    <input type="hidden" name="action" value="send_info_request">
-                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label for="nombre" class="info-form-label">Nombre Completo *</label>
-                            <input type="text" class="form-control info-form-control" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="email" class="info-form-label">Correo Electrónico *</label>
-                            <input type="email" class="form-control info-form-control" id="email" name="email" placeholder="ejemplo@correo.com" required>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="telefono" class="info-form-label">Teléfono / WhatsApp</label>
-                            <input type="tel" class="form-control info-form-control" id="telefono" name="telefono" placeholder="+51 900 000 000">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="destino" class="info-form-label">Destino o Tour de Interés</label>
-                            <select class="form-select info-form-control" id="destino" name="destino">
-                                <option value="" selected>Selecciona una opción...</option>
-                                <option value="Machu Picchu & Cusco">Machu Picchu & Cusco</option>
-                                <option value="Montaña de Colores Vinicunca">Montaña de Colores Vinicunca</option>
-                                <option value="Laguna Humantay">Laguna Humantay</option>
-                                <option value="Valle Sagrado de los Incas">Valle Sagrado de los Incas</option>
-                                <option value="7 Lagunas del Ausangate">7 Lagunas del Ausangate</option>
-                                <option value="Paquete Personalizado / A Medida">Paquete Personalizado / A Medida</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="mensaje" class="info-form-label">¿En qué podemos ayudarte? *</label>
-                            <textarea class="form-control info-form-control" id="mensaje" name="mensaje" rows="4" placeholder="Escribe tus fechas aproximadas de viaje, número de pasajeros o consultas específicas..." required></textarea>
-                        </div>
-
-                        <div class="col-12 text-center mt-4">
-                            <button type="submit" class="btn btn-submit-request shadow">
-                                <i class="bi bi-send-fill me-2"></i> Enviar Solicitud de Información
-                            </button>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </section>
