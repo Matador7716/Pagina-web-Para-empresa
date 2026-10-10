@@ -682,6 +682,24 @@ $about_gallery_images = [
         @media (max-width: 575.98px) {
             .logo-img-header { height: 54px; }
         }
+
+        @media print {
+            .top-bar, .navbar-custom, .page-header-banner, .creative-gallery-section, .footer-custom, .whatsapp-float, #policyControlButtons {
+                display: none !important;
+            }
+            .policy-section {
+                padding: 0 !important;
+                background: white !important;
+            }
+            .policy-card {
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+            }
+            .collapse:not(.show) {
+                display: block !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -947,160 +965,174 @@ $about_gallery_images = [
                     </p>
                 </div>
 
-                <!-- PUNTO 4 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">4</span>
-                        <span>Vuelos</span>
+                <!-- PUNTOS PENDIENTES EN CONTENEDOR COLAPSABLE (4 AL 14) -->
+                <div class="collapse" id="collapsePolicy">
+                    <!-- PUNTO 4 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">4</span>
+                            <span>Vuelos</span>
+                        </div>
+                        <p class="policy-text">
+                            Los vuelos adquiridos a través de PERÚ SAFE JOURNEYS TRAVEL AGENCY SAC están sujetos a una penalidad del 100%, de acuerdo con las condiciones establecidas para dichos servicios. Asimismo, podrán aplicar las restricciones y condiciones particulares del proveedor o aerolínea correspondiente.
+                        </p>
                     </div>
-                    <p class="policy-text">
-                        Los vuelos adquiridos a través de PERÚ SAFE JOURNEYS TRAVEL AGENCY SAC están sujetos a una penalidad del 100%, de acuerdo con las condiciones establecidas para dichos servicios. Asimismo, podrán aplicar las restricciones y condiciones particulares del proveedor o aerolínea correspondiente.
-                    </p>
+
+                    <!-- PUNTO 5 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">5</span>
+                            <span>Reembolsos</span>
+                        </div>
+                        <p class="policy-text">
+                            Cuando, de acuerdo con las condiciones aplicables, corresponda realizar un reembolso, PERÚ SAFE JOURNEYS determinará el importe considerando el monto efectivamente pagado, las penalidades aplicables, los servicios ya emitidos, reservados o utilizados y las condiciones particulares de los proveedores.
+                        </p>
+                        <p class="policy-text">
+                            El importe final del reembolso será comunicado al cliente una vez evaluada la solicitud y verificadas las condiciones de los servicios contratados.
+                        </p>
+                    </div>
+
+                    <!-- PUNTO 6 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">6</span>
+                            <span>Servicios con condiciones particulares</span>
+                        </div>
+                        <p class="policy-text">
+                            Algunos servicios pueden estar sujetos a condiciones específicas de cancelación, modificación o reembolso establecidas por sus respectivos proveedores. Esto puede incluir vuelos, trenes, alojamientos, entradas, boletos turísticos, traslados, tours, excursiones y otros servicios. Cuando existan condiciones particulares, estas deberán ser informadas al cliente antes o durante el proceso de contratación, según corresponda.
+                        </p>
+                    </div>
+
+                    <!-- PUNTO 7 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">7</span>
+                            <span>Modificaciones y reprogramaciones</span>
+                        </div>
+                        <p class="policy-text">
+                            Las solicitudes de cambio de fechas, destinos, actividades u otros servicios serán evaluadas previamente por PERÚ SAFE JOURNEYS y estarán sujetas a disponibilidad, condiciones del proveedor, diferencias tarifarias y posibles gastos o penalidades.
+                        </p>
+                        <p class="policy-text">
+                            Ninguna modificación se considerará confirmada hasta que haya sido aceptada por la agencia y, cuando corresponda, por los proveedores involucrados.
+                        </p>
+                    </div>
+
+                    <!-- PUNTO 8 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">8</span>
+                            <span>No presentación (No-Show)</span>
+                        </div>
+                        <p class="policy-text">
+                            La no presentación del cliente a un servicio reservado, tour, traslado, alojamiento, transporte, actividad o cualquier otro servicio contratado será considerada una cancelación de último momento y podrá estar sujeta a una penalidad de hasta el 100%, dependiendo de las condiciones del servicio y del proveedor.
+                        </p>
+                        <p class="policy-text">
+                            Cuando un proveedor establezca una condición específica de no-show, prevalecerá dicha condición, siempre que haya sido comunicada o forme parte de las condiciones aplicables a la reserva.
+                        </p>
+                    </div>
+
+                    <!-- PUNTO 9 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">9</span>
+                            <span>Servicios parcialmente utilizados</span>
+                        </div>
+                        <p class="policy-text">
+                            Una vez iniciado el viaje, los servicios no utilizados voluntariamente por el cliente, así como las actividades que el cliente decida omitir durante el programa, no generan automáticamente derecho a reembolso.
+                        </p>
+                        <p class="policy-text">
+                            Cualquier solicitud relacionada con servicios parcialmente utilizados será evaluada de acuerdo con las condiciones del servicio y del proveedor correspondiente.
+                        </p>
+                    </div>
+
+                    <!-- PUNTO 10 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">10</span>
+                            <span>Cancelaciones por circunstancias fuera del control de la agencia</span>
+                        </div>
+                        <p class="policy-text">
+                            PERÚ SAFE JOURNEYS se compromete a gestionar los servicios contratados de manera diligente y profesional. Sin embargo, pueden presentarse circunstancias fuera del control directo de la agencia, tales como:
+                        </p>
+                        <ul class="policy-list-bullet">
+                            <li>Condiciones meteorológicas adversas.</li>
+                            <li>Huelgas, paralizaciones o bloqueos.</li>
+                            <li>Cancelaciones o modificaciones de vuelos.</li>
+                            <li>Cancelaciones, cambios o interrupciones de servicios por parte de proveedores.</li>
+                            <li>Otras circunstancias externas que puedan afectar la prestación de los servicios.</li>
+                        </ul>
+                        <p class="policy-text">
+                            En estas situaciones, la agencia comunicará al cliente la situación y las alternativas disponibles, de acuerdo con las condiciones y políticas de los proveedores correspondientes.
+                        </p>
+                    </div>
+
+                    <!-- PUNTO 11 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">11</span>
+                            <span>Seguro de viaje</span>
+                        </div>
+                        <p class="policy-text">
+                            PERÚ SAFE JOURNEYS recomienda contratar un seguro de viaje que incluya cobertura para cancelación o interrupción del viaje, accidentes, problemas de salud, pérdida o demora de equipaje y otros imprevistos.
+                        </p>
+                        <p class="policy-text">
+                            Salvo que se indique expresamente lo contrario en el programa o contrato de servicios, la contratación y responsabilidad del seguro de viaje corresponde al cliente.
+                        </p>
+                    </div>
+
+                    <!-- PUNTO 12 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">12</span>
+                            <span>Procedimiento para solicitar una cancelación</span>
+                        </div>
+                        <ul class="policy-list-bullet">
+                            <li>Enviar la solicitud de cancelación por un medio que permita dejar constancia.</li>
+                            <li>Indicar los datos de la reserva y los servicios que se desean cancelar.</li>
+                            <li>La agencia verificará la fecha de recepción de la solicitud y las condiciones aplicables.</li>
+                            <li>Se informará al cliente la penalidad correspondiente y, de existir, el importe estimado del reembolso.</li>
+                            <li>El reembolso, cuando corresponda, será gestionado conforme a las condiciones aplicables a la reserva.</li>
+                        </ul>
+                    </div>
+
+                    <!-- PUNTO 13 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">13</span>
+                            <span>Aceptación</span>
+                        </div>
+                        <p class="policy-text">
+                            La confirmación y/o pago de una reserva implica que el cliente declara haber leído, comprendido y aceptado esta Política de Cancelación y Reembolsos, además de las condiciones particulares indicadas en su cotización, contrato, voucher o confirmación de servicios.
+                        </p>
+                    </div>
+
+                    <!-- PUNTO 14 -->
+                    <div class="policy-point-item">
+                        <div class="policy-point-title">
+                            <span class="policy-point-number">14</span>
+                            <span>Información de la empresa</span>
+                        </div>
+                        <p class="policy-text fw-bold text-dark mb-1">PERÚ SAFE JOURNEYS TRAVEL AGENCY SAC</p>
+                        <p class="policy-text mb-1"><strong>RUC:</strong> 20613753258</p>
+                        <p class="policy-text mb-0">Cusco – Perú</p>
+                    </div>
+
+                    <!-- NOTA IMPORTANTE -->
+                    <div class="policy-notice-box">
+                        <strong><i class="bi bi-exclamation-triangle-fill me-1"></i> IMPORTANTE PARA PUBLICACIÓN:</strong><br>
+                        Antes de publicar esta política como versión definitiva, recomendamos completar la condición para cancelaciones con más de 95 días de anticipación y validar jurídicamente las cláusulas de no-show, servicios parcialmente utilizados y circunstancias fuera del control de la agencia.
+                    </div>
                 </div>
 
-                <!-- PUNTO 5 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">5</span>
-                        <span>Reembolsos</span>
-                    </div>
-                    <p class="policy-text">
-                        Cuando, de acuerdo con las condiciones aplicables, corresponda realizar un reembolso, PERÚ SAFE JOURNEYS determinará el importe considerando el monto efectivamente pagado, las penalidades aplicables, los servicios ya emitidos, reservados o utilizados y las condiciones particulares de los proveedores.
-                    </p>
-                    <p class="policy-text">
-                        El importe final del reembolso será comunicado al cliente una vez evaluada la solicitud y verificadas las condiciones de los servicios contratados.
-                    </p>
-                </div>
+                <!-- BOTONES DE CONTROL: VER MÁS & DESCARGAR/IMPRIMIR -->
+                <div class="text-center mt-4 d-flex justify-content-center align-items-center gap-3 flex-wrap" id="policyControlButtons">
+                    <button class="btn text-white fw-bold px-4 py-2 rounded-pill shadow-sm" style="background-color: var(--color-naranja-journey); border: none;" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePolicy" aria-expanded="false" aria-controls="collapsePolicy" id="btnTogglePolicy">
+                        <i class="bi bi-chevron-down me-1" id="iconTogglePolicy"></i> <span id="textTogglePolicy">Ver más</span>
+                    </button>
 
-                <!-- PUNTO 6 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">6</span>
-                        <span>Servicios con condiciones particulares</span>
-                    </div>
-                    <p class="policy-text">
-                        Algunos servicios pueden estar sujetos a condiciones específicas de cancelación, modificación o reembolso establecidas por sus respectivos proveedores. Esto puede incluir vuelos, trenes, alojamientos, entradas, boletos turísticos, traslados, tours, excursiones y otros servicios. Cuando existan condiciones particulares, estas deberán ser informadas al cliente antes o durante el proceso de contratación, según corresponda.
-                    </p>
-                </div>
-
-                <!-- PUNTO 7 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">7</span>
-                        <span>Modificaciones y reprogramaciones</span>
-                    </div>
-                    <p class="policy-text">
-                        Las solicitudes de cambio de fechas, destinos, actividades u otros servicios serán evaluadas previamente por PERÚ SAFE JOURNEYS y estarán sujetas a disponibilidad, condiciones del proveedor, diferencias tarifarias y posibles gastos o penalidades.
-                    </p>
-                    <p class="policy-text">
-                        Ninguna modificación se considerará confirmada hasta que haya sido aceptada por la agencia y, cuando corresponda, por los proveedores involucrados.
-                    </p>
-                </div>
-
-                <!-- PUNTO 8 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">8</span>
-                        <span>No presentación (No-Show)</span>
-                    </div>
-                    <p class="policy-text">
-                        La no presentación del cliente a un servicio reservado, tour, traslado, alojamiento, transporte, actividad o cualquier otro servicio contratado será considerada una cancelación de último momento y podrá estar sujeta a una penalidad de hasta el 100%, dependiendo de las condiciones del servicio y del proveedor.
-                    </p>
-                    <p class="policy-text">
-                        Cuando un proveedor establezca una condición específica de no-show, prevalecerá dicha condición, siempre que haya sido comunicada o forme parte de las condiciones aplicables a la reserva.
-                    </p>
-                </div>
-
-                <!-- PUNTO 9 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">9</span>
-                        <span>Servicios parcialmente utilizados</span>
-                    </div>
-                    <p class="policy-text">
-                        Una vez iniciado el viaje, los servicios no utilizados voluntariamente por el cliente, así como las actividades que el cliente decida omitir durante el programa, no generan automáticamente derecho a reembolso.
-                    </p>
-                    <p class="policy-text">
-                        Cualquier solicitud relacionada con servicios parcialmente utilizados será evaluada de acuerdo con las condiciones del servicio y del proveedor correspondiente.
-                    </p>
-                </div>
-
-                <!-- PUNTO 10 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">10</span>
-                        <span>Cancelaciones por circunstancias fuera del control de la agencia</span>
-                    </div>
-                    <p class="policy-text">
-                        PERÚ SAFE JOURNEYS se compromete a gestionar los servicios contratados de manera diligente y profesional. Sin embargo, pueden presentarse circunstancias fuera del control directo de la agencia, tales como:
-                    </p>
-                    <ul class="policy-list-bullet">
-                        <li>Condiciones meteorológicas adversas.</li>
-                        <li>Huelgas, paralizaciones o bloqueos.</li>
-                        <li>Cancelaciones o modificaciones de vuelos.</li>
-                        <li>Cancelaciones, cambios o interrupciones de servicios por parte de proveedores.</li>
-                        <li>Otras circunstancias externas que puedan afectar la prestación de los servicios.</li>
-                    </ul>
-                    <p class="policy-text">
-                        En estas situaciones, la agencia comunicará al cliente la situación y las alternativas disponibles, de acuerdo con las condiciones y políticas de los proveedores correspondientes.
-                    </p>
-                </div>
-
-                <!-- PUNTO 11 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">11</span>
-                        <span>Seguro de viaje</span>
-                    </div>
-                    <p class="policy-text">
-                        PERÚ SAFE JOURNEYS recomienda contratar un seguro de viaje que incluya cobertura para cancelación o interrupción del viaje, accidentes, problemas de salud, pérdida o demora de equipaje y otros imprevistos.
-                    </p>
-                    <p class="policy-text">
-                        Salvo que se indique expresamente lo contrario en el programa o contrato de servicios, la contratación y responsabilidad del seguro de viaje corresponde al cliente.
-                    </p>
-                </div>
-
-                <!-- PUNTO 12 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">12</span>
-                        <span>Procedimiento para solicitar una cancelación</span>
-                    </div>
-                    <ul class="policy-list-bullet">
-                        <li>Enviar la solicitud de cancelación por un medio que permita dejar constancia.</li>
-                        <li>Indicar los datos de la reserva y los servicios que se desean cancelar.</li>
-                        <li>La agencia verificará la fecha de recepción de la solicitud y las condiciones aplicables.</li>
-                        <li>Se informará al cliente la penalidad correspondiente y, de existir, el importe estimado del reembolso.</li>
-                        <li>El reembolso, cuando corresponda, será gestionado conforme a las condiciones aplicables a la reserva.</li>
-                    </ul>
-                </div>
-
-                <!-- PUNTO 13 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">13</span>
-                        <span>Aceptación</span>
-                    </div>
-                    <p class="policy-text">
-                        La confirmación y/o pago de una reserva implica que el cliente declara haber leído, comprendido y aceptado esta Política de Cancelación y Reembolsos, además de las condiciones particulares indicadas en su cotización, contrato, voucher o confirmación de servicios.
-                    </p>
-                </div>
-
-                <!-- PUNTO 14 -->
-                <div class="policy-point-item">
-                    <div class="policy-point-title">
-                        <span class="policy-point-number">14</span>
-                        <span>Información de la empresa</span>
-                    </div>
-                    <p class="policy-text fw-bold text-dark mb-1">PERÚ SAFE JOURNEYS TRAVEL AGENCY SAC</p>
-                    <p class="policy-text mb-1"><strong>RUC:</strong> 20613753258</p>
-                    <p class="policy-text mb-0">Cusco – Perú</p>
-                </div>
-
-                <!-- NOTA IMPORTANTE -->
-                <div class="policy-notice-box">
-                    <strong><i class="bi bi-exclamation-triangle-fill me-1"></i> IMPORTANTE PARA PUBLICACIÓN:</strong><br>
-                    Antes de publicar esta política como versión definitiva, recomendamos completar la condición para cancelaciones con más de 95 días de anticipación y validar jurídicamente las cláusulas de no-show, servicios parcialmente utilizados y circunstancias fuera del control de la agencia.
+                    <button class="btn btn-outline-dark fw-bold px-4 py-2 rounded-pill shadow-sm" onclick="window.print()">
+                        <i class="bi bi-download me-1"></i> Descargar / Imprimir PDF
+                    </button>
                 </div>
 
             </div>
@@ -1226,5 +1258,23 @@ $about_gallery_images = [
 
     <!-- Scripts Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapseElement = document.getElementById('collapsePolicy');
+            const textToggle = document.getElementById('textTogglePolicy');
+            const iconToggle = document.getElementById('iconTogglePolicy');
+
+            if (collapseElement && textToggle && iconToggle) {
+                collapseElement.addEventListener('show.bs.collapse', function () {
+                    textToggle.textContent = 'Ver menos';
+                    iconToggle.className = 'bi bi-chevron-up me-1';
+                });
+                collapseElement.addEventListener('hide.bs.collapse', function () {
+                    textToggle.textContent = 'Ver más';
+                    iconToggle.className = 'bi bi-chevron-down me-1';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
