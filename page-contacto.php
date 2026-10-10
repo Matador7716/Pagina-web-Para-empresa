@@ -292,13 +292,13 @@ $destinos_submenu = [
             border-bottom: 3px solid var(--color-naranja-journey);
         }
 
-        /* TARJETAS DE CONTACTO DE IGUAL TAMAÑO & MAPA */
+        /* TARJETAS DE CONTACTO SIN BORDER-TOP & MAPA MEJORADO */
         .contact-info-card {
             background: #FFFFFF;
             border-radius: 24px;
             border: 1px solid var(--color-gris-border);
-            border-top: 5px solid var(--color-naranja-journey);
-            padding: 2.5rem 2rem;
+            border-top: none !important;
+            padding: 2.5rem 2.2rem;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -307,11 +307,11 @@ $destinos_submenu = [
 
         .contact-item-box {
             background: #F8FAFC;
-            border-radius: 16px;
+            border-radius: 18px;
             border: 1px solid var(--color-gris-border);
-            padding: 1.1rem 1.2rem;
-            transition: all 0.28s ease;
-            height: 84px;
+            padding: 1.1rem 1.3rem;
+            transition: all 0.3s ease;
+            height: 86px;
             display: flex;
             align-items: center;
         }
@@ -319,19 +319,19 @@ $destinos_submenu = [
         .contact-item-box:hover {
             border-color: var(--color-naranja-journey);
             background: #FFFFFF;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         .contact-icon-wrapper {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
             background: linear-gradient(135deg, rgba(233, 77, 0, 0.12) 0%, rgba(233, 77, 0, 0.04) 100%);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             border: 1px solid rgba(233, 77, 0, 0.25);
             flex-shrink: 0;
         }
@@ -339,10 +339,10 @@ $destinos_submenu = [
         .contact-form-card {
             background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
             border-radius: 24px;
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 2.2rem;
             color: #FFFFFF;
-            border: 1px solid rgba(233, 77, 0, 0.3);
-            border-top: 5px solid var(--color-naranja-journey);
+            border: 1px solid rgba(233, 77, 0, 0.25);
+            border-top: none !important;
             height: 100%;
             display: flex;
             flex-direction: column;
