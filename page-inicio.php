@@ -498,19 +498,52 @@ $tripadvisor_reviews = [
             fill: currentColor;
         }
 
-        /* HERO SLIDER */
+        /* ULTRA MODERN HERO MULTI-SLIDER */
         .hero-video-slider {
             position: relative;
-            height: 90vh;
-            min-height: 580px;
-            max-height: 820px;
+            height: 92vh;
+            min-height: 620px;
+            max-height: 860px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: var(--color-blanco);
             width: 100vw;
             padding-top: 80px;
+        }
+
+        .hero-slide-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.9s ease-in-out, visibility 0.9s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-slide-item.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hero-slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.48) contrast(1.15);
+            transform: scale(1.05);
+            transition: transform 7s ease-out;
+            z-index: 1;
+        }
+
+        .hero-slide-item.active .hero-slide-bg {
+            transform: scale(1);
         }
 
         .video-background-wrapper {
@@ -534,7 +567,7 @@ $tripadvisor_reviews = [
             left: 50%;
             transform: translate(-50%, -50%);
             object-fit: cover;
-            filter: brightness(0.48) contrast(1.18);
+            filter: brightness(0.46) contrast(1.18);
         }
 
         .video-overlay-gradient {
@@ -545,9 +578,9 @@ $tripadvisor_reviews = [
             height: 100%;
             background: linear-gradient(
                 180deg,
-                rgba(0, 18, 32, 0.75) 0%,
-                rgba(0, 34, 56, 0.35) 50%,
-                rgba(0, 18, 32, 0.88) 100%
+                rgba(0, 18, 32, 0.78) 0%,
+                rgba(0, 34, 56, 0.42) 50%,
+                rgba(0, 18, 32, 0.92) 100%
             );
             z-index: 2;
         }
@@ -555,75 +588,172 @@ $tripadvisor_reviews = [
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 1050px;
+            max-width: 1080px;
             text-align: center;
-            padding: 1rem;
+            padding: 1.5rem;
+        }
+
+        .hero-slide-item .hero-title,
+        .hero-slide-item .hero-subtitle,
+        .hero-slide-item .hero-actions {
+            transform: translateY(30px);
+            opacity: 0;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+
+        .hero-slide-item.active .hero-title {
+            transform: translateY(0);
+            opacity: 1;
+            transition-delay: 0.2s;
+        }
+
+        .hero-slide-item.active .hero-subtitle {
+            transform: translateY(0);
+            opacity: 1;
+            transition-delay: 0.4s;
+        }
+
+        .hero-slide-item.active .hero-actions {
+            transform: translateY(0);
+            opacity: 1;
+            transition-delay: 0.6s;
         }
 
         .hero-title {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 900;
             letter-spacing: -0.5px;
             line-height: 1.1;
             margin-bottom: 1.2rem;
             text-transform: uppercase;
             color: #FFFFFF;
-            text-shadow: 0 4px 25px rgba(0, 0, 0, 0.85);
+            text-shadow: 0 4px 28px rgba(0, 0, 0, 0.88);
         }
 
         .hero-subtitle {
-            font-size: 1.28rem;
+            font-size: 1.25rem;
             font-weight: 500;
-            line-height: 1.85;
+            line-height: 1.8;
             margin-bottom: 2.2rem;
             color: #F8FAFC;
             max-width: 880px;
             margin-left: auto;
             margin-right: auto;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.82);
         }
 
         .btn-banner-primary {
             background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: var(--color-blanco) !important;
-            font-weight: 700;
+            font-weight: 800;
             border-radius: 50px;
-            padding: 0.85rem 2.2rem;
+            padding: 0.9rem 2.4rem;
             font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
             border: 2px solid rgba(255, 255, 255, 0.3);
             text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(233, 77, 0, 0.4);
         }
 
         .btn-banner-primary:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.02);
             background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            box-shadow: 0 14px 32px rgba(233, 77, 0, 0.6);
         }
 
         .btn-banner-secondary {
-            background-color: rgba(255, 255, 255, 0.18);
+            background-color: rgba(255, 255, 255, 0.16);
             color: var(--color-blanco) !important;
-            font-weight: 700;
+            font-weight: 800;
             border-radius: 50px;
-            padding: 0.85rem 2.2rem;
+            padding: 0.9rem 2.4rem;
             font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            backdrop-filter: blur(12px);
+            transition: all 0.35s ease;
             border: 2px solid rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
         }
 
         .btn-banner-secondary:hover {
             background-color: rgba(255, 255, 255, 0.35);
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        /* CONTROLES Y THUMBNAILS DE SLIDER HERO */
+        .hero-slider-arrows {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+            pointer-events: none;
+        }
+
+        .hero-arrow-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(0, 18, 32, 0.65);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            pointer-events: auto;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-arrow-btn:hover {
+            background: var(--color-naranja-journey);
+            border-color: var(--color-naranja-journey);
+            transform: scale(1.1);
+        }
+
+        .hero-slider-thumbnails {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(0, 18, 32, 0.65);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-thumb-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-thumb-dot.active {
+            background: var(--color-naranja-journey);
+            border-color: #FFFFFF;
+            transform: scale(1.3);
         }
 
         /* SECTION TITLES & BADGES */
@@ -1365,39 +1495,111 @@ $tripadvisor_reviews = [
     </nav>
 
 
-    <!-- HERO SLIDER VIDEO -->
+    <!-- HERO MULTI-SLIDER REVISION MODERNA -->
     <section class="hero-video-slider">
-        <div class="video-background-wrapper">
-            <iframe src="https://www.youtube.com/embed/QPBMvXbjjUI?autoplay=1&mute=1&controls=0&loop=1&playlist=QPBMvXbjjUI&showinfo=0&rel=0&iv_load_policy=3&enablejsapi=1"
-                    title="Perú Safe Journeys Background Video"
-                    frameborder="0"
-                    allow="autoplay; encrypted-media">
-            </iframe>
-        </div>
         <div class="video-overlay-gradient"></div>
 
-        <div class="container-fluid px-3 px-lg-5 position-relative">
-            <div class="hero-content mx-auto">
-                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill font-weight-bold text-uppercase mb-3 fs-6">
-                    EXPERIENCIAS AUTÉNTICAS EN EL PERÚ
-                </span>
-                <h1 class="hero-title">
-                    VIVE EL PERÚ A TU MANERA
-                </h1>
-                <p class="hero-subtitle">
-                    Diseñamos viajes personalizados con seguridad, confort y una profunda conexión con nuestra cultura, historia y naturaleza.
-                </p>
-                <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
-                    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20ahora%20mi%20viaje" target="_blank" class="btn-banner-primary">
-                        <span>Reserva Ahora y Viaja</span>
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                    <a href="https://www.perusafejourneysgroup.com/destinos/" class="btn-banner-secondary">
-                        <span>Explora Nuestros Tours</span>
-                        <i class="bi bi-compass"></i>
-                    </a>
+        <!-- SLIDE 1: VIDEO CINEMÁTICO PRINCIPAL -->
+        <div class="hero-slide-item active" id="heroSlide1">
+            <div class="video-background-wrapper">
+                <iframe src="https://www.youtube.com/embed/QPBMvXbjjUI?autoplay=1&mute=1&controls=0&loop=1&playlist=QPBMvXbjjUI&showinfo=0&rel=0&iv_load_policy=3&enablejsapi=1"
+                        title="Perú Safe Journeys Background Video"
+                        frameborder="0"
+                        allow="autoplay; encrypted-media">
+                </iframe>
+            </div>
+            <div class="container-fluid px-3 px-lg-5 position-relative">
+                <div class="hero-content mx-auto">
+                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3 fs-6">
+                        EXPERIENCIAS AUTÉNTICAS EN EL PERÚ
+                    </span>
+                    <h1 class="hero-title">
+                        VIVE EL PERÚ A TU MANERA
+                    </h1>
+                    <p class="hero-subtitle">
+                        Diseñamos viajes personalizados con seguridad, confort y una profunda conexión con nuestra cultura, historia y naturaleza.
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap hero-actions">
+                        <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20ahora%20mi%20viaje" target="_blank" class="btn-banner-primary">
+                            <span>Reserva Ahora y Viaja</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="https://www.perusafejourneysgroup.com/destinos/" class="btn-banner-secondary">
+                            <span>Explora Nuestros Tours</span>
+                            <i class="bi bi-compass"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- SLIDE 2: MACHU PICCHU Y VALLE SAGRADO -->
+        <div class="hero-slide-item" id="heroSlide2">
+            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1800&q=80" alt="Machu Picchu Safe Journeys" class="hero-slide-bg">
+            <div class="container-fluid px-3 px-lg-5 position-relative">
+                <div class="hero-content mx-auto">
+                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3 fs-6">
+                        PATRIMONIO DE LA HUMANIDAD
+                    </span>
+                    <h1 class="hero-title">
+                        SANTUARIOS & MONTAÑAS SAGRADAS
+                    </h1>
+                    <p class="hero-subtitle">
+                        Descubre la majestuosidad Inca de Machu Picchu y el Valle Sagrado acompañados por nuestros guías especialistas locales.
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap hero-actions">
+                        <a href="https://www.perusafejourneysgroup.com/destinos/valle-sagrado-big/" class="btn-banner-primary">
+                            <span>Ver Rutas Tradicionales</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20cotizar%20Machu%20Picchu" target="_blank" class="btn-banner-secondary">
+                            <span>Cotizar por WhatsApp</span>
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: AVENTURA Y MONTAÑAS DE COLORES -->
+        <div class="hero-slide-item" id="heroSlide3">
+            <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=1800&q=80" alt="Vinicunca Montaña de Colores" class="hero-slide-bg">
+            <div class="container-fluid px-3 px-lg-5 position-relative">
+                <div class="hero-content mx-auto">
+                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3 fs-6">
+                        RUTAS DE ALTA MONTAÑA & ADRENALINA
+                    </span>
+                    <h1 class="hero-title">
+                        PAISAJES QUE DESAFIAN TUS SENTIDOS
+                    </h1>
+                    <p class="hero-subtitle">
+                        Siente la adrenalina en cuatrimoto hacia Vinicunca y explora los glaciares de Humantay y Ausangate con la máxima seguridad.
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap hero-actions">
+                        <a href="https://www.perusafejourneysgroup.com/destinos/atv-montana-de-colores-fd/" class="btn-banner-primary">
+                            <span>Tour ATV Vinicunca</span>
+                            <i class="bi bi-lightning-charge-fill"></i>
+                        </a>
+                        <a href="https://www.perusafejourneysgroup.com/destinos/7-lagunas-del-ausangate/" class="btn-banner-secondary">
+                            <span>7 Lagunas del Ausangate</span>
+                            <i class="bi bi-water"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTROLES FLECHAS -->
+        <div class="hero-slider-arrows">
+            <button class="hero-arrow-btn" id="heroPrevBtn" aria-label="Slide Anterior"><i class="bi bi-chevron-left"></i></button>
+            <button class="hero-arrow-btn" id="heroNextBtn" aria-label="Slide Siguiente"><i class="bi bi-chevron-right"></i></button>
+        </div>
+
+        <!-- THUMBNAIL INDICATORS -->
+        <div class="hero-slider-thumbnails">
+            <div class="hero-thumb-dot active" onclick="goToHeroSlide(0)"></div>
+            <div class="hero-thumb-dot" onclick="goToHeroSlide(1)"></div>
+            <div class="hero-thumb-dot" onclick="goToHeroSlide(2)"></div>
         </div>
     </section>
 
@@ -1817,6 +2019,66 @@ $tripadvisor_reviews = [
             setupSlider('modalidadesTrack', 'slideModPrevBtn', 'slideModNextBtn');
             setupSlider('destinosTrack', 'slideDestPrevBtn', 'slideDestNextBtn');
         });
+
+        // LÓGICA DE HERO SLIDER MULTI-DIAPOSITIVA
+        let currentHeroIndex = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide-item');
+        const heroDots = document.querySelectorAll('.hero-thumb-dot');
+        let heroInterval;
+
+        function showHeroSlide(index) {
+            heroSlides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            heroDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+            currentHeroIndex = index;
+        }
+
+        function goToHeroSlide(index) {
+            showHeroSlide(index);
+            resetHeroTimer();
+        }
+
+        function nextHeroSlide() {
+            let nextIndex = (currentHeroIndex + 1) % heroSlides.length;
+            showHeroSlide(nextIndex);
+        }
+
+        function prevHeroSlide() {
+            let prevIndex = (currentHeroIndex - 1 + heroSlides.length) % heroSlides.length;
+            showHeroSlide(prevIndex);
+        }
+
+        function resetHeroTimer() {
+            clearInterval(heroInterval);
+            heroInterval = setInterval(nextHeroSlide, 7000);
+        }
+
+        const heroPrev = document.getElementById('heroPrevBtn');
+        const heroNext = document.getElementById('heroNextBtn');
+
+        if (heroPrev && heroNext) {
+            heroPrev.addEventListener('click', () => {
+                prevHeroSlide();
+                resetHeroTimer();
+            });
+            heroNext.addEventListener('click', () => {
+                nextHeroSlide();
+                resetHeroTimer();
+            });
+        }
+
+        resetHeroTimer();
     </script>
 </body>
 </html>
