@@ -336,97 +336,162 @@ $seven_lakes_gallery = [
             color: var(--color-dorado-andino);
         }
 
-        /* GALERÍA MODERNA TIPO SLIDER Y CARDS INTERACTIVAS */
-        .modern-gallery-section {
+        /* NUEVO DISEÑO DE GALERÍA EN FORMATO FILMSTRIP Y CARDS ELEVADAS SIN BORDES */
+        .interactive-gallery-section {
             background-color: #F8FAFC;
-            padding: 4rem 0;
+            padding: 4.5rem 0;
             border-bottom: 1px solid var(--color-gris-border);
         }
 
-        .modern-gallery-track {
+        .lake-filmstrip-container {
             display: flex;
-            gap: 18px;
+            gap: 20px;
             overflow-x: auto;
             scroll-behavior: smooth;
-            padding: 10px 4px 20px;
+            padding: 15px 5px 25px;
             scrollbar-width: none;
         }
 
-        .modern-gallery-track::-webkit-scrollbar {
+        .lake-filmstrip-container::-webkit-scrollbar {
             display: none;
         }
 
-        .modern-lake-card {
-            flex: 0 0 310px;
-            height: 380px;
-            border-radius: 24px;
+        .filmstrip-card {
+            flex: 0 0 320px;
+            height: 420px;
+            border-radius: 26px;
             overflow: hidden;
             position: relative;
             cursor: pointer;
             border: none !important;
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
             box-shadow: none !important;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            background: #001220;
         }
 
-        .modern-lake-card img {
+        .filmstrip-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+            filter: brightness(0.9);
         }
 
-        .modern-lake-card:hover {
-            transform: translateY(-8px);
+        .filmstrip-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            z-index: 3;
         }
 
-        .modern-lake-card:hover img {
+        .filmstrip-card:hover img {
             transform: scale(1.12);
+            filter: brightness(1);
         }
 
-        .modern-lake-overlay {
+        .filmstrip-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(0, 18, 32, 0.15) 0%, rgba(0, 18, 32, 0.92) 100%);
-            padding: 1.5rem 1.3rem;
+            background: linear-gradient(180deg, rgba(0, 18, 32, 0.08) 0%, rgba(0, 18, 32, 0.95) 100%);
+            padding: 1.6rem 1.4rem;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             color: #FFFFFF;
         }
 
-        .modern-lake-badge {
+        .filmstrip-tag {
             position: absolute;
-            top: 16px;
-            left: 16px;
-            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            top: 18px;
+            left: 18px;
+            background: rgba(0, 18, 32, 0.82);
+            backdrop-filter: blur(10px);
             color: #FFFFFF;
             font-size: 0.78rem;
             font-weight: 800;
-            padding: 0.38rem 0.95rem;
+            padding: 0.4rem 1rem;
             border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
             text-transform: uppercase;
         }
 
-        .modern-zoom-btn {
+        .filmstrip-zoom-icon {
             position: absolute;
-            top: 16px;
-            right: 16px;
-            width: 38px;
-            height: 38px;
+            top: 18px;
+            right: 18px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(8px);
+            background: var(--color-naranja-journey);
             color: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.35s ease;
         }
 
-        .modern-lake-card:hover .modern-zoom-btn {
-            background: var(--color-naranja-journey);
-            transform: scale(1.1);
+        .filmstrip-card:hover .filmstrip-zoom-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* SECCIÓN A ANCHO COMPLETO PARA BOTONES DE CONTACTO DIRECTO EN EL PIE */
+        .footer-cta-section {
+            background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%);
+            padding: 4.5rem 0;
+            color: #FFFFFF;
+            width: 100vw;
+            border-top: 3px solid var(--color-naranja-journey);
+            position: relative;
+        }
+
+        .cta-action-btn-wa {
+            background: #25D366;
+            color: #FFFFFF !important;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 1.05rem 2.8rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.35s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+        }
+
+        .cta-action-btn-wa:hover {
+            background: #1EBE57;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        .cta-action-btn-call {
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: #FFFFFF !important;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 1.05rem 2.8rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.35s ease;
+            box-shadow: 0 10px 30px rgba(233, 77, 0, 0.35);
+        }
+
+        .cta-action-btn-call:hover {
+            background: linear-gradient(135deg, var(--color-naranja-hover) 0%, var(--color-naranja-journey) 100%);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 35px rgba(233, 77, 0, 0.5);
         }
 
         /* CUERPO DEL TOUR RE-DISEÑADO CON PALETA INICIO */
@@ -871,30 +936,30 @@ $seven_lakes_gallery = [
         </div>
     </section>
 
-    <!-- GALERÍA INTERACTIVA MODERNA TIPO SLIDER Y CARDS SIN BORDES -->
-    <section class="modern-gallery-section">
+    <!-- GALERÍA DE DISEÑO NUEVO, CREATIVO Y ATRACTIVO EN FORMATO FILMSTRIP INTERACTIVO -->
+    <section class="interactive-gallery-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
                 <div>
-                    <span class="section-badge-clean">GALERÍA VISUAL Y EXCLUSIVA</span>
+                    <span class="section-badge-clean">GALERÍA VISUAL INTERACTIVA</span>
                     <h2 class="display-6 fw-extrabold text-dark mb-1">Las 7 Lagunas del Ausangate</h2>
-                    <p class="fs-6 text-secondary mb-0">Desliza de forma interactiva y haz clic en cualquier laguna para contemplarla en alta resolución.</p>
+                    <p class="fs-6 text-secondary mb-0">Desliza horizontalmente y haz clic en cualquiera de las lagunas para ver la imagen completa.</p>
                 </div>
 
                 <div class="d-flex gap-2">
-                    <button class="slider-nav-btn" id="galleryPrevBtn" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
-                    <button class="slider-nav-btn" id="galleryNextBtn" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
+                    <button class="slider-nav-btn" id="filmstripPrevBtn" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
+                    <button class="slider-nav-btn" id="filmstripNextBtn" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
                 </div>
             </div>
 
-            <div class="modern-gallery-track" id="lakesGalleryTrack">
+            <div class="lake-filmstrip-container" id="lakeFilmstripTrack">
                 <?php foreach($seven_lakes_gallery as $idx => $lake): ?>
-                    <div class="modern-lake-card" onclick="openImageModal('<?php echo $lake['url']; ?>', '<?php echo addslashes($lake['title']); ?>', '<?php echo addslashes($lake['subtitle']); ?>')">
-                        <span class="modern-lake-badge">Laguna <?php echo ($idx + 1); ?></span>
-                        <div class="modern-zoom-btn"><i class="bi bi-arrows-angle-expand"></i></div>
+                    <div class="filmstrip-card" onclick="openImageModal('<?php echo $lake['url']; ?>', '<?php echo addslashes($lake['title']); ?>', '<?php echo addslashes($lake['subtitle']); ?>')">
+                        <span class="filmstrip-tag">Laguna 0<?php echo ($idx + 1); ?></span>
+                        <div class="filmstrip-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
                         <img src="<?php echo $lake['url']; ?>" alt="<?php echo $lake['title']; ?>" loading="lazy">
-                        <div class="modern-lake-overlay">
-                            <h5 class="fs-5 fw-bold text-white mb-1"><?php echo $lake['title']; ?></h5>
+                        <div class="filmstrip-overlay">
+                            <h4 class="fs-5 fw-bold text-white mb-1"><?php echo $lake['title']; ?></h4>
                             <p class="text-warning small mb-0 fw-medium"><?php echo $lake['subtitle']; ?></p>
                         </div>
                     </div>
@@ -1039,23 +1104,35 @@ $seven_lakes_gallery = [
                             </ul>
                         </div>
 
-                        <!-- BOTONES DE CONTACTO DIRECTO CENTRADOS -->
-                        <div class="p-4 rounded-4 text-center mx-auto w-100" style="background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%); border: none !important; box-shadow: none !important;">
-                            <h4 class="fs-5 fw-bold text-white mb-2 text-center">¿Tienes dudas o deseas reservar?</h4>
-                            <p class="small text-light opacity-90 mb-3 text-center mx-auto max-w-400">Nuestros asesores de ventas están listos para asistirte al instante.</p>
-                            <div class="d-flex flex-column gap-2 align-items-center justify-content-center mx-auto max-w-350">
-                                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20tour%207%20Lagunas%20del%20Ausangate" target="_blank" class="btn-reserve-wa w-100 justify-content-center text-center">
-                                    <i class="bi bi-whatsapp"></i> Consultar por WhatsApp
-                                </a>
-                                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="btn-call-sales w-100 justify-content-center text-center">
-                                    <i class="bi bi-telephone-fill"></i> Llamar a Ventas
-                                </a>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN COMPLETA DE BOTONES DE CONTACTO DIRECTO AL PIE DE PÁGINA (A ANCHO COMPLETO) -->
+    <section class="footer-cta-section text-center" id="reserva-directa">
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="max-w-900 mx-auto">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">ATENCIÓN INMEDIATA Y PERSONALIZADA</span>
+                <h2 class="display-5 fw-extrabold text-white mb-3">¿Listo para explorar las 7 Lagunas del Ausangate?</h2>
+                <p class="fs-5 text-light opacity-90 mb-4 max-w-700 mx-auto" style="line-height: 1.8;">
+                    Nuestros especialistas locales están disponibles en tiempo real para cotizar tu grupo, responder consultas o asegurar tu lugar en la fecha elegida.
+                </p>
+
+                <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+                    <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20el%20tour%207%20Lagunas%20del%20Ausangate" target="_blank" class="cta-action-btn-wa">
+                        <i class="bi bi-whatsapp fs-4"></i>
+                        <span>Consultar por WhatsApp</span>
+                    </a>
+
+                    <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="cta-action-btn-call">
+                        <i class="bi bi-telephone-fill fs-5"></i>
+                        <span>Llamar Directamente</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1165,16 +1242,16 @@ $seven_lakes_gallery = [
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            const track = document.getElementById('lakesGalleryTrack');
-            const prevBtn = document.getElementById('galleryPrevBtn');
-            const nextBtn = document.getElementById('galleryNextBtn');
+            const track = document.getElementById('lakeFilmstripTrack');
+            const prevBtn = document.getElementById('filmstripPrevBtn');
+            const nextBtn = document.getElementById('filmstripNextBtn');
 
             if (track && prevBtn && nextBtn) {
                 nextBtn.addEventListener('click', () => {
-                    track.scrollBy({ left: 320, behavior: 'smooth' });
+                    track.scrollBy({ left: 340, behavior: 'smooth' });
                 });
                 prevBtn.addEventListener('click', () => {
-                    track.scrollBy({ left: -320, behavior: 'smooth' });
+                    track.scrollBy({ left: -340, behavior: 'smooth' });
                 });
             }
         });
