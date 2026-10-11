@@ -860,7 +860,7 @@ $seven_lakes_gallery = [
                         </span>
                     </div>
 
-                    <h1 class="display-3 fw-extrabold text-white mb-3 text-uppercase" style="letter-spacing: -1px; text-shadow: 0 4px 20px rgba(0,0,0,0.85);">
+                    <h1 class="display-3 fw-extrabold text-white mb-3 text-uppercase" style="text-shadow: 0 4px 20px rgba(0,0,0,0.85);">
                         7 LAGUNAS DEL AUSANGATE
                     </h1>
                     <p class="fs-5 text-light opacity-90 mb-4" style="line-height: 1.8; max-width: 720px; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
