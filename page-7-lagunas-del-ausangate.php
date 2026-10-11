@@ -283,132 +283,136 @@ $seven_lakes_gallery = [
             transform: translateX(5px);
         }
 
-        /* HERO HEADER TOUR BANNER RE-DISEÑADO Y CINEMÁTICO */
+        /* ULTRA-FRIENDLY & MODERN HERO BANNER MATCHING INICIO */
         .tour-hero-banner {
-            background: linear-gradient(180deg, rgba(0, 18, 32, 0.5) 0%, rgba(0, 18, 32, 0.95) 100%), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat fixed;
-            padding: 5.5rem 0 4.5rem;
+            background: linear-gradient(180deg, rgba(0, 18, 32, 0.65) 0%, rgba(0, 34, 56, 0.92) 100%), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+            padding: 5.8rem 0 4.8rem;
             color: #FFFFFF;
             border-bottom: 3px solid var(--color-naranja-journey);
             position: relative;
         }
 
-        .hero-key-pills {
-            display: flex;
+        .section-badge-clean {
+            display: inline-flex;
             align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-
-        .hero-pill-item {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(8px);
-            padding: 0.35rem 1rem;
+            justify-content: center;
+            background-color: rgba(233, 77, 0, 0.08);
+            color: var(--color-naranja-journey);
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 0.38rem 1.1rem;
             border-radius: 50px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: #F8FAFC;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1.2px;
+            margin-bottom: 0.6rem;
+            border: 1px solid rgba(233, 77, 0, 0.22);
         }
 
-        .tour-price-box-glass {
-            background: rgba(0, 18, 32, 0.82);
-            backdrop-filter: blur(16px);
-            border: 2px solid rgba(233, 77, 0, 0.6);
-            border-radius: 24px;
-            padding: 2rem 1.8rem;
+        .tour-price-card-creative {
+            background: rgba(0, 18, 32, 0.88);
+            backdrop-filter: blur(18px);
+            border: 2px solid rgba(233, 77, 0, 0.5);
+            border-radius: 28px;
+            padding: 2.2rem 2rem;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.35s ease;
         }
 
-        .tour-price-badge {
-            font-size: 2.6rem;
+        .tour-price-card-creative:hover {
+            border-color: var(--color-naranja-journey);
+            transform: translateY(-4px);
+        }
+
+        .tour-price-main {
+            font-size: 2.8rem;
             font-weight: 900;
             color: #FFFFFF;
             line-height: 1;
-            letter-spacing: -0.5px;
         }
 
-        .tour-pen-price {
+        .tour-price-pen-badge {
             font-size: 1.15rem;
-            color: var(--color-dorado-andino);
             font-weight: 700;
-            margin-top: 0.2rem;
+            color: var(--color-dorado-andino);
         }
 
-        /* GALERÍA EN MOSAICO MODERNO Y CREATIVO SIN BORDES */
-        .mosaic-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 210px;
-            gap: 12px;
+        /* GALERÍA MODERNA TIPO SLIDER Y CARDS INTERACTIVAS */
+        .modern-gallery-section {
+            background-color: #F8FAFC;
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--color-gris-border);
         }
 
-        .mosaic-item {
-            position: relative;
-            border-radius: 18px;
+        .modern-gallery-track {
+            display: flex;
+            gap: 18px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 4px 20px;
+            scrollbar-width: none;
+        }
+
+        .modern-gallery-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .modern-lake-card {
+            flex: 0 0 310px;
+            height: 380px;
+            border-radius: 24px;
             overflow: hidden;
+            position: relative;
             cursor: pointer;
             border: none !important;
-            box-shadow: none !important;
             transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: none !important;
         }
 
-        .mosaic-item-featured {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        .mosaic-item img {
+        .modern-lake-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .mosaic-item:hover {
-            transform: translateY(-4px);
-            z-index: 2;
+        .modern-lake-card:hover {
+            transform: translateY(-8px);
         }
 
-        .mosaic-item:hover img {
-            transform: scale(1.08);
+        .modern-lake-card:hover img {
+            transform: scale(1.12);
         }
 
-        .mosaic-item-overlay {
+        .modern-lake-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(0, 18, 32, 0.92) 100%);
-            padding: 1.2rem;
+            background: linear-gradient(180deg, rgba(0, 18, 32, 0.15) 0%, rgba(0, 18, 32, 0.92) 100%);
+            padding: 1.5rem 1.3rem;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             color: #FFFFFF;
-            transition: all 0.3s ease;
         }
 
-        .mosaic-lake-number {
+        .modern-lake-badge {
             position: absolute;
-            top: 14px;
-            left: 14px;
-            background: rgba(233, 77, 0, 0.9);
+            top: 16px;
+            left: 16px;
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
             color: #FFFFFF;
-            font-weight: 800;
             font-size: 0.78rem;
-            padding: 0.3rem 0.8rem;
+            font-weight: 800;
+            padding: 0.38rem 0.95rem;
             border-radius: 50px;
-            backdrop-filter: blur(6px);
             text-transform: uppercase;
         }
 
-        .mosaic-zoom-icon {
+        .modern-zoom-btn {
             position: absolute;
-            top: 14px;
-            right: 14px;
-            width: 36px;
-            height: 36px;
+            top: 16px;
+            right: 16px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(8px);
@@ -416,58 +420,54 @@ $seven_lakes_gallery = [
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
-            opacity: 0;
-            transform: scale(0.8);
+            font-size: 1.1rem;
             transition: all 0.3s ease;
         }
 
-        .mosaic-item:hover .mosaic-zoom-icon {
-            opacity: 1;
-            transform: scale(1);
+        .modern-lake-card:hover .modern-zoom-btn {
             background: var(--color-naranja-journey);
+            transform: scale(1.1);
         }
 
-        /* CUERPO Y SECCIONES MODERNAS DEL TOUR */
-        .tour-details-section {
+        /* CUERPO DEL TOUR RE-DISEÑADO CON PALETA INICIO */
+        .tour-friendly-body {
             background-color: #FFFFFF;
             padding: 4.5rem 0;
         }
 
-        .spec-highlight-card {
+        .friendly-highlight-box {
             background: #F8FAFC;
-            border-radius: 20px;
+            border-radius: 22px;
             border: 1px solid var(--color-gris-border);
-            padding: 1.5rem;
+            padding: 1.6rem 1.4rem;
             display: flex;
             align-items: center;
             gap: 16px;
             transition: all 0.3s ease;
         }
 
-        .spec-highlight-card:hover {
+        .friendly-highlight-box:hover {
             border-color: var(--color-naranja-journey);
-            background: #FFFFFF;
             transform: translateY(-3px);
+            background: #FFFFFF;
         }
 
-        .spec-icon-wrapper {
-            width: 52px;
-            height: 52px;
+        .friendly-icon-circle {
+            width: 54px;
+            height: 54px;
             border-radius: 16px;
-            background: linear-gradient(135deg, rgba(233, 77, 0, 0.12) 0%, rgba(233, 77, 0, 0.04) 100%);
-            color: var(--color-naranja-journey);
+            background: linear-gradient(135deg, var(--color-naranja-journey) 0%, #FF6200 100%);
+            color: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
-            border: 1px solid rgba(233, 77, 0, 0.25);
+            font-size: 1.5rem;
             flex-shrink: 0;
         }
 
         .tour-spec-box {
             background: #FFFFFF;
-            border-radius: 22px;
+            border-radius: 24px;
             border: 1px solid var(--color-gris-border);
             padding: 2.2rem 1.8rem;
             height: 100%;
@@ -479,16 +479,17 @@ $seven_lakes_gallery = [
         }
 
         .tour-spec-icon {
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             border-radius: 16px;
-            background: rgba(233, 77, 0, 0.12);
+            background: linear-gradient(135deg, rgba(233, 77, 0, 0.12) 0%, rgba(233, 77, 0, 0.04) 100%);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 1.2rem;
+            border: 1px solid rgba(233, 77, 0, 0.25);
         }
 
         .tour-check-list {
@@ -796,18 +797,18 @@ $seven_lakes_gallery = [
         </div>
     </nav>
 
-    <!-- HERO HEADER DEL TOUR RE-DISEÑADO -->
+    <!-- HERO HEADER DEL TOUR - PALETA Y DISEÑO DE PÁGINA DE INICIO -->
     <section class="tour-hero-banner">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row align-items-center g-5">
                 <div class="col-lg-7">
-                    <!-- TÍTULOS SIN FONDO BADGE -->
-                    <div class="hero-key-pills">
-                        <span class="fw-bold text-warning text-uppercase" style="font-size: 0.9rem;">
+                    <!-- TÍTULOS SIN FONDO BADGE CON PALETA INICIO -->
+                    <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
+                        <span class="fw-bold text-warning text-uppercase fs-6">
                             <i class="bi bi-clock-history me-1"></i> FULL DAY
                         </span>
                         <span class="text-light opacity-50">•</span>
-                        <span class="fw-bold text-info text-uppercase" style="font-size: 0.9rem;">
+                        <span class="fw-bold text-info text-uppercase fs-6">
                             <i class="bi bi-geo-alt-fill me-1"></i> PACCHANTA – AUSANGATE
                         </span>
                     </div>
@@ -819,11 +820,11 @@ $seven_lakes_gallery = [
                         Ruta mística a través de siete deslumbrantes espejos de agua glaciares al pie de la majestuosa cordillera del Ausangate y relajantes aguas termales naturales en Pacchanta.
                     </p>
 
-                    <!-- SPECS RÁPIDAS -->
+                    <!-- SPECS HIGHLIGHTS -->
                     <div class="row g-3 max-w-700">
                         <div class="col-sm-4">
                             <div class="d-flex align-items-center gap-2 text-white">
-                                <i class="bi bi-graph-up-arrow text-warning fs-4"></i>
+                                <i class="bi bi-graph-up-arrow text-warning fs-3"></i>
                                 <div>
                                     <small class="d-block text-uppercase text-light opacity-75 fw-bold" style="font-size: 0.7rem;">Altitud Máx.</small>
                                     <strong class="fs-6">4,300 msnm</strong>
@@ -832,7 +833,7 @@ $seven_lakes_gallery = [
                         </div>
                         <div class="col-sm-4">
                             <div class="d-flex align-items-center gap-2 text-white">
-                                <i class="bi bi-activity text-warning fs-4"></i>
+                                <i class="bi bi-activity text-warning fs-3"></i>
                                 <div>
                                     <small class="d-block text-uppercase text-light opacity-75 fw-bold" style="font-size: 0.7rem;">Dificultad</small>
                                     <strong class="fs-6">Moderada - Alta</strong>
@@ -841,7 +842,7 @@ $seven_lakes_gallery = [
                         </div>
                         <div class="col-sm-4">
                             <div class="d-flex align-items-center gap-2 text-white">
-                                <i class="bi bi-people-fill text-warning fs-4"></i>
+                                <i class="bi bi-people-fill text-warning fs-3"></i>
                                 <div>
                                     <small class="d-block text-uppercase text-light opacity-75 fw-bold" style="font-size: 0.7rem;">Modalidad</small>
                                     <strong class="fs-6">Grupal / Privado</strong>
@@ -852,10 +853,10 @@ $seven_lakes_gallery = [
                 </div>
 
                 <div class="col-lg-5 text-lg-end">
-                    <div class="tour-price-box-glass mx-auto ms-lg-auto max-w-380">
-                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2" style="font-size: 0.72rem;">OFERTA DE CATÁLOGO</span>
-                        <div class="tour-price-badge my-1">USD 40.00</div>
-                        <div class="tour-pen-price mb-3">S/. 137.70 soles por persona</div>
+                    <div class="tour-price-card-creative mx-auto ms-lg-auto max-w-380">
+                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2" style="font-size: 0.72rem;">PRECIO OFICIAL CATÁLOGO</span>
+                        <div class="tour-price-main my-1">USD 40.00</div>
+                        <div class="tour-price-pen-badge mb-3">S/. 137.70 soles por persona</div>
                         <div class="d-flex flex-column gap-2">
                             <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20el%20tour%207%20Lagunas%20del%20Ausangate%20a%20USD%2040" target="_blank" class="btn btn-reserve-wa w-100 justify-content-center">
                                 <i class="bi bi-whatsapp"></i> Reservar por WhatsApp
@@ -870,24 +871,31 @@ $seven_lakes_gallery = [
         </div>
     </section>
 
-    <!-- GALERÍA MOSAICO ULTRA CREATIVA DE LAS 7 LAGUNAS -->
-    <section class="py-5 bg-light">
+    <!-- GALERÍA INTERACTIVA MODERNA TIPO SLIDER Y CARDS SIN BORDES -->
+    <section class="modern-gallery-section">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="text-center mb-4">
-                <span class="section-badge-clean">CIRCUITO NATURAL MOSAICO</span>
-                <h2 class="display-6 fw-extrabold text-dark mb-2">Las 7 Lagunas del Ausangate</h2>
-                <p class="fs-6 text-secondary max-w-700 mx-auto mb-0">Explora la composición fotográfica de las siete lagunas glaciares. Haz clic en cualquiera para visualizarla a pantalla completa.</p>
+            <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+                <div>
+                    <span class="section-badge-clean">GALERÍA VISUAL Y EXCLUSIVA</span>
+                    <h2 class="display-6 fw-extrabold text-dark mb-1">Las 7 Lagunas del Ausangate</h2>
+                    <p class="fs-6 text-secondary mb-0">Desliza de forma interactiva y haz clic en cualquier laguna para contemplarla en alta resolución.</p>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button class="slider-nav-btn" id="galleryPrevBtn" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
+                    <button class="slider-nav-btn" id="galleryNextBtn" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
+                </div>
             </div>
 
-            <div class="mosaic-gallery-grid">
+            <div class="modern-gallery-track" id="lakesGalleryTrack">
                 <?php foreach($seven_lakes_gallery as $idx => $lake): ?>
-                    <div class="mosaic-item <?php echo ($idx === 0) ? 'mosaic-item-featured' : ''; ?>" onclick="openImageModal('<?php echo $lake['url']; ?>', '<?php echo addslashes($lake['title']); ?>', '<?php echo addslashes($lake['subtitle']); ?>')">
-                        <span class="mosaic-lake-number">Laguna <?php echo ($idx + 1); ?></span>
-                        <div class="mosaic-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
+                    <div class="modern-lake-card" onclick="openImageModal('<?php echo $lake['url']; ?>', '<?php echo addslashes($lake['title']); ?>', '<?php echo addslashes($lake['subtitle']); ?>')">
+                        <span class="modern-lake-badge">Laguna <?php echo ($idx + 1); ?></span>
+                        <div class="modern-zoom-btn"><i class="bi bi-arrows-angle-expand"></i></div>
                         <img src="<?php echo $lake['url']; ?>" alt="<?php echo $lake['title']; ?>" loading="lazy">
-                        <div class="mosaic-item-overlay">
-                            <h5 class="fs-6 fw-bold text-white mb-0"><?php echo $lake['title']; ?></h5>
-                            <small class="text-warning"><?php echo $lake['subtitle']; ?></small>
+                        <div class="modern-lake-overlay">
+                            <h5 class="fs-5 fw-bold text-white mb-1"><?php echo $lake['title']; ?></h5>
+                            <p class="text-warning small mb-0 fw-medium"><?php echo $lake['subtitle']; ?></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -895,33 +903,33 @@ $seven_lakes_gallery = [
         </div>
     </section>
 
-    <!-- DETALLES DEL TOUR: ITINERARIO, DATOS, INCLUYE, RECOMENDACIONES -->
-    <section class="tour-details-section">
+    <!-- CUERPO Y SECCIONES CON PALETA Y ESTILO PÁGINA DE INICIO -->
+    <section class="tour-friendly-body">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-5">
 
-                <!-- COLUMNA IZQUIERDA: ITINERARIO Y DATOS IMPORTANTES -->
+                <!-- COLUMNA IZQUIERDA: ITINERARIO PASO A PASO -->
                 <div class="col-lg-7">
-                    <!-- SPECS HIGHLIGHTS -->
+                    <!-- SPECS RÁPIDAS AMIGABLES -->
                     <div class="row g-3 mb-4">
                         <div class="col-md-6">
-                            <div class="spec-highlight-card">
-                                <div class="spec-icon-wrapper">
+                            <div class="friendly-highlight-box">
+                                <div class="friendly-icon-circle">
                                     <i class="bi bi-sunrise-fill"></i>
                                 </div>
                                 <div>
-                                    <small class="d-block text-uppercase text-secondary fw-bold" style="font-size: 0.72rem;">Hora de Salida</small>
+                                    <small class="d-block text-uppercase text-secondary fw-bold" style="font-size: 0.72rem;">Hora de Recojo</small>
                                     <strong class="fs-6 text-dark">04:30 a.m. – 05:00 a.m.</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="spec-highlight-card">
-                                <div class="spec-icon-wrapper">
+                            <div class="friendly-highlight-box">
+                                <div class="friendly-icon-circle">
                                     <i class="bi bi-sunset-fill"></i>
                                 </div>
                                 <div>
-                                    <small class="d-block text-uppercase text-secondary fw-bold" style="font-size: 0.72rem;">Hora de Retorno</small>
+                                    <small class="d-block text-uppercase text-secondary fw-bold" style="font-size: 0.72rem;">Retorno a Cusco</small>
                                     <strong class="fs-6 text-dark">19:00 p.m. aprox.</strong>
                                 </div>
                             </div>
@@ -930,8 +938,8 @@ $seven_lakes_gallery = [
 
                     <!-- ITINERARIO DETALLADO -->
                     <div class="mb-5">
-                        <span class="section-badge-clean">CRONOGRAMA PASO A PASO</span>
-                        <h3 class="fs-2 fw-extrabold text-dark mb-4">Itinerario de Experiencia</h3>
+                        <span class="section-badge-clean">CRONOGRAMA DETALLADO</span>
+                        <h3 class="fs-2 fw-extrabold text-dark mb-4">Itinerario de la Experiencia</h3>
 
                         <div class="itinerary-timeline">
                             <div class="itinerary-step">
@@ -1155,6 +1163,21 @@ $seven_lakes_gallery = [
             const modal = new bootstrap.Modal(document.getElementById('imageModal'));
             modal.show();
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('lakesGalleryTrack');
+            const prevBtn = document.getElementById('galleryPrevBtn');
+            const nextBtn = document.getElementById('galleryNextBtn');
+
+            if (track && prevBtn && nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    track.scrollBy({ left: 320, behavior: 'smooth' });
+                });
+                prevBtn.addEventListener('click', () => {
+                    track.scrollBy({ left: -320, behavior: 'smooth' });
+                });
+            }
+        });
     </script>
 </body>
 </html>
