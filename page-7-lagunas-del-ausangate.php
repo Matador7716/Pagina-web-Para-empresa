@@ -692,27 +692,43 @@ $seven_lakes_gallery = [
         </div>
     </nav>
 
-    <!-- HERO HEADER DEL TOUR -->
+    <!-- HERO HEADER DEL TOUR CON TÍTULOS SIN FONDO DE BADGE Y DISEÑO ULTRA MODERNO -->
     <section class="tour-hero-banner">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row align-items-center g-4">
                 <div class="col-lg-8">
-                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2"><i class="bi bi-clock-history me-1"></i> FULL DAY</span>
-                    <span class="badge bg-info text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2 ms-2"><i class="bi bi-geo-alt-fill me-1"></i> PACCHANTA – AUSANGATE</span>
-                    <h1 class="display-4 fw-extrabold text-white mb-2">7 LAGUNAS DEL AUSANGATE</h1>
-                    <p class="fs-5 text-light opacity-90 max-w-700 mb-0">
-                        Ruta mística a través de siete deslumbrantes espejos de agua glaciares al pie de la majestuosa cordillera del Ausangate y relajantes aguas termales naturales.
+                    <!-- TÍTULOS SIN FONDO BADGE -->
+                    <div class="d-flex align-items-center gap-3 flex-wrap mb-2">
+                        <span class="fw-bold text-warning text-uppercase tracking-wider fs-6">
+                            <i class="bi bi-clock-history me-1"></i> FULL DAY
+                        </span>
+                        <span class="text-light opacity-50">•</span>
+                        <span class="fw-bold text-info text-uppercase tracking-wider fs-6">
+                            <i class="bi bi-geo-alt-fill me-1"></i> PACCHANTA – AUSANGATE
+                        </span>
+                    </div>
+
+                    <h1 class="display-3 fw-extrabold text-white mb-3 text-uppercase" style="letter-spacing: -1px; text-shadow: 0 4px 20px rgba(0,0,0,0.8);">
+                        7 LAGUNAS DEL AUSANGATE
+                    </h1>
+                    <p class="fs-5 text-light opacity-90 max-w-700 mb-0" style="line-height: 1.75; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
+                        Ruta mística a través de siete deslumbrantes espejos de agua glaciares al pie de la majestuosa cordillera del Ausangate y relajantes aguas termales naturales en Pacchanta.
                     </p>
                 </div>
 
                 <div class="col-lg-4 text-lg-end">
-                    <div class="p-3 rounded-4" style="background: rgba(0, 18, 32, 0.7); border: 2px solid rgba(233, 77, 0, 0.5); display: inline-block;">
-                        <small class="text-uppercase text-light d-block fw-bold">Precio Oficial Catálogo</small>
-                        <div class="tour-price-badge">USD 40.00</div>
-                        <div class="tour-pen-price">S/. 137.70 soles por persona</div>
-                        <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20el%20tour%207%20Lagunas%20del%20Ausangate%20a%20USD%2040" target="_blank" class="btn btn-reserve-wa mt-3 w-100 justify-content-center">
-                            <i class="bi bi-whatsapp"></i> Reservar Ahora
-                        </a>
+                    <div class="p-4 rounded-4 shadow-lg text-center" style="background: rgba(0, 18, 32, 0.85); backdrop-filter: blur(12px); border: 2px solid rgba(233, 77, 0, 0.6); display: inline-block; min-width: 290px;">
+                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2" style="font-size: 0.72rem;">CATÁLOGO OFICIAL</span>
+                        <div class="tour-price-badge my-1">USD 40.00</div>
+                        <div class="tour-pen-price mb-3">S/. 137.70 soles por persona</div>
+                        <div class="d-flex flex-column gap-2">
+                            <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20el%20tour%207%20Lagunas%20del%20Ausangate%20a%20USD%2040" target="_blank" class="btn btn-reserve-wa w-100 justify-content-center">
+                                <i class="bi bi-whatsapp"></i> Reservar Ahora
+                            </a>
+                            <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="btn btn-call-sales w-100 justify-content-center" style="font-size: 0.88rem; padding: 0.65rem 1.5rem;">
+                                <i class="bi bi-telephone-fill"></i> Llamar a Ventas
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
