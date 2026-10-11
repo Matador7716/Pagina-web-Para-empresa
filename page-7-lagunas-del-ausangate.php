@@ -305,19 +305,19 @@ $seven_lakes_gallery = [
             font-weight: 700;
         }
 
-        /* GALERÍA DE 7 FOTOS */
+        /* GALERÍA DE 7 FOTOS COMPACTA SIN BORDES */
         .seven-gallery-card {
             position: relative;
-            border-radius: 18px;
+            border-radius: 16px;
             overflow: hidden;
-            height: 230px;
+            height: 210px;
             cursor: pointer;
-            border: 2px solid transparent;
+            border: none !important;
+            box-shadow: none !important;
             transition: all 0.35s ease;
         }
 
         .seven-gallery-card:hover {
-            border-color: var(--color-naranja-journey);
             transform: translateY(-4px);
         }
 
@@ -719,21 +719,21 @@ $seven_lakes_gallery = [
         </div>
     </section>
 
-    <!-- GALERÍA DE 7 FOTOS (LAS 7 LAGUNAS DEL AUSANGATE) -->
-    <section class="py-5 bg-light">
-        <div class="container-fluid px-3 px-lg-5">
-            <div class="text-center mb-4">
+    <!-- GALERÍA DE 7 FOTOS (ESPACIOS REDUCIDOS Y SIN BORDES) -->
+    <section class="py-4 bg-light">
+        <div class="container-fluid px-2 px-lg-4">
+            <div class="text-center mb-3">
                 <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">CIRCUITO NATURAL</span>
-                <h2 class="display-6 fw-extrabold text-dark mb-2">Las 7 Lagunas en Imágenes</h2>
-                <p class="fs-6 text-secondary max-w-700 mx-auto mb-0">Haz clic en cualquiera de las imágenes para contemplar la majestuosidad completa de cada laguna.</p>
+                <h2 class="display-6 fw-extrabold text-dark mb-1">Las 7 Lagunas en Imágenes</h2>
+                <p class="fs-6 text-secondary max-w-700 mx-auto mb-0">Haz clic en cualquiera de las imágenes para contemplarla a detalle en alta resolución.</p>
             </div>
 
-            <div class="row g-3">
+            <div class="row g-2">
                 <?php foreach($seven_lakes_gallery as $idx => $lake): ?>
                     <div class="<?php echo ($idx === 0) ? 'col-lg-6 col-md-12' : 'col-lg-3 col-md-6'; ?>">
                         <div class="seven-gallery-card <?php echo ($idx === 0) ? 'h-100' : ''; ?>" onclick="openImageModal('<?php echo $lake['url']; ?>', '<?php echo addslashes($lake['title']); ?>', '<?php echo addslashes($lake['subtitle']); ?>')">
                             <div class="gallery-zoom-badge"><i class="bi bi-arrows-angle-expand"></i></div>
-                            <img src="<?php echo $lake['url']; ?>" alt="<?php echo $lake['title']; ?>" style="<?php echo ($idx === 0) ? 'height: 320px;' : 'height: 230px;'; ?>">
+                            <img src="<?php echo $lake['url']; ?>" alt="<?php echo $lake['title']; ?>" style="<?php echo ($idx === 0) ? 'height: 290px;' : 'height: 210px;'; ?>">
                             <div class="seven-gallery-overlay">
                                 <h5 class="fs-6 fw-bold text-white mb-0"><?php echo $lake['title']; ?></h5>
                                 <small class="text-warning"><?php echo $lake['subtitle']; ?></small>
@@ -876,19 +876,19 @@ $seven_lakes_gallery = [
         </div>
     </section>
 
-    <!-- MODAL DE VISTA DE FOTO COMPLETA -->
+    <!-- MODAL DE VISTA DE FOTO COMPLETA (TÍTULO Y DESCRIPCIÓN AL PIE) -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content bg-dark text-white border-0 rounded-4 overflow-hidden">
-                <div class="modal-header border-0 pb-0">
-                    <div>
-                        <h5 class="modal-title fw-bold text-white mb-0" id="modalImageTitle">7 Lagunas del Ausangate</h5>
-                        <small class="text-warning" id="modalImageSubtitle">Perú Safe Journeys</small>
-                    </div>
+                <div class="modal-header border-0 pb-0 pt-3 px-3 justify-content-end">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
-                <div class="modal-body p-3 text-center">
-                    <img src="" id="modalImagePreview" class="img-fluid rounded-3 max-h-80vh object-fit-contain shadow-lg" alt="Vista completa">
+                <div class="modal-body p-2 text-center">
+                    <img src="" id="modalImagePreview" class="img-fluid rounded-3 max-h-75vh object-fit-contain" alt="Vista completa">
+                </div>
+                <div class="modal-footer border-0 bg-black bg-opacity-75 d-block text-center py-3 px-4">
+                    <h5 class="fw-bold text-white mb-1 fs-5" id="modalImageTitle">7 Lagunas del Ausangate</h5>
+                    <p class="text-warning mb-0 small" id="modalImageSubtitle">Perú Safe Journeys</p>
                 </div>
             </div>
         </div>
