@@ -283,108 +283,212 @@ $seven_lakes_gallery = [
             transform: translateX(5px);
         }
 
-        /* HERO HEADER TOUR BANNER */
+        /* HERO HEADER TOUR BANNER RE-DISEÑADO Y CINEMÁTICO */
         .tour-hero-banner {
-            background: linear-gradient(180deg, rgba(0, 18, 32, 0.6) 0%, rgba(0, 18, 32, 0.92) 100%), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-            padding: 5rem 0 4rem;
+            background: linear-gradient(180deg, rgba(0, 18, 32, 0.5) 0%, rgba(0, 18, 32, 0.95) 100%), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat fixed;
+            padding: 5.5rem 0 4.5rem;
             color: #FFFFFF;
             border-bottom: 3px solid var(--color-naranja-journey);
             position: relative;
         }
 
+        .hero-key-pills {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .hero-pill-item {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #F8FAFC;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tour-price-box-glass {
+            background: rgba(0, 18, 32, 0.82);
+            backdrop-filter: blur(16px);
+            border: 2px solid rgba(233, 77, 0, 0.6);
+            border-radius: 24px;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
         .tour-price-badge {
-            font-size: 2.2rem;
+            font-size: 2.6rem;
             font-weight: 900;
-            color: var(--color-blanco);
-            line-height: 1.1;
+            color: #FFFFFF;
+            line-height: 1;
+            letter-spacing: -0.5px;
         }
 
         .tour-pen-price {
             font-size: 1.15rem;
             color: var(--color-dorado-andino);
             font-weight: 700;
+            margin-top: 0.2rem;
         }
 
-        /* GALERÍA DE 7 FOTOS COMPACTA SIN BORDES */
-        .seven-gallery-card {
+        /* GALERÍA EN MOSAICO MODERNO Y CREATIVO SIN BORDES */
+        .mosaic-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 210px;
+            gap: 12px;
+        }
+
+        .mosaic-item {
             position: relative;
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
-            height: 210px;
             cursor: pointer;
             border: none !important;
             box-shadow: none !important;
-            transition: all 0.35s ease;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .seven-gallery-card:hover {
-            transform: translateY(-4px);
+        .mosaic-item-featured {
+            grid-column: span 2;
+            grid-row: span 2;
         }
 
-        .seven-gallery-card img {
+        .mosaic-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .seven-gallery-card:hover img {
-            transform: scale(1.1);
+        .mosaic-item:hover {
+            transform: translateY(-4px);
+            z-index: 2;
         }
 
-        .seven-gallery-overlay {
+        .mosaic-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .mosaic-item-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 18, 32, 0.95) 100%);
-            padding: 1rem;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(0, 18, 32, 0.92) 100%);
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
             color: #FFFFFF;
+            transition: all 0.3s ease;
         }
 
-        .gallery-zoom-badge {
+        .mosaic-lake-number {
             position: absolute;
-            top: 12px;
-            right: 12px;
+            top: 14px;
+            left: 14px;
+            background: rgba(233, 77, 0, 0.9);
+            color: #FFFFFF;
+            font-weight: 800;
+            font-size: 0.78rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            backdrop-filter: blur(6px);
+            text-transform: uppercase;
+        }
+
+        .mosaic-zoom-icon {
+            position: absolute;
+            top: 14px;
+            right: 14px;
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: var(--color-naranja-journey);
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(8px);
             color: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.05rem;
+            font-size: 1rem;
             opacity: 0;
             transform: scale(0.8);
             transition: all 0.3s ease;
         }
 
-        .seven-gallery-card:hover .gallery-zoom-badge {
+        .mosaic-item:hover .mosaic-zoom-icon {
             opacity: 1;
             transform: scale(1);
+            background: var(--color-naranja-journey);
         }
 
-        /* CAJAS DE INFORMACIÓN DEL TOUR */
-        .tour-spec-box {
+        /* CUERPO Y SECCIONES MODERNAS DEL TOUR */
+        .tour-details-section {
+            background-color: #FFFFFF;
+            padding: 4.5rem 0;
+        }
+
+        .spec-highlight-card {
             background: #F8FAFC;
-            border-radius: 18px;
+            border-radius: 20px;
             border: 1px solid var(--color-gris-border);
-            padding: 1.8rem;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .spec-highlight-card:hover {
+            border-color: var(--color-naranja-journey);
+            background: #FFFFFF;
+            transform: translateY(-3px);
+        }
+
+        .spec-icon-wrapper {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(233, 77, 0, 0.12) 0%, rgba(233, 77, 0, 0.04) 100%);
+            color: var(--color-naranja-journey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            border: 1px solid rgba(233, 77, 0, 0.25);
+            flex-shrink: 0;
+        }
+
+        .tour-spec-box {
+            background: #FFFFFF;
+            border-radius: 22px;
+            border: 1px solid var(--color-gris-border);
+            padding: 2.2rem 1.8rem;
             height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .tour-spec-box:hover {
+            border-color: var(--color-naranja-journey);
         }
 
         .tour-spec-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 14px;
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
             background: rgba(233, 77, 0, 0.12);
             color: var(--color-naranja-journey);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
         }
 
         .tour-check-list {
@@ -692,40 +796,71 @@ $seven_lakes_gallery = [
         </div>
     </nav>
 
-    <!-- HERO HEADER DEL TOUR CON TÍTULOS SIN FONDO DE BADGE Y DISEÑO ULTRA MODERNO -->
+    <!-- HERO HEADER DEL TOUR RE-DISEÑADO -->
     <section class="tour-hero-banner">
         <div class="container-fluid px-3 px-lg-5">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-8">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
                     <!-- TÍTULOS SIN FONDO BADGE -->
-                    <div class="d-flex align-items-center gap-3 flex-wrap mb-2">
-                        <span class="fw-bold text-warning text-uppercase tracking-wider fs-6">
+                    <div class="hero-key-pills">
+                        <span class="fw-bold text-warning text-uppercase" style="font-size: 0.9rem;">
                             <i class="bi bi-clock-history me-1"></i> FULL DAY
                         </span>
                         <span class="text-light opacity-50">•</span>
-                        <span class="fw-bold text-info text-uppercase tracking-wider fs-6">
+                        <span class="fw-bold text-info text-uppercase" style="font-size: 0.9rem;">
                             <i class="bi bi-geo-alt-fill me-1"></i> PACCHANTA – AUSANGATE
                         </span>
                     </div>
 
-                    <h1 class="display-3 fw-extrabold text-white mb-3 text-uppercase" style="letter-spacing: -1px; text-shadow: 0 4px 20px rgba(0,0,0,0.8);">
+                    <h1 class="display-3 fw-extrabold text-white mb-3 text-uppercase" style="letter-spacing: -1px; text-shadow: 0 4px 20px rgba(0,0,0,0.85);">
                         7 LAGUNAS DEL AUSANGATE
                     </h1>
-                    <p class="fs-5 text-light opacity-90 max-w-700 mb-0" style="line-height: 1.75; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
+                    <p class="fs-5 text-light opacity-90 mb-4" style="line-height: 1.8; max-width: 720px; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
                         Ruta mística a través de siete deslumbrantes espejos de agua glaciares al pie de la majestuosa cordillera del Ausangate y relajantes aguas termales naturales en Pacchanta.
                     </p>
+
+                    <!-- SPECS RÁPIDAS -->
+                    <div class="row g-3 max-w-700">
+                        <div class="col-sm-4">
+                            <div class="d-flex align-items-center gap-2 text-white">
+                                <i class="bi bi-graph-up-arrow text-warning fs-4"></i>
+                                <div>
+                                    <small class="d-block text-uppercase text-light opacity-75 fw-bold" style="font-size: 0.7rem;">Altitud Máx.</small>
+                                    <strong class="fs-6">4,300 msnm</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="d-flex align-items-center gap-2 text-white">
+                                <i class="bi bi-activity text-warning fs-4"></i>
+                                <div>
+                                    <small class="d-block text-uppercase text-light opacity-75 fw-bold" style="font-size: 0.7rem;">Dificultad</small>
+                                    <strong class="fs-6">Moderada - Alta</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="d-flex align-items-center gap-2 text-white">
+                                <i class="bi bi-people-fill text-warning fs-4"></i>
+                                <div>
+                                    <small class="d-block text-uppercase text-light opacity-75 fw-bold" style="font-size: 0.7rem;">Modalidad</small>
+                                    <strong class="fs-6">Grupal / Privado</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-lg-4 text-lg-end">
-                    <div class="p-4 rounded-4 shadow-lg text-center" style="background: rgba(0, 18, 32, 0.85); backdrop-filter: blur(12px); border: 2px solid rgba(233, 77, 0, 0.6); display: inline-block; min-width: 290px;">
-                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2" style="font-size: 0.72rem;">CATÁLOGO OFICIAL</span>
+                <div class="col-lg-5 text-lg-end">
+                    <div class="tour-price-box-glass mx-auto ms-lg-auto max-w-380">
+                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2" style="font-size: 0.72rem;">OFERTA DE CATÁLOGO</span>
                         <div class="tour-price-badge my-1">USD 40.00</div>
                         <div class="tour-pen-price mb-3">S/. 137.70 soles por persona</div>
                         <div class="d-flex flex-column gap-2">
                             <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20deseo%20reservar%20el%20tour%207%20Lagunas%20del%20Ausangate%20a%20USD%2040" target="_blank" class="btn btn-reserve-wa w-100 justify-content-center">
-                                <i class="bi bi-whatsapp"></i> Reservar Ahora
+                                <i class="bi bi-whatsapp"></i> Reservar por WhatsApp
                             </a>
-                            <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="btn btn-call-sales w-100 justify-content-center" style="font-size: 0.88rem; padding: 0.65rem 1.5rem;">
+                            <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="btn btn-call-sales w-100 justify-content-center" style="font-size: 0.88rem; padding: 0.7rem 1.5rem;">
                                 <i class="bi bi-telephone-fill"></i> Llamar a Ventas
                             </a>
                         </div>
@@ -735,25 +870,24 @@ $seven_lakes_gallery = [
         </div>
     </section>
 
-    <!-- GALERÍA DE 7 FOTOS (ESPACIOS REDUCIDOS Y SIN BORDES) -->
-    <section class="py-4 bg-light">
-        <div class="container-fluid px-2 px-lg-4">
-            <div class="text-center mb-3">
-                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">CIRCUITO NATURAL</span>
-                <h2 class="display-6 fw-extrabold text-dark mb-1">Las 7 Lagunas en Imágenes</h2>
-                <p class="fs-6 text-secondary max-w-700 mx-auto mb-0">Haz clic en cualquiera de las imágenes para contemplarla a detalle en alta resolución.</p>
+    <!-- GALERÍA MOSAICO ULTRA CREATIVA DE LAS 7 LAGUNAS -->
+    <section class="py-5 bg-light">
+        <div class="container-fluid px-3 px-lg-5">
+            <div class="text-center mb-4">
+                <span class="section-badge-clean">CIRCUITO NATURAL MOSAICO</span>
+                <h2 class="display-6 fw-extrabold text-dark mb-2">Las 7 Lagunas del Ausangate</h2>
+                <p class="fs-6 text-secondary max-w-700 mx-auto mb-0">Explora la composición fotográfica de las siete lagunas glaciares. Haz clic en cualquiera para visualizarla a pantalla completa.</p>
             </div>
 
-            <div class="row g-2">
+            <div class="mosaic-gallery-grid">
                 <?php foreach($seven_lakes_gallery as $idx => $lake): ?>
-                    <div class="<?php echo ($idx === 0) ? 'col-lg-6 col-md-12' : 'col-lg-3 col-md-6'; ?>">
-                        <div class="seven-gallery-card <?php echo ($idx === 0) ? 'h-100' : ''; ?>" onclick="openImageModal('<?php echo $lake['url']; ?>', '<?php echo addslashes($lake['title']); ?>', '<?php echo addslashes($lake['subtitle']); ?>')">
-                            <div class="gallery-zoom-badge"><i class="bi bi-arrows-angle-expand"></i></div>
-                            <img src="<?php echo $lake['url']; ?>" alt="<?php echo $lake['title']; ?>" style="<?php echo ($idx === 0) ? 'height: 290px;' : 'height: 210px;'; ?>">
-                            <div class="seven-gallery-overlay">
-                                <h5 class="fs-6 fw-bold text-white mb-0"><?php echo $lake['title']; ?></h5>
-                                <small class="text-warning"><?php echo $lake['subtitle']; ?></small>
-                            </div>
+                    <div class="mosaic-item <?php echo ($idx === 0) ? 'mosaic-item-featured' : ''; ?>" onclick="openImageModal('<?php echo $lake['url']; ?>', '<?php echo addslashes($lake['title']); ?>', '<?php echo addslashes($lake['subtitle']); ?>')">
+                        <span class="mosaic-lake-number">Laguna <?php echo ($idx + 1); ?></span>
+                        <div class="mosaic-zoom-icon"><i class="bi bi-arrows-angle-expand"></i></div>
+                        <img src="<?php echo $lake['url']; ?>" alt="<?php echo $lake['title']; ?>" loading="lazy">
+                        <div class="mosaic-item-overlay">
+                            <h5 class="fs-6 fw-bold text-white mb-0"><?php echo $lake['title']; ?></h5>
+                            <small class="text-warning"><?php echo $lake['subtitle']; ?></small>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -762,16 +896,42 @@ $seven_lakes_gallery = [
     </section>
 
     <!-- DETALLES DEL TOUR: ITINERARIO, DATOS, INCLUYE, RECOMENDACIONES -->
-    <section class="py-5">
+    <section class="tour-details-section">
         <div class="container-fluid px-3 px-lg-5">
             <div class="row g-5">
 
                 <!-- COLUMNA IZQUIERDA: ITINERARIO Y DATOS IMPORTANTES -->
                 <div class="col-lg-7">
-                    <!-- ITINERARIO -->
+                    <!-- SPECS HIGHLIGHTS -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="spec-highlight-card">
+                                <div class="spec-icon-wrapper">
+                                    <i class="bi bi-sunrise-fill"></i>
+                                </div>
+                                <div>
+                                    <small class="d-block text-uppercase text-secondary fw-bold" style="font-size: 0.72rem;">Hora de Salida</small>
+                                    <strong class="fs-6 text-dark">04:30 a.m. – 05:00 a.m.</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="spec-highlight-card">
+                                <div class="spec-icon-wrapper">
+                                    <i class="bi bi-sunset-fill"></i>
+                                </div>
+                                <div>
+                                    <small class="d-block text-uppercase text-secondary fw-bold" style="font-size: 0.72rem;">Hora de Retorno</small>
+                                    <strong class="fs-6 text-dark">19:00 p.m. aprox.</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITINERARIO DETALLADO -->
                     <div class="mb-5">
-                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">CRONOGRAMA DE VIAJE</span>
-                        <h3 class="fs-2 fw-extrabold text-dark mb-4">Itinerario Detallado</h3>
+                        <span class="section-badge-clean">CRONOGRAMA PASO A PASO</span>
+                        <h3 class="fs-2 fw-extrabold text-dark mb-4">Itinerario de Experiencia</h3>
 
                         <div class="itinerary-timeline">
                             <div class="itinerary-step">
