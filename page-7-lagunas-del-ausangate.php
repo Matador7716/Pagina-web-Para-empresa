@@ -1039,15 +1039,15 @@ $seven_lakes_gallery = [
                             </ul>
                         </div>
 
-                        <!-- BOTONES DE CONTACTO DIRECTO -->
-                        <div class="p-4 rounded-4 text-center" style="background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%); border: 1px solid rgba(233, 77, 0, 0.3);">
-                            <h4 class="fs-5 fw-bold text-white mb-2">¿Tienes dudas o deseas reservar?</h4>
-                            <p class="small text-light opacity-90 mb-3">Nuestros asesores de ventas están listos para asistirte al instante.</p>
-                            <div class="d-flex flex-column gap-2">
-                                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20tour%207%20Lagunas%20del%20Ausangate" target="_blank" class="btn-reserve-wa w-100 justify-content-center">
+                        <!-- BOTONES DE CONTACTO DIRECTO CENTRADOS -->
+                        <div class="p-4 rounded-4 text-center mx-auto w-100" style="background: linear-gradient(135deg, #001220 0%, var(--color-azul-peru-safe) 100%); border: none !important; box-shadow: none !important;">
+                            <h4 class="fs-5 fw-bold text-white mb-2 text-center">¿Tienes dudas o deseas reservar?</h4>
+                            <p class="small text-light opacity-90 mb-3 text-center mx-auto max-w-400">Nuestros asesores de ventas están listos para asistirte al instante.</p>
+                            <div class="d-flex flex-column gap-2 align-items-center justify-content-center mx-auto max-w-350">
+                                <a href="https://wa.me/<?php echo $phones['ventas']['clean']; ?>?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20tour%207%20Lagunas%20del%20Ausangate" target="_blank" class="btn-reserve-wa w-100 justify-content-center text-center">
                                     <i class="bi bi-whatsapp"></i> Consultar por WhatsApp
                                 </a>
-                                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="btn-call-sales w-100 justify-content-center">
+                                <a href="tel:<?php echo $phones['ventas']['clean']; ?>" class="btn-call-sales w-100 justify-content-center text-center">
                                     <i class="bi bi-telephone-fill"></i> Llamar a Ventas
                                 </a>
                             </div>
