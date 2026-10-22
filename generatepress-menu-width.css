@@ -1,0 +1,86 @@
+/* ==========================================================================
+   CÓDIGOS CSS PARA CONTROLAR EL ANCHO DEL MENÚ EN GENERATEPRESS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   OPCIÓN 1: MENÚ DE NAVEGACIÓN A ANCHO COMPLETO (100% FULL-WIDTH)
+   Hace que la barra de navegación ocupe todo el ancho de la pantalla.
+   -------------------------------------------------------------------------- */
+.main-navigation {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.main-navigation .inside-navigation {
+    max-width: 100% !important;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+/* --------------------------------------------------------------------------
+   OPCIÓN 2: MENÚ CONTENIDO CON ANCHO MÁXIMO PERSONALIZADO
+   (Cambia '1200px' por el ancho deseado: 1000px, 1280px, 1400px, etc.)
+   -------------------------------------------------------------------------- */
+.main-navigation .inside-navigation {
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   OPCIÓN 3: MENÚ CENTRADO CON ELEMENTOS DISTRIBUIDOS UNIFORMEMENTE
+   Alinea y distribuye el logo y los ítems del menú.
+   -------------------------------------------------------------------------- */
+.main-navigation .inside-navigation.grid-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* --------------------------------------------------------------------------
+   OPCIÓN 4: AJUSTAR EL ANCHO Y ESPACIADO DE CADA ÍTEM DEL MENÚ
+   (Controla la separación horizontal y vertical entre enlaces)
+   -------------------------------------------------------------------------- */
+.main-navigation .main-nav > ul > li > a {
+    padding-left: 25px;  /* Espacio horizontal interno */
+    padding-right: 25px;
+}
+
+/* Para que los elementos se expandan equitativamente ocupando todo el ancho */
+.main-navigation .main-nav > ul {
+    display: flex;
+    width: 100%;
+}
+
+.main-navigation .main-nav > ul > li {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+/* --------------------------------------------------------------------------
+   OPCIÓN 5: SUBMENÚS (DROPDOWN) - ANCHO PERSONALIZADO
+   Ajusta el ancho de los desplegables del menú superior.
+   -------------------------------------------------------------------------- */
+.main-navigation ul ul {
+    width: 240px; /* Ancho fijo para los submenús emergentes */
+}
+
+
+/* --------------------------------------------------------------------------
+   OPCIÓN 6: ANCHO DEL MENÚ MÓVIL (DESPLEGABLE EN PANTALLAS PEQUEÑAS)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Menú desplegable móvil a pantalla completa */
+    .main-navigation.toggled .main-nav {
+        width: 100% !important;
+    }
+
+    .main-navigation.toggled .main-nav ul li a {
+        text-align: center;
+        padding: 15px 0;
+    }
+}
