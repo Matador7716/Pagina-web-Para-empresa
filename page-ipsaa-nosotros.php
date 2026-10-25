@@ -245,11 +245,11 @@
             font-size: 28px;
         }
 
-        /* Hero Header Section */
+        /* Redesigned Premium Split Hero Section */
         .nosotros-hero {
-            background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-ipsaa) 100%);
+            background: linear-gradient(135deg, #380009 0%, #670010 50%, #4a000b 100%);
             color: var(--white);
-            padding: 90px 0 80px;
+            padding: 80px 0 90px;
             position: relative;
             overflow: hidden;
         }
@@ -257,56 +257,204 @@
         .nosotros-hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
+            top: -120px;
+            right: -120px;
+            width: 550px;
+            height: 550px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(232, 195, 158, 0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(232, 195, 158, 0.18) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        .nosotros-hero-content {
-            max-width: 860px;
-            margin: 0 auto;
-            text-align: center;
+        .nosotros-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(103, 0, 16, 0.4) 0%, transparent 75%);
+            pointer-events: none;
+        }
+
+        .nosotros-hero-layout {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 50px;
+            align-items: center;
             position: relative;
             z-index: 2;
         }
 
+        .nosotros-hero-copy {
+            display: flex;
+            flex-direction: flex-start;
+            flex-direction: column;
+        }
+
         .nosotros-hero h1 {
-            font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+            font-size: clamp(2.3rem, 4.2vw, 3.4rem);
             font-weight: 800;
-            line-height: 1.18;
-            margin-bottom: 20px;
+            line-height: 1.16;
+            margin-bottom: 22px;
             letter-spacing: -0.5px;
             color: var(--white);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+        }
+
+        .nosotros-hero h1 span {
+            color: var(--beige-calido);
+            position: relative;
+            display: inline-block;
         }
 
         .nosotros-hero p.lead {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 36px;
+            font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.92);
+            margin-bottom: 32px;
             font-weight: 300;
             line-height: 1.7;
+            max-width: 660px;
         }
 
+        .nosotros-hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 28px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .hero-btn--primary {
+            background: var(--beige-calido);
+            color: var(--red-dark);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-btn--primary:hover {
+            background: #ffffff;
+            color: var(--red-ipsaa);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-btn--secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--white);
+            border: 1px solid rgba(232, 195, 158, 0.4);
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-btn--secondary:hover {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        /* Hero Right Media Box */
+        .nosotros-hero-media {
+            position: relative;
+            border-radius: var(--radius-lg);
+        }
+
+        .hero-media-card {
+            position: relative;
+            height: 440px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(232, 195, 158, 0.3);
+        }
+
+        .hero-media-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.88);
+            transition: transform 0.6s ease;
+        }
+
+        .hero-media-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-floating-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: rgba(56, 0, 9, 0.92);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(232, 195, 158, 0.4);
+            padding: 18px 22px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            z-index: 3;
+        }
+
+        .badge-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(232, 195, 158, 0.2);
+            color: var(--beige-calido);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-info strong {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .badge-info span {
+            font-size: 0.8rem;
+            color: var(--beige-calido);
+        }
+
+        /* Hero Stats Row */
         .nosotros-hero-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            grid-column: 1 / -1;
             padding-top: 36px;
-            border-top: 1px solid rgba(232, 195, 158, 0.25);
+            margin-top: 20px;
+            border-top: 1px solid rgba(232, 195, 158, 0.2);
         }
 
         .hero-stat-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(8px);
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            padding: 22px 18px;
             border-radius: var(--radius-md);
-            border: 1px solid rgba(232, 195, 158, 0.2);
+            border: 1px solid rgba(232, 195, 158, 0.22);
             text-align: center;
+            transition: var(--transition);
+        }
+
+        .hero-stat-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--beige-calido);
+            transform: translateY(-4px);
         }
 
         .hero-stat-card strong {
@@ -320,7 +468,7 @@
 
         .hero-stat-card span {
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.88);
             font-weight: 500;
         }
 
@@ -1075,14 +1223,43 @@
     </header>
 
     <main>
-        <!-- Hero Header -->
+        <!-- Redesigned Hero Header -->
         <section class="nosotros-hero">
             <div class="container">
-                <div class="nosotros-hero-content">
-                    <span class="eyebrow eyebrow--light"><span class="ms" style="font-size:18px">info</span> Conoce la asociación</span>
-                    <h1>El talento peruano en el mundo unido por el desarrollo del Perú</h1>
-                    <p class="lead">Somos la International Peruvian Students &amp; Alumni Association (IPSAA), una plataforma independiente que conecta a estudiantes, egresados y asociaciones peruanas en universidades líderes globales para democratizar el acceso a la educación superior de excelencia.</p>
+                <div class="nosotros-hero-layout">
+                    <!-- Left Copy Column -->
+                    <div class="nosotros-hero-copy">
+                        <span class="eyebrow eyebrow--light"><span class="ms" style="font-size:18px">verified</span> Conoce IPSAA</span>
+                        <h1>El talento peruano en el mundo unido por el <span>desarrollo del Perú</span></h1>
+                        <p class="lead">Somos la International Peruvian Students &amp; Alumni Association (IPSAA), una plataforma global e independiente que conecta a estudiantes, egresados y asociaciones peruanas en universidades de prestigio para democratizar la educación superior de excelencia.</p>
 
+                        <div class="nosotros-hero-actions">
+                            <a href="#proposito-principios" class="hero-btn hero-btn--primary">
+                                Conoce nuestro propósito <span class="ms">arrow_forward</span>
+                            </a>
+                            <a href="#nuestra-historia" class="hero-btn hero-btn--secondary">
+                                <span class="ms">history_edu</span> Ver nuestra historia
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Media Box -->
+                    <div class="nosotros-hero-media">
+                        <div class="hero-media-card">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80" alt="Comunidad Peruana en el Extranjero" />
+                        </div>
+                        <div class="hero-floating-badge">
+                            <div class="badge-icon-box">
+                                <span class="ms" style="font-size:26px">public</span>
+                            </div>
+                            <div class="badge-info">
+                                <strong>Comunidad Global IPSAA</strong>
+                                <span>Presentes en América, Europa y Asia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Grid Statistics -->
                     <div class="nosotros-hero-stats">
                         <div class="hero-stat-card">
                             <strong>10+</strong>
