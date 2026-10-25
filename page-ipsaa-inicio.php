@@ -128,7 +128,7 @@
             justify-content: space-between;
             max-width: 1280px;
             margin: 0 auto;
-            padding: 14px 24px;
+            padding: 8px 24px;
         }
 
         .brand {
@@ -138,9 +138,9 @@
         }
 
         .header-logo-img {
-            height: 68px;
+            height: 48px;
             width: auto;
-            max-width: 320px;
+            max-width: 260px;
             object-fit: contain;
             transition: var(--transition);
         }

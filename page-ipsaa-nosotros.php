@@ -138,7 +138,7 @@
             justify-content: space-between;
             max-width: 1280px;
             margin: 0 auto;
-            padding: 14px 24px;
+            padding: 8px 24px;
         }
 
         .brand {
@@ -148,9 +148,9 @@
         }
 
         .header-logo-img {
-            height: 68px;
+            height: 48px;
             width: auto;
-            max-width: 320px;
+            max-width: 260px;
             object-fit: contain;
             transition: var(--transition);
         }
@@ -188,10 +188,49 @@
         .nav-link--cta {
             background: var(--red-ipsaa);
             color: var(--white) !important;
-            padding: 10px 22px;
+            padding: 8px 20px;
             border-radius: 50px;
             font-weight: 600;
             box-shadow: 0 4px 14px rgba(103, 0, 16, 0.28);
+        }
+
+        /* Submenu Dropdowns */
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 230px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.06);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+
+        .nav-item:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .submenu a {
+            display: block;
+            padding: 10px 14px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            border-radius: var(--radius-sm);
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .submenu a:hover {
+            background: var(--beige-calido);
+            color: var(--red-ipsaa);
         }
 
         .nav-link--cta:hover {
@@ -992,15 +1031,35 @@
             <nav class="nav" id="nav">
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/">Inicio</a>
+                    <div class="submenu">
+                        <a href="http://localhost/IPSAA%20CUSCO/#que-es">Presentación</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/#hoja-ruta">Elige tu camino</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/#ultimas-novedades">Últimas novedades</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/#voces-home">Historias destacadas</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/#red-ipsaa-home">La Red IPSAA</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/#registro-comunidad-home">Conecta con lo que viene</a>
+                    </div>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link active" href="http://localhost/IPSAA%20CUSCO/?page_id=8">Nosotros</a>
+                    <div class="submenu">
+                        <a href="#quienes-somos">Quiénes somos</a>
+                        <a href="#proposito-principios">Propósito y principios</a>
+                        <a href="#nuestra-historia">Nuestra historia</a>
+                        <a href="#el-equipo">El equipo</a>
+                        <a href="#transparencia">Transparencia</a>
+                    </div>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=10">Red IPSAA</a>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=12">Actividades</a>
+                    <div class="submenu">
+                        <a href="http://localhost/IPSAA%20CUSCO/#ultimas-novedades">Mentoría Horizontes</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/#ultimas-novedades">Webinars y Bootcamps</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/#ultimas-novedades">Perú Connect 2026</a>
+                    </div>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=14">Recursos</a>
