@@ -148,9 +148,9 @@
         }
 
         .header-logo-img {
-            height: 48px;
+            height: 60px;
             width: auto;
-            max-width: 260px;
+            max-width: 280px;
             object-fit: contain;
             transition: var(--transition);
         }
@@ -998,9 +998,9 @@
         }
 
         .footer-logo-img {
-            height: 72px;
+            height: 84px;
             width: auto;
-            max-width: 320px;
+            max-width: 340px;
             object-fit: contain;
             margin-bottom: 16px;
             transition: var(--transition);
