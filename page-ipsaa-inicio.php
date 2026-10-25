@@ -1269,7 +1269,7 @@
             </button>
             <nav class="nav" id="nav">
                 <div class="nav-item">
-                    <a class="nav-link" href="#inicio">Inicio</a>
+                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/">Inicio</a>
                     <div class="submenu">
                         <a href="#que-es">Presentación</a>
                         <a href="#hoja-ruta">Elige tu camino</a>
@@ -1280,17 +1280,17 @@
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#que-es">Nosotros</a>
+                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=8">Nosotros</a>
                     <div class="submenu">
                         <a href="#que-es">Quiénes somos</a>
                         <a href="#que-es">Propósito y principios</a>
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#red-ipsaa-home">Red IPSAA</a>
+                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=10">Red IPSAA</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#ultimas-novedades">Actividades</a>
+                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=12">Actividades</a>
                     <div class="submenu">
                         <a href="#ultimas-novedades">Mentoría Horizontes</a>
                         <a href="#ultimas-novedades">Webinars y Bootcamps</a>
@@ -1298,13 +1298,13 @@
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#hoja-ruta">Recursos</a>
+                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=14">Recursos</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="#voces-home">Blog</a>
+                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=16">Blog</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link nav-link--cta" href="#registro-comunidad-home">Sé parte</a>
+                    <a class="nav-link nav-link--cta" href="http://localhost/IPSAA%20CUSCO/?page_id=18">Sé parte</a>
                 </div>
             </nav>
         </div>
@@ -1601,18 +1601,18 @@
                 </div>
                 <div class="footer-col">
                     <h4>Navegación</h4>
-                    <a href="#inicio">Inicio</a>
-                    <a href="#que-es">Nosotros</a>
-                    <a href="#red-ipsaa-home">Red IPSAA</a>
-                    <a href="#ultimas-novedades">Actividades</a>
-                    <a href="#hoja-ruta">Recursos</a>
+                    <a href="http://localhost/IPSAA%20CUSCO/">Inicio</a>
+                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=8">Nosotros</a>
+                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=10">Red IPSAA</a>
+                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=12">Actividades</a>
+                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=14">Recursos</a>
                 </div>
                 <div class="footer-col">
                     <h4>Comunidad</h4>
-                    <a href="#voces-home">Blog</a>
+                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=16">Blog</a>
                     <a href="#voces-home">Voces de la Red</a>
                     <a href="#registro-comunidad-home">Convocatorias</a>
-                    <a href="#registro-comunidad-home">Sé parte</a>
+                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=18">Sé parte</a>
                 </div>
                 <div class="footer-col">
                     <h4>Iniciativas</h4>
