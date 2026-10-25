@@ -22,22 +22,22 @@
 
     <style>
         :root {
-            /* IPSAA Official Brand Palette */
-            --red-ipsaa: #D9252A;
-            --red-dark: #A81B1F;
-            --red-light: #FF5A5F;
-            --navy-ipsaa: #0B192C;
-            --navy-light: #1E2E45;
-            --navy-dark: #050D18;
-            --beige-calido: #F8F5EE;
-            --beige-soft: #EFEAD8;
+            /* Custom IPSAA Brand Palette */
+            --red-ipsaa: #670010;
+            --red-dark: #4a000b;
+            --red-light: #8a0016;
+            --navy-ipsaa: #670010;
+            --navy-light: #52000d;
+            --navy-dark: #380009;
+            --beige-calido: #e8c39e;
+            --beige-soft: #f2d9bf;
             --text-dark: #1F2937;
             --text-muted: #6B7280;
             --white: #FFFFFF;
             --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --shadow-sm: 0 2px 8px rgba(11, 25, 44, 0.06);
-            --shadow-md: 0 8px 24px rgba(11, 25, 44, 0.12);
-            --shadow-lg: 0 16px 36px rgba(11, 25, 44, 0.18);
+            --shadow-sm: 0 2px 8px rgba(103, 0, 16, 0.08);
+            --shadow-md: 0 8px 24px rgba(103, 0, 16, 0.15);
+            --shadow-lg: 0 16px 36px rgba(103, 0, 16, 0.22);
             --radius-sm: 8px;
             --radius-md: 16px;
             --radius-lg: 24px;
@@ -476,13 +476,13 @@
         .hero-preview-num {
             font-size: 0.72rem;
             font-weight: 700;
-            color: var(--red-ipsaa);
+            color: var(--beige-calido);
             margin-bottom: 2px;
             display: block;
         }
 
         .hero-preview-tab.active .hero-preview-num {
-            color: #FF6B6B;
+            color: #ffffff;
         }
 
         .hero-preview-title {
