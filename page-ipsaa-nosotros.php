@@ -1218,6 +1218,13 @@
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=14">Recursos</a>
+                    <div class="submenu">
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=14#guias-postulacion">Guías de Postulación</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=14#modelos-ensayos">Modelos de Ensayos &amp; SOP</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=14#plantillas-cv">Plantillas de CV &amp; Cartas</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=14#becas-financiamiento">Becas &amp; Financiamiento</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=14#examenes-estandarizados">Exámenes Estandarizados</a>
+                    </div>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=16">Blog</a>
