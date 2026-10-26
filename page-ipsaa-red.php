@@ -1181,9 +1181,10 @@
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=12">Actividades</a>
                     <div class="submenu">
-                        <a href="http://localhost/IPSAA%20CUSCO/#ultimas-novedades">Mentoría Horizontes</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/#ultimas-novedades">Webinars y Bootcamps</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/#ultimas-novedades">Perú Connect 2026</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=12#mentoria-horizontes">Mentoría Horizontes</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=12#biblioteca-horizontes">Biblioteca Horizontes</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=12#webinars-bootcamps">Webinars y Bootcamps</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=12#peru-connect">Perú Connect 2026</a>
                     </div>
                 </div>
                 <div class="nav-item">
