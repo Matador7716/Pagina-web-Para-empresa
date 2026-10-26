@@ -1319,6 +1319,11 @@
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=16">Blog</a>
+                    <div class="submenu">
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=16#postales-del-camino">Postales del Camino</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=16#voces-de-la-red">Voces de la Red</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=16#noticias-ipsaa">Noticias IPSAA</a>
+                    </div>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link nav-link--cta" href="http://localhost/IPSAA%20CUSCO/?page_id=18">Sé parte</a>
