@@ -1269,7 +1269,7 @@
             </button>
             <nav class="nav" id="nav">
                 <div class="nav-item">
-                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/">Inicio</a>
+                    <a class="nav-link active" href="http://localhost/IPSAA%20CUSCO/">Inicio</a>
                     <div class="submenu">
                         <a href="#que-es">Presentación</a>
                         <a href="#hoja-ruta">Elige tu camino</a>
@@ -1282,8 +1282,11 @@
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=8">Nosotros</a>
                     <div class="submenu">
-                        <a href="#que-es">Quiénes somos</a>
-                        <a href="#que-es">Propósito y principios</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=8#quienes-somos">Quiénes somos</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=8#proposito-principios">Propósito y principios</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=8#nuestra-historia">Nuestra historia</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=8#el-equipo">El equipo</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=8#transparencia">Transparencia</a>
                     </div>
                 </div>
                 <div class="nav-item">
