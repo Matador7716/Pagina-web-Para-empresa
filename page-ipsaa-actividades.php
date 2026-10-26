@@ -1144,6 +1144,11 @@
                 </div>
                 <div class="nav-item">
                     <a class="nav-link nav-link--cta" href="http://localhost/IPSAA%20CUSCO/?page_id=18">Sé parte</a>
+                    <div class="submenu">
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=18#modalidades">Modalidades de Participación</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=18#beneficios">Beneficios de la Red</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=18#formulario-registro">Formulario de Registro</a>
+                    </div>
                 </div>
             </nav>
         </div>

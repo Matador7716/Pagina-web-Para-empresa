@@ -185,13 +185,22 @@
             font-weight: 600;
         }
 
-        .nav-link--cta {
-            background: var(--red-ipsaa);
+        .nav-link--cta,
+        .nav-link--cta.active {
+            background: var(--red-ipsaa) !important;
             color: var(--white) !important;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 4px 14px rgba(103, 0, 16, 0.28);
+            padding: 10px 22px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 14px rgba(103, 0, 16, 0.28) !important;
+        }
+
+        .nav-link--cta:hover,
+        .nav-link--cta.active:hover {
+            background: var(--red-dark) !important;
+            color: var(--beige-calido) !important;
+            box-shadow: 0 6px 18px rgba(103, 0, 16, 0.38) !important;
+            transform: translateY(-1px);
         }
 
         /* Submenu Dropdowns */
@@ -581,20 +590,22 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            background: rgba(103, 0, 16, 0.08);
-            color: var(--red-ipsaa);
-            padding: 10px 20px;
+            gap: 10px;
+            background: var(--red-ipsaa);
+            color: var(--white);
+            padding: 12px 24px;
             border-radius: 50px;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 700;
             transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(103, 0, 16, 0.2);
         }
 
         .btn-modalidad-cta:hover {
-            background: var(--red-ipsaa);
-            color: var(--white);
+            background: var(--red-dark);
+            color: var(--beige-calido);
             transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(103, 0, 16, 0.35);
         }
 
         /* Beneficios Section */
@@ -977,6 +988,11 @@
                 </div>
                 <div class="nav-item">
                     <a class="nav-link nav-link--cta active" href="http://localhost/IPSAA%20CUSCO/?page_id=18">Sé parte</a>
+                    <div class="submenu">
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=18#modalidades">Modalidades de Participación</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=18#beneficios">Beneficios de la Red</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=18#formulario-registro">Formulario de Registro</a>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -1269,6 +1285,10 @@
             const selectEl = document.getElementById('reg-role');
             if (selectEl) {
                 selectEl.value = roleValue;
+            }
+            const formSection = document.getElementById('formulario-registro');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
             }
         }
 
