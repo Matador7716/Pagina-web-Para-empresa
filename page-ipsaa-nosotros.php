@@ -1200,6 +1200,12 @@
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=10">Red IPSAA</a>
+                    <div class="submenu">
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=10#presentacion-red">Presentación de la Red</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=10#directorio-asociaciones">Directorio de Asociaciones</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=10#beneficios-alianzas">Beneficios de articulación</a>
+                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=10#sumar-asociacion">Sumar mi Asociación</a>
+                    </div>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=12">Actividades</a>
