@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red de Comunidades Peruanas en el Mundo - Slider</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================
+           RESET & GLOBAL STYLES
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d1117;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* ==========================================
+           HEADER SECTION
+           ========================================== */
+        .header-container {
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #670010 0%, #4a000b 100%);
+            color: #e8c39e;
+            border: 1px solid rgba(232, 195, 158, 0.4);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(103, 0, 16, 0.4);
+        }
+
+        .header-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            background: linear-gradient(180deg, #ffffff 0%, #e8c39e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-subtitle {
+            font-size: 1rem;
+            color: #9ca3af;
+            font-weight: 300;
+        }
+
+        /* ==========================================
+           SLIDER MAIN CONTAINER
+           ========================================== */
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            background-color: #161b22;
+        }
+
+        /* Hide Radio Inputs */
+        .slider-wrapper input[type="radio"] {
+            display: none;
+        }
+
+        /* ==========================================
+           SLIDES TRACK
+           ========================================== */
+        .slides-container {
+            position: relative;
+            width: 500%; /* 5 slides = 500% */
+            height: 520px;
+            display: flex;
+            transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        /* Individual Slide */
+        .slide {
+            width: 20%; /* 100% / 5 slides */
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.75);
+            transition: transform 6s ease, filter 0.5s ease;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg,
+                rgba(13, 17, 23, 0.1) 0%,
+                rgba(13, 17, 23, 0.5) 50%,
+                rgba(13, 17, 23, 0.95) 100%
+            );
+        }
+
+        /* Content inside Slide */
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+            max-width: 650px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.6s ease 0.2s, opacity 0.6s ease 0.2s;
+        }
+
+        .community-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(103, 0, 16, 0.92);
+            color: #e8c39e;
+            border: 1px solid rgba(232, 195, 158, 0.3);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            backdrop-filter: blur(4px);
+        }
+
+        .community-tag span.flag {
+            font-size: 1.1rem;
+        }
+
+        .slide-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-description {
+            font-size: 0.95rem;
+            color: #e5e7eb;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .slide-stats {
+            display: flex;
+            gap: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 15px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #e8c39e;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================
+           SLIDE POSITIONING WITH RADIO BUTTONS
+           ========================================== */
+        #slide1:checked ~ .slides-container { transform: translateX(0%); }
+        #slide2:checked ~ .slides-container { transform: translateX(-20%); }
+        #slide3:checked ~ .slides-container { transform: translateX(-40%); }
+        #slide4:checked ~ .slides-container { transform: translateX(-60%); }
+        #slide5:checked ~ .slides-container { transform: translateX(-80%); }
+
+        /* Animate Content & Zoom Background on Active Slide */
+        #slide1:checked ~ .slides-container .slide-1 .slide-content,
+        #slide2:checked ~ .slides-container .slide-2 .slide-content,
+        #slide3:checked ~ .slides-container .slide-3 .slide-content,
+        #slide4:checked ~ .slides-container .slide-4 .slide-content,
+        #slide5:checked ~ .slides-container .slide-5 .slide-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        #slide1:checked ~ .slides-container .slide-1 .slide-bg,
+        #slide2:checked ~ .slides-container .slide-2 .slide-bg,
+        #slide3:checked ~ .slides-container .slide-3 .slide-bg,
+        #slide4:checked ~ .slides-container .slide-4 .slide-bg,
+        #slide5:checked ~ .slides-container .slide-5 .slide-bg {
+            transform: scale(1.08);
+            filter: brightness(0.85);
+        }
+
+        /* ==========================================
+           NAVIGATION ARROWS
+           ========================================== */
+        .nav-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 15px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .nav-arrow {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            user-select: none;
+        }
+
+        .nav-arrow:hover {
+            background: #670010;
+            border-color: #e8c39e;
+            color: #e8c39e;
+            box-shadow: 0 0 15px rgba(103, 0, 16, 0.7);
+            transform: scale(1.1);
+        }
+
+        .nav-arrow svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Arrow visibility matrix based on selected slide */
+        #slide1:checked ~ .nav-arrows .arrow-5-prev,
+        #slide1:checked ~ .nav-arrows .arrow-2-next { display: flex; }
+
+        #slide2:checked ~ .nav-arrows .arrow-1-prev,
+        #slide2:checked ~ .nav-arrows .arrow-3-next { display: flex; }
+
+        #slide3:checked ~ .nav-arrows .arrow-2-prev,
+        #slide3:checked ~ .nav-arrows .arrow-4-next { display: flex; }
+
+        #slide4:checked ~ .nav-arrows .arrow-3-prev,
+        #slide4:checked ~ .nav-arrows .arrow-5-next { display: flex; }
+
+        #slide5:checked ~ .nav-arrows .arrow-4-prev,
+        #slide5:checked ~ .nav-arrows .arrow-1-next { display: flex; }
+
+        /* ==========================================
+           PAGINATION DOTS & THUMBNAILS
+           ========================================== */
+        .pagination-dots {
+            position: absolute;
+            bottom: 25px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot-label {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot-label:hover {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Active Dot Styling */
+        #slide1:checked ~ .pagination-dots label[for="slide1"],
+        #slide2:checked ~ .pagination-dots label[for="slide2"],
+        #slide3:checked ~ .pagination-dots label[for="slide3"],
+        #slide4:checked ~ .pagination-dots label[for="slide4"],
+        #slide5:checked ~ .pagination-dots label[for="slide5"] {
+            background-color: #670010;
+            border: 1px solid #e8c39e;
+            width: 32px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(103, 0, 16, 0.9);
+        }
+
+        /* ==========================================
+           RESPONSIVE STYLES
+           ========================================== */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 1.6rem;
+            }
+
+            .slides-container {
+                height: 460px;
+            }
+
+            .slide-content {
+                padding: 25px;
+            }
+
+            .slide-title {
+                font-size: 1.5rem;
+            }
+
+            .slide-description {
+                font-size: 0.85rem;
+                margin-bottom: 15px;
+            }
+
+            .pagination-dots {
+                bottom: 15px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            .nav-arrow {
+                width: 38px;
+                height: 38px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header-container">
+        <span class="header-badge">Comunidad Global</span>
+        <h1 class="header-title">Red de Comunidades Peruanas en el Mundo</h1>
+        <p class="header-subtitle">Uniendo a los peruanos en el extranjero a través de la cultura, la gastronomía y la fraternidad.</p>
+    </header>
+
+    <!-- Slider Main Container -->
+    <div class="slider-wrapper">
+
+        <!-- Radio Controls -->
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <input type="radio" name="slider" id="slide5">
+
+        <!-- Slides Track -->
+        <div class="slides-container">
+
+            <!-- Slide 1: Madrid, España -->
+            <article class="slide slide-1">
+                <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?q=80&w=1200&auto=format&fit=crop" alt="Comunidad Peruana en Madrid" class="slide-bg">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="community-tag">
+                        <span class="flag">🇪🇸</span> Madrid, España
+                    </div>
+                    <h2 class="slide-title">Asociación Cultural Peruano-Española</h2>
+                    <p class="slide-description">
+                        Promovemos las festividades tradicionales del Perú en Europa, organizando el Inti Raymi en Madrid y difundiendo la danza de la Marinera y la gastronomía criolla.
+                    </p>
+                    <div class="slide-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">+120,000</span>
+                            <span class="stat-label">Peruanos en Madrid</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">15 Años</span>
+                            <span class="stat-label">De Trayectoria</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Slide 2: Nueva York, EE.UU. -->
+            <article class="slide slide-2">
+                <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=1200&auto=format&fit=crop" alt="Comunidad Peruana en Nueva York" class="slide-bg">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="community-tag">
+                        <span class="flag">🇺🇸</span> Nueva York & New Jersey, EE.UU.
+                    </div>
+                    <h2 class="slide-title">Hermandad del Señor de los Milagros NY</h2>
+                    <p class="slide-description">
+                        Una de las comunidades más emblemáticas en la costa este norteamericana. Unimos a miles de compatriotas en procesiones, festivales gastronómicos y apoyo social mutuo.
+                    </p>
+                    <div class="slide-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">+200,000</span>
+                            <span class="stat-label">Miembros Activos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Desfile Anual</span>
+                            <span class="stat-label">Patria e Identidad</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Slide 3: Tokio, Japón -->
+            <article class="slide slide-3">
+                <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1200&auto=format&fit=crop" alt="Comunidad Peruana en Tokio" class="slide-bg">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="community-tag">
+                        <span class="flag">🇯🇵</span> Tokio & Kanagawa, Japón
+                    </div>
+                    <h2 class="slide-title">Colectivo Nikkei & Peruano en Japón</h2>
+                    <p class="slide-description">
+                        Integrando raíces andino-amazónicas con el sol naciente. Nuestra comunidad impulsa escuelas de español, gastronomía fusión Nikkei y talleres de danzas típicas.
+                    </p>
+                    <div class="slide-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">+48,000</span>
+                            <span class="stat-label">Residentes Peruanos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Festival Perú</span>
+                            <span class="stat-label">Yoyogi Park Tokio</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Slide 4: Buenos Aires, Argentina -->
+            <article class="slide slide-4">
+                <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?q=80&w=1200&auto=format&fit=crop" alt="Comunidad Peruana en Buenos Aires" class="slide-bg">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="community-tag">
+                        <span class="flag">🇦🇷</span> Buenos Aires, Argentina
+                    </div>
+                    <h2 class="slide-title">Red de Emprendedores y Artistas Peruanos</h2>
+                    <p class="slide-description">
+                        Referente cultural en Sudamérica. Organizamos la celebre fiesta "Buenos Aires Celebra Perú" en la Av. de Mayo, mostrando la música afroperuana y el folklor andino.
+                    </p>
+                    <div class="slide-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">+180,000</span>
+                            <span class="stat-label">Comunidad residente</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Feria Gastronómica</span>
+                            <span class="stat-label">Anual e Inclusiva</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Slide 5: Milán, Italia -->
+            <article class="slide slide-5">
+                <img src="https://images.unsplash.com/photo-1513581166391-887a96ddeafd?q=80&w=1200&auto=format&fit=crop" alt="Comunidad Peruana en Milán" class="slide-bg">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="community-tag">
+                        <span class="flag">🇮🇹</span> Milán & Lombardía, Italia
+                    </div>
+                    <h2 class="slide-title">Consorcio Cultural Peruano en Italia</h2>
+                    <p class="slide-description">
+                        Punto de encuentro para jóvenes profesionales, estudiantes y familias peruanas en el norte de Italia. Promovemos intercambios culturales y redes de solidaridad.
+                    </p>
+                    <div class="slide-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">+100,000</span>
+                            <span class="stat-label">Peruanos en Italia</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Red Solidaria</span>
+                            <span class="stat-label">Asistencia e Integración</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div> <!-- End .slides-container -->
+
+        <!-- Navigation Arrows Controls -->
+        <div class="nav-arrows">
+            <!-- Arrow Prev Controls -->
+            <label for="slide5" class="nav-arrow arrow-5-prev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </label>
+            <label for="slide1" class="nav-arrow arrow-1-prev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </label>
+            <label for="slide2" class="nav-arrow arrow-2-prev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </label>
+            <label for="slide3" class="nav-arrow arrow-3-prev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </label>
+            <label for="slide4" class="nav-arrow arrow-4-prev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </label>
+
+            <!-- Arrow Next Controls -->
+            <label for="slide2" class="nav-arrow arrow-2-next" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </label>
+            <label for="slide3" class="nav-arrow arrow-3-next" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </label>
+            <label for="slide4" class="nav-arrow arrow-4-next" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </label>
+            <label for="slide5" class="nav-arrow arrow-5-next" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </label>
+            <label for="slide1" class="nav-arrow arrow-1-next" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </label>
+        </div>
+
+        <!-- Pagination Dots -->
+        <div class="pagination-dots">
+            <label for="slide1" class="dot-label" title="Madrid, España"></label>
+            <label for="slide2" class="dot-label" title="Nueva York, EE.UU."></label>
+            <label for="slide3" class="dot-label" title="Tokio, Japón"></label>
+            <label for="slide4" class="dot-label" title="Buenos Aires, Argentina"></label>
+            <label for="slide5" class="dot-label" title="Milán, Italia"></label>
+        </div>
+
+    </div> <!-- End .slider-wrapper -->
+
+</body>
+</html>
