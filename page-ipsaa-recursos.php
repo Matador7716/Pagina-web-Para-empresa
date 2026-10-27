@@ -900,8 +900,8 @@
     <!-- Header Navigation -->
     <header class="site-header">
         <div class="nav-wrap">
-            <a class="brand" href="http://localhost/IPSAA%20CUSCO/" title="IPSAA Inicio">
-                <img src="http://localhost/IPSAA%20CUSCO/wp-content/uploads/2026/10/Logo-3_sinfondo.png" alt="IPSAA Logo" class="header-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <a class="brand" href="https://www.ipsaaperu.com/inicio/" title="IPSAA Inicio">
+                <img src="https://www.ipsaaperu.com/wp-content/uploads/2026/10/Logo-3_sinfondo.png" alt="IPSAA Logo" class="header-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
                 <div class="brand-text" style="display:none; color:var(--navy-ipsaa); font-weight:800; font-size:1.6rem;">IPSAA<span style="color:var(--red-ipsaa)">.</span></div>
             </a>
             <button class="nav-toggle" aria-label="Menú" onclick="document.getElementById('nav').classList.toggle('open')">
@@ -909,46 +909,46 @@
             </button>
             <nav class="nav" id="nav">
                 <div class="nav-item">
-                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/">Inicio</a>
+                    <a class="nav-link" href="https://www.ipsaaperu.com/inicio/">Inicio</a>
                     <div class="submenu">
-                        <a href="http://localhost/IPSAA%20CUSCO/#que-es">Presentación</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/#hoja-ruta">Elige tu camino</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/#ultimas-novedades">Últimas novedades</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/#voces-home">Historias destacadas</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/#red-ipsaa-home">La Red IPSAA</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/#registro-comunidad-home">Conecta con lo que viene</a>
+                        <a href="https://www.ipsaaperu.com/inicio/#que-es">Presentación</a>
+                        <a href="https://www.ipsaaperu.com/inicio/#hoja-ruta">Elige tu camino</a>
+                        <a href="https://www.ipsaaperu.com/inicio/#ultimas-novedades">Últimas novedades</a>
+                        <a href="https://www.ipsaaperu.com/inicio/#voces-home">Historias destacadas</a>
+                        <a href="https://www.ipsaaperu.com/inicio/#red-ipsaa-home">La Red IPSAA</a>
+                        <a href="https://www.ipsaaperu.com/inicio/#registro-comunidad-home">Conecta con lo que viene</a>
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=8">Nosotros</a>
+                    <a class="nav-link" href="https://www.ipsaaperu.com/nosotros/">Nosotros</a>
                     <div class="submenu">
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=8#quienes-somos">Quiénes somos</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=8#proposito-principios">Propósito y principios</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=8#nuestra-historia">Nuestra historia</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=8#el-equipo">El equipo</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=8#transparencia">Transparencia</a>
+                        <a href="https://www.ipsaaperu.com/nosotros/#quienes-somos">Quiénes somos</a>
+                        <a href="https://www.ipsaaperu.com/nosotros/#proposito-principios">Propósito y principios</a>
+                        <a href="https://www.ipsaaperu.com/nosotros/#nuestra-historia">Nuestra historia</a>
+                        <a href="https://www.ipsaaperu.com/nosotros/#el-equipo">El equipo</a>
+                        <a href="https://www.ipsaaperu.com/nosotros/#transparencia">Transparencia</a>
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=10">Red IPSAA</a>
+                    <a class="nav-link" href="https://www.ipsaaperu.com/red-ipsaa/">Red IPSAA</a>
                     <div class="submenu">
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=10#presentacion-red">Presentación de la Red</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=10#directorio-asociaciones">Directorio de Asociaciones</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=10#beneficios-alianzas">Beneficios de articulación</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=10#sumar-asociacion">Sumar mi Asociación</a>
+                        <a href="https://www.ipsaaperu.com/red-ipsaa/#presentacion-red">Presentación de la Red</a>
+                        <a href="https://www.ipsaaperu.com/red-ipsaa/#directorio-asociaciones">Directorio de Asociaciones</a>
+                        <a href="https://www.ipsaaperu.com/red-ipsaa/#beneficios-alianzas">Beneficios de articulación</a>
+                        <a href="https://www.ipsaaperu.com/red-ipsaa/#sumar-asociacion">Sumar mi Asociación</a>
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=12">Actividades</a>
+                    <a class="nav-link" href="https://www.ipsaaperu.com/actividades/">Actividades</a>
                     <div class="submenu">
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=12#mentoria-horizontes">Mentoría Horizontes</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=12#biblioteca-horizontes">Biblioteca Horizontes</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=12#webinars-bootcamps">Webinars y Bootcamps</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=12#peru-connect">Perú Connect 2026</a>
+                        <a href="https://www.ipsaaperu.com/actividades/#mentoria-horizontes">Mentoría Horizontes</a>
+                        <a href="https://www.ipsaaperu.com/actividades/#biblioteca-horizontes">Biblioteca Horizontes</a>
+                        <a href="https://www.ipsaaperu.com/actividades/#webinars-bootcamps">Webinars y Bootcamps</a>
+                        <a href="https://www.ipsaaperu.com/actividades/#peru-connect">Perú Connect 2026</a>
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link active" href="http://localhost/IPSAA%20CUSCO/?page_id=14">Recursos</a>
+                    <a class="nav-link active" href="https://www.ipsaaperu.com/recursos/">Recursos</a>
                     <div class="submenu">
                         <a href="#guias-postulacion">Guías de Postulación</a>
                         <a href="#modelos-ensayos">Modelos de Ensayos &amp; SOP</a>
@@ -958,19 +958,19 @@
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link" href="http://localhost/IPSAA%20CUSCO/?page_id=16">Blog</a>
+                    <a class="nav-link" href="https://www.ipsaaperu.com/blog/">Blog</a>
                     <div class="submenu">
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=16#postales-del-camino">Postales del Camino</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=16#voces-de-la-red">Voces de la Red</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=16#noticias-ipsaa">Noticias IPSAA</a>
+                        <a href="https://www.ipsaaperu.com/blog/#postales-del-camino">Postales del Camino</a>
+                        <a href="https://www.ipsaaperu.com/blog/#voces-de-la-red">Voces de la Red</a>
+                        <a href="https://www.ipsaaperu.com/blog/#noticias-ipsaa">Noticias IPSAA</a>
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link nav-link--cta" href="http://localhost/IPSAA%20CUSCO/?page_id=18">Sé parte</a>
+                    <a class="nav-link nav-link--cta" href="https://www.ipsaaperu.com/se-parte/">Sé parte</a>
                     <div class="submenu">
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=18#modalidades">Modalidades de Participación</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=18#beneficios">Beneficios de la Red</a>
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=18#formulario-registro">Formulario de Registro</a>
+                        <a href="https://www.ipsaaperu.com/se-parte/#modalidades">Modalidades de Participación</a>
+                        <a href="https://www.ipsaaperu.com/se-parte/#beneficios">Beneficios de la Red</a>
+                        <a href="https://www.ipsaaperu.com/se-parte/#formulario-registro">Formulario de Registro</a>
                     </div>
                 </div>
             </nav>
@@ -1190,7 +1190,7 @@
                         <h3 style="color: var(--beige-calido); margin-bottom: 16px; font-size: 1.4rem;"><span class="ms">add_circle</span> ¿Necesitas una plantilla o guía específica?</h3>
                         <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-bottom: 24px;">Si no encuentras el recurso que buscas para tu área o beca de interés, escríbenos para sugerir su elaboración a nuestro equipo de mentores.</p>
 
-                        <a href="http://localhost/IPSAA%20CUSCO/?page_id=18" class="btn-action-recurso" style="background: var(--beige-calido); color: var(--navy-ipsaa); padding: 12px 28px; font-weight: 700; width: 100%; justify-content: center;">
+                        <a href="https://www.ipsaaperu.com/se-parte/" class="btn-action-recurso" style="background: var(--beige-calido); color: var(--navy-ipsaa); padding: 12px 28px; font-weight: 700; width: 100%; justify-content: center;">
                             Solicitar nuevo recurso a IPSAA <span class="ms">send</span>
                         </a>
                     </div>
@@ -1204,24 +1204,24 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="http://localhost/IPSAA%20CUSCO/wp-content/uploads/2026/10/Logo-3_sinfondo.png" alt="IPSAA Logo" class="footer-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                    <img src="https://www.ipsaaperu.com/wp-content/uploads/2026/10/Logo-3_sinfondo.png" alt="IPSAA Logo" class="footer-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
                     <div class="brand-text" style="display:none; color:var(--white);">IPSAA<span style="color:var(--red-ipsaa)">.</span></div>
                     <p style="margin-top:12px">© 2026 International Peruvian Students &amp; Alumni Association (IPSAA). Todos los derechos reservados.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navegación</h4>
-                    <a href="http://localhost/IPSAA%20CUSCO/">Inicio</a>
-                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=8">Nosotros</a>
-                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=10">Red IPSAA</a>
-                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=12">Actividades</a>
-                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=14">Recursos</a>
+                    <a href="https://www.ipsaaperu.com/inicio/">Inicio</a>
+                    <a href="https://www.ipsaaperu.com/nosotros/">Nosotros</a>
+                    <a href="https://www.ipsaaperu.com/red-ipsaa/">Red IPSAA</a>
+                    <a href="https://www.ipsaaperu.com/actividades/">Actividades</a>
+                    <a href="https://www.ipsaaperu.com/recursos/">Recursos</a>
                 </div>
                 <div class="footer-col">
                     <h4>Comunidad</h4>
-                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=16">Blog</a>
+                    <a href="https://www.ipsaaperu.com/blog/">Blog</a>
                     <a href="#guias-postulacion">Guías PDF</a>
                     <a href="#modelos-ensayos">SOP Ejemplos</a>
-                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=18">Sé parte</a>
+                    <a href="https://www.ipsaaperu.com/se-parte/">Sé parte</a>
                 </div>
                 <div class="footer-col">
                     <h4>Iniciativas</h4>
@@ -1231,7 +1231,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contacto</h4>
-                    <a href="http://localhost/IPSAA%20CUSCO/?page_id=18">Escríbenos</a>
+                    <a href="https://www.ipsaaperu.com/se-parte/">Escríbenos</a>
                     <a href="mailto:ipsaa.peru@gmail.com">ipsaa.peru@gmail.com</a>
                 </div>
                 <div class="footer-col">
