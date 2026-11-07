@@ -1,0 +1,8 @@
+        </div> <!-- End container-fluid -->
+    </div> <!-- End Page Content -->
+</div> <!-- End Wrapper -->
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
