@@ -1,0 +1,183 @@
+:root {
+    --primary-color: #0284c7;
+    --primary-hover: #0369a1;
+    --secondary-color: #0f172a;
+    --accent-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --light-bg: #f8fafc;
+    --border-color: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #334155;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header & Navbar */
+.top-bar {
+    background: #0f172a;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+}
+
+.top-bar a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.top-bar a:hover {
+    color: #ffffff;
+}
+
+.navbar-main {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand-badge {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: white;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+/* Product Cards */
+.product-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+}
+
+.product-badge-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ef4444;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    z-index: 2;
+}
+
+.product-wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 2;
+}
+
+.product-wishlist-btn:hover, .product-wishlist-btn.active {
+    color: #ef4444;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.product-thumb {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    background: #f1f5f9;
+}
+
+/* Floating WhatsApp */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+/* Stepper Checkout */
+.stepper-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.stepper-item::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #cbd5e1;
+    width: 100%;
+    top: 20px;
+    left: -50%;
+    z-index: 1;
+}
+
+.stepper-item:first-child::before {
+    content: none;
+}
+
+.stepper-counter {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #475569;
+    font-weight: 600;
+}
+
+.stepper-item.completed .stepper-counter {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.stepper-item.active .stepper-counter {
+    background: var(--primary-color);
+    color: #ffffff;
+}
